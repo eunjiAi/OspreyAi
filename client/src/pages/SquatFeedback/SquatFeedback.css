@@ -1,0 +1,15 @@
+.squat-feedback {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .squat-feedback h1 {
+    color: #334e68;
+  }
+  
+  .squat-feedback p {
+    font-size: 18px;
+    color: #55697e;
+    margin: 5px 0;
+  }
+  
