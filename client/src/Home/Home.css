@@ -9,11 +9,11 @@
   color: #334e68;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
-  max-width: 1200px; /* 중앙 정렬을 위해 최대 너비 설정 */
-  margin: 0 auto; /* 중앙 정렬 */
+  width: 100%;
+  margin: 0; /* 여백 제거 */
+  box-sizing: border-box; 
 }
 
-  
   /* 히어로 섹션 스타일 */
   .hero {
     text-align: center;

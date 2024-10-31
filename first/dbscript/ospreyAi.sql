@@ -1,0 +1,3 @@
+CREATE USER c##ospreyai IDENTIFIED BY "123456";
+GRANT CONNECT, RESOURCE TO c##ospreyai;
+
