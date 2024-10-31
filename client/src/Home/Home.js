@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import './Home.css';
+import robotImage from '../images/robot1.png';
 function Home() {
     const [message, setMessage] = useState("");
 
@@ -12,8 +14,21 @@ function Home() {
     }, []);
 
     return (
-        <div>
-            <h1>{message}</h1>
+        <div className="home-container">
+            <section className="hero">
+                <h1 className="hero-title">OspreyAI</h1>
+                <p className="hero-description">실시간 비전 모니터링 AI 시스템</p>
+                <p>{message}</p> {/* Spring Boot API의 메시지 표시 */}
+            </section>
+            <section className="features">
+                <Link to="/WebcamCapture" className="feature">
+                    <div className="feature-icon">
+                        <img src={robotImage} alt="AI Process" />
+                    </div>
+                    <h2 className="feature-title">Real-time Process AI</h2>
+                    <p className="feature-description">OspreyAI</p>
+                </Link>
+            </section>
         </div>
     );
 }
