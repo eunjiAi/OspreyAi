@@ -1,0 +1,256 @@
+2024-11-01 16:52:05,404 DEBUG matplotlib data path: C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\matplotlib\mpl-data
+2024-11-01 16:52:05,407 DEBUG CONFIGDIR=C:\Users\ict01-20\.matplotlib
+2024-11-01 16:52:05,408 DEBUG interactive is False
+2024-11-01 16:52:05,408 DEBUG platform is win32
+2024-11-01 16:52:05,441 DEBUG CACHEDIR=C:\Users\ict01-20\.matplotlib
+2024-11-01 16:52:05,444 DEBUG Using fontManager instance from C:\Users\ict01-20\.matplotlib\fontlist-v330.json
+2024-11-01 16:52:05,742 ERROR Library import error: No module named 'sqlalchemy'
+2024-11-01 16:52:28,845 DEBUG matplotlib data path: C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\matplotlib\mpl-data
+2024-11-01 16:52:28,849 DEBUG CONFIGDIR=C:\Users\ict01-20\.matplotlib
+2024-11-01 16:52:28,849 DEBUG interactive is False
+2024-11-01 16:52:28,849 DEBUG platform is win32
+2024-11-01 16:52:28,881 DEBUG CACHEDIR=C:\Users\ict01-20\.matplotlib
+2024-11-01 16:52:28,885 DEBUG Using fontManager instance from C:\Users\ict01-20\.matplotlib\fontlist-v330.json
+2024-11-01 16:52:29,393 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-01 16:52:29,394 INFO [33mPress CTRL+C to quit[0m
+2024-11-01 16:52:29,395 INFO  * Restarting with stat
+2024-11-01 16:52:29,768 DEBUG matplotlib data path: C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\matplotlib\mpl-data
+2024-11-01 16:52:29,771 DEBUG CONFIGDIR=C:\Users\ict01-20\.matplotlib
+2024-11-01 16:52:29,771 DEBUG interactive is False
+2024-11-01 16:52:29,772 DEBUG platform is win32
+2024-11-01 16:52:29,804 DEBUG CACHEDIR=C:\Users\ict01-20\.matplotlib
+2024-11-01 16:52:29,808 DEBUG Using fontManager instance from C:\Users\ict01-20\.matplotlib\fontlist-v330.json
+2024-11-01 16:52:30,285 WARNING  * Debugger is active!
+2024-11-01 16:52:30,287 INFO  * Debugger PIN: 125-377-655
+2024-11-01 16:56:26,055 INFO 127.0.0.1 - - [01/Nov/2024 16:56:26] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:26,750 INFO 127.0.0.1 - - [01/Nov/2024 16:56:26] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:28,054 INFO 127.0.0.1 - - [01/Nov/2024 16:56:28] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:28,741 INFO 127.0.0.1 - - [01/Nov/2024 16:56:28] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:30,061 INFO 127.0.0.1 - - [01/Nov/2024 16:56:30] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:30,743 INFO 127.0.0.1 - - [01/Nov/2024 16:56:30] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:32,059 INFO 127.0.0.1 - - [01/Nov/2024 16:56:32] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:32,744 INFO 127.0.0.1 - - [01/Nov/2024 16:56:32] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:34,052 INFO 127.0.0.1 - - [01/Nov/2024 16:56:34] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:34,748 INFO 127.0.0.1 - - [01/Nov/2024 16:56:34] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:36,053 INFO 127.0.0.1 - - [01/Nov/2024 16:56:36] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:36,748 INFO 127.0.0.1 - - [01/Nov/2024 16:56:36] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:38,051 INFO 127.0.0.1 - - [01/Nov/2024 16:56:38] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:38,738 INFO 127.0.0.1 - - [01/Nov/2024 16:56:38] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:40,047 INFO 127.0.0.1 - - [01/Nov/2024 16:56:40] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:40,745 INFO 127.0.0.1 - - [01/Nov/2024 16:56:40] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:42,049 INFO 127.0.0.1 - - [01/Nov/2024 16:56:42] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:42,749 INFO 127.0.0.1 - - [01/Nov/2024 16:56:42] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:44,056 INFO 127.0.0.1 - - [01/Nov/2024 16:56:44] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:44,738 INFO 127.0.0.1 - - [01/Nov/2024 16:56:44] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:46,062 INFO 127.0.0.1 - - [01/Nov/2024 16:56:46] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:46,747 INFO 127.0.0.1 - - [01/Nov/2024 16:56:46] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:48,054 INFO 127.0.0.1 - - [01/Nov/2024 16:56:48] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:48,737 INFO 127.0.0.1 - - [01/Nov/2024 16:56:48] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:50,060 INFO 127.0.0.1 - - [01/Nov/2024 16:56:50] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:50,747 INFO 127.0.0.1 - - [01/Nov/2024 16:56:50] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:52,050 INFO 127.0.0.1 - - [01/Nov/2024 16:56:52] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:52,749 INFO 127.0.0.1 - - [01/Nov/2024 16:56:52] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:54,054 INFO 127.0.0.1 - - [01/Nov/2024 16:56:54] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:54,752 INFO 127.0.0.1 - - [01/Nov/2024 16:56:54] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:56,058 INFO 127.0.0.1 - - [01/Nov/2024 16:56:56] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:56,742 INFO 127.0.0.1 - - [01/Nov/2024 16:56:56] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:58,065 INFO 127.0.0.1 - - [01/Nov/2024 16:56:58] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:56:58,748 INFO 127.0.0.1 - - [01/Nov/2024 16:56:58] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:00,059 INFO 127.0.0.1 - - [01/Nov/2024 16:57:00] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:00,740 INFO 127.0.0.1 - - [01/Nov/2024 16:57:00] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:02,049 INFO 127.0.0.1 - - [01/Nov/2024 16:57:02] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:02,747 INFO 127.0.0.1 - - [01/Nov/2024 16:57:02] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:04,055 INFO 127.0.0.1 - - [01/Nov/2024 16:57:04] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:04,736 INFO 127.0.0.1 - - [01/Nov/2024 16:57:04] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:06,061 INFO 127.0.0.1 - - [01/Nov/2024 16:57:06] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:06,743 INFO 127.0.0.1 - - [01/Nov/2024 16:57:06] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:08,049 INFO 127.0.0.1 - - [01/Nov/2024 16:57:08] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:08,748 INFO 127.0.0.1 - - [01/Nov/2024 16:57:08] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:10,058 INFO 127.0.0.1 - - [01/Nov/2024 16:57:10] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:10,739 INFO 127.0.0.1 - - [01/Nov/2024 16:57:10] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:12,059 INFO 127.0.0.1 - - [01/Nov/2024 16:57:12] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:12,741 INFO 127.0.0.1 - - [01/Nov/2024 16:57:12] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:14,060 INFO 127.0.0.1 - - [01/Nov/2024 16:57:14] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:14,745 INFO 127.0.0.1 - - [01/Nov/2024 16:57:14] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:16,051 INFO 127.0.0.1 - - [01/Nov/2024 16:57:16] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:16,738 INFO 127.0.0.1 - - [01/Nov/2024 16:57:16] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:18,061 INFO 127.0.0.1 - - [01/Nov/2024 16:57:18] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:18,740 INFO 127.0.0.1 - - [01/Nov/2024 16:57:18] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:20,060 INFO 127.0.0.1 - - [01/Nov/2024 16:57:20] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:20,744 INFO 127.0.0.1 - - [01/Nov/2024 16:57:20] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:22,052 INFO 127.0.0.1 - - [01/Nov/2024 16:57:22] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:22,751 INFO 127.0.0.1 - - [01/Nov/2024 16:57:22] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:24,059 INFO 127.0.0.1 - - [01/Nov/2024 16:57:24] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:24,742 INFO 127.0.0.1 - - [01/Nov/2024 16:57:24] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:26,047 INFO 127.0.0.1 - - [01/Nov/2024 16:57:26] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:26,745 INFO 127.0.0.1 - - [01/Nov/2024 16:57:26] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:28,055 INFO 127.0.0.1 - - [01/Nov/2024 16:57:28] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:28,738 INFO 127.0.0.1 - - [01/Nov/2024 16:57:28] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:30,064 INFO 127.0.0.1 - - [01/Nov/2024 16:57:30] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:30,748 INFO 127.0.0.1 - - [01/Nov/2024 16:57:30] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:32,061 INFO 127.0.0.1 - - [01/Nov/2024 16:57:32] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:32,747 INFO 127.0.0.1 - - [01/Nov/2024 16:57:32] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:34,055 INFO 127.0.0.1 - - [01/Nov/2024 16:57:34] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:34,740 INFO 127.0.0.1 - - [01/Nov/2024 16:57:34] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:36,062 INFO 127.0.0.1 - - [01/Nov/2024 16:57:36] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:36,748 INFO 127.0.0.1 - - [01/Nov/2024 16:57:36] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:38,054 INFO 127.0.0.1 - - [01/Nov/2024 16:57:38] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:38,742 INFO 127.0.0.1 - - [01/Nov/2024 16:57:38] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:40,060 INFO 127.0.0.1 - - [01/Nov/2024 16:57:40] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:40,739 INFO 127.0.0.1 - - [01/Nov/2024 16:57:40] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:42,046 INFO 127.0.0.1 - - [01/Nov/2024 16:57:42] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:42,746 INFO 127.0.0.1 - - [01/Nov/2024 16:57:42] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:44,053 INFO 127.0.0.1 - - [01/Nov/2024 16:57:44] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:44,741 INFO 127.0.0.1 - - [01/Nov/2024 16:57:44] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:46,050 INFO 127.0.0.1 - - [01/Nov/2024 16:57:46] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:46,748 INFO 127.0.0.1 - - [01/Nov/2024 16:57:46] "[31m[1mGET /squat-analysis HTTP/1.1[0m" 405 -
+2024-11-01 16:57:48,916 INFO 127.0.0.1 - - [01/Nov/2024 16:57:48] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:49,645 INFO 127.0.0.1 - - [01/Nov/2024 16:57:49] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:50,946 INFO 127.0.0.1 - - [01/Nov/2024 16:57:50] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:51,640 INFO 127.0.0.1 - - [01/Nov/2024 16:57:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:52,949 INFO 127.0.0.1 - - [01/Nov/2024 16:57:52] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:53,645 INFO 127.0.0.1 - - [01/Nov/2024 16:57:53] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:54,943 INFO 127.0.0.1 - - [01/Nov/2024 16:57:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:55,643 INFO 127.0.0.1 - - [01/Nov/2024 16:57:55] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:56,949 INFO 127.0.0.1 - - [01/Nov/2024 16:57:56] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:57,641 INFO 127.0.0.1 - - [01/Nov/2024 16:57:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:58,953 INFO 127.0.0.1 - - [01/Nov/2024 16:57:58] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:57:59,636 INFO 127.0.0.1 - - [01/Nov/2024 16:57:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:00,944 INFO 127.0.0.1 - - [01/Nov/2024 16:58:00] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:01,633 INFO 127.0.0.1 - - [01/Nov/2024 16:58:01] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:02,941 INFO 127.0.0.1 - - [01/Nov/2024 16:58:02] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:03,641 INFO 127.0.0.1 - - [01/Nov/2024 16:58:03] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:04,943 INFO 127.0.0.1 - - [01/Nov/2024 16:58:04] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:05,630 INFO 127.0.0.1 - - [01/Nov/2024 16:58:05] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:06,949 INFO 127.0.0.1 - - [01/Nov/2024 16:58:06] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:07,624 INFO 127.0.0.1 - - [01/Nov/2024 16:58:07] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:08,945 INFO 127.0.0.1 - - [01/Nov/2024 16:58:08] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:09,632 INFO 127.0.0.1 - - [01/Nov/2024 16:58:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:10,932 INFO 127.0.0.1 - - [01/Nov/2024 16:58:10] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:11,641 INFO 127.0.0.1 - - [01/Nov/2024 16:58:11] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:12,937 INFO 127.0.0.1 - - [01/Nov/2024 16:58:12] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:13,630 INFO 127.0.0.1 - - [01/Nov/2024 16:58:13] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:14,947 INFO 127.0.0.1 - - [01/Nov/2024 16:58:14] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:15,637 INFO 127.0.0.1 - - [01/Nov/2024 16:58:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:16,943 INFO 127.0.0.1 - - [01/Nov/2024 16:58:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:17,640 INFO 127.0.0.1 - - [01/Nov/2024 16:58:17] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:18,942 INFO 127.0.0.1 - - [01/Nov/2024 16:58:18] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:19,641 INFO 127.0.0.1 - - [01/Nov/2024 16:58:19] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:20,949 INFO 127.0.0.1 - - [01/Nov/2024 16:58:20] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:21,643 INFO 127.0.0.1 - - [01/Nov/2024 16:58:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:22,945 INFO 127.0.0.1 - - [01/Nov/2024 16:58:22] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:23,629 INFO 127.0.0.1 - - [01/Nov/2024 16:58:23] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:24,952 INFO 127.0.0.1 - - [01/Nov/2024 16:58:24] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:25,636 INFO 127.0.0.1 - - [01/Nov/2024 16:58:25] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:26,941 INFO 127.0.0.1 - - [01/Nov/2024 16:58:26] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:27,636 INFO 127.0.0.1 - - [01/Nov/2024 16:58:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:28,949 INFO 127.0.0.1 - - [01/Nov/2024 16:58:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:29,640 INFO 127.0.0.1 - - [01/Nov/2024 16:58:29] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:30,945 INFO 127.0.0.1 - - [01/Nov/2024 16:58:30] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:31,641 INFO 127.0.0.1 - - [01/Nov/2024 16:58:31] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:32,943 INFO 127.0.0.1 - - [01/Nov/2024 16:58:32] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:33,633 INFO 127.0.0.1 - - [01/Nov/2024 16:58:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:34,951 INFO 127.0.0.1 - - [01/Nov/2024 16:58:34] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:35,632 INFO 127.0.0.1 - - [01/Nov/2024 16:58:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:36,953 INFO 127.0.0.1 - - [01/Nov/2024 16:58:36] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:37,642 INFO 127.0.0.1 - - [01/Nov/2024 16:58:37] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:38,947 INFO 127.0.0.1 - - [01/Nov/2024 16:58:38] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:39,638 INFO 127.0.0.1 - - [01/Nov/2024 16:58:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:40,949 INFO 127.0.0.1 - - [01/Nov/2024 16:58:40] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:41,639 INFO 127.0.0.1 - - [01/Nov/2024 16:58:41] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:42,950 INFO 127.0.0.1 - - [01/Nov/2024 16:58:42] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:43,631 INFO 127.0.0.1 - - [01/Nov/2024 16:58:43] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:44,939 INFO 127.0.0.1 - - [01/Nov/2024 16:58:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:45,631 INFO 127.0.0.1 - - [01/Nov/2024 16:58:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:46,951 INFO 127.0.0.1 - - [01/Nov/2024 16:58:46] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:47,624 INFO 127.0.0.1 - - [01/Nov/2024 16:58:47] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:48,925 INFO 127.0.0.1 - - [01/Nov/2024 16:58:48] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:49,633 INFO 127.0.0.1 - - [01/Nov/2024 16:58:49] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:50,944 INFO 127.0.0.1 - - [01/Nov/2024 16:58:50] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:51,637 INFO 127.0.0.1 - - [01/Nov/2024 16:58:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:52,955 INFO 127.0.0.1 - - [01/Nov/2024 16:58:52] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:53,632 INFO 127.0.0.1 - - [01/Nov/2024 16:58:53] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:54,956 INFO 127.0.0.1 - - [01/Nov/2024 16:58:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:55,634 INFO 127.0.0.1 - - [01/Nov/2024 16:58:55] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:56,947 INFO 127.0.0.1 - - [01/Nov/2024 16:58:56] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:57,638 INFO 127.0.0.1 - - [01/Nov/2024 16:58:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:58,939 INFO 127.0.0.1 - - [01/Nov/2024 16:58:58] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:58:59,629 INFO 127.0.0.1 - - [01/Nov/2024 16:58:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:00,944 INFO 127.0.0.1 - - [01/Nov/2024 16:59:00] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:01,648 INFO 127.0.0.1 - - [01/Nov/2024 16:59:01] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:02,942 INFO 127.0.0.1 - - [01/Nov/2024 16:59:02] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:03,632 INFO 127.0.0.1 - - [01/Nov/2024 16:59:03] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:04,942 INFO 127.0.0.1 - - [01/Nov/2024 16:59:04] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:05,641 INFO 127.0.0.1 - - [01/Nov/2024 16:59:05] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:06,951 INFO 127.0.0.1 - - [01/Nov/2024 16:59:06] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:07,635 INFO 127.0.0.1 - - [01/Nov/2024 16:59:07] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:08,952 INFO 127.0.0.1 - - [01/Nov/2024 16:59:08] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:09,639 INFO 127.0.0.1 - - [01/Nov/2024 16:59:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:10,943 INFO 127.0.0.1 - - [01/Nov/2024 16:59:10] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:11,641 INFO 127.0.0.1 - - [01/Nov/2024 16:59:11] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:12,949 INFO 127.0.0.1 - - [01/Nov/2024 16:59:12] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:13,628 INFO 127.0.0.1 - - [01/Nov/2024 16:59:13] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:14,948 INFO 127.0.0.1 - - [01/Nov/2024 16:59:14] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:15,644 INFO 127.0.0.1 - - [01/Nov/2024 16:59:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:16,953 INFO 127.0.0.1 - - [01/Nov/2024 16:59:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:17,633 INFO 127.0.0.1 - - [01/Nov/2024 16:59:17] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:18,946 INFO 127.0.0.1 - - [01/Nov/2024 16:59:18] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:19,631 INFO 127.0.0.1 - - [01/Nov/2024 16:59:19] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:20,940 INFO 127.0.0.1 - - [01/Nov/2024 16:59:20] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:21,637 INFO 127.0.0.1 - - [01/Nov/2024 16:59:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:22,942 INFO 127.0.0.1 - - [01/Nov/2024 16:59:22] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:23,640 INFO 127.0.0.1 - - [01/Nov/2024 16:59:23] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:24,943 INFO 127.0.0.1 - - [01/Nov/2024 16:59:24] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:25,640 INFO 127.0.0.1 - - [01/Nov/2024 16:59:25] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:26,940 INFO 127.0.0.1 - - [01/Nov/2024 16:59:26] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:27,636 INFO 127.0.0.1 - - [01/Nov/2024 16:59:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:28,945 INFO 127.0.0.1 - - [01/Nov/2024 16:59:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:29,654 INFO 127.0.0.1 - - [01/Nov/2024 16:59:29] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:30,952 INFO 127.0.0.1 - - [01/Nov/2024 16:59:30] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:31,641 INFO 127.0.0.1 - - [01/Nov/2024 16:59:31] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:32,950 INFO 127.0.0.1 - - [01/Nov/2024 16:59:32] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:33,647 INFO 127.0.0.1 - - [01/Nov/2024 16:59:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:34,946 INFO 127.0.0.1 - - [01/Nov/2024 16:59:34] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:35,641 INFO 127.0.0.1 - - [01/Nov/2024 16:59:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:36,943 INFO 127.0.0.1 - - [01/Nov/2024 16:59:36] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:37,638 INFO 127.0.0.1 - - [01/Nov/2024 16:59:37] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:38,947 INFO 127.0.0.1 - - [01/Nov/2024 16:59:38] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:39,641 INFO 127.0.0.1 - - [01/Nov/2024 16:59:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:40,937 INFO 127.0.0.1 - - [01/Nov/2024 16:59:40] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:41,643 INFO 127.0.0.1 - - [01/Nov/2024 16:59:41] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:42,954 INFO 127.0.0.1 - - [01/Nov/2024 16:59:42] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:43,641 INFO 127.0.0.1 - - [01/Nov/2024 16:59:43] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:44,951 INFO 127.0.0.1 - - [01/Nov/2024 16:59:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:45,637 INFO 127.0.0.1 - - [01/Nov/2024 16:59:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:46,942 INFO 127.0.0.1 - - [01/Nov/2024 16:59:46] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:47,637 INFO 127.0.0.1 - - [01/Nov/2024 16:59:47] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:48,945 INFO 127.0.0.1 - - [01/Nov/2024 16:59:48] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:49,628 INFO 127.0.0.1 - - [01/Nov/2024 16:59:49] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:50,942 INFO 127.0.0.1 - - [01/Nov/2024 16:59:50] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:51,638 INFO 127.0.0.1 - - [01/Nov/2024 16:59:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:52,946 INFO 127.0.0.1 - - [01/Nov/2024 16:59:52] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:53,626 INFO 127.0.0.1 - - [01/Nov/2024 16:59:53] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:54,943 INFO 127.0.0.1 - - [01/Nov/2024 16:59:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:55,633 INFO 127.0.0.1 - - [01/Nov/2024 16:59:55] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:56,950 INFO 127.0.0.1 - - [01/Nov/2024 16:59:56] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:57,646 INFO 127.0.0.1 - - [01/Nov/2024 16:59:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:58,942 INFO 127.0.0.1 - - [01/Nov/2024 16:59:58] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 16:59:59,642 INFO 127.0.0.1 - - [01/Nov/2024 16:59:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:00,948 INFO 127.0.0.1 - - [01/Nov/2024 17:00:00] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:01,627 INFO 127.0.0.1 - - [01/Nov/2024 17:00:01] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:02,944 INFO 127.0.0.1 - - [01/Nov/2024 17:00:02] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:03,642 INFO 127.0.0.1 - - [01/Nov/2024 17:00:03] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:04,951 INFO 127.0.0.1 - - [01/Nov/2024 17:00:04] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:05,629 INFO 127.0.0.1 - - [01/Nov/2024 17:00:05] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:06,941 INFO 127.0.0.1 - - [01/Nov/2024 17:00:06] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:07,635 INFO 127.0.0.1 - - [01/Nov/2024 17:00:07] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:08,938 INFO 127.0.0.1 - - [01/Nov/2024 17:00:08] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:09,633 INFO 127.0.0.1 - - [01/Nov/2024 17:00:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:10,949 INFO 127.0.0.1 - - [01/Nov/2024 17:00:10] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:11,644 INFO 127.0.0.1 - - [01/Nov/2024 17:00:11] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:12,944 INFO 127.0.0.1 - - [01/Nov/2024 17:00:12] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:13,637 INFO 127.0.0.1 - - [01/Nov/2024 17:00:13] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:14,951 INFO 127.0.0.1 - - [01/Nov/2024 17:00:14] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:15,631 INFO 127.0.0.1 - - [01/Nov/2024 17:00:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-01 17:00:16,940 INFO 127.0.0.1 - - [01/Nov/2024 17:00:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -

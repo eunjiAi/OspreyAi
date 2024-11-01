@@ -13,7 +13,7 @@ function Header() {
         <ul className="navbar-menu">
 
           <li className="navbar-item dropdown">
-            <Link to="/WebcamCapture" className="navbar-link">RealTimeProcessAI</Link>
+            <Link to="/SquatFeedback" className="navbar-link">RealTimeProcessAI</Link>
             <ul className="dropdown-menu">
               <li><Link to="/about/team" className="dropdown-link">Our Team</Link></li>
               <li><Link to="/about/careers" className="dropdown-link">Careers</Link></li>
