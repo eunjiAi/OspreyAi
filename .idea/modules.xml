@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/projectEunji.iml" filepath="$PROJECT_DIR$/.idea/projectEunji.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/springboot_workspace.iml" filepath="$PROJECT_DIR$/.idea/springboot_workspace.iml" />
     </modules>
   </component>
 </project>
