@@ -40,7 +40,7 @@
   font-size: 18px;
   padding: 8px 16px;
   font-weight: normal;
-  transition: font-weight 0.3s ease; /* 호버 시 글씨 굵어지게 */
+  transition: font-weight 0.1s ease; /* 호버 시 글씨 굵어지게 */
 }
 
 .navbar-link:hover {
@@ -51,7 +51,7 @@
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 135%; /* 서브메뉴랑 메인메뉴 사이 간격 조정 */
+  top: 135%; /* 서브메뉴랑 메인메뉴 사이 간격 */
   left: 0;
   background-color: #fff;
   list-style: none;
