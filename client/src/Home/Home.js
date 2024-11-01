@@ -2,14 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import robotImage from '../images/robot1.png';
+
 function Home() {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
         // Spring Boot의 /OspreyAI/api/home 엔드포인트로 요청
         fetch("http://localhost:8888/OspreyAI/api/home")
-            .then(response => response.json())  // JSON 형식으로 응답 처리
-            .then(data => setMessage(data.message))
+            .then(response => response.json())
+            .then(data => {
+                // React 콘솔에 응답 출력
+                console.log("Received data from Spring Boot:", data);
+                
+                // message 상태 업데이트
+                setMessage(data.message);
+            })
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
