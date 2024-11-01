@@ -17,33 +17,36 @@ try:
     import datetime
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
-    print("All libraries imported successfully.")
+    print("모든 라이브러리가 성공적으로 임포트되었습니다.")
+    logging.debug("모든 라이브러리가 성공적으로 임포트되었습니다.")
 except ImportError as e:
-    logging.error(f"Library import error: {e}")
-    print(f"Library import error: {e}")
+    logging.error(f"라이브러리 임포트 오류: {e}")
+    print(f"라이브러리 임포트 오류: {e}")
     sys.exit()
 
 # MediaPipe 초기화
 try:
     mp_pose = mp.solutions.pose
     pose = mp_pose.Pose()
-    print("MediaPipe initialized.")
+    print("MediaPipe가 초기화되었습니다.")
+    logging.debug("MediaPipe가 초기화되었습니다.")
 except Exception as e:
-    logging.error(f"MediaPipe initialization error: {e}")
-    print(f"MediaPipe initialization error: {e}")
+    logging.error(f"MediaPipe 초기화 오류: {e}")
+    print(f"MediaPipe 초기화 오류: {e}")
     sys.exit()
 
 # 데이터베이스 연결 설정
 try:
-    print("Connecting to database...")
+    print("데이터베이스에 연결 중...")
     DATABASE_URI = 'oracle+cx_oracle://c##ospreyai:123456@localhost:1521/XE'
     engine = create_engine(DATABASE_URI)
     Session = sessionmaker(bind=engine)
     session = Session()
-    print("Database connected successfully.")
+    print("데이터베이스에 성공적으로 연결되었습니다.")
+    logging.debug("데이터베이스에 성공적으로 연결되었습니다.")
 except Exception as e:
-    logging.error(f"Database connection error: {e}")
-    print(f"Database connection error: {e}")
+    logging.error(f"데이터베이스 연결 오류: {e}")
+    print(f"데이터베이스 연결 오류: {e}")
     sys.exit()
 
 # Pose 분석 함수
@@ -72,10 +75,13 @@ def analyze_pose(image):
             
             update_daily_feedback(feedback)
         
+        print("자세 분석이 완료되었습니다:", {"angle": angle, "knee_position": knee_position, "feedback": feedback})
+        logging.debug(f"자세 분석 결과: angle={angle}, knee_position={knee_position}, feedback={feedback}")
         return {"angle": angle, "knee_position": knee_position, "feedback": feedback}
     except Exception as e:
-        logging.error(f"Pose analysis error: {e}")
-        return {"error": "Pose analysis failed"}
+        logging.error(f"자세 분석 오류: {e}")
+        print(f"자세 분석 오류: {e}")
+        return {"error": "자세 분석 실패"}
 
 # 각도 계산 (예시)
 def calculate_upper_body_angle(landmarks):
@@ -99,21 +105,35 @@ def update_daily_feedback(feedback):
             new_entry = SquatFeedback(date=today, duration=1, correct_posture_duration=correct_duration)
             session.add(new_entry)
         session.commit()
+        print("일일 피드백이 데이터베이스에 업데이트되었습니다.")
+        logging.debug("일일 피드백이 데이터베이스에 업데이트되었습니다.")
     except Exception as e:
-        logging.error(f"Database update error: {e}")
+        logging.error(f"데이터베이스 업데이트 오류: {e}")
+        print(f"데이터베이스 업데이트 오류: {e}")
 
 @app.route('/squat-analysis', methods=['POST'])
 def squat_analysis():
+    print("받은 요청: /squat-analysis")
+    logging.debug("받은 요청: /squat-analysis")
+
     data = request.get_json()
     frame = data.get('frame')
-    result = analyze_pose(frame)
-    return jsonify(result)
+    if frame:
+        result = analyze_pose(frame)
+        print("분석 결과 반환:", result)
+        logging.debug(f"분석 결과 반환: {result}")
+        return jsonify(result)
+    else:
+        print("프레임 데이터가 수신되지 않았습니다.")
+        logging.debug("프레임 데이터가 수신되지 않았습니다.")
+        return jsonify({"error": "프레임 데이터가 수신되지 않았습니다."}), 400
 
 # Flask 서버 시작
 if __name__ == '__main__':
-    print("Starting Flask server...")
+    print("Flask 서버를 시작합니다...")
+    logging.debug("Flask 서버를 시작합니다...")
     try:
         app.run(port=5000, debug=True)
     except Exception as e:
-        logging.error(f"Flask server start error: {e}")
-        print(f"Flask server start error: {e}")
+        logging.error(f"Flask 서버 시작 오류: {e}")
+        print(f"Flask 서버 시작 오류: {e}")

@@ -17,7 +17,7 @@ public class SquatFeedbackDTO {
 	private String userId;
 	private int duration;
 	private int correctPostureDuration;
-	private Date date;
+	private Date date; // 날짜 필드
 
 	public SquatFeedback toEntity() {
 		return SquatFeedback.builder()
@@ -25,7 +25,7 @@ public class SquatFeedbackDTO {
 				.userId(userId)
 				.duration(duration)
 				.correctPostureDuration(correctPostureDuration)
-				.date(date)
+				.squatDate(date) // 변경된 필드 이름
 				.build();
 	}
 }

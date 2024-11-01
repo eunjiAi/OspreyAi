@@ -31,8 +31,8 @@ public class SquatFeedback {
     private int correctPostureDuration;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "DATE", nullable = false)
-    private Date date;
+    @Column(name = "SQUAT_DATE", nullable = false) // DATE에서 SQUAT_DATE로 변경
+    private Date squatDate; // 필드 이름도 변경
 
     public SquatFeedbackDTO toDto() {
         return SquatFeedbackDTO.builder()
@@ -40,7 +40,7 @@ public class SquatFeedback {
                 .userId(userId)
                 .duration(duration)
                 .correctPostureDuration(correctPostureDuration)
-                .date(date)
+                .date(squatDate) // 변경된 필드 이름
                 .build();
     }
 }

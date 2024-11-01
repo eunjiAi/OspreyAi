@@ -23,7 +23,7 @@
 }
 
 .webcam-video {
-  width:85%;
+  width: 85%;
   aspect-ratio: 9 / 16; /* 세로 비율을 늘려 전체 신체가 보이도록 설정 */
   max-height: 84vh;
   border-radius: 12px;
@@ -85,7 +85,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .control-button.start {
@@ -97,6 +97,10 @@
   background-color: #218838;
 }
 
+.control-button.start.active {
+  background-color: #218838; /* 클릭 후 유지할 색상 */
+}
+
 .control-button.stop {
   background-color: #dc3545;
   color: #fff;
@@ -104,6 +108,10 @@
 
 .control-button.stop:hover {
   background-color: #c82333;
+}
+
+.control-button.stop.active {
+  background-color: #c82333; /* 클릭 후 유지할 색상 */
 }
 
 /* Daily Stats */

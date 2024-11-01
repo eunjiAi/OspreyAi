@@ -2,15 +2,16 @@ import React, { useEffect, useState, useRef } from 'react';
 import './SquatFeedback.css';
 
 function SquatFeedback() {
-  const [feedback, setFeedback] = useState(''); // 자세 교정 메시지
-  const [angle, setAngle] = useState(null); // 상체 각도
-  const [kneePosition, setKneePosition] = useState(null); // 무릎 위치
-  const [dailyStats, setDailyStats] = useState([]); // 날짜별 통계
-  const [intervalTime, setIntervalTime] = useState(1000); // 검사 간격 (밀리초)
-  const [isRunning, setIsRunning] = useState(false); // 분석 중 여부
+  const [feedback, setFeedback] = useState('');
+  const [angle, setAngle] = useState(null);
+  const [kneePosition, setKneePosition] = useState(null);
+  const [dailyStats, setDailyStats] = useState([]);
+  const [intervalTime, setIntervalTime] = useState(1000);
+  const [isRunning, setIsRunning] = useState(false);
   const videoRef = useRef(null);
-  const intervalIdRef = useRef(null); // setInterval의 ID 저장
+  const intervalIdRef = useRef(null);
 
+  // 웹캠 시작
   useEffect(() => {
     const startWebcam = async () => {
       try {
@@ -19,12 +20,13 @@ function SquatFeedback() {
           videoRef.current.srcObject = stream;
         }
       } catch (error) {
-        console.error('Error accessing webcam:', error);
+        console.error('웹캠 접근 오류:', error);
       }
     };
     startWebcam();
   }, []);
 
+  // 데이터 전송 함수
   const fetchData = () => {
     if (videoRef.current) {
       const canvas = document.createElement('canvas');
@@ -32,8 +34,9 @@ function SquatFeedback() {
       canvas.height = videoRef.current.videoHeight;
       const context = canvas.getContext('2d');
       context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
-      const imageData = canvas.toDataURL('image/png'); // 이미지 데이터를 base64 형식으로 변환
+      const imageData = canvas.toDataURL('image/png');
 
+      console.log("Python 서버에 데이터 전송 중...");
       fetch('http://localhost:5000/squat-analysis', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -41,29 +44,35 @@ function SquatFeedback() {
       })
         .then(response => response.json())
         .then(data => {
+          console.log("Python 서버로부터 응답 수신:", data);
           setAngle(data.angle);
           setKneePosition(data.knee_position);
           setFeedback(data.feedback);
         })
-        .catch(error => console.error('Error fetching feedback:', error));
+        .catch(error => console.error('피드백 가져오기 오류:', error));
     }
   };
 
+  // 분석 시작
   const startAnalysis = () => {
     setIsRunning(true);
     if (intervalIdRef.current) {
-      clearInterval(intervalIdRef.current);
+        clearInterval(intervalIdRef.current);
     }
     intervalIdRef.current = setInterval(fetchData, intervalTime);
+    console.log("분석이 시작되었습니다.");
   };
 
+  // 분석 종료
   const stopAnalysis = () => {
     setIsRunning(false);
     if (intervalIdRef.current) {
-      clearInterval(intervalIdRef.current);
+        clearInterval(intervalIdRef.current);
     }
+    console.log("분석이 종료되었습니다.");
   };
 
+  // 날짜별 통계 가져오기
   useEffect(() => {
     fetch('http://localhost:8888/OspreyAI/api/squat/daily-stats')
       .then(response => response.json())
@@ -71,19 +80,17 @@ function SquatFeedback() {
         setDailyStats(Array.isArray(data) ? data : []);
       })
       .catch(error => {
-        console.error('Error fetching daily stats:', error);
+        console.error('일일 통계 가져오기 오류:', error);
         setDailyStats([]);
       });
   }, []);
 
   return (
     <div className="squat-feedback-container">
-      {/* 왼쪽 웹캠 화면 */}
       <div className="webcam-container">
         <video ref={videoRef} autoPlay muted className="webcam-video" />
       </div>
 
-      {/* 오른쪽 설정 및 피드백 */}
       <div className="feedback-panel">
         <h1 className="title">Squat Feedback</h1>
         <div className="feedback-info">
@@ -102,8 +109,8 @@ function SquatFeedback() {
             onChange={(e) => setIntervalTime(e.target.value * 1000)}
             className="slider"
           />
-          <button onClick={startAnalysis} disabled={isRunning} className="control-button start">시작</button>
-          <button onClick={stopAnalysis} disabled={!isRunning} className="control-button stop">종료</button>
+          <button onClick={startAnalysis} disabled={isRunning} className={`control-button start ${isRunning ? 'active' : ''}`}>시작</button>
+          <button onClick={stopAnalysis} disabled={!isRunning} className={`control-button stop ${!isRunning ? 'disabled' : 'active'}`}>종료</button>
         </div>
 
         <div className="daily-stats">
@@ -112,11 +119,11 @@ function SquatFeedback() {
             {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
               dailyStats.map((stat, index) => (
                 <li key={index}>
-                  날짜: {stat.date}, 총 운동 시간: {stat.duration}분, 바른 자세 시간: {stat.correctPostureDuration}분
+                  날짜: {stat.date}, 총 운동 시간: {stat.duration}분, 올바른 자세: {stat.correctPostureDuration}분
                 </li>
               ))
             ) : (
-              <p>No data available</p>
+              <p>데이터가 없습니다</p>
             )}
           </ul>
         </div>
