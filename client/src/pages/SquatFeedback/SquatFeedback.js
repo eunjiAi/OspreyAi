@@ -40,7 +40,8 @@ function SquatFeedback() {
       fetch('http://localhost:5000/squat-analysis', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ frame: imageData })
+        body: JSON.stringify({ frame: imageData }),
+        mode: 'cors' // CORS 모드 명시적으로 추가
       })
         .then(response => response.json())
         .then(data => {

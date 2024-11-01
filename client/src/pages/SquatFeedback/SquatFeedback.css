@@ -24,11 +24,11 @@
 
 .webcam-video {
   width: 85%;
-  aspect-ratio: 9 / 16; /* 세로 비율을 늘려 전체 신체가 보이도록 설정 */
+  aspect-ratio: 9 / 16;
   max-height: 84vh;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  object-fit: cover; /* 비율을 유지하며 화면을 꽉 채움 */
+  object-fit: cover;
 }
 
 /* 오른쪽 피드백 및 설정 패널 */
@@ -88,6 +88,7 @@
   transition: background-color 0.3s, transform 0.2s;
 }
 
+/* 시작 버튼 스타일 */
 .control-button.start {
   background-color: #28a745;
   color: #fff;
@@ -98,20 +99,29 @@
 }
 
 .control-button.start.active {
-  background-color: #218838; /* 클릭 후 유지할 색상 */
+  background-color: #218838;
 }
 
+/* 종료 버튼 스타일 */
 .control-button.stop {
   background-color: #dc3545;
   color: #fff;
 }
 
-.control-button.stop:hover {
-  background-color: #c82333;
+/* 종료 버튼이 비활성화될 때 금지 커서 표시 및 색상 변경 */
+.control-button.stop:disabled {
+  background-color: #f5b5b8;
+  cursor: not-allowed;
 }
 
+/* 종료 버튼이 활성화되었을 때 색상 유지 및 호버 효과 */
 .control-button.stop.active {
-  background-color: #c82333; /* 클릭 후 유지할 색상 */
+  background-color: #c82333;
+  cursor: pointer;
+}
+
+.control-button.stop.active:hover {
+  background-color: #a71e28;
 }
 
 /* Daily Stats */

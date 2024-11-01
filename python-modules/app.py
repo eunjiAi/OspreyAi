@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import sys
 import logging
 
@@ -7,6 +8,7 @@ logging.basicConfig(filename='app_error.log', level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s')
 
 app = Flask(__name__)
+CORS(app)  # CORS 설정 추가
 
 # 외부 라이브러리와 초기화 단계에서 발생할 수 있는 오류 방지 코드
 try:
@@ -113,20 +115,29 @@ def update_daily_feedback(feedback):
 
 @app.route('/squat-analysis', methods=['POST'])
 def squat_analysis():
-    print("받은 요청: /squat-analysis")
-    logging.debug("받은 요청: /squat-analysis")
+    print(f"받은 요청 메소드: {request.method}")
+    logging.debug(f"받은 요청 메소드: {request.method}")
 
-    data = request.get_json()
-    frame = data.get('frame')
-    if frame:
-        result = analyze_pose(frame)
-        print("분석 결과 반환:", result)
-        logging.debug(f"분석 결과 반환: {result}")
-        return jsonify(result)
-    else:
-        print("프레임 데이터가 수신되지 않았습니다.")
-        logging.debug("프레임 데이터가 수신되지 않았습니다.")
-        return jsonify({"error": "프레임 데이터가 수신되지 않았습니다."}), 400
+    if request.method == 'OPTIONS':
+        print("OPTIONS 요청 수신")
+        logging.debug("OPTIONS 요청 수신")
+        return jsonify({"status": "CORS preflight passed"}), 200
+
+    if request.method == 'POST':
+        print("POST 요청 수신: /squat-analysis")
+        logging.debug("POST 요청 수신: /squat-analysis")
+
+        data = request.get_json()
+        frame = data.get('frame')
+        if frame:
+            result = analyze_pose(frame)
+            print("분석 결과 반환:", result)
+            logging.debug(f"분석 결과 반환: {result}")
+            return jsonify(result)
+        else:
+            print("프레임 데이터가 수신되지 않았습니다.")
+            logging.debug("프레임 데이터가 수신되지 않았습니다.")
+            return jsonify({"error": "프레임 데이터가 수신되지 않았습니다."}), 400
 
 # Flask 서버 시작
 if __name__ == '__main__':
@@ -136,4 +147,3 @@ if __name__ == '__main__':
         app.run(port=5000, debug=True)
     except Exception as e:
         logging.error(f"Flask 서버 시작 오류: {e}")
-        print(f"Flask 서버 시작 오류: {e}")
