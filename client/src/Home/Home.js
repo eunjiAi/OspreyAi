@@ -26,6 +26,7 @@ function Home() {
                 <h1 className="hero-title">OspreyAI</h1>
                 <p className="hero-description">실시간 비전 모니터링 AI 시스템</p>
                 <p>{message}</p> {/* Spring Boot API의 메시지 표시 */}
+                
             </section>
             <section className="features">
                 <Link to="/WebcamCapture" className="feature">
