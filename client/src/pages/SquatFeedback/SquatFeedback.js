@@ -41,7 +41,7 @@ function SquatFeedback() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ frame: imageData }),
-        mode: 'cors' // CORS 모드 명시적으로 추가
+        mode: 'cors'
       })
         .then(response => response.json())
         .then(data => {
@@ -78,10 +78,11 @@ function SquatFeedback() {
     fetch('http://localhost:8888/OspreyAI/api/squat/daily-stats')
       .then(response => response.json())
       .then(data => {
+        console.log("Fetched data from API:", data);  // API 응답 로그 추가
         setDailyStats(Array.isArray(data) ? data : []);
       })
       .catch(error => {
-        console.error('일일 통계 가져오기 오류:', error);
+        console.error('Error fetching daily stats:', error);
         setDailyStats([]);
       });
   }, []);
@@ -120,7 +121,7 @@ function SquatFeedback() {
             {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
               dailyStats.map((stat, index) => (
                 <li key={index}>
-                  날짜: {stat.date}, 총 운동 시간: {stat.duration}분, 올바른 자세: {stat.correctPostureDuration}분
+                  날짜: {stat.date}, 총 시도 횟수: {stat.totalAttempts}, 바른 자세 횟수: {stat.correctPostureCount}
                 </li>
               ))
             ) : (

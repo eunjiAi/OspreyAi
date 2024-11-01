@@ -15,17 +15,17 @@ import java.util.Date;
 public class SquatFeedbackDTO {
 	private Long id;
 	private String userId;
-	private int duration;
-	private int correctPostureDuration;
-	private Date date; // 날짜 필드
+	private int totalAttempts;
+	private int correctPostureCount;
+	private Date date;
 
 	public SquatFeedback toEntity() {
 		return SquatFeedback.builder()
 				.id(id)
 				.userId(userId)
-				.duration(duration)
-				.correctPostureDuration(correctPostureDuration)
-				.squatDate(date) // 변경된 필드 이름
+				.totalAttempts(totalAttempts)
+				.correctPostureCount(correctPostureCount)
+				.squatDate(date)
 				.build();
 	}
 }

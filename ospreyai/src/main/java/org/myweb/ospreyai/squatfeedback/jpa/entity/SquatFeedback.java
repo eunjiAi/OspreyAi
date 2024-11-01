@@ -24,23 +24,23 @@ public class SquatFeedback {
     @Column(name = "USER_ID", nullable = false)
     private String userId;
 
-    @Column(name = "DURATION", nullable = false)
-    private int duration;
+    @Column(name = "TOTAL_ATTEMPTS", nullable = false)
+    private int totalAttempts;
 
-    @Column(name = "CORRECT_POSTURE_DURATION", nullable = false)
-    private int correctPostureDuration;
+    @Column(name = "CORRECT_POSTURE_COUNT", nullable = false)
+    private int correctPostureCount;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "SQUAT_DATE", nullable = false) // DATE에서 SQUAT_DATE로 변경
-    private Date squatDate; // 필드 이름도 변경
+    @Temporal(TemporalType.DATE)
+    @Column(name = "SQUAT_DATE", nullable = false)
+    private Date squatDate;
 
     public SquatFeedbackDTO toDto() {
         return SquatFeedbackDTO.builder()
                 .id(id)
                 .userId(userId)
-                .duration(duration)
-                .correctPostureDuration(correctPostureDuration)
-                .date(squatDate) // 변경된 필드 이름
+                .totalAttempts(totalAttempts)
+                .correctPostureCount(correctPostureCount)
+                .date(squatDate)
                 .build();
     }
 }

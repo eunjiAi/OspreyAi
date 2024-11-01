@@ -29,15 +29,10 @@ public class SquatFeedbackService {
 		}
 	}
 
-	public SquatFeedbackDTO findFeedbackById(Long id) {
-		return squatFeedbackRepository.findById(id)
-				.map(SquatFeedback::toDto)
-				.orElse(null);
-	}
-
-	// 일별 피드백 통계 조회 메서드 추가
 	public List<SquatFeedbackDTO> getAllFeedback() {
-		return squatFeedbackRepository.findAll().stream()
+		List<SquatFeedback> feedbackList = squatFeedbackRepository.findAll();
+		System.out.println("Fetched feedback data from database: " + feedbackList);
+		return feedbackList.stream()
 				.map(SquatFeedback::toDto)
 				.collect(Collectors.toList());
 	}

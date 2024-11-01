@@ -16,13 +16,15 @@ public class SquatFeedbackController {
 
 	@PostMapping("/feedback")
 	public String submitFeedback(@RequestBody SquatFeedbackDTO dto) {
-		squatFeedbackService.saveFeedback(dto);
-		return "Feedback saved successfully";
+		int result = squatFeedbackService.saveFeedback(dto);
+		return result == 1 ? "Feedback saved successfully" : "Error saving feedback";
 	}
 
 	// 날짜별 피드백 통계를 조회하는 GET 엔드포인트
 	@GetMapping("/daily-stats")
 	public List<SquatFeedbackDTO> getDailyStats() {
-		return squatFeedbackService.getAllFeedback();
+		List<SquatFeedbackDTO> feedbackList = squatFeedbackService.getAllFeedback();
+		System.out.println("Returned data to frontend: " + feedbackList);
+		return feedbackList;
 	}
 }
