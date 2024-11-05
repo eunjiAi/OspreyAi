@@ -127,9 +127,10 @@
 
 /* Daily Stats */
 .daily-stats {
-  width: 100%;
+  width: 88%;
   text-align: left;
   margin-top: 20px;
+  font-size: 13.5px;
 }
 
 .daily-stats h2 {
