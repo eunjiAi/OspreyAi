@@ -104,6 +104,8 @@ def calculate_upper_body_angle(landmarks):
     angle = np.arccos(cosine_angle)
     return np.degrees(angle)
 
+    
+
 # 무릎과 발목 사이의 상대적 위치 계산함
 def calculate_knee_position(landmarks):
     knee = landmarks[mp_pose.PoseLandmark.LEFT_KNEE]

@@ -46,8 +46,9 @@ function SquatFeedback() {
         .then(response => response.json())
         .then(data => {
           console.log("Python 서버로부터 응답 수신:", data);
-          setAngle(data.angle);
-          setKneePosition(data.knee_position);
+          // 소수점 두 자리로 포맷팅
+          setAngle(data.angle !== null ? data.angle.toFixed(2) : null);
+          setKneePosition(data.knee_position !== null ? data.knee_position.toFixed(2) : null);
           setFeedback(data.feedback);
         })
         .catch(error => console.error('피드백 가져오기 오류:', error));
@@ -96,8 +97,8 @@ function SquatFeedback() {
       <div className="feedback-panel">
         <h1 className="title">Squat Feedback</h1>
         <div className="feedback-info">
-          <p>상체 각도: <span>{angle}</span></p>
-          <p>무릎 위치: <span>{kneePosition}</span></p>
+          <p>상체 각도: <span>{angle !== null ? angle : 'N/A'}</span></p>
+          <p>무릎 위치: <span>{kneePosition !== null ? kneePosition : 'N/A'}</span></p>
           <p>피드백: <span>{feedback}</span></p>
         </div>
 
