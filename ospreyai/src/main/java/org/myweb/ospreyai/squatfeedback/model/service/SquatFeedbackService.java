@@ -29,11 +29,16 @@ public class SquatFeedbackService {
 		}
 	}
 
-	public List<SquatFeedbackDTO> getAllFeedback() {
-		List<SquatFeedback> feedbackList = squatFeedbackRepository.findAll();
-		System.out.println("Fetched feedback data from database: " + feedbackList);
-		return feedbackList.stream()
+	public List<SquatFeedbackDTO> getDailyStats(int page, int size) {
+		int offset = page * size;
+		return squatFeedbackRepository.findAll().stream()
+				.skip(offset)
+				.limit(size)
 				.map(SquatFeedback::toDto)
 				.collect(Collectors.toList());
+	}
+
+	public long getTotalFeedbackCount() {
+		return squatFeedbackRepository.count(); // 전체 피드백 수 반환
 	}
 }

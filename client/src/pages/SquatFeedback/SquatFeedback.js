@@ -6,6 +6,8 @@ function SquatFeedback() {
   const [angle, setAngle] = useState(null);
   const [kneePosition, setKneePosition] = useState(null);
   const [dailyStats, setDailyStats] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
   const [intervalTime, setIntervalTime] = useState(1000);
   const [isRunning, setIsRunning] = useState(false);
   const videoRef = useRef(null);
@@ -46,7 +48,6 @@ function SquatFeedback() {
         .then(response => response.json())
         .then(data => {
           console.log("Python 서버로부터 응답 수신:", data);
-          // 소수점 두 자리로 포맷팅
           setAngle(data.angle !== null ? data.angle.toFixed(2) : null);
           setKneePosition(data.knee_position !== null ? data.knee_position.toFixed(2) : null);
           setFeedback(data.feedback);
@@ -59,7 +60,7 @@ function SquatFeedback() {
   const startAnalysis = () => {
     setIsRunning(true);
     if (intervalIdRef.current) {
-        clearInterval(intervalIdRef.current);
+      clearInterval(intervalIdRef.current);
     }
     intervalIdRef.current = setInterval(fetchData, intervalTime);
     console.log("분석이 시작되었습니다.");
@@ -69,24 +70,29 @@ function SquatFeedback() {
   const stopAnalysis = () => {
     setIsRunning(false);
     if (intervalIdRef.current) {
-        clearInterval(intervalIdRef.current);
+      clearInterval(intervalIdRef.current);
     }
     console.log("분석이 종료되었습니다.");
   };
 
   // 날짜별 통계 가져오기
-  useEffect(() => {
-    fetch('http://localhost:8888/OspreyAI/api/squat/daily-stats')
+  const fetchDailyStats = () => {
+    fetch(`http://localhost:8888/OspreyAI/api/squat/daily-stats?page=${currentPage}&size=7`)
       .then(response => response.json())
       .then(data => {
-        console.log("Fetched data from API:", data);  // API 응답 로그 추가
-        setDailyStats(Array.isArray(data) ? data : []);
+        console.log("Fetched data from API:", data);
+        setDailyStats(data.feedbackList); // 피드백 목록 설정
+        setTotalPages(Math.ceil(data.totalCount / 7)); // 전체 수 기반 페이지 수 계산
       })
       .catch(error => {
         console.error('Error fetching daily stats:', error);
         setDailyStats([]);
       });
-  }, []);
+  };
+
+  useEffect(() => {
+    fetchDailyStats();
+  }, [currentPage]); // 페이지가 변경될 때마다 통계 재가져오기
 
   return (
     <div className="squat-feedback-container">
@@ -129,6 +135,11 @@ function SquatFeedback() {
               <p>데이터가 없습니다</p>
             )}
           </ul>
+          <div className="pagination">
+            <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} disabled={currentPage === 0}>이전</button>
+            <span>페이지 {currentPage + 1} / {totalPages}</span>
+            <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages - 1))} disabled={currentPage === totalPages - 1}>다음</button>
+          </div>
         </div>
       </div>
     </div>

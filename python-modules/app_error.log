@@ -1054,3 +1054,40 @@
 2024-11-05 11:52:39,465 DEBUG 자세 분석 결과: angle=24.19996078801851, knee_position=-0.07070982456207275, feedback=무릎을 앞으로 내세요
 2024-11-05 11:52:39,465 DEBUG 분석 결과 반환: {'angle': 24.19996078801851, 'knee_position': -0.07070982456207275, 'feedback': '무릎을 앞으로 내세요'}
 2024-11-05 11:52:39,466 INFO 127.0.0.1 - - [05/Nov/2024 11:52:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-11-05 12:14:44,610 INFO 127.0.0.1 - - [05/Nov/2024 12:14:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-05 12:14:44,870 DEBUG 받은 요청 메소드: POST
+2024-11-05 12:14:44,905 DEBUG 포즈 랜드마크가 감지되었습니다.
+2024-11-05 12:14:44,905 DEBUG 자세 분석 결과: angle=2.0485051456645103, knee_position=0.012998223304748535, feedback=무릎을 앞으로 내세요
+2024-11-05 12:14:44,905 DEBUG 분석 결과 반환: {'angle': 2.0485051456645103, 'knee_position': 0.012998223304748535, 'feedback': '무릎을 앞으로 내세요'}
+2024-11-05 12:14:44,905 INFO 127.0.0.1 - - [05/Nov/2024 12:14:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-11-05 15:50:33,608 INFO 127.0.0.1 - - [05/Nov/2024 15:50:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-11-05 15:50:33,867 DEBUG 받은 요청 메소드: POST
+2024-11-05 15:50:33,925 DEBUG 포즈 랜드마크가 감지되지 않았습니다.
+2024-11-05 15:50:33,926 DEBUG 자세 분석 결과: angle=None, knee_position=None, feedback=포즈가 감지되지 않았습니다
+2024-11-05 15:50:33,926 DEBUG 분석 결과 반환: {'angle': None, 'knee_position': None, 'feedback': '포즈가 감지되지 않았습니다'}
+2024-11-05 15:50:33,926 INFO 127.0.0.1 - - [05/Nov/2024 15:50:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-11-05 15:50:34,300 DEBUG 받은 요청 메소드: POST
+2024-11-05 15:50:34,335 DEBUG 포즈 랜드마크가 감지되지 않았습니다.
+2024-11-05 15:50:34,335 DEBUG 자세 분석 결과: angle=None, knee_position=None, feedback=포즈가 감지되지 않았습니다
+2024-11-05 15:50:34,335 DEBUG 분석 결과 반환: {'angle': None, 'knee_position': None, 'feedback': '포즈가 감지되지 않았습니다'}
+2024-11-05 15:50:34,336 INFO 127.0.0.1 - - [05/Nov/2024 15:50:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-11-05 15:50:35,586 DEBUG 받은 요청 메소드: POST
+2024-11-05 15:50:35,609 DEBUG 포즈 랜드마크가 감지되지 않았습니다.
+2024-11-05 15:50:35,609 DEBUG 자세 분석 결과: angle=None, knee_position=None, feedback=포즈가 감지되지 않았습니다
+2024-11-05 15:50:35,609 DEBUG 분석 결과 반환: {'angle': None, 'knee_position': None, 'feedback': '포즈가 감지되지 않았습니다'}
+2024-11-05 15:50:35,609 INFO 127.0.0.1 - - [05/Nov/2024 15:50:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-11-05 15:50:36,302 DEBUG 받은 요청 메소드: POST
+2024-11-05 15:50:36,323 DEBUG 포즈 랜드마크가 감지되지 않았습니다.
+2024-11-05 15:50:36,323 DEBUG 자세 분석 결과: angle=None, knee_position=None, feedback=포즈가 감지되지 않았습니다
+2024-11-05 15:50:36,324 DEBUG 분석 결과 반환: {'angle': None, 'knee_position': None, 'feedback': '포즈가 감지되지 않았습니다'}
+2024-11-05 15:50:36,325 INFO 127.0.0.1 - - [05/Nov/2024 15:50:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-11-05 15:50:37,600 DEBUG 받은 요청 메소드: POST
+2024-11-05 15:50:37,629 DEBUG 포즈 랜드마크가 감지되지 않았습니다.
+2024-11-05 15:50:37,629 DEBUG 자세 분석 결과: angle=None, knee_position=None, feedback=포즈가 감지되지 않았습니다
+2024-11-05 15:50:37,629 DEBUG 분석 결과 반환: {'angle': None, 'knee_position': None, 'feedback': '포즈가 감지되지 않았습니다'}
+2024-11-05 15:50:37,629 INFO 127.0.0.1 - - [05/Nov/2024 15:50:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-11-05 15:50:38,284 DEBUG 받은 요청 메소드: POST
+2024-11-05 15:50:38,305 DEBUG 포즈 랜드마크가 감지되지 않았습니다.
+2024-11-05 15:50:38,307 DEBUG 자세 분석 결과: angle=None, knee_position=None, feedback=포즈가 감지되지 않았습니다
+2024-11-05 15:50:38,307 DEBUG 분석 결과 반환: {'angle': None, 'knee_position': None, 'feedback': '포즈가 감지되지 않았습니다'}
+2024-11-05 15:50:38,307 INFO 127.0.0.1 - - [05/Nov/2024 15:50:38] "POST /squat-analysis HTTP/1.1" 200 -
