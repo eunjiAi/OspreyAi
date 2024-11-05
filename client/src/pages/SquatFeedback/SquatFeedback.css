@@ -23,9 +23,10 @@
 }
 
 .webcam-video {
-  width: 85%;
+  width: 72%;
   aspect-ratio: 9 / 16;
-  max-height: 84vh;
+  margin-top: 4.5%;
+  max-height: 77vh;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   object-fit: cover;
@@ -146,6 +147,11 @@
 .daily-stats li {
   padding: 8px 0;
   border-bottom: 1px solid #ddd;
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
 }
 
 /* 반응형 디자인: 작은 화면일 때 세로 레이아웃으로 변경 */

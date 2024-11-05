@@ -77,12 +77,12 @@ function SquatFeedback() {
 
   // 날짜별 통계 가져오기
   const fetchDailyStats = () => {
-    fetch(`http://localhost:8888/OspreyAI/api/squat/daily-stats?page=${currentPage}&size=7`)
+    fetch(`http://localhost:8888/OspreyAI/api/squat/daily-stats?page=${currentPage}&size=6`)
       .then(response => response.json())
       .then(data => {
         console.log("Fetched data from API:", data);
         setDailyStats(data.feedbackList); // 피드백 목록 설정
-        setTotalPages(Math.ceil(data.totalCount / 7)); // 전체 수 기반 페이지 수 계산
+        setTotalPages(Math.ceil(data.totalCount / 6)); // 전체 수 기반 페이지 수 계산
       })
       .catch(error => {
         console.error('Error fetching daily stats:', error);

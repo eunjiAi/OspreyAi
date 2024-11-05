@@ -25,7 +25,7 @@ public class SquatFeedbackController {
 	// 날짜별 피드백 통계를 조회하는 GET 엔드포인트
 	@GetMapping("/daily-stats")
 	public Map<String, Object> getDailyStats(@RequestParam(defaultValue = "0") int page,
-											 @RequestParam(defaultValue = "7") int size) {
+											 @RequestParam(defaultValue = "6") int size) {
 		List<SquatFeedbackDTO> feedbackList = squatFeedbackService.getDailyStats(page, size);
 		long totalFeedbackCount = squatFeedbackService.getTotalFeedbackCount(); // 전체 피드백 수 가져오기
 
