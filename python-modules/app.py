@@ -89,7 +89,7 @@ def analyze_pose(image):
         print(f"자세 분석 오류: {e}")
         return {"error": "자세 분석 실패"}
 
-# 각도 계산 (예시)
+# 각도 계산 : 어깨, 엉덩이, 무릎 좌표를 사용해 상체 기울기 각도 계산함
 def calculate_upper_body_angle(landmarks):
     shoulder = landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER]
     hip = landmarks[mp_pose.PoseLandmark.LEFT_HIP]
@@ -104,7 +104,7 @@ def calculate_upper_body_angle(landmarks):
     angle = np.arccos(cosine_angle)
     return np.degrees(angle)
 
-# 무릎 위치 계산 (예시)
+# 무릎과 발목 사이의 상대적 위치 계산함
 def calculate_knee_position(landmarks):
     knee = landmarks[mp_pose.PoseLandmark.LEFT_KNEE]
     foot = landmarks[mp_pose.PoseLandmark.LEFT_ANKLE]
