@@ -23,8 +23,8 @@
 .webcam-video {
   width: 72%;
   aspect-ratio: 9 / 16;
-  margin-top: 4.5%;
-  max-height: 77vh;
+  margin-top: 3.3%;
+  max-height: 79vh;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   object-fit: cover;
