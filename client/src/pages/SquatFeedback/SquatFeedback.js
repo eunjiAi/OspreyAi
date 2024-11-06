@@ -89,8 +89,8 @@ function SquatFeedback() {
       .then(response => response.json())
       .then(data => {
         console.log("Fetched data from API:", data);
-        setDailyStats(data.feedbackList); // 피드백 목록 설정
-        setTotalPages(Math.ceil(data.totalCount / 6)); // 전체 수 기반 페이지 수 계산
+        setDailyStats(data.feedbackList);               // 피드백 목록 설정
+        setTotalPages(Math.ceil(data.totalCount / 6));  // 전체 수 기반 페이지 수 계산
       })
       .catch(error => {
         console.error('Error fetching daily stats:', error);
@@ -102,7 +102,7 @@ function SquatFeedback() {
   const updateSliderBackground = () => {
     const slider = document.querySelector('.slider');
     if (slider) {
-      const percentage = ((intervalTime / 1000 - 1) / 9) * 100; // 수정된 계산
+      const percentage = ((intervalTime / 1000 - 1) / 9) * 100;       // 수정된 계산
       slider.style.background = `linear-gradient(to right, #007bff ${percentage}%, #ddd ${percentage}%)`;
     }
   };
