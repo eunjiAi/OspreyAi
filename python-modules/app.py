@@ -70,15 +70,18 @@ def analyze_pose(image):
             # 피드백 설정 및 자세 검증
             if angle > 45:
                 feedback = "상체를 더 숙이세요"
+                update_daily_feedback("test_user", feedback=False)  # 잘못된 자세
             elif knee_position < 0.3:
                 feedback = "무릎을 앞으로 내세요"
+                update_daily_feedback("test_user", feedback=False)  # 잘못된 자세
             else:
                 feedback = "바른 자세입니다"
-                update_daily_feedback("test_user", feedback=True)  # 바른 자세일 때 카운팅
+                update_daily_feedback("test_user", feedback=True)  # 바른 자세
         else:
             print("포즈 랜드마크가 감지되지 않았습니다.")
             logging.debug("포즈 랜드마크가 감지되지 않았습니다.")
             feedback = "포즈가 감지되지 않았습니다"
+            # 포즈가 감지되지 않았을 때는 DB 업데이트 생략
 
         # 최종 결과 로그
         print("자세 분석이 완료되었습니다:", {"angle": angle, "knee_position": knee_position, "feedback": feedback})
@@ -88,6 +91,8 @@ def analyze_pose(image):
         logging.error(f"자세 분석 오류: {e}")
         print(f"자세 분석 오류: {e}")
         return {"error": "자세 분석 실패"}
+
+
 
 # 각도 계산 : 어깨, 엉덩이, 무릎 좌표를 사용해 상체 기울기 각도 계산함
 def calculate_upper_body_angle(landmarks):
@@ -117,16 +122,24 @@ def update_daily_feedback(user_id, feedback):
     try:
         today = datetime.date.today()
         
-        # 올바른 자세 시 CORRECT_POSTURE_COUNT 증가
+        # 올바른 자세 시 CORRECT_POSTURE_COUNT 증가, 그렇지 않은 경우 0으로 업데이트
         correct_increment = 1 if feedback else 0
 
-        # TOTAL_ATTEMPTS 및 CORRECT_POSTURE_COUNT 업데이트
+        # 해당 날짜에 대한 TOTAL_ATTEMPTS 및 CORRECT_POSTURE_COUNT 업데이트
         entry = session.query(SquatFeedback).filter_by(user_id=user_id, squat_date=today).first()
+        
         if entry:
+            # 데이터가 이미 있으면 카운트 업데이트
             entry.total_attempts += 1
             entry.correct_posture_count += correct_increment
         else:
-            new_entry = SquatFeedback(user_id=user_id, total_attempts=1, correct_posture_count=correct_increment, squat_date=today)
+            # 해당 날짜 첫 번째 실행 시 total_attempts는 1로, correct_posture_count는 올바르지 않은 자세의 경우 0으로 저장
+            new_entry = SquatFeedback(
+                user_id=user_id,
+                total_attempts=1,
+                correct_posture_count=correct_increment,
+                squat_date=today
+            )
             session.add(new_entry)
         
         session.commit()
@@ -135,6 +148,7 @@ def update_daily_feedback(user_id, feedback):
     except Exception as e:
         logging.error(f"데이터베이스 업데이트 오류: {e}")
         print(f"데이터베이스 업데이트 오류: {e}")
+
 
 @app.route('/squat-analysis', methods=['POST'])
 def squat_analysis():

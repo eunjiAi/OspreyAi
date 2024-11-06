@@ -10,6 +10,7 @@ function SquatFeedback() {
   const [totalPages, setTotalPages] = useState(0);
   const [intervalTime, setIntervalTime] = useState(1000);
   const [isRunning, setIsRunning] = useState(false);
+  const [detected, setDetected] = useState(false); // 감지 여부 상태 추가
   const videoRef = useRef(null);
   const intervalIdRef = useRef(null);
 
@@ -51,6 +52,13 @@ function SquatFeedback() {
           setAngle(data.angle !== null ? data.angle.toFixed(2) : null);
           setKneePosition(data.knee_position !== null ? data.knee_position.toFixed(2) : null);
           setFeedback(data.feedback);
+
+          // 감지 여부에 따라 detected 상태 업데이트
+          if (data.angle !== null && data.knee_position !== null) {
+            setDetected(true); // 포즈 감지됨
+          } else {
+            setDetected(false); // 포즈 미감지
+          }
         })
         .catch(error => console.error('피드백 가져오기 오류:', error));
     }
@@ -90,9 +98,24 @@ function SquatFeedback() {
       });
   };
 
+  // 슬라이더 배경 업데이트 함수
+  const updateSliderBackground = () => {
+    const slider = document.querySelector('.slider');
+    if (slider) {
+      const percentage = ((intervalTime / 1000 - 1) / 9) * 100; // 수정된 계산
+      slider.style.background = `linear-gradient(to right, #007bff ${percentage}%, #ddd ${percentage}%)`;
+    }
+  };
+  
+
+  // intervalTime이 변경될 때마다 슬라이더 배경 업데이트
+  useEffect(() => {
+    updateSliderBackground();
+  }, [intervalTime]);
+
   useEffect(() => {
     fetchDailyStats();
-  }, [currentPage]);               // 페이지가 변경될 때마다 통계 재가져오기
+  }, [currentPage]); // 페이지가 변경될 때마다 통계 재가져오기
 
   return (
     <div className="squat-feedback-container">
@@ -103,9 +126,9 @@ function SquatFeedback() {
       <div className="feedback-panel">
         <h1 className="title">Squat Feedback</h1>
         <div className="feedback-info">
-          <p>상체 각도: <span>{angle !== null ? angle : 'N/A'}</span></p>
-          <p>무릎 위치: <span>{kneePosition !== null ? kneePosition : 'N/A'}</span></p>
-          <p>피드백: <span>{feedback}</span></p>
+          <p>상체 각도: <span className={detected ? 'detected' : ''}>{angle !== null ? angle : 'N/A'}</span></p>
+          <p>무릎 위치: <span className={detected ? 'detected' : ''}>{kneePosition !== null ? kneePosition : 'N/A'}</span></p>
+          <p>피드백: <span className={detected ? 'detected' : ''}>{feedback}</span></p>
         </div>
 
         <div className="control-panel">
@@ -125,17 +148,17 @@ function SquatFeedback() {
         <div className="daily-stats">
           <h2>Daily Stats</h2>
           <ul>
-          {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
-            dailyStats.map((stat, index) => (
-              <li key={index}>
-                <span className="date">날짜: {stat.date}</span>
-                <span className="count">바른 자세 횟수: {stat.correctPostureCount}</span>
-              </li>
-            ))
-          ) : (
-            <p>데이터가 없습니다</p>
-          )}
-        </ul>
+            {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
+              dailyStats.map((stat, index) => (
+                <li key={index}>
+                  <span className="date">날짜: {stat.date}</span>
+                  <span className="count">바른 자세 횟수: {stat.correctPostureCount}</span>
+                </li>
+              ))
+            ) : (
+              <p>데이터가 없습니다</p>
+            )}
+          </ul>
 
           <div className="pagination">
             <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} disabled={currentPage === 0}>이전</button>

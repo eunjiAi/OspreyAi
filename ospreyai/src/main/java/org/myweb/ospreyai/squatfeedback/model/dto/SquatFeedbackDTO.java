@@ -20,7 +20,7 @@ public class SquatFeedbackDTO {
 	@JsonProperty("totalAttempts")
 	private int totalAttempts;
 
-	@JsonProperty("correctPostureCount")  
+	@JsonProperty("correctPostureCount")
 	private int correctPostureCount;
 
 	private Date date;
