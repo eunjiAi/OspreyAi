@@ -22,7 +22,7 @@ public class SquatFeedbackController {
 		return result == 1 ? "Feedback saved successfully" : "Error saving feedback";
 	}
 
-	// 날짜별 피드백 통계를 조회하는 GET 엔드포인트
+	// 날짜별 피드백 통계를 조회하는 GET
 	@GetMapping("/daily-stats")
 	public Map<String, Object> getDailyStats(@RequestParam(defaultValue = "0") int page,
 											 @RequestParam(defaultValue = "6") int size) {
