@@ -77,7 +77,7 @@ function SquatFeedback() {
 
   // 날짜별 통계 가져오기
   const fetchDailyStats = () => {
-    fetch(`http://localhost:8888/OspreyAI/api/squat/daily-stats?page=${currentPage}&size=6`)
+    fetch(`http://localhost:8888/OspreyAI/api/squat/daily-stats?page=${currentPage}&size=5`)
       .then(response => response.json())
       .then(data => {
         console.log("Fetched data from API:", data);
@@ -92,7 +92,7 @@ function SquatFeedback() {
 
   useEffect(() => {
     fetchDailyStats();
-  }, [currentPage]); // 페이지가 변경될 때마다 통계 재가져오기
+  }, [currentPage]);               // 페이지가 변경될 때마다 통계 재가져오기
 
   return (
     <div className="squat-feedback-container">
@@ -125,16 +125,18 @@ function SquatFeedback() {
         <div className="daily-stats">
           <h2>Daily Stats</h2>
           <ul>
-            {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
-              dailyStats.map((stat, index) => (
-                <li key={index}>
-                  날짜: {stat.date}, 총 시도 횟수: {stat.totalAttempts}, 바른 자세 횟수: {stat.correctPostureCount}
-                </li>
-              ))
-            ) : (
-              <p>데이터가 없습니다</p>
-            )}
-          </ul>
+          {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
+            dailyStats.map((stat, index) => (
+              <li key={index}>
+                <span className="date">날짜: {stat.date}</span>
+                <span className="count">바른 자세 횟수: {stat.correctPostureCount}</span>
+              </li>
+            ))
+          ) : (
+            <p>데이터가 없습니다</p>
+          )}
+        </ul>
+
           <div className="pagination">
             <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} disabled={currentPage === 0}>이전</button>
             <span>페이지 {currentPage + 1} / {totalPages}</span>

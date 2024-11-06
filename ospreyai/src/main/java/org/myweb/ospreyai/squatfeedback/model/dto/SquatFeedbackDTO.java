@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.myweb.ospreyai.squatfeedback.jpa.entity.SquatFeedback;
 
 import java.util.Date;
@@ -15,8 +16,13 @@ import java.util.Date;
 public class SquatFeedbackDTO {
 	private Long id;
 	private String userId;
+
+	@JsonProperty("totalAttempts")
 	private int totalAttempts;
+
+	@JsonProperty("correctPostureCount")  
 	private int correctPostureCount;
+
 	private Date date;
 
 	public SquatFeedback toEntity() {
