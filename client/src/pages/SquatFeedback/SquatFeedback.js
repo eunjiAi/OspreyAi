@@ -102,7 +102,7 @@ function SquatFeedback() {
   const updateSliderBackground = () => {
     const slider = document.querySelector('.slider');
     if (slider) {
-      const percentage = ((intervalTime / 1000 - 1) / 9) * 100;       // 수정된 계산
+      const percentage = ((intervalTime / 1000 - 1) / 9) * 100;       
       slider.style.background = `linear-gradient(to right, #007bff ${percentage}%, #ddd ${percentage}%)`;
     }
   };
