@@ -23,8 +23,8 @@
 .webcam-video {
   width: 72%;
   aspect-ratio: 9 / 16;
-  margin-top: 3.3%;
-  max-height: 79vh;
+  margin-top: 2.6%;
+  max-height: 80.5vh;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   object-fit: cover;
@@ -177,7 +177,7 @@
 .daily-stats {
   width: 80%;
   text-align: left;
-  margin-top: 20px;
+  margin-top: 1%;
   font-size: 14px;
   border-radius: 8px;
   padding: 15px;
