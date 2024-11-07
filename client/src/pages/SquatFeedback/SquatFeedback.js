@@ -10,7 +10,7 @@ function SquatFeedback() {
   const [totalPages, setTotalPages] = useState(0);
   const [intervalTime, setIntervalTime] = useState(1000);
   const [isRunning, setIsRunning] = useState(false);
-  const [detected, setDetected] = useState(false); // 감지 여부 상태 추가
+  const [detected, setDetected] = useState(false);
   const videoRef = useRef(null);
   const intervalIdRef = useRef(null);
 
@@ -53,11 +53,10 @@ function SquatFeedback() {
           setKneePosition(data.knee_position !== null ? data.knee_position.toFixed(2) : null);
           setFeedback(data.feedback);
 
-          // 감지 여부에 따라 detected 상태 업데이트
           if (data.angle !== null && data.knee_position !== null) {
-            setDetected(true); // 포즈 감지됨
+            setDetected(true);
           } else {
-            setDetected(false); // 포즈 미감지
+            setDetected(false);
           }
         })
         .catch(error => console.error('피드백 가져오기 오류:', error));
@@ -89,8 +88,8 @@ function SquatFeedback() {
       .then(response => response.json())
       .then(data => {
         console.log("Fetched data from API:", data);
-        setDailyStats(data.feedbackList);               // 피드백 목록 설정
-        setTotalPages(Math.ceil(data.totalCount / 6));  // 전체 수 기반 페이지 수 계산
+        setDailyStats(data.feedbackList);
+        setTotalPages(Math.ceil(data.totalCount / 6));
       })
       .catch(error => {
         console.error('Error fetching daily stats:', error);
@@ -102,29 +101,28 @@ function SquatFeedback() {
   const updateSliderBackground = () => {
     const slider = document.querySelector('.slider');
     if (slider) {
-      const percentage = ((intervalTime / 1000 - 1) / 9) * 100;       
-      slider.style.background = `linear-gradient(to right, #007bff ${percentage}%, #ddd ${percentage}%)`;
+      const percentage = ((intervalTime / 1000 - 1) / 9) * 100;
+      slider.style.background = `linear-gradient(to right, #4a90e2 ${percentage}%, #ddd ${percentage}%)`;
     }
   };
-  
 
-  // intervalTime이 변경될 때마다 슬라이더 배경 업데이트
   useEffect(() => {
     updateSliderBackground();
   }, [intervalTime]);
 
   useEffect(() => {
     fetchDailyStats();
-  }, [currentPage]); // 페이지가 변경될 때마다 통계 재가져오기
+  }, [currentPage]);
 
   return (
     <div className="squat-feedback-container">
       <div className="webcam-container">
+        <p className="webcam-message">전신을 보여주세요!</p>
         <video ref={videoRef} autoPlay muted className="webcam-video" />
       </div>
 
       <div className="feedback-panel">
-        <h1 className="title">Squat Feedback</h1>
+        <h1 className="title">스쿼트 피드백</h1>
         <div className="feedback-info">
           <p>상체 각도: <span className={detected ? 'detected' : ''}>{angle !== null ? angle : 'N/A'}</span></p>
           <p>무릎 위치: <span className={detected ? 'detected' : ''}>{kneePosition !== null ? kneePosition : 'N/A'}</span></p>
@@ -146,7 +144,7 @@ function SquatFeedback() {
         </div>
 
         <div className="daily-stats">
-          <h2>Daily Stats</h2>
+          <h2>일일 통계</h2>
           <ul>
             {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
               dailyStats.map((stat, index) => (
