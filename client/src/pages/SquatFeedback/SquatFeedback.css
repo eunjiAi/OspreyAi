@@ -28,11 +28,11 @@
 
 .webcam-message {
   position: absolute;
-  top: 1.2%;
-  font-size: 2em;
-  color: #3a3a3a;
+  top: 2%;
+  font-size: 2.2em;
+  color: #1d3c6a;
   font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
   width: 100%;
   animation: fadeIn 2s ease-in-out;
@@ -44,13 +44,13 @@
 }
 
 .webcam-video {
-  width: 75%;
+  width: 70%;
   aspect-ratio: 9 / 16;
-  max-height: 72vh;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-height: 70vh;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   object-fit: cover;
-  border: 4px solid #7399e0;
+  border: 5px solid #4b8ded;
 }
 
 .feedback-panel {
@@ -76,27 +76,22 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.feedback-info-container {
+/* 상체각도, 무릎위치, 피드백 BOX */
+.feedback-info {
   width: 90%;
-  background-color: #e9f2ff;
+  background-color: #FFF;
   border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.13);
   padding: 15px;
   margin-bottom: 10px;
-}
-
-.feedback-info {
   font-size: 1.2em;
   color: #3a3a3a;
-  margin-bottom: 10px;
-  width: 100%;
 }
 
 .feedback-info p {
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
-  color: #3a3a3a;
 }
 
 .feedback-info span {
