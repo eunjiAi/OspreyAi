@@ -68,7 +68,7 @@ def analyze_pose(image):
             knee_position = calculate_knee_position(landmarks)
 
             # 피드백 설정 및 자세 검증
-            if angle > 45:
+            if angle < 25:
                 feedback = "상체를 더 숙이세요"
                 update_daily_feedback("test_user", feedback=False)  # 잘못된 자세
             elif knee_position < 0.3:

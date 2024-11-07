@@ -124,9 +124,11 @@ function SquatFeedback() {
       <div className="feedback-panel">
         <h1 className="title">스쿼트 피드백</h1>
         <div className="feedback-info">
-          <p>상체 각도: <span className={detected ? 'detected' : ''}>{angle !== null ? angle : 'N/A'}</span></p>
-          <p>무릎 위치: <span className={detected ? 'detected' : ''}>{kneePosition !== null ? kneePosition : 'N/A'}</span></p>
-          <p>피드백: <span className={detected ? 'detected' : ''}>{feedback}</span></p>
+          {/* <p>상체 각도: <span className={detected ? 'detected' : ''}>{angle !== null ? angle : 'N/A'}</span></p>
+          <p>무릎 위치: <span className={detected ? 'detected' : ''}>{kneePosition !== null ? kneePosition : 'N/A'}</span></p> */}
+
+          <p><span className={detected ? 'detected' : ''}>{feedback}</span></p>
+          
         </div>
 
         <div className="control-panel">
