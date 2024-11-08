@@ -29,7 +29,7 @@ function Home() {
                 
             </section>
             <section className="features">
-                <Link to="/WebcamCapture" className="feature">
+                <Link to="/SquatFeedback" className="feature">
                     <div className="feature-icon">
                         <img src={robotImage} alt="AI Process" />
                     </div>
