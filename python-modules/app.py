@@ -18,9 +18,9 @@ logging.basicConfig(filename='app_error.log', level=logging.DEBUG,
 app = Flask(__name__)
 CORS(app)
 
-# MediaPipe 초기화
-mp_pose = mp.solutions.pose
-pose = mp_pose.Pose()
+# MediaPipe Holistic 초기화
+mp_holistic = mp.solutions.holistic
+holistic = mp_holistic.Holistic()
 
 # 데이터베이스 연결 설정
 DATABASE_URI = 'oracle+cx_oracle://c##ospreyai:123456@localhost:1521/XE'
@@ -38,8 +38,13 @@ class SquatFeedback(Base):
     correct_posture_count = Column(Integer, nullable=False)
     squat_date = Column(Date, nullable=False)
 
+# 현재 자세 상태 추적 변수
+current_posture = "stand"  # 기본값은 stand로 설정
+completed_once = False  # "동작 완료" 메시지가 한 번 출력됐는지 여부
+
 # Pose 분석 함수
 def analyze_pose(image):
+    global current_posture, completed_once
     try:
         # Base64 디코딩
         print("이미지 데이터 디코딩 중...")
@@ -52,9 +57,9 @@ def analyze_pose(image):
             logging.debug("디코딩된 이미지가 None입니다.")
             return {"angle": None, "knee_position": None, "feedback": "이미지 디코딩 오류"}
 
-        # MediaPipe를 통한 포즈 추출
+        # MediaPipe Holistic을 통한 포즈 추출
         print("MediaPipe를 통한 자세 분석 중...")
-        result = pose.process(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+        result = holistic.process(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
         feedback = ""
         angle = None
         knee_position = None
@@ -67,16 +72,38 @@ def analyze_pose(image):
             angle = calculate_upper_body_angle(landmarks)
             knee_position = calculate_knee_position(landmarks)
 
-            # 피드백 설정 및 자세 검증
-            if angle < 25:
-                feedback = "상체를 더 숙이세요"
-                update_daily_feedback("test_user", feedback=False)  # 잘못된 자세
-            elif knee_position < 0.3:
-                feedback = "무릎을 앞으로 내세요"
-                update_daily_feedback("test_user", feedback=False)  # 잘못된 자세
+            # 스쿼트 동작과 원상태(stand) 확인
+            if angle < 60:  # 상체가 충분히 숙여지지 않으면 피드백 줌 
+                # 바른 자세에서 벗어났을 때 첫 번째 동작에서는 "동작 완료" 표시
+                if current_posture == "squat" and not completed_once:
+                    feedback = "동작 완료"
+                    update_daily_feedback("test_user", feedback=True)  # 바른 자세 카운트 증가
+                    current_posture = "stand"  # 원상태로 전환
+                    completed_once = True  # 완료 상태 기록
+                else:
+                    feedback = "상체를 더 숙이세요"
+                    update_daily_feedback("test_user", feedback=False)  # 잘못된 자세
+                
+            elif knee_position < -0.1:  # 무릎이 발목보다 충분히 앞으로 나왔는지 확인
+                # 바른 자세에서 벗어났을 때 첫 번째 동작에서는 "동작 완료" 표시
+                if current_posture == "squat" and not completed_once:
+                    feedback = "동작 완료"
+                    update_daily_feedback("test_user", feedback=True)  # 바른 자세 카운트 증가
+                    current_posture = "stand"  # 원상태로 전환
+                    completed_once = True  # 완료 상태 기록
+                else:
+                    feedback = "무릎을 앞으로 내세요"
+                    update_daily_feedback("test_user", feedback=False)  # 잘못된 자세
+                
             else:
-                feedback = "바른 자세입니다"
-                update_daily_feedback("test_user", feedback=True)  # 바른 자세
+                # 바른 자세인 경우
+                if current_posture == "stand":
+                    feedback = "바른 자세입니다"
+                    current_posture = "squat"  # 스쿼트 상태로 전환
+                    completed_once = False  # 바른 자세가 되면 완료 상태 초기화
+                else:
+                    feedback = "바른 자세입니다"  # 스쿼트 상태 유지 중일 때
+
         else:
             print("포즈 랜드마크가 감지되지 않았습니다.")
             logging.debug("포즈 랜드마크가 감지되지 않았습니다.")
@@ -92,13 +119,11 @@ def analyze_pose(image):
         print(f"자세 분석 오류: {e}")
         return {"error": "자세 분석 실패"}
 
-
-
 # 각도 계산 : 어깨, 엉덩이, 무릎 좌표를 사용해 상체 기울기 각도 계산함
 def calculate_upper_body_angle(landmarks):
-    shoulder = landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER]
-    hip = landmarks[mp_pose.PoseLandmark.LEFT_HIP]
-    knee = landmarks[mp_pose.PoseLandmark.LEFT_KNEE]
+    shoulder = landmarks[mp_holistic.PoseLandmark.LEFT_SHOULDER]
+    hip = landmarks[mp_holistic.PoseLandmark.LEFT_HIP]
+    knee = landmarks[mp_holistic.PoseLandmark.LEFT_KNEE]
     
     # 벡터 계산
     shoulder_hip = np.array([hip.x - shoulder.x, hip.y - shoulder.y])
@@ -109,12 +134,10 @@ def calculate_upper_body_angle(landmarks):
     angle = np.arccos(cosine_angle)
     return np.degrees(angle)
 
-    
-
 # 무릎과 발목 사이의 상대적 위치 계산함
 def calculate_knee_position(landmarks):
-    knee = landmarks[mp_pose.PoseLandmark.LEFT_KNEE]
-    foot = landmarks[mp_pose.PoseLandmark.LEFT_ANKLE]
+    knee = landmarks[mp_holistic.PoseLandmark.LEFT_KNEE]
+    foot = landmarks[mp_holistic.PoseLandmark.LEFT_ANKLE]
     return knee.x - foot.x
 
 # 일일 피드백 업데이트 (카운트 방식)
@@ -148,7 +171,6 @@ def update_daily_feedback(user_id, feedback):
     except Exception as e:
         logging.error(f"데이터베이스 업데이트 오류: {e}")
         print(f"데이터베이스 업데이트 오류: {e}")
-
 
 @app.route('/squat-analysis', methods=['POST'])
 def squat_analysis():
