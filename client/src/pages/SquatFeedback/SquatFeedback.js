@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import './SquatFeedback.css';
 
 function SquatFeedback() {
-  const [feedback, setFeedback] = useState('시작 버튼을 눌러주세요!');
+  const [feedback, setFeedback] = useState('시작 버튼을 눌러주세요');
   const [angle, setAngle] = useState(null);
   const [kneePosition, setKneePosition] = useState(null);
   const [dailyStats, setDailyStats] = useState([]);
@@ -79,7 +79,7 @@ function SquatFeedback() {
     if (intervalIdRef.current) {
       clearInterval(intervalIdRef.current);
     }
-    setFeedback('시작 버튼을 눌러주세요!');
+    setFeedback('시작 버튼을 눌러주세요');
     console.log("분석이 종료되었습니다.");
   };
 
@@ -117,7 +117,7 @@ function SquatFeedback() {
 
   const getFeedbackClass = (feedback) => {
     switch (feedback) {
-      case '시작 버튼을 눌러주세요!':
+      case '시작 버튼을 눌러주세요':
         return 'start-message';
       case '포즈가 감지되지 않았습니다':
         return 'pose-not-detected';
