@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import './SquatFeedback.css';
 
 function SquatFeedback() {
-  const [feedback, setFeedback] = useState('');
+  const [feedback, setFeedback] = useState('시작 버튼을 눌러주세요!');
   const [angle, setAngle] = useState(null);
   const [kneePosition, setKneePosition] = useState(null);
   const [dailyStats, setDailyStats] = useState([]);
@@ -79,6 +79,7 @@ function SquatFeedback() {
     if (intervalIdRef.current) {
       clearInterval(intervalIdRef.current);
     }
+    setFeedback('시작 버튼을 눌러주세요!');
     console.log("분석이 종료되었습니다.");
   };
 
@@ -114,6 +115,23 @@ function SquatFeedback() {
     fetchDailyStats();
   }, [currentPage]);
 
+  const getFeedbackClass = (feedback) => {
+    switch (feedback) {
+      case '시작 버튼을 눌러주세요!':
+        return 'start-message';
+      case '포즈가 감지되지 않았습니다':
+        return 'pose-not-detected';
+      case '상체를 더 숙이세요':
+        return 'lean-forward';
+      case '무릎을 앞으로 내세요':
+        return 'move-knees';
+      case '바른 자세입니다':
+        return 'correct-posture';
+      default:
+        return '';
+    }
+  };
+
   return (
     <div className="squat-feedback-container">
       <div className="webcam-container">
@@ -124,11 +142,7 @@ function SquatFeedback() {
       <div className="feedback-panel">
         <h1 className="title">스쿼트 피드백</h1>
         <div className="feedback-info">
-          {/* <p>상체 각도: <span className={detected ? 'detected' : ''}>{angle !== null ? angle : 'N/A'}</span></p>
-          <p>무릎 위치: <span className={detected ? 'detected' : ''}>{kneePosition !== null ? kneePosition : 'N/A'}</span></p> */}
-
-          <p><span className={detected ? 'detected' : ''}>{feedback}</span></p>
-          
+          <p className={`feedback-text ${getFeedbackClass(feedback)}`}>{feedback}</p>
         </div>
 
         <div className="control-panel">

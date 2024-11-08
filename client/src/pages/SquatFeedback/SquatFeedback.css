@@ -1,3 +1,5 @@
+/* 기존 코드 유지 */
+
 .squat-feedback-container {
   display: flex;
   width: 100vw;
@@ -44,9 +46,9 @@
 }
 
 .webcam-video {
-  width: 70%;
+  width: 50%;
   aspect-ratio: 9 / 16;
-  max-height: 70vh;
+  max-height: 67vh;
   border-radius: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   object-fit: cover;
@@ -104,6 +106,24 @@
   color: #6095f2;
 }
 
+/* 새로운 스타일 */
+.feedback-text {
+  font-size: 1.2em;
+}
+
+.feedback-text.start-message,
+.feedback-text.pose-not-detected {
+  font-size: 1.4em;
+  color: #a9a9a9;
+  font-weight: bold;
+}
+
+.feedback-text.lean-forward,
+.feedback-text.move-knees,
+.feedback-text.correct-posture {
+  color: #4b8ded;
+  font-weight: bold;
+}
 
 /* 검사간격(초) */
 .control-panel {
@@ -184,7 +204,7 @@
 .daily-stats {
   width: 90%;
   text-align: left;
-  margin-top: 15%;
+  margin-top: 6%;
   font-size: 0.9em;
   border-radius: 12px;
   padding: 12px 16px;
