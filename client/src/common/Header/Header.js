@@ -15,8 +15,9 @@ function Header() {
           <li className="navbar-item dropdown">
             <Link to="/SquatFeedback" className="navbar-link">RealTimeProcessAI</Link>
             <ul className="dropdown-menu">
+
               <li><Link to="/about/team" className="dropdown-link">Our Team</Link></li>
-              <li><Link to="/about/careers" className="dropdown-link">Careers</Link></li>
+
             </ul>
           </li>
 
@@ -24,7 +25,7 @@ function Header() {
             <Link to="/upload" className="navbar-link">Contact Us</Link>
             <ul className="dropdown-menu">
               <li><Link to="/upload/images" className="dropdown-link">Upload Images</Link></li>
-              <li><Link to="/upload/documents" className="dropdown-link">Upload Documents</Link></li>
+
             </ul>
           </li>
 
@@ -32,7 +33,7 @@ function Header() {
             <Link to="/Login" className="navbar-link">Login</Link>
             <ul className="dropdown-menu">
               <li><Link to="/upload/images" className="dropdown-link">Upload Images</Link></li>
-              <li><Link to="/upload/documents" className="dropdown-link">Upload Documents</Link></li>
+
             </ul>
           </li>
 
