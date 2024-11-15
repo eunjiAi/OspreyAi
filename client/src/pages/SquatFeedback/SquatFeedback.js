@@ -29,7 +29,7 @@ function SquatFeedback() {
     startWebcam();
   }, []);
 
-  // 데이터 전송 함수
+  // 데이터 전송
   const fetchData = () => {
     if (videoRef.current) {
       const canvas = document.createElement('canvas');
@@ -98,7 +98,7 @@ function SquatFeedback() {
       });
   };
 
-  // 슬라이더 배경 업데이트 함수
+  // 슬라이더 배경 업데이트
   const updateSliderBackground = () => {
     const slider = document.querySelector('.slider');
     if (slider) {

@@ -1,0 +1,74 @@
+.board-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f8f9fb;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    color: #1a1a1a;
+  }
+  
+  .post-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+  }
+  
+  .post-content {
+    font-size: 18px;
+    color: #4a4a4a;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+  
+  .title-input,
+  .content-input {
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .content-input {
+    min-height: 200px;
+    resize: vertical;
+  }
+  
+  .save-button,
+  .edit-button,
+  .delete-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #4a90e2;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+  }
+  
+  .edit-button {
+    background-color: #4a90e2;
+  }
+  
+  .delete-button {
+    background-color: #e74c3c;
+  }
+  
+  .save-button:hover,
+  .edit-button:hover {
+    background-color: #3b7fc4;
+  }
+  
+  .delete-button:hover {
+    background-color: #c0392b;
+  }
+  

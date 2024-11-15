@@ -22,7 +22,7 @@ function Header() {
           </li>
 
           <li className="navbar-item dropdown">
-            <Link to="/upload" className="navbar-link">Contact Us</Link>
+            <Link to="/Board" className="navbar-link">Board</Link>
             <ul className="dropdown-menu">
               <li><Link to="/upload/images" className="dropdown-link">Upload Images</Link></li>
 
