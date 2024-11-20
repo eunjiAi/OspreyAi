@@ -14897,3 +14897,11 @@
 2024-11-14 16:18:15,074 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=2.085298518802337, knee_position=-0.04780226945877075, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
 2024-11-14 16:18:15,074 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 2.085298518802337, 'knee_position': -0.04780226945877075, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
 2024-11-14 16:18:15,074 INFO 127.0.0.1 - - [14/Nov/2024 16:18:15] "POST /squat-analysis HTTP/1.1" 200 -
+2024-11-18 17:27:55,951 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-11-18 17:27:55,975 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-18 17:27:55,975 INFO [33mPress CTRL+C to quit[0m
+2024-11-18 17:27:55,976 INFO  * Restarting with stat
+2024-11-18 17:27:56,838 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-11-18 17:27:56,845 WARNING  * Debugger is active!
+2024-11-18 17:27:56,848 INFO  * Debugger PIN: 125-377-655

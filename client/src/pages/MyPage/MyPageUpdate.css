@@ -1,0 +1,92 @@
+.update-container {
+    max-width: 600px; /* 컨텐츠 최대 폭 */
+    margin: 50px auto; /* 화면 중앙 정렬 */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    /*padding: 30px;
+    background-color: #fff; 
+    border-radius: 15px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 부드러운 그림자 
+    */
+  }
+  
+  .update-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .update-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    width: 100%; /* 입력창 폭을 부모 요소에 맞게 설정 */
+    max-width: 500px; /* 입력창 최대 폭 */
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 8px;
+    display: block;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    font-size: 14px;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #6a8dff;
+    box-shadow: 0px 0px 5px rgba(106, 141, 255, 0.5);
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between; /* 버튼을 양쪽에 배치 */
+    width: 100%;
+    max-width: 500px; /* 버튼 그룹 폭 제한 */
+    margin-top: 20px;
+  }
+  
+  .save-btn,
+  .delete-btn {
+    width: 48%; /* 버튼을 동일한 폭으로 설정 */
+    padding: 10px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .save-btn {
+    background-color: #6a8dff;
+    color: white;
+  }
+  
+  .save-btn:hover {
+    background-color: #506cd0;
+  }
+  
+  .delete-btn {
+    background-color: #ff6b6b;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d45a5a;
+  }
+  
