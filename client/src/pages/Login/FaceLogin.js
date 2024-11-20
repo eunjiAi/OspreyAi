@@ -4,7 +4,7 @@ import './FaceLogin.css';
 function FaceLogin() {
   const handleGoBack = () => {
     console.log('Go back clicked');
-    // 이전 페이지로 이동하는 로직 추가 예정
+    // 이전 페이지로 이동하는 코드 추가 예정
   };
 
   const handleFaceScan = () => {

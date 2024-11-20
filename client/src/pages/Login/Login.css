@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #e9efff, #b2c9ff); /* 밝고 산뜻한 그라데이션 */
+  background: linear-gradient(135deg, #f0f8ff, #d1e7ff); 
   color: #334e68; /* 네이비 톤으로 변경 */
   font-family: 'Roboto', sans-serif;
 }

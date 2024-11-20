@@ -1,67 +1,92 @@
-import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import './BoardDetail.css';
+import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import "./BoardDetail.css";
 
-function BoardDetail({ posts, setPosts }) {
+const BoardDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const post = posts.find((post) => post.id === Number(id));
+  const [posts, setPosts] = useState([
+    { id: 1, title: "Welcome to the Board!", content: "Feel free to share your thoughts here.", comments: ["Great post!", "Very helpful!"] },
+    { id: 2, title: "React Tips & Tricks", content: "Learn how to build amazing apps.", comments: ["Thanks for sharing!", "This is awesome."] },
+  ]);
 
+  const [newComment, setNewComment] = useState("");
   const [isEditing, setIsEditing] = useState(false);
-  const [updatedTitle, setUpdatedTitle] = useState(post.title);
-  const [updatedContent, setUpdatedContent] = useState(post.content);
+  const [editedContent, setEditedContent] = useState("");
+  const post = posts.find((post) => post.id === parseInt(id));
 
   if (!post) {
-    return <div>게시글을 찾을 수 없습니다.</div>;
+    return <div>Post not found.</div>;
   }
 
+  const handleAddComment = () => {
+    if (newComment.trim()) {
+      post.comments.push(newComment);
+      setNewComment("");
+    }
+  };
+
   const handleDelete = () => {
-    const updatedPosts = posts.filter((p) => p.id !== post.id);
+    const updatedPosts = posts.filter((post) => post.id !== parseInt(id));
     setPosts(updatedPosts);
-    alert('게시글이 삭제되었습니다.');
-    navigate('/');
+    navigate("/Board");
   };
 
   const handleEdit = () => {
-    setIsEditing(true);
-  };
-
-  const handleSave = () => {
-    const updatedPosts = posts.map((p) =>
-      p.id === post.id ? { ...p, title: updatedTitle, content: updatedContent } : p
-    );
-    setPosts(updatedPosts);
-    setIsEditing(false);
-    alert('게시글이 수정되었습니다.');
+    if (isEditing) {
+      const updatedPosts = posts.map((p) =>
+        p.id === parseInt(id) ? { ...p, content: editedContent } : p
+      );
+      setPosts(updatedPosts);
+      setIsEditing(false);
+    } else {
+      setEditedContent(post.content);
+      setIsEditing(true);
+    }
   };
 
   return (
-    <div className="board-detail-container">
-      {isEditing ? (
-        <>
+    <div className="detail-container">
+      <button className="back-button" onClick={() => navigate("/Board")}>
+        ← Back to Board
+      </button>
+      <h1 className="detail-title">{post.title}</h1>
+      {!isEditing ? (
+        <p className="detail-content">{post.content}</p>
+      ) : (
+        <textarea
+          className="edit-content"
+          value={editedContent}
+          onChange={(e) => setEditedContent(e.target.value)}
+        />
+      )}
+      <div className="button-group">
+        <button className="edit-button" onClick={handleEdit}>
+          {isEditing ? "Save" : "Edit"}
+        </button>
+        <button className="delete-button" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
+      <div className="comments-section">
+        <h2>Comments</h2>
+        <ul>
+          {post.comments.map((comment, index) => (
+            <li key={index}>{comment}</li>
+          ))}
+        </ul>
+        <div className="add-comment">
           <input
             type="text"
-            value={updatedTitle}
-            onChange={(e) => setUpdatedTitle(e.target.value)}
-            className="title-input"
+            placeholder="Add a comment..."
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
           />
-          <textarea
-            value={updatedContent}
-            onChange={(e) => setUpdatedContent(e.target.value)}
-            className="content-input"
-          ></textarea>
-          <button onClick={handleSave} className="save-button">저장</button>
-        </>
-      ) : (
-        <>
-          <h1 className="post-title">{post.title}</h1>
-          <p className="post-content">{post.content}</p>
-          <button onClick={handleEdit} className="edit-button">수정</button>
-          <button onClick={handleDelete} className="delete-button">삭제</button>
-        </>
-      )}
+          <button onClick={handleAddComment}>Submit</button>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default BoardDetail;

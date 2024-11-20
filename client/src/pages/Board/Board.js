@@ -1,32 +1,38 @@
-import React, { useState } from 'react';
-import './Board.css';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Board.css";
 
-function Board({ posts, setPosts }) {
+const Board = () => {
   const navigate = useNavigate();
+  const [posts, setPosts] = useState([
+    { id: 1, title: "Welcome to the Board!", date: "2024-11-20" },
+    { id: 2, title: "React Tips & Tricks", date: "2024-11-18" },
+  ]);
 
-  const handlePostClick = (postId) => {
-    navigate(`/post/${postId}`);
+  const handlePostClick = (id) => {
+    navigate(`/Board/${id}`);
+  };
+
+  const handleNewPost = () => {
+    navigate("/Board/new");
   };
 
   return (
     <div className="board-container">
-      <header className="board-header">
-        <h1 className="board-title">게시판</h1>
-        <Link to="/BoardCreate" className="new-post-button">새 글 작성</Link>
-      </header>
-      <ul className="post-list">
+      <h1 className="board-title">Community Board</h1>
+      <button className="new-post-button" onClick={handleNewPost}>
+        New Post
+      </button>
+      <ul className="board-list">
         {posts.map((post) => (
-          <li key={post.id} className="post-item" onClick={() => handlePostClick(post.id)}>
-            <div className="post-link">
-              <div className="post-title">{post.title}</div>
-              <div className="post-date">{post.date}</div>
-            </div>
+          <li key={post.id} className="board-item" onClick={() => handlePostClick(post.id)}>
+            <span className="board-item-title">{post.title}</span>
+            <span className="board-item-date">{post.date}</span>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
 export default Board;

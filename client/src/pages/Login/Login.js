@@ -15,7 +15,7 @@ function Login() {
 
   const handleFaceLogin = () => {
     console.log('Face login clicked');
-    // Face 로그인 로직 추가 예정
+    navigate('/FaceLogin'); // Face 로그인 페이지로 이동
   };
 
   return (
