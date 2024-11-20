@@ -6,8 +6,8 @@ import Header from "./common/Header/Header";
 import Footer from "./common/Footer/Footer";
 import SquatFeedback from "./pages/SquatFeedback/SquatFeedback";
 import Board from "./pages/Board/Board";
-import BoardDetail from "./pages/Board/BoardDetail"; // 게시판 상세 페이지
-import BoardCreate from "./pages/Board/BoardCreate"; // 새로 추가된 게시글 작성 페이지
+import BoardDetail from "./pages/Board/BoardDetail"; 
+import BoardCreate from "./pages/Board/BoardCreate"; 
 import Login from "./pages/Login/Login";
 import FaceLogin from "./pages/Login/FaceLogin";
 import Signup from "./pages/Signup/Signup";
@@ -31,8 +31,8 @@ function App() {
         <Route path="/MyPageUpdate" element={<MyPageUpdate />} />
 
         <Route path="/Board" element={<Board />} />
-        <Route path="/Board/new" element={<BoardCreate />} /> {/* 게시글 작성 페이지 */}
-        <Route path="/Board/:id" element={<BoardDetail />} /> {/* 게시판 상세 페이지 */}
+        <Route path="/Board/new" element={<BoardCreate />} /> 
+        <Route path="/Board/:id" element={<BoardDetail />} /> 
       </Routes>
 
       <Footer />

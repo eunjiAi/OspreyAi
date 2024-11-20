@@ -8,6 +8,12 @@ const BoardDetail = () => {
   const [posts, setPosts] = useState([
     { id: 1, title: "Osprey AI는 자세교정에 도움이 됩니다.", content: "상세내용입니다.", comments: ["따봉", "도움이 되었습니다."] },
     { id: 2, title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.", content: "자랑글입니다.", comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"] },
+    { id: 3, title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.", content: "자랑글입니다.", comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"] },
+    { id: 4, title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.", content: "자랑글입니다.", comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"] },
+    { id: 5, title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.", content: "자랑글입니다.", comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"] },
+    { id: 6, title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.", content: "자랑글입니다.", comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"] },
+    { id: 7, title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.", content: "자랑글입니다.", comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"] },
+    { id: 8, title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.", content: "자랑글입니다.", comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"] },
   ]);
 
   const [newComment, setNewComment] = useState("");
