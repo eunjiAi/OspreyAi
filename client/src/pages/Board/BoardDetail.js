@@ -6,8 +6,8 @@ const BoardDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [posts, setPosts] = useState([
-    { id: 1, title: "Welcome to the Board!", content: "Feel free to share your thoughts here.", comments: ["Great post!", "Very helpful!"] },
-    { id: 2, title: "React Tips & Tricks", content: "Learn how to build amazing apps.", comments: ["Thanks for sharing!", "This is awesome."] },
+    { id: 1, title: "Osprey AI는 자세교정에 도움이 됩니다.", content: "상세내용입니다.", comments: ["따봉", "도움이 되었습니다."] },
+    { id: 2, title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.", content: "자랑글입니다.", comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"] },
   ]);
 
   const [newComment, setNewComment] = useState("");
@@ -48,7 +48,7 @@ const BoardDetail = () => {
   return (
     <div className="detail-container">
       <button className="back-button" onClick={() => navigate("/Board")}>
-        ← Back to Board
+        ← 게시판 목록으로 돌아가기
       </button>
       <h1 className="detail-title">{post.title}</h1>
       {!isEditing ? (
@@ -62,14 +62,17 @@ const BoardDetail = () => {
       )}
       <div className="button-group">
         <button className="edit-button" onClick={handleEdit}>
-          {isEditing ? "Save" : "Edit"}
+          {isEditing ? "Save" : "수정"}
         </button>
         <button className="delete-button" onClick={handleDelete}>
-          Delete
+          삭제
         </button>
       </div>
       <div className="comments-section">
-        <h2>Comments</h2>
+
+        <hr></hr>
+
+        <h2>댓글</h2>
         <ul>
           {post.comments.map((comment, index) => (
             <li key={index}>{comment}</li>
@@ -78,11 +81,11 @@ const BoardDetail = () => {
         <div className="add-comment">
           <input
             type="text"
-            placeholder="Add a comment..."
+            placeholder="댓글을 입력하세요"
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
           />
-          <button onClick={handleAddComment}>Submit</button>
+          <button onClick={handleAddComment}>등록</button>
         </div>
       </div>
     </div>

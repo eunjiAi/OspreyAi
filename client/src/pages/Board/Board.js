@@ -5,8 +5,8 @@ import "./Board.css";
 const Board = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([
-    { id: 1, title: "Welcome to the Board!", date: "2024-11-20" },
-    { id: 2, title: "React Tips & Tricks", date: "2024-11-18" },
+    { id: 1, title: "Osprey AI는 자세교정에 도움이 됩니다.", date: "2024-11-20" },
+    { id: 2, title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.", date: "2024-11-18" },
   ]);
 
   const handlePostClick = (id) => {
@@ -19,9 +19,9 @@ const Board = () => {
 
   return (
     <div className="board-container">
-      <h1 className="board-title">Community Board</h1>
+      <h1 className="board-title">게시판</h1>
       <button className="new-post-button" onClick={handleNewPost}>
-        New Post
+        게시글 작성
       </button>
       <ul className="board-list">
         {posts.map((post) => (
