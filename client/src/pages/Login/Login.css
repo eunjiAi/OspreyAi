@@ -93,6 +93,26 @@
   text-decoration: underline;
 }
 
+/* Face 로그인 버튼 */
+.face-login-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #334e68; /* 네이비 톤 */
+  background-color: #ffcc00; /* 밝은 노란색 */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px; /* 로그인 버튼과 간격 */
+  transition: background-color 0.3s ease;
+}
+
+.face-login-button:hover {
+  background-color: #e6b800; /* 호버 시 어두운 노란색 */
+}
+
+
 /* 반응형 스타일 */
 @media (max-width: 768px) {
   .login-box {

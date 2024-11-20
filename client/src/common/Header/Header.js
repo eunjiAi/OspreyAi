@@ -37,13 +37,13 @@ function Header() {
             </ul>
           </li>
 
-          <li className="navbar-item dropdown">
+          {/* <li className="navbar-item dropdown">
             <Link to="/MyPage" className="navbar-link">MyPage</Link>
             <ul className="dropdown-menu">
               <li><Link to="/upload/images" className="dropdown-link">Upload Images</Link></li>
 
             </ul>
-          </li>
+          </li> */}
 
         </ul>
       </div>

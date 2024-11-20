@@ -9,6 +9,8 @@ import Board from './pages/Board/Board';
 import BoardCreate from './pages/Board/BoardCreate';
 import BoardDetail from './pages/Board/BoardDetail';
 import Login from './pages/Login/Login';
+import FaceLogin from './pages/Login/FaceLogin';
+
 import Signup from './pages/Signup/Signup';
 import MyPage from './pages/MyPage/MyPage';
 import MyPageUpdate from './pages/MyPage/MyPageUpdate';
@@ -27,10 +29,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/SquatFeedback" element={<SquatFeedback />} />
+
         <Route path="/Login" element={<Login />} />
+        <Route path="/FaceLogin" element={<FaceLogin />} />
+
         <Route path="/Signup" element={<Signup />} />
         <Route path="/MyPage" element={<MyPage />} />
         <Route path="/MyPageUpdate" element={<MyPageUpdate />} />
+
 
         {/* 게시판 라우트에 posts와 setPosts를 전달 */}
         <Route path="/Board" element={<Board posts={posts} setPosts={setPosts} />} />
