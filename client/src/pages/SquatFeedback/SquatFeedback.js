@@ -90,7 +90,7 @@ function SquatFeedback() {
       .then(data => {
         console.log("Fetched data from API:", data);
         setDailyStats(data.feedbackList);
-        setTotalPages(Math.ceil(data.totalCount / 6));
+        setTotalPages(Math.ceil(data.totalCount / 5));
       })
       .catch(error => {
         console.error('Error fetching daily stats:', error);
