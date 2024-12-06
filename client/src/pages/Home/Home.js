@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import robotImage from '../images/robot1.png';
+import robotImage from '../../images/robot1.png';
 
 function Home() {
     const [message, setMessage] = useState("");
