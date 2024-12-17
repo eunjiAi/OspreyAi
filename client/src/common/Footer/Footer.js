@@ -15,14 +15,13 @@ function Footer() {
         </div>
         <div className="footer-right">
           <div className="footer-links">
-            <a href="/about" className="footer-link">About Us</a>
-            <a href="/services" className="footer-link">Services</a>
-            <a href="/contact" className="footer-link">Contact</a>
-            <a href="/privacy" className="footer-link">Privacy Policy</a>
+            <a href="/about" className="footer-link">스쿼트피드백AI</a>
+            <a href="/services" className="footer-link">공지사항</a>
+            <a href="/contact" className="footer-link">게시판</a>
           </div>
           <div className="footer-socials">
             <a href="https://twitter.com" className="footer-social-link" aria-label="Twitter">
-              <img src="path/to/twitter-icon.png" alt="Twitter" />
+              <img src="path/to/twitter-icon.png" alt="Instagram" />
             </a>
             <a href="https://facebook.com" className="footer-social-link" aria-label="Facebook">
               <img src="path/to/facebook-icon.png" alt="Facebook" />
@@ -32,7 +31,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; 2024 OspreyAI. All Rights Reserved.
+        &copy; 2024 OspreyAI
       </div>
     </footer>
   );
