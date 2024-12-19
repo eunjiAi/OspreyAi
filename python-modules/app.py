@@ -6,10 +6,11 @@ import base64
 import numpy as np
 import cv2
 import mediapipe as mp
-from sqlalchemy import create_engine, Column, Integer, String, Date
+from sqlalchemy import create_engine, Column, Integer, String, Date, Sequence
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import datetime
+import uuid as uuid_lib
 
 # 로그 설정
 logging.basicConfig(filename='app_error.log', level=logging.DEBUG, 
@@ -30,12 +31,14 @@ session = Session()
 
 # 모델 정의
 Base = declarative_base()
+
+# 모델 정의
 class SquatFeedback(Base):
     __tablename__ = 'SQUATFEEDBACK'
-    id = Column(Integer, primary_key=True)
-    user_id = Column(String, nullable=False)
+    squat_id = Column(Integer, Sequence('squat_id_seq', start=1, increment=1), primary_key=True)  # SQUAT_ID는 시퀀스로 자동 생성
+    uuid = Column(String, nullable=False)  # UUID로 사용자 식별
     total_attempts = Column(Integer, nullable=False)
-    correct_posture_count = Column(Integer, nullable=False)
+    correct_count = Column(Integer, nullable=False)
     squat_date = Column(Date, nullable=False)
 
 # 현재 자세 상태 추적 변수
@@ -74,7 +77,6 @@ def analyze_pose(image):
 
             # 스쿼트 동작과 원상태(stand) 확인
             if angle < 60:  # 상체가 충분히 숙여지지 않으면 피드백 줌 
-                # 바른 자세에서 벗어났을 때 첫 번째 동작에서는 "동작 완료" 표시
                 if current_posture == "squat" and not completed_once:
                     feedback = "동작 완료"
                     update_daily_feedback("test_user", feedback=True)  # 바른 자세 카운트 증가
@@ -85,7 +87,6 @@ def analyze_pose(image):
                     update_daily_feedback("test_user", feedback=False)  # 잘못된 자세
                 
             elif knee_position < -0.1:  # 무릎이 발목보다 충분히 앞으로 나왔는지 확인
-                # 바른 자세에서 벗어났을 때 첫 번째 동작에서는 "동작 완료" 표시
                 if current_posture == "squat" and not completed_once:
                     feedback = "동작 완료"
                     update_daily_feedback("test_user", feedback=True)  # 바른 자세 카운트 증가
@@ -96,7 +97,6 @@ def analyze_pose(image):
                     update_daily_feedback("test_user", feedback=False)  # 잘못된 자세
                 
             else:
-                # 바른 자세인 경우
                 if current_posture == "stand":
                     feedback = "바른 자세입니다"
                     current_posture = "squat"  # 스쿼트 상태로 전환
@@ -108,7 +108,7 @@ def analyze_pose(image):
             print("포즈 랜드마크가 감지되지 않았습니다.")
             logging.debug("포즈 랜드마크가 감지되지 않았습니다.")
             feedback = "포즈가 감지되지 않았습니다"
-            # 포즈가 감지되지 않았을 때는 DB 업데이트 생략
+            update_daily_feedback("test_user", feedback=False)  # 누락 방지: 실패 시에도 데이터 기록
 
         # 최종 결과 로그
         print("자세 분석이 완료되었습니다:", {"angle": angle, "knee_position": knee_position, "feedback": feedback})
@@ -141,27 +141,35 @@ def calculate_knee_position(landmarks):
     return knee.x - foot.x
 
 # 일일 피드백 업데이트 (카운트 방식)
-def update_daily_feedback(user_id, feedback):
+import uuid as uuid_lib
+
+import datetime
+
+# 일일 피드백 업데이트 (카운트 방식)
+def update_daily_feedback(uuid, feedback):
     try:
-        today = datetime.date.today()
+        # 오늘 날짜를 가져오되, 시간을 00:00:00으로 고정하여 날짜만 비교하도록 처리
+        today = datetime.date.today()  # 오늘 날짜만 (시간은 제외)
         
-        # 올바른 자세 시 CORRECT_POSTURE_COUNT 증가, 그렇지 않은 경우 0으로 업데이트
+        # 만약 시간이 00:00:00일 경우 날짜를 강제로 맞춰주기 위해 설정할 수 있습니다.
+        today = datetime.datetime.combine(today, datetime.time.min).date()
+
         correct_increment = 1 if feedback else 0
 
-        # 해당 날짜에 대한 TOTAL_ATTEMPTS 및 CORRECT_POSTURE_COUNT 업데이트
-        entry = session.query(SquatFeedback).filter_by(user_id=user_id, squat_date=today).first()
+        # Check if uuid already exists for today's date, otherwise insert a new entry
+        entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
         
         if entry:
-            # 데이터가 이미 있으면 카운트 업데이트
+            # 기존 데이터가 있으면 업데이트
             entry.total_attempts += 1
-            entry.correct_posture_count += correct_increment
+            entry.correct_count += correct_increment
         else:
-            # 해당 날짜 첫 번째 실행 시 total_attempts는 1로, correct_posture_count는 올바르지 않은 자세의 경우 0으로 저장
+            # 새로운 데이터를 삽입
             new_entry = SquatFeedback(
-                user_id=user_id,
+                uuid=uuid,  # 생성된 고유 uuid 사용
                 total_attempts=1,
-                correct_posture_count=correct_increment,
-                squat_date=today
+                correct_count=correct_increment,
+                squat_date=today  # 날짜만 저장
             )
             session.add(new_entry)
         
@@ -169,8 +177,11 @@ def update_daily_feedback(user_id, feedback):
         print("일일 피드백이 데이터베이스에 업데이트되었습니다.")
         logging.debug("일일 피드백이 데이터베이스에 업데이트되었습니다.")
     except Exception as e:
+        session.rollback()  # 오류 발생 시 세션 롤백
         logging.error(f"데이터베이스 업데이트 오류: {e}")
         print(f"데이터베이스 업데이트 오류: {e}")
+
+
 
 @app.route('/squat-analysis', methods=['POST'])
 def squat_analysis():
@@ -179,8 +190,16 @@ def squat_analysis():
 
     data = request.get_json()
     frame = data.get('frame')
+    
+    # Now using test_user UUID directly
+    uuid = 'test_user'  # Fixed UUID for the user, since it's already in MEMBER table
+
+    if not uuid:
+        return jsonify({"error": "UUID가 누락되었습니다."}), 400
+
     if frame:
         result = analyze_pose(frame)
+        update_daily_feedback(uuid, result.get('feedback') == "동작 완료")  # Update the feedback in DB
         print("분석 결과 반환:", result)
         logging.debug(f"분석 결과 반환: {result}")
         return jsonify(result)
@@ -188,6 +207,7 @@ def squat_analysis():
         print("프레임 데이터가 수신되지 않았습니다.")
         logging.debug("프레임 데이터가 수신되지 않았습니다.")
         return jsonify({"error": "프레임 데이터가 수신되지 않았습니다."}), 400
+
 
 # Flask 서버 시작
 if __name__ == '__main__':

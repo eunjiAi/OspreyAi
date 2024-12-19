@@ -16295,3 +16295,1538 @@ WHERE "SQUATFEEDBACK".user_id = :user_id_1 AND "SQUATFEEDBACK".squat_date = :squ
 2024-12-19 17:28:36,017 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
 2024-12-19 17:28:36,017 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
 2024-12-19 17:28:36,018 INFO 127.0.0.1 - - [19/Dec/2024 17:28:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:36:19,781 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 17:36:28,328 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:36:28,362 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 17:36:28,362 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 17:36:28,363 INFO  * Restarting with stat
+2024-12-19 17:36:32,148 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:36:32,166 WARNING  * Debugger is active!
+2024-12-19 17:36:32,172 INFO  * Debugger PIN: 125-377-655
+2024-12-19 17:36:32,197 INFO 127.0.0.1 - - [19/Dec/2024 17:36:32] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:36:32,198 INFO 127.0.0.1 - - [19/Dec/2024 17:36:32] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:36:32,504 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:36:32,505 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:36:32,553 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:36:32,554 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:36:32,574 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2024-12-19 17:36:32,575 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:36:32,575 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:36:32,575 INFO 127.0.0.1 - - [19/Dec/2024 17:36:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:36:32,921 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."USER_ID": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".id AS "SQUATFEEDBACK_id", "SQUATFEEDBACK".user_id AS "SQUATFEEDBACK_user_id", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".user_id = :user_id_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'user_id_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:36:32,922 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:36:32,922 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:36:32,922 INFO 127.0.0.1 - - [19/Dec/2024 17:36:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:36:33,474 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:36:33,502 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:36:33,505 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."USER_ID": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".id AS "SQUATFEEDBACK_id", "SQUATFEEDBACK".user_id AS "SQUATFEEDBACK_user_id", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".user_id = :user_id_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'user_id_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:36:33,505 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:36:33,506 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:36:33,506 INFO 127.0.0.1 - - [19/Dec/2024 17:36:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:36:34,156 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:36:34,181 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:36:34,185 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."USER_ID": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".id AS "SQUATFEEDBACK_id", "SQUATFEEDBACK".user_id AS "SQUATFEEDBACK_user_id", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".user_id = :user_id_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'user_id_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:36:34,188 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:36:34,189 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:36:34,190 INFO 127.0.0.1 - - [19/Dec/2024 17:36:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:36:35,463 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:36:35,487 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:36:35,489 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."USER_ID": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".id AS "SQUATFEEDBACK_id", "SQUATFEEDBACK".user_id AS "SQUATFEEDBACK_user_id", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".user_id = :user_id_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'user_id_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:36:35,491 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:36:35,491 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:36:35,491 INFO 127.0.0.1 - - [19/Dec/2024 17:36:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:36:36,159 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:36:36,187 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:36:36,191 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."USER_ID": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".id AS "SQUATFEEDBACK_id", "SQUATFEEDBACK".user_id AS "SQUATFEEDBACK_user_id", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".user_id = :user_id_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'user_id_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:36:36,191 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:36:36,191 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:36:36,193 INFO 127.0.0.1 - - [19/Dec/2024 17:36:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:36:37,474 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:36:37,499 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:36:37,504 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."USER_ID": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".id AS "SQUATFEEDBACK_id", "SQUATFEEDBACK".user_id AS "SQUATFEEDBACK_user_id", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".user_id = :user_id_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'user_id_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:36:37,505 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:36:37,505 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:36:37,506 INFO 127.0.0.1 - - [19/Dec/2024 17:36:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:48:24,221 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 17:48:31,019 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:48:31,048 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 17:48:31,048 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 17:48:31,051 INFO  * Restarting with stat
+2024-12-19 17:48:34,421 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:48:34,437 WARNING  * Debugger is active!
+2024-12-19 17:48:34,440 INFO  * Debugger PIN: 125-377-655
+2024-12-19 17:48:35,895 INFO 127.0.0.1 - - [19/Dec/2024 17:48:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:48:36,155 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:48:36,182 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:48:36,450 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:36,451 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:48:36,452 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'cc961bc5-3c2a-465a-b8f0-f02c7f41caca', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:36,452 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:48:36,452 INFO 127.0.0.1 - - [19/Dec/2024 17:48:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:48:36,581 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:48:36,603 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:48:36,606 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:36,607 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:48:36,610 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': '0e25d7ff-e19f-4e4c-bd81-7b69be851389', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:36,611 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:48:36,611 INFO 127.0.0.1 - - [19/Dec/2024 17:48:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:48:37,891 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:48:37,916 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:48:37,918 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:37,920 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:48:37,921 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'dc738011-23c8-4b59-85dc-c991d979a107', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:37,922 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:48:37,922 INFO 127.0.0.1 - - [19/Dec/2024 17:48:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:48:38,582 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:48:38,604 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:48:38,605 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:38,606 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:48:38,606 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'd3688cc2-eb85-402c-868e-a0c4779c3f43', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:38,606 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:48:38,606 INFO 127.0.0.1 - - [19/Dec/2024 17:48:38] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:48:39,891 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:48:39,916 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:48:39,920 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:39,920 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:48:39,921 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'd9ab7d0e-7fdd-40ac-b15d-ff1a8ba40c84', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:39,921 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:48:39,921 INFO 127.0.0.1 - - [19/Dec/2024 17:48:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:48:40,582 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:48:40,604 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:48:40,609 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': 'test_user', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:40,610 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:48:40,614 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-00904: "SQUATFEEDBACK"."CORRECT_POSTURE_COUNT": ºÎÀûÇÕÇÑ ½Äº°ÀÚ
+[SQL: SELECT "SQUATFEEDBACK".squat_id AS "SQUATFEEDBACK_squat_id", "SQUATFEEDBACK".uuid AS "SQUATFEEDBACK_uuid", "SQUATFEEDBACK".total_attempts AS "SQUATFEEDBACK_total_attempts", "SQUATFEEDBACK".correct_posture_count AS "SQUATFEEDBACK_correct_posture_count", "SQUATFEEDBACK".squat_date AS "SQUATFEEDBACK_squat_date" 
+FROM "SQUATFEEDBACK" 
+WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_date_1
+ FETCH FIRST 1 ROWS ONLY]
+[parameters: {'uuid_1': '734dfd1e-c8c1-4f6e-8b9c-d67d46cdd37a', 'squat_date_1': datetime.date(2024, 12, 19)}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:48:40,615 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:48:40,616 INFO 127.0.0.1 - - [19/Dec/2024 17:48:40] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:49:23,022 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 17:49:28,252 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:49:28,269 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 17:49:28,269 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 17:49:28,270 INFO  * Restarting with stat
+2024-12-19 17:49:31,438 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:49:31,446 WARNING  * Debugger is active!
+2024-12-19 17:49:31,452 INFO  * Debugger PIN: 125-377-655
+2024-12-19 17:49:32,855 INFO 127.0.0.1 - - [19/Dec/2024 17:49:32] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:49:33,119 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:49:33,155 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:49:33,346 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.DatabaseError) ORA-02289: ½ÃÄö½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-19 17:49:33,346 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:49:33,346 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.DatabaseError) ORA-02289: ½ÃÄö½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:49:33,347 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:49:33,347 INFO 127.0.0.1 - - [19/Dec/2024 17:49:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:49:33,551 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:49:33,581 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:49:33,584 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.DatabaseError) ORA-02289: ½ÃÄö½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:49:33,584 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:49:33,585 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.DatabaseError) ORA-02289: ½ÃÄö½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:49:33,586 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:49:33,587 INFO 127.0.0.1 - - [19/Dec/2024 17:49:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:49:34,866 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:49:34,892 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:49:34,892 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.DatabaseError) ORA-02289: ½ÃÄö½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:49:34,893 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:49:34,893 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.DatabaseError) ORA-02289: ½ÃÄö½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:49:34,895 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:49:34,895 INFO 127.0.0.1 - - [19/Dec/2024 17:49:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:49:35,552 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:49:35,579 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:49:35,581 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.DatabaseError) ORA-02289: ½ÃÄö½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:49:35,582 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:49:35,582 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.DatabaseError) ORA-02289: ½ÃÄö½º°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/4xp6) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:49:35,583 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:49:35,584 INFO 127.0.0.1 - - [19/Dec/2024 17:49:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:50:13,661 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:50:13,686 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 17:50:13,686 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 17:50:13,687 INFO  * Restarting with stat
+2024-12-19 17:50:17,358 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:50:17,368 WARNING  * Debugger is active!
+2024-12-19 17:50:17,370 INFO  * Debugger PIN: 125-377-655
+2024-12-19 17:50:18,488 INFO 127.0.0.1 - - [19/Dec/2024 17:50:18] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:50:18,753 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:50:18,787 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:50:19,003 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-00001: ¹«°á¼º Á¦¾à Á¶°Ç(C##OSPREYAI.SYS_C0023790)¿¡ À§¹èµË´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 17:50:19,004 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:50:19,004 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.IntegrityError) ORA-00001: ¹«°á¼º Á¦¾à Á¶°Ç(C##OSPREYAI.SYS_C0023790)¿¡ À§¹èµË´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:50:19,004 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:50:19,004 INFO 127.0.0.1 - - [19/Dec/2024 17:50:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:50:19,188 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:50:19,214 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:50:19,216 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.IntegrityError) ORA-00001: ¹«°á¼º Á¦¾à Á¶°Ç(C##OSPREYAI.SYS_C0023790)¿¡ À§¹èµË´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:50:19,217 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:50:19,217 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.IntegrityError) ORA-00001: ¹«°á¼º Á¦¾à Á¶°Ç(C##OSPREYAI.SYS_C0023790)¿¡ À§¹èµË´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:50:19,218 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:50:19,218 INFO 127.0.0.1 - - [19/Dec/2024 17:50:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:50:20,493 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 17:50:20,517 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 17:50:20,517 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.IntegrityError) ORA-00001: ¹«°á¼º Á¦¾à Á¶°Ç(C##OSPREYAI.SYS_C0023790)¿¡ À§¹èµË´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:50:20,517 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 17:50:20,517 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (cx_Oracle.IntegrityError) ORA-00001: ¹«°á¼º Á¦¾à Á¶°Ç(C##OSPREYAI.SYS_C0023790)¿¡ À§¹èµË´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-12-19 17:50:20,517 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 17:50:20,518 INFO 127.0.0.1 - - [19/Dec/2024 17:50:20] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 17:51:38,273 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 17:51:48,085 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:51:48,097 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 17:51:48,097 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 17:51:48,098 INFO  * Restarting with stat
+2024-12-19 17:51:51,010 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 17:51:51,019 WARNING  * Debugger is active!
+2024-12-19 17:51:51,021 INFO  * Debugger PIN: 125-377-655
+2024-12-19 18:00:11,575 INFO 127.0.0.1 - - [19/Dec/2024 18:00:11] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:00:11,841 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:00:11,876 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:00:12,085 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: 'correct_posture_count' is an invalid keyword argument for SquatFeedback
+2024-12-19 18:00:12,087 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:00:12,093 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: 'correct_posture_count' is an invalid keyword argument for SquatFeedback
+2024-12-19 18:00:12,093 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:00:12,094 INFO 127.0.0.1 - - [19/Dec/2024 18:00:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:00:12,268 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:00:12,293 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:00:12,300 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: 'correct_posture_count' is an invalid keyword argument for SquatFeedback
+2024-12-19 18:00:12,300 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:00:12,301 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: 'correct_posture_count' is an invalid keyword argument for SquatFeedback
+2024-12-19 18:00:12,301 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:00:12,302 INFO 127.0.0.1 - - [19/Dec/2024 18:00:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:00:13,598 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:00:13,622 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:00:13,626 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: 'correct_posture_count' is an invalid keyword argument for SquatFeedback
+2024-12-19 18:00:13,627 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:00:13,628 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: 'correct_posture_count' is an invalid keyword argument for SquatFeedback
+2024-12-19 18:00:13,629 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:00:13,629 INFO 127.0.0.1 - - [19/Dec/2024 18:00:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:00:55,318 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 18:00:59,894 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:00:59,907 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 18:00:59,907 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 18:00:59,909 INFO  * Restarting with stat
+2024-12-19 18:01:02,972 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:01:02,993 WARNING  * Debugger is active!
+2024-12-19 18:01:02,997 INFO  * Debugger PIN: 125-377-655
+2024-12-19 18:01:05,424 INFO 127.0.0.1 - - [19/Dec/2024 18:01:05] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:01:05,670 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:01:05,752 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:01:05,753 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=168.41345077094337, knee_position=0.19374090433120728, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:01:05,983 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'a17d69b7-6e39-4c09-b774-198a9ae00d23', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:01:05,985 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 168.41345077094337, 'knee_position': 0.19374090433120728, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:01:05,986 INFO 127.0.0.1 - - [19/Dec/2024 18:01:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:01:06,116 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:01:06,161 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:01:06,161 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=175.52156328417843, knee_position=0.06067630648612976, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:01:06,169 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': '930b37b3-5205-45f3-8b39-58ca88230409', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:01:06,170 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 175.52156328417843, 'knee_position': 0.06067630648612976, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:01:06,171 INFO 127.0.0.1 - - [19/Dec/2024 18:01:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:01:07,426 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:01:07,469 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:01:07,473 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'test_user', 'total_attempts': 1, 'correct_count': 1, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:01:07,474 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=171.91423905135133, knee_position=-0.11881256103515625, feedback=µ¿ÀÛ ¿Ï·á
+2024-12-19 18:01:07,479 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'cbf4c8d8-a670-4ac9-8483-089fbcc1a9ce', 'total_attempts': 1, 'correct_count': 1, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:01:07,479 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 171.91423905135133, 'knee_position': -0.11881256103515625, 'feedback': 'µ¿ÀÛ ¿Ï·á'}
+2024-12-19 18:01:07,480 INFO 127.0.0.1 - - [19/Dec/2024 18:01:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:02:56,018 INFO 127.0.0.1 - - [19/Dec/2024 18:02:56] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:02:56,283 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:02:56,323 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:02:56,338 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:02:56,338 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:02:56,345 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': '704c0f9d-dcd6-4572-946d-fb86979103e2', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:02:56,350 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:02:56,350 INFO 127.0.0.1 - - [19/Dec/2024 18:02:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:02:56,703 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:02:56,729 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:02:56,745 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:02:56,745 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:02:56,747 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': '6b4556ba-ec7e-4d74-a65f-e96ce7979111', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:02:56,747 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:02:56,747 INFO 127.0.0.1 - - [19/Dec/2024 18:02:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:02:58,013 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:02:58,038 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:02:58,041 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:02:58,041 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:02:58,043 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': '84093259-4967-448d-aa0f-400de6d03bac', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:02:58,044 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:02:58,044 INFO 127.0.0.1 - - [19/Dec/2024 18:02:58] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:02:58,702 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:02:58,728 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:02:58,731 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:02:58,731 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:02:58,733 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'd0f367de-2ede-445c-8aa8-6aff296096a0', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:02:58,733 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:02:58,733 INFO 127.0.0.1 - - [19/Dec/2024 18:02:58] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:04:46,731 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:04:46,756 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 18:04:46,757 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 18:04:46,758 INFO  * Restarting with stat
+2024-12-19 18:04:50,371 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:04:50,386 WARNING  * Debugger is active!
+2024-12-19 18:04:50,391 INFO  * Debugger PIN: 125-377-655
+2024-12-19 18:04:50,409 INFO 127.0.0.1 - - [19/Dec/2024 18:04:50] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:04:50,412 INFO 127.0.0.1 - - [19/Dec/2024 18:04:50] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:04:50,414 INFO 127.0.0.1 - - [19/Dec/2024 18:04:50] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:04:50,508 INFO 127.0.0.1 - - [19/Dec/2024 18:04:50] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:04:50,723 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:04:50,725 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:04:50,725 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:04:50,789 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:04:50,825 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:04:50,826 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2024-12-19 18:04:50,827 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:04:50,827 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2024-12-19 18:04:50,831 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:04:50,881 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:04:50,882 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2024-12-19 18:04:50,915 INFO 127.0.0.1 - - [19/Dec/2024 18:04:50] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2024-12-19 18:04:50,918 INFO 127.0.0.1 - - [19/Dec/2024 18:04:50] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2024-12-19 18:04:50,925 ERROR Error on request:
+Traceback (most recent call last):
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 152, in update_daily_feedback
+    entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 192, in squat_analysis
+    update_daily_feedback(uuid, result.get('feedback') == "µ¿ÀÛ ¿Ï·á")  # Update the feedback in DB
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 172, in update_daily_feedback
+    session.rollback()  # Rollback the session in case of an error
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 1990, in rollback
+    self._transaction.rollback(_to_root=True)
+  File "<string>", line 2, in rollback
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 333, in execute
+    for data in application_iter:
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 378, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [WinError 6] ÇÚµéÀÌ Àß¸øµÇ¾ú½À´Ï´Ù
+2024-12-19 18:04:50,926 ERROR Error on request:
+Traceback (most recent call last):
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 152, in update_daily_feedback
+    entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 192, in squat_analysis
+    update_daily_feedback(uuid, result.get('feedback') == "µ¿ÀÛ ¿Ï·á")  # Update the feedback in DB
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 172, in update_daily_feedback
+    session.rollback()  # Rollback the session in case of an error
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 1990, in rollback
+    self._transaction.rollback(_to_root=True)
+  File "<string>", line 2, in rollback
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 333, in execute
+    for data in application_iter:
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 378, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [WinError 6] ÇÚµéÀÌ Àß¸øµÇ¾ú½À´Ï´Ù
+2024-12-19 18:04:50,929 INFO 127.0.0.1 - - [19/Dec/2024 18:04:50] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2024-12-19 18:04:50,934 ERROR Error on request:
+Traceback (most recent call last):
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 152, in update_daily_feedback
+    entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 192, in squat_analysis
+    update_daily_feedback(uuid, result.get('feedback') == "µ¿ÀÛ ¿Ï·á")  # Update the feedback in DB
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 172, in update_daily_feedback
+    session.rollback()  # Rollback the session in case of an error
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 1990, in rollback
+    self._transaction.rollback(_to_root=True)
+  File "<string>", line 2, in rollback
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 333, in execute
+    for data in application_iter:
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 378, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [WinError 6] ÇÚµéÀÌ Àß¸øµÇ¾ú½À´Ï´Ù
+2024-12-19 18:04:51,116 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:04:51,116 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:04:51,120 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': '42c70097-dc80-4859-8668-0156608dc1bf', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:04:51,121 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:04:51,121 INFO 127.0.0.1 - - [19/Dec/2024 18:04:51] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:04:51,504 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:04:51,532 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:04:51,546 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:04:51,547 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:04:51,555 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': '68fdb21f-0ab0-47a4-8264-a1f58aa61b5e', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:04:51,557 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:04:51,557 INFO 127.0.0.1 - - [19/Dec/2024 18:04:51] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:04:52,199 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:04:52,229 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:04:52,238 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:04:52,239 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:04:52,243 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ¿À·ù: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': '255d3001-e404-417b-a0ae-df736e1cb969', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 19), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-19 18:04:52,243 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:04:52,244 INFO 127.0.0.1 - - [19/Dec/2024 18:04:52] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:08:50,179 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 18:08:59,667 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:08:59,687 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 18:08:59,687 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 18:08:59,689 INFO  * Restarting with stat
+2024-12-19 18:09:03,475 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:09:03,489 WARNING  * Debugger is active!
+2024-12-19 18:09:03,493 INFO  * Debugger PIN: 125-377-655
+2024-12-19 18:09:38,856 INFO 127.0.0.1 - - [19/Dec/2024 18:09:38] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:39,116 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:09:39,152 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:09:39,400 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:39,400 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:09:39,405 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:39,405 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:09:39,406 INFO 127.0.0.1 - - [19/Dec/2024 18:09:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:39,572 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:09:39,595 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:09:39,598 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:39,599 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:09:39,603 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:39,603 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:09:39,604 INFO 127.0.0.1 - - [19/Dec/2024 18:09:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:40,881 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:09:40,907 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:09:40,916 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:40,916 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:09:40,919 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:40,919 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:09:40,920 INFO 127.0.0.1 - - [19/Dec/2024 18:09:40] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:41,566 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:09:41,591 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:09:41,606 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:41,606 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:09:41,609 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:41,609 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:09:41,609 INFO 127.0.0.1 - - [19/Dec/2024 18:09:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:42,873 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:09:42,897 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:09:42,906 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:42,906 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:09:42,909 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:42,909 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:09:42,909 INFO 127.0.0.1 - - [19/Dec/2024 18:09:42] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:43,566 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:09:43,591 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:09:43,598 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:43,599 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:09:43,601 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:43,601 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:09:43,601 INFO 127.0.0.1 - - [19/Dec/2024 18:09:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:44,881 INFO 127.0.0.1 - - [19/Dec/2024 18:09:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:45,142 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:09:45,166 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:09:45,179 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:45,179 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:09:45,181 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:45,181 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:09:45,181 INFO 127.0.0.1 - - [19/Dec/2024 18:09:45] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:45,575 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:09:45,608 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:09:45,611 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:45,611 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:09:45,616 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:45,616 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:09:45,617 INFO 127.0.0.1 - - [19/Dec/2024 18:09:45] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:09:46,871 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:09:46,894 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:09:46,901 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:46,901 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:09:46,906 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:09:46,906 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:09:46,908 INFO 127.0.0.1 - - [19/Dec/2024 18:09:46] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:50,203 INFO 127.0.0.1 - - [19/Dec/2024 18:10:50] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:50,466 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:50,493 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:10:50,503 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:50,504 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:10:50,506 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:50,506 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:10:50,507 INFO 127.0.0.1 - - [19/Dec/2024 18:10:50] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:50,882 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:50,916 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:10:50,924 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:50,924 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:10:50,929 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:50,930 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:10:50,931 INFO 127.0.0.1 - - [19/Dec/2024 18:10:50] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:52,194 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:52,219 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:10:52,228 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:52,228 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:10:52,233 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:52,233 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:10:52,233 INFO 127.0.0.1 - - [19/Dec/2024 18:10:52] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:52,891 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:52,915 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:10:52,923 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:52,923 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:10:52,926 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:52,926 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:10:52,927 INFO 127.0.0.1 - - [19/Dec/2024 18:10:52] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:54,199 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:54,229 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:10:54,237 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:54,237 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:10:54,242 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:54,243 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:10:54,243 INFO 127.0.0.1 - - [19/Dec/2024 18:10:54] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:54,903 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:54,979 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:54,979 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=172.81073429667978, knee_position=0.11093318462371826, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:10:54,984 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:54,984 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 172.81073429667978, 'knee_position': 0.11093318462371826, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:10:54,985 INFO 127.0.0.1 - - [19/Dec/2024 18:10:54] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:56,203 INFO 127.0.0.1 - - [19/Dec/2024 18:10:56] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:56,469 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:56,548 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:56,549 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=174.03596972706896, knee_position=0.24654200673103333, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:10:56,566 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:56,566 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 174.03596972706896, 'knee_position': 0.24654200673103333, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:10:56,567 INFO 127.0.0.1 - - [19/Dec/2024 18:10:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:56,891 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:56,953 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:56,954 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=110.41170590140105, knee_position=0.02331787347793579, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:10:56,966 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:56,968 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 110.41170590140105, 'knee_position': 0.02331787347793579, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:10:56,969 INFO 127.0.0.1 - - [19/Dec/2024 18:10:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:58,196 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:58,250 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:58,263 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:58,263 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=41.3772964514623, knee_position=-0.13803577423095703, feedback=µ¿ÀÛ ¿Ï·á
+2024-12-19 18:10:58,267 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:58,267 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 41.3772964514623, 'knee_position': -0.13803577423095703, 'feedback': 'µ¿ÀÛ ¿Ï·á'}
+2024-12-19 18:10:58,268 INFO 127.0.0.1 - - [19/Dec/2024 18:10:58] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:10:58,880 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:10:58,937 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:58,937 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=145.79275886921576, knee_position=0.007717549800872803, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:10:58,943 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:10:58,943 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 145.79275886921576, 'knee_position': 0.007717549800872803, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:10:58,944 INFO 127.0.0.1 - - [19/Dec/2024 18:10:58] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:11:00,196 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:11:00,243 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:11:00,251 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:11:00,251 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=0.29783268401942126, knee_position=-0.048095881938934326, feedback=µ¿ÀÛ ¿Ï·á
+2024-12-19 18:11:00,253 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:11:00,253 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 0.29783268401942126, 'knee_position': -0.048095881938934326, 'feedback': 'µ¿ÀÛ ¿Ï·á'}
+2024-12-19 18:11:00,253 INFO 127.0.0.1 - - [19/Dec/2024 18:11:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:11:00,885 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:11:00,931 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:11:00,933 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=99.71633633027382, knee_position=-0.022475123405456543, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:11:00,945 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:11:00,945 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 99.71633633027382, 'knee_position': -0.022475123405456543, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:11:00,946 INFO 127.0.0.1 - - [19/Dec/2024 18:11:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:11:02,185 INFO 127.0.0.1 - - [19/Dec/2024 18:11:02] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:11:02,452 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:11:02,500 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:11:02,669 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:11:02,669 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=12.883887618207938, knee_position=-0.0052146315574646, feedback=µ¿ÀÛ ¿Ï·á
+2024-12-19 18:11:02,672 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:11:02,672 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 12.883887618207938, 'knee_position': -0.0052146315574646, 'feedback': 'µ¿ÀÛ ¿Ï·á'}
+2024-12-19 18:11:02,672 INFO 127.0.0.1 - - [19/Dec/2024 18:11:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:38,661 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 18:13:45,836 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:13:45,867 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 18:13:45,867 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 18:13:45,868 INFO  * Restarting with stat
+2024-12-19 18:13:49,473 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:13:49,486 WARNING  * Debugger is active!
+2024-12-19 18:13:49,491 INFO  * Debugger PIN: 125-377-655
+2024-12-19 18:13:49,502 INFO 127.0.0.1 - - [19/Dec/2024 18:13:49] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:49,503 INFO 127.0.0.1 - - [19/Dec/2024 18:13:49] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:49,811 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:49,813 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:49,858 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:49,874 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:49,875 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2024-12-19 18:13:49,897 INFO 127.0.0.1 - - [19/Dec/2024 18:13:49] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2024-12-19 18:13:49,901 ERROR Error on request:
+Traceback (most recent call last):
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 158, in update_daily_feedback
+    entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 199, in squat_analysis
+    update_daily_feedback(uuid, result.get('feedback') == "µ¿ÀÛ ¿Ï·á")  # Update the feedback in DB
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 178, in update_daily_feedback
+    session.rollback()  # Rollback the session in case of an error
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 1990, in rollback
+    self._transaction.rollback(_to_root=True)
+  File "<string>", line 2, in rollback
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 333, in execute
+    for data in application_iter:
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 378, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [WinError 6] ÇÚµéÀÌ Àß¸øµÇ¾ú½À´Ï´Ù
+2024-12-19 18:13:50,066 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:50,066 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:50,068 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:50,068 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:50,068 INFO 127.0.0.1 - - [19/Dec/2024 18:13:50] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:50,136 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:50,163 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:50,166 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:50,167 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:50,169 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:50,169 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:50,169 INFO 127.0.0.1 - - [19/Dec/2024 18:13:50] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:51,132 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:51,164 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:51,171 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:51,171 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:51,174 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:51,174 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:51,174 INFO 127.0.0.1 - - [19/Dec/2024 18:13:51] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:51,825 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:51,850 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:51,860 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:51,860 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:51,863 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:51,863 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:51,863 INFO 127.0.0.1 - - [19/Dec/2024 18:13:51] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:53,134 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:53,158 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:53,161 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:53,163 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:53,164 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:53,165 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:53,165 INFO 127.0.0.1 - - [19/Dec/2024 18:13:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:53,826 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:53,848 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:53,856 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:53,857 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:53,861 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:53,861 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:53,861 INFO 127.0.0.1 - - [19/Dec/2024 18:13:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:55,156 INFO 127.0.0.1 - - [19/Dec/2024 18:13:55] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:55,419 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:55,445 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:55,454 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:55,454 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:55,456 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:55,456 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:55,456 INFO 127.0.0.1 - - [19/Dec/2024 18:13:55] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:55,829 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:55,854 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:55,863 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:55,864 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:55,866 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:55,866 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:55,866 INFO 127.0.0.1 - - [19/Dec/2024 18:13:55] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:57,145 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:57,167 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:57,177 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:57,177 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:57,178 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:57,178 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:57,178 INFO 127.0.0.1 - - [19/Dec/2024 18:13:57] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:57,833 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:57,861 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:57,871 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:57,871 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:57,874 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:57,874 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:57,875 INFO 127.0.0.1 - - [19/Dec/2024 18:13:57] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:59,138 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:59,164 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:59,169 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:59,169 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:59,172 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:59,172 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:59,172 INFO 127.0.0.1 - - [19/Dec/2024 18:13:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:13:59,830 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:13:59,856 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:13:59,865 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:59,865 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:13:59,870 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:13:59,871 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:13:59,871 INFO 127.0.0.1 - - [19/Dec/2024 18:13:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:01,151 INFO 127.0.0.1 - - [19/Dec/2024 18:14:01] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:01,399 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:01,425 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:14:01,438 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:01,439 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:14:01,441 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:01,441 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:14:01,442 INFO 127.0.0.1 - - [19/Dec/2024 18:14:01] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:01,836 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:01,920 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:01,932 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:01,933 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=17.60002423110022, knee_position=0.1476402971893549, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:14:01,937 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:01,937 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 17.60002423110022, 'knee_position': 0.1476402971893549, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:14:01,938 INFO 127.0.0.1 - - [19/Dec/2024 18:14:01] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:03,141 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:03,188 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:03,198 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:03,199 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=44.875352819729294, knee_position=0.02976302057504654, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:14:03,201 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:03,201 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 44.875352819729294, 'knee_position': 0.02976302057504654, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:14:03,201 INFO 127.0.0.1 - - [19/Dec/2024 18:14:03] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:03,833 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:03,885 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:03,900 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:03,901 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=28.57107835239327, knee_position=0.09855647571384907, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:14:03,907 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:03,907 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 28.57107835239327, 'knee_position': 0.09855647571384907, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:14:03,907 INFO 127.0.0.1 - - [19/Dec/2024 18:14:03] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:05,135 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:05,188 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:05,197 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:05,198 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=153.98669517597492, knee_position=-0.18953973054885864, feedback=¹«¸­À» ¾ÕÀ¸·Î ³»¼¼¿ä
+2024-12-19 18:14:05,199 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:05,200 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 153.98669517597492, 'knee_position': -0.18953973054885864, 'feedback': '¹«¸­À» ¾ÕÀ¸·Î ³»¼¼¿ä'}
+2024-12-19 18:14:05,200 INFO 127.0.0.1 - - [19/Dec/2024 18:14:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:05,834 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:05,875 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:14:05,884 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:05,884 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:14:05,887 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:05,887 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:14:05,888 INFO 127.0.0.1 - - [19/Dec/2024 18:14:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:07,141 INFO 127.0.0.1 - - [19/Dec/2024 18:14:07] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:07,405 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:07,475 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:07,475 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=117.88135867382809, knee_position=0.06322532892227173, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:14:07,618 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:07,618 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 117.88135867382809, 'knee_position': 0.06322532892227173, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:14:07,618 INFO 127.0.0.1 - - [19/Dec/2024 18:14:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:07,850 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:07,961 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:07,963 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=118.87179594080766, knee_position=0.05449336767196655, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:14:07,978 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:07,979 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 118.87179594080766, 'knee_position': 0.05449336767196655, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:14:07,981 INFO 127.0.0.1 - - [19/Dec/2024 18:14:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:09,134 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:09,185 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:09,185 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=115.93504101356301, knee_position=0.05645751953125, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:14:09,190 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:09,190 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 115.93504101356301, 'knee_position': 0.05645751953125, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:14:09,190 INFO 127.0.0.1 - - [19/Dec/2024 18:14:09] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:09,833 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:09,868 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:14:09,874 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:09,874 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:14:09,879 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:09,879 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:14:09,880 INFO 127.0.0.1 - - [19/Dec/2024 18:14:09] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:11,147 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:11,209 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:11,216 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:11,217 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=0.9803021915218659, knee_position=0.0036554932594299316, feedback=µ¿ÀÛ ¿Ï·á
+2024-12-19 18:14:11,218 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:11,218 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 0.9803021915218659, 'knee_position': 0.0036554932594299316, 'feedback': 'µ¿ÀÛ ¿Ï·á'}
+2024-12-19 18:14:11,219 INFO 127.0.0.1 - - [19/Dec/2024 18:14:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:11,834 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:11,894 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:11,905 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:11,905 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=2.432023275725229, knee_position=0.014276742935180664, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:14:11,907 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:11,907 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 2.432023275725229, 'knee_position': 0.014276742935180664, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:14:11,909 INFO 127.0.0.1 - - [19/Dec/2024 18:14:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:13,138 INFO 127.0.0.1 - - [19/Dec/2024 18:14:13] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:13,405 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:13,458 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:13,465 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:13,465 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=1.1373467467598612, knee_position=0.008266925811767578, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:14:13,472 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:13,472 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 1.1373467467598612, 'knee_position': 0.008266925811767578, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:14:13,472 INFO 127.0.0.1 - - [19/Dec/2024 18:14:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:13,832 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:13,879 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:13,886 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:13,886 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=2.3376863190276587, knee_position=0.0005601644515991211, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:14:13,891 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:13,891 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 2.3376863190276587, 'knee_position': 0.0005601644515991211, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:14:13,892 INFO 127.0.0.1 - - [19/Dec/2024 18:14:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:15,133 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:15,180 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:15,183 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:15,185 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=1.0359060096822685, knee_position=0.017998218536376953, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:14:15,187 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:15,187 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 1.0359060096822685, 'knee_position': 0.017998218536376953, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:14:15,187 INFO 127.0.0.1 - - [19/Dec/2024 18:14:15] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:15,839 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:15,892 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:15,904 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:15,904 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=4.733972164373718, knee_position=0.010469198226928711, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:14:15,906 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:15,906 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 4.733972164373718, 'knee_position': 0.010469198226928711, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:14:15,906 INFO 127.0.0.1 - - [19/Dec/2024 18:14:15] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:17,138 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:17,189 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:17,189 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=93.49396989823757, knee_position=0.047757089138031006, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:14:17,200 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:17,200 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 93.49396989823757, 'knee_position': 0.047757089138031006, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:14:17,201 INFO 127.0.0.1 - - [19/Dec/2024 18:14:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:17,845 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:17,910 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:17,910 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=111.90374887764814, knee_position=0.04451647400856018, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:14:17,914 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:17,914 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 111.90374887764814, 'knee_position': 0.04451647400856018, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:14:17,914 INFO 127.0.0.1 - - [19/Dec/2024 18:14:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:19,141 INFO 127.0.0.1 - - [19/Dec/2024 18:14:19] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:19,407 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:19,454 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:19,455 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=120.2133527172655, knee_position=0.04616245627403259, feedback=¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2024-12-19 18:14:19,461 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:19,462 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 120.2133527172655, 'knee_position': 0.04616245627403259, 'feedback': '¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù'}
+2024-12-19 18:14:19,462 INFO 127.0.0.1 - - [19/Dec/2024 18:14:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:19,827 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:19,874 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:19,889 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:19,889 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=37.623324568047046, knee_position=-0.012774348258972168, feedback=µ¿ÀÛ ¿Ï·á
+2024-12-19 18:14:19,895 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:19,895 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 37.623324568047046, 'knee_position': -0.012774348258972168, 'feedback': 'µ¿ÀÛ ¿Ï·á'}
+2024-12-19 18:14:19,896 INFO 127.0.0.1 - - [19/Dec/2024 18:14:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:14:21,140 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:14:21,201 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:21,216 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:21,216 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=3.0007553763679713, knee_position=-0.02139359712600708, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:14:21,223 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:14:21,223 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 3.0007553763679713, 'knee_position': -0.02139359712600708, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:14:21,224 INFO 127.0.0.1 - - [19/Dec/2024 18:14:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:15:42,858 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 18:15:49,465 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:15:49,488 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 18:15:49,488 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 18:15:49,491 INFO  * Restarting with stat
+2024-12-19 18:15:53,710 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:15:53,723 WARNING  * Debugger is active!
+2024-12-19 18:15:53,726 INFO  * Debugger PIN: 125-377-655
+2024-12-19 18:16:33,881 INFO 127.0.0.1 - - [19/Dec/2024 18:16:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:16:34,143 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:16:34,177 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:16:34,421 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:16:34,421 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:16:34,425 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:16:34,425 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:16:34,425 INFO 127.0.0.1 - - [19/Dec/2024 18:16:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:16:34,575 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:16:34,599 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:16:34,603 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:16:34,603 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:16:34,605 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:16:34,605 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:16:34,605 INFO 127.0.0.1 - - [19/Dec/2024 18:16:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:16:35,886 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:16:35,911 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:16:35,917 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:16:35,917 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:16:35,918 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:16:35,918 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:16:35,920 INFO 127.0.0.1 - - [19/Dec/2024 18:16:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:16:36,578 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:16:36,603 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:16:36,613 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:16:36,613 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:16:36,616 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:16:36,616 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:16:36,617 INFO 127.0.0.1 - - [19/Dec/2024 18:16:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:17:57,199 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 18:18:02,944 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:18:02,967 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 18:18:02,967 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 18:18:02,968 INFO  * Restarting with stat
+2024-12-19 18:18:06,559 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:18:06,568 WARNING  * Debugger is active!
+2024-12-19 18:18:06,573 INFO  * Debugger PIN: 125-377-655
+2024-12-19 18:18:06,587 INFO 127.0.0.1 - - [19/Dec/2024 18:18:06] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:18:06,852 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:18:06,889 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:18:07,062 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:18:07,064 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:18:07,067 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:18:07,067 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:18:07,067 INFO 127.0.0.1 - - [19/Dec/2024 18:18:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:18:07,284 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:18:07,309 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:18:07,318 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:18:07,318 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:18:07,321 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:18:07,321 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:18:07,322 INFO 127.0.0.1 - - [19/Dec/2024 18:18:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:18:08,596 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:18:08,621 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:18:08,631 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:18:08,631 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:18:08,634 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:18:08,635 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:18:08,635 INFO 127.0.0.1 - - [19/Dec/2024 18:18:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:20:19,157 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 18:20:26,744 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:20:26,776 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 18:20:26,776 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 18:20:26,778 INFO  * Restarting with stat
+2024-12-19 18:20:30,770 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:20:30,780 WARNING  * Debugger is active!
+2024-12-19 18:20:30,783 INFO  * Debugger PIN: 125-377-655
+2024-12-19 18:20:43,909 INFO 127.0.0.1 - - [19/Dec/2024 18:20:43] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:20:44,156 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:20:44,188 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:20:44,373 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:44,373 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:20:44,375 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:44,375 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:20:44,375 INFO 127.0.0.1 - - [19/Dec/2024 18:20:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:20:44,600 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:20:44,626 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:20:44,635 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:44,636 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:20:44,638 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:44,638 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:20:44,638 INFO 127.0.0.1 - - [19/Dec/2024 18:20:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:20:45,913 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:20:45,937 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:20:45,950 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:45,950 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:20:45,952 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:45,952 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:20:45,953 INFO 127.0.0.1 - - [19/Dec/2024 18:20:45] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:20:46,591 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:20:46,616 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:20:46,620 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:46,621 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:20:46,622 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:46,623 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:20:46,624 INFO 127.0.0.1 - - [19/Dec/2024 18:20:46] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:20:47,903 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:20:47,932 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-19 18:20:47,939 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:47,939 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-19 18:20:47,944 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:20:47,944 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-19 18:20:47,945 INFO 127.0.0.1 - - [19/Dec/2024 18:20:47] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:21:42,640 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-19 18:22:55,435 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:22:55,455 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-19 18:22:55,455 INFO [33mPress CTRL+C to quit[0m
+2024-12-19 18:22:55,457 INFO  * Restarting with stat
+2024-12-19 18:22:59,100 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-19 18:22:59,115 WARNING  * Debugger is active!
+2024-12-19 18:22:59,118 INFO  * Debugger PIN: 125-377-655
+2024-12-19 18:22:59,131 INFO 127.0.0.1 - - [19/Dec/2024 18:22:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:22:59,131 INFO 127.0.0.1 - - [19/Dec/2024 18:22:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:22:59,133 INFO 127.0.0.1 - - [19/Dec/2024 18:22:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:22:59,134 INFO 127.0.0.1 - - [19/Dec/2024 18:22:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:22:59,435 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:22:59,437 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:22:59,444 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:22:59,446 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:22:59,600 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:22:59,600 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:22:59,613 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2024-12-19 18:22:59,614 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:22:59,614 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2024-12-19 18:22:59,614 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:22:59,614 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2024-12-19 18:22:59,649 INFO 127.0.0.1 - - [19/Dec/2024 18:22:59] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2024-12-19 18:22:59,652 INFO 127.0.0.1 - - [19/Dec/2024 18:22:59] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2024-12-19 18:22:59,656 INFO 127.0.0.1 - - [19/Dec/2024 18:22:59] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2024-12-19 18:22:59,662 ERROR Error on request:
+Traceback (most recent call last):
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 160, in update_daily_feedback
+    entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 202, in squat_analysis
+    update_daily_feedback(uuid, result.get('feedback') == "µ¿ÀÛ ¿Ï·á")  # Update the feedback in DB
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 180, in update_daily_feedback
+    session.rollback()  # ¿À·ù ¹ß»ý ½Ã ¼¼¼Ç ·Ñ¹é
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 1990, in rollback
+    self._transaction.rollback(_to_root=True)
+  File "<string>", line 2, in rollback
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 333, in execute
+    for data in application_iter:
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 378, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [WinError 6] ÇÚµéÀÌ Àß¸øµÇ¾ú½À´Ï´Ù
+2024-12-19 18:22:59,662 ERROR Error on request:
+Traceback (most recent call last):
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 160, in update_daily_feedback
+    entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 202, in squat_analysis
+    update_daily_feedback(uuid, result.get('feedback') == "µ¿ÀÛ ¿Ï·á")  # Update the feedback in DB
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 180, in update_daily_feedback
+    session.rollback()  # ¿À·ù ¹ß»ý ½Ã ¼¼¼Ç ·Ñ¹é
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 1990, in rollback
+    self._transaction.rollback(_to_root=True)
+  File "<string>", line 2, in rollback
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 333, in execute
+    for data in application_iter:
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 378, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [WinError 6] ÇÚµéÀÌ Àß¸øµÇ¾ú½À´Ï´Ù
+2024-12-19 18:22:59,662 ERROR Error on request:
+Traceback (most recent call last):
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 160, in update_daily_feedback
+    entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 202, in squat_analysis
+    update_daily_feedback(uuid, result.get('feedback') == "µ¿ÀÛ ¿Ï·á")  # Update the feedback in DB
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 180, in update_daily_feedback
+    session.rollback()  # ¿À·ù ¹ß»ý ½Ã ¼¼¼Ç ·Ñ¹é
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 1990, in rollback
+    self._transaction.rollback(_to_root=True)
+  File "<string>", line 2, in rollback
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 333, in execute
+    for data in application_iter:
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 378, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [WinError 6] ÇÚµéÀÌ Àß¸øµÇ¾ú½À´Ï´Ù
+2024-12-19 18:22:59,829 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:22:59,830 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=1.1239827378381957, knee_position=-0.037528783082962036, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:22:59,833 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:22:59,833 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 1.1239827378381957, 'knee_position': -0.037528783082962036, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:22:59,833 INFO 127.0.0.1 - - [19/Dec/2024 18:22:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:23:00,214 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:23:00,264 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:23:00,287 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:23:00,288 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=1.538813228047854, knee_position=-0.026235908269882202, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:23:00,291 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:23:00,292 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 1.538813228047854, 'knee_position': -0.026235908269882202, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:23:00,293 INFO 127.0.0.1 - - [19/Dec/2024 18:23:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:23:00,907 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:23:00,953 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:23:00,965 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:23:00,966 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=1.4489060586827534, knee_position=-0.023050129413604736, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:23:00,969 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:23:00,970 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 1.4489060586827534, 'knee_position': -0.023050129413604736, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:23:00,970 INFO 127.0.0.1 - - [19/Dec/2024 18:23:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:29:38,374 INFO 127.0.0.1 - - [19/Dec/2024 18:29:38] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:29:38,641 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:29:38,692 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:29:38,700 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:29:38,701 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=2.078399686225748, knee_position=-0.027461141347885132, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:29:38,704 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:29:38,704 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 2.078399686225748, 'knee_position': -0.027461141347885132, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:29:38,704 INFO 127.0.0.1 - - [19/Dec/2024 18:29:38] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:29:39,072 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:29:39,115 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:29:39,122 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:29:39,123 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=3.0493976665708677, knee_position=-0.02056407928466797, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:29:39,126 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:29:39,126 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 3.0493976665708677, 'knee_position': -0.02056407928466797, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:29:39,127 INFO 127.0.0.1 - - [19/Dec/2024 18:29:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-19 18:29:40,365 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-19 18:29:40,427 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.
+2024-12-19 18:29:40,438 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:29:40,438 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=2.831369991717523, knee_position=-0.03049600124359131, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-19 18:29:40,443 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-19 18:29:40,444 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 2.831369991717523, 'knee_position': -0.03049600124359131, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
+2024-12-19 18:29:40,444 INFO 127.0.0.1 - - [19/Dec/2024 18:29:40] "POST /squat-analysis HTTP/1.1" 200 -

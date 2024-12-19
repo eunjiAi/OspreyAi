@@ -1,29 +1,13 @@
--- Member ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-INSERT INTO Member (uuid, name, email, pw, phone_number, is_admin, face_id) 
-VALUES ('uuid-001', 'John Doe', 'john.doe@example.com', 'password123', '1234567890', 0, NULL);
+-- test_user Ãß°¡
+INSERT INTO Member (uuid, name, email, pw, phone_number, is_admin, face_id)
+VALUES ('test_user', 'Å×½ºÆ® »ç¿ëÀÚ', 'test@example.com', 'adminpass', '01012345678', 0, NULL);
 
-INSERT INTO Member (uuid, name, email, pw, phone_number, is_admin, face_id) 
-VALUES ('uuid-002', 'Jane Smith', 'jane.smith@example.com', 'password456', '0987654321', 0, NULL);
+-- Ãß°¡ÀûÀÎ ´õ¹Ì µ¥ÀÌÅÍ¸¦ »ðÀÔÇÕ´Ï´Ù.
+INSERT INTO Member (uuid, name, email, pw, phone_number, is_admin, face_id)
+VALUES ('b62a18d1-56f2-4b71-b123-456cd789abc', '±èÃ¶¼ö', 'kimchulsoo@example.com', 'password123', '01098765432', 0, NULL);
 
-INSERT INTO Member (uuid, name, email, pw, phone_number, is_admin, face_id) 
-VALUES ('uuid-003', 'Admin User', 'admin@example.com', 'adminpass', '1122334455', 1, NULL);
+INSERT INTO Member (uuid, name, email, pw, phone_number, is_admin, face_id)
+VALUES ('1e1e9e5f-bde0-4231-92d1-973413b509dd', '¹Ú¿µÈñ', 'parkyounghee@example.com', 'password123', '01056789012', 0, NULL);
 
--- Squatfeedback ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-INSERT INTO Squatfeedback (squat_id, uuid, total_attempts, correct_count, squat_date) 
-VALUES (1, 'uuid-001', 10, 8, TO_TIMESTAMP('2024-12-18 10:30:00', 'YYYY-MM-DD HH24:MI:SS'));
-
-INSERT INTO Squatfeedback (squat_id, uuid, total_attempts, correct_count, squat_date) 
-VALUES (2, 'uuid-001', 15, 14, TO_TIMESTAMP('2024-12-19 14:45:00', 'YYYY-MM-DD HH24:MI:SS'));
-
-INSERT INTO Squatfeedback (squat_id, uuid, total_attempts, correct_count, squat_date) 
-VALUES (3, 'uuid-002', 20, 18, TO_TIMESTAMP('2024-12-18 09:20:00', 'YYYY-MM-DD HH24:MI:SS'));
-
-INSERT INTO Squatfeedback (squat_id, uuid, total_attempts, correct_count, squat_date) 
-VALUES (4, 'uuid-002', 25, 23, TO_TIMESTAMP('2024-12-19 16:00:00', 'YYYY-MM-DD HH24:MI:SS'));
-
-INSERT INTO Squatfeedback (squat_id, uuid, total_attempts, correct_count, squat_date) 
-VALUES (5, 'uuid-003', 30, 28, TO_TIMESTAMP('2024-12-18 11:10:00', 'YYYY-MM-DD HH24:MI:SS'));
-
-INSERT INTO Squatfeedback (squat_id, uuid, total_attempts, correct_count, squat_date) 
-VALUES (6, 'uuid-003', 12, 10, TO_TIMESTAMP('2024-12-19 13:00:00', 'YYYY-MM-DD HH24:MI:SS'));
-
+INSERT INTO Member (uuid, name, email, pw, phone_number, is_admin, face_id)
+VALUES ('2f2f2f6f-f9a1-452b-bc9d-512e564e3344', 'ÀÌ¹Î¼ö', 'leeminsu@example.com', 'password123', '01034567890', 0, NULL);
