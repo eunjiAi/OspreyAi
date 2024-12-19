@@ -5,20 +5,20 @@
   align-items: center;
   height: 100vh;
   background: linear-gradient(135deg, #f0f8ff, #d1e7ff); 
-  color: #334e68; /* 네이비 톤으로 변경 */
+  color: #334e68; 
   font-family: 'Roboto', sans-serif;
 }
 
 /* 로그인 박스 */
 .login-box {
-  background-color: rgba(255, 255, 255, 0.9); /* 더 밝은 배경색 */
+  background-color: rgba(255, 255, 255, 0.9); 
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); 
   max-width: 400px;
   width: 100%;
   text-align: center;
-  backdrop-filter: blur(8px); /* 블러 효과 유지 */
+  backdrop-filter: blur(8px); 
 }
 
 /* 로그인 제목 */
@@ -26,7 +26,7 @@
   font-size: 36px;
   margin-bottom: 20px;
   font-weight: bold;
-  color: #334e68; /* 네이비 톤으로 변경 */
+  color: #334e68;
   letter-spacing: 2px;
 }
 
@@ -38,7 +38,7 @@
 
 .input-group label {
   font-size: 16px;
-  color: #55697e; /* 회색/블루 톤 */
+  color: #55697e; 
   margin-bottom: 5px;
   display: block;
 }
@@ -50,12 +50,12 @@
   border-radius: 8px;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.2);
-  color: #334e68; /* 텍스트 색상 변경 */
+  color: #334e68; 
   outline: none;
 }
 
 .input-group input::placeholder {
-  color: #8899a6; /* 부드러운 회색 */
+  color: #8899a6;
 }
 
 /* 로그인 버튼 */
@@ -73,14 +73,14 @@
 }
 
 .login-button:hover {
-  background-color: #3a72d9; /* 버튼 호버 시 색상 변경 */
+  background-color: #3a72d9; 
 }
 
-/* 회원가입 링크 스타일 */
+/* 회원가입 링크 */
 .signup-prompt {
   margin-top: 20px;
   font-size: 14px;
-  color: #55697e; /* 회색/블루 톤 */
+  color: #55697e;
 }
 
 .signup-link {
@@ -99,8 +99,8 @@
   padding: 12px;
   font-size: 18px;
   font-weight: bold;
-  color: #334e68; /* 네이비 톤 */
-  background-color: #ffcc00; /* 밝은 노란색 */
+  color: #334e68;
+  background-color: #ffcc00; 
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -109,7 +109,7 @@
 }
 
 .face-login-button:hover {
-  background-color: #e6b800; /* 호버 시 어두운 노란색 */
+  background-color: #e6b800;
 }
 
 
