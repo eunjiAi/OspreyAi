@@ -38,7 +38,7 @@ CREATE TABLE Squatfeedback (
     total_attempts NUMBER NOT NULL,
     correct_count NUMBER NOT NULL,
     squat_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (squat_id, uuid),
+    PRIMARY KEY (squat_id),
     CONSTRAINT FK_MEMBER_SQUATFEEDBACK FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
 
@@ -61,6 +61,9 @@ CREATE TABLE Posts (
     report_status NUMBER(1) NOT NULL,
     is_public NUMBER(1) NOT NULL,
     post_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (post_id, uuid),
+    PRIMARY KEY (post_id),
     CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
+
+
+commit;

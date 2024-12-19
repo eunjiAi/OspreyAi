@@ -2,14 +2,16 @@ package org.myweb.ospreyai.squatfeedback.model.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.myweb.ospreyai.squatfeedback.model.dto.SquatFeedbackDTO;
 import org.myweb.ospreyai.squatfeedback.jpa.entity.SquatFeedback;
 import org.myweb.ospreyai.squatfeedback.jpa.repository.SquatFeedbackRepository;
+import org.myweb.ospreyai.squatfeedback.model.dto.SquatFeedbackDTO;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort; // 올바른 임포트 추가
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,14 +34,30 @@ public class SquatFeedbackService {
 	}
 
 	public List<SquatFeedbackDTO> getDailyStats(int page, int size) {
-		// PageRequest로 페이지네이션 및 내림차순 정렬 적용
-		PageRequest pageRequest = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "id"));
-		return squatFeedbackRepository.findAll(pageRequest).stream()
+		return squatFeedbackRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "squatDate")))
+				.stream()
 				.map(SquatFeedback::toDto)
 				.collect(Collectors.toList());
 	}
 
 	public long getTotalFeedbackCount() {
-		return squatFeedbackRepository.count(); // 전체 피드백 수 반환
+		return squatFeedbackRepository.count();
+	}
+
+	public List<SquatFeedbackDTO> getFeedbackByDate(Date date) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+		Date startDate = calendar.getTime();
+
+		calendar.add(Calendar.DAY_OF_MONTH, 1);
+		Date endDate = calendar.getTime();
+
+		return squatFeedbackRepository.findByDate(startDate, endDate).stream()
+				.map(SquatFeedback::toDto)
+				.collect(Collectors.toList());
 	}
 }

@@ -19,27 +19,28 @@ public class SquatFeedback {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "SQUAT_ID")
+    private Long squatId; // 기본 키
 
-    @Column(name = "USER_ID", nullable = false)
-    private String userId;
+    @Column(name = "UUID", nullable = false)
+    private String uuid; // 외래 키 (Member 테이블의 uuid와 연관)
 
     @Column(name = "TOTAL_ATTEMPTS", nullable = false)
     private int totalAttempts;
 
-    @Column(name = "CORRECT_POSTURE_COUNT", nullable = false)
-    private int correctPostureCount;
+    @Column(name = "CORRECT_COUNT", nullable = false)
+    private int correctCount;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "SQUAT_DATE", nullable = false)
     private Date squatDate;
 
     public SquatFeedbackDTO toDto() {
         return SquatFeedbackDTO.builder()
-                .id(id)
-                .userId(userId)
+                .id(squatId)
+                .uuid(uuid)
                 .totalAttempts(totalAttempts)
-                .correctPostureCount(correctPostureCount)
+                .correctCount(correctCount)
                 .date(squatDate)
                 .build();
     }

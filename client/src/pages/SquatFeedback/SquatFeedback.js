@@ -89,7 +89,14 @@ function SquatFeedback() {
       .then(response => response.json())
       .then(data => {
         console.log("Fetched data from API:", data);
-        setDailyStats(data.feedbackList);
+
+        // 날짜 형식을 YYYY-MM-DD로 변환
+        const formattedStats = data.feedbackList.map(stat => ({
+          ...stat,
+          date: new Date(stat.date).toISOString().split('T')[0] // 변환
+        }));
+
+        setDailyStats(formattedStats);
         setTotalPages(Math.ceil(data.totalCount / 5));
       })
       .catch(error => {
@@ -166,7 +173,7 @@ function SquatFeedback() {
               dailyStats.map((stat, index) => (
                 <li key={index}>
                   <span className="date">날짜: {stat.date}</span>
-                  <span className="count">바른 자세 횟수: {stat.correctPostureCount}</span>
+                  <span className="count">바른 자세 횟수: {stat.correctCount}</span>
                 </li>
               ))
             ) : (
