@@ -89,13 +89,17 @@ function SquatFeedback() {
       .then(response => response.json())
       .then(data => {
         console.log("Fetched data from API:", data);
-
-        // 날짜 형식을 YYYY-MM-DD로 변환
+  
+        // 날짜 형식을 로컬 시간대에 맞게 변환
         const formattedStats = data.feedbackList.map(stat => ({
           ...stat,
-          date: new Date(stat.date).toISOString().split('T')[0] // 변환
+          date: new Date(stat.date).toLocaleDateString('ko-KR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          }),
         }));
-
+  
         setDailyStats(formattedStats);
         setTotalPages(Math.ceil(data.totalCount / 5));
       })
@@ -104,7 +108,8 @@ function SquatFeedback() {
         setDailyStats([]);
       });
   };
-
+  
+  
   // 슬라이더 배경 업데이트
   const updateSliderBackground = () => {
     const slider = document.querySelector('.slider');

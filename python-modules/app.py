@@ -1,3 +1,7 @@
+
+# USAGE
+# pip install pytz
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sys
@@ -11,6 +15,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import datetime
 import uuid as uuid_lib
+from pytz import timezone
+
 
 # 로그 설정
 logging.basicConfig(filename='app_error.log', level=logging.DEBUG, 
@@ -148,11 +154,9 @@ import datetime
 # 일일 피드백 업데이트 (카운트 방식)
 def update_daily_feedback(uuid, feedback):
     try:
-        # 오늘 날짜를 가져오되, 시간을 00:00:00으로 고정하여 날짜만 비교하도록 처리
-        today = datetime.date.today()  # 오늘 날짜만 (시간은 제외)
-        
-        # 만약 시간이 00:00:00일 경우 날짜를 강제로 맞춰주기 위해 설정할 수 있습니다.
-        today = datetime.datetime.combine(today, datetime.time.min).date()
+        # 한국 시간(KST)을 기준으로 오늘 날짜를 계산
+        kst = timezone('Asia/Seoul')
+        today = datetime.datetime.now(kst).date()
 
         correct_increment = 1 if feedback else 0
 
@@ -180,7 +184,6 @@ def update_daily_feedback(uuid, feedback):
         session.rollback()  # 오류 발생 시 세션 롤백
         logging.error(f"데이터베이스 업데이트 오류: {e}")
         print(f"데이터베이스 업데이트 오류: {e}")
-
 
 
 @app.route('/squat-analysis', methods=['POST'])

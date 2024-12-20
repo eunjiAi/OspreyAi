@@ -126,4 +126,137 @@ Traceback (most recent call last):
   File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 333, in execute
     for data in application_iter:
   File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 378, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))2024-12-20 14:45:04,118 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:45:04,144 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-20 14:45:04,144 INFO [33mPress CTRL+C to quit[0m
+2024-12-20 14:45:04,145 INFO  * Restarting with stat
+2024-12-20 14:45:06,837 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:45:06,845 WARNING  * Debugger is active!
+2024-12-20 14:45:06,847 INFO  * Debugger PIN: 125-377-655
+2024-12-20 14:46:01,467 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:46:01,478 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-20 14:46:01,478 INFO [33mPress CTRL+C to quit[0m
+2024-12-20 14:46:01,478 INFO  * Restarting with stat
+2024-12-20 14:46:04,167 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:46:04,174 WARNING  * Debugger is active!
+2024-12-20 14:46:04,176 INFO  * Debugger PIN: 125-377-655
+2024-12-20 14:46:20,394 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-20 14:46:47,471 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:46:47,489 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-20 14:46:47,489 INFO [33mPress CTRL+C to quit[0m
+2024-12-20 14:46:47,490 INFO  * Restarting with stat
+2024-12-20 14:46:50,262 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:46:50,270 WARNING  * Debugger is active!
+2024-12-20 14:46:50,272 INFO  * Debugger PIN: 125-377-655
+2024-12-20 14:46:54,073 INFO 127.0.0.1 - - [20/Dec/2024 14:46:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-20 14:46:54,337 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-20 14:46:54,386 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-20 14:46:54,760 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-20 14:46:54,781 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-20 14:46:54,782 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2024-12-20 14:46:54,803 INFO 127.0.0.1 - - [20/Dec/2024 14:46:54] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2024-12-20 14:46:54,806 ERROR Error on request:
+Traceback (most recent call last):
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 164, in update_daily_feedback
+    entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 205, in squat_analysis
+    update_daily_feedback(uuid, result.get('feedback') == "µ¿ÀÛ ¿Ï·á")  # Update the feedback in DB
+  File "D:\eunjiAi\projectEunji\python-modules\app.py", line 184, in update_daily_feedback
+    session.rollback()  # ¿À·ù ¹ß»ý ½Ã ¼¼¼Ç ·Ñ¹é
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 1990, in rollback
+    self._transaction.rollback(_to_root=True)
+  File "<string>", line 2, in rollback
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\sqlalchemy\orm\session.py", line 990, in _raise_for_prerequisite_state
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\serving.py", line 333, in execute
+    for data in application_iter:
+  File "C:\Users\ict01-20\anaconda3\envs\py38\lib\site-packages\werkzeug\debug\__init__.py", line 378, in debug_application
     environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [WinError 6] ÇÚµéÀÌ Àß¸øµÇ¾ú½À´Ï´Ù
+2024-12-20 14:46:54,908 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-20 14:46:54,909 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-20 14:46:54,913 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-20 14:46:54,913 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-20 14:46:54,914 INFO 127.0.0.1 - - [20/Dec/2024 14:46:54] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-20 14:46:56,082 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-20 14:46:56,105 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-20 14:46:56,107 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-20 14:46:56,107 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-20 14:46:56,108 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-20 14:46:56,108 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-20 14:46:56,109 INFO 127.0.0.1 - - [20/Dec/2024 14:46:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-20 14:46:56,762 DEBUG ¹ÞÀº ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-20 14:46:56,786 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2024-12-20 14:46:56,788 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-20 14:46:56,789 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=None, knee_position=None, feedback=Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù
+2024-12-20 14:46:56,790 DEBUG ÀÏÀÏ ÇÇµå¹éÀÌ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¾÷µ¥ÀÌÆ®µÇ¾ú½À´Ï´Ù.
+2024-12-20 14:46:56,790 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': None, 'knee_position': None, 'feedback': 'Æ÷Áî°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù'}
+2024-12-20 14:46:56,790 INFO 127.0.0.1 - - [20/Dec/2024 14:46:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-20 14:49:44,295 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-20 14:51:43,985 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:51:44,000 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-20 14:51:44,000 INFO [33mPress CTRL+C to quit[0m
+2024-12-20 14:51:44,000 INFO  * Restarting with stat
+2024-12-20 14:51:46,925 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:51:46,933 WARNING  * Debugger is active!
+2024-12-20 14:51:46,935 INFO  * Debugger PIN: 125-377-655
+2024-12-20 14:51:53,030 INFO  * Detected change in 'D:\\eunjiAi\\projectEunji\\python-modules\\app.py', reloading
+2024-12-20 14:51:59,094 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:51:59,104 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-20 14:51:59,104 INFO [33mPress CTRL+C to quit[0m
+2024-12-20 14:51:59,105 INFO  * Restarting with stat
+2024-12-20 14:52:01,905 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 14:52:01,913 WARNING  * Debugger is active!
+2024-12-20 14:52:01,915 INFO  * Debugger PIN: 125-377-655
