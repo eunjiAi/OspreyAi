@@ -8,7 +8,7 @@ function Home() {
         <div className="home-container">
             <section className="hero">
                 <h1 className="hero-title">OspreyAI</h1>
-                <p className="hero-description">실시간 모니터링 스쿼트 AI</p>
+                <p className="hero-description">실시간 스쿼트피드백 AI</p>
             </section>
             <section className="features">
                 <Link to="/SquatFeedback" className="feature">

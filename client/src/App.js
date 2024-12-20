@@ -8,7 +8,6 @@ import SquatFeedback from "./pages/SquatFeedback/SquatFeedback";
 import Board from "./pages/Board/Board";
 import BoardDetail from "./pages/Board/BoardDetail"; 
 import BoardCreate from "./pages/Board/BoardCreate"; 
-import Login from "./pages/Login/Login";
 import FaceLogin from "./pages/Login/FaceLogin";
 import Signup from "./pages/Signup/Signup";
 import MyPage from "./pages/MyPage/MyPage";
@@ -37,7 +36,6 @@ function App() {
         <Route path="/" element={<Home searchResults={generalResults} />} />
         <Route path="/SquatFeedback" element={<SquatFeedback />} />
 
-        <Route path="/Login" element={<Login />} />
         <Route path="/FaceLogin" element={<FaceLogin />} />
 
         <Route path="/Signup" element={<Signup />} />

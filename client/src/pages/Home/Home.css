@@ -1,4 +1,5 @@
-/* 홈 컨테이너 */
+
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -10,46 +11,48 @@
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
   width: 100%;
-  margin: 0; /* 여백 제거 */
+  margin: 0;
   box-sizing: border-box; 
 }
 
-  /* 히어로 섹션 스타일 */
-  .hero {
-    text-align: center;
-    margin-bottom: 50px;
-    animation: fadeIn 1.5s ease-out;
-  }
-  
-  .hero-title {
-    font-size: 56px;
-    color: #334e68;
-    margin-bottom: 20px;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-  
-  .hero-description {
-    font-size: 20px;
-    color: #55697e;
-    max-width: 700px;
-    margin-bottom: 30px;
-    line-height: 1.6;
-  }
-  
-  /* 특징 섹션 스타일 */
-  .features {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 40px;
-    flex-wrap: wrap; /* 요소를 줄바꿈하여 더 나은 반응형 배치 */
+/* OspreyAI */
+.hero-title {
+  font-size: 56px;
+  color: #334e68;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
+/* 실시간 스쿼트피드백 AI */
+.hero-description {
+  font-size: 20px;
+  color: #55697e;
+  max-width: 700px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* 하얀 박스 */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* 하얀 박스 */
+.features {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  flex-wrap: wrap; 
+}
+/* 하얀 박스 */
 .feature {
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 40px;
+  padding: 33px;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -58,30 +61,31 @@
   color: #334e68;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   backdrop-filter: blur(8px);
-  margin: 0 10px; /* 각 카드 간의 여백 조정 */
+  margin: 0 10px; /* 각 카드 간의 여백 */
 }
 
-
+  /* 메인 로고 이미지 */
   .feature-icon img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
+    width: 110px;
+    height: 110px;
   }
   
+  /* SquatFeedback AI 글자 */
   .feature-title {
     font-size: 28px;
-    color: #334e68; /*타이틀 색상 */
+    color: #334e68; 
     margin-bottom: 10px;
     font-weight: 500;
   }
   
+  /* OspreyAI 글자 */
   .feature-description {
+    margin-top: 20px;
     font-size: 18px;
-    color: #55697e; /* 설명 텍스트 */
-    margin-bottom: 20px;
+    color: #55697e;
   }
   
-  /* 호버 시 박스 확대 효과 */
+  /* 호버 시 박스 확대 */
   .feature:hover {
     transform: translateY(-10px) scale(1.05);
     background-color: rgba(255, 255, 255, 0.9);
@@ -93,12 +97,12 @@
     .features {
         flex-direction: column;
         align-items: center;
-        padding: 0 20px; /* 좌우 여백 추가 */
+        padding: 0 20px;
     }
 
     .feature {
         margin-bottom: 30px;
-        width: 100%; /* 작은 화면에서 전체 너비로 확장 */
+        width: 100%; 
         max-width: 400px;
     }
 }
