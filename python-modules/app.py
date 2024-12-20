@@ -196,15 +196,15 @@ def squat_analysis():
     data = request.get_json()
     frame = data.get('frame')
     
-    # Now using test_user UUID directly
-    uuid = 'test_user'  # Fixed UUID for the user, since it's already in MEMBER table
+    # 테스트용 uuid
+    uuid = 'test_user'  # Fixed UUID
 
     if not uuid:
         return jsonify({"error": "UUID가 누락되었습니다."}), 400
 
     if frame:
         result = analyze_pose(frame)
-        update_daily_feedback(uuid, result.get('feedback') == "동작 완료")  # Update the feedback in DB
+        update_daily_feedback(uuid, result.get('feedback') == "동작 완료")  # 피드백 DB로 업데이트
         print("분석 결과 반환:", result)
         logging.debug(f"분석 결과 반환: {result}")
         return jsonify(result)
