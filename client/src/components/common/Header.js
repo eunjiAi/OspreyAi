@@ -116,7 +116,6 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
         </Link>
         <nav>
           <ul className={styles.navList}>
-            <li><Link to="/" className={styles.navItem}>홈</Link></li>
             <li><Link to="/notice" className={styles.navItem}>공지사항</Link></li>
             <li><Link to="/board" className={styles.navItem}>게시판</Link></li>
           </ul>
