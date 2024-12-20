@@ -19,8 +19,7 @@ CREATE TABLE Member (
     join_date DATE DEFAULT SYSDATE,  
     is_admin NUMBER(1) DEFAULT 0,
     face_id VARCHAR2(255),
-    PRIMARY KEY (uuid),
-    UNIQUE (name) -- name 컬럼에 UNIQUE 제약 조건 추가
+    PRIMARY KEY (uuid)
 );
 
 -- Squatfeedback 테이블 삭제
@@ -38,13 +37,11 @@ END;
 CREATE TABLE Squatfeedback (
     squat_id NUMBER NOT NULL,
     uuid VARCHAR2(36) NOT NULL,
-    name VARCHAR2(100) NOT NULL, -- Member의 NAME 컬럼 추가
     total_attempts NUMBER NOT NULL,
     correct_count NUMBER NOT NULL,
     squat_date DATE DEFAULT SYSDATE,  
     PRIMARY KEY (squat_id),
-    CONSTRAINT FK_MEMBER_SQUATFEEDBACK FOREIGN KEY (uuid) REFERENCES Member (uuid),
-    CONSTRAINT FK_MEMBER_NAME FOREIGN KEY (name) REFERENCES Member (name) -- Member의 NAME과 FK 관계
+    CONSTRAINT FK_MEMBER_SQUATFEEDBACK FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
 
 -- Posts 테이블 삭제
@@ -76,4 +73,4 @@ CREATE SEQUENCE squat_id_seq
 START WITH 1
 INCREMENT BY 1;
 
-COMMIT;
+commit;

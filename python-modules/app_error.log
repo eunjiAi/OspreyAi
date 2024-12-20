@@ -6280,3 +6280,11 @@ WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_dat
 2024-12-20 15:12:05,204 DEBUG ÀÚ¼¼ ºÐ¼® °á°ú: angle=18.96685185428161, knee_position=0.03157728910446167, feedback=»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
 2024-12-20 15:12:05,205 DEBUG ºÐ¼® °á°ú ¹ÝÈ¯: {'angle': 18.96685185428161, 'knee_position': 0.03157728910446167, 'feedback': '»óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä'}
 2024-12-20 15:12:05,206 INFO 127.0.0.1 - - [20/Dec/2024 15:12:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-20 17:07:09,795 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 17:07:09,806 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-20 17:07:09,806 INFO [33mPress CTRL+C to quit[0m
+2024-12-20 17:07:09,807 INFO  * Restarting with stat
+2024-12-20 17:07:12,189 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
+2024-12-20 17:07:12,194 WARNING  * Debugger is active!
+2024-12-20 17:07:12,196 INFO  * Debugger PIN: 125-377-655
