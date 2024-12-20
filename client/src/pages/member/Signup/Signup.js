@@ -1,6 +1,7 @@
 // src/pages/member/Signup.js
 import React, { useEffect, useState } from 'react';
-import apiClient from '../../utils/axios';
+import apiClient from '../../../utils/axios';
+import style from './Signup.module.css';
 
 function Signup({ onSignupSuccess }) {
   const [formData, setFormData] = useState({
@@ -142,62 +143,70 @@ function Signup({ onSignupSuccess }) {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>회원 가입</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="userId">아이디: </label>
-          <input type="text" id="userId" name='userId' value={formData.userId} onChange={handleChange} required />
-          <button type="button" onClick={handleIdCheck}>중복검사</button>
-        </div>
-        <div>
-          <label htmlFor="userPwd">비밀번호: </label>
-          <input type="password" id="userPwd" name="userPwd" value={formData.userPwd} onChange={handleChange} required />          
-        </div>
-        <div>
-          <label htmlFor="confirmPwd">비밀번호 확인: </label>
-          <input type="password" id="confirmPwd" name="confirmPwd" value={formData.confirmPwd} 
-            onChange={handleChange} 
-            onBlur={handleConfirmPwd}
-            required />          
-        </div>
-        <div>
-          <label htmlFor="userName">이름: </label>
-          <input type="text" id="userName" name='userName' value={formData.userName} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="gender">성별: </label>
-          <select id="gender" name="gender" value={formData.gender} onChange={handleChange} required>
-            <option value="">선택</option>
-            <option value="M">남자</option>
-            <option value="F">여자</option>
-          </select>          
-        </div>
-        <div>
-          <label htmlFor="age">나이: </label>
-          <input type="number" id="age" name='age' value={formData.age} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="phone">전화번호: </label>
-          <input type="tel" id="phone" name='phone' value={formData.phone} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="email">이메일: </label>
-          <input type="email" id="email" name='email' value={formData.email} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="photoFile">사진: </label>
-          <input type="file" id="photoFile" name='photoFile' onChange={handleChange} accept='image/*' />
-        </div>
-        {previewUrl && (
-          <div style={{ marginTop: '10px'}}>
-            <img src={previewUrl} alt='사진 미리보기' style={{ maxWidth: '200px', maxHeight: '200px' }} />
+    <div className={style.container}>
+      <div className={style.overlay}></div>
+      <div className={style.signupPopup}>
+        <button type="button" className={style.closeButton} onClick={onSignupSuccess}>
+          ×
+        </button>
+        <h1 className={style.title}>회원 가입</h1>
+        <form onSubmit={handleSubmit}>
+          <div className={style.formGroup}>
+            <label htmlFor="userId">아이디: </label>
+            <input type="text" id="userId" name="userId" value={formData.userId} onChange={handleChange} required />
+            <button type="button" onClick={handleIdCheck} className={style.idCheckButton}>
+              중복검사
+            </button>
           </div>
-        )}
-        <button type="submit">가입하기</button>
-      </form>
+          <div className={style.formGroup}>
+            <label htmlFor="userPwd">비밀번호: </label>
+            <input type="password" id="userPwd" name="userPwd" value={formData.userPwd} onChange={handleChange} required />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="confirmPwd">비밀번호 확인: </label>
+            <input type="password" id="confirmPwd" name="confirmPwd" value={formData.confirmPwd} onChange={handleChange} required />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="userName">이름: </label>
+            <input type="text" id="userName" name="userName" value={formData.userName} onChange={handleChange} required />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="gender">성별: </label>
+            <select id="gender" name="gender" value={formData.gender} onChange={handleChange} required>
+              <option value="">선택</option>
+              <option value="M">남자</option>
+              <option value="F">여자</option>
+            </select>
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="age">나이: </label>
+            <input type="number" id="age" name="age" value={formData.age} onChange={handleChange} required />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="phone">전화번호: </label>
+            <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="email">이메일: </label>
+            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="photoFile">사진: </label>
+            <input type="file" id="photoFile" name="photoFile" onChange={handleChange} accept="image/*" />
+          </div>
+          {previewUrl && (
+            <div className={style.preview}>
+              <img src={previewUrl} alt="사진 미리보기" className={style.previewImage} />
+            </div>
+          )}
+          <button type="submit" className={style.submitButton}>
+            가입하기
+          </button>
+        </form>
+      </div>
     </div>
   );
+  
 }
 
 export default Signup;

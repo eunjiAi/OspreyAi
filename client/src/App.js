@@ -14,8 +14,8 @@ import MyPage from "./pages/MyPage/MyPage";
 import MyPageUpdate from "./pages/MyPage/MyPageUpdate";
 
 function App() {
-  const [boardResults, setBoardResults] = useState(null); // Board 검색 결과 상태
-  const [generalResults, setGeneralResults] = useState(null); // 다른 페이지 검색 결과 상태
+  const [boardResults, setBoardResults] = useState(null);        // Board 검색 결과 상태
+  const [generalResults, setGeneralResults] = useState(null);    // 다른 페이지 검색 결과 상태
 
   const resetSearchInput = () => {
     setBoardResults(null);
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Router>
-      {/* Header에 검색 결과 업데이트 처리 추가 */}
+      {/* Header에 검색 결과 업데이트 처리 */}
       <Header
         updateBoardResults={setBoardResults}
         updateGeneralResults={setGeneralResults}

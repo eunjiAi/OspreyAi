@@ -9,8 +9,8 @@ import logo from '../../images/logo.png'; // 로고 이미지
 import styles from './Header.module.css'; // CSS Modules
 
 import Modal from './Modal';     //Modal 컴포넌트 임포트
-import Login from '../../pages/member/Login';   // Login 컴포넌트 임포트 (Modal 로 출력)
-import Signup from '../../pages/member/Signup';   // Signup 컴포넌트 임포트 (Modal 로 출력)
+import Login from '../../pages/member/Login/Login';   // Login 컴포넌트 임포트 (Modal 로 출력)
+import Signup from '../../pages/member/Signup/Signup';   // Signup 컴포넌트 임포트 (Modal 로 출력)
 import SideMenu from './SideMenu';     // SideMenu 컴포넌트 임포트
 
 

@@ -1,0 +1,129 @@
+/* Signup 팝업을 위한 최상위 컨테이너 */
+.container {
+    position: relative;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* 팝업 배경 */
+  .container .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* 어두운 반투명 배경 */
+    z-index: 999;
+  }
+  
+  /* 팝업 컨테이너 */
+  .container .signupPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* 크기 조정 */
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+  }
+  
+  /* 제목 스타일 */
+  .container .signupPopup .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* 폼 그룹 */
+  .container .signupPopup .formGroup {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .container .signupPopup label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .container .signupPopup input,
+  .container .signupPopup select,
+  .container .signupPopup button {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .container .signupPopup input:focus,
+  .container .signupPopup select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* 버튼 스타일 */
+  .container .signupPopup button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .container .signupPopup button:hover {
+    background: #0056b3;
+  }
+  
+  .container .signupPopup .idCheckButton {
+    background: #28a745;
+    margin-top: 5px;
+  }
+  
+  .container .signupPopup .idCheckButton:hover {
+    background: #218838;
+  }
+  
+  .container .signupPopup .submitButton {
+    background: #007bff;
+  }
+  
+  .container .signupPopup .submitButton:hover {
+    background: #0056b3;
+  }
+  
+  /* 닫기 버튼 */
+  .container .signupPopup .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .container .signupPopup .closeButton:hover {
+    color: #ff0000;
+  }
+  
+  /* 미리보기 */
+  .container .signupPopup .preview {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .container .signupPopup .previewImage {
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 5px;
+  }
+  

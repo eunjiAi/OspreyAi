@@ -1,7 +1,7 @@
 // src/pages/member/Login.js
 import React, { useState, useContext } from 'react';
-import apiClient from '../../utils/axios';
-import { AuthContext } from '../../AuthProvider';
+import apiClient from '../../../utils/axios';
+import { AuthContext } from '../../../AuthProvider';
 import styles from './Login.module.css';
 
 

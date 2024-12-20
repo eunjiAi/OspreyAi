@@ -73,10 +73,10 @@ export const AuthProvider = ({ children }) => {
       if (!refreshToken) throw new Error('No refresh token available');
 
       //reissue 요청시 refreshToken 을 parameter 로 전송한다면
-      //const response = await axios.post('http://localhost:8080/reissue', { refreshToken});
+      //const response = await axios.post('http://localhost:8888/reissue', { refreshToken});
 
       // 만들어 놓은 reissue 컨트롤러에서는 request header 에 'Bearer' 뒤에 추가한 것을 추출하게 해 놓았음
-      const response = await axios.post('http://localhost:8080/reissue', {
+      const response = await axios.post('http://localhost:8888/reissue', {
         headers: {
           Authorization: `Bearer ${refreshToken}`,
         }
