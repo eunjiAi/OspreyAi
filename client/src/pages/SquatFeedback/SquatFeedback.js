@@ -26,6 +26,7 @@ function SquatFeedback() {
         console.error('웹캠 접근 오류:', error);
       }
     };
+    
     startWebcam();
   }, []);
 
@@ -114,7 +115,8 @@ function SquatFeedback() {
   const updateSliderBackground = () => {
     const slider = document.querySelector('.slider');
     if (slider) {
-      const percentage = ((intervalTime / 1000 - 1) / 9) * 100;
+      // 1부터 3까지 기준으로 퍼센트 계산
+      const percentage = ((intervalTime / 1000 - 1) / 2) * 100; // 2로 나눔 (3-1)
       slider.style.background = `linear-gradient(to right, #4a90e2 ${percentage}%, #ddd ${percentage}%)`;
     }
   };
@@ -145,7 +147,9 @@ function SquatFeedback() {
   };
 
   return (
+
     <div className="squat-feedback-container">
+
       <div className="webcam-container">
         <p className="webcam-message">전신을 보여주세요!</p>
         <video ref={videoRef} autoPlay muted className="webcam-video" />
@@ -157,12 +161,13 @@ function SquatFeedback() {
           <p className={`feedback-text ${getFeedbackClass(feedback)}`}>{feedback}</p>
         </div>
 
+
         <div className="control-panel">
           <label>검사 간격 (초): {intervalTime / 1000}초</label>
           <input
             type="range"
             min="1"
-            max="10"
+            max="3"
             value={intervalTime / 1000}
             onChange={(e) => setIntervalTime(e.target.value * 1000)}
             className="slider"
@@ -170,6 +175,7 @@ function SquatFeedback() {
           <button onClick={startAnalysis} disabled={isRunning} className={`control-button start ${isRunning ? 'active' : ''}`}>시작</button>
           <button onClick={stopAnalysis} disabled={!isRunning} className={`control-button stop ${!isRunning ? 'disabled' : 'active'}`}>종료</button>
         </div>
+
 
         <div className="daily-stats">
           <h2>일일 통계</h2>
@@ -186,11 +192,14 @@ function SquatFeedback() {
             )}
           </ul>
 
+
           <div className="pagination">
             <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} disabled={currentPage === 0}>이전</button>
             <span>페이지 {currentPage + 1} / {totalPages}</span>
             <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages - 1))} disabled={currentPage === totalPages - 1}>다음</button>
           </div>
+
+
         </div>
       </div>
     </div>
