@@ -17,6 +17,8 @@ import datetime
 import uuid as uuid_lib
 from pytz import timezone
 
+from sqlalchemy.orm import scoped_session
+
 
 # 로그 설정
 logging.basicConfig(filename='app_error.log', level=logging.DEBUG, 
@@ -32,8 +34,8 @@ holistic = mp_holistic.Holistic()
 # 데이터베이스 연결 설정
 DATABASE_URI = 'oracle+cx_oracle://c##ospreyai:123456@localhost:1521/XE'
 engine = create_engine(DATABASE_URI)
-Session = sessionmaker(bind=engine)
-session = Session()
+session_factory = sessionmaker(bind=engine)
+Session = scoped_session(session_factory)
 
 # 모델 정의
 Base = declarative_base()
@@ -153,37 +155,37 @@ import datetime
 
 # 일일 피드백 업데이트 (카운트 방식)
 def update_daily_feedback(uuid, feedback):
+    session = Session()  # 요청별 세션 생성
     try:
-        # 한국 시간(KST)을 기준으로 오늘 날짜를 계산
+        # 오늘 날짜 계산
         kst = timezone('Asia/Seoul')
         today = datetime.datetime.now(kst).date()
-
         correct_increment = 1 if feedback else 0
 
-        # Check if uuid already exists for today's date, otherwise insert a new entry
+        # 오늘 날짜와 UUID에 해당하는 데이터 검색
         entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
-        
+
         if entry:
-            # 기존 데이터가 있으면 업데이트
+            # 기존 데이터 업데이트
             entry.total_attempts += 1
             entry.correct_count += correct_increment
         else:
-            # 새로운 데이터를 삽입
+            # 새로운 데이터 삽입
             new_entry = SquatFeedback(
-                uuid=uuid,  # 생성된 고유 uuid 사용
+                uuid=uuid,
                 total_attempts=1,
                 correct_count=correct_increment,
-                squat_date=today  # 날짜만 저장
+                squat_date=today
             )
             session.add(new_entry)
-        
+
         session.commit()
         print("일일 피드백이 데이터베이스에 업데이트되었습니다.")
-        logging.debug("일일 피드백이 데이터베이스에 업데이트되었습니다.")
     except Exception as e:
-        session.rollback()  # 오류 발생 시 세션 롤백
-        logging.error(f"데이터베이스 업데이트 오류: {e}")
+        session.rollback()  # 오류 시 롤백
         print(f"데이터베이스 업데이트 오류: {e}")
+    finally:
+        session.close()  # 세션 종료
 
 
 @app.route('/squat-analysis', methods=['POST'])
