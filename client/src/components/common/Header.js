@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import apiClient from '../../utils/axios';
 import { AuthContext } from '../../AuthProvider';
 
-import logo from '../../images/robot1.png'; // 로고 이미지
+import logo from '../../images/logo.png'; // 로고 이미지
 import styles from './Header.module.css'; // CSS Modules
 
 import Modal from './Modal';     //Modal 컴포넌트 임포트
