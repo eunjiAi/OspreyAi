@@ -16,7 +16,7 @@ CREATE TABLE Member (
     email VARCHAR2(100) NOT NULL,
     pw VARCHAR2(255) NOT NULL,
     phone_number VARCHAR2(15) NOT NULL,
-    join_date DATE DEFAULT SYSDATE,  -- DATE 타입으로 변경하여 시간 없이 날짜만 저장
+    join_date DATE DEFAULT SYSDATE,  
     is_admin NUMBER(1) DEFAULT 0,
     face_id VARCHAR2(255),
     PRIMARY KEY (uuid)
@@ -39,7 +39,7 @@ CREATE TABLE Squatfeedback (
     uuid VARCHAR2(36) NOT NULL,
     total_attempts NUMBER NOT NULL,
     correct_count NUMBER NOT NULL,
-    squat_date DATE DEFAULT SYSDATE,  -- DATE 타입으로 변경하여 시간 없이 날짜만 저장
+    squat_date DATE DEFAULT SYSDATE,  
     PRIMARY KEY (squat_id),
     CONSTRAINT FK_MEMBER_SQUATFEEDBACK FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
@@ -63,7 +63,7 @@ CREATE TABLE Posts (
     content CLOB NOT NULL,
     report_status NUMBER(1) NOT NULL,
     is_public NUMBER(1) NOT NULL,
-    post_date DATE DEFAULT SYSDATE,  -- DATE 타입으로 변경하여 시간 없이 날짜만 저장
+    post_date DATE DEFAULT SYSDATE,  
     PRIMARY KEY (post_id),
     CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
