@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import apiClient from '../../utils/axios';
 import { AuthContext } from '../../AuthProvider';
 
-import logo from '../../images/logo.png'; // 로고 이미지
+import mainlogo from '../../images/mainlogo.png'; // 로고 이미지
 import styles from './Header.module.css'; // CSS Modules
 
 import Modal from './Modal';     //Modal 컴포넌트 임포트
@@ -112,7 +112,7 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
           ☰  {/* 햄버거 메뉴 아이콘 */}
         </button>
         <Link to="/" className={styles.logoLink}>
-          <img src={logo} alt="Site Logo" className={styles.logo} />
+          <img src={mainlogo} alt="Site Logo" className={styles.mainlogo} />
         </Link>
         <nav>
           <ul className={styles.navList}>
