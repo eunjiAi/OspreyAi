@@ -5,6 +5,7 @@ import org.springframework.data.domain.Pageable;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 
 //QueryDSL 용 Custom 인터페이스를 작성함
 public interface MemberRepositoryCustom {
@@ -21,4 +22,7 @@ public interface MemberRepositoryCustom {
 //     long countSearchAge(int age);
      List<MemberEntity> findSearchLoginOK(String keyword, Pageable pageable);
      long countSearchLoginOK(String keyword);
+
+    // 이메일로 정보 조회하기용
+    Optional<MemberEntity> findByEmail(String userId);
 }

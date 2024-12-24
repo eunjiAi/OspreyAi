@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -150,4 +151,16 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
                 )  //where loginOk = keyword
                 .fetchCount();
     }
+
+    @Override
+    public Optional<MemberEntity> findByEmail(String email) {
+        MemberEntity result = queryFactory
+                .selectFrom(member)
+                .where(member.email.eq(email)) // 이메일 조건
+                .fetchOne(); // 단일 결과 조회
+
+        return Optional.ofNullable(result); // 결과가 없으면 Optional.empty() 반환
+    }
+
 }
+

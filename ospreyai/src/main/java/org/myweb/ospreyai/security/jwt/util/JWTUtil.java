@@ -47,6 +47,7 @@ public class JWTUtil {
 
         //MemberSerive 사용해서 db 에서 로그인한 사용자 정보를 조회해 옴
         Member member = memberService.selectMember(userId);
+        log.info("member : {}", member);
 
         //사용자 정보가 없는 경우, UsernameNotFoundException (스프링 제공됨)을 발생시킴
         if (member == null) {

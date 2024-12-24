@@ -60,7 +60,6 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             
             return authenticationManager.authenticate(authToken);
         } catch (IOException e) {
-            e.printStackTrace();
             throw new RuntimeException("Failed to parse login request", e);
         }
     }

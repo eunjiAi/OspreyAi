@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Slf4j    //Logger 객체 선언임, 별도의 로그객체 선언 필요없음, 제공되는 레퍼런스는 log 임
@@ -39,12 +40,17 @@ public class MemberService {
 	}
 
 	public Member selectMember(String userId) {
-		//jpa 제공 메소드 사용
-		//findById(id) : Optional<T>
-		//엔티티에 등록된 id 를 사용해서 entity 조회함
-		Optional<MemberEntity> entityOptional = memberRepository.findById(userId);
-		return entityOptional.get().toDto();
+		log.info("selectMember(String userId): {}", userId);
+
+		// 이메일을 기준으로 조회한다고 가정
+		Optional<MemberEntity> entityOptional = memberRepository.findByEmail(userId);
+
+		// 데이터가 없을 경우 예외 처리
+		return entityOptional
+				.map(MemberEntity::toDto) // Optional로 안전하게 DTO 변환
+				.orElseThrow(() -> new NoSuchElementException("Member not found with email: " + userId));
 	}
+
 
 	@Transactional
 	public int updateMember(Member member) {
