@@ -13,6 +13,7 @@ END;
 CREATE TABLE Member (
     uuid VARCHAR2(36) NOT NULL,
     name VARCHAR2(20) NOT NULL,
+    nickname VARCHAR2(30) NOT NULL,
     email VARCHAR2(100) NOT NULL,
     pw VARCHAR2(100),
     phone_number VARCHAR2(15),
@@ -30,6 +31,7 @@ CREATE TABLE Member (
 -- Member 테이블 코멘트 생성
 COMMENT ON COLUMN Member.uuid IS '고유키';
 COMMENT ON COLUMN Member.name IS '이름';
+COMMENT ON COLUMN Member.nickname IS '닉네임';
 COMMENT ON COLUMN Member.email IS '이메일';
 COMMENT ON COLUMN Member.pw IS '비밀번호';
 COMMENT ON COLUMN Member.phone_number IS '전화번호';

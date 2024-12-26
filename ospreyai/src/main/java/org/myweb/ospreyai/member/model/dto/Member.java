@@ -18,6 +18,7 @@ public class Member {
 	@NotBlank
 	private String uuid;	//	UUID	VARCHAR2(36 BYTE)
 	private String name;	//	NAME	VARCHAR2(20 BYTE)
+	private String nickname;	//	NICKNAME	VARCHAR2(30 BYTE)
 	private String email;	//	EMAIL	VARCHAR2(100 BYTE)
 	private String pw;		//	PW	VARCHAR2(100 BYTE)
 	private String phoneNumber;	//	PHONE_NUMBER	VARCHAR2(15 BYTE)
@@ -36,6 +37,7 @@ public class Member {
 		return MemberEntity.builder()
 				.uuid(uuid)
 				.name(name)
+				.nickname(nickname)
 				.email(email)
 				.pw(pw)
 				.phoneNumber(phoneNumber)
