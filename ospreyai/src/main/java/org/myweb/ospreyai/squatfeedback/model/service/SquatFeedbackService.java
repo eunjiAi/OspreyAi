@@ -35,8 +35,12 @@ public class SquatFeedbackService {
 		}
 	}
 
-	public List<SquatFeedbackDTO> getDailyStats(int page, int size, String name) {
-		return squatFeedbackRepository.findByName(name, PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "squatDate")))
+	public List<SquatFeedbackDTO> getDailyStats(int page, int size, String name, String uuid) {
+		return squatFeedbackRepository.findByNameAndUuid(
+						name,
+						uuid,
+						PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "squatDate"))
+				)
 				.stream()
 				.map(SquatFeedback::toDto)
 				.collect(Collectors.toList());
@@ -44,6 +48,11 @@ public class SquatFeedbackService {
 
 	public long getTotalFeedbackCount(String name) {
 		return squatFeedbackRepository.countByName(name);
+	}
+
+	// name, uuid 사용
+	public long getTotalFeedbackCount(String name, String uuid) {
+		return squatFeedbackRepository.countByNameAndUuid(name, uuid);
 	}
 
 	public List<SquatFeedbackDTO> getFeedbackByDate(Date date, String name) {

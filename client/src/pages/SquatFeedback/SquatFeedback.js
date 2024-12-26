@@ -11,6 +11,8 @@ function SquatFeedback() {
   const [intervalTime, setIntervalTime] = useState(1000);
   const [isRunning, setIsRunning] = useState(false);
   const [detected, setDetected] = useState(false);
+  const [loading, setLoading] = useState(false); // 로딩 상태 추가
+
   const [username, setUsername] = useState(''); // 사용자 이름 상태 추가
   const videoRef = useRef(null);
   const intervalIdRef = useRef(null);
@@ -153,30 +155,28 @@ function SquatFeedback() {
 
   // 날짜별 통계 가져오기
   const fetchDailyStats = async () => {
+    setLoading(true); // 로딩 시작
     try {
-      const validToken = await ensureValidToken(); // 토큰 유효성 확인 및 갱신
-      const uuid = getUUIDFromToken(); // 현재 사용자의 UUID
-
+      const validToken = await ensureValidToken();
       const response = await fetch(
-        `http://localhost:8888/api/squat/daily-stats?page=${currentPage}&size=5&uuid=${uuid}`,
+        `http://localhost:8888/api/squat/daily-stats?page=${currentPage}&size=5`,
         {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${validToken}`, // 갱신된 토큰 사용
+            Authorization: `Bearer ${validToken}`,
           },
         }
       );
-
+  
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Error fetching daily stats');
       }
-
+  
       const data = await response.json();
       console.log('Fetched data from API:', data);
-
-      // 날짜 형식 변환
+  
       const formattedStats = data.feedbackList.map((stat) => ({
         ...stat,
         date: new Date(stat.date).toLocaleDateString('ko-KR', {
@@ -185,14 +185,17 @@ function SquatFeedback() {
           day: '2-digit',
         }),
       }));
-
+  
       setDailyStats(formattedStats);
       setTotalPages(Math.ceil(data.totalCount / 5));
     } catch (error) {
       console.error('Error fetching daily stats:', error);
       alert(`Error: ${error.message}`);
+    } finally {
+      setLoading(false); // 로딩 종료
     }
   };
+  
 
   // 슬라이더 배경 업데이트
   const updateSliderBackground = () => {
@@ -207,9 +210,19 @@ function SquatFeedback() {
     updateSliderBackground();
   }, [intervalTime]);
 
+
+
   useEffect(() => {
-    fetchDailyStats();
+    console.log('Fetching daily stats...');
+    fetchDailyStats()
+      .then(() => {
+        console.log('Daily stats fetched successfully:', dailyStats);
+      })
+      .catch((err) => {
+        console.error('Failed to fetch daily stats:', err);
+      });
   }, [currentPage]);
+  
 
   const getFeedbackClass = (feedback) => {
     switch (feedback) {
@@ -261,19 +274,22 @@ function SquatFeedback() {
 
         <div className="daily-stats">
           <h2>{username}의 일일 운동 기록</h2>
-          <ul>
-            {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
-              dailyStats.map((stat, index) => (
-                <li key={index}>
-                  <span className="date">날짜: {stat.date}</span>
-                  <span className="count">바른 자세 횟수: {stat.correctCount}</span>
-                </li>
-              ))
-            ) : (
-              <p>데이터가 없습니다</p>
-            )}
-          </ul>
-
+          {loading ? (
+            <p>로딩 중...</p>
+          ) : (
+            <ul>
+              {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
+                dailyStats.map((stat, index) => (
+                  <li key={index}>
+                    <span className="date">날짜: {stat.date}</span>
+                    <span className="count">바른 자세 횟수: {stat.correctCount}</span>
+                  </li>
+                ))
+              ) : (
+                <p>데이터가 없습니다</p>
+              )}
+            </ul>
+          )}
           <div className="pagination">
             <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))} disabled={currentPage === 0}>
               이전
@@ -286,6 +302,7 @@ function SquatFeedback() {
             </button>
           </div>
         </div>
+
       </div>
     </div>
   );

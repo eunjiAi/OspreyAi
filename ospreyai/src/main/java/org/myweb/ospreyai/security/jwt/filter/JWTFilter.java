@@ -65,18 +65,19 @@ public class JWTFilter extends OncePerRequestFilter {
             // 사용자 정보 추출
             String username = jwtUtil.getUserIdFromToken(token);
             String role = jwtUtil.getRoleFromToken(token);
+            String uuid = jwtUtil.getUuidFromToken(token); // 추가: UUID 추출
+            String name = jwtUtil.getNameFromToken(token); // 추가: Name 추출
 
             // 사용자 인증 객체 생성
             MemberEntity member = new MemberEntity();
             member.setEmail(username);
+            member.setName(name); // 추가: Name 설정
+            member.setUuid(uuid); // 추가: UUID 설정
             member.setAdminYn(role.equals("ADMIN") ? "Y" : "N");
             member.setPw("tempPassword");
 
             log.info("Authenticated member: {}", member);
 
-            // ROLE_ Prefix 추가: Spring Security에서 권한을 인식하려면 ROLE_ prefix가 필요합니다.
-            // SimpleGrantedAuthority: GrantedAuthority를 정확하게 설정합니다.
-            // CustomUserDetails 및 Authentication 객체 생성
             CustomUserDetails customUserDetails = new CustomUserDetails(member);
             Authentication authToken = new UsernamePasswordAuthenticationToken(
                     customUserDetails,

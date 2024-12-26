@@ -2,10 +2,11 @@ package org.myweb.ospreyai.squatfeedback.controller;
 
 import org.myweb.ospreyai.squatfeedback.model.dto.SquatFeedbackDTO;
 import org.myweb.ospreyai.squatfeedback.model.service.SquatFeedbackService;
+import org.myweb.ospreyai.security.jwt.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
+import org.springframework.security.core.Authentication; // 추가된 부분
 import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
@@ -21,6 +22,9 @@ public class SquatFeedbackController {
 	@Autowired
 	private SquatFeedbackService squatFeedbackService;
 
+	@Autowired
+	private JWTUtil jwtUtil;
+
 	@PostMapping("/feedback")
 	public ResponseEntity<String> submitFeedback(@RequestBody SquatFeedbackDTO dto, Authentication authentication) {
 		String name = authentication.getName(); // 인증된 사용자 이름
@@ -34,12 +38,18 @@ public class SquatFeedbackController {
 
 	@GetMapping("/daily-stats")
 	public ResponseEntity<Map<String, Object>> getDailyStats(
+			@RequestHeader("Authorization") String authorization, // JWT 토큰 추가
 			@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "6") int size,
-			Authentication authentication) {
-		String name = authentication.getName(); // 인증된 사용자 이름
-		List<SquatFeedbackDTO> feedbackList = squatFeedbackService.getDailyStats(page, size, name);
-		long totalFeedbackCount = squatFeedbackService.getTotalFeedbackCount(name);
+			@RequestParam(defaultValue = "6") int size) {
+
+		// JWT 토큰에서 사용자 정보 추출
+		String token = authorization.replace("Bearer ", "");
+		String uuid = jwtUtil.getUuidFromToken(token);
+		String name = jwtUtil.getNameFromToken(token);
+
+		// 서비스 호출
+		List<SquatFeedbackDTO> feedbackList = squatFeedbackService.getDailyStats(page, size, name, uuid);
+		long totalFeedbackCount = squatFeedbackService.getTotalFeedbackCount(name, uuid);
 
 		// 날짜 형식 변환 (yyyy-MM-dd)
 		feedbackList.forEach(feedback -> {

@@ -15,7 +15,7 @@ import java.util.Date;
 @Builder
 public class SquatFeedbackDTO {
 	private Long id;
-	private String uuid;
+	private String uuid; // 추가된 필드
 	private String name;
 
 	@JsonProperty("totalAttempts")
@@ -32,7 +32,7 @@ public class SquatFeedbackDTO {
 	public SquatFeedback toEntity() {
 		return SquatFeedback.builder()
 				.squatId(id)
-				.uuid(uuid)
+				.uuid(uuid) // 추가된 필드
 				.name(name)
 				.totalAttempts(totalAttempts)
 				.correctCount(correctCount)
