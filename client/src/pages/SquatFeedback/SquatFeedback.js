@@ -14,6 +14,42 @@ function SquatFeedback() {
   const videoRef = useRef(null);
   const intervalIdRef = useRef(null);
 
+  // JWT 토큰 유효성 검사 및 갱신 함수
+  const isTokenExpired = (token) => {
+    if (!token) return true;
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const currentTime = Math.floor(Date.now() / 1000);
+    return payload.exp < currentTime;
+  };
+
+  const ensureValidToken = async () => {
+    const accessToken = localStorage.getItem('accessToken');
+    const refreshToken = localStorage.getItem('refreshToken');
+
+    if (!accessToken || isTokenExpired(accessToken)) {
+      console.log('Access token expired, refreshing...');
+      try {
+        const response = await fetch('http://localhost:8888/reissue', {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${refreshToken}`,
+            'Content-Type': 'application/json',
+          },
+        });
+        if (!response.ok) throw new Error('Failed to refresh token');
+        const data = await response.json();
+        localStorage.setItem('accessToken', data.accessToken);
+        return data.accessToken;
+      } catch (error) {
+        console.error('Token refresh failed:', error);
+        alert('로그인이 만료되었습니다. 다시 로그인해주세요.');
+        window.location.href = '/login';     // 로그인 페이지로 리다이렉트
+        throw error;
+      }
+    }
+    return accessToken;
+  };
+
   // 웹캠 시작
   useEffect(() => {
     const startWebcam = async () => {
@@ -26,7 +62,7 @@ function SquatFeedback() {
         console.error('웹캠 접근 오류:', error);
       }
     };
-    
+
     startWebcam();
   }, []);
 
@@ -40,16 +76,16 @@ function SquatFeedback() {
       context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
       const imageData = canvas.toDataURL('image/png');
 
-      console.log("Python 서버에 데이터 전송 중...");
+      console.log('Python 서버에 데이터 전송 중...');
       fetch('http://localhost:5000/squat-analysis', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ frame: imageData }),
-        mode: 'cors'
+        mode: 'cors',
       })
-        .then(response => response.json())
-        .then(data => {
-          console.log("Python 서버로부터 응답 수신:", data);
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Python 서버로부터 응답 수신:', data);
           setAngle(data.angle !== null ? data.angle.toFixed(2) : null);
           setKneePosition(data.knee_position !== null ? data.knee_position.toFixed(2) : null);
           setFeedback(data.feedback);
@@ -60,7 +96,7 @@ function SquatFeedback() {
             setDetected(false);
           }
         })
-        .catch(error => console.error('피드백 가져오기 오류:', error));
+        .catch((error) => console.error('피드백 가져오기 오류:', error));
     }
   };
 
@@ -71,7 +107,7 @@ function SquatFeedback() {
       clearInterval(intervalIdRef.current);
     }
     intervalIdRef.current = setInterval(fetchData, intervalTime);
-    console.log("분석이 시작되었습니다.");
+    console.log('분석이 시작되었습니다.');
   };
 
   // 분석 종료
@@ -81,42 +117,56 @@ function SquatFeedback() {
       clearInterval(intervalIdRef.current);
     }
     setFeedback('시작 버튼을 눌러주세요');
-    console.log("분석이 종료되었습니다.");
+    console.log('분석이 종료되었습니다.');
   };
 
   // 날짜별 통계 가져오기
-  const fetchDailyStats = () => {
-    fetch(`http://localhost:8888/OspreyAI/api/squat/daily-stats?page=${currentPage}&size=5`)
-      .then(response => response.json())
-      .then(data => {
-        console.log("Fetched data from API:", data);
-  
-        // 날짜 형식을 로컬 시간대에 맞게 변환
-        const formattedStats = data.feedbackList.map(stat => ({
-          ...stat,
-          date: new Date(stat.date).toLocaleDateString('ko-KR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-          }),
-        }));
-  
-        setDailyStats(formattedStats);
-        setTotalPages(Math.ceil(data.totalCount / 5));
-      })
-      .catch(error => {
-        console.error('Error fetching daily stats:', error);
-        setDailyStats([]);
-      });
+  const fetchDailyStats = async () => {
+    try {
+      const validToken = await ensureValidToken(); // 토큰 유효성 확인 및 갱신
+
+      const response = await fetch(
+        `http://localhost:8888/api/squat/daily-stats?page=${currentPage}&size=5`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${validToken}`, // 갱신된 토큰 사용
+          },
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Error fetching daily stats');
+      }
+
+      const data = await response.json();
+      console.log('Fetched data from API:', data);
+
+      // 날짜 형식 변환
+      const formattedStats = data.feedbackList.map((stat) => ({
+        ...stat,
+        date: new Date(stat.date).toLocaleDateString('ko-KR', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        }),
+      }));
+
+      setDailyStats(formattedStats);
+      setTotalPages(Math.ceil(data.totalCount / 5));
+    } catch (error) {
+      console.error('Error fetching daily stats:', error);
+      alert(`Error: ${error.message}`);
+    }
   };
-  
-  
+
   // 슬라이더 배경 업데이트
   const updateSliderBackground = () => {
     const slider = document.querySelector('.slider');
     if (slider) {
-      // 1부터 3까지 기준으로 퍼센트 계산
-      const percentage = ((intervalTime / 1000 - 1) / 2) * 100; // 2로 나눔 (3-1)
+      const percentage = ((intervalTime / 1000 - 1) / 2) * 100; // 1~3초 기준
       slider.style.background = `linear-gradient(to right, #4a90e2 ${percentage}%, #ddd ${percentage}%)`;
     }
   };
@@ -147,9 +197,7 @@ function SquatFeedback() {
   };
 
   return (
-
     <div className="squat-feedback-container">
-
       <div className="webcam-container">
         <p className="webcam-message">전신을 보여주세요!</p>
         <video ref={videoRef} autoPlay muted className="webcam-video" />
@@ -161,7 +209,6 @@ function SquatFeedback() {
           <p className={`feedback-text ${getFeedbackClass(feedback)}`}>{feedback}</p>
         </div>
 
-
         <div className="control-panel">
           <label>검사 간격 (초): {intervalTime / 1000}초</label>
           <input
@@ -172,10 +219,13 @@ function SquatFeedback() {
             onChange={(e) => setIntervalTime(e.target.value * 1000)}
             className="slider"
           />
-          <button onClick={startAnalysis} disabled={isRunning} className={`control-button start ${isRunning ? 'active' : ''}`}>시작</button>
-          <button onClick={stopAnalysis} disabled={!isRunning} className={`control-button stop ${!isRunning ? 'disabled' : 'active'}`}>종료</button>
+          <button onClick={startAnalysis} disabled={isRunning} className={`control-button start ${isRunning ? 'active' : ''}`}>
+            시작
+          </button>
+          <button onClick={stopAnalysis} disabled={!isRunning} className={`control-button stop ${!isRunning ? 'disabled' : 'active'}`}>
+            종료
+          </button>
         </div>
-
 
         <div className="daily-stats">
           <h2>일일 통계</h2>
@@ -192,14 +242,17 @@ function SquatFeedback() {
             )}
           </ul>
 
-
           <div className="pagination">
-            <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} disabled={currentPage === 0}>이전</button>
-            <span>페이지 {currentPage + 1} / {totalPages}</span>
-            <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages - 1))} disabled={currentPage === totalPages - 1}>다음</button>
+            <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))} disabled={currentPage === 0}>
+              이전
+            </button>
+            <span>
+              페이지 {currentPage + 1} / {totalPages}
+            </span>
+            <button onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1))} disabled={currentPage === totalPages - 1}>
+              다음
+            </button>
           </div>
-
-
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ import org.myweb.ospreyai.squatfeedback.jpa.entity.SquatFeedback;
 import org.myweb.ospreyai.squatfeedback.jpa.repository.SquatFeedbackRepository;
 import org.myweb.ospreyai.squatfeedback.model.dto.SquatFeedbackDTO;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort; // 올바른 임포트 추가
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,9 +23,11 @@ public class SquatFeedbackService {
 
 	private final SquatFeedbackRepository squatFeedbackRepository;
 
-	public int saveFeedback(SquatFeedbackDTO dto) {
+	public int saveFeedback(SquatFeedbackDTO dto, String name) {
 		try {
-			squatFeedbackRepository.save(dto.toEntity());
+			SquatFeedback entity = dto.toEntity();
+			entity.setName(name); // name 설정
+			squatFeedbackRepository.save(entity);
 			return 1;
 		} catch (Exception e) {
 			log.error("Error saving feedback: " + e.getMessage());
@@ -33,18 +35,18 @@ public class SquatFeedbackService {
 		}
 	}
 
-	public List<SquatFeedbackDTO> getDailyStats(int page, int size) {
-		return squatFeedbackRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "squatDate")))
+	public List<SquatFeedbackDTO> getDailyStats(int page, int size, String name) {
+		return squatFeedbackRepository.findByName(name, PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "squatDate")))
 				.stream()
 				.map(SquatFeedback::toDto)
 				.collect(Collectors.toList());
 	}
 
-	public long getTotalFeedbackCount() {
-		return squatFeedbackRepository.count();
+	public long getTotalFeedbackCount(String name) {
+		return squatFeedbackRepository.countByName(name);
 	}
 
-	public List<SquatFeedbackDTO> getFeedbackByDate(Date date) {
+	public List<SquatFeedbackDTO> getFeedbackByDate(Date date, String name) {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
 		calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -56,7 +58,7 @@ public class SquatFeedbackService {
 		calendar.add(Calendar.DAY_OF_MONTH, 1);
 		Date endDate = calendar.getTime();
 
-		return squatFeedbackRepository.findByDate(startDate, endDate).stream()
+		return squatFeedbackRepository.findByNameAndDate(name, startDate, endDate).stream()
 				.map(SquatFeedback::toDto)
 				.collect(Collectors.toList());
 	}

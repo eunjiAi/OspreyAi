@@ -21,6 +21,8 @@ public class QSquatFeedback extends EntityPathBase<SquatFeedback> {
 
     public final NumberPath<Integer> correctCount = createNumber("correctCount", Integer.class);
 
+    public final StringPath name = createString("name");
+
     public final DateTimePath<java.util.Date> squatDate = createDateTime("squatDate", java.util.Date.class);
 
     public final NumberPath<Long> squatId = createNumber("squatId", Long.class);
