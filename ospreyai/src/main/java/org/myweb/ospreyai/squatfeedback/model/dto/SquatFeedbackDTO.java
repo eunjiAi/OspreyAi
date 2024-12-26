@@ -15,8 +15,8 @@ import java.util.Date;
 @Builder
 public class SquatFeedbackDTO {
 	private Long id;
-	private String uuid; // UUID를 사용하여 Member와 연관
-	private String name; // 사용자 이름
+	private String uuid; // 추가된 필드
+	private String name;
 
 	@JsonProperty("totalAttempts")
 	private int totalAttempts;
@@ -26,10 +26,13 @@ public class SquatFeedbackDTO {
 
 	private Date date;
 
+	@JsonProperty("dateFormatted") // 추가된 직렬화 필드
+	private String dateFormatted;
+
 	public SquatFeedback toEntity() {
 		return SquatFeedback.builder()
 				.squatId(id)
-				.uuid(uuid)
+				.uuid(uuid) // 추가된 필드
 				.name(name)
 				.totalAttempts(totalAttempts)
 				.correctCount(correctCount)

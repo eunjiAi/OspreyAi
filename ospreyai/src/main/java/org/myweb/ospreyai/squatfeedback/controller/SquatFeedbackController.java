@@ -2,13 +2,13 @@ package org.myweb.ospreyai.squatfeedback.controller;
 
 import org.myweb.ospreyai.squatfeedback.model.dto.SquatFeedbackDTO;
 import org.myweb.ospreyai.squatfeedback.model.service.SquatFeedbackService;
+import org.myweb.ospreyai.security.jwt.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
+import org.springframework.security.core.Authentication; // 추가된 부분
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +21,9 @@ public class SquatFeedbackController {
 
 	@Autowired
 	private SquatFeedbackService squatFeedbackService;
+
+	@Autowired
+	private JWTUtil jwtUtil;
 
 	@PostMapping("/feedback")
 	public ResponseEntity<String> submitFeedback(@RequestBody SquatFeedbackDTO dto, Authentication authentication) {
@@ -35,12 +38,25 @@ public class SquatFeedbackController {
 
 	@GetMapping("/daily-stats")
 	public ResponseEntity<Map<String, Object>> getDailyStats(
+			@RequestHeader("Authorization") String authorization, // JWT 토큰 추가
 			@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "6") int size,
-			Authentication authentication) {
-		String name = authentication.getName(); // 인증된 사용자 이름
-		List<SquatFeedbackDTO> feedbackList = squatFeedbackService.getDailyStats(page, size, name);
-		long totalFeedbackCount = squatFeedbackService.getTotalFeedbackCount(name);
+			@RequestParam(defaultValue = "6") int size) {
+
+		// JWT 토큰에서 사용자 정보 추출
+		String token = authorization.replace("Bearer ", "");
+		String uuid = jwtUtil.getUuidFromToken(token);
+		String name = jwtUtil.getNameFromToken(token);
+
+		// 서비스 호출
+		List<SquatFeedbackDTO> feedbackList = squatFeedbackService.getDailyStats(page, size, name, uuid);
+		long totalFeedbackCount = squatFeedbackService.getTotalFeedbackCount(name, uuid);
+
+		// 날짜 형식 변환 (yyyy-MM-dd)
+		feedbackList.forEach(feedback -> {
+			feedback.setDateFormatted(
+					new SimpleDateFormat("yyyy-MM-dd").format(feedback.getDate())
+			);
+		});
 
 		Map<String, Object> response = new HashMap<>();
 		response.put("feedbackList", feedbackList);
@@ -65,16 +81,8 @@ public class SquatFeedbackController {
 			}
 
 			return ResponseEntity.ok(feedbackList);
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 		}
-	}
-
-	@ExceptionHandler(Exception.class)
-	public ResponseEntity<Map<String, String>> handleException(Exception ex) {
-		Map<String, String> errorResponse = new HashMap<>();
-		errorResponse.put("error", "Internal Server Error");
-		errorResponse.put("message", ex.getMessage());
-		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
 	}
 }

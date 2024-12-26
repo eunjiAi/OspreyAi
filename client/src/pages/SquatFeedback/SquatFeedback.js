@@ -11,13 +11,39 @@ function SquatFeedback() {
   const [intervalTime, setIntervalTime] = useState(1000);
   const [isRunning, setIsRunning] = useState(false);
   const [detected, setDetected] = useState(false);
+  const [loading, setLoading] = useState(false); // 로딩 상태 추가
+
+  const [username, setUsername] = useState(''); // 사용자 이름 상태 추가
   const videoRef = useRef(null);
   const intervalIdRef = useRef(null);
+
+  // JWT 토큰에서 UUID와 이름 추출
+  const getPayloadFromToken = (token) => {
+    if (!token) return null;
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      return payload;
+    } catch {
+      return null;
+    }
+  };
+
+  const getUUIDFromToken = () => {
+    const token = localStorage.getItem('accessToken');
+    const payload = getPayloadFromToken(token);
+    return payload ? payload.sub : null; // subject(sub)에 UUID 저장된 경우
+  };
+
+  const getNameFromToken = () => {
+    const token = localStorage.getItem('accessToken');
+    const payload = getPayloadFromToken(token);
+    return payload ? payload.name : ''; // JWT에 사용자 이름(name) 저장된 경우
+  };
 
   // JWT 토큰 유효성 검사 및 갱신 함수
   const isTokenExpired = (token) => {
     if (!token) return true;
-    const payload = JSON.parse(atob(token.split('.')[1]));
+    const payload = getPayloadFromToken(token);
     const currentTime = Math.floor(Date.now() / 1000);
     return payload.exp < currentTime;
   };
@@ -43,7 +69,7 @@ function SquatFeedback() {
       } catch (error) {
         console.error('Token refresh failed:', error);
         alert('로그인이 만료되었습니다. 다시 로그인해주세요.');
-        window.location.href = '/login';     // 로그인 페이지로 리다이렉트
+        window.location.href = '/login'; // 로그인 페이지로 리다이렉트
         throw error;
       }
     }
@@ -64,6 +90,7 @@ function SquatFeedback() {
     };
 
     startWebcam();
+    setUsername(getNameFromToken()); // 초기 사용자 이름 설정
   }, []);
 
   // 데이터 전송
@@ -75,30 +102,41 @@ function SquatFeedback() {
       const context = canvas.getContext('2d');
       context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
       const imageData = canvas.toDataURL('image/png');
-
+  
       console.log('Python 서버에 데이터 전송 중...');
       fetch('http://localhost:5000/squat-analysis', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`, // JWT 추가
+        },
         body: JSON.stringify({ frame: imageData }),
-        mode: 'cors',
       })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log('Python 서버로부터 응답 수신:', data);
-          setAngle(data.angle !== null ? data.angle.toFixed(2) : null);
-          setKneePosition(data.knee_position !== null ? data.knee_position.toFixed(2) : null);
-          setFeedback(data.feedback);
-
-          if (data.angle !== null && data.knee_position !== null) {
-            setDetected(true);
-          } else {
-            setDetected(false);
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
           }
+          return response.json();
         })
-        .catch((error) => console.error('피드백 가져오기 오류:', error));
+        .then((data) => {
+          console.log('서버 응답 데이터:', data);
+  
+          // 유효성 검사
+          const angle = data.angle !== null && data.angle !== undefined ? data.angle.toFixed(2) : null;
+          const kneePosition = data.knee_position !== null && data.knee_position !== undefined ? data.knee_position.toFixed(2) : null;
+  
+          setFeedback(data.feedback || '분석 실패');
+          setAngle(angle);
+          setKneePosition(kneePosition);
+          setDetected(angle !== null && kneePosition !== null);
+        })
+        .catch((error) => {
+          console.error('피드백 가져오기 오류:', error);
+          setFeedback('서버 오류가 발생했습니다.');
+        });
     }
-  };
+  };  
+  
 
   // 분석 시작
   const startAnalysis = () => {
@@ -122,29 +160,28 @@ function SquatFeedback() {
 
   // 날짜별 통계 가져오기
   const fetchDailyStats = async () => {
+    setLoading(true); // 로딩 시작
     try {
-      const validToken = await ensureValidToken(); // 토큰 유효성 확인 및 갱신
-
+      const validToken = await ensureValidToken();
       const response = await fetch(
         `http://localhost:8888/api/squat/daily-stats?page=${currentPage}&size=5`,
         {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${validToken}`, // 갱신된 토큰 사용
+            Authorization: `Bearer ${validToken}`,
           },
         }
       );
-
+  
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Error fetching daily stats');
       }
-
+  
       const data = await response.json();
       console.log('Fetched data from API:', data);
-
-      // 날짜 형식 변환
+  
       const formattedStats = data.feedbackList.map((stat) => ({
         ...stat,
         date: new Date(stat.date).toLocaleDateString('ko-KR', {
@@ -153,14 +190,17 @@ function SquatFeedback() {
           day: '2-digit',
         }),
       }));
-
+  
       setDailyStats(formattedStats);
       setTotalPages(Math.ceil(data.totalCount / 5));
     } catch (error) {
       console.error('Error fetching daily stats:', error);
       alert(`Error: ${error.message}`);
+    } finally {
+      setLoading(false); // 로딩 종료
     }
   };
+  
 
   // 슬라이더 배경 업데이트
   const updateSliderBackground = () => {
@@ -175,9 +215,19 @@ function SquatFeedback() {
     updateSliderBackground();
   }, [intervalTime]);
 
+
+
   useEffect(() => {
-    fetchDailyStats();
+    console.log('Fetching daily stats...');
+    fetchDailyStats()
+      .then(() => {
+        console.log('Daily stats fetched successfully:', dailyStats);
+      })
+      .catch((err) => {
+        console.error('Failed to fetch daily stats:', err);
+      });
   }, [currentPage]);
+  
 
   const getFeedbackClass = (feedback) => {
     switch (feedback) {
@@ -228,20 +278,23 @@ function SquatFeedback() {
         </div>
 
         <div className="daily-stats">
-          <h2>일일 통계</h2>
-          <ul>
-            {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
-              dailyStats.map((stat, index) => (
-                <li key={index}>
-                  <span className="date">날짜: {stat.date}</span>
-                  <span className="count">바른 자세 횟수: {stat.correctCount}</span>
-                </li>
-              ))
-            ) : (
-              <p>데이터가 없습니다</p>
-            )}
-          </ul>
-
+          <h2>{username}의 일일 운동 기록</h2>
+          {loading ? (
+            <p>로딩 중...</p>
+          ) : (
+            <ul>
+              {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
+                dailyStats.map((stat, index) => (
+                  <li key={index}>
+                    <span className="date">날짜: {stat.date}</span>
+                    <span className="count">바른 자세 횟수: {stat.correctCount}</span>
+                  </li>
+                ))
+              ) : (
+                <p>데이터가 없습니다</p>
+              )}
+            </ul>
+          )}
           <div className="pagination">
             <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))} disabled={currentPage === 0}>
               이전
@@ -254,6 +307,7 @@ function SquatFeedback() {
             </button>
           </div>
         </div>
+
       </div>
     </div>
   );

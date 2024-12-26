@@ -23,7 +23,7 @@ public class SquatFeedback {
     private Long squatId;
 
     @Column(name = "UUID", nullable = false)
-    private String uuid;
+    private String uuid; // 추가된 필드
 
     @Column(name = "NAME", nullable = false)
     private String name;
@@ -41,7 +41,7 @@ public class SquatFeedback {
     public SquatFeedbackDTO toDto() {
         return SquatFeedbackDTO.builder()
                 .id(squatId)
-                .uuid(uuid)
+                .uuid(uuid) // 추가된 필드
                 .name(name)
                 .totalAttempts(totalAttempts)
                 .correctCount(correctCount)

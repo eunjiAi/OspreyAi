@@ -151,10 +151,11 @@ CREATE TABLE Notice (
     notice_no NUMBER NOT NULL,
     ntitle VARCHAR2(60) NOT NULL,
     ncontent CLOB NOT NULL,
-    nwriter VARCHAR2(30),
+    nwriter VARCHAR2(30) NOT NULL,
     ncreated_at DATE DEFAULT SYSDATE,
     ofilename VARCHAR2(200),
-    rfilename VARCHAR2(200),  
+    rfilename VARCHAR2(200),
+    ncount NUMBER DEFAULT 0,
     PRIMARY KEY (notice_no)
 );
 
@@ -164,6 +165,7 @@ CREATE TABLE Notice (
 -- ½ÃÄö½º »ý¼º
 CREATE SEQUENCE squat_id_seq
 START WITH 1
-INCREMENT BY 1;
+INCREMENT BY 1
+NOCACHE;
 
 COMMIT;

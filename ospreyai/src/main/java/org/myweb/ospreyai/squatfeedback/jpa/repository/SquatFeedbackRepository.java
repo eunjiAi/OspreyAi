@@ -14,6 +14,9 @@ import java.util.List;
 @Repository
 public interface SquatFeedbackRepository extends JpaRepository<SquatFeedback, Long> {
 
+    @Query("SELECT f FROM SquatFeedback f WHERE f.name = :name AND f.uuid = :uuid")
+    Page<SquatFeedback> findByNameAndUuid(@Param("name") String name, @Param("uuid") String uuid, Pageable pageable);
+
     @Query("SELECT f FROM SquatFeedback f WHERE f.squatDate >= :startDate AND f.squatDate < :endDate AND f.name = :name")
     List<SquatFeedback> findByNameAndDate(@Param("name") String name,
                                           @Param("startDate") Date startDate,
@@ -22,4 +25,8 @@ public interface SquatFeedbackRepository extends JpaRepository<SquatFeedback, Lo
     Page<SquatFeedback> findByName(String name, Pageable pageable);
 
     long countByName(String name);
+
+    // name과 uuid를 조건으로 사용하는 메서드
+    @Query("SELECT COUNT(f) FROM SquatFeedback f WHERE f.name = :name AND f.uuid = :uuid")
+    long countByNameAndUuid(@Param("name") String name, @Param("uuid") String uuid);
 }
