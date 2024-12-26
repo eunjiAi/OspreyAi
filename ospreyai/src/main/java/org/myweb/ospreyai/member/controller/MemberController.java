@@ -19,10 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @RestController
@@ -36,14 +33,14 @@ public class MemberController {
 
 	//ajax 통신으로 가입할 회원의 아이디 중복 검사 요청 처리용 메소드
 	//동작 행위는 select 이므로 @GetMapping 이지만, 개인 아이디이므로 url 에 노출되지 않도록 post 요청 처리함
-//	@PostMapping("/emailchk")
-//	public ResponseEntity<String> dupCheckIdMethod(@RequestParam("userId") String userId) {
-//		if(memberService.selectCheckId(userId) == 0){
-//			return new ResponseEntity<String>("ok", HttpStatus.OK);
-//		}else{
-//			return new ResponseEntity<String>("dup", HttpStatus.OK);
-//		}
-//	}
+	@PostMapping("/emailchk")
+	public ResponseEntity<String> dupCheckIdMethod(@RequestParam("email") String email) {
+		if(memberService.selectCheckEmail(email) == 0){
+			return new ResponseEntity<String>("ok", HttpStatus.OK);
+		}else{
+			return new ResponseEntity<String>("dup", HttpStatus.OK);
+		}
+	}
 
 	// 회원 가입 요청 처리용 메소드 (파일 첨부 기능이 있는 경우 처리 방식) => 첨부된 파일은 별도로 전송받도록 처리함
 	// 서버상의 파일 저장 폴더 지정을 위해서 request 객체가 사용됨
@@ -52,25 +49,29 @@ public class MemberController {
 	// json 객체를 string 형태로 전송오면, @RequestBody String param 으로 받음
 	// 이름: 값 의 형태로 전송오면, @RequestParam("이름") 자료형 변수명 으로 받음
 	// multipart 방식으로 폼데이터가 전송오면, @ModelAttribute 클래스명 커맨드객체명 으로 받음
-//	@PostMapping
-//	public ResponseEntity memberInsertMethod(
-//			@ModelAttribute Member member) {
-//		log.info("memberInsertMethod : " + member);
-//
-//		// 패스워드 암호화 처리
-//		member.setPw(bcryptPasswordEncoder.encode(member.getPw()));
-//		log.info("after encode : " + member.getPw() + ", length : " + member.getPw().length());
-//
-//		//가입정보 추가 입력 처리
-//		member.setLoginOk("Y");
-//		member.setAdminYn("N");
-//		member.setSignType("direct");
-//		log.info("memberInsertMethod : " + member);
-//
-//		memberService.insertMember(member);
-//		return ResponseEntity.status(HttpStatus.OK).build();
-//
-//	}
+	@PostMapping
+	public ResponseEntity memberInsertMethod(
+			@ModelAttribute Member member) {
+		log.info("memberInsertMethod() : " + member);
+
+		//UUID 자동 생성
+		member.setUuid(UUID.randomUUID().toString());
+		log.info("createdUUID : " + member.getUuid());
+
+		// 패스워드 암호화 처리
+		member.setPw(bcryptPasswordEncoder.encode(member.getPw()));
+		log.info("after encode : " + member.getPw() + ", length : " + member.getPw().length());
+
+		//가입정보 추가 입력 처리
+		member.setLoginOk("Y");
+		member.setAdminYn("N");
+		member.setSignType("direct");
+		log.info("memberInsertMethod : " + member);
+
+		memberService.insertMember(member);
+		return ResponseEntity.status(HttpStatus.OK).build();
+
+	}
 
 
 	// '내 정보 보기' 클릭시 회원 정보 조회 요청 처리용 메소드

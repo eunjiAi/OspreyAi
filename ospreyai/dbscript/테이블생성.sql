@@ -13,7 +13,7 @@ END;
 CREATE TABLE Member (
     uuid VARCHAR2(36) NOT NULL,
     name VARCHAR2(20) NOT NULL,
-    nickname VARCHAR2(30) NOT NULL,
+    nickname VARCHAR2(30),
     email VARCHAR2(100) NOT NULL,
     pw VARCHAR2(100),
     phone_number VARCHAR2(15),
