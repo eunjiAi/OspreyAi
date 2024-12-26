@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
@@ -42,6 +41,13 @@ public class SquatFeedbackController {
 		List<SquatFeedbackDTO> feedbackList = squatFeedbackService.getDailyStats(page, size, name);
 		long totalFeedbackCount = squatFeedbackService.getTotalFeedbackCount(name);
 
+		// 날짜 형식 변환 (yyyy-MM-dd)
+		feedbackList.forEach(feedback -> {
+			feedback.setDateFormatted(
+					new SimpleDateFormat("yyyy-MM-dd").format(feedback.getDate())
+			);
+		});
+
 		Map<String, Object> response = new HashMap<>();
 		response.put("feedbackList", feedbackList);
 		response.put("totalCount", totalFeedbackCount);
@@ -65,16 +71,8 @@ public class SquatFeedbackController {
 			}
 
 			return ResponseEntity.ok(feedbackList);
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 		}
-	}
-
-	@ExceptionHandler(Exception.class)
-	public ResponseEntity<Map<String, String>> handleException(Exception ex) {
-		Map<String, String> errorResponse = new HashMap<>();
-		errorResponse.put("error", "Internal Server Error");
-		errorResponse.put("message", ex.getMessage());
-		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
 	}
 }

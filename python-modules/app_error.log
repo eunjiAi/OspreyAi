@@ -7331,3 +7331,482 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
 2024-12-26 14:53:32,499 INFO 127.0.0.1 - - [26/Dec/2024 14:53:32] "POST /squat-analysis HTTP/1.1" 200 -
 2024-12-26 14:53:32,927 INFO 127.0.0.1 - - [26/Dec/2024 14:53:32] "POST /squat-analysis HTTP/1.1" 200 -
 2024-12-26 14:53:34,255 INFO 127.0.0.1 - - [26/Dec/2024 14:53:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:54:18,484 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 14:54:23,629 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:54:23,629 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:54:23,631 INFO  * Restarting with stat
+2024-12-26 14:54:26,595 WARNING  * Debugger is active!
+2024-12-26 14:54:26,598 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:55:33,338 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 14:55:38,900 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:55:38,901 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:55:38,902 INFO  * Restarting with stat
+2024-12-26 14:55:41,640 WARNING  * Debugger is active!
+2024-12-26 14:55:41,642 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:55:44,238 INFO 127.0.0.1 - - [26/Dec/2024 14:55:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:55:44,499 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:44,500 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:44,507 INFO 127.0.0.1 - - [26/Dec/2024 14:55:44] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:44,941 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:44,941 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:44,942 INFO 127.0.0.1 - - [26/Dec/2024 14:55:44] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:46,245 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:46,245 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:46,246 INFO 127.0.0.1 - - [26/Dec/2024 14:55:46] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:46,936 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:46,936 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:46,936 INFO 127.0.0.1 - - [26/Dec/2024 14:55:46] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:48,258 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:48,258 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:48,258 INFO 127.0.0.1 - - [26/Dec/2024 14:55:48] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:49,943 INFO 127.0.0.1 - - [26/Dec/2024 14:55:49] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:55:50,246 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:50,246 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:50,247 INFO 127.0.0.1 - - [26/Dec/2024 14:55:50] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:50,935 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:50,935 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:50,935 INFO 127.0.0.1 - - [26/Dec/2024 14:55:50] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:52,239 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:52,239 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:52,240 INFO 127.0.0.1 - - [26/Dec/2024 14:55:52] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:52,941 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:52,941 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:52,941 INFO 127.0.0.1 - - [26/Dec/2024 14:55:52] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:54,240 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:54,242 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:54,242 INFO 127.0.0.1 - - [26/Dec/2024 14:55:54] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:55,400 INFO 127.0.0.1 - - [26/Dec/2024 14:55:55] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:55:55,714 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:55,715 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:55,715 INFO 127.0.0.1 - - [26/Dec/2024 14:55:55] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:56,401 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:56,401 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:56,401 INFO 127.0.0.1 - - [26/Dec/2024 14:55:56] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:57,706 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:57,706 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:57,707 INFO 127.0.0.1 - - [26/Dec/2024 14:55:57] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:58,402 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:58,402 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:58,403 INFO 127.0.0.1 - - [26/Dec/2024 14:55:58] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:55:59,718 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:55:59,718 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:55:59,719 INFO 127.0.0.1 - - [26/Dec/2024 14:55:59] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:00,403 INFO 127.0.0.1 - - [26/Dec/2024 14:56:00] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:56:00,712 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:00,712 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:00,713 INFO 127.0.0.1 - - [26/Dec/2024 14:56:00] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:01,411 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:01,411 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:01,411 INFO 127.0.0.1 - - [26/Dec/2024 14:56:01] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:02,715 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:02,716 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:02,716 INFO 127.0.0.1 - - [26/Dec/2024 14:56:02] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:03,397 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:03,398 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:03,398 INFO 127.0.0.1 - - [26/Dec/2024 14:56:03] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:04,709 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:04,709 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:04,709 INFO 127.0.0.1 - - [26/Dec/2024 14:56:04] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:05,410 INFO 127.0.0.1 - - [26/Dec/2024 14:56:05] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:56:05,719 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:05,719 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:05,720 INFO 127.0.0.1 - - [26/Dec/2024 14:56:05] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:06,399 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:06,400 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:06,400 INFO 127.0.0.1 - - [26/Dec/2024 14:56:06] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:07,706 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:07,706 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:07,707 INFO 127.0.0.1 - - [26/Dec/2024 14:56:07] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:08,408 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:08,408 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:08,410 INFO 127.0.0.1 - - [26/Dec/2024 14:56:08] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:09,713 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:09,713 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:09,714 INFO 127.0.0.1 - - [26/Dec/2024 14:56:09] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:10,398 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:10,398 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:10,398 INFO 127.0.0.1 - - [26/Dec/2024 14:56:10] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:11,705 INFO 127.0.0.1 - - [26/Dec/2024 14:56:11] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:56:11,972 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:11,972 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:11,972 INFO 127.0.0.1 - - [26/Dec/2024 14:56:11] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:12,406 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:12,406 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:12,406 INFO 127.0.0.1 - - [26/Dec/2024 14:56:12] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:13,706 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:13,706 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:13,706 INFO 127.0.0.1 - - [26/Dec/2024 14:56:13] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:14,402 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:14,402 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:14,402 INFO 127.0.0.1 - - [26/Dec/2024 14:56:14] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:15,707 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:15,707 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:15,707 INFO 127.0.0.1 - - [26/Dec/2024 14:56:15] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:16,401 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:16,401 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:16,401 INFO 127.0.0.1 - - [26/Dec/2024 14:56:16] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:17,707 INFO 127.0.0.1 - - [26/Dec/2024 14:56:17] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:56:17,950 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:17,951 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:17,951 INFO 127.0.0.1 - - [26/Dec/2024 14:56:17] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:18,402 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:18,402 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:18,402 INFO 127.0.0.1 - - [26/Dec/2024 14:56:18] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:19,698 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:19,698 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:19,699 INFO 127.0.0.1 - - [26/Dec/2024 14:56:19] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:20,395 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:20,396 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:20,396 INFO 127.0.0.1 - - [26/Dec/2024 14:56:20] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:21,719 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:21,719 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:21,720 INFO 127.0.0.1 - - [26/Dec/2024 14:56:21] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:22,397 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:22,397 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:22,397 INFO 127.0.0.1 - - [26/Dec/2024 14:56:22] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:23,706 INFO 127.0.0.1 - - [26/Dec/2024 14:56:23] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:56:23,971 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:23,971 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:23,971 INFO 127.0.0.1 - - [26/Dec/2024 14:56:23] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:24,400 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:24,400 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:24,400 INFO 127.0.0.1 - - [26/Dec/2024 14:56:24] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:25,713 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:25,713 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:25,714 INFO 127.0.0.1 - - [26/Dec/2024 14:56:25] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:26,407 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:26,407 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:26,407 INFO 127.0.0.1 - - [26/Dec/2024 14:56:26] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:27,700 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:27,700 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:27,700 INFO 127.0.0.1 - - [26/Dec/2024 14:56:27] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:28,464 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:28,464 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:28,464 INFO 127.0.0.1 - - [26/Dec/2024 14:56:28] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:29,716 INFO 127.0.0.1 - - [26/Dec/2024 14:56:29] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:56:29,980 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:29,980 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:29,980 INFO 127.0.0.1 - - [26/Dec/2024 14:56:29] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:30,395 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:30,395 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:30,396 INFO 127.0.0.1 - - [26/Dec/2024 14:56:30] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:31,705 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:31,705 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:31,705 INFO 127.0.0.1 - - [26/Dec/2024 14:56:31] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:32,400 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:32,402 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:32,402 INFO 127.0.0.1 - - [26/Dec/2024 14:56:32] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:33,708 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:33,708 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:33,709 INFO 127.0.0.1 - - [26/Dec/2024 14:56:33] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:34,403 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:34,403 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:34,403 INFO 127.0.0.1 - - [26/Dec/2024 14:56:34] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:35,709 INFO 127.0.0.1 - - [26/Dec/2024 14:56:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:56:35,973 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:35,974 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:35,974 INFO 127.0.0.1 - - [26/Dec/2024 14:56:35] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:36,406 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:36,406 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:36,407 INFO 127.0.0.1 - - [26/Dec/2024 14:56:36] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:37,714 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:37,715 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:37,716 INFO 127.0.0.1 - - [26/Dec/2024 14:56:37] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:38,396 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:38,396 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:38,397 INFO 127.0.0.1 - - [26/Dec/2024 14:56:38] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:39,708 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:39,708 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:39,709 INFO 127.0.0.1 - - [26/Dec/2024 14:56:39] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:40,390 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:40,390 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:40,392 INFO 127.0.0.1 - - [26/Dec/2024 14:56:40] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:41,705 INFO 127.0.0.1 - - [26/Dec/2024 14:56:41] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:56:41,968 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:41,968 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:41,969 INFO 127.0.0.1 - - [26/Dec/2024 14:56:41] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:42,408 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:42,408 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:42,408 INFO 127.0.0.1 - - [26/Dec/2024 14:56:42] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:43,713 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:43,713 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:43,714 INFO 127.0.0.1 - - [26/Dec/2024 14:56:43] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:44,402 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:44,402 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:44,403 INFO 127.0.0.1 - - [26/Dec/2024 14:56:44] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:45,705 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:45,705 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:45,706 INFO 127.0.0.1 - - [26/Dec/2024 14:56:45] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:46,408 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:46,408 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:46,408 INFO 127.0.0.1 - - [26/Dec/2024 14:56:46] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:47,717 INFO 127.0.0.1 - - [26/Dec/2024 14:56:47] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:56:47,977 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:47,977 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:47,977 INFO 127.0.0.1 - - [26/Dec/2024 14:56:47] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:48,392 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:48,392 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:48,393 INFO 127.0.0.1 - - [26/Dec/2024 14:56:48] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:49,713 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:49,714 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:49,714 INFO 127.0.0.1 - - [26/Dec/2024 14:56:49] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:50,393 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:50,393 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:50,393 INFO 127.0.0.1 - - [26/Dec/2024 14:56:50] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:51,717 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:51,717 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:51,718 INFO 127.0.0.1 - - [26/Dec/2024 14:56:51] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:52,400 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:56:52,400 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:56:52,401 INFO 127.0.0.1 - - [26/Dec/2024 14:56:52] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:56:53,402 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 14:57:57,692 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:57:57,692 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:57:57,693 INFO  * Restarting with stat
+2024-12-26 14:58:00,487 WARNING  * Debugger is active!
+2024-12-26 14:58:00,490 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:58:00,497 INFO 127.0.0.1 - - [26/Dec/2024 14:58:00] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:00,498 INFO 127.0.0.1 - - [26/Dec/2024 14:58:00] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:00,499 INFO 127.0.0.1 - - [26/Dec/2024 14:58:00] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:00,504 INFO 127.0.0.1 - - [26/Dec/2024 14:58:00] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:00,883 INFO 127.0.0.1 - - [26/Dec/2024 14:58:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:00,884 INFO 127.0.0.1 - - [26/Dec/2024 14:58:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:00,885 INFO 127.0.0.1 - - [26/Dec/2024 14:58:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:00,885 INFO 127.0.0.1 - - [26/Dec/2024 14:58:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:01,079 INFO 127.0.0.1 - - [26/Dec/2024 14:58:01] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:02,077 INFO 127.0.0.1 - - [26/Dec/2024 14:58:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:02,773 INFO 127.0.0.1 - - [26/Dec/2024 14:58:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:04,086 INFO 127.0.0.1 - - [26/Dec/2024 14:58:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:04,762 INFO 127.0.0.1 - - [26/Dec/2024 14:58:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:06,062 INFO 127.0.0.1 - - [26/Dec/2024 14:58:06] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:06,389 INFO 127.0.0.1 - - [26/Dec/2024 14:58:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:07,433 INFO 127.0.0.1 - - [26/Dec/2024 14:58:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:08,754 INFO 127.0.0.1 - - [26/Dec/2024 14:58:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:09,430 INFO 127.0.0.1 - - [26/Dec/2024 14:58:09] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:10,768 INFO 127.0.0.1 - - [26/Dec/2024 14:58:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:11,393 INFO 127.0.0.1 - - [26/Dec/2024 14:58:11] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:11,752 INFO 127.0.0.1 - - [26/Dec/2024 14:58:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:12,429 INFO 127.0.0.1 - - [26/Dec/2024 14:58:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:13,746 INFO 127.0.0.1 - - [26/Dec/2024 14:58:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:14,433 INFO 127.0.0.1 - - [26/Dec/2024 14:58:14] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:15,747 INFO 127.0.0.1 - - [26/Dec/2024 14:58:15] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:16,398 INFO 127.0.0.1 - - [26/Dec/2024 14:58:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:16,743 INFO 127.0.0.1 - - [26/Dec/2024 14:58:16] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:17,437 INFO 127.0.0.1 - - [26/Dec/2024 14:58:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:18,750 INFO 127.0.0.1 - - [26/Dec/2024 14:58:18] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:19,428 INFO 127.0.0.1 - - [26/Dec/2024 14:58:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:20,738 INFO 127.0.0.1 - - [26/Dec/2024 14:58:20] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:21,405 INFO 127.0.0.1 - - [26/Dec/2024 14:58:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:21,755 INFO 127.0.0.1 - - [26/Dec/2024 14:58:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:22,455 INFO 127.0.0.1 - - [26/Dec/2024 14:58:22] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:23,812 INFO 127.0.0.1 - - [26/Dec/2024 14:58:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:24,440 INFO 127.0.0.1 - - [26/Dec/2024 14:58:24] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:25,747 INFO 127.0.0.1 - - [26/Dec/2024 14:58:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:26,435 INFO 127.0.0.1 - - [26/Dec/2024 14:58:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:27,708 INFO 127.0.0.1 - - [26/Dec/2024 14:58:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:28,040 INFO 127.0.0.1 - - [26/Dec/2024 14:58:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:28,433 INFO 127.0.0.1 - - [26/Dec/2024 14:58:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:29,794 INFO 127.0.0.1 - - [26/Dec/2024 14:58:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:30,484 INFO 127.0.0.1 - - [26/Dec/2024 14:58:30] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:31,774 INFO 127.0.0.1 - - [26/Dec/2024 14:58:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:32,436 INFO 127.0.0.1 - - [26/Dec/2024 14:58:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:33,713 INFO 127.0.0.1 - - [26/Dec/2024 14:58:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:33,991 INFO 127.0.0.1 - - [26/Dec/2024 14:58:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:34,444 INFO 127.0.0.1 - - [26/Dec/2024 14:58:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:35,750 INFO 127.0.0.1 - - [26/Dec/2024 14:58:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:36,441 INFO 127.0.0.1 - - [26/Dec/2024 14:58:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:37,758 INFO 127.0.0.1 - - [26/Dec/2024 14:58:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:38,433 INFO 127.0.0.1 - - [26/Dec/2024 14:58:38] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:39,714 INFO 127.0.0.1 - - [26/Dec/2024 14:58:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:40,004 INFO 127.0.0.1 - - [26/Dec/2024 14:58:40] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:40,420 INFO 127.0.0.1 - - [26/Dec/2024 14:58:40] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:41,737 INFO 127.0.0.1 - - [26/Dec/2024 14:58:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:42,414 INFO 127.0.0.1 - - [26/Dec/2024 14:58:42] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:43,739 INFO 127.0.0.1 - - [26/Dec/2024 14:58:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:44,420 INFO 127.0.0.1 - - [26/Dec/2024 14:58:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:45,707 INFO 127.0.0.1 - - [26/Dec/2024 14:58:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:45,996 INFO 127.0.0.1 - - [26/Dec/2024 14:58:45] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:46,417 INFO 127.0.0.1 - - [26/Dec/2024 14:58:46] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:47,738 INFO 127.0.0.1 - - [26/Dec/2024 14:58:47] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:48,416 INFO 127.0.0.1 - - [26/Dec/2024 14:58:48] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:49,723 INFO 127.0.0.1 - - [26/Dec/2024 14:58:49] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:50,420 INFO 127.0.0.1 - - [26/Dec/2024 14:58:50] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:51,710 INFO 127.0.0.1 - - [26/Dec/2024 14:58:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:52,004 INFO 127.0.0.1 - - [26/Dec/2024 14:58:52] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:52,411 INFO 127.0.0.1 - - [26/Dec/2024 14:58:52] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:53,771 INFO 127.0.0.1 - - [26/Dec/2024 14:58:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:54,440 INFO 127.0.0.1 - - [26/Dec/2024 14:58:54] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:55,743 INFO 127.0.0.1 - - [26/Dec/2024 14:58:55] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:56,440 INFO 127.0.0.1 - - [26/Dec/2024 14:58:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:57,718 INFO 127.0.0.1 - - [26/Dec/2024 14:58:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:57,999 INFO 127.0.0.1 - - [26/Dec/2024 14:58:57] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:58,436 INFO 127.0.0.1 - - [26/Dec/2024 14:58:58] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:58:59,749 INFO 127.0.0.1 - - [26/Dec/2024 14:58:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:00,445 INFO 127.0.0.1 - - [26/Dec/2024 14:59:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:01,749 INFO 127.0.0.1 - - [26/Dec/2024 14:59:01] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:02,446 INFO 127.0.0.1 - - [26/Dec/2024 14:59:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:03,715 INFO 127.0.0.1 - - [26/Dec/2024 14:59:03] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:04,016 INFO 127.0.0.1 - - [26/Dec/2024 14:59:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:04,441 INFO 127.0.0.1 - - [26/Dec/2024 14:59:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:05,748 INFO 127.0.0.1 - - [26/Dec/2024 14:59:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:06,429 INFO 127.0.0.1 - - [26/Dec/2024 14:59:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:07,755 INFO 127.0.0.1 - - [26/Dec/2024 14:59:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:08,436 INFO 127.0.0.1 - - [26/Dec/2024 14:59:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:09,707 INFO 127.0.0.1 - - [26/Dec/2024 14:59:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:10,011 INFO 127.0.0.1 - - [26/Dec/2024 14:59:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:10,451 INFO 127.0.0.1 - - [26/Dec/2024 14:59:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:11,752 INFO 127.0.0.1 - - [26/Dec/2024 14:59:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:12,438 INFO 127.0.0.1 - - [26/Dec/2024 14:59:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:13,313 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 14:59:25,105 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:59:25,105 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:59:25,106 INFO  * Restarting with stat
+2024-12-26 14:59:27,715 WARNING  * Debugger is active!
+2024-12-26 14:59:27,718 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:59:32,277 INFO 127.0.0.1 - - [26/Dec/2024 14:59:32] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:32,540 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:32,541 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:32,541 INFO 127.0.0.1 - - [26/Dec/2024 14:59:32] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:32,969 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:32,970 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:32,970 INFO 127.0.0.1 - - [26/Dec/2024 14:59:32] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:34,270 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:34,270 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:34,270 INFO 127.0.0.1 - - [26/Dec/2024 14:59:34] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:34,968 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:34,968 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:34,969 INFO 127.0.0.1 - - [26/Dec/2024 14:59:34] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:36,277 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:36,277 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:36,277 INFO 127.0.0.1 - - [26/Dec/2024 14:59:36] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:36,966 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:36,967 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:36,967 INFO 127.0.0.1 - - [26/Dec/2024 14:59:36] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:38,275 INFO 127.0.0.1 - - [26/Dec/2024 14:59:38] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:38,539 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:38,539 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:38,539 INFO 127.0.0.1 - - [26/Dec/2024 14:59:38] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:38,971 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:38,972 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:38,972 INFO 127.0.0.1 - - [26/Dec/2024 14:59:38] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:40,276 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:40,276 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:40,276 INFO 127.0.0.1 - - [26/Dec/2024 14:59:40] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:40,968 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:40,969 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:40,969 INFO 127.0.0.1 - - [26/Dec/2024 14:59:40] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:42,272 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:42,274 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:42,274 INFO 127.0.0.1 - - [26/Dec/2024 14:59:42] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:42,977 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:42,977 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:42,977 INFO 127.0.0.1 - - [26/Dec/2024 14:59:42] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:44,274 INFO 127.0.0.1 - - [26/Dec/2024 14:59:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:44,519 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:44,519 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:44,520 INFO 127.0.0.1 - - [26/Dec/2024 14:59:44] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:44,974 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:44,974 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:44,974 INFO 127.0.0.1 - - [26/Dec/2024 14:59:44] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:46,267 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:46,267 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:46,267 INFO 127.0.0.1 - - [26/Dec/2024 14:59:46] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:46,964 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:46,964 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:46,964 INFO 127.0.0.1 - - [26/Dec/2024 14:59:46] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:48,275 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:48,276 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:48,276 INFO 127.0.0.1 - - [26/Dec/2024 14:59:48] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:48,971 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:48,971 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:48,971 INFO 127.0.0.1 - - [26/Dec/2024 14:59:48] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:50,278 INFO 127.0.0.1 - - [26/Dec/2024 14:59:50] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:50,541 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:50,541 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:50,542 INFO 127.0.0.1 - - [26/Dec/2024 14:59:50] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:50,962 DEBUG ¿äÃ» ¸Þ¼Òµå: POST
+2024-12-26 14:59:50,962 ERROR JWT Ã³¸® ¿À·ù: Authorization Çì´õ°¡ ¾ø½À´Ï´Ù.
+2024-12-26 14:59:50,962 INFO 127.0.0.1 - - [26/Dec/2024 14:59:50] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 14:59:51,970 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 14:59:56,331 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:59:56,331 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:59:56,332 INFO  * Restarting with stat
+2024-12-26 14:59:59,090 WARNING  * Debugger is active!
+2024-12-26 14:59:59,092 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:59:59,102 INFO 127.0.0.1 - - [26/Dec/2024 14:59:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:59,104 INFO 127.0.0.1 - - [26/Dec/2024 14:59:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:59,514 INFO 127.0.0.1 - - [26/Dec/2024 14:59:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:59:59,515 INFO 127.0.0.1 - - [26/Dec/2024 14:59:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:00:01,836 INFO 127.0.0.1 - - [26/Dec/2024 15:00:01] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:00:02,517 INFO 127.0.0.1 - - [26/Dec/2024 15:00:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:00:03,846 INFO 127.0.0.1 - - [26/Dec/2024 15:00:03] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:00:04,493 INFO 127.0.0.1 - - [26/Dec/2024 15:00:04] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:00:04,852 INFO 127.0.0.1 - - [26/Dec/2024 15:00:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:00:05,519 INFO 127.0.0.1 - - [26/Dec/2024 15:00:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:00:06,822 INFO 127.0.0.1 - - [26/Dec/2024 15:00:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:00:07,501 INFO 127.0.0.1 - - [26/Dec/2024 15:00:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:00:08,807 INFO 127.0.0.1 - - [26/Dec/2024 15:00:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:13:42,875 INFO 127.0.0.1 - - [26/Dec/2024 15:13:42] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:13:43,149 INFO 127.0.0.1 - - [26/Dec/2024 15:13:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:13:43,578 INFO 127.0.0.1 - - [26/Dec/2024 15:13:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:02,532 INFO 127.0.0.1 - - [26/Dec/2024 15:15:02] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:02,820 INFO 127.0.0.1 - - [26/Dec/2024 15:15:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:03,235 INFO 127.0.0.1 - - [26/Dec/2024 15:15:03] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:04,553 INFO 127.0.0.1 - - [26/Dec/2024 15:15:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:05,249 INFO 127.0.0.1 - - [26/Dec/2024 15:15:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:06,559 INFO 127.0.0.1 - - [26/Dec/2024 15:15:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:07,251 INFO 127.0.0.1 - - [26/Dec/2024 15:15:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:08,539 INFO 127.0.0.1 - - [26/Dec/2024 15:15:08] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:08,827 INFO 127.0.0.1 - - [26/Dec/2024 15:15:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:09,246 INFO 127.0.0.1 - - [26/Dec/2024 15:15:09] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:10,556 INFO 127.0.0.1 - - [26/Dec/2024 15:15:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:11,241 INFO 127.0.0.1 - - [26/Dec/2024 15:15:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:16,543 INFO 127.0.0.1 - - [26/Dec/2024 15:15:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:16,832 INFO 127.0.0.1 - - [26/Dec/2024 15:15:16] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:17,264 INFO 127.0.0.1 - - [26/Dec/2024 15:15:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:18,564 INFO 127.0.0.1 - - [26/Dec/2024 15:15:18] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:19,267 INFO 127.0.0.1 - - [26/Dec/2024 15:15:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:20,564 INFO 127.0.0.1 - - [26/Dec/2024 15:15:20] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:21,340 INFO 127.0.0.1 - - [26/Dec/2024 15:15:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:23,615 INFO 127.0.0.1 - - [26/Dec/2024 15:15:23] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:23,903 INFO 127.0.0.1 - - [26/Dec/2024 15:15:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:24,349 INFO 127.0.0.1 - - [26/Dec/2024 15:15:24] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:25,661 INFO 127.0.0.1 - - [26/Dec/2024 15:15:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:26,369 INFO 127.0.0.1 - - [26/Dec/2024 15:15:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:27,665 INFO 127.0.0.1 - - [26/Dec/2024 15:15:27] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:28,369 INFO 127.0.0.1 - - [26/Dec/2024 15:15:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:29,631 INFO 127.0.0.1 - - [26/Dec/2024 15:15:29] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:29,933 INFO 127.0.0.1 - - [26/Dec/2024 15:15:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:30,367 INFO 127.0.0.1 - - [26/Dec/2024 15:15:30] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:31,677 INFO 127.0.0.1 - - [26/Dec/2024 15:15:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:15:32,362 INFO 127.0.0.1 - - [26/Dec/2024 15:15:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:16:25,434 INFO 127.0.0.1 - - [26/Dec/2024 15:16:25] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:16:25,725 INFO 127.0.0.1 - - [26/Dec/2024 15:16:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:16:26,143 INFO 127.0.0.1 - - [26/Dec/2024 15:16:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:16:42,767 INFO 127.0.0.1 - - [26/Dec/2024 15:16:42] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 15:16:43,052 INFO 127.0.0.1 - - [26/Dec/2024 15:16:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 16:35:25,775 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 16:36:14,338 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 16:36:14,339 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 16:36:14,339 INFO  * Restarting with stat
+2024-12-26 16:36:16,819 WARNING  * Debugger is active!
+2024-12-26 16:36:16,821 INFO  * Debugger PIN: 125-377-655
+2024-12-26 16:36:30,919 INFO 127.0.0.1 - - [26/Dec/2024 16:36:30] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 16:36:31,184 INFO 127.0.0.1 - - [26/Dec/2024 16:36:31] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 16:36:31,604 INFO 127.0.0.1 - - [26/Dec/2024 16:36:31] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 16:36:32,922 INFO 127.0.0.1 - - [26/Dec/2024 16:36:32] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 16:36:33,605 INFO 127.0.0.1 - - [26/Dec/2024 16:36:33] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 16:36:34,919 INFO 127.0.0.1 - - [26/Dec/2024 16:36:34] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 401 -
+2024-12-26 16:36:37,051 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 16:36:40,949 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 16:36:40,949 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 16:36:40,950 INFO  * Restarting with stat
+2024-12-26 16:36:43,623 WARNING  * Debugger is active!
+2024-12-26 16:36:43,625 INFO  * Debugger PIN: 125-377-655
