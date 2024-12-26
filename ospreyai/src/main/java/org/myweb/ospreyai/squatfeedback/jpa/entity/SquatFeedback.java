@@ -20,10 +20,13 @@ public class SquatFeedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SQUAT_ID")
-    private Long squatId; // 기본 키
+    private Long squatId;
 
     @Column(name = "UUID", nullable = false)
-    private String uuid; // 외래 키 (Member 테이블의 uuid와 연관)
+    private String uuid;
+
+    @Column(name = "NAME", nullable = false)
+    private String name;
 
     @Column(name = "TOTAL_ATTEMPTS", nullable = false)
     private int totalAttempts;
@@ -39,6 +42,7 @@ public class SquatFeedback {
         return SquatFeedbackDTO.builder()
                 .id(squatId)
                 .uuid(uuid)
+                .name(name)
                 .totalAttempts(totalAttempts)
                 .correctCount(correctCount)
                 .date(squatDate)
