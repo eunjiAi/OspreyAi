@@ -100,30 +100,36 @@ function SquatFeedback() {
       const context = canvas.getContext('2d');
       context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
       const imageData = canvas.toDataURL('image/png');
-
+  
       console.log('Python 서버에 데이터 전송 중...');
       fetch('http://localhost:5000/squat-analysis', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ frame: imageData }),
-        mode: 'cors',
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log('Python 서버로부터 응답 수신:', data);
+          console.log('서버 응답 데이터:', data);
+  
+          // 서버 응답에 따른 상태 업데이트
+          if (data.error) {
+            setFeedback('포즈가 감지되지 않았습니다'); // 에러가 발생했을 때
+          } else if (data.feedback) {
+            setFeedback(data.feedback); // 정상적인 피드백 처리
+          }
+  
           setAngle(data.angle !== null ? data.angle.toFixed(2) : null);
           setKneePosition(data.knee_position !== null ? data.knee_position.toFixed(2) : null);
-          setFeedback(data.feedback);
-
-          if (data.angle !== null && data.knee_position !== null) {
-            setDetected(true);
-          } else {
-            setDetected(false);
-          }
+  
+          setDetected(data.angle !== null && data.knee_position !== null);
         })
-        .catch((error) => console.error('피드백 가져오기 오류:', error));
+        .catch((error) => {
+          console.error('피드백 가져오기 오류:', error);
+          setFeedback('서버 오류가 발생했습니다.'); // 서버 오류 처리
+        });
     }
   };
+  
 
   // 분석 시작
   const startAnalysis = () => {

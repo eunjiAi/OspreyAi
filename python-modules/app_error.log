@@ -6304,3 +6304,1030 @@ WHERE "SQUATFEEDBACK".uuid = :uuid_1 AND "SQUATFEEDBACK".squat_date = :squat_dat
 2024-12-26 11:06:25,901 DEBUG Flask ¼­¹ö¸¦ ½ÃÀÛÇÕ´Ï´Ù...
 2024-12-26 11:06:25,909 WARNING  * Debugger is active!
 2024-12-26 11:06:25,917 INFO  * Debugger PIN: 133-731-000
+2024-12-26 14:43:24,776 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:43:24,777 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:43:24,777 INFO  * Restarting with stat
+2024-12-26 14:43:27,567 WARNING  * Debugger is active!
+2024-12-26 14:43:27,569 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:43:35,733 INFO 127.0.0.1 - - [26/Dec/2024 14:43:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:43:35,987 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:35,990 INFO 127.0.0.1 - - [26/Dec/2024 14:43:35] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:36,404 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:36,404 INFO 127.0.0.1 - - [26/Dec/2024 14:43:36] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:37,722 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:37,723 INFO 127.0.0.1 - - [26/Dec/2024 14:43:37] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:38,406 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:38,406 INFO 127.0.0.1 - - [26/Dec/2024 14:43:38] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:39,716 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:39,716 INFO 127.0.0.1 - - [26/Dec/2024 14:43:39] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:40,424 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:40,424 INFO 127.0.0.1 - - [26/Dec/2024 14:43:40] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:41,714 INFO 127.0.0.1 - - [26/Dec/2024 14:43:41] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:43:41,980 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:41,980 INFO 127.0.0.1 - - [26/Dec/2024 14:43:41] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:42,410 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:42,410 INFO 127.0.0.1 - - [26/Dec/2024 14:43:42] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:44,711 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:44,711 INFO 127.0.0.1 - - [26/Dec/2024 14:43:44] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:46,402 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:46,402 INFO 127.0.0.1 - - [26/Dec/2024 14:43:46] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:48,703 INFO 127.0.0.1 - - [26/Dec/2024 14:43:48] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:43:48,968 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:48,968 INFO 127.0.0.1 - - [26/Dec/2024 14:43:48] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:50,393 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:50,393 INFO 127.0.0.1 - - [26/Dec/2024 14:43:50] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:52,706 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:52,706 INFO 127.0.0.1 - - [26/Dec/2024 14:43:52] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:54,397 INFO 127.0.0.1 - - [26/Dec/2024 14:43:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:43:54,714 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:54,714 INFO 127.0.0.1 - - [26/Dec/2024 14:43:54] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:55,416 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:55,416 INFO 127.0.0.1 - - [26/Dec/2024 14:43:55] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:56,713 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:56,713 INFO 127.0.0.1 - - [26/Dec/2024 14:43:56] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:57,416 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:57,416 INFO 127.0.0.1 - - [26/Dec/2024 14:43:57] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:43:59,713 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:43:59,713 INFO 127.0.0.1 - - [26/Dec/2024 14:43:59] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:01,403 INFO 127.0.0.1 - - [26/Dec/2024 14:44:01] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:01,719 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:01,720 INFO 127.0.0.1 - - [26/Dec/2024 14:44:01] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:03,401 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:03,401 INFO 127.0.0.1 - - [26/Dec/2024 14:44:03] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:05,717 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:05,717 INFO 127.0.0.1 - - [26/Dec/2024 14:44:05] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:07,405 INFO 127.0.0.1 - - [26/Dec/2024 14:44:07] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:07,716 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:07,716 INFO 127.0.0.1 - - [26/Dec/2024 14:44:07] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:09,392 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:09,392 INFO 127.0.0.1 - - [26/Dec/2024 14:44:09] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:11,712 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:11,712 INFO 127.0.0.1 - - [26/Dec/2024 14:44:11] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:13,400 INFO 127.0.0.1 - - [26/Dec/2024 14:44:13] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:13,712 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:13,712 INFO 127.0.0.1 - - [26/Dec/2024 14:44:13] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:15,403 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:15,404 INFO 127.0.0.1 - - [26/Dec/2024 14:44:15] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:17,703 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:17,704 INFO 127.0.0.1 - - [26/Dec/2024 14:44:17] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:19,393 INFO 127.0.0.1 - - [26/Dec/2024 14:44:19] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:19,713 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:19,713 INFO 127.0.0.1 - - [26/Dec/2024 14:44:19] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:21,391 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:21,392 INFO 127.0.0.1 - - [26/Dec/2024 14:44:21] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:23,702 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:23,703 INFO 127.0.0.1 - - [26/Dec/2024 14:44:23] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:25,394 INFO 127.0.0.1 - - [26/Dec/2024 14:44:25] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:25,706 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:25,707 INFO 127.0.0.1 - - [26/Dec/2024 14:44:25] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:27,380 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:27,380 INFO 127.0.0.1 - - [26/Dec/2024 14:44:27] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:29,689 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:29,689 INFO 127.0.0.1 - - [26/Dec/2024 14:44:29] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:31,391 INFO 127.0.0.1 - - [26/Dec/2024 14:44:31] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:31,712 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:31,713 INFO 127.0.0.1 - - [26/Dec/2024 14:44:31] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:33,392 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:33,393 INFO 127.0.0.1 - - [26/Dec/2024 14:44:33] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:35,704 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:35,705 INFO 127.0.0.1 - - [26/Dec/2024 14:44:35] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:37,402 INFO 127.0.0.1 - - [26/Dec/2024 14:44:37] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:37,713 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:37,713 INFO 127.0.0.1 - - [26/Dec/2024 14:44:37] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:39,452 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:39,452 INFO 127.0.0.1 - - [26/Dec/2024 14:44:39] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:41,712 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:41,713 INFO 127.0.0.1 - - [26/Dec/2024 14:44:41] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:43,401 INFO 127.0.0.1 - - [26/Dec/2024 14:44:43] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:43,716 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:43,717 INFO 127.0.0.1 - - [26/Dec/2024 14:44:43] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:45,390 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:45,390 INFO 127.0.0.1 - - [26/Dec/2024 14:44:45] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:47,715 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:47,716 INFO 127.0.0.1 - - [26/Dec/2024 14:44:47] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:48,941 INFO 127.0.0.1 - - [26/Dec/2024 14:44:48] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:49,248 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:49,249 INFO 127.0.0.1 - - [26/Dec/2024 14:44:49] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:49,511 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:49,511 INFO 127.0.0.1 - - [26/Dec/2024 14:44:49] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:50,398 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:50,399 INFO 127.0.0.1 - - [26/Dec/2024 14:44:50] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:53,105 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:53,106 INFO 127.0.0.1 - - [26/Dec/2024 14:44:53] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:53,791 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:53,791 INFO 127.0.0.1 - - [26/Dec/2024 14:44:53] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:55,104 INFO 127.0.0.1 - - [26/Dec/2024 14:44:55] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:44:55,374 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:55,375 INFO 127.0.0.1 - - [26/Dec/2024 14:44:55] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:55,800 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:55,800 INFO 127.0.0.1 - - [26/Dec/2024 14:44:55] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:57,093 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:57,094 INFO 127.0.0.1 - - [26/Dec/2024 14:44:57] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:57,789 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:57,790 INFO 127.0.0.1 - - [26/Dec/2024 14:44:57] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:44:59,108 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:44:59,109 INFO 127.0.0.1 - - [26/Dec/2024 14:44:59] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:00,812 INFO 127.0.0.1 - - [26/Dec/2024 14:45:00] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:01,125 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:01,125 INFO 127.0.0.1 - - [26/Dec/2024 14:45:01] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:01,823 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:01,823 INFO 127.0.0.1 - - [26/Dec/2024 14:45:01] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:03,137 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:03,138 INFO 127.0.0.1 - - [26/Dec/2024 14:45:03] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:03,815 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:03,815 INFO 127.0.0.1 - - [26/Dec/2024 14:45:03] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:05,125 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:05,126 INFO 127.0.0.1 - - [26/Dec/2024 14:45:05] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:06,392 INFO 127.0.0.1 - - [26/Dec/2024 14:45:06] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:06,712 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:06,712 INFO 127.0.0.1 - - [26/Dec/2024 14:45:06] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:07,408 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:07,408 INFO 127.0.0.1 - - [26/Dec/2024 14:45:07] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:08,706 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:08,707 INFO 127.0.0.1 - - [26/Dec/2024 14:45:08] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:09,406 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:09,408 INFO 127.0.0.1 - - [26/Dec/2024 14:45:09] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:10,710 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:10,711 INFO 127.0.0.1 - - [26/Dec/2024 14:45:10] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:11,398 INFO 127.0.0.1 - - [26/Dec/2024 14:45:11] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:11,718 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:11,719 INFO 127.0.0.1 - - [26/Dec/2024 14:45:11] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:12,405 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:12,405 INFO 127.0.0.1 - - [26/Dec/2024 14:45:12] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:13,717 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:13,718 INFO 127.0.0.1 - - [26/Dec/2024 14:45:13] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:14,393 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:14,395 INFO 127.0.0.1 - - [26/Dec/2024 14:45:14] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:15,706 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:15,708 INFO 127.0.0.1 - - [26/Dec/2024 14:45:15] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:16,400 INFO 127.0.0.1 - - [26/Dec/2024 14:45:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:16,709 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:16,710 INFO 127.0.0.1 - - [26/Dec/2024 14:45:16] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:17,407 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:17,408 INFO 127.0.0.1 - - [26/Dec/2024 14:45:17] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:18,719 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:18,719 INFO 127.0.0.1 - - [26/Dec/2024 14:45:18] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:19,396 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:19,396 INFO 127.0.0.1 - - [26/Dec/2024 14:45:19] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:20,718 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:20,718 INFO 127.0.0.1 - - [26/Dec/2024 14:45:20] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:21,274 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:21,275 INFO 127.0.0.1 - - [26/Dec/2024 14:45:21] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:22,130 INFO 127.0.0.1 - - [26/Dec/2024 14:45:22] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:22,400 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:22,401 INFO 127.0.0.1 - - [26/Dec/2024 14:45:22] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:23,397 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:23,399 INFO 127.0.0.1 - - [26/Dec/2024 14:45:23] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:24,715 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:24,715 INFO 127.0.0.1 - - [26/Dec/2024 14:45:24] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:25,407 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:25,407 INFO 127.0.0.1 - - [26/Dec/2024 14:45:25] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:26,709 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:26,709 INFO 127.0.0.1 - - [26/Dec/2024 14:45:26] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:27,406 INFO 127.0.0.1 - - [26/Dec/2024 14:45:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:27,720 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:27,720 INFO 127.0.0.1 - - [26/Dec/2024 14:45:27] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:28,392 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:28,394 INFO 127.0.0.1 - - [26/Dec/2024 14:45:28] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:29,719 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:29,719 INFO 127.0.0.1 - - [26/Dec/2024 14:45:29] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:30,399 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:30,399 INFO 127.0.0.1 - - [26/Dec/2024 14:45:30] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:31,723 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:31,724 INFO 127.0.0.1 - - [26/Dec/2024 14:45:31] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:32,404 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:32,405 INFO 127.0.0.1 - - [26/Dec/2024 14:45:32] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:33,709 INFO 127.0.0.1 - - [26/Dec/2024 14:45:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:33,968 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:33,969 INFO 127.0.0.1 - - [26/Dec/2024 14:45:33] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:34,392 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:34,392 INFO 127.0.0.1 - - [26/Dec/2024 14:45:34] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:35,729 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:35,729 INFO 127.0.0.1 - - [26/Dec/2024 14:45:35] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:36,411 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:36,411 INFO 127.0.0.1 - - [26/Dec/2024 14:45:36] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:37,711 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:37,711 INFO 127.0.0.1 - - [26/Dec/2024 14:45:37] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:38,393 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:38,393 INFO 127.0.0.1 - - [26/Dec/2024 14:45:38] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:39,714 INFO 127.0.0.1 - - [26/Dec/2024 14:45:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:39,977 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:39,978 INFO 127.0.0.1 - - [26/Dec/2024 14:45:39] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:40,392 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:40,392 INFO 127.0.0.1 - - [26/Dec/2024 14:45:40] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:41,715 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:41,715 INFO 127.0.0.1 - - [26/Dec/2024 14:45:41] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:42,396 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:42,396 INFO 127.0.0.1 - - [26/Dec/2024 14:45:42] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:43,701 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:43,701 INFO 127.0.0.1 - - [26/Dec/2024 14:45:43] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:44,401 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:44,402 INFO 127.0.0.1 - - [26/Dec/2024 14:45:44] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:45,707 INFO 127.0.0.1 - - [26/Dec/2024 14:45:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:45,954 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:45,954 INFO 127.0.0.1 - - [26/Dec/2024 14:45:45] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:46,395 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:46,395 INFO 127.0.0.1 - - [26/Dec/2024 14:45:46] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:47,708 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:47,709 INFO 127.0.0.1 - - [26/Dec/2024 14:45:47] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:48,409 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:48,409 INFO 127.0.0.1 - - [26/Dec/2024 14:45:48] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:49,711 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:49,711 INFO 127.0.0.1 - - [26/Dec/2024 14:45:49] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:50,400 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:50,400 INFO 127.0.0.1 - - [26/Dec/2024 14:45:50] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:51,716 INFO 127.0.0.1 - - [26/Dec/2024 14:45:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:51,980 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:51,980 INFO 127.0.0.1 - - [26/Dec/2024 14:45:51] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:52,398 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:52,399 INFO 127.0.0.1 - - [26/Dec/2024 14:45:52] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:53,716 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:53,717 INFO 127.0.0.1 - - [26/Dec/2024 14:45:53] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:54,396 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:54,398 INFO 127.0.0.1 - - [26/Dec/2024 14:45:54] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:55,724 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:55,725 INFO 127.0.0.1 - - [26/Dec/2024 14:45:55] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:56,401 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:56,401 INFO 127.0.0.1 - - [26/Dec/2024 14:45:56] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:57,710 INFO 127.0.0.1 - - [26/Dec/2024 14:45:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:45:57,974 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:57,974 INFO 127.0.0.1 - - [26/Dec/2024 14:45:57] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:58,401 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:58,402 INFO 127.0.0.1 - - [26/Dec/2024 14:45:58] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:45:59,714 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:45:59,714 INFO 127.0.0.1 - - [26/Dec/2024 14:45:59] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:00,401 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:00,401 INFO 127.0.0.1 - - [26/Dec/2024 14:46:00] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:01,713 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:01,713 INFO 127.0.0.1 - - [26/Dec/2024 14:46:01] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:02,398 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:02,399 INFO 127.0.0.1 - - [26/Dec/2024 14:46:02] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:03,714 INFO 127.0.0.1 - - [26/Dec/2024 14:46:03] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:03,979 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:03,979 INFO 127.0.0.1 - - [26/Dec/2024 14:46:03] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:04,390 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:04,392 INFO 127.0.0.1 - - [26/Dec/2024 14:46:04] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:05,712 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:05,712 INFO 127.0.0.1 - - [26/Dec/2024 14:46:05] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:06,394 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:06,394 INFO 127.0.0.1 - - [26/Dec/2024 14:46:06] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:07,711 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:07,711 INFO 127.0.0.1 - - [26/Dec/2024 14:46:07] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:08,401 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:08,402 INFO 127.0.0.1 - - [26/Dec/2024 14:46:08] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:09,706 INFO 127.0.0.1 - - [26/Dec/2024 14:46:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:09,953 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:09,954 INFO 127.0.0.1 - - [26/Dec/2024 14:46:09] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:10,392 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:10,393 INFO 127.0.0.1 - - [26/Dec/2024 14:46:10] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:11,707 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:11,708 INFO 127.0.0.1 - - [26/Dec/2024 14:46:11] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:12,400 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:12,401 INFO 127.0.0.1 - - [26/Dec/2024 14:46:12] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:13,708 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:13,709 INFO 127.0.0.1 - - [26/Dec/2024 14:46:13] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:14,392 ERROR JWT µðÄÚµù ¿À·ù: Not enough segments
+2024-12-26 14:46:14,393 INFO 127.0.0.1 - - [26/Dec/2024 14:46:14] "[31m[1mPOST /squat-analysis HTTP/1.1[0m" 400 -
+2024-12-26 14:46:15,244 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 14:46:18,981 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:46:18,981 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:46:18,981 INFO  * Restarting with stat
+2024-12-26 14:46:21,591 WARNING  * Debugger is active!
+2024-12-26 14:46:21,594 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:46:21,600 INFO 127.0.0.1 - - [26/Dec/2024 14:46:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:21,602 INFO 127.0.0.1 - - [26/Dec/2024 14:46:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:21,604 INFO 127.0.0.1 - - [26/Dec/2024 14:46:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:21,605 INFO 127.0.0.1 - - [26/Dec/2024 14:46:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:21,937 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:21,937 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: CalculatorGraph::Run() failed: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:21,938 INFO 127.0.0.1 - - [26/Dec/2024 14:46:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:21,938 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:21,939 INFO 127.0.0.1 - - [26/Dec/2024 14:46:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:21,939 INFO 127.0.0.1 - - [26/Dec/2024 14:46:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:21,943 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: CalculatorGraph::Run() failed: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:21,944 INFO 127.0.0.1 - - [26/Dec/2024 14:46:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:22,127 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:22,128 INFO 127.0.0.1 - - [26/Dec/2024 14:46:22] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:23,923 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:23,924 INFO 127.0.0.1 - - [26/Dec/2024 14:46:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:24,603 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:24,604 INFO 127.0.0.1 - - [26/Dec/2024 14:46:24] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:25,917 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:25,917 INFO 127.0.0.1 - - [26/Dec/2024 14:46:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:26,608 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:26,609 INFO 127.0.0.1 - - [26/Dec/2024 14:46:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:27,901 INFO 127.0.0.1 - - [26/Dec/2024 14:46:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:28,173 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:28,175 INFO 127.0.0.1 - - [26/Dec/2024 14:46:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:28,601 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:28,603 INFO 127.0.0.1 - - [26/Dec/2024 14:46:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:29,922 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:29,924 INFO 127.0.0.1 - - [26/Dec/2024 14:46:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:30,604 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:30,605 INFO 127.0.0.1 - - [26/Dec/2024 14:46:30] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:31,906 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:31,906 INFO 127.0.0.1 - - [26/Dec/2024 14:46:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:32,607 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:32,609 INFO 127.0.0.1 - - [26/Dec/2024 14:46:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:33,909 INFO 127.0.0.1 - - [26/Dec/2024 14:46:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:34,180 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:34,180 INFO 127.0.0.1 - - [26/Dec/2024 14:46:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:34,596 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:34,598 INFO 127.0.0.1 - - [26/Dec/2024 14:46:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:35,912 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:35,913 INFO 127.0.0.1 - - [26/Dec/2024 14:46:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:36,604 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:36,606 INFO 127.0.0.1 - - [26/Dec/2024 14:46:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:37,915 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:37,915 INFO 127.0.0.1 - - [26/Dec/2024 14:46:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:38,604 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:38,605 INFO 127.0.0.1 - - [26/Dec/2024 14:46:38] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:40,708 INFO 127.0.0.1 - - [26/Dec/2024 14:46:40] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:40,967 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:40,967 INFO 127.0.0.1 - - [26/Dec/2024 14:46:40] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:41,412 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:41,413 INFO 127.0.0.1 - - [26/Dec/2024 14:46:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:42,708 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:42,709 INFO 127.0.0.1 - - [26/Dec/2024 14:46:42] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:43,401 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:43,405 INFO 127.0.0.1 - - [26/Dec/2024 14:46:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:44,718 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:44,719 INFO 127.0.0.1 - - [26/Dec/2024 14:46:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:45,411 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:45,413 INFO 127.0.0.1 - - [26/Dec/2024 14:46:45] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:46,707 INFO 127.0.0.1 - - [26/Dec/2024 14:46:46] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:46,984 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:46,985 INFO 127.0.0.1 - - [26/Dec/2024 14:46:46] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:47,409 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:47,411 INFO 127.0.0.1 - - [26/Dec/2024 14:46:47] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:48,730 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:48,731 INFO 127.0.0.1 - - [26/Dec/2024 14:46:48] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:49,401 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:49,403 INFO 127.0.0.1 - - [26/Dec/2024 14:46:49] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:50,738 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:50,739 INFO 127.0.0.1 - - [26/Dec/2024 14:46:50] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:51,402 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:51,403 INFO 127.0.0.1 - - [26/Dec/2024 14:46:51] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:52,710 INFO 127.0.0.1 - - [26/Dec/2024 14:46:52] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:52,988 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:52,988 INFO 127.0.0.1 - - [26/Dec/2024 14:46:52] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:53,403 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:53,467 INFO 127.0.0.1 - - [26/Dec/2024 14:46:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:54,733 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:54,733 INFO 127.0.0.1 - - [26/Dec/2024 14:46:54] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:55,414 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:55,415 INFO 127.0.0.1 - - [26/Dec/2024 14:46:55] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:56,729 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:56,729 INFO 127.0.0.1 - - [26/Dec/2024 14:46:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:57,406 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:57,407 INFO 127.0.0.1 - - [26/Dec/2024 14:46:57] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:58,714 INFO 127.0.0.1 - - [26/Dec/2024 14:46:58] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:58,985 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:58,985 INFO 127.0.0.1 - - [26/Dec/2024 14:46:58] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:46:59,402 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:46:59,402 INFO 127.0.0.1 - - [26/Dec/2024 14:46:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:00,699 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:00,700 INFO 127.0.0.1 - - [26/Dec/2024 14:47:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:01,416 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:01,417 INFO 127.0.0.1 - - [26/Dec/2024 14:47:01] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:02,726 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:02,728 INFO 127.0.0.1 - - [26/Dec/2024 14:47:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:03,413 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:03,414 INFO 127.0.0.1 - - [26/Dec/2024 14:47:03] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:04,700 INFO 127.0.0.1 - - [26/Dec/2024 14:47:04] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:04,969 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:04,970 INFO 127.0.0.1 - - [26/Dec/2024 14:47:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:05,398 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:05,399 INFO 127.0.0.1 - - [26/Dec/2024 14:47:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:06,720 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:06,721 INFO 127.0.0.1 - - [26/Dec/2024 14:47:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:07,412 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:07,413 INFO 127.0.0.1 - - [26/Dec/2024 14:47:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:08,720 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:08,720 INFO 127.0.0.1 - - [26/Dec/2024 14:47:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:09,405 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:09,405 INFO 127.0.0.1 - - [26/Dec/2024 14:47:09] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:10,720 INFO 127.0.0.1 - - [26/Dec/2024 14:47:10] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:10,991 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:10,991 INFO 127.0.0.1 - - [26/Dec/2024 14:47:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:11,406 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:11,406 INFO 127.0.0.1 - - [26/Dec/2024 14:47:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:12,715 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:12,716 INFO 127.0.0.1 - - [26/Dec/2024 14:47:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:13,402 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:13,402 INFO 127.0.0.1 - - [26/Dec/2024 14:47:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:14,717 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:14,717 INFO 127.0.0.1 - - [26/Dec/2024 14:47:14] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:15,395 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:15,396 INFO 127.0.0.1 - - [26/Dec/2024 14:47:15] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:16,705 INFO 127.0.0.1 - - [26/Dec/2024 14:47:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:16,975 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:16,976 INFO 127.0.0.1 - - [26/Dec/2024 14:47:16] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:17,404 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:17,406 INFO 127.0.0.1 - - [26/Dec/2024 14:47:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:18,715 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:18,715 INFO 127.0.0.1 - - [26/Dec/2024 14:47:18] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:19,407 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:19,408 INFO 127.0.0.1 - - [26/Dec/2024 14:47:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:20,701 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:20,702 INFO 127.0.0.1 - - [26/Dec/2024 14:47:20] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:21,395 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:21,396 INFO 127.0.0.1 - - [26/Dec/2024 14:47:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:22,725 INFO 127.0.0.1 - - [26/Dec/2024 14:47:22] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:22,996 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:22,997 INFO 127.0.0.1 - - [26/Dec/2024 14:47:22] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:23,401 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:23,401 INFO 127.0.0.1 - - [26/Dec/2024 14:47:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:24,708 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:24,710 INFO 127.0.0.1 - - [26/Dec/2024 14:47:24] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:25,408 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:25,408 INFO 127.0.0.1 - - [26/Dec/2024 14:47:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:26,719 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:26,720 INFO 127.0.0.1 - - [26/Dec/2024 14:47:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:27,405 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:27,405 INFO 127.0.0.1 - - [26/Dec/2024 14:47:27] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:28,708 INFO 127.0.0.1 - - [26/Dec/2024 14:47:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:28,961 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:28,966 INFO 127.0.0.1 - - [26/Dec/2024 14:47:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:29,408 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:29,409 INFO 127.0.0.1 - - [26/Dec/2024 14:47:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:30,714 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:30,714 INFO 127.0.0.1 - - [26/Dec/2024 14:47:30] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:31,401 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:31,401 INFO 127.0.0.1 - - [26/Dec/2024 14:47:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:32,717 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:32,717 INFO 127.0.0.1 - - [26/Dec/2024 14:47:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:33,416 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:33,416 INFO 127.0.0.1 - - [26/Dec/2024 14:47:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:34,707 INFO 127.0.0.1 - - [26/Dec/2024 14:47:34] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:34,988 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:34,988 INFO 127.0.0.1 - - [26/Dec/2024 14:47:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:35,411 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:35,412 INFO 127.0.0.1 - - [26/Dec/2024 14:47:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:36,724 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:36,725 INFO 127.0.0.1 - - [26/Dec/2024 14:47:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:37,405 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:37,405 INFO 127.0.0.1 - - [26/Dec/2024 14:47:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:38,712 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:38,712 INFO 127.0.0.1 - - [26/Dec/2024 14:47:38] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:39,414 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:39,414 INFO 127.0.0.1 - - [26/Dec/2024 14:47:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:40,698 INFO 127.0.0.1 - - [26/Dec/2024 14:47:40] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:40,969 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:40,969 INFO 127.0.0.1 - - [26/Dec/2024 14:47:40] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:41,406 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:41,406 INFO 127.0.0.1 - - [26/Dec/2024 14:47:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:42,705 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:42,705 INFO 127.0.0.1 - - [26/Dec/2024 14:47:42] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:43,312 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:43,317 INFO 127.0.0.1 - - [26/Dec/2024 14:47:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:43,915 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: Graph has errors: 
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+; Packet timestamp mismatch on a calculator receiving from stream "image". Current minimum expected timestamp is 33334 but received 33333. Are you using a custom InputStreamHandler? Note that some InputStreamHandlers allow timestamps that are not strictly monotonically increasing. See for example the ImmediateInputStreamHandler class comment.
+Packet type mismatch on a calculator receiving from stream "image": Expected a Packet of type: ::mediapipe::ImageFrame, but received an empty Packet.
+2024-12-26 14:47:43,916 INFO 127.0.0.1 - - [26/Dec/2024 14:47:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:47:54,561 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:47:54,561 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:47:54,563 INFO  * Restarting with stat
+2024-12-26 14:47:57,975 WARNING  * Debugger is active!
+2024-12-26 14:47:57,977 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:48:03,790 INFO 127.0.0.1 - - [26/Dec/2024 14:48:03] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:04,125 INFO 127.0.0.1 - - [26/Dec/2024 14:48:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:04,511 INFO 127.0.0.1 - - [26/Dec/2024 14:48:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:05,822 INFO 127.0.0.1 - - [26/Dec/2024 14:48:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:06,512 INFO 127.0.0.1 - - [26/Dec/2024 14:48:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:07,827 INFO 127.0.0.1 - - [26/Dec/2024 14:48:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:08,505 INFO 127.0.0.1 - - [26/Dec/2024 14:48:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:09,785 INFO 127.0.0.1 - - [26/Dec/2024 14:48:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:10,076 INFO 127.0.0.1 - - [26/Dec/2024 14:48:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:10,497 INFO 127.0.0.1 - - [26/Dec/2024 14:48:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:11,812 INFO 127.0.0.1 - - [26/Dec/2024 14:48:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:12,494 INFO 127.0.0.1 - - [26/Dec/2024 14:48:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:13,801 INFO 127.0.0.1 - - [26/Dec/2024 14:48:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:14,603 INFO 127.0.0.1 - - [26/Dec/2024 14:48:14] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:15,785 INFO 127.0.0.1 - - [26/Dec/2024 14:48:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:16,053 INFO 127.0.0.1 - - [26/Dec/2024 14:48:16] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:16,536 INFO 127.0.0.1 - - [26/Dec/2024 14:48:16] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:17,825 INFO 127.0.0.1 - - [26/Dec/2024 14:48:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:18,556 INFO 127.0.0.1 - - [26/Dec/2024 14:48:18] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:19,824 INFO 127.0.0.1 - - [26/Dec/2024 14:48:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:20,515 INFO 127.0.0.1 - - [26/Dec/2024 14:48:20] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:21,780 INFO 127.0.0.1 - - [26/Dec/2024 14:48:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:22,084 INFO 127.0.0.1 - - [26/Dec/2024 14:48:22] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:22,517 INFO 127.0.0.1 - - [26/Dec/2024 14:48:22] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:23,837 INFO 127.0.0.1 - - [26/Dec/2024 14:48:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:24,520 INFO 127.0.0.1 - - [26/Dec/2024 14:48:24] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:25,820 INFO 127.0.0.1 - - [26/Dec/2024 14:48:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:26,520 INFO 127.0.0.1 - - [26/Dec/2024 14:48:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:27,784 INFO 127.0.0.1 - - [26/Dec/2024 14:48:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:28,094 INFO 127.0.0.1 - - [26/Dec/2024 14:48:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:28,513 INFO 127.0.0.1 - - [26/Dec/2024 14:48:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:29,818 INFO 127.0.0.1 - - [26/Dec/2024 14:48:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:30,516 INFO 127.0.0.1 - - [26/Dec/2024 14:48:30] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:31,821 INFO 127.0.0.1 - - [26/Dec/2024 14:48:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:32,601 INFO 127.0.0.1 - - [26/Dec/2024 14:48:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:33,790 INFO 127.0.0.1 - - [26/Dec/2024 14:48:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:34,080 INFO 127.0.0.1 - - [26/Dec/2024 14:48:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:34,505 INFO 127.0.0.1 - - [26/Dec/2024 14:48:34] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:35,827 INFO 127.0.0.1 - - [26/Dec/2024 14:48:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:36,516 INFO 127.0.0.1 - - [26/Dec/2024 14:48:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:37,822 INFO 127.0.0.1 - - [26/Dec/2024 14:48:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:38,519 INFO 127.0.0.1 - - [26/Dec/2024 14:48:38] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:39,810 INFO 127.0.0.1 - - [26/Dec/2024 14:48:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:40,102 INFO 127.0.0.1 - - [26/Dec/2024 14:48:40] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:40,517 INFO 127.0.0.1 - - [26/Dec/2024 14:48:40] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:41,824 INFO 127.0.0.1 - - [26/Dec/2024 14:48:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:42,507 INFO 127.0.0.1 - - [26/Dec/2024 14:48:42] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:43,836 INFO 127.0.0.1 - - [26/Dec/2024 14:48:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:44,519 INFO 127.0.0.1 - - [26/Dec/2024 14:48:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:45,783 INFO 127.0.0.1 - - [26/Dec/2024 14:48:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:46,088 INFO 127.0.0.1 - - [26/Dec/2024 14:48:46] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:48:46,524 INFO 127.0.0.1 - - [26/Dec/2024 14:48:46] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:49:55,180 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 14:50:15,902 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:50:15,902 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:50:15,903 INFO  * Restarting with stat
+2024-12-26 14:50:18,621 WARNING  * Debugger is active!
+2024-12-26 14:50:18,626 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:50:21,080 INFO 127.0.0.1 - - [26/Dec/2024 14:50:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:21,366 INFO 127.0.0.1 - - [26/Dec/2024 14:50:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:21,792 INFO 127.0.0.1 - - [26/Dec/2024 14:50:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:23,107 INFO 127.0.0.1 - - [26/Dec/2024 14:50:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:23,785 INFO 127.0.0.1 - - [26/Dec/2024 14:50:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:25,117 INFO 127.0.0.1 - - [26/Dec/2024 14:50:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:25,789 INFO 127.0.0.1 - - [26/Dec/2024 14:50:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:27,084 INFO 127.0.0.1 - - [26/Dec/2024 14:50:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:27,373 INFO 127.0.0.1 - - [26/Dec/2024 14:50:27] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:27,789 INFO 127.0.0.1 - - [26/Dec/2024 14:50:27] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:29,094 INFO 127.0.0.1 - - [26/Dec/2024 14:50:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:29,790 INFO 127.0.0.1 - - [26/Dec/2024 14:50:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:31,142 INFO 127.0.0.1 - - [26/Dec/2024 14:50:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:31,809 INFO 127.0.0.1 - - [26/Dec/2024 14:50:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:33,070 INFO 127.0.0.1 - - [26/Dec/2024 14:50:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:33,377 INFO 127.0.0.1 - - [26/Dec/2024 14:50:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:33,804 INFO 127.0.0.1 - - [26/Dec/2024 14:50:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:35,114 INFO 127.0.0.1 - - [26/Dec/2024 14:50:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:35,811 INFO 127.0.0.1 - - [26/Dec/2024 14:50:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:37,123 INFO 127.0.0.1 - - [26/Dec/2024 14:50:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:37,806 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_uuid' is not defined
+2024-12-26 14:50:37,807 INFO 127.0.0.1 - - [26/Dec/2024 14:50:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:39,069 INFO 127.0.0.1 - - [26/Dec/2024 14:50:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:39,383 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_uuid' is not defined
+2024-12-26 14:50:39,384 INFO 127.0.0.1 - - [26/Dec/2024 14:50:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:43,122 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_uuid' is not defined
+2024-12-26 14:50:43,123 INFO 127.0.0.1 - - [26/Dec/2024 14:50:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:44,382 INFO 127.0.0.1 - - [26/Dec/2024 14:50:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:44,695 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_uuid' is not defined
+2024-12-26 14:50:44,695 INFO 127.0.0.1 - - [26/Dec/2024 14:50:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:45,149 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_uuid' is not defined
+2024-12-26 14:50:45,151 INFO 127.0.0.1 - - [26/Dec/2024 14:50:45] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:46,437 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_uuid' is not defined
+2024-12-26 14:50:46,439 INFO 127.0.0.1 - - [26/Dec/2024 14:50:46] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:47,121 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_uuid' is not defined
+2024-12-26 14:50:47,122 INFO 127.0.0.1 - - [26/Dec/2024 14:50:47] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:48,425 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_uuid' is not defined
+2024-12-26 14:50:48,426 INFO 127.0.0.1 - - [26/Dec/2024 14:50:48] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:50:49,123 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_uuid' is not defined
+2024-12-26 14:50:49,123 INFO 127.0.0.1 - - [26/Dec/2024 14:50:49] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:51:29,345 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-26 14:53:29,036 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 14:53:29,036 INFO [33mPress CTRL+C to quit[0m
+2024-12-26 14:53:29,037 INFO  * Restarting with stat
+2024-12-26 14:53:31,917 WARNING  * Debugger is active!
+2024-12-26 14:53:31,920 INFO  * Debugger PIN: 125-377-655
+2024-12-26 14:53:32,230 INFO 127.0.0.1 - - [26/Dec/2024 14:53:32] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:53:32,499 INFO 127.0.0.1 - - [26/Dec/2024 14:53:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:53:32,927 INFO 127.0.0.1 - - [26/Dec/2024 14:53:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 14:53:34,255 INFO 127.0.0.1 - - [26/Dec/2024 14:53:34] "POST /squat-analysis HTTP/1.1" 200 -
