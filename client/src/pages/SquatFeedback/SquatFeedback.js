@@ -106,31 +106,36 @@ function SquatFeedback() {
       console.log('Python 서버에 데이터 전송 중...');
       fetch('http://localhost:5000/squat-analysis', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`, // JWT 추가
+        },
         body: JSON.stringify({ frame: imageData }),
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
         .then((data) => {
           console.log('서버 응답 데이터:', data);
   
-          // 서버 응답에 따른 상태 업데이트
-          if (data.error) {
-            setFeedback('포즈가 감지되지 않았습니다'); // 에러가 발생했을 때
-          } else if (data.feedback) {
-            setFeedback(data.feedback); // 정상적인 피드백 처리
-          }
+          // 유효성 검사
+          const angle = data.angle !== null && data.angle !== undefined ? data.angle.toFixed(2) : null;
+          const kneePosition = data.knee_position !== null && data.knee_position !== undefined ? data.knee_position.toFixed(2) : null;
   
-          setAngle(data.angle !== null ? data.angle.toFixed(2) : null);
-          setKneePosition(data.knee_position !== null ? data.knee_position.toFixed(2) : null);
-  
-          setDetected(data.angle !== null && data.knee_position !== null);
+          setFeedback(data.feedback || '분석 실패');
+          setAngle(angle);
+          setKneePosition(kneePosition);
+          setDetected(angle !== null && kneePosition !== null);
         })
         .catch((error) => {
           console.error('피드백 가져오기 오류:', error);
-          setFeedback('서버 오류가 발생했습니다.'); // 서버 오류 처리
+          setFeedback('서버 오류가 발생했습니다.');
         });
     }
-  };
+  };  
   
 
   // 분석 시작
