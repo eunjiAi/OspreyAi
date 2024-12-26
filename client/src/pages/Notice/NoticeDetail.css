@@ -1,0 +1,71 @@
+.detail-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.back-button {
+  margin-bottom: 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #0056b3;
+}
+
+.detail-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.detail-content,
+.edit-content {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.edit-content {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background: #ffc107;
+  color: #fff;
+}
+
+.edit-button:hover {
+  background: #e0a800;
+}
+
+.delete-button {
+  background: #dc3545;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background: #c82333;
+}

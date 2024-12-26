@@ -44,6 +44,8 @@ COMMENT ON COLUMN Member.signtype IS '가입방식';
 COMMENT ON COLUMN Member.login_ok IS '로그인가능여부';
 
 
+
+
 -- Refresh_Tokens 테이블 삭제
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Refresh_Tokens CASCADE CONSTRAINTS';
@@ -104,6 +106,9 @@ CREATE TABLE Squatfeedback (
     CONSTRAINT FK_MEMBER_SQUATFEEDBACK FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
 
+
+
+
 -- Posts 테이블 삭제
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Posts CASCADE CONSTRAINTS';
@@ -127,6 +132,34 @@ CREATE TABLE Posts (
     PRIMARY KEY (post_id),
     CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
+
+
+
+-- Notice 테이블 삭제
+BEGIN
+    EXECUTE IMMEDIATE 'DROP TABLE Notice CASCADE CONSTRAINTS';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -942 THEN
+            RAISE;
+        END IF;
+END;
+/
+
+-- Notice 테이블 생성
+CREATE TABLE Notice (
+    notice_no NUMBER NOT NULL,
+    ntitle VARCHAR2(60) NOT NULL,
+    ncontent CLOB NOT NULL,
+    nwriter VARCHAR2(30),
+    ncreated_at DATE DEFAULT SYSDATE,
+    ofilename VARCHAR2(200),
+    rfilename VARCHAR2(200),  
+    PRIMARY KEY (notice_no)
+);
+
+
+
 
 -- 시퀀스 생성
 CREATE SEQUENCE squat_id_seq

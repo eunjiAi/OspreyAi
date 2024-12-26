@@ -6,19 +6,24 @@ import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import SquatFeedback from "./pages/SquatFeedback/SquatFeedback";
 import Board from "./pages/Board/Board";
-import BoardDetail from "./pages/Board/BoardDetail"; 
-import BoardCreate from "./pages/Board/BoardCreate"; 
+import BoardDetail from "./pages/Board/BoardDetail";
+import BoardCreate from "./pages/Board/BoardCreate";
+import Notice from "./pages/Notice/Notice";
+import NoticeDetail from "./pages/Notice/NoticeDetail";
+import NoticeCreate from "./pages/Notice/NoticeCreate";
 import FaceLogin from "./pages/Login/FaceLogin";
 import Signup from "./pages/Signup/Signup";
 import MyPage from "./pages/MyPage/MyPage";
 import MyPageUpdate from "./pages/MyPage/MyPageUpdate";
 
 function App() {
-  const [boardResults, setBoardResults] = useState(null);        // Board 검색 결과 상태
-  const [generalResults, setGeneralResults] = useState(null);    // 다른 페이지 검색 결과 상태
+  const [boardResults, setBoardResults] = useState(null); // Board 검색 결과 상태
+  const [noticeResults, setNoticeResults] = useState(null); // Notice 검색 결과 상태
+  const [generalResults, setGeneralResults] = useState(null); // 다른 페이지 검색 결과 상태
 
   const resetSearchInput = () => {
     setBoardResults(null);
+    setNoticeResults(null);
     setGeneralResults(null);
   };
 
@@ -46,6 +51,11 @@ function App() {
         <Route path="/Board" element={<Board searchResults={boardResults} />} />
         <Route path="/Board/new" element={<BoardCreate />} />
         <Route path="/Board/:id" element={<BoardDetail />} />
+
+        {/* Notice 관련 라우트에 검색 결과 전달 */}
+        <Route path="/Notice" element={<Notice searchResults={noticeResults} />} />
+        <Route path="/Notice/new" element={<NoticeCreate />} />
+        <Route path="/Notice/:id" element={<NoticeDetail />} />
       </Routes>
 
       <Footer />
