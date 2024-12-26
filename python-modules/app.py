@@ -1,3 +1,6 @@
+# USAGE
+# pip install Flask Flask-Cors SQLAlchemy cx_Oracle PyJWT pytz numpy opencv-python mediapipe
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sys
@@ -11,7 +14,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
 import datetime
 from pytz import timezone
-import jwt  # PyJWT 라이브러리 : pip install PyJWT
+import jwt  
 
 # 로그 설정
 logging.basicConfig(filename='app_error.log', level=logging.DEBUG, 
@@ -49,7 +52,7 @@ completed_once = False
 def extract_uuid_from_token(token):
     try:
         payload = jwt.decode(token, options={"verify_signature": False})
-        return payload.get("sub")  # `sub` 필드에 UUID 저장되어 있다고 가정
+        return payload.get("sub") 
     except Exception as e:
         logging.error(f"JWT 디코딩 오류: {e}")
         return None
@@ -132,10 +135,10 @@ def update_daily_feedback(uuid, feedback_correct):
 
         if entry:
             logging.info(f"기존 데이터 발견: {entry}")
-            entry.total_attempts += 1  # 총 시도 횟수 증가
-            entry.correct_count += correct_increment  # 바른 자세 횟수 증가
+            entry.total_attempts += 1                       # 총 시도 횟수 증가
+            entry.correct_count += correct_increment        # 바른 자세 횟수 증가
         else:
-            logging.info("기존 데이터가 없습니다. 새로운 데이터 생성 중...")
+            logging.info("기존 데이터 없음. 새로운 데이터 생성 중...")
             new_entry = SquatFeedback(
                 uuid=uuid,
                 total_attempts=1,
@@ -177,7 +180,7 @@ def squat_analysis():
         uuid = extract_uuid_from_token(token)
 
         if uuid:
-            print(f"추출된 UUID: {uuid}, 피드백 결과: {result.get('feedback')}")
+            print(f"이메일: {uuid}, 피드백 결과: {result.get('feedback')}")
             # 피드백이 "동작 완료"인 경우 True, 그렇지 않으면 False
             feedback_correct = result.get('feedback') == "동작 완료"
             logging.info(f"UUID: {uuid}, 동작 완료 여부: {feedback_correct}")
