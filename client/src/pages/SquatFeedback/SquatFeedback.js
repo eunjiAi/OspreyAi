@@ -11,13 +11,37 @@ function SquatFeedback() {
   const [intervalTime, setIntervalTime] = useState(1000);
   const [isRunning, setIsRunning] = useState(false);
   const [detected, setDetected] = useState(false);
+  const [username, setUsername] = useState(''); // 사용자 이름 상태 추가
   const videoRef = useRef(null);
   const intervalIdRef = useRef(null);
+
+  // JWT 토큰에서 UUID와 이름 추출
+  const getPayloadFromToken = (token) => {
+    if (!token) return null;
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      return payload;
+    } catch {
+      return null;
+    }
+  };
+
+  const getUUIDFromToken = () => {
+    const token = localStorage.getItem('accessToken');
+    const payload = getPayloadFromToken(token);
+    return payload ? payload.sub : null; // subject(sub)에 UUID 저장된 경우
+  };
+
+  const getNameFromToken = () => {
+    const token = localStorage.getItem('accessToken');
+    const payload = getPayloadFromToken(token);
+    return payload ? payload.name : ''; // JWT에 사용자 이름(name) 저장된 경우
+  };
 
   // JWT 토큰 유효성 검사 및 갱신 함수
   const isTokenExpired = (token) => {
     if (!token) return true;
-    const payload = JSON.parse(atob(token.split('.')[1]));
+    const payload = getPayloadFromToken(token);
     const currentTime = Math.floor(Date.now() / 1000);
     return payload.exp < currentTime;
   };
@@ -43,7 +67,7 @@ function SquatFeedback() {
       } catch (error) {
         console.error('Token refresh failed:', error);
         alert('로그인이 만료되었습니다. 다시 로그인해주세요.');
-        window.location.href = '/login';     // 로그인 페이지로 리다이렉트
+        window.location.href = '/login'; // 로그인 페이지로 리다이렉트
         throw error;
       }
     }
@@ -64,6 +88,7 @@ function SquatFeedback() {
     };
 
     startWebcam();
+    setUsername(getNameFromToken()); // 초기 사용자 이름 설정
   }, []);
 
   // 데이터 전송
@@ -124,9 +149,10 @@ function SquatFeedback() {
   const fetchDailyStats = async () => {
     try {
       const validToken = await ensureValidToken(); // 토큰 유효성 확인 및 갱신
+      const uuid = getUUIDFromToken(); // 현재 사용자의 UUID
 
       const response = await fetch(
-        `http://localhost:8888/api/squat/daily-stats?page=${currentPage}&size=5`,
+        `http://localhost:8888/api/squat/daily-stats?page=${currentPage}&size=5&uuid=${uuid}`,
         {
           method: 'GET',
           headers: {
@@ -228,7 +254,7 @@ function SquatFeedback() {
         </div>
 
         <div className="daily-stats">
-          <h2>일일 통계</h2>
+          <h2>{username}의 일일 운동 기록</h2>
           <ul>
             {Array.isArray(dailyStats) && dailyStats.length > 0 ? (
               dailyStats.map((stat, index) => (

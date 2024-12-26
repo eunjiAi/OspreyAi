@@ -1,4 +1,4 @@
--- Member Å×ÀÌºí »èÁ¦
+-- Member í…Œì´ë¸” ì‚­ì œ
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Member CASCADE CONSTRAINTS';
 EXCEPTION
@@ -9,7 +9,7 @@ EXCEPTION
 END;
 /
 
--- Member Å×ÀÌºí »ı¼º
+-- Member í…Œì´ë¸” ìƒì„±
 CREATE TABLE Member (
     uuid VARCHAR2(36) NOT NULL,
     name VARCHAR2(20) NOT NULL,
@@ -28,23 +28,22 @@ CREATE TABLE Member (
     UNIQUE (email)
 );
 
--- Member Å×ÀÌºí ÄÚ¸àÆ® »ı¼º
-COMMENT ON COLUMN Member.uuid IS '°íÀ¯Å°';
-COMMENT ON COLUMN Member.name IS 'ÀÌ¸§';
-COMMENT ON COLUMN Member.nickname IS '´Ğ³×ÀÓ';
-COMMENT ON COLUMN Member.email IS 'ÀÌ¸ŞÀÏ';
-COMMENT ON COLUMN Member.pw IS 'ºñ¹Ğ¹øÈ£';
-COMMENT ON COLUMN Member.phone_number IS 'ÀüÈ­¹øÈ£';
-COMMENT ON COLUMN Member.gender IS '¼ºº°';
-COMMENT ON COLUMN Member.admin_yn IS '°ü¸®ÀÚ¿©ºÎ';
-COMMENT ON COLUMN Member.face_id IS 'ÆäÀÌ½º¾ÆÀÌµğ';
-COMMENT ON COLUMN Member.enroll_date IS '°¡ÀÔ³¯Â¥';
-COMMENT ON COLUMN Member.lastModified IS '¸¶Áö¸·¼öÁ¤³¯Â¥';
-COMMENT ON COLUMN Member.signtype IS '°¡ÀÔ¹æ½Ä';
-COMMENT ON COLUMN Member.login_ok IS '·Î±×ÀÎ°¡´É¿©ºÎ';
+-- Member í…Œì´ë¸” ì£¼ì„ ì¶”ê°€
+COMMENT ON COLUMN Member.uuid IS 'ê¸°ë³¸í‚¤';
+COMMENT ON COLUMN Member.name IS 'ì´ë¦„';
+COMMENT ON COLUMN Member.nickname IS 'ë‹‰ë„¤ì„';
+COMMENT ON COLUMN Member.email IS 'ì´ë©”ì¼';
+COMMENT ON COLUMN Member.pw IS 'ë¹„ë°€ë²ˆí˜¸';
+COMMENT ON COLUMN Member.phone_number IS 'ì „í™”ë²ˆí˜¸';
+COMMENT ON COLUMN Member.gender IS 'ì„±ë³„';
+COMMENT ON COLUMN Member.admin_yn IS 'ê´€ë¦¬ì ì—¬ë¶€';
+COMMENT ON COLUMN Member.face_id IS 'ì–¼êµ´ì¸ì‹ID';
+COMMENT ON COLUMN Member.enroll_date IS 'ê°€ì…ë‚ ì§œ';
+COMMENT ON COLUMN Member.lastModified IS 'ìµœê·¼ìˆ˜ì •ë‚ ì§œ';
+COMMENT ON COLUMN Member.signtype IS 'ê°€ì…íƒ€ì…';
+COMMENT ON COLUMN Member.login_ok IS 'ë¡œê·¸ì¸í—ˆìš©ì—¬ë¶€';
 
-
--- Refresh_Tokens Å×ÀÌºí »èÁ¦
+-- Refresh_Tokens í…Œì´ë¸” ì‚­ì œ
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Refresh_Tokens CASCADE CONSTRAINTS';
 EXCEPTION
@@ -55,7 +54,7 @@ EXCEPTION
 END;
 /
 
--- Refresh_Tokens Å×ÀÌºí »ı¼º
+-- Refresh_Tokens í…Œì´ë¸” ìƒì„±
 CREATE TABLE Refresh_Tokens (
     id RAW(36) DEFAULT SYS_GUID() NOT NULL,
     userid VARCHAR2(50)    NOT NULL,
@@ -69,20 +68,17 @@ CREATE TABLE Refresh_Tokens (
     CONSTRAINT FK_RTOKENS FOREIGN KEY (userid) REFERENCES MEMBER (uuid) ON DELETE CASCADE
 );
 
--- Refresh_Tokens Å×ÀÌºí ÄÚ¸àÆ® »ı¼º
-COMMENT ON COLUMN Refresh_Tokens.id IS 'ÅäÅ«½Äº°ID';
-COMMENT ON COLUMN Refresh_Tokens.userid IS 'ÅäÅ«»ç¿ëÀÚ¾ÆÀÌµğ';
-COMMENT ON COLUMN Refresh_Tokens.token_value IS 'ÅäÅ«°ª';
-COMMENT ON COLUMN Refresh_Tokens.issued_at IS 'ÅäÅ«»ı¼º³¯Â¥½Ã°£';
-COMMENT ON COLUMN Refresh_Tokens.expires_in IS 'ÅäÅ«¸¸·á¹Ğ¸®ÃÊ';
-COMMENT ON COLUMN Refresh_Tokens.expiration_date IS 'ÅäÅ«¸¸·á³¯Â¥½Ã°£';
-COMMENT ON COLUMN Refresh_Tokens.member_agent IS 'ÅäÅ«¹ß±Ş¿¡ÀÌÀüÆ®';
-COMMENT ON COLUMN Refresh_Tokens.status IS 'ÅäÅ«»óÅÂ';
+-- Refresh_Tokens í…Œì´ë¸” ì£¼ì„ ì¶”ê°€
+COMMENT ON COLUMN Refresh_Tokens.id IS 'í† í°ê³ ìœ ID';
+COMMENT ON COLUMN Refresh_Tokens.userid IS 'í† í°ì†Œìœ ìID';
+COMMENT ON COLUMN Refresh_Tokens.token_value IS 'í† í°ê°’';
+COMMENT ON COLUMN Refresh_Tokens.issued_at IS 'í† í°ë°œê¸‰ì‹œê°„';
+COMMENT ON COLUMN Refresh_Tokens.expires_in IS 'í† í°ìœ íš¨ê¸°ê°„';
+COMMENT ON COLUMN Refresh_Tokens.expiration_date IS 'í† í°ë§Œë£Œì‹œê°„';
+COMMENT ON COLUMN Refresh_Tokens.member_agent IS 'í† í°ìš”ì²­ê¸°ê¸°';
+COMMENT ON COLUMN Refresh_Tokens.status IS 'í† í°ìƒíƒœ';
 
-
-
-
--- Squatfeedback Å×ÀÌºí »èÁ¦
+-- Squatfeedback í…Œì´ë¸” ì‚­ì œ
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Squatfeedback CASCADE CONSTRAINTS';
 EXCEPTION
@@ -93,18 +89,27 @@ EXCEPTION
 END;
 /
 
--- Squatfeedback Å×ÀÌºí »ı¼º
+-- Squatfeedback í…Œì´ë¸” ìƒì„±
 CREATE TABLE Squatfeedback (
     squat_id NUMBER NOT NULL,
     uuid VARCHAR2(36) NOT NULL,
     total_attempts NUMBER NOT NULL,
     correct_count NUMBER NOT NULL,
     squat_date DATE DEFAULT SYSDATE,  
+    name VARCHAR2(255), -- ìƒˆë¡œìš´ ì»¬ëŸ¼ ì¶”ê°€
     PRIMARY KEY (squat_id),
     CONSTRAINT FK_MEMBER_SQUATFEEDBACK FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
 
--- Posts Å×ÀÌºí »èÁ¦
+-- Squatfeedback í…Œì´ë¸” ì£¼ì„ ì¶”ê°€
+COMMENT ON COLUMN Squatfeedback.squat_id IS 'ê¸°ë³¸í‚¤';
+COMMENT ON COLUMN Squatfeedback.uuid IS 'Member í…Œì´ë¸” UUID';
+COMMENT ON COLUMN Squatfeedback.total_attempts IS 'ì „ì²´ ì‹œë„ íšŸìˆ˜';
+COMMENT ON COLUMN Squatfeedback.correct_count IS 'ì˜¬ë°”ë¥¸ ìì„¸ íšŸìˆ˜';
+COMMENT ON COLUMN Squatfeedback.squat_date IS 'ìŠ¤ì¿¼íŠ¸ ë‚ ì§œ';
+COMMENT ON COLUMN Squatfeedback.name IS 'Member í…Œì´ë¸”ì—ì„œ ê°€ì ¸ì˜¨ ì´ë¦„'; -- ìƒˆë¡œìš´ ì»¬ëŸ¼ ì£¼ì„ ì¶”ê°€
+
+-- Posts í…Œì´ë¸” ì‚­ì œ
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Posts CASCADE CONSTRAINTS';
 EXCEPTION
@@ -115,7 +120,7 @@ EXCEPTION
 END;
 /
 
--- Posts Å×ÀÌºí »ı¼º
+-- Posts í…Œì´ë¸” ìƒì„±
 CREATE TABLE Posts (
     post_id NUMBER NOT NULL,
     uuid VARCHAR2(36) NOT NULL,
@@ -128,9 +133,23 @@ CREATE TABLE Posts (
     CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
 
--- ½ÃÄö½º »ı¼º
+-- Posts í…Œì´ë¸” ì£¼ì„ ì¶”ê°€
+COMMENT ON COLUMN Posts.post_id IS 'ê²Œì‹œë¬¼ID';
+COMMENT ON COLUMN Posts.uuid IS 'ì‘ì„±ìUUID';
+COMMENT ON COLUMN Posts.title IS 'ê²Œì‹œë¬¼ì œëª©';
+COMMENT ON COLUMN Posts.content IS 'ê²Œì‹œë¬¼ë‚´ìš©';
+COMMENT ON COLUMN Posts.report_status IS 'ì‹ ê³ ìƒíƒœ';
+COMMENT ON COLUMN Posts.is_public IS 'ê³µê°œì—¬ë¶€';
+COMMENT ON COLUMN Posts.post_date IS 'ê²Œì‹œë¬¼ì‘ì„±ì¼';
+
+
+
+
+
+-- ì‹œí€€ìŠ¤ ìƒì„±
 CREATE SEQUENCE squat_id_seq
 START WITH 1
 INCREMENT BY 1;
+
 
 COMMIT;
