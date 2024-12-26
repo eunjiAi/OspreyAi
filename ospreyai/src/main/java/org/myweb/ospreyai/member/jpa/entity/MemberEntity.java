@@ -44,11 +44,10 @@ public class MemberEntity {
     @Column(name = "LOGIN_OK", nullable = false, columnDefinition = "Y")
     private String loginOk;		//	LOGIN_OK	CHAR(1 BYTE)
 
-    @PrePersist     //jpa 로 넘어가기 전(sql 에 적용하기 전)에 작동된다는 어노테이션임
+    @PrePersist
     public void prePersist(){
-        //insert 문 실행시 주로 사용됨
-        enrollDate = new Date(System.currentTimeMillis());  //현재 날짜 시간 적용
-        lastModified = new Date(System.currentTimeMillis());  //현재 날짜 시간 적용
+        enrollDate = new Date(System.currentTimeMillis());
+        lastModified = new Date(System.currentTimeMillis());
     }
 
     public Member toDto(){

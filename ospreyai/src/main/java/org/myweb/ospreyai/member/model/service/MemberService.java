@@ -22,23 +22,9 @@ import java.util.Optional;
 @Transactional
 public class MemberService {
 	//jpa 가 제공하는 기본 메소드와 추가한 메소드 사용
-	private final MemberRepository memberRepository;	
-	//QueryDSL 사용 첫번째
-	//4. Service 에서는 MemberRepository 만 사용하면 됨
+	private final MemberRepository memberRepository;
 
-	@Transactional
-	public int insertMember(Member member) {
-		//save() -> 성공시 Entity, 실패시 null 리턴함, JPA 가 제공하는 메소드임
-		try{
-			memberRepository.save(member.toEntity()).toDto();
-			return 1;
-		}catch (Exception e) {
-			log.error(e.getMessage());
-			e.printStackTrace();
-			return 0;
-		}
-	}
-
+	// Email로 회원 정보 검색
 	public Member selectMember(String userId) {
 		log.info("selectMember(String userId): {}", userId);
 
@@ -52,9 +38,20 @@ public class MemberService {
 	}
 
 
+	//회원가입시 이메일 중복 검사용
+	public int selectCheckEmail(String email) {
+		// email로 회원정보 가져와서 uuid 추출
+		String uuid = memberRepository.findByEmail(email)
+				.map(MemberEntity::getUuid)
+				.orElse(null);
+		log.info("selectCheckEmail() : " + uuid);
+
+		return (uuid != null && memberRepository.existsById(uuid)) ? 1 : 0;
+	}
+
+	//회원 가입
 	@Transactional
-	public int updateMember(Member member) {
-		//save() -> 성공시 Entity, 실패시 null 리턴함, JPA 가 제공하는 메소드임
+	public int insertMember(Member member) {
 		try{
 			memberRepository.save(member.toEntity()).toDto();
 			return 1;
@@ -64,29 +61,38 @@ public class MemberService {
 		}
 	}
 
-	@Transactional
-	public int deleteMember(String userId) {
-		try {   //리턴 타입을 int 로 맞추기 위해서 처리함
-			//deleteById() -> 리턴 타입이 void 임
-			//전달인자인 userid 가 null 인 경우 IllegalArgumentException 발생함
-			memberRepository.deleteById(userId);
-			return 1;
-		} catch (Exception e) {
-			log.info(e.getMessage());
-			return 0;
-		}
-	}
 
-	//회원가입시 아이디 중복 검사용
-	public int selectCheckId(String userid) {
-		return memberRepository.existsById(userid) ? 1 : 0;	//jpa가 제공
-		//userid 가 존재하면 true, 없으면 false 리턴함
-	}
+
+//	@Transactional
+//	public int updateMember(Member member) {
+//		//save() -> 성공시 Entity, 실패시 null 리턴함, JPA 가 제공하는 메소드임
+//		try{
+//			memberRepository.save(member.toEntity()).toDto();
+//			return 1;
+//		}catch (Exception e) {
+//			log.error(e.getMessage());
+//			return 0;
+//		}
+//	}
+
+//	@Transactional
+//	public int deleteMember(String userId) {
+//		try {   //리턴 타입을 int 로 맞추기 위해서 처리함
+//			//deleteById() -> 리턴 타입이 void 임
+//			//전달인자인 userid 가 null 인 경우 IllegalArgumentException 발생함
+//			memberRepository.deleteById(userId);
+//			return 1;
+//		} catch (Exception e) {
+//			log.info(e.getMessage());
+//			return 0;
+//		}
+//	}
+
 
 	//관리자용 ******************************************
-	public int selectListCount() {
-		return (int)memberRepository.count();  //jpa 제공
-	}
+//	public int selectListCount() {
+//		return (int)memberRepository.count();  //jpa 제공
+//	}
 
 //	public ArrayList<Member> selectList(Pageable pageable) {
 //		Page<MemberEntity> entityList = memberRepository.findAll(pageable);  //jpa 제공
@@ -106,20 +112,20 @@ public class MemberService {
 		return entityList.map(MemberEntity::toDto); // MemberEntity의 toDto() 메서드를 사용
 	}*/
 
-	public int updateLoginOK(String userId, String loginOk) {
-		try {
-			//이전 데이터를 가진 회원정보를 조회해 옴 (수정전)
-			Member updateMember = memberRepository.findById(userId).get().toDto();
-			//전달받은 객체에서 loginOk 정보만 수정할 것이므로, 수정할 값으로 변경함
-			updateMember.setLoginOk(loginOk);
-			//수정할 객체를 가진 회원정보를 jpa 로 넘김
-			memberRepository.save(updateMember.toEntity());  //jpa 제공
-			return 1;
-		}catch (Exception e) {
-			log.error(e.getMessage());
-			return 0;
-		}
-	}
+//	public int updateLoginOK(String userId, String loginOk) {
+//		try {
+//			//이전 데이터를 가진 회원정보를 조회해 옴 (수정전)
+//			Member updateMember = memberRepository.findById(userId).get().toDto();
+//			//전달받은 객체에서 loginOk 정보만 수정할 것이므로, 수정할 값으로 변경함
+//			updateMember.setLoginOk(loginOk);
+//			//수정할 객체를 가진 회원정보를 jpa 로 넘김
+//			memberRepository.save(updateMember.toEntity());  //jpa 제공
+//			return 1;
+//		}catch (Exception e) {
+//			log.error(e.getMessage());
+//			return 0;
+//		}
+//	}
 
 	//검색 카운트 관련 ------------------------------------------------------------------
 //	public int selectSearchUserIdCount(String keyword) {
