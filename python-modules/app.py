@@ -54,7 +54,7 @@ def extract_uuid_from_token(token):
         logging.error(f"JWT 디코딩 오류: {e}")
         return None
 
-# Pose 분석 함수
+# Pose 분석 
 def analyze_pose(image):
     global current_posture, completed_once
     try:
@@ -127,12 +127,16 @@ def update_daily_feedback(uuid, feedback):
         today = datetime.datetime.now(kst).date()
         correct_increment = 1 if feedback else 0
 
+        print(f"Updating feedback for UUID: {uuid}, Feedback: {feedback}, Date: {today}")
+
         entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
 
         if entry:
+            print("Existing entry found. Updating...")
             entry.total_attempts += 1
             entry.correct_count += correct_increment
         else:
+            print("No entry found. Creating new entry...")
             new_entry = SquatFeedback(
                 uuid=uuid,
                 total_attempts=1,
@@ -142,11 +146,14 @@ def update_daily_feedback(uuid, feedback):
             session.add(new_entry)
 
         session.commit()
+        print("Database update successful.")
     except Exception as e:
         session.rollback()
         logging.error(f"데이터베이스 업데이트 오류: {e}")
+        print(f"Database update failed: {e}")
     finally:
         session.close()
+
 
 @app.route('/squat-analysis', methods=['POST'])
 def squat_analysis():
@@ -163,10 +170,24 @@ def squat_analysis():
     try:
         result = analyze_pose(frame)
         print("분석 결과:", result)
+
+        # JWT에서 UUID 추출
+        token = request.headers.get('Authorization', '').split(' ')[1]
+        uuid = extract_uuid_from_token(token)
+
+        if uuid:
+            print(f"UUID: {uuid}, Feedback: {result.get('feedback')}")
+            # 데이터베이스 업데이트 호출
+            feedback_correct = result.get('feedback') == "동작 완료"
+            update_daily_feedback(uuid, feedback_correct)
+        else:
+            print("UUID를 추출할 수 없습니다.")
+
         return jsonify(result)
     except Exception as e:
         print(f"분석 실패: {e}")
         return jsonify({"feedback": "분석 실패"}), 500
+
 
 
 if __name__ == '__main__':

@@ -7810,3 +7810,27 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
 2024-12-26 16:36:40,950 INFO  * Restarting with stat
 2024-12-26 16:36:43,623 WARNING  * Debugger is active!
 2024-12-26 16:36:43,625 INFO  * Debugger PIN: 125-377-655
+2024-12-26 17:08:09,874 INFO 127.0.0.1 - - [26/Dec/2024 17:08:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:10,168 INFO 127.0.0.1 - - [26/Dec/2024 17:08:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:10,575 INFO 127.0.0.1 - - [26/Dec/2024 17:08:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:11,884 INFO 127.0.0.1 - - [26/Dec/2024 17:08:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:12,583 INFO 127.0.0.1 - - [26/Dec/2024 17:08:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:13,886 INFO 127.0.0.1 - - [26/Dec/2024 17:08:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:14,576 INFO 127.0.0.1 - - [26/Dec/2024 17:08:14] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:15,865 INFO 127.0.0.1 - - [26/Dec/2024 17:08:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:16,152 INFO 127.0.0.1 - - [26/Dec/2024 17:08:16] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:21,625 INFO 127.0.0.1 - - [26/Dec/2024 17:08:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:21,961 INFO 127.0.0.1 - - [26/Dec/2024 17:08:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:22,656 INFO 127.0.0.1 - - [26/Dec/2024 17:08:22] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:23,998 INFO 127.0.0.1 - - [26/Dec/2024 17:08:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:24,699 INFO 127.0.0.1 - - [26/Dec/2024 17:08:24] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:25,966 INFO 127.0.0.1 - - [26/Dec/2024 17:08:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:26,675 INFO 127.0.0.1 - - [26/Dec/2024 17:08:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:27,943 INFO 127.0.0.1 - - [26/Dec/2024 17:08:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:28,247 INFO 127.0.0.1 - - [26/Dec/2024 17:08:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:28,677 INFO 127.0.0.1 - - [26/Dec/2024 17:08:28] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:29,975 INFO 127.0.0.1 - - [26/Dec/2024 17:08:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:30,676 INFO 127.0.0.1 - - [26/Dec/2024 17:08:30] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:31,990 INFO 127.0.0.1 - - [26/Dec/2024 17:08:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:08:32,673 INFO 127.0.0.1 - - [26/Dec/2024 17:08:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-26 17:19:50,737 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
