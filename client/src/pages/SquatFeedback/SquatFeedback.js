@@ -28,12 +28,6 @@ function SquatFeedback() {
     }
   };
 
-  const getUUIDFromToken = () => {
-    const token = localStorage.getItem('accessToken');
-    const payload = getPayloadFromToken(token);
-    return payload ? payload.sub : null; // subject(sub)에 UUID 저장된 경우
-  };
-
   const getNameFromToken = () => {
     const token = localStorage.getItem('accessToken');
     const payload = getPayloadFromToken(token);
