@@ -1,7 +1,7 @@
 // src/components/common/Header.js
 // 로그인 버튼 클릭시, 모달창에 로그인 페이지가 출력되게 함
 import React, { useState, useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
 import { AuthContext } from "../../AuthProvider";
 
@@ -22,8 +22,12 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
   const [showSignupModal, setShowSignupModal] = useState(false);
   // 사이드 메뉴 상태 추가
   const [showSideMenu, setShowSideMenu] = useState(false);
+  // 드롭다운 메뉴 상태 추가
+  const [showNoticeDropdown, setShowNoticeDropdown] = useState(false);
   // 검색 input 에 입력된 검색어 상태 관리 변수
   const [searchTerm, setSearchTerm] = useState("");
+
+  const navigate = useNavigate();
 
   // 라우터 정보를 관리할 상태변수
   const location = useLocation();
@@ -60,6 +64,13 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
     }
   };
 
+  //로그아웃 클릭시 작동할 핸들러
+  const handleLogout = () => {
+    logout();
+    setShowSideMenu(false);
+    navigate("/");
+  };
+
   //검색 input 초기화
   const handleResetSearch = () => {
     setSearchTerm(""); //검색 input 초기화
@@ -69,6 +80,11 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
   // 사이드 메뉴 보이기 안보이기 처리용 핸들러
   const toggleSideMenu = () => {
     setShowSideMenu(!showSideMenu);
+  };
+
+  // 공지사항 드롭다운 보이기/숨기기 처리
+  const toggleNoticeDropdown = () => {
+    setShowNoticeDropdown(!showNoticeDropdown);
   };
 
   //회원가입 버튼 클릭시 작동할 핸들 함수 추가
@@ -115,9 +131,35 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
         <nav>
           <ul className={styles.navList}>
             <li>
-              <Link to="/notice" className={styles.navItem}>
-                공지사항
+              <Link to="/" className={styles.navItem}>
+                홈
               </Link>
+            </li>
+            <li
+              className={styles.navItem}
+              onMouseEnter={toggleNoticeDropdown}
+              onMouseLeave={toggleNoticeDropdown}
+            >
+              공지사항
+              {showNoticeDropdown && (
+                <ul className={styles.dropdownMenu}>
+                  <li>
+                    <Link to="/notice" className={styles.dropdownItem}>
+                      공지사항
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/faq" className={styles.dropdownItem}>
+                      FAQ
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/qna" className={styles.dropdownItem}>
+                      Q&A
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <Link to="/board" className={styles.navItem}>
@@ -148,7 +190,7 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
         {isLoggedIn ? (
           <>
             <span className={styles.username}>{username}</span>
-            <button onClick={logout} className={styles.authButton}>
+            <button onClick={handleLogout} className={styles.authButton}>
               로그아웃
             </button>
           </>

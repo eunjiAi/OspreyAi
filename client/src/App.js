@@ -12,6 +12,9 @@ import Notice from "./pages/Notice/Notice";
 import NoticeDetail from "./pages/Notice/NoticeDetail";
 import NoticeCreate from "./pages/Notice/NoticeCreate";
 import NoticeEdit from "./pages/Notice/NoticeEdit";
+import FaqDetail from "./pages/faq/FaqDetail";
+import FaqWrite from "./pages/faq/FaqWrite";
+import FaqList from "./pages/faq/FaqList";
 import FaceLogin from "./pages/Login/FaceLogin";
 import Signup from "./pages/Signup/Signup";
 import MyPage from "./pages/MyPage/MyPage";
@@ -55,10 +58,17 @@ function App() {
         <Route path="/Board/:id" element={<BoardDetail />} />
 
         {/* Notice 관련 라우트에 검색 결과 전달 */}
-        <Route path="/Notice" element={<Notice searchResults={noticeResults} />} />
+        <Route
+          path="/Notice"
+          element={<Notice searchResults={noticeResults} />}
+        />
         <Route path="/Notice/new" element={<NoticeCreate />} />
         <Route path="/Notice/:id" element={<NoticeDetail />} />
         <Route path="/Notice/edit/:id" element={<NoticeEdit />} />
+
+        <Route path="/faq" element={<FaqList />} />
+        <Route path="/faqd/:no" element={<FaqDetail />} />
+        <Route path="/faqw" element={<FaqWrite />} />
       </Routes>
 
       <Footer />
