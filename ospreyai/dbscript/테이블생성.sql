@@ -153,11 +153,62 @@ CREATE TABLE Notice (
     ncontent CLOB NOT NULL,
     nwriter VARCHAR2(30) NOT NULL,
     ncreated_at DATE DEFAULT SYSDATE,
+    nupdated_at DATE DEFAULT SYSDATE,
     ofilename VARCHAR2(200),
     rfilename VARCHAR2(200),
     ncount NUMBER DEFAULT 0,
     PRIMARY KEY (notice_no)
 );
+
+-- Notice 테이블 코멘트 생성
+COMMENT ON COLUMN Notice.notice_no IS '글번호';
+COMMENT ON COLUMN Notice.ntitle IS '글제목';
+COMMENT ON COLUMN Notice.ncontent IS '내용';
+COMMENT ON COLUMN Notice.nwriter IS '작성자';
+COMMENT ON COLUMN Notice.ncreated_at IS '생성일자';
+COMMENT ON COLUMN Notice.nupdated_at IS '수정일자';
+COMMENT ON COLUMN Notice.ofilename IS '원본파일이름';
+COMMENT ON COLUMN Notice.rfilename IS '수정파일이름';
+COMMENT ON COLUMN Notice.ncount IS '조회수';
+
+
+
+
+-- FAQ 테이블 삭제
+BEGIN
+    EXECUTE IMMEDIATE 'DROP TABLE FAQ CASCADE CONSTRAINTS';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -942 THEN
+            RAISE;
+        END IF;
+END;
+/
+
+-- FAQ 테이블 생성
+CREATE TABLE FAQ (
+    faq_id NUMBER PRIMARY KEY,                    -- 글번호 (PK)
+    faq_title VARCHAR2(1000) NOT NULL,              -- 글제목
+    faq_content VARCHAR2(2000) NOT NULL,                     -- 글내용
+    category CHAR(1) NOT NULL,               -- 글구분 (FAQ의 카테고리)
+    view_count NUMBER DEFAULT 0 NOT NULL,                   -- 조회수
+    created_at DATE DEFAULT SYSDATE NOT NULL, -- 등록날짜
+    qna_id NUMBER,                                 -- Q&A 글번호 (FK)
+    faq_writer VARCHAR2(100) NOT NULL,
+    CONSTRAINT fk_qna_id FOREIGN KEY (qna_id) REFERENCES FAQ(faq_id) ON DELETE SET NULL -- QNA와 외래키 관계
+    ,CONSTRAINT CHK_category check (category in ('Q', 'A'))
+    ,CONSTRAINT fk_faq_writer FOREIGN KEY (faq_writer) REFERENCES MEMBER(email) ON DELETE SET NULL
+);
+
+-- FAQ 테이블 코멘트 생성
+COMMENT ON COLUMN FAQ.faq_id IS 'FAQ 글 번호';
+COMMENT ON COLUMN FAQ.faq_title IS 'FAQ 글 제목';
+COMMENT ON COLUMN FAQ.faq_content IS 'FAQ 글 내용';
+COMMENT ON COLUMN FAQ.category IS 'FAQ 카테고리';
+COMMENT ON COLUMN FAQ.view_count IS 'FAQ 조회수';
+COMMENT ON COLUMN FAQ.created_at IS 'FAQ 등록일';
+COMMENT ON COLUMN FAQ.qna_id IS 'QNA 글번호';
+COMMENT ON COLUMN FAQ.faq_writer IS '작성자';
 
 
 

@@ -23,6 +23,13 @@ public class Paging implements java.io.Serializable {
 		this.currentPage = currentPage;
 		this.urlMapping = urlMapping;
 	}
+
+	public Paging(int listCount, int limit, int currentPage) {
+		super();
+		this.listCount = listCount;
+		this.limit = limit;
+		this.currentPage = currentPage;
+	}
 	
 	//페이지 계산 메소드
 	public void calculate() {
