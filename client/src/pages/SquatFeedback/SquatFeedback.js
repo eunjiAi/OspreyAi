@@ -11,9 +11,9 @@ function SquatFeedback() {
   const [intervalTime, setIntervalTime] = useState(1000);
   const [isRunning, setIsRunning] = useState(false);
   const [detected, setDetected] = useState(false);
-  const [loading, setLoading] = useState(false); // 로딩 상태
+  const [loading, setLoading] = useState(false);           // 로딩 상태
 
-  const [username, setUsername] = useState(''); // 사용자 이름 상태
+  const [username, setUsername] = useState('');           // 사용자 이름 상태
   const videoRef = useRef(null);
   const intervalIdRef = useRef(null);
 
@@ -31,7 +31,7 @@ function SquatFeedback() {
   const getNameFromToken = () => {
     const token = localStorage.getItem('accessToken');
     const payload = getPayloadFromToken(token);
-    return payload ? payload.name : ''; // JWT에 사용자 이름(name) 저장된 경우
+    return payload ? payload.name : '';        // JWT에 사용자 이름(name) 저장된 경우
   };
 
   // JWT 토큰 유효성 검사 및 갱신 함수
@@ -63,7 +63,7 @@ function SquatFeedback() {
       } catch (error) {
         console.error('Token refresh failed:', error);
         alert('로그인이 만료되었습니다. 다시 로그인해주세요.');
-        window.location.href = '/login';          // 로그인 페이지로 리다이렉트
+        window.location.href = '/login';              // 로그인 페이지로 리다이렉트
         throw error;
       }
     }
