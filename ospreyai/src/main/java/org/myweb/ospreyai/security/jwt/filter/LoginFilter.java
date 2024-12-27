@@ -75,7 +75,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         log.info("successfulAuthentication: {}", username);
 
         //로그인 성공이므로, 토큰 만들기함
-        String accessToken = jwtUtil.generateToken(username, "access", 15000L);
+        String accessToken = jwtUtil.generateToken(username, "access", 1800000L);
         String refreshToken = jwtUtil.generateToken(username, "refresh", 86400000L);
 
         //만들어진 리프레시토큰 정보 db 에 저장함
