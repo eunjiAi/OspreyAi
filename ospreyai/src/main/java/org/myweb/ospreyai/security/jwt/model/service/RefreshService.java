@@ -1,6 +1,7 @@
 package org.myweb.ospreyai.security.jwt.model.service;
 
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.security.jwt.jpa.entity.RefreshToken;
 import org.myweb.ospreyai.security.jwt.jpa.repository.RefreshRepository;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 @Transactional
 //@RequiredArgsConstructor
 public class RefreshService {
@@ -23,8 +25,13 @@ public class RefreshService {
     }
 
     public Optional<RefreshToken> findByTokenValue(String token) {
-        return refreshRepository.findByTokenValue(token);
+        Optional<RefreshToken> refreshToken = refreshRepository.findByTokenValue(token);
+        if (refreshToken.isEmpty()) {
+            log.warn("No refresh token found for token value: {}", token);
+        }
+        return refreshToken;
     }
+
 
     public Boolean exitsByRefreshToken(String refreshValue) {
         return refreshRepository.existsByTokenValue(refreshValue);

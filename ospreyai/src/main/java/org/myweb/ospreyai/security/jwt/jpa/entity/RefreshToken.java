@@ -49,7 +49,8 @@ public class RefreshToken {
     public void prePersist() {
         LocalDateTime now = LocalDateTime.now();
         if (issuedAt == null) issuedAt = now;
-        if (expirationDate == null) expirationDate = now.plusSeconds(expiresIn / 1000); 
-        // 예를 들어 expiresIn이 밀리초 단위라면, 날짜로 변환함
+        if (expiresIn == null || expiresIn <= 0) expiresIn = 86400000L;
+        if (expirationDate == null) expirationDate = now.plusSeconds(expiresIn / 1000);
     }
+
 }

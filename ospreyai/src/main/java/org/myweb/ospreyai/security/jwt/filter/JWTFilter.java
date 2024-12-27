@@ -16,6 +16,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Enumeration;
 
 @Slf4j
 public class JWTFilter extends OncePerRequestFilter {
@@ -28,19 +29,28 @@ public class JWTFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws IOException {
-        log.info("JWT filter running...");
+        log.info("JWT 필터 작동중...");
         try {
+            // Authorization 헤더가 있는지 확인
             String authorization = request.getHeader("Authorization");
             String requestURI = request.getRequestURI();
 
-            // 로그인 및 토큰 재발급 요청은 필터 통과
-            if (requestURI.equals("/login") || requestURI.equals("/reissue")) {
-                filterChain.doFilter(request, response);
-                return;
+            Enumeration<String> headerNames = request.getHeaderNames();
+            log.info("[디버깅] 요청에 포함된 헤더 목록:");
+            while (headerNames != null && headerNames.hasMoreElements()) {
+                String headerName = headerNames.nextElement();
+                log.info("[디버깅] 헤더 이름: {}, 값: {}", headerName, request.getHeader(headerName));
             }
 
             // Authorization 헤더가 없거나 잘못된 형식이면 필터 통과
             if (authorization == null || !authorization.startsWith("Bearer ")) {
+                log.warn("[디버깅] Authorization 헤더가 없거나 형식이 올바르지 않습니다.");
+                filterChain.doFilter(request, response);
+                return;
+            }
+
+            // 로그인 및 토큰 재발급 요청은 필터 통과
+            if (requestURI.equals("/login") || requestURI.equals("/reissue")) {
                 filterChain.doFilter(request, response);
                 return;
             }

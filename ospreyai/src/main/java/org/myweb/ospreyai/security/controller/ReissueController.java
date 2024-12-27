@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Enumeration;
 import java.util.Optional;
 
 @Slf4j
@@ -35,9 +36,20 @@ public class ReissueController {
 
     @PostMapping("/reissue")
     public ResponseEntity<?> reissue(HttpServletRequest request, HttpServletResponse response) {
-        //리프레시 토큰을 request header 에 'Authorization' 에 넣어서 보냈다면
+        log.info("[디버깅] /reissue 엔드포인트 요청 처리 중...");
+
+        // 요청 헤더 디버깅
+        Enumeration<String> headerNames = request.getHeaderNames();
+        log.info("[디버깅] 요청에 포함된 헤더 목록:");
+        while (headerNames.hasMoreElements()) {
+            String headerName = headerNames.nextElement();
+            log.info("[디버깅] 헤더 이름: {}, 값: {}", headerName, request.getHeader(headerName));
+        }
+
+        // 리프레시 토큰 처리 로직
         String refresh = request.getHeader("Authorization");
-        if(refresh == null || !refresh.startsWith("Bearer ")) {
+        if (refresh == null || !refresh.startsWith("Bearer ")) {
+            log.warn("[디버깅] Authorization 헤더가 비어있거나 잘못되었습니다.");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
 
@@ -45,11 +57,12 @@ public class ReissueController {
 
         //토큰 만료 여부 검사
         try {
-            if(jwtUtil.isTokenExpired(token)){
-                //리프레시 토큰이 만료되면, 데이터베이스에서 기존의 토큰을 삭제함
+            if(jwtUtil.isTokenExpired(token)) {
+                log.info("Refresh token expired: {}", token);
                 refreshService.deleteByRefreshToken(token);
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Refresh token expired.");
             }
+
         } catch (ExpiredJwtException e) {
             refreshService.deleteByRefreshToken(token);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -72,9 +85,11 @@ public class ReissueController {
 
             //리프래시 토큰의 상태 확인
             RefreshToken refreshToken = refreshTokenOptional.get();
-            if (!refreshToken.getStatus().equals("activated")) {
-                return new ResponseEntity<>("refresh token is not activated", HttpStatus.BAD_REQUEST);
+            if (refreshToken == null || !refreshToken.getStatus().equals("activated")) {
+                log.info("Refresh token not activated or null: {}", token);
+                return new ResponseEntity<>("Refresh token is not activated or invalid", HttpStatus.BAD_REQUEST);
             }
+
 
             //리프래시 토큰이 정상이면, 엑세스 토큰만 새로 생성함
             String access = jwtUtil.generateToken(username, "access", ACCESS_TOKEN_EXPIRATION);

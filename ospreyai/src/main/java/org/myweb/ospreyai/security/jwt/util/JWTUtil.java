@@ -1,6 +1,7 @@
 package org.myweb.ospreyai.security.jwt.util;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.annotation.PostConstruct;
@@ -70,8 +71,17 @@ public class JWTUtil {
     }
 
     public boolean isTokenExpired(String token) {
-        return getClaimsFromToken(token).getExpiration().before(new java.util.Date());
+        try {
+            return getClaimsFromToken(token).getExpiration().before(new java.util.Date());
+        } catch (ExpiredJwtException e) {
+            log.warn("Token is already expired: {}", token, e);
+            return true;
+        } catch (Exception e) {
+            log.error("Error checking token expiration: {}", token, e);
+            throw new RuntimeException("Error parsing token", e);
+        }
     }
+
 
     public String getAdminFromToken(String token) {
         return getClaimsFromToken(token).get("role", String.class);
