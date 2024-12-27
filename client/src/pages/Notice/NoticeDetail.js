@@ -9,6 +9,7 @@ const NoticeDetail = () => {
   const navigate = useNavigate(); //useNavigate 훅 사용
   const [notice, setNotice] = useState(null); //공지 데이터 저장할 상태 변수 선언과 초기화함
   const [error, setError] = useState(null); //에러 메세지 저장용 상태 변수 선언과 초기화
+  const [loading, setLoading] = useState(true); // 로딩 상태
 
   const { isLoggedIn, role, accessToken } = useContext(AuthContext);
 
@@ -16,14 +17,17 @@ const NoticeDetail = () => {
     //서버측에 요청해서 해당 공지글 가져오는 ajax 통신 처리 함수를 작성할 수 있음
     const fetchNoticeDetail = async () => {
       try {
-        // url path 와 ${변수명} 를 같이 사용시에는 반드시 빽틱(``)을 표시해야 함 (작은따옴표 아님 : 주의)
+        setLoading(true);
         const response = await apiClient.get(`/notice/${id}`);
-        setNotice(response.data); //서버측에서 받은 데이터 저장 처리
+        setNotice(response.data);
       } catch (error) {
+        console.error("Error fetching notice details:", error);
         setError("공지글 상세 조회 실패!");
-        console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
+    
 
     //작성된 함수 실행
     fetchNoticeDetail();
@@ -96,11 +100,15 @@ const NoticeDetail = () => {
           </tr>
           <tr>
             <th>제목</th>
-            <td>{notice.noticeTitle}</td>
+            <td>{notice.nTitle}</td>
           </tr>
           <tr>
             <th>작성자</th>
-            <td>{notice.noticeWriter}</td>
+            <td>{notice.nwriter}</td>
+          </tr>
+          <tr>
+            <th>작성자</th>
+            <td>{notice.nContent}</td>
           </tr>
           <tr>
             <th>첨부파일</th>
@@ -123,15 +131,15 @@ const NoticeDetail = () => {
           </tr>
           <tr>
             <th>등록날짜</th>
-            <td>{notice.noticeDate}</td>
+            <td>{notice.nCreatedAt}</td>
           </tr>
           <tr>
             <th>내용</th>
-            <td>{notice.noticeContent}</td>
+            <td>{notice.ofileName}</td>
           </tr>
           <tr>
             <th>조회수</th>
-            <td>{notice.readCount}</td>
+            <td>{notice.nCount}</td>
           </tr>
         </tbody>
       </table>

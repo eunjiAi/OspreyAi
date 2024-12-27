@@ -9006,3 +9006,44 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
 2024-12-26 18:10:05,629 INFO 127.0.0.1 - - [26/Dec/2024 18:10:05] "POST /squat-analysis HTTP/1.1" 200 -
 2024-12-26 18:11:11,428 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2024-12-27 09:56:25,705 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-27 09:56:25,705 INFO [33mPress CTRL+C to quit[0m
+2024-12-27 09:56:25,706 INFO  * Restarting with stat
+2024-12-27 09:56:28,463 WARNING  * Debugger is active!
+2024-12-27 09:56:28,470 INFO  * Debugger PIN: 125-377-655
+2024-12-27 09:56:28,477 INFO 127.0.0.1 - - [27/Dec/2024 09:56:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-27 09:56:28,478 INFO 127.0.0.1 - - [27/Dec/2024 09:56:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-27 09:56:28,479 INFO 127.0.0.1 - - [27/Dec/2024 09:56:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-27 09:56:28,480 INFO 127.0.0.1 - - [27/Dec/2024 09:56:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-27 09:56:31,624 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-27 09:56:31,625 INFO UUID: eunji@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-27 09:56:31,709 INFO UUID: eunji@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-27
+2024-12-27 09:56:32,407 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2024-12-27 09:56:32,407 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2024-12-27 09:56:32,413 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'eunji@example.com', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 27), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-27 09:56:32,413 INFO 127.0.0.1 - - [27/Dec/2024 09:56:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-27 09:56:32,630 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-27 09:56:32,630 INFO UUID: eunji@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-27 09:56:32,630 INFO UUID: eunji@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-27
+2024-12-27 09:56:32,634 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2024-12-27 09:56:32,634 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2024-12-27 09:56:32,641 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'eunji@example.com', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 27), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-27 09:56:32,641 INFO 127.0.0.1 - - [27/Dec/2024 09:56:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-27 09:56:33,607 INFO 127.0.0.1 - - [27/Dec/2024 09:56:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-27 09:56:33,628 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-27 09:56:33,628 INFO UUID: eunji@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-27 09:56:33,628 INFO UUID: eunji@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-27
+2024-12-27 09:56:33,630 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2024-12-27 09:56:33,630 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2024-12-27 09:56:33,639 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##OSPREYAI.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'eunji@example.com', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 27), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-27 09:56:33,639 INFO 127.0.0.1 - - [27/Dec/2024 09:56:33] "POST /squat-analysis HTTP/1.1" 200 -

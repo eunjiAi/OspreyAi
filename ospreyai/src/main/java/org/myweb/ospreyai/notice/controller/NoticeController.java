@@ -53,6 +53,23 @@ public class NoticeController {
 //		return new ResponseEntity<>(notice, HttpStatus.OK);
 //	}
 //
+
+	// 상세 보기
+	@GetMapping("/{id}")
+	public ResponseEntity<Notice> getNoticeById(@PathVariable int id) {
+		log.info("Fetching notice by ID: " + id);
+		try {
+			Notice notice = noticeService.selectNotice(id);
+			if (notice == null) {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+			}
+			return ResponseEntity.ok(notice);
+		} catch (Exception e) {
+			log.error("Error fetching notice details", e);
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+		}
+	}
+
 	// 공지사항 전체 목록보기 요청 처리용 (페이징 처리 : 한 페이지에 10개씩 출력 처리)
 	@GetMapping
 	public Map<String, Object> noticeListMethod(
