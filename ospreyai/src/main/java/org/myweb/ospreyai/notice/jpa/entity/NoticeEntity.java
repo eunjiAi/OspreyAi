@@ -27,6 +27,8 @@ public class NoticeEntity {
     private String nWriter; //    NWRITER	VARCHAR2(30 BYTE)
     @Column(name = "NCREATED_AT")
     private Date nCreatedAt;    //    NCREATED_AT	DATE
+    @Column(name = "NUPDATED_AT")
+    private Date nUpdatedAt;    //    NCREATED_AT	DATE
     @Column(name = "OFILENAME")
     private String ofileName;   //    OFILENAME	VARCHAR2(200 BYTE)
     @Column(name = "RFILENAME")
@@ -47,6 +49,7 @@ public class NoticeEntity {
                 .nContent(nContent)
                 .nWriter(nWriter)
                 .nCreatedAt(nCreatedAt)
+                .nUpdatedAt(nUpdatedAt)
                 .ofileName(ofileName)
                 .rfileName(rfileName)
                 .nCount(nCount)

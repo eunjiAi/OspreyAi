@@ -41,20 +41,7 @@ public class NoticeController {
 	@Value("${file.upload-dir}")
 	private String uploadDir;
 
-	// 공지글 상세 내용보기 요청 처리용
-//	@GetMapping("/detail/{noticeNo}")
-//	public ResponseEntity<Notice> noticeDetailMethod(@PathVariable int noticeNo) {
-//		log.info("ndetail.do : " + noticeNo); // 전송받은 값 확인
-//
-//		Notice notice = noticeService.selectNotice(noticeNo);
-//		// 조회수 1증가 처리
-//		noticeService.updateAddReadCount(noticeNo);
-//
-//		return new ResponseEntity<>(notice, HttpStatus.OK);
-//	}
-//
-
-	// 상세 보기
+	// 공지글 상세 보기
 	@GetMapping("/{id}")
 	public ResponseEntity<Notice> getNoticeById(@PathVariable int id) {
 		log.info("Fetching notice by ID: " + id);
@@ -63,6 +50,7 @@ public class NoticeController {
 			if (notice == null) {
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 			}
+			noticeService.updateAddReadCount(id);
 			return ResponseEntity.ok(notice);
 		} catch (Exception e) {
 			log.error("Error fetching notice details", e);
@@ -92,216 +80,165 @@ public class NoticeController {
 
 		return map;
 	}
-//
-//	// 새 공지글 등록 요청 처리용 (파일 업로드 기능 추가)
-//	@PostMapping
-//	public ResponseEntity noticeInsertMethod(
-//			@ModelAttribute Notice notice,
-//			@RequestParam(name = "ofile", required = false) MultipartFile mfile) throws IOException {
-//		log.info("notice insert : " + notice);
-//
-//		// 공지사항 첨부파일 저장 폴더를 경로 지정
-//		//classpath 인 src/main/resources 아래에 저장 폴더를 둔 경우에 (war 만들면 사용못함)
-//		//String savePath = new ClassPathResource("notice_upfiles").getFile().getAbsolutePath();
-//		//D:\springboot_workspace\first_serverside\build\resources\main\static\notice_upfiles
-//
-//		String savePath = uploadDir + "/notice";
-//		log.info("savePath : " + savePath);
-//
-//
-//		File directory = new File(savePath);
-//		if (!directory.exists()) {
-//			// 폴더가 없으면 새로 폴더 만들기함
-//			directory.mkdirs();
-//		}
-//
-//		// 첨부파일이 있을 때
-//		if (mfile != null && !mfile.isEmpty()) {
-//			// 전송온 파일이름 추출함
-//			String fileName = mfile.getOriginalFilename();
-//			String renameFileName = null;
-//
-//			// 저장폴더에는 변경된 이름을 저장 처리함
-//			// 파일 이름바꾸기함 : 년월일시분초.확장자
-//			if (fileName != null && !fileName.isEmpty()) {
-//				// 바꿀 파일명에 대한 문자열 만들기
-//				renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
-//				// 바뀐 파일명 확인
-//				log.info("첨부파일명 확인 : " + renameFileName);
-//
-//				try {
-//					// 저장 폴더에 파일명 바꾸어 저장하기
-//					mfile.transferTo(new File(savePath, renameFileName));
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//					return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//				}
-//			} // 파일명 바꾸기
-//
-//			// notice 객체에 첨부파일 정보 저장 처리
-//			notice.setOriginalFilePath(fileName);
-//			notice.setRenameFilePath(renameFileName);
-//		} // 첨부파일이 있을 때
-//
-//		//중요도(importance) 가 null 일때 (체크되지 않았을 때)
-//		if(notice.getImportance() == null || notice.getImportance().equals("false")){
-//			notice.setImportance("N");
-//		}
-//		if(notice.getImportance().equals("true")){
-//			notice.setImportance("Y");
-//		}
-//
-//		if (noticeService.insertNotice(notice) > 0) {
-//			// 새 공지글 등록 성공시 목록 페이지 내보내기 요청
-//			return ResponseEntity.ok().build();
-//		} else {
-//			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//		}
-//	}
-//
-//	// 첨부파일 다운로드 요청 처리용 메소드
-//	@GetMapping("/nfdown")
-//	public ResponseEntity<Resource> fileDownload(
-//			@RequestParam("ofile") String originalFileName,
-//			@RequestParam("rfile") String renameFileName) throws IOException {
-//
-//		// 공지사항 첨부파일 저장 폴더 경로 지정 => classpath 경로 설정
-//		// src/main/resources/notice_upfiles (war 만들면 사용 못 함)
-//		//String savePath = "/notice_upfiles/";
-//		//D:\springboot_workspace\first_serverside\build\resources\main\static\notice_upfiles
-//
-//		String savePath = uploadDir + "/notice";
-//
-//		//Path 객체 생성
-//		Path path = Paths.get(savePath).toAbsolutePath().normalize();
-//
-//		// classpath 에서 파일 찾기
-////		ClassPathResource classPathResource = new ClassPathResource(savePath + renameFileName);
-////		log.info("nfdown : " + classPathResource.getFile().getAbsolutePath());
-//
-//
-////		if(!classPathResource.exists()) {
-////			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-////		}
-//
-//		// Resource 객체 생성
-//		Resource resource = null;
-//		try {
-//			//resource = classPathResource;
-//			resource = new UrlResource(path.toUri() + "/" + renameFileName);
-//		} catch (Exception e){
-//			e.printStackTrace();
-//			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//		}
-//
-//		// 파일 이름 설정 (한글 파일명 때문에 인코딩)
-//		String encodedFileName = originalFileName != null ? originalFileName : renameFileName;
-//		try {
-//			encodedFileName = URLEncoder.encode(encodedFileName, "UTF-8").replaceAll("\\+", "%20");
-//		} catch (Exception e) {
-//			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//		}
-//
-//		// Content-Disposition 해더 설정
-//		String contentDisposition = "attachment; filename=\"" + encodedFileName + "\"";
-//
-//		return ResponseEntity.ok()
-//				.contentType(MediaType.APPLICATION_OCTET_STREAM)
-//				.header("Content-Disposition", contentDisposition)
-//				.body(resource);
-//	}
-//
-//
-//	// 공지글 삭제 요청 처리용
-//	@DeleteMapping("/{noticeNo}")
-//	public ResponseEntity noticeDeleteMethod(@PathVariable int noticeNo,
-//			@RequestParam(name = "rfile", required = false) String renameFileName) {
-//		if (noticeService.deleteNotice(noticeNo) > 0) { // 공지글 삭제 성공시
-//			// 공지글 삭제 성공시 저장 폴더에 있는 첨부파일도 삭제 처리함
-//			if (renameFileName != null && renameFileName.length() > 0) {
-//				// 공지사항 첨부파일 저장 폴더 경로 지정
-//				String savePath = uploadDir + "/notice";
-//
-//				//Path 객체 생성
-//				Path path = Paths.get(savePath, renameFileName);
-//				File file = path.toFile();
-//				if (file.exists()) {
-//					if(!file.delete()){
-//						return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//					}
-//				}
-//			}
-//			return ResponseEntity.ok().build();
-//		} else {
-//			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//		}
-//	}
-//
-//	// 공지글 수정 요청 처리용 (파일 업로드 기능 사용)
-//	@PutMapping("/{no}")
-//	public ResponseEntity noticeUpdateMethod(
-//			@ModelAttribute Notice notice,
-//			@RequestParam(name = "ofile", required = false) MultipartFile mfile) {
-//		log.info("mupdate.do : " + notice); // 전송온 값 확인
-//
-//		// 중요도 체크 안 한 경우 처리
-//		if (notice.getImportance() == null) {
-//			if(notice.getImportance().equals("false")) {
-//				notice.setImportance("N");
-//				notice.setImpEndDate(new Date(System.currentTimeMillis())); // 오늘 날짜를 기본 날짜로 지정함
-//			}
-//			if(notice.getImportance().equals("true")) {
-//				notice.setImportance("Y");
-//			}
-//		}
-//
-//		//수정 날짜도 변경
-//		notice.setNoticeDate(new Date(System.currentTimeMillis()));
-//
-//		// 첨부파일 관련 변경 사항 처리
-//		// 공지사항 첨부파일 저장 폴더 경로 지정
-//		String savePath = uploadDir + "/notice";
-//		log.info("savePath : " + savePath);
-//
-//		// 새로운 첨부파일로 변경 업로드된 경우
-//		// => 이전 파일과 파일정보 삭제함
-//		if(mfile != null && !mfile.isEmpty()) {
-//			// 저장 폴더에서 이전 파일은 삭제함
-//			new File(savePath, notice.getRenameFilePath()).delete();
-//			// notice 안의 파일 정보도 삭제함
-//			notice.setOriginalFilePath(null);
-//			notice.setRenameFilePath(null);
-//
-//			// 전송온 파일이름 추출함
-//			String fileName = mfile.getOriginalFilename();
-//			String renameFileName = null;
-//
-//			// 파일 이름바꾸기함 : 년월일시분초.확장자
-//			if (fileName != null && fileName.length() > 0) {
-//				// 바꿀 파일명에 대한 문자열 만들기
-//				renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
-//
-//				try {
-//					// 저장 폴더에 파일명 바꾸어 저장하기
-//					mfile.transferTo(new File(savePath, renameFileName));
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//					return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//				}
-//			} // 파일명 바꾸기와 저장 처리
-//
-//			// notice 객체에 첨부파일 정보 저장 처리
-//			notice.setOriginalFilePath(fileName);
-//			notice.setRenameFilePath(renameFileName);
-//		} // 새로운 첨부파일이 있을 때
-//
-//		if (noticeService.updateNotice(notice) > 0) { // 공지글 수정 성공시
-//			return ResponseEntity.ok().build();
-//		} else {
-//			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//		}
-//	}
-//
+
+	// 공지글 등록 요청(파일 업로드)
+	@PostMapping
+	public ResponseEntity noticeInsertMethod(
+			@ModelAttribute Notice notice,
+			@RequestParam(name = "ofile", required = false) MultipartFile mfile) throws IOException {
+		log.info("noticeInsertMethod() : " + notice);
+
+		String savePath = uploadDir + "/notice";
+		log.info("noticeInsertMethod() => savePath : " + savePath);
+
+
+		File directory = new File(savePath);
+		if (!directory.exists()) {
+			directory.mkdirs();
+		}
+
+		if (mfile != null && !mfile.isEmpty()) {
+			String fileName = mfile.getOriginalFilename();
+			String renameFileName = null;
+
+			if (fileName != null && !fileName.isEmpty()) {
+				renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
+				log.info("변경된 첨부파일명 : " + renameFileName);
+
+				try {
+					mfile.transferTo(new File(savePath, renameFileName));
+				} catch (Exception e) {
+					return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+				}
+			}
+
+			notice.setOfileName(fileName);
+			notice.setRfileName(renameFileName);
+		}
+
+		if (noticeService.insertNotice(notice) > 0) {
+			return ResponseEntity.ok().build();
+		} else {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+	}
+
+	// 첨부파일 다운로드 요청 처리
+	@GetMapping("/nfdown")
+	public ResponseEntity<Resource> fileDownload(
+			@RequestParam("ofile") String originalFileName,
+			@RequestParam("rfile") String renameFileName) throws IOException {
+
+		String savePath = uploadDir + "/notice";
+
+		Path path = Paths.get(savePath).toAbsolutePath().normalize();
+
+		// Resource 객체 생성
+		Resource resource = null;
+		try {
+			resource = new UrlResource(path.toUri() + "/" + renameFileName);
+		} catch (Exception e){
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+
+		// 파일 이름 설정 (한글 파일명 인코딩)
+		String encodedFileName = originalFileName != null ? originalFileName : renameFileName;
+		try {
+			encodedFileName = URLEncoder.encode(encodedFileName, "UTF-8").replaceAll("\\+", "%20");
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+
+		// Content-Disposition 헤더 설정
+		String contentDisposition = "attachment; filename=\"" + encodedFileName + "\"";
+
+		return ResponseEntity.ok()
+				.contentType(MediaType.APPLICATION_OCTET_STREAM)
+				.header("Content-Disposition", contentDisposition)
+				.body(resource);
+	}
+
+
+	// 공지글 삭제 요청 처리용
+	@DeleteMapping("/{noticeNo}")
+	public ResponseEntity noticeDeleteMethod(@PathVariable int noticeNo,
+			@RequestParam(name = "rfile", required = false) String renameFileName) {
+		if (noticeService.deleteNotice(noticeNo) > 0) { // 공지글 삭제 성공시
+			// 공지글 삭제 성공시 저장 폴더에 있는 첨부파일도 삭제 처리함
+			if (renameFileName != null && renameFileName.length() > 0) {
+				// 공지사항 첨부파일 저장 폴더 경로 지정
+				String savePath = uploadDir + "/notice";
+
+				//Path 객체 생성
+				Path path = Paths.get(savePath, renameFileName);
+				File file = path.toFile();
+				if (file.exists()) {
+					if(!file.delete()){
+						return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+					}
+				}
+			}
+			return ResponseEntity.ok().build();
+		} else {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+	}
+
+	// 공지글 수정 요청
+	@PutMapping("/{id}")
+	public ResponseEntity noticeUpdateMethod(
+			@ModelAttribute Notice notice,
+			@RequestParam(name = "ofile", required = false) MultipartFile mfile) {
+		log.info("noticeUpdateMethod() : " + notice); // 전송온 값 확인
+
+		notice.setNCreatedAt(notice.getNCreatedAt());
+		notice.setNUpdatedAt(new Date(System.currentTimeMillis()));
+
+		// 첨부파일 관련 변경 사항 처리
+		// 공지사항 첨부파일 저장 폴더 경로 지정
+		String savePath = uploadDir + "/notice";
+		log.info("savePath : " + savePath);
+
+		// 새로운 첨부파일로 변경 업로드된 경우
+		// => 이전 파일과 파일정보 삭제함
+		if(mfile != null && !mfile.isEmpty()) {
+			// 저장 폴더에서 이전 파일은 삭제함
+			new File(savePath, notice.getRfileName()).delete();
+			// notice 안의 파일 정보도 삭제함
+			notice.setOfileName(null);
+			notice.setRfileName(null);
+
+			// 전송온 파일이름 추출함
+			String fileName = mfile.getOriginalFilename();
+			String renameFileName = null;
+
+			// 파일 이름바꾸기함 : 년월일시분초.확장자
+			if (fileName != null && fileName.length() > 0) {
+				// 바꿀 파일명에 대한 문자열 만들기
+				renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
+
+				try {
+					// 저장 폴더에 파일명 바꾸어 저장하기
+					mfile.transferTo(new File(savePath, renameFileName));
+				} catch (Exception e) {
+					e.printStackTrace();
+					return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+				}
+			} // 파일명 바꾸기와 저장 처리
+
+			// notice 객체에 첨부파일 정보 저장 처리
+			notice.setOfileName(fileName);
+			notice.setRfileName(renameFileName);
+		} // 새로운 첨부파일이 있을 때
+
+		if (noticeService.updateNotice(notice) > 0) { // 공지글 수정 성공시
+			return ResponseEntity.ok().build();
+		} else {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+	}
+
 //	// 공지글 제목 검색용 (페이징 처리 포함)
 //	@GetMapping("/search/title")
 //	public ResponseEntity<Map> noticeSearchTitleMethod(

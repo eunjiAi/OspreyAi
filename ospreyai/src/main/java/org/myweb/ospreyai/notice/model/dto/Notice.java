@@ -20,6 +20,7 @@ public class Notice {
     private String nContent;    //    NCONTENT	CLOB
     private String nWriter;     //    NWRITER	VARCHAR2(30 BYTE)
     private Date nCreatedAt;  //    NCREATED_AT	DATE
+    private Date nUpdatedAt;    //  NUPDATED_AT	DATE
     private String ofileName; //    OFILENAME	VARCHAR2(200 BYTE)
     private String rfileName;   //    RFILENAME	VARCHAR2(200 BYTE)
     private int nCount; //  NCOUNT	NUMBER
@@ -31,6 +32,7 @@ public class Notice {
                 .nContent(nContent)
                 .nWriter(nWriter)
                 .nCreatedAt(nCreatedAt)
+                .nUpdatedAt(nUpdatedAt)
                 .ofileName(ofileName)
                 .rfileName(rfileName)
                 .nCount(nCount)

@@ -11,6 +11,7 @@ import BoardCreate from "./pages/Board/BoardCreate";
 import Notice from "./pages/Notice/Notice";
 import NoticeDetail from "./pages/Notice/NoticeDetail";
 import NoticeCreate from "./pages/Notice/NoticeCreate";
+import NoticeEdit from "./pages/Notice/NoticeEdit";
 import FaceLogin from "./pages/Login/FaceLogin";
 import Signup from "./pages/Signup/Signup";
 import MyPage from "./pages/MyPage/MyPage";
@@ -57,6 +58,7 @@ function App() {
         <Route path="/Notice" element={<Notice searchResults={noticeResults} />} />
         <Route path="/Notice/new" element={<NoticeCreate />} />
         <Route path="/Notice/:id" element={<NoticeDetail />} />
+        <Route path="/Notice/edit/:id" element={<NoticeEdit />} />
       </Routes>
 
       <Footer />

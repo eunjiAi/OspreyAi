@@ -27,18 +27,17 @@ const NoticeDetail = () => {
         setLoading(false);
       }
     };
-    
 
     //작성된 함수 실행
     fetchNoticeDetail();
   }, [id]);
 
-  const handleFileDownload = async (originalFileName, renameFileName) => {
+  const handleFileDownload = async (ofileName, rfileName) => {
     try {
-      const response = await apiClient.get("/Notice/nfdown", {
+      const response = await apiClient.get("/notice/nfdown", {
         params: {
-          ofile: originalFileName,
-          rfile: renameFileName,
+          ofile: ofileName,
+          rfile: rfileName,
         },
         responseType: "blob", //파일 다운로드를 위한 설정
       });
@@ -47,7 +46,7 @@ const NoticeDetail = () => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
       link.href = url;
-      link.setAttribute("download", originalFileName);
+      link.setAttribute("download", ofileName);
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -58,7 +57,7 @@ const NoticeDetail = () => {
   };
 
   const handleMoveEdit = () => {
-    navigate(`/noticeu/${id}`);
+    navigate(`/notice/edit/${id}`);
   };
 
   const handleDelete = async (rfile) => {
@@ -90,8 +89,8 @@ const NoticeDetail = () => {
   }
 
   return (
-    <div>
-      <h2> {id}번 공지사항 상세보기</h2>
+    <div className="detail-container">
+      <h2 className="detail-title"> {id}번 공지사항 상세보기</h2>
       <table border="1">
         <tbody>
           <tr>
@@ -100,29 +99,22 @@ const NoticeDetail = () => {
           </tr>
           <tr>
             <th>제목</th>
-            <td>{notice.nTitle}</td>
+            <td>{notice.ntitle}</td>
           </tr>
           <tr>
             <th>작성자</th>
             <td>{notice.nwriter}</td>
           </tr>
           <tr>
-            <th>작성자</th>
-            <td>{notice.nContent}</td>
-          </tr>
-          <tr>
             <th>첨부파일</th>
             <td>
-              {notice.originalFilePath ? (
+              {notice.ofileName ? (
                 <button
                   onClick={() =>
-                    handleFileDownload(
-                      notice.originalFilePath,
-                      notice.renameFilePath
-                    )
+                    handleFileDownload(notice.ofileName, notice.rfileName)
                   }
                 >
-                  {notice.originalFilePath}
+                  {notice.ofileName}
                 </button>
               ) : (
                 "첨부파일 없음"
@@ -131,23 +123,28 @@ const NoticeDetail = () => {
           </tr>
           <tr>
             <th>등록날짜</th>
-            <td>{notice.nCreatedAt}</td>
+            <td>{notice.ncreatedAt}</td>
           </tr>
           <tr>
             <th>내용</th>
-            <td>{notice.ofileName}</td>
+            <td>{notice.ncontent}</td>
           </tr>
           <tr>
             <th>조회수</th>
-            <td>{notice.nCount}</td>
+            <td>{notice.ncount}</td>
           </tr>
         </tbody>
       </table>
       {/* ADMIN 권한만 수정 및 삭제 버튼 표시 */}
       {isLoggedIn && role === "ADMIN" && (
         <div>
-          <button onClick={handleMoveEdit}>수정 페이지로 이동</button>
-          <button onClick={() => handleDelete(notice.renameFilePath)}>
+          <button onClick={handleMoveEdit} className="edit-button">
+            수정 페이지로 이동
+          </button>
+          <button
+            onClick={() => handleDelete(notice.rfileName)}
+            className="delete-button"
+          >
             삭제하기
           </button>
         </div>

@@ -1,72 +1,144 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import "./NoticeCreate.css";
+import apiClient from "../../utils/axios";
+import styles from "./NoticeCreate.css";
+import { AuthContext } from "../../AuthProvider";
 
-const BoardCreate = () => {
+function NoticeCreate() {
+  const { email, accessToken } = useContext(AuthContext);
+
+  const [formData, setFormData] = useState({
+    nTitle: "",
+    nWriter: "관리자",
+    nContent: "",
+  });
+  const [file, setFile] = useState(null);
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (email) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        nWriter: email,
+      }));
+    }
+  }, [email]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (title.trim() && content.trim()) {
-      alert(`New Post Created!\nTitle: ${title}\nContent: ${content}`);
+    const data = new FormData();
+    data.append("nTitle", formData.nTitle);
+    data.append("nWriter", formData.nWriter);
+    data.append("nContent", formData.nContent);
+    if (file) {
+      data.append("ofile", file);
+    }
 
-      navigate("/Board");
-    } else {
-      alert("Please fill in all fields before submitting.");
+    try {
+      await apiClient.post("/notice", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      alert("공지글 등록 성공");
+      navigate("/notice");
+    } catch (error) {
+      console.error("공지글 등록 실패", error);
+      alert("공지글 등록 실패");
     }
   };
 
-  const handleCancel = () => {
-    navigate("/Board");
-  };
-
   return (
-    <div className="create-container">
-      <h1 className="create-title">게시글 등록</h1>
-      <form className="create-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="title" className="form-label">
-            제목
-          </label>
-          <input
-            type="text"
-            id="title"
-            className="form-input"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="제목을 입력하세요"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="content" className="form-label">
-            상세내용
-          </label>
-          <textarea
-            id="content"
-            className="form-input"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            placeholder="상세내용을 입력하세요"
-          ></textarea>
-        </div>
-        <div className="form-buttons">
-          <button type="submit" className="submit-button">
-            게시글 등록
-          </button>
-          <button
-            type="button"
-            className="cancel-button"
-            onClick={handleCancel}
-          >
-            취소
-          </button>
-        </div>
+    <div className={styles.container}>
+      <h1 className={styles.header}>공지글 등록 페이지</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <table align="center" width="700" cellspacing="5" cellpadding="5">
+          <tbody>
+            <tr>
+              <th width="120">제 목</th>
+              <td>
+                <input
+                  type="text"
+                  name="nTitle"
+                  size="50"
+                  value={formData.nTitle}
+                  onChange={handleChange}
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <th width="120">작성자</th>
+              <td>
+                <input
+                  type="text"
+                  name="nWriter"
+                  value={formData.nWriter}
+                  readOnly
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>첨부파일</th>
+              <td>
+                <input type="file" name="file" onChange={handleFileChange} />
+              </td>
+            </tr>
+            <tr>
+              <th>내 용</th>
+              <td>
+                <textarea
+                  rows="5"
+                  cols="50"
+                  name="nContent"
+                  value={formData.nContent}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th colSpan="2">
+                <input type="submit" value="등록하기" /> &nbsp;
+                <input
+                  type="reset"
+                  value="작성취소"
+                  onClick={() =>
+                    setFormData({
+                      ...formData,
+                      nTitle: "",
+                      nContent: "",
+                    })
+                  }
+                />
+                &nbsp;
+                <input
+                  type="button"
+                  value="목록"
+                  onClick={() => navigate(-1)}
+                />
+              </th>
+            </tr>
+          </tbody>
+        </table>
       </form>
     </div>
   );
-};
+}
 
-export default BoardCreate;
+export default NoticeCreate;
