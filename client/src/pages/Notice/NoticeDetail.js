@@ -1,140 +1,151 @@
-import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import "./NoticeDetail.css";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom"; //이전 페이지에서 전달온 값을 받기 위함
+import apiClient from "../../utils/axios";
+import styles from "./NoticeDetail.css";
+import { AuthContext } from "../../AuthProvider";
 
-const BoardDetail = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [posts, setPosts] = useState([
-    {
-      id: 1,
-      title: "Osprey AI는 자세교정에 도움이 됩니다.",
-      content: "상세내용입니다.",
-      comments: ["따봉", "도움이 되었습니다."],
-    },
-    {
-      id: 2,
-      title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.",
-      content: "자랑글입니다.",
-      comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"],
-    },
-    {
-      id: 3,
-      title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.",
-      content: "자랑글입니다.",
-      comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"],
-    },
-    {
-      id: 4,
-      title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.",
-      content: "자랑글입니다.",
-      comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"],
-    },
-    {
-      id: 5,
-      title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.",
-      content: "자랑글입니다.",
-      comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"],
-    },
-    {
-      id: 6,
-      title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.",
-      content: "자랑글입니다.",
-      comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"],
-    },
-    {
-      id: 7,
-      title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.",
-      content: "자랑글입니다.",
-      comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"],
-    },
-    {
-      id: 8,
-      title: "OspreyAI로 오늘 바른자세 80번 달성했습니다.",
-      content: "자랑글입니다.",
-      comments: ["더 열심히 해서 80번보다 더 많이 해야겠네요.", "따봉"],
-    },
-  ]);
+const NoticeDetail = () => {
+  const { id } = useParams(); // URL 에서 no 파라미터를 가져옴(추출함)
+  const navigate = useNavigate(); //useNavigate 훅 사용
+  const [notice, setNotice] = useState(null); //공지 데이터 저장할 상태 변수 선언과 초기화함
+  const [error, setError] = useState(null); //에러 메세지 저장용 상태 변수 선언과 초기화
 
-  const [newComment, setNewComment] = useState("");
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedContent, setEditedContent] = useState("");
-  const post = posts.find((post) => post.id === parseInt(id));
+  const { isLoggedIn, role, accessToken } = useContext(AuthContext);
 
-  if (!post) {
-    return <div>Post not found.</div>;
+  useEffect(() => {
+    //서버측에 요청해서 해당 공지글 가져오는 ajax 통신 처리 함수를 작성할 수 있음
+    const fetchNoticeDetail = async () => {
+      try {
+        // url path 와 ${변수명} 를 같이 사용시에는 반드시 빽틱(``)을 표시해야 함 (작은따옴표 아님 : 주의)
+        const response = await apiClient.get(`/notice/${id}`);
+        setNotice(response.data); //서버측에서 받은 데이터 저장 처리
+      } catch (error) {
+        setError("공지글 상세 조회 실패!");
+        console.error(error);
+      }
+    };
+
+    //작성된 함수 실행
+    fetchNoticeDetail();
+  }, [id]);
+
+  const handleFileDownload = async (originalFileName, renameFileName) => {
+    try {
+      const response = await apiClient.get("/Notice/nfdown", {
+        params: {
+          ofile: originalFileName,
+          rfile: renameFileName,
+        },
+        responseType: "blob", //파일 다운로드를 위한 설정
+      });
+
+      //파일 다운로드 처리
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", originalFileName);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (error) {
+      console.error("File download error : ", error);
+      alert("파일 다운로드에 실패했습니다.");
+    }
+  };
+
+  const handleMoveEdit = () => {
+    navigate(`/noticeu/${id}`);
+  };
+
+  const handleDelete = async (rfile) => {
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      try {
+        await apiClient.delete(`/notice/${id}`, {
+          params: { rfile: rfile },
+          headers: {
+            Authorization: `Bearer ${accessToken}`, // accessToken 추가
+          },
+        });
+        alert("삭제가 완료되었습니다.");
+        //브라우저 히스토리를 이용해서, 목록 출력 페이지로 이동 <= 리액트의 히스토리를 이용한다면
+        //history.push('/notice');
+        navigate("/notice"); //목록 출력 페이지로 이동
+      } catch (error) {
+        console.error("Delete error : ", error);
+        alert("삭제 실패!");
+      }
+    }
+  };
+
+  if (!notice) {
+    return <div className={styles.loading}>로딩 중...</div>; // 로딩 표시
   }
 
-  const handleAddComment = () => {
-    if (newComment.trim()) {
-      post.comments.push(newComment);
-      setNewComment("");
-    }
-  };
-
-  const handleDelete = () => {
-    const updatedPosts = posts.filter((post) => post.id !== parseInt(id));
-    setPosts(updatedPosts);
-    navigate("/Board");
-  };
-
-  const handleEdit = () => {
-    if (isEditing) {
-      const updatedPosts = posts.map((p) =>
-        p.id === parseInt(id) ? { ...p, content: editedContent } : p
-      );
-      setPosts(updatedPosts);
-      setIsEditing(false);
-    } else {
-      setEditedContent(post.content);
-      setIsEditing(true);
-    }
-  };
+  if (error) {
+    return <div className={styles.error}>{error}</div>; // 에러 메시지 표시
+  }
 
   return (
-    <div className="detail-container">
-      <button className="back-button" onClick={() => navigate("/Board")}>
-        ← 게시판 목록으로 돌아가기
-      </button>
-      <h1 className="detail-title">{post.title}</h1>
-      {!isEditing ? (
-        <p className="detail-content">{post.content}</p>
-      ) : (
-        <textarea
-          className="edit-content"
-          value={editedContent}
-          onChange={(e) => setEditedContent(e.target.value)}
-        />
-      )}
-      <div className="button-group">
-        <button className="edit-button" onClick={handleEdit}>
-          {isEditing ? "Save" : "수정"}
-        </button>
-        <button className="delete-button" onClick={handleDelete}>
-          삭제
-        </button>
-      </div>
-      <div className="comments-section">
-        <hr></hr>
-
-        <h2>댓글</h2>
-        <ul>
-          {post.comments.map((comment, index) => (
-            <li key={index}>{comment}</li>
-          ))}
-        </ul>
-        <div className="add-comment">
-          <input
-            type="text"
-            placeholder="댓글을 입력하세요"
-            value={newComment}
-            onChange={(e) => setNewComment(e.target.value)}
-          />
-          <button onClick={handleAddComment}>등록</button>
+    <div>
+      <h2> {id}번 공지사항 상세보기</h2>
+      <table border="1">
+        <tbody>
+          <tr>
+            <th>번호</th>
+            <td>{notice.noticeNo}</td>
+          </tr>
+          <tr>
+            <th>제목</th>
+            <td>{notice.noticeTitle}</td>
+          </tr>
+          <tr>
+            <th>작성자</th>
+            <td>{notice.noticeWriter}</td>
+          </tr>
+          <tr>
+            <th>첨부파일</th>
+            <td>
+              {notice.originalFilePath ? (
+                <button
+                  onClick={() =>
+                    handleFileDownload(
+                      notice.originalFilePath,
+                      notice.renameFilePath
+                    )
+                  }
+                >
+                  {notice.originalFilePath}
+                </button>
+              ) : (
+                "첨부파일 없음"
+              )}
+            </td>
+          </tr>
+          <tr>
+            <th>등록날짜</th>
+            <td>{notice.noticeDate}</td>
+          </tr>
+          <tr>
+            <th>내용</th>
+            <td>{notice.noticeContent}</td>
+          </tr>
+          <tr>
+            <th>조회수</th>
+            <td>{notice.readCount}</td>
+          </tr>
+        </tbody>
+      </table>
+      {/* ADMIN 권한만 수정 및 삭제 버튼 표시 */}
+      {isLoggedIn && role === "ADMIN" && (
+        <div>
+          <button onClick={handleMoveEdit}>수정 페이지로 이동</button>
+          <button onClick={() => handleDelete(notice.renameFilePath)}>
+            삭제하기
+          </button>
         </div>
-      </div>
+      )}
     </div>
   );
-};
+}; // const NoticeDetail
 
-export default BoardDetail;
+export default NoticeDetail;

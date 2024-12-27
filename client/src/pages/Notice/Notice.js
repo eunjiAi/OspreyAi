@@ -74,8 +74,8 @@ function Notice({ searchResults }) {
     fetchNotices(1);
   };
 
-  const handleTitleClick = (noticeNo) => {
-    navigate(`/notice/${noticeNo}`);
+  const handleTitleClick = (id) => {
+    navigate(`/notice/${id}`);
   };
 
   const handleWriteClick = () => {

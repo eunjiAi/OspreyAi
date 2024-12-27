@@ -32,6 +32,7 @@ function App() {
       {/* Header에 검색 결과 업데이트 처리 */}
       <Header
         updateBoardResults={setBoardResults}
+        updateNoticeResults={setNoticeResults}
         updateGeneralResults={setGeneralResults}
         resetSearchInput={resetSearchInput}
       />
