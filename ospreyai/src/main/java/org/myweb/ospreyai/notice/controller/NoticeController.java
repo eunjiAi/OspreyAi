@@ -187,57 +187,45 @@ public class NoticeController {
 
 	// 공지글 수정 요청
 	@PutMapping("/{id}")
-	public ResponseEntity noticeUpdateMethod(
+	public ResponseEntity<?> updateNotice(
 			@ModelAttribute Notice notice,
 			@RequestParam(name = "ofile", required = false) MultipartFile mfile) {
-		log.info("noticeUpdateMethod() : " + notice); // 전송온 값 확인
+		log.info("updateNotice() : " + notice);
 
-		notice.setNCreatedAt(notice.getNCreatedAt());
-		notice.setNUpdatedAt(new Date(System.currentTimeMillis()));
-
-		// 첨부파일 관련 변경 사항 처리
-		// 공지사항 첨부파일 저장 폴더 경로 지정
+		// 첨부파일 처리 로직
 		String savePath = uploadDir + "/notice";
 		log.info("savePath : " + savePath);
 
-		// 새로운 첨부파일로 변경 업로드된 경우
-		// => 이전 파일과 파일정보 삭제함
-		if(mfile != null && !mfile.isEmpty()) {
-			// 저장 폴더에서 이전 파일은 삭제함
+		if (mfile != null && !mfile.isEmpty()) {
+			// 기존 파일 삭제
 			new File(savePath, notice.getRfileName()).delete();
-			// notice 안의 파일 정보도 삭제함
 			notice.setOfileName(null);
 			notice.setRfileName(null);
 
-			// 전송온 파일이름 추출함
+			// 새 파일 저장
 			String fileName = mfile.getOriginalFilename();
-			String renameFileName = null;
-
-			// 파일 이름바꾸기함 : 년월일시분초.확장자
-			if (fileName != null && fileName.length() > 0) {
-				// 바꿀 파일명에 대한 문자열 만들기
-				renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
-
+			if (fileName != null && !fileName.isEmpty()) {
+				String renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
 				try {
-					// 저장 폴더에 파일명 바꾸어 저장하기
 					mfile.transferTo(new File(savePath, renameFileName));
+					notice.setOfileName(fileName);
+					notice.setRfileName(renameFileName);
 				} catch (Exception e) {
 					e.printStackTrace();
 					return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 				}
-			} // 파일명 바꾸기와 저장 처리
+			}
+		}
 
-			// notice 객체에 첨부파일 정보 저장 처리
-			notice.setOfileName(fileName);
-			notice.setRfileName(renameFileName);
-		} // 새로운 첨부파일이 있을 때
-
-		if (noticeService.updateNotice(notice) > 0) { // 공지글 수정 성공시
+		// 서비스 호출
+		int result = noticeService.updateNotice(notice);
+		if (result > 0) {
 			return ResponseEntity.ok().build();
 		} else {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 	}
+
 
 //	// 공지글 제목 검색용 (페이징 처리 포함)
 //	@GetMapping("/search/title")

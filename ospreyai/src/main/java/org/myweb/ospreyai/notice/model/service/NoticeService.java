@@ -2,13 +2,11 @@ package org.myweb.ospreyai.notice.model.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.myweb.ospreyai.common.Search;
 import org.myweb.ospreyai.notice.jpa.entity.NoticeEntity;
 import org.myweb.ospreyai.notice.jpa.repository.NoticeRepository;
 import org.myweb.ospreyai.notice.model.dto.Notice;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,6 +21,7 @@ import java.util.Optional;
 public class NoticeService {
 	private final NoticeRepository noticeRepository;
 
+	// 엔티티 리스트를 DTO 리스트로 변환 (Page 타입 처리)
 	private ArrayList<Notice> toList(Page<NoticeEntity> entityList) {
 		ArrayList<Notice> list = new ArrayList<>();
 		for(NoticeEntity entity : entityList){
@@ -31,7 +30,7 @@ public class NoticeService {
 		return list;
 	}
 
-	// toList 오버로딩
+	// 엔티티 리스트를 DTO 리스트로 반환 (List 타입 처리)
 	private ArrayList<Notice> toList(List<NoticeEntity> entityList) {
 		ArrayList<Notice> list = new ArrayList<>();
 		for(NoticeEntity entity : entityList){
@@ -40,6 +39,32 @@ public class NoticeService {
 		return list;
 	}
 
+	// 공지사항 상세 조회
+	public Notice selectNotice(int noticeNo) {
+		Optional<NoticeEntity> entityOptional = noticeRepository.findById(noticeNo);
+		return entityOptional.get().toDto();
+	}
+
+	// 조회수 증가
+	@Transactional
+	public void updateAddReadCount(int noticeNo) {
+		Optional<NoticeEntity> entity = noticeRepository.findById(noticeNo);
+		NoticeEntity noticeEntity = entity.get();
+		noticeEntity.setNCount(noticeEntity.getNCount() + 1);
+		noticeRepository.save(noticeEntity).toDto();
+	}
+
+	// 공지사항 리스트 조회 (페이징 처리)
+	public ArrayList<Notice> selectList(Pageable pageable) {
+		return toList(noticeRepository.findAll(pageable));
+	}
+
+	// 공지사항 전체 개수 조회
+	public int selectListCount() {
+		return (int)noticeRepository.count();
+	}
+
+	// 공지사항 추가
 	@Transactional
 	public int insertNotice(Notice notice) {
 		try {
@@ -53,50 +78,9 @@ public class NoticeService {
 		}
 	}
 
-	public Notice selectNotice(int noticeNo) {
-		Optional<NoticeEntity> entityOptional = noticeRepository.findById(noticeNo);
-		return entityOptional.get().toDto();
-	}
-
-	@Transactional
-	public Notice updateAddReadCount(int noticeNo) {
-		Optional<NoticeEntity> entity = noticeRepository.findById(noticeNo);
-		NoticeEntity noticeEntity = entity.get();
-		log.info("addReadCount : " + noticeEntity);
-		noticeEntity.setNCount(noticeEntity.getNCount() + 1);
-		return noticeRepository.save(noticeEntity).toDto();	//jpa가 제공
-	}
-
-	//로직을 단계별로 처리한 코드 ------------------------------------------
-	/*public ArrayList<Notice> selectList(Pageable pageable) {
-		//jpa 제공 메소드 사용
-		//findAll() : Entity 반환됨 => select * from notice 쿼리 자동 실행됨
-		//page 단위로 list 조회를 하고자 한다면, 스프링이 제공하는 Pageable 객체를 사용함
-		//findAll(Pageable 변수) : Page<NoticeEntity> 반환됨 => 한 페이지의 리스트 정보가 들어있음
-		Page<NoticeEntity> entityList = noticeRepository.findAll(pageable);
-		//컨트롤러로 리턴할 ArrayList<Notice> 타입으로 변경 처리 필요함
-		ArrayList<Notice> list = new ArrayList<>();
-		//Page 안의 NoticeEntity 를 Notice 로 변환해서 리스트에 추가 처리함
-		for(NoticeEntity entity : entityList){
-			list.add(entity.toDto());
-		}
-		return list;
-	}*/
-
-	//별도로 작성된 toList() 메소드 이용한 코드로 변경하면 ---------------------
-	public ArrayList<Notice> selectList(Pageable pageable) {
-		return toList(noticeRepository.findAll(pageable));
-	}
-
-
-	public int selectListCount() {
-		return (int)noticeRepository.count();
-	}
-
+	// 공지사항 삭제
 	@Transactional
 	public int deleteNotice(int noticeNo) {
-		//jpa 제공하는 메소드 사용
-		//deleteById(pk로 지정된 컬럼에 대한 property): void => 실패하면 에러, 성공하면 리턴값없음
 		try {
 			noticeRepository.deleteById(noticeNo);
 			return 1;
@@ -106,18 +90,25 @@ public class NoticeService {
 		}
 	}
 
-
+	//공지사항 수정
+	@Transactional
 	public int updateNotice(Notice notice) {
-		//save(Entity) : Entity 가 반환되는 메소드 사용, 실패하면 에러 발생하고 null 리턴
-		//jpa 가 제공, insert 문, update 문 처리
 		try {
+			Optional<NoticeEntity> existingEntityOpt = noticeRepository.findById(notice.getNoticeNo());
+			if (existingEntityOpt.isEmpty()) {
+				return 0;
+			}
+			NoticeEntity existingEntity = existingEntityOpt.get();
+
+			notice.setNCreatedAt(existingEntity.getNCreatedAt());
 			noticeRepository.save(notice.toEntity());
 			return 1;
-		}catch(Exception e){
+		} catch (Exception e) {
 			log.info(e.getMessage());
 			return 0;
 		}
 	}
+
 
 	//검색용 메소드 --------------------------------------------------------
 //	public ArrayList<Notice> selectSearchTitle(String keyword, Pageable pageable) {

@@ -5,6 +5,8 @@ import styles from "./Notice.css";
 import PagingView from "../../components/common/PagingView";
 import { AuthContext } from "../../AuthProvider";
 
+import fileDownIcon from "../../images/fileDown.png";
+
 function Notice({ searchResults }) {
   const [notices, setNotices] = useState([]);
   const [pagingInfo, setPagingInfo] = useState({
@@ -96,35 +98,41 @@ function Notice({ searchResults }) {
       {role === "ADMIN" && <button onClick={handleWriteClick}>글쓰기</button>}
       <button onClick={handleListButtonClick}>목록</button>
       <table className={styles.noticeList}>
-        <tr>
-          <th>번호</th>
-          <th>제목</th>
-          <th>작성자</th>
-          <th>첨부파일</th>
-          <th>날짜</th>
-          <th>조회수</th>
-        </tr>
-        {notices.map((notice) => (
-          <tr key={notice.noticeNo} className={styles.noticeItem}>
-            <td className={styles.noticeNo}>{notice.noticeNo}</td>
-            <td className={styles.nTitle}>
-              <span
-                style={{
-                  color: "blue",
-                  cursor: "pointer",
-                  textDecoration: "underline",
-                }}
-                onClick={() => handleTitleClick(notice.noticeNo)}
-              >
-                {notice.ntitle}
-              </span>
-            </td>
-            <td className={styles.nWriter}>{notice.nwriter}</td>
-            <td className={styles.ofileName}>{notice.ofileName ? "📎" : ""}</td>
-            <td className={styles.ncreatedAt}>{notice.ncreatedAt}</td>
-            <td className={styles.nCount}>{notice.ncount}</td>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>첨부파일</th>
+            <th>날짜</th>
+            <th>조회수</th>
           </tr>
-        ))}
+        </thead>
+        <tbody>
+          {notices.map((notice) => (
+            <tr key={notice.noticeNo} className={styles.noticeItem}>
+              <td className={styles.noticeNo}>{notice.noticeNo}</td>
+              <td className={styles.nTitle}>
+                <span
+                  style={{
+                    color: "blue",
+                    cursor: "pointer",
+                    textDecoration: "underline",
+                  }}
+                  onClick={() => handleTitleClick(notice.noticeNo)}
+                >
+                  {notice.ntitle}
+                </span>
+              </td>
+              <td className={styles.nWriter}>{notice.nwriter}</td>
+              <td className={styles.ofileName}>
+                {notice.ofileName ? <img src={fileDownIcon} style={{width: "20px", height: "20px",}} /> : ""}
+              </td>
+              <td className={styles.ncreatedAt}>{notice.ncreatedAt}</td>
+              <td className={styles.nCount}>{notice.ncount}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
       <PagingView
         currentPag={pagingInfo.currentPage || 1}

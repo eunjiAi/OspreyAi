@@ -50,8 +50,8 @@ public class NoticeEntity {
                 .nWriter(nWriter)
                 .nCreatedAt(nCreatedAt)
                 .nUpdatedAt(nUpdatedAt)
-                .ofileName(ofileName)
-                .rfileName(rfileName)
+                .ofileName(ofileName != null && !ofileName.isEmpty() ? ofileName : "")
+                .rfileName(rfileName != null && !rfileName.isEmpty() ? rfileName : "")
                 .nCount(nCount)
                 .build();
     }
