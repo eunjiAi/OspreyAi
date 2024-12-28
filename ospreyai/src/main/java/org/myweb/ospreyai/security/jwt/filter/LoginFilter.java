@@ -32,7 +32,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     private final JWTUtil jwtUtil;
     private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
-//    private static final long ACCESS_TOKEN_EXPIRATION = 1800000L;
+//    private static final long ACCESS_TOKEN_EXPIRATION = 900000L;
 //    private static final long REFRESH_TOKEN_EXPIRATION = 86400000L;
 
     //생성자를 통한 의존성 주입
@@ -75,7 +75,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         log.info("successfulAuthentication: {}", username);
 
         //로그인 성공이므로, 토큰 만들기함
-        String accessToken = jwtUtil.generateToken(username, "access", 60000L);
+        String accessToken = jwtUtil.generateToken(username, "access", 900000L);
         String refreshToken = jwtUtil.generateToken(username, "refresh", 604800000L);
 
         //만들어진 리프레시토큰 정보 db 에 저장함
