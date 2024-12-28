@@ -4,7 +4,7 @@ import axios from "axios";
 // Context 생성
 export const AuthContext = createContext();
 
-// accessToken 파싱 함수 : 페이로드만 추출해서 JSON 객체로 리턴함
+// Access Token 파싱 함수
 const parseAccessToken = (token) => {
   if (!token) return null;
   try {
@@ -18,7 +18,7 @@ const parseAccessToken = (token) => {
     );
     return JSON.parse(jsonPayload);
   } catch (error) {
-    console.error("잘못된 Access Token 형식입니다:", error);
+    console.error("Access Token 파싱에 실패했습니다:", error);
     return null;
   }
 };
@@ -45,7 +45,7 @@ axios.interceptors.request.use(
     return config;
   },
   (error) => {
-    console.error("Axios 요청 중 에러 발생:", error);
+    console.error("Axios 요청 중 에러가 발생했습니다:", error);
     return Promise.reject(error);
   }
 );
@@ -61,15 +61,48 @@ export const AuthProvider = ({ children }) => {
     userid: "",
   });
 
-  // React 상태 감지용 useEffect
-  useEffect(() => {
-    console.log("authInfo 상태가 변경되었습니다:", authInfo);
-  }, [authInfo]);
+  // Access Token 갱신 함수
+  const refreshAccessToken = async () => {
+    try {
+      const refreshToken = localStorage.getItem("refreshToken");
+      if (!refreshToken) throw new Error("Refresh Token이 없습니다.");
+
+      console.log("Access Token 갱신 요청을 시작합니다.");
+      const response = await axios.post(
+        "http://localhost:8888/reissue",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${refreshToken}`,
+          },
+        }
+      );
+
+      const newAccessToken = response.data.accessToken;
+      if (!newAccessToken) throw new Error("새로운 Access Token을 받을 수 없습니다.");
+
+      console.log("Access Token 갱신 성공: 새 Access Token을 저장합니다.");
+      localStorage.setItem("accessToken", newAccessToken);
+      const parsedToken = parseAccessToken(newAccessToken);
+
+      setAuthInfo((prev) => ({
+        ...prev,
+        isLoggedIn: true,
+        accessToken: newAccessToken,
+        role: parsedToken.role || prev.role,
+        username: parsedToken.name || prev.username,
+        userid: parsedToken.sub || prev.userid,
+      }));
+    } catch (error) {
+      console.error("Access Token 갱신 실패:", error);
+      logout();
+    }
+  };
 
   // 로그인 함수
   const login = ({ accessToken, refreshToken }) => {
     if (!accessToken || !refreshToken) {
-      console.error("로그인 중 토큰이 누락되었습니다.");
+      console.error("로그인 중 Access Token 또는 Refresh Token이 누락되었습니다.");
       return;
     }
 
@@ -77,8 +110,6 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("refreshToken", refreshToken);
 
     const parsedToken = parseAccessToken(accessToken);
-    console.log("Access Token 파싱 결과:", parsedToken);
-
     if (!parsedToken) {
       console.error("로그인 중 Access Token 파싱에 실패했습니다.");
       logout();
@@ -89,9 +120,9 @@ export const AuthProvider = ({ children }) => {
       isLoggedIn: true,
       accessToken,
       refreshToken,
-      role: parsedToken.role || "user", // 기본 역할 설정
-      username: parsedToken.name || "알 수 없음", // 기본 이름 설정
-      userid: parsedToken.sub || "알 수 없음", // 기본 사용자 ID 설정
+      role: parsedToken.role || "user",
+      username: parsedToken.name || "알 수 없음",
+      userid: parsedToken.sub || "알 수 없음",
     });
 
     console.log("로그인 성공: authInfo가 업데이트되었습니다.");
@@ -101,17 +132,14 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       const refreshToken = localStorage.getItem("refreshToken");
-      if (!refreshToken) {
-        console.warn("로그아웃 중 Refresh Token이 누락되었습니다.");
-      } else {
+      if (refreshToken) {
         console.log("백엔드로 로그아웃 요청을 보냅니다.");
-        // Refresh Token을 Authorization 헤더에 포함하여 백엔드로 로그아웃 요청
         await axios.post(
           "http://localhost:8888/logout",
-          {}, // 요청 body 비워둠
+          {},
           {
             headers: {
-              Authorization: `Bearer ${refreshToken}`, // Refresh Token 사용
+              Authorization: `Bearer ${refreshToken}`,
             },
           }
         );
@@ -120,7 +148,6 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       console.error("백엔드 로그아웃 요청 실패:", error);
     } finally {
-      // 로컬 스토리지 초기화 및 상태 초기화
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
       setAuthInfo({
@@ -135,71 +162,63 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // refreshToken을 사용하여 새 accessToken을 요청
-  const refreshAccessToken = async () => {
-    try {
-      const refreshToken = localStorage.getItem("refreshToken");
-      if (!refreshToken) throw new Error("리프레시 토큰이 없습니다.");
-
-      console.log("Access Token 갱신 요청을 시작합니다.");
-      const response = await axios.post(
-        "http://localhost:8888/reissue",
-        {}, // 요청 body 비워둠
-        {
-          headers: {
-            Authorization: `Bearer ${refreshToken}`, // Refresh Token 사용
-          },
-        }
-      );
-
-      const newAccessToken = response.data.accessToken;
-      if (!newAccessToken) throw new Error("새로운 Access Token 수신에 실패했습니다.");
-
-      localStorage.setItem("accessToken", newAccessToken);
-      const parsedToken = parseAccessToken(newAccessToken);
-
-      console.log("Access Token 갱신 결과:", parsedToken);
-
-      setAuthInfo((prev) => ({
-        ...prev,
-        isLoggedIn: true,
-        accessToken: newAccessToken,
-        role: parsedToken.role || prev.role,
-        username: parsedToken.name || prev.username,
-        userid: parsedToken.sub || prev.userid,
-      }));
-
-      console.log("Access Token 갱신 성공: authInfo가 업데이트되었습니다.");
-    } catch (error) {
-      console.error("Access Token 갱신 실패:", error);
-      logout(); // 실패 시 로그아웃 처리
-    }
-  };
-
-  // 컴포넌트 마운트 시 로컬 스토리지에서 토큰 확인
+  // 새로고침 시 로그인 상태 복원
   useEffect(() => {
-    const accessToken = localStorage.getItem("accessToken");
-    const refreshToken = localStorage.getItem("refreshToken");
+    const initializeAuthState = () => {
+      const storedAccessToken = localStorage.getItem("accessToken");
+      const storedRefreshToken = localStorage.getItem("refreshToken");
 
-    if (accessToken) {
-      const parsedToken = parseAccessToken(accessToken);
-      console.log("로컬 스토리지에서 Access Token 파싱 결과:", parsedToken);
-
-      if (parsedToken) {
-        setAuthInfo({
-          isLoggedIn: true,
-          accessToken,
-          refreshToken,
-          role: parsedToken.role || "user",
-          username: parsedToken.name || "알 수 없음",
-          userid: parsedToken.sub || "알 수 없음",
-        });
-        console.log("로컬 스토리지에서 authInfo를 복원했습니다.");
+      if (storedAccessToken) {
+        const parsedToken = parseAccessToken(storedAccessToken);
+        if (parsedToken && parsedToken.exp * 1000 > Date.now()) {
+          console.log("유효한 Access Token을 발견했습니다. 로그인 상태를 복원합니다.");
+          setAuthInfo({
+            isLoggedIn: true,
+            accessToken: storedAccessToken,
+            refreshToken: storedRefreshToken || "",
+            role: parsedToken.role || "user",
+            username: parsedToken.name || "알 수 없음",
+            userid: parsedToken.sub || "알 수 없음",
+          });
+        } else {
+          console.warn("Access Token이 만료되었습니다. 로그아웃합니다.");
+          logout();
+        }
       } else {
-        console.error("로컬 스토리지에 잘못된 Access Token이 있습니다.");
-        logout();
+        console.log("저장된 Access Token이 없습니다. 로그아웃 상태로 시작합니다.");
       }
-    }
+    };
+
+    initializeAuthState();
+  }, []);
+
+  // Access Token 주기적 갱신
+  useEffect(() => {
+    const checkAndRefreshToken = async () => {
+      const accessToken = localStorage.getItem("accessToken");
+      if (!accessToken) return;
+
+      const parsedToken = parseAccessToken(accessToken);
+      if (!parsedToken) {
+        console.error("잘못된 Access Token이 발견되었습니다.");
+        logout();
+        return;
+      }
+
+      const expirationTime = parsedToken.exp * 1000 - Date.now();
+      if (expirationTime < 60000) {
+        console.log("Access Token이 곧 만료됩니다. 갱신을 시도합니다.");
+        await refreshAccessToken();
+      } else {
+        console.log(
+          `Access Token 유효 기간 남음:\n >>${Math.floor(expirationTime / 1000 / 60)}분 ${Math.floor((expirationTime / 1000) % 60)}초`
+        );
+      }
+    };
+
+    const intervalId = setInterval(checkAndRefreshToken, 50000); // 50초마다 검사
+
+    return () => clearInterval(intervalId); // 컴포넌트 언마운트 시 interval 해제
   }, []);
 
   return (
