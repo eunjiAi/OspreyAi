@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./BoardDetail.css";
+import "./PostsDetail.css";
 
 const BoardDetail = () => {
   const { id } = useParams();

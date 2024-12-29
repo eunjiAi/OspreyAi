@@ -9,11 +9,11 @@ import mainlogo from "../../images/mainlogo.png"; // 로고 이미지
 import styles from "./Header.module.css"; // CSS Modules
 
 import Modal from "./Modal"; //Modal 컴포넌트 임포트
-import Login from "../../pages/member/Login/Login"; // Login 컴포넌트 임포트 (Modal 로 출력)
-import Signup from "../../pages/member/Signup/Signup"; // Signup 컴포넌트 임포트 (Modal 로 출력)
+import Login from "../../pages/member/login/Login"; // Login 컴포넌트 임포트 (Modal 로 출력)
+import Signup from "../../pages/member/signup/Signup"; // Signup 컴포넌트 임포트 (Modal 로 출력)
 import SideMenu from "./SideMenu"; // SideMenu 컴포넌트 임포트
 
-function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
+function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
   const { isLoggedIn, username, logout } = useContext(AuthContext); // AuthProvider 에서 가져오기
 
   //로그인 모달 상태변수 추가
@@ -34,7 +34,7 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
 
   // 현재 라우터(/notice:NoticeList or /board:BoardList)를 기반으로 검색 input 의 placeholder 를 표시 처리
   const getSearchPlaceholder = () => {
-    if (location.pathname.startsWith("/board")) {
+    if (location.pathname.startsWith("/posts")) {
       return "게시판 검색어를 입력하세요.";
     } else if (location.pathname.startsWith("/notice")) {
       return "공지사항 검색어를 입력하세요.";
@@ -45,8 +45,8 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
   // 검색 버튼 클릭하면
   const handleSearch = async () => {
     try {
-      const endpoint = location.pathname.startsWith("/board")
-        ? `/board/search/title`
+      const endpoint = location.pathname.startsWith("/posts")
+        ? `/posts/search/title`
         : `/notice/search/title`;
 
       const response = await apiClient.get(endpoint, {
@@ -54,8 +54,8 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
       });
       console.log(response.data); // 리턴된 Map (list:...., paging:....) 확인
       // Header.js 에서 받은 결과를 각 XXXList.js 에 출력 처리하는 코드
-      if (location.pathname.startsWith("/board")) {
-        updateBoardResults(response.data); // 검색 결과 전달
+      if (location.pathname.startsWith("/posts")) {
+        updatePostsResults(response.data); // 검색 결과 전달
       } else {
         updateNoticeResults(response.data); // 검색 결과 전달
       }
@@ -162,7 +162,7 @@ function Header({ updateBoardResults, updateNoticeResults, resetSearchInput }) {
               )}
             </li>
             <li>
-              <Link to="/board" className={styles.navItem}>
+              <Link to="/posts" className={styles.navItem}>
                 게시판
               </Link>
             </li>

@@ -123,15 +123,28 @@ END;
 -- Posts 테이블 생성
 CREATE TABLE Posts (
     post_id NUMBER NOT NULL,
-    uuid VARCHAR2(36) NOT NULL,
     title VARCHAR2(200) NOT NULL,
     content CLOB NOT NULL,
-    report_status NUMBER(1) NOT NULL,
-    is_public NUMBER(1) NOT NULL,
-    post_date DATE DEFAULT SYSDATE,  
+    writer VARCHAR2(30) NOT NULL,
+    post_date DATE DEFAULT SYSDATE,
+    post_update DATE DEFAULT SYSDATE,
+    filename VARCHAR2(200),
+    rename_file VARCHAR2(200),
+    post_count NUMBER DEFAULT 0,
     PRIMARY KEY (post_id),
-    CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (uuid) REFERENCES Member (uuid)
+    CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (writer) REFERENCES Member (email)
 );
+
+-- Post 테이블 코멘트 생성
+COMMENT ON COLUMN Post.post_id IS '글번호';
+COMMENT ON COLUMN Post.title IS '제목';
+COMMENT ON COLUMN Post.content IS '내용';
+COMMENT ON COLUMN Post.writer IS '작성자';
+COMMENT ON COLUMN Post.post_date IS '생성일자';
+COMMENT ON COLUMN Post.post_update IS '수정일자';
+COMMENT ON COLUMN Post.filename IS '원본파일이름';
+COMMENT ON COLUMN Post.rename_file IS '수정파일이름';
+COMMENT ON COLUMN Post.post_count IS '조회수';
 
 
 

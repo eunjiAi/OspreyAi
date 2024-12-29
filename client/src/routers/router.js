@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import memberRouter from "./memberRouter";
 import squatFeedbackRouter from "./squatFeedbackRouter";
-import boardRouter from "./boardRouter";
+import boardRouter from "./postsRouter";
 import noticeRouter from "./noticeRouter";
 import faqRouter from "./faqRouter";
 

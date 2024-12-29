@@ -3,19 +3,19 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AppRouter from "./routers/router";
 
-import Home from "./pages/Home/Home";
+import Home from "./pages/home/Home";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
-import Board from "./pages/Board/Board";
-import Notice from "./pages/Notice/Notice";
+import Posts from "./pages/posts/Posts";
+import Notice from "./pages/notice/Notice";
 
 function App() {
-  const [boardResults, setBoardResults] = useState(null); // Board 검색 결과 상태
+  const [postsResults, setPostsResults] = useState(null); // Board 검색 결과 상태
   const [noticeResults, setNoticeResults] = useState(null); // Notice 검색 결과 상태
   const [generalResults, setGeneralResults] = useState(null); // 다른 페이지 검색 결과 상태
 
   const resetSearchInput = () => {
-    setBoardResults(null);
+    setPostsResults(null);
     setNoticeResults(null);
     setGeneralResults(null);
   };
@@ -24,7 +24,7 @@ function App() {
     <Router>
       {/* Header에 검색 결과 업데이트 처리 */}
       <Header
-        updateBoardResults={setBoardResults}
+        updatePostsResults={setPostsResults}
         updateNoticeResults={setNoticeResults}
         updateGeneralResults={setGeneralResults}
         resetSearchInput={resetSearchInput}
@@ -33,9 +33,11 @@ function App() {
       <Routes>
         {/* 검색 결과 전달 및 기본 경로 */}
         <Route path="/" element={<Home searchResults={generalResults} />} />
-        <Route path="/Board" element={<Board searchResults={boardResults} />} />
-        <Route path="/Notice" element={<Notice searchResults={noticeResults} />} />
-       
+        <Route path="/posts" element={<Posts searchResults={postsResults} />} />
+        <Route
+          path="/notice"
+          element={<Notice searchResults={noticeResults} />}
+        />
 
         {/* 나머지경로 AppRouter 에서 처리리 */}
         <Route path="/*" element={<AppRouter />} />

@@ -1,10 +1,10 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import SquatFeedback from "../pages/SquatFeedback/SquatFeedback";
+import SquatFeedback from "../pages/squatFeedback/SquatFeedback";
 
 const squatFeedbackRouter = [
-   <Route path="/SquatFeedback" element={<SquatFeedback />} />,
+   <Route path="/squatFeedback" element={<SquatFeedback />} />,
 ];
 
 export default squatFeedbackRouter;
