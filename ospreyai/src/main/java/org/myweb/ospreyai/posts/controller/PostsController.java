@@ -51,7 +51,6 @@ public class PostsController {
 	 */
 	@GetMapping("/{id}")
 	public ResponseEntity<Posts> getPostsById(@PathVariable int id) {
-		log.info("getPostsById() : " + id);
 		try {
 			Posts posts = postsService.selectPosts(id);
 			if (posts == null) {

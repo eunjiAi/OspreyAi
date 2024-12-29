@@ -44,7 +44,6 @@ public class NoticeController {
 	// 공지글 상세 보기
 	@GetMapping("/{id}")
 	public ResponseEntity<Notice> getNoticeById(@PathVariable int id) {
-		log.info("Fetching notice by ID: " + id);
 		try {
 			Notice notice = noticeService.selectNotice(id);
 			if (notice == null) {
@@ -88,7 +87,7 @@ public class NoticeController {
 			@RequestParam(name = "ofile", required = false) MultipartFile mfile) throws IOException {
 		log.info("noticeInsertMethod() : " + notice);
 
-		String savePath = uploadDir + "/notice";
+		String savePath = uploadDir + "/notice_upfiles";
 		log.info("noticeInsertMethod() => savePath : " + savePath);
 
 
@@ -129,7 +128,7 @@ public class NoticeController {
 			@RequestParam("ofile") String originalFileName,
 			@RequestParam("rfile") String renameFileName) throws IOException {
 
-		String savePath = uploadDir + "/notice";
+		String savePath = uploadDir + "/notice_upfiles";
 
 		Path path = Paths.get(savePath).toAbsolutePath().normalize();
 
@@ -168,7 +167,7 @@ public class NoticeController {
 			// 공지글 삭제 성공시 저장 폴더에 있는 첨부파일도 삭제 처리함
 			if (renameFileName != null && renameFileName.length() > 0) {
 				// 공지사항 첨부파일 저장 폴더 경로 지정
-				String savePath = uploadDir + "/notice";
+				String savePath = uploadDir + "/notice_upfiles";
 
 				//Path 객체 생성
 				Path path = Paths.get(savePath, renameFileName);
@@ -193,7 +192,7 @@ public class NoticeController {
 		log.info("updateNotice() : " + notice);
 
 		// 첨부파일 처리 로직
-		String savePath = uploadDir + "/notice";
+		String savePath = uploadDir + "/notice_upfiles";
 		log.info("savePath : " + savePath);
 
 		if (mfile != null && !mfile.isEmpty()) {

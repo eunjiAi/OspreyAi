@@ -7,8 +7,8 @@ import { AuthContext } from "../../AuthProvider";
 
 import fileDownIcon from "../../images/fileDown.png";
 
-function Board({ searchResults }) {
-  const [boards, setBoards] = useState([]); // 게시글 목록
+function Posts({ searchResults }) {
+  const [posts, setPosts] = useState([]); // 게시글 목록
   const [pagingInfo, setPagingInfo] = useState({
     currentPage: 1,
     maxPage: 1,
@@ -27,11 +27,11 @@ function Board({ searchResults }) {
    * 게시글 목록을 가져오는 함수
    * 백엔드 매핑: GET /posts?page=1&limit=10
    */
-  const fetchBoards = async (page) => {
+  const fetchPosts = async (page) => {
     try {
       setLoading(true);
       const response = await apiClient.get(`/posts?page=${page}`);
-      setBoards(response.data.list); // 게시글 목록 설정
+      setPosts(response.data.list); // 게시글 목록 설정
       setPagingInfo(response.data.paging); // 페이징 정보 설정
       setIsSearchMode(false); // 검색 모드 해제
     } catch (err) {
@@ -47,13 +47,13 @@ function Board({ searchResults }) {
   useEffect(() => {
     if (searchResults) {
       // 검색 결과 설정
-      setBoards(searchResults.list || []);
+      setPosts(searchResults.list || []);
       setPagingInfo(searchResults.paging || {});
       setIsSearchMode(true);
       setLoading(false);
     } else {
       // 기본 게시글 목록 가져오기
-      fetchBoards(1);
+      fetchPosts(1);
     }
   }, [searchResults]);
 
@@ -73,11 +73,11 @@ function Board({ searchResults }) {
             page,
           },
         });
-        setBoards(response.data.list || []);
+        setPosts(response.data.list || []);
         setPagingInfo(response.data.paging || {});
       } else {
         // 일반 게시글 페이징 처리
-        fetchBoards(page);
+        fetchPosts(page);
       }
     } catch (err) {
       setError("페이징 요청 실패!");
@@ -90,14 +90,14 @@ function Board({ searchResults }) {
    * 글쓰기 페이지 이동
    */
   const handleWriteClick = () => {
-    navigate("/board/new");
+    navigate("/posts/new");
   };
 
   /**
    * 게시글 상세 페이지 이동
    */
   const handleTitleClick = (id) => {
-    navigate(`/board/${id}`);
+    navigate(`/posts/${id}`);
   };
 
   if (loading) {
@@ -109,10 +109,10 @@ function Board({ searchResults }) {
   }
 
   return (
-    <div className="board-container">
-      <h1 className="board-title">게시판</h1>
+    <div className="posts-container">
+      <h1 className="posts-title">게시판</h1>
       {role === "ADMIN" && <button onClick={handleWriteClick}>글쓰기</button>}
-      <table className={styles.boardList}>
+      <table className={styles.postsList}>
         <thead>
           <tr>
             <th>번호</th>
@@ -124,9 +124,9 @@ function Board({ searchResults }) {
           </tr>
         </thead>
         <tbody>
-          {boards.map((board) => (
-            <tr key={board.postId} className={styles.boardItem}>
-              <td className={styles.postId}>{board.postId}</td>
+          {posts.map((post) => (
+            <tr key={post.postId} className={styles.postItem}>
+              <td className={styles.postId}>{post.postId}</td>
               <td className={styles.title}>
                 <span
                   style={{
@@ -134,16 +134,16 @@ function Board({ searchResults }) {
                     cursor: "pointer",
                     textDecoration: "underline",
                   }}
-                  onClick={() => handleTitleClick(board.postId)}
+                  onClick={() => handleTitleClick(post.postId)}
                 >
-                  {board.title}
+                  {post.title}
                 </span>
               </td>
-              <td className={styles.writer}>{board.writer}</td>
+              <td className={styles.writer}>{post.writer}</td>
               <td className={styles.ofileName}>
-                {board.fileName ? (
+                {post.fileName ? (
                   <a
-                    href={`/posts/pfdown?ofile=${board.fileName}&rfile=${board.renameFile}`}
+                    href={`/posts/pfdown?ofile=${post.fileName}&rfile=${post.renameFile}`}
                   >
                     <img
                       src={fileDownIcon}
@@ -155,8 +155,8 @@ function Board({ searchResults }) {
                   ""
                 )}
               </td>
-              <td className={styles.createdAt}>{board.postDate}</td>
-              <td className={styles.count}>{board.postCount}</td>
+              <td className={styles.createdAt}>{post.postDate}</td>
+              <td className={styles.count}>{post.postCount}</td>
             </tr>
           ))}
         </tbody>
@@ -172,4 +172,4 @@ function Board({ searchResults }) {
   );
 }
 
-export default Board;
+export default Posts;

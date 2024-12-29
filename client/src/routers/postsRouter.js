@@ -1,12 +1,12 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import BoardDetail from "../pages/posts/PostsDetail";
-import BoardCreate from "../pages/posts/PostsCreate";
+import PostsDetail from "../pages/posts/PostsDetail";
+import PostsCreate from "../pages/posts/PostsCreate";
 
-const boardRouter = [
-  <Route path="/posts/new" element={<BoardCreate />} />,
-  <Route path="/posts/:id" element={<BoardDetail />} />,
+const postsRouter = [
+  <Route path="/posts/new" element={<PostsCreate />} />,
+  <Route path="/posts/:id" element={<PostsDetail />} />,
 ];
 
-export default boardRouter;
+export default postsRouter;

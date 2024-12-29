@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import memberRouter from "./memberRouter";
 import squatFeedbackRouter from "./squatFeedbackRouter";
-import boardRouter from "./postsRouter";
+import postsRouter from "./postsRouter";
 import noticeRouter from "./noticeRouter";
 import faqRouter from "./faqRouter";
 
@@ -12,7 +12,7 @@ const AppRouter = () => {
     <Routes>
       {memberRouter}
       {squatFeedbackRouter}
-      {boardRouter}
+      {postsRouter}
       {noticeRouter}
       {faqRouter}
     </Routes>
