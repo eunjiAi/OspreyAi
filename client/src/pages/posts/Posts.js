@@ -119,7 +119,8 @@ function Posts({ searchResults }) {
             <th>제목</th>
             <th>작성자</th>
             <th>첨부파일</th>
-            <th>날짜</th>
+            <th>등록일</th>
+            <th>수정일</th>
             <th>조회수</th>
           </tr>
         </thead>
@@ -139,7 +140,7 @@ function Posts({ searchResults }) {
                   {post.title}
                 </span>
               </td>
-              <td className={styles.writer}>{post.writer}</td>
+              <td className={styles.nickname}>{post.nickname}</td>
               <td className={styles.ofileName}>
                 {post.fileName ? (
                   <a
@@ -156,6 +157,7 @@ function Posts({ searchResults }) {
                 )}
               </td>
               <td className={styles.createdAt}>{post.postDate}</td>
+              <td className={styles.updatedAt}>{post.postUpdate}</td>
               <td className={styles.count}>{post.postCount}</td>
             </tr>
           ))}

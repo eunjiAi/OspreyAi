@@ -23,6 +23,8 @@ public class QPostsEntity extends EntityPathBase<PostsEntity> {
 
     public final StringPath fileName = createString("fileName");
 
+    public final StringPath nickname = createString("nickname");
+
     public final NumberPath<Integer> postCount = createNumber("postCount", Integer.class);
 
     public final DatePath<java.sql.Date> postDate = createDate("postDate", java.sql.Date.class);

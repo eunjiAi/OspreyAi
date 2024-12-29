@@ -15,6 +15,30 @@ VALUES ('uuid-3', 'Charlie', 'Charlie', 'charlie@example.com', 'password123', '0
 INSERT INTO Member (uuid, name, nickname, email, pw, phone_number, gender, admin_yn, face_id, enroll_date, lastmodified, signtype, login_ok)
 VALUES ('uuid-4', 'Shayne', 'Shayne', 'smtt22@example.com', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-0101-1234', 'M', 'Y', 'face-4', SYSDATE, NULL, 'direct', 'Y');
 
+-- 포스트 더미 데이터
+INSERT ALL
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (1, '스쿼트 챌린지 100회 성공!', '오늘 드디어 스쿼트 100회를 달성했습니다! 사진은 첨부하지 않았지만 다음엔 영상 올릴게요.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, NULL, NULL, 50)
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (2, '스쿼트 자세 이렇게 교정하세요', '저도 한동안 무릎 통증이 있었는데, 이렇게 교정하니 괜찮아졌어요.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, 'correct_posture.jpg', 'correct_posture_20231229.jpg', 120)
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (3, '스쿼트 무게 150kg 도전 성공!', '헬스장 사람들이 응원해줘서 더 힘이 났습니다! 동영상으로 증명합니다.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, '150kg_squat.mp4', 'iron_sam_squat.mp4', 220)
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (4, '스쿼트 중량 기록 공유', '오늘의 기록: 80kg로 12회, 4세트 완료. 꾸준히 하니 실력이 늘어요!', 'eunji@example.com', '은지', SYSDATE, SYSDATE, NULL, NULL, 85)
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (5, '스쿼트 실패담...', '스쿼트 하다가 중심을 잃고 넘어졌습니다. 괜찮긴 한데 부끄럽네요.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, NULL, NULL, 30)
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (6, '스쿼트 강추! 하체 근육 빵빵해짐', '스쿼트를 매일 하니까 하체가 정말 단단해졌어요. 사진 참고하세요.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, 'leg_progress.jpg', 'leg_master_progress.jpg', 180)
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (7, '운동 루틴 질문이요', '스쿼트를 시작한 지 한 달째인데, 어떻게 중량을 늘려야 할지 궁금합니다.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, NULL, NULL, 40)
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (8, '스쿼트와 플랭크 병행 효과!', '플랭크와 스쿼트를 함께 하면 몸의 밸런스가 좋아지는 것 같아요.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, NULL, NULL, 70)
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (9, '스쿼트 30일 챌린지 완료', '드디어 30일 동안 하루도 빠지지 않고 스쿼트를 했습니다. 몸이 달라졌어요!', 'eunji@example.com', '은지', SYSDATE, SYSDATE, '30day_squat.jpg', 'challenge_result.jpg', 200)
+    INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
+    VALUES (10, '헬스장 스쿼트 머신 추천', '저희 헬스장에 새로 들어온 스쿼트 머신이 너무 좋습니다. 사진 올려요.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, 'squat_machine.jpg', 'new_machine.jpg', 150)
+SELECT 1 FROM DUAL;
+
 
 -- 공지사항 더미 데이터
 INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)

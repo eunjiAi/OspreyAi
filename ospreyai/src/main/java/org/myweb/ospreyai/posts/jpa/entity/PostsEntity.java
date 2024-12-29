@@ -25,6 +25,8 @@ public class PostsEntity {
     private String content;     //    CONTENT	CLOB
     @Column(name = "WRITER", nullable = false)
     private String writer;      //    WRITER	VARCHAR2(30 BYTE)
+    @Column(name = "NICKNAME")
+    private String nickname;     //    NICKNAME	VARCHAR2(30 BYTE)
     @Column(name = "POST_DATE")
     private Date postDate;      //    POST_DATE	DATE
     @Column(name = "POST_UPDATE")
@@ -48,6 +50,7 @@ public class PostsEntity {
                 .title(title)
                 .content(content)
                 .writer(writer)
+                .nickname(nickname)
                 .postDate(postDate)
                 .postUpdate(postUpdate)
                 .fileName(fileName != null && !fileName.isEmpty() ? fileName : "")

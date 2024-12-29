@@ -19,6 +19,7 @@ public class Posts {
     private String title;        //    TITLE	VARCHAR2(200 BYTE)
     private String content;     //    CONTENT	CLOB
     private String writer;      //    WRITER	VARCHAR2(30 BYTE)
+    private String nickname;    //    NICKNAME	VARCHAR2(30 BYTE)
     private Date postDate;      //    POST_DATE	DATE
     private Date postUpdate;    //    POST_UPDATE	DATE
     private String fileName;    //    FILENAME	VARCHAR2(200 BYTE)
@@ -31,6 +32,7 @@ public class Posts {
                 .title(title)
                 .content(content)
                 .writer(writer)
+                .nickname(nickname)
                 .postDate(postDate)
                 .postUpdate(postUpdate)
                 .fileName(fileName)
