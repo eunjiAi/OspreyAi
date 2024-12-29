@@ -5,7 +5,7 @@ import styles from "./NoticeCreate.css";
 import { AuthContext } from "../../AuthProvider";
 
 function NoticeCreate() {
-  const { email, accessToken } = useContext(AuthContext);
+  const { userid, accessToken } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
     nTitle: "",
@@ -16,13 +16,13 @@ function NoticeCreate() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (email) {
+    if (userid) {
       setFormData((prevFormData) => ({
         ...prevFormData,
-        nWriter: email,
+        nWriter: userid,
       }));
     }
-  }, [email]);
+  }, [userid]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

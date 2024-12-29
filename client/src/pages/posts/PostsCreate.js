@@ -1,60 +1,165 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import "./PostsCreate.css";
+import apiClient from "../../utils/axios";
+import styles from "./PostsCreate.css";
+import { AuthContext } from "../../AuthProvider";
 
-const BoardCreate = () => {
+function PostsCreate() {
+  const { userid, accessToken } = useContext(AuthContext);
+
+  const [formData, setFormData] = useState({
+    title: "",
+    writer: userid || "",
+    nickname: "",
+    content: "",
+  });
+  const [file, setFile] = useState(null);
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
 
-  const handleSubmit = (e) => {
+  // 닉네임 가져오기
+  useEffect(() => {
+    const fetchNickname = async () => {
+      const masked = userid.includes("@")
+        ? `${userid.split("@")[0]}@*`
+        : userid;
+      if (userid) {
+        try {
+          const response = await apiClient.get(`/member/nickname`, {
+            params: { userid },
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          });
+          setFormData((prevFormData) => ({
+            ...prevFormData,
+            nickname: response.data || masked,
+          }));
+        } catch (error) {
+          console.error("닉네임 조회 실패", error);
+          alert("닉네임을 조회할 수 없습니다.");
+        }
+      }
+    };
+
+    fetchNickname();
+  }, [userid, accessToken]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (title.trim() && content.trim()) {
-      alert(`New Post Created!\nTitle: ${title}\nContent: ${content}`);
+    const data = new FormData();
+    data.append("title", formData.title);
+    data.append("writer", formData.writer);
+    data.append("nickname", formData.nickname);
+    data.append("content", formData.content);
+    if (file) {
+      data.append("ofile", file);
+    }
 
-      navigate("/Board");
-    } else {
-      alert("Please fill in all fields before submitting.");
+    try {
+      await apiClient.post("/posts", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      alert("게시글 등록 성공");
+      navigate("/posts");
+    } catch (error) {
+      console.error("게시글 등록 실패", error);
+      alert("게시글 등록 실패");
     }
   };
 
-  const handleCancel = () => {
-    navigate("/Board");
-  };
-
   return (
-    <div className="create-container">
-      <h1 className="create-title">게시글 등록</h1>
-      <form className="create-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="title" className="form-label">제목</label>
-          <input
-            type="text"
-            id="title"
-            className="form-input"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="제목을 입력하세요"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="content" className="form-label">상세내용</label>
-          <textarea
-            id="content"
-            className="form-input"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            placeholder="상세내용을 입력하세요"
-          ></textarea>
-        </div>
-        <div className="form-buttons">
-          <button type="submit" className="submit-button">게시글 등록</button>
-          <button type="button" className="cancel-button" onClick={handleCancel}>취소</button>
-        </div>
+    <div className={styles.container}>
+      <h1 className={styles.header}>게시글 등록 페이지</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <table align="center" width="700" cellspacing="5" cellpadding="5">
+          <tbody>
+            <tr>
+              <th width="120">제 목</th>
+              <td>
+                <input
+                  type="text"
+                  name="title"
+                  size="50"
+                  value={formData.title}
+                  onChange={handleChange}
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <th width="120">작성자 닉네임</th>
+              <td>
+                <input
+                  type="text"
+                  name="nickname"
+                  value={formData.nickname}
+                  readOnly
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>첨부파일</th>
+              <td>
+                <input type="file" name="file" onChange={handleFileChange} />
+              </td>
+            </tr>
+            <tr>
+              <th>내 용</th>
+              <td>
+                <textarea
+                  rows="5"
+                  cols="50"
+                  name="content"
+                  value={formData.content}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th colSpan="2">
+                <input type="submit" value="등록하기" /> &nbsp;
+                <input
+                  type="reset"
+                  value="작성취소"
+                  onClick={() =>
+                    setFormData({
+                      ...formData,
+                      title: "",
+                      content: "",
+                    })
+                  }
+                />
+                &nbsp;
+                <input
+                  type="button"
+                  value="목록"
+                  onClick={() => navigate(-1)}
+                />
+              </th>
+            </tr>
+          </tbody>
+        </table>
       </form>
     </div>
   );
-};
+}
 
-export default BoardCreate;
+export default PostsCreate;

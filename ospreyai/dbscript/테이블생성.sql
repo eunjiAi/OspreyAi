@@ -126,6 +126,7 @@ CREATE TABLE Posts (
     title VARCHAR2(200) NOT NULL,
     content CLOB NOT NULL,
     writer VARCHAR2(30) NOT NULL,
+    nickname VARCHAR2(30),
     post_date DATE DEFAULT SYSDATE,
     post_update DATE DEFAULT SYSDATE,
     filename VARCHAR2(200),
@@ -135,18 +136,17 @@ CREATE TABLE Posts (
     CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (writer) REFERENCES Member (email)
 );
 
--- Post 테이블 코멘트 생성
-COMMENT ON COLUMN Post.post_id IS '글번호';
-COMMENT ON COLUMN Post.title IS '제목';
-COMMENT ON COLUMN Post.content IS '내용';
-COMMENT ON COLUMN Post.writer IS '작성자';
-COMMENT ON COLUMN Post.post_date IS '생성일자';
-COMMENT ON COLUMN Post.post_update IS '수정일자';
-COMMENT ON COLUMN Post.filename IS '원본파일이름';
-COMMENT ON COLUMN Post.rename_file IS '수정파일이름';
-COMMENT ON COLUMN Post.post_count IS '조회수';
-
-
+-- Posts 테이블 코멘트 생성
+COMMENT ON COLUMN Posts.post_id IS '글번호';
+COMMENT ON COLUMN Posts.title IS '제목';
+COMMENT ON COLUMN Posts.content IS '내용';
+COMMENT ON COLUMN Posts.writer IS '작성자';
+COMMENT ON COLUMN Posts.nickname IS '별명';
+COMMENT ON COLUMN Posts.post_date IS '생성일자';
+COMMENT ON COLUMN Posts.post_update IS '수정일자';
+COMMENT ON COLUMN Posts.filename IS '원본파일이름';
+COMMENT ON COLUMN Posts.rename_file IS '수정파일이름';
+COMMENT ON COLUMN Posts.post_count IS '조회수';
 
 -- Notice 테이블 삭제
 BEGIN

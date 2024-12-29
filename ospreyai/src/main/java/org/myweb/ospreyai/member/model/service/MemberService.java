@@ -61,6 +61,13 @@ public class MemberService {
 		}
 	}
 
+	//닉네임 조회
+	public String getNicknameByUserId(String userid) {
+		return memberRepository.findByEmail(userid)
+				.map(MemberEntity::getNickname) // 메서드 참조 대신 람다식 사용
+				.orElseThrow(() -> new IllegalArgumentException("해당 사용자 ID를 찾을 수 없습니다: " + userid));
+}
+
 
 
 //	@Transactional

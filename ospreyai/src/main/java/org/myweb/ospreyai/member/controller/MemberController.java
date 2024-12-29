@@ -64,7 +64,15 @@ public class MemberController {
 
 	}
 
-
+	@GetMapping("/nickname")
+	public ResponseEntity<String> getNicknameByUserId(@RequestParam String userid) {
+		String nickname = memberService.getNicknameByUserId(userid);
+		if (nickname != null) {
+			return ResponseEntity.ok(nickname);
+		} else {
+			return ResponseEntity.notFound().build();
+		}
+	}
 	// '내 정보 보기' 클릭시 회원 정보 조회 요청 처리용 메소드
 //	@GetMapping("/myinfo/{userId}")
 //	public ResponseEntity<Member> memberDetailMethod(@PathVariable String userId) {

@@ -39,15 +39,24 @@ public class FaqRepositoryCustomImpl implements FaqRepositoryCustom {
     }
 
     @Override
-    public void deleteFaq(int faqId) {      // 원글,답글 삭제
+    public void deleteFaq(int faqId) {
+        // 댓글 먼저 삭제
         queryFactory
                 .delete(faq)
-                .where(faq.qnaId.eq(faqId)) // 조건 : faqId 일치
+                .where(faq.category.eq("A")
+                        .and(faq.qnaId.eq(faqId))) // 댓글의 parentId가 원글 ID와 일치
+                .execute();
+
+        // 원글 삭제
+        queryFactory
+                .delete(faq)
+                .where(faq.qnaId.eq(faqId)) // 원글 ID
                 .execute();
 
         entityManager.flush();
         entityManager.clear();
     }
+
 
     @Override
     public int findCount() {
