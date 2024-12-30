@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -101,6 +102,7 @@ public class PostsService {
 			PostsEntity existingEntity = existingEntityOpt.get();
 
 			posts.setPostDate(existingEntity.getPostDate());
+			posts.setPostUpdate(new Date(System.currentTimeMillis()));
 			postsRepository.save(posts.toEntity());
 			return 1;
 		} catch (Exception e) {

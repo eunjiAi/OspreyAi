@@ -11,7 +11,7 @@ const PostsDetail = () => {
   const [error, setError] = useState(null); //에러 메세지 저장용 상태 변수 선언과 초기화
   const [loading, setLoading] = useState(true); // 로딩 상태
 
-  const { isLoggedIn, role, accessToken } = useContext(AuthContext);
+  const { isLoggedIn, role, accessToken, userid } = useContext(AuthContext);
 
   useEffect(() => {
     //서버측에 요청해서 해당 공지글 가져오는 ajax 통신 처리 함수를 작성할 수 있음
@@ -135,8 +135,8 @@ const PostsDetail = () => {
           </tr>
         </tbody>
       </table>
-      {/* ADMIN 권한만 수정 및 삭제 버튼 표시 */}
-      {isLoggedIn && role === "ADMIN" && (
+      {/* 자신의 글만 수정 및 삭제 버튼 표시 */}
+      {isLoggedIn && posts.writer === userid && (
         <div>
           <button onClick={handleMoveEdit} className="edit-button">
             수정 페이지로 이동

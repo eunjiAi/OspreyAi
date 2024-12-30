@@ -27,11 +27,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * PostsController
- * 게시판 관련 요청을 처리하는 컨트롤러 클래스
- * - 게시글 CRUD, 파일 업로드/다운로드 기능 포함
- */
 @Slf4j
 @RequiredArgsConstructor
 @RestController
@@ -44,11 +39,7 @@ public class PostsController {
 	@Value("${file.upload-dir}")
 	private String uploadDir;
 
-	/**
-	 * 게시글 상세 보기
-	 * @param id 게시글 ID
-	 * @return 게시글 상세 정보
-	 */
+	// 게시글 상세보기
 	@GetMapping("/{id}")
 	public ResponseEntity<Posts> getPostsById(@PathVariable int id) {
 		try {
@@ -64,12 +55,7 @@ public class PostsController {
 		}
 	}
 
-	/**
-	 * 게시글 목록 조회 (페이징 처리)
-	 * @param currentPage 현재 페이지 번호
-	 * @param limit 한 페이지에 출력할 게시글 수
-	 * @return 게시글 목록과 페이징 정보
-	 */
+	// 게시글 목록 조회
 	@GetMapping
 	public Map<String, Object> postsListMethod(
 			@RequestParam(name = "page", defaultValue = "1") int currentPage,
@@ -91,13 +77,7 @@ public class PostsController {
 		return map;
 	}
 
-	/**
-	 * 게시글 등록
-	 * @param posts 게시글 객체
-	 * @param mfile 첨부파일
-	 * @return 성공 여부
-	 * @throws IOException 파일 처리 중 발생할 수 있는 예외
-	 */
+	// 게시글 등록
 	@PostMapping
 	public ResponseEntity postsInsertMethod(
 			@ModelAttribute Posts posts,
@@ -138,13 +118,7 @@ public class PostsController {
 		}
 	}
 
-	/**
-	 * 파일 다운로드
-	 * @param originalFileName 원본 파일명
-	 * @param renameFileName 변경된 파일명
-	 * @return 파일 다운로드 리소스
-	 * @throws IOException 파일 처리 중 발생할 수 있는 예외
-	 */
+	// 파일 다운로드
 	@GetMapping("/pfdown")
 	public ResponseEntity<Resource> fileDownload(
 			@RequestParam("ofile") String originalFileName,
@@ -176,12 +150,7 @@ public class PostsController {
 				.body(resource);
 	}
 
-	/**
-	 * 게시글 삭제
-	 * @param postId 게시글 ID
-	 * @param renameFileName 첨부파일 변경명
-	 * @return 성공 여부
-	 */
+	// 게시글 삭제
 	@DeleteMapping("/{postId}")
 	public ResponseEntity postsDeleteMethod(@PathVariable int postId,
 											@RequestParam(name = "rfile", required = false) String renameFileName) {
@@ -200,12 +169,7 @@ public class PostsController {
 		}
 	}
 
-	/**
-	 * 게시글 수정
-	 * @param posts 게시글 객체
-	 * @param mfile 첨부파일
-	 * @return 성공 여부
-	 */
+	// 게시글 수정
 	@PutMapping("/{id}")
 	public ResponseEntity<?> updatePosts(
 			@ModelAttribute Posts posts,
@@ -214,6 +178,11 @@ public class PostsController {
 
 		String savePath = uploadDir + "/posts_upfiles";
 		log.info("updatePosts(), savePath : " + savePath);
+
+		File directory = new File(savePath);
+		if (!directory.exists()) {
+			directory.mkdirs();
+		}
 
 		if (mfile != null && !mfile.isEmpty()) {
 			new File(savePath, posts.getRenameFile()).delete();
