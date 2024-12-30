@@ -113,13 +113,13 @@ public class PostsService {
 
 
 	//검색용 메소드 --------------------------------------------------------
-//	public ArrayList<Notice> selectSearchTitle(String keyword, Pageable pageable) {
-//		return toList(noticeRepository.findSearchTitle(keyword, pageable));
-//	}
-//
-//	public int selectSearchTitleCount(String keyword) {
-//		return (int)noticeRepository.countSearchTitle(keyword);
-//	}
+	public ArrayList<Posts> selectSearchTitle(String keyword, Pageable pageable) {
+		return toList(postsRepository.findSearchTitle(keyword, pageable));
+	}
+
+	public int selectSearchTitleCount(String keyword) {
+		return (int)postsRepository.countSearchTitle(keyword);
+	}
 //
 //	public ArrayList<Notice> selectSearchContent(String keyword, Pageable pageable) {
 //		return toList(noticeRepository.findSearchContent(keyword, pageable));

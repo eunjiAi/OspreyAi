@@ -56,42 +56,42 @@ public class PostsRepositoryCustomImpl implements PostsRepositoryCustom {
                 .fetchCount();
     }
 
-    @Override
-    public List<PostsEntity> findSearchContent(String keyword, Pageable pageable) {
-        return queryFactory
-                .selectFrom(posts)
-                .where(posts.postCount.like("%" + keyword + "%"))
-                .orderBy(posts.postId.desc())
-                .offset(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .fetch();
-    }
-
-    @Override
-    public long countSearchContent(String keyword) {
-        return queryFactory
-                .selectFrom(posts)     //select * from notice
-                .where(posts.postCount.like("%" + keyword + "%"))  //where noticetitle %keyword%
-                .fetchCount();
-    }
-
-    @Override
-    public List<PostsEntity> findSearchDate(Date begin, Date end, Pageable pageable) {
-        return queryFactory
-                .selectFrom(posts)
-                .where(posts.postDate.between(begin, end))
-                .orderBy(posts.postId.desc())
-                .offset(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .fetch();
-    }
-
-    @Override
-    public long countSearchDate(Date begin, Date end) {
-        return queryFactory
-                .selectFrom(posts)     //select * from notice
-                .where(posts.postDate.between(begin, end))  //where noticedate between :begin and :end
-                .fetchCount();
-    }
+//    @Override
+//    public List<PostsEntity> findSearchContent(String keyword, Pageable pageable) {
+//        return queryFactory
+//                .selectFrom(posts)
+//                .where(posts.postCount.like("%" + keyword + "%"))
+//                .orderBy(posts.postId.desc())
+//                .offset(pageable.getOffset())
+//                .limit(pageable.getPageSize())
+//                .fetch();
+//    }
+//
+//    @Override
+//    public long countSearchContent(String keyword) {
+//        return queryFactory
+//                .selectFrom(posts)     //select * from notice
+//                .where(posts.postCount.like("%" + keyword + "%"))  //where noticetitle %keyword%
+//                .fetchCount();
+//    }
+//
+//    @Override
+//    public List<PostsEntity> findSearchDate(Date begin, Date end, Pageable pageable) {
+//        return queryFactory
+//                .selectFrom(posts)
+//                .where(posts.postDate.between(begin, end))
+//                .orderBy(posts.postId.desc())
+//                .offset(pageable.getOffset())
+//                .limit(pageable.getPageSize())
+//                .fetch();
+//    }
+//
+//    @Override
+//    public long countSearchDate(Date begin, Date end) {
+//        return queryFactory
+//                .selectFrom(posts)     //select * from notice
+//                .where(posts.postDate.between(begin, end))  //where noticedate between :begin and :end
+//                .fetchCount();
+//    }
 
 }

@@ -14,8 +14,8 @@ public interface PostsRepositoryCustom {
     //검색 관련 메소드 ------------------------------------
      List<PostsEntity> findSearchTitle(String keyword, Pageable pageable);
      long countSearchTitle(String keyword);
-     List<PostsEntity> findSearchContent(String keyword, Pageable pageable);
-     long countSearchContent(String keyword);
-     List<PostsEntity> findSearchDate(Date begin, Date end, Pageable pageable);
-     long countSearchDate(Date begin, Date end);
+//     List<PostsEntity> findSearchContent(String keyword, Pageable pageable);
+//     long countSearchContent(String keyword);
+//     List<PostsEntity> findSearchDate(Date begin, Date end, Pageable pageable);
+//     long countSearchDate(Date begin, Date end);
 }

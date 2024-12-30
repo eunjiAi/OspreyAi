@@ -56,42 +56,42 @@ public class NoticeRepositoryCustomImpl implements NoticeRepositoryCustom {
                 .fetchCount();
     }
 
-    @Override
-    public List<NoticeEntity> findSearchContent(String keyword, Pageable pageable) {
-        return queryFactory
-                .selectFrom(notice)
-                .where(notice.nContent.like("%" + keyword + "%"))
-                .orderBy(notice.noticeNo.desc())
-                .offset(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .fetch();
-    }
-
-    @Override
-    public long countSearchContent(String keyword) {
-        return queryFactory
-                .selectFrom(notice)     //select * from notice
-                .where(notice.nContent.like("%" + keyword + "%"))  //where noticetitle %keyword%
-                .fetchCount();
-    }
-
-    @Override
-    public List<NoticeEntity> findSearchDate(Date begin, Date end, Pageable pageable) {
-        return queryFactory
-                .selectFrom(notice)
-                .where(notice.nCreatedAt.between(begin, end))
-                .orderBy(notice.noticeNo.desc())
-                .offset(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .fetch();
-    }
-
-    @Override
-    public long countSearchDate(Date begin, Date end) {
-        return queryFactory
-                .selectFrom(notice)     //select * from notice
-                .where(notice.nCreatedAt.between(begin, end))  //where noticedate between :begin and :end
-                .fetchCount();
-    }
+//    @Override
+//    public List<NoticeEntity> findSearchContent(String keyword, Pageable pageable) {
+//        return queryFactory
+//                .selectFrom(notice)
+//                .where(notice.nContent.like("%" + keyword + "%"))
+//                .orderBy(notice.noticeNo.desc())
+//                .offset(pageable.getOffset())
+//                .limit(pageable.getPageSize())
+//                .fetch();
+//    }
+//
+//    @Override
+//    public long countSearchContent(String keyword) {
+//        return queryFactory
+//                .selectFrom(notice)     //select * from notice
+//                .where(notice.nContent.like("%" + keyword + "%"))  //where noticetitle %keyword%
+//                .fetchCount();
+//    }
+//
+//    @Override
+//    public List<NoticeEntity> findSearchDate(Date begin, Date end, Pageable pageable) {
+//        return queryFactory
+//                .selectFrom(notice)
+//                .where(notice.nCreatedAt.between(begin, end))
+//                .orderBy(notice.noticeNo.desc())
+//                .offset(pageable.getOffset())
+//                .limit(pageable.getPageSize())
+//                .fetch();
+//    }
+//
+//    @Override
+//    public long countSearchDate(Date begin, Date end) {
+//        return queryFactory
+//                .selectFrom(notice)     //select * from notice
+//                .where(notice.nCreatedAt.between(begin, end))  //where noticedate between :begin and :end
+//                .fetchCount();
+//    }
 
 }

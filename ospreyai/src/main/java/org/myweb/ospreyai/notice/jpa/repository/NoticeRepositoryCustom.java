@@ -14,8 +14,8 @@ public interface NoticeRepositoryCustom {
     //검색 관련 메소드 ------------------------------------
      List<NoticeEntity> findSearchTitle(String keyword, Pageable pageable);
      long countSearchTitle(String keyword);
-     List<NoticeEntity> findSearchContent(String keyword, Pageable pageable);
-     long countSearchContent(String keyword);
-     List<NoticeEntity> findSearchDate(Date begin, Date end, Pageable pageable);
-     long countSearchDate(Date begin, Date end);
+//     List<NoticeEntity> findSearchContent(String keyword, Pageable pageable);
+//     long countSearchContent(String keyword);
+//     List<NoticeEntity> findSearchDate(Date begin, Date end, Pageable pageable);
+//     long countSearchDate(Date begin, Date end);
 }

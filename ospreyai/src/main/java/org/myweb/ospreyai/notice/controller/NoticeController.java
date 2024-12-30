@@ -226,43 +226,43 @@ public class NoticeController {
 	}
 
 
-//	// 공지글 제목 검색용 (페이징 처리 포함)
-//	@GetMapping("/search/title")
-//	public ResponseEntity<Map> noticeSearchTitleMethod(
-//			@RequestParam("action") String action,
-//			@RequestParam("keyword") String keyword,
-//			@RequestParam(name = "page", defaultValue = "1") int currentPage,
-//			@RequestParam(name = "limit", defaultValue = "10") int limit) {
-//		// page : 출력할 페이지, limit : 한 페이지에 출력할 목록 갯수
-//
-//		// 검색결과가 적용된 총 목록갯수 조회해서 총 페이지 수 계산함
-//		int listCount = noticeService.selectSearchTitleCount(keyword);
-//		// 페이지 관련 항목 계산 처리
-//		Paging paging = new Paging(listCount, limit, currentPage, "nsearchTitle.do");
-//		paging.calculate();
-//
-//		//JPA 가 제공하는 메소드에 필요한 Pageable 객체 생성함 ---------------------------------------
-//		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
-//				Sort.by(Sort.Direction.DESC, "noticeNo"));
-//
-//		// 서비스롤 목록 조회 요청하고 결과 받기
-//		ArrayList<Notice> list = noticeService.selectSearchTitle(keyword, pageable);
-//		Map<String, Object> map = new HashMap<String, Object>();
-//
-//		if (list != null && list.size() > 0) {
-//			map.put("list", list);
-//			map.put("paging", paging);
-//			//아래 데이터들은 요청한 페이지에 존재하는 값이므로 응답 처리에서 제외함
-////			map.put("currentPage", currentPage);
-//			map.put("action", action);
-//			map.put("keyword", keyword);
-//
-//			return new ResponseEntity<Map>(map, HttpStatus.OK);
-//		} else {
-//			map.put("message", "검색실패");
-//			return new ResponseEntity<Map>(map, HttpStatus.BAD_REQUEST);
-//		}
-//	}
+	// 공지글 제목 검색용 (페이징 처리 포함)
+	@GetMapping("/search/title")
+	public ResponseEntity<Map> noticeSearchTitleMethod(
+			@RequestParam("action") String action,
+			@RequestParam("keyword") String keyword,
+			@RequestParam(name = "page", defaultValue = "1") int currentPage,
+			@RequestParam(name = "limit", defaultValue = "10") int limit) {
+		// page : 출력할 페이지, limit : 한 페이지에 출력할 목록 갯수
+
+		// 검색결과가 적용된 총 목록갯수 조회해서 총 페이지 수 계산함
+		int listCount = noticeService.selectSearchTitleCount(keyword);
+		// 페이지 관련 항목 계산 처리
+		Paging paging = new Paging(listCount, limit, currentPage, "nsearchTitle.do");
+		paging.calculate();
+
+		//JPA 가 제공하는 메소드에 필요한 Pageable 객체 생성함 ---------------------------------------
+		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
+				Sort.by(Sort.Direction.DESC, "noticeNo"));
+
+		// 서비스롤 목록 조회 요청하고 결과 받기
+		ArrayList<Notice> list = noticeService.selectSearchTitle(keyword, pageable);
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		if (list != null && list.size() > 0) {
+			map.put("list", list);
+			map.put("paging", paging);
+			//아래 데이터들은 요청한 페이지에 존재하는 값이므로 응답 처리에서 제외함
+//			map.put("currentPage", currentPage);
+			map.put("action", action);
+			map.put("keyword", keyword);
+
+			return new ResponseEntity<Map>(map, HttpStatus.OK);
+		} else {
+			map.put("message", "검색실패");
+			return new ResponseEntity<Map>(map, HttpStatus.BAD_REQUEST);
+		}
+	}
 //
 //	// 공지글 내용 검색용 (페이징 처리 포함)
 //	@GetMapping("/search/content")
