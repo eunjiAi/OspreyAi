@@ -28,7 +28,7 @@ INSERT ALL
     INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
     VALUES (5, '스쿼트 실패담...', '스쿼트 하다가 중심을 잃고 넘어졌습니다. 괜찮긴 한데 부끄럽네요.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, NULL, NULL, 30)
     INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
-    VALUES (6, '스쿼트 강추! 하체 근육 빵빵해짐', '스쿼트를 매일 하니까 하체가 정말 단단해졌어요. 사진 참고하세요.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, 'leg_progress.jpg', 'leg_master_progress.jpg', 180)
+    VALUES (6, '스쿼트 강추!', '스쿼트를 매일 하니까 하체가 정말 단단해졌어요. 사진 참고하세요.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, 'leg_progress.jpg', 'leg_master_progress.jpg', 180)
     INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
     VALUES (7, '운동 루틴 질문이요', '스쿼트를 시작한 지 한 달째인데, 어떻게 중량을 늘려야 할지 궁금합니다.', 'eunji@example.com', '은지', SYSDATE, SYSDATE, NULL, NULL, 40)
     INTO Posts (post_id, title, content, writer, nickname, post_date, post_update, filename, rename_file, post_count) 
@@ -41,65 +41,66 @@ SELECT 1 FROM DUAL;
 
 
 -- 공지사항 더미 데이터
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (1, '서버 점검 안내', '다음 주 월요일 오전 2시에 서버 점검이 예정되어 있습니다.', '관리자', SYSDATE - 20, SYSDATE - 15, NULL, NULL, 50);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (1, '서버 점검 안내', '다음 주 월요일 오전 2시에 서버 점검이 예정되어 있습니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 20, SYSDATE - 15, NULL, NULL, 50);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (2, '새로운 서비스 출시', '저희 웹사이트에 새로운 서비스가 추가되었습니다. 많은 이용 바랍니다.', '홍길동', SYSDATE - 18, SYSDATE - 10, NULL, NULL, 34);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (2, '새로운 서비스 출시', '저희 웹사이트에 새로운 서비스가 추가되었습니다. 많은 이용 바랍니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 18, SYSDATE - 10, NULL, NULL, 34);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (3, '이벤트 당첨자 발표', '지난 주 진행된 이벤트의 당첨자를 공지합니다.', '이몽룡', SYSDATE - 16, SYSDATE - 14, 'winners_list.pdf', 'winners_2024.pdf', 100);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (3, '이벤트 당첨자 발표', '지난 주 진행된 이벤트의 당첨자를 공지합니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 16, SYSDATE - 14, 'winners_list.pdf', 'winners_2024.pdf', 100);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (4, '보안 업데이트 공지', '중요 보안 업데이트가 적용되었습니다. 자세한 내용은 공지를 참고하세요.', '관리자', SYSDATE - 15, SYSDATE - 12, NULL, NULL, 75);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (4, '보안 업데이트 공지', '중요 보안 업데이트가 적용되었습니다. 자세한 내용은 공지를 참고하세요.', 'smtt22@example.com', 'Shayne', SYSDATE - 15, SYSDATE - 12, NULL, NULL, 75);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (5, '임시 휴무 안내', '금일 오후 3시부터 시스템 점검으로 인해 임시 휴무합니다.', '운영팀', SYSDATE - 14, SYSDATE - 13, 'schedule.pdf', 'schedule_renamed.pdf', 60);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (5, '임시 휴무 안내', '금일 오후 3시부터 시스템 점검으로 인해 임시 휴무합니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 14, SYSDATE - 13, 'schedule.pdf', 'schedule_renamed.pdf', 60);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (6, 'FAQ 페이지 업데이트', '자주 묻는 질문 페이지가 업데이트되었습니다. 새로운 정보를 확인하세요.', '지원팀', SYSDATE - 13, SYSDATE - 12, NULL, NULL, 48);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (6, 'FAQ 페이지 업데이트', '자주 묻는 질문 페이지가 업데이트되었습니다. 새로운 정보를 확인하세요.', 'smtt22@example.com', 'Shayne', SYSDATE - 13, SYSDATE - 12, NULL, NULL, 48);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (7, '회원가입 감사 이벤트', '신규 회원 가입자 대상 감사 이벤트를 진행합니다.', '홍보팀', SYSDATE - 12, SYSDATE - 10, 'event_details.pdf', 'event_info.pdf', 88);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (7, '회원가입 감사 이벤트', '신규 회원 가입자 대상 감사 이벤트를 진행합니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 12, SYSDATE - 10, 'event_details.pdf', 'event_info.pdf', 88);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (8, '서비스 이용약관 변경', '서비스 이용약관이 2024년 1월 1일부터 변경됩니다.', '법무팀', SYSDATE - 11, SYSDATE - 9, 'terms_old.pdf', 'terms_new.pdf', 22);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (8, '서비스 이용약관 변경', '서비스 이용약관이 2024년 1월 1일부터 변경됩니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 11, SYSDATE - 9, 'terms_old.pdf', 'terms_new.pdf', 22);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (9, '시스템 복구 완료', '시스템 장애 복구 작업이 완료되었습니다. 불편을 드려 죄송합니다.', '기술팀', SYSDATE - 10, SYSDATE - 8, NULL, NULL, 70);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (9, '시스템 복구 완료', '시스템 장애 복구 작업이 완료되었습니다. 불편을 드려 죄송합니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 10, SYSDATE - 8, NULL, NULL, 70);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (10, '신규 게시판 오픈', '고객 소통을 위한 새로운 게시판이 오픈되었습니다.', '커뮤니티팀', SYSDATE - 9, SYSDATE - 7, NULL, NULL, 40);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (10, '신규 게시판 오픈', '고객 소통을 위한 새로운 게시판이 오픈되었습니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 9, SYSDATE - 7, NULL, NULL, 40);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (11, '정기 업데이트 일정', '정기 업데이트는 매월 첫째 주 화요일에 진행됩니다.', '개발팀', SYSDATE - 8, SYSDATE - 6, NULL, NULL, 18);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (11, '정기 업데이트 일정', '정기 업데이트는 매월 첫째 주 화요일에 진행됩니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 8, SYSDATE - 6, NULL, NULL, 18);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (12, '2024년 공휴일 안내', '2024년 공휴일 및 휴무 일정을 안내드립니다.', 'HR팀', SYSDATE - 7, SYSDATE - 5, 'holidays.pdf', 'holidays_2024.pdf', 85);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (12, '2024년 공휴일 안내', '2024년 공휴일 및 휴무 일정을 안내드립니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 7, SYSDATE - 5, 'holidays.pdf', 'holidays_2024.pdf', 85);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (13, '시스템 안정화 작업', '시스템 안정화를 위한 작업이 진행될 예정입니다.', '기술지원팀', SYSDATE - 6, SYSDATE - 4, NULL, NULL, 55);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (13, '시스템 안정화 작업', '시스템 안정화를 위한 작업이 진행될 예정입니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 6, SYSDATE - 4, NULL, NULL, 55);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (14, '고객 만족도 조사', '고객 만족도 조사가 진행 중입니다. 많은 참여 부탁드립니다.', '마케팅팀', SYSDATE - 5, SYSDATE - 3, 'survey.pdf', 'survey_results.pdf', 90);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (14, '고객 만족도 조사', '고객 만족도 조사가 진행 중입니다. 많은 참여 부탁드립니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 5, SYSDATE - 3, 'survey.pdf', 'survey_results.pdf', 90);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (15, '회원 등급 제도 도입', '새로운 회원 등급 제도가 도입되었습니다.', '고객관리팀', SYSDATE - 4, SYSDATE - 2, NULL, NULL, 65);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (15, '회원 등급 제도 도입', '새로운 회원 등급 제도가 도입되었습니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 4, SYSDATE - 2, NULL, NULL, 65);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (16, '이벤트 참여 안내', '이벤트 참여 방법과 혜택에 대한 안내입니다.', '홍보팀', SYSDATE - 3, SYSDATE - 1, 'event_details.pdf', 'event_rewards.pdf', 45);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (16, '이벤트 참여 안내', '이벤트 참여 방법과 혜택에 대한 안내입니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 3, SYSDATE - 1, 'event_details.pdf', 'event_rewards.pdf', 45);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (17, '긴급 서버 점검', '긴급 서버 점검이 진행 중입니다. 서비스 이용에 참고 바랍니다.', '기술팀', SYSDATE - 2, SYSDATE, NULL, NULL, 95);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (17, '긴급 서버 점검', '긴급 서버 점검이 진행 중입니다. 서비스 이용에 참고 바랍니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 2, SYSDATE, NULL, NULL, 95);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (18, '문의 사항 답변 지연', '현재 문의 사항 답변이 지연되고 있습니다. 양해 부탁드립니다.', '운영팀', SYSDATE - 1, SYSDATE, NULL, NULL, 60);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (18, '문의 사항 답변 지연', '현재 문의 사항 답변이 지연되고 있습니다. 양해 부탁드립니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 1, SYSDATE, NULL, NULL, 60);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (19, '서비스 개선 공지', '서비스 개선을 위한 피드백을 받고 있습니다.', '개발팀', SYSDATE - 3, SYSDATE - 1, NULL, NULL, 20);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (19, '서비스 개선 공지', '서비스 개선을 위한 피드백을 받고 있습니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 3, SYSDATE - 1, NULL, NULL, 20);
 
-INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
-VALUES (20, '신규 기능 베타 테스트', '새로운 기능의 베타 테스트를 시작합니다. 많은 참여 바랍니다.', '기술팀', SYSDATE - 4, SYSDATE - 2, 'beta_test.pdf', 'beta_guide.pdf', 80);
+INSERT INTO NOTICE (NOTICE_NO, NTITLE, NCONTENT, NWRITER, N_NICKNAME, NCREATED_AT, NUPDATED_AT, OFILENAME, RFILENAME, NCOUNT)
+VALUES (20, '신규 기능 베타 테스트', '새로운 기능의 베타 테스트를 시작합니다. 많은 참여 바랍니다.', 'smtt22@example.com', 'Shayne', SYSDATE - 4, SYSDATE - 2, 'beta_test.pdf', 'beta_guide.pdf', 80);
+
 
 
 

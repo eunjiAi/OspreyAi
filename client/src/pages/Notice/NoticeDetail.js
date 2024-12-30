@@ -103,7 +103,7 @@ const NoticeDetail = () => {
           </tr>
           <tr>
             <th>작성자</th>
-            <td>{notice.nwriter}</td>
+            <td>{notice.nnickname}</td>
           </tr>
           <tr>
             <th>첨부파일</th>
@@ -147,6 +147,11 @@ const NoticeDetail = () => {
           >
             삭제하기
           </button>
+          <input
+            type="button"
+            value="목록"
+            onClick={() => navigate("/notice")}
+          />
         </div>
       )}
     </div>

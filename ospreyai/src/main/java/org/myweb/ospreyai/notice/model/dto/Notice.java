@@ -19,6 +19,7 @@ public class Notice {
     private String nTitle;  //    NTITLE	VARCHAR2(60 BYTE)
     private String nContent;    //    NCONTENT	CLOB
     private String nWriter;     //    NWRITER	VARCHAR2(30 BYTE)
+    private String nNickname;   //  N_NICKNAME	VARCHAR2(30 BYTE)
     private Date nCreatedAt;  //    NCREATED_AT	DATE
     private Date nUpdatedAt;    //  NUPDATED_AT	DATE
     private String ofileName; //    OFILENAME	VARCHAR2(200 BYTE)
@@ -31,6 +32,7 @@ public class Notice {
                 .nTitle(nTitle)
                 .nContent(nContent)
                 .nWriter(nWriter)
+                .nNickname(nNickname)
                 .nCreatedAt(nCreatedAt)
                 .nUpdatedAt(nUpdatedAt)
                 .ofileName(ofileName)

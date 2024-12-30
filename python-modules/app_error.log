@@ -9047,3 +9047,1126 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
 [parameters: {'uuid': 'eunji@example.com', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2024, 12, 27), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
 2024-12-27 09:56:33,639 INFO 127.0.0.1 - - [27/Dec/2024 09:56:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:22,911 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 18:17:22,923 INFO [33mPress CTRL+C to quit[0m
+2024-12-30 18:17:22,925 INFO  * Restarting with stat
+2024-12-30 18:17:23,819 WARNING  * Debugger is active!
+2024-12-30 18:17:23,820 INFO  * Debugger PIN: 133-731-000
+2024-12-30 18:17:40,874 INFO 127.0.0.1 - - [30/Dec/2024 18:17:40] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:41,179 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:41,180 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:41,278 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:41,883 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:41,884 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:41,884 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:42,896 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:42,896 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:42,896 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:43,106 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:43,107 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:43,107 INFO 127.0.0.1 - - [30/Dec/2024 18:17:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:43,107 INFO 127.0.0.1 - - [30/Dec/2024 18:17:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:43,891 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:43,891 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:43,891 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:43,919 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:43,920 INFO 127.0.0.1 - - [30/Dec/2024 18:17:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:44,890 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:44,891 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:44,891 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:44,919 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:44,919 INFO 127.0.0.1 - - [30/Dec/2024 18:17:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:45,906 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:45,908 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:45,908 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:45,915 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:45,916 INFO 127.0.0.1 - - [30/Dec/2024 18:17:45] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:46,875 INFO 127.0.0.1 - - [30/Dec/2024 18:17:46] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:46,941 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:46,941 INFO 127.0.0.1 - - [30/Dec/2024 18:17:46] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:47,206 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:47,206 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:47,207 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:47,906 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:47,907 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:47,907 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:48,233 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:48,234 INFO 127.0.0.1 - - [30/Dec/2024 18:17:48] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:48,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:48,903 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:48,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:48,933 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:48,933 INFO 127.0.0.1 - - [30/Dec/2024 18:17:48] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:49,928 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:49,928 INFO 127.0.0.1 - - [30/Dec/2024 18:17:49] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:49,945 INFO Analyzed Pose -> Angle: 129.8418388308542, Knee Position: -0.43487173318862915, Feedback: ºÐ¼® ½ÇÆÐ
+2024-12-30 18:17:49,945 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:49,945 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:50,884 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:50,885 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:50,885 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:50,995 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:50,996 INFO 127.0.0.1 - - [30/Dec/2024 18:17:50] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:51,910 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:51,910 INFO 127.0.0.1 - - [30/Dec/2024 18:17:51] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:52,217 INFO 127.0.0.1 - - [30/Dec/2024 18:17:52] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:52,554 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:52,555 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:52,555 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:52,924 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:52,925 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:52,925 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:53,591 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:53,592 INFO 127.0.0.1 - - [30/Dec/2024 18:17:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:53,955 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:53,955 INFO 127.0.0.1 - - [30/Dec/2024 18:17:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:54,242 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:54,242 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:54,242 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:55,245 INFO Analyzed Pose -> Angle: 6.477510344573233, Knee Position: 0.08885392546653748, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-30 18:17:55,245 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:55,245 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:55,268 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:55,269 INFO 127.0.0.1 - - [30/Dec/2024 18:17:55] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:56,239 INFO Analyzed Pose -> Angle: 5.846104376222672, Knee Position: 0.09602725505828857, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2024-12-30 18:17:56,239 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:56,239 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:56,275 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:56,276 INFO 127.0.0.1 - - [30/Dec/2024 18:17:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:57,253 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:57,253 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:57,253 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:57,263 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:57,263 INFO 127.0.0.1 - - [30/Dec/2024 18:17:57] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:58,210 INFO 127.0.0.1 - - [30/Dec/2024 18:17:58] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:58,288 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:58,288 INFO 127.0.0.1 - - [30/Dec/2024 18:17:58] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:17:58,556 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:58,556 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:58,556 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:59,244 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:17:59,245 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:17:59,245 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:17:59,592 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:17:59,592 INFO 127.0.0.1 - - [30/Dec/2024 18:17:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:00,234 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:00,234 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:00,234 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:00,270 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:00,271 INFO 127.0.0.1 - - [30/Dec/2024 18:18:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:01,229 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:01,229 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:01,229 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:01,260 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:01,260 INFO 127.0.0.1 - - [30/Dec/2024 18:18:01] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:02,240 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:02,240 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:02,240 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:02,253 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:02,254 INFO 127.0.0.1 - - [30/Dec/2024 18:18:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:03,223 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:03,224 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:03,224 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:03,265 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:03,266 INFO 127.0.0.1 - - [30/Dec/2024 18:18:03] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:04,190 INFO 127.0.0.1 - - [30/Dec/2024 18:18:04] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:04,247 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:04,247 INFO 127.0.0.1 - - [30/Dec/2024 18:18:04] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:04,526 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:04,527 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:04,527 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:05,230 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:05,230 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:05,230 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:05,564 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:05,566 INFO 127.0.0.1 - - [30/Dec/2024 18:18:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:06,236 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:06,237 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:06,237 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:06,262 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:06,264 INFO 127.0.0.1 - - [30/Dec/2024 18:18:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:07,228 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:07,229 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:07,229 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:07,275 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:07,276 INFO 127.0.0.1 - - [30/Dec/2024 18:18:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:08,233 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:08,233 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:08,233 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:08,253 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:08,253 INFO 127.0.0.1 - - [30/Dec/2024 18:18:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:09,267 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:09,267 INFO 127.0.0.1 - - [30/Dec/2024 18:18:09] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:09,279 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:09,279 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:09,279 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:10,241 INFO 127.0.0.1 - - [30/Dec/2024 18:18:10] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:10,306 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:10,307 INFO 127.0.0.1 - - [30/Dec/2024 18:18:10] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:10,578 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:10,578 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:10,578 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:11,004 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:11,005 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:11,005 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:11,609 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:11,609 INFO 127.0.0.1 - - [30/Dec/2024 18:18:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:11,909 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:11,909 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:11,909 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:12,033 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:12,034 INFO 127.0.0.1 - - [30/Dec/2024 18:18:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:12,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:12,900 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:12,900 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:12,982 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:12,982 INFO 127.0.0.1 - - [30/Dec/2024 18:18:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:13,897 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:13,897 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:13,897 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:13,922 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:13,923 INFO 127.0.0.1 - - [30/Dec/2024 18:18:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:14,895 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:14,895 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:14,895 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:14,921 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:14,921 INFO 127.0.0.1 - - [30/Dec/2024 18:18:14] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:15,886 INFO 127.0.0.1 - - [30/Dec/2024 18:18:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:15,926 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:15,927 INFO 127.0.0.1 - - [30/Dec/2024 18:18:15] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:16,220 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:16,220 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:16,220 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:16,911 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:16,912 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:16,912 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:17,259 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:17,261 INFO 127.0.0.1 - - [30/Dec/2024 18:18:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:17,893 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:17,893 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:17,893 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:17,953 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:17,953 INFO 127.0.0.1 - - [30/Dec/2024 18:18:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:18,902 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:18,903 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:18,903 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:18,921 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:18,922 INFO 127.0.0.1 - - [30/Dec/2024 18:18:18] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:19,887 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:19,888 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:19,888 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:19,941 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:19,941 INFO 127.0.0.1 - - [30/Dec/2024 18:18:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:20,902 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:20,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:20,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:20,914 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:20,915 INFO 127.0.0.1 - - [30/Dec/2024 18:18:20] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:21,857 INFO 127.0.0.1 - - [30/Dec/2024 18:18:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:21,944 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:21,945 INFO 127.0.0.1 - - [30/Dec/2024 18:18:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:22,185 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:22,186 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:22,186 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:22,870 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:22,871 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:22,871 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:23,216 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:23,217 INFO 127.0.0.1 - - [30/Dec/2024 18:18:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:23,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:23,900 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:23,901 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:23,929 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:23,929 INFO 127.0.0.1 - - [30/Dec/2024 18:18:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:24,892 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:24,893 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:24,893 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:24,917 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:24,917 INFO 127.0.0.1 - - [30/Dec/2024 18:18:24] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:25,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:25,904 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:25,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:25,934 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:25,935 INFO 127.0.0.1 - - [30/Dec/2024 18:18:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:26,886 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:26,887 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:26,887 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:26,947 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:26,948 INFO 127.0.0.1 - - [30/Dec/2024 18:18:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:27,879 INFO 127.0.0.1 - - [30/Dec/2024 18:18:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:27,948 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:27,948 INFO 127.0.0.1 - - [30/Dec/2024 18:18:27] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:28,211 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:28,212 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:28,212 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:28,897 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:28,898 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:28,898 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:29,240 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:29,241 INFO 127.0.0.1 - - [30/Dec/2024 18:18:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:29,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:29,904 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:29,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:29,920 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:29,921 INFO 127.0.0.1 - - [30/Dec/2024 18:18:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:30,904 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:30,904 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:30,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:30,933 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:30,933 INFO 127.0.0.1 - - [30/Dec/2024 18:18:30] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:31,893 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:31,893 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:31,893 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:31,928 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:31,929 INFO 127.0.0.1 - - [30/Dec/2024 18:18:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:32,897 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:32,897 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:32,898 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:32,922 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:32,922 INFO 127.0.0.1 - - [30/Dec/2024 18:18:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:33,888 INFO 127.0.0.1 - - [30/Dec/2024 18:18:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:33,930 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:33,931 INFO 127.0.0.1 - - [30/Dec/2024 18:18:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:34,223 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:34,223 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:34,223 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:34,892 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:34,892 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:34,893 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:35,251 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:35,252 INFO 127.0.0.1 - - [30/Dec/2024 18:18:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:35,914 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:35,915 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:35,915 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:35,918 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:35,918 INFO 127.0.0.1 - - [30/Dec/2024 18:18:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:36,906 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:36,906 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:36,906 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:36,954 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:36,955 INFO 127.0.0.1 - - [30/Dec/2024 18:18:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:37,904 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:37,904 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:37,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:37,934 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:37,936 INFO 127.0.0.1 - - [30/Dec/2024 18:18:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:38,905 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:38,905 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:38,906 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:38,931 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:38,931 INFO 127.0.0.1 - - [30/Dec/2024 18:18:38] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:39,872 INFO 127.0.0.1 - - [30/Dec/2024 18:18:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:39,941 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:39,942 INFO 127.0.0.1 - - [30/Dec/2024 18:18:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:40,204 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:40,204 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:40,204 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:40,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:40,900 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:40,901 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:41,231 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:41,232 INFO 127.0.0.1 - - [30/Dec/2024 18:18:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:41,898 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:41,899 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:41,899 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:41,931 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:41,931 INFO 127.0.0.1 - - [30/Dec/2024 18:18:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:42,890 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:42,890 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:42,890 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:42,936 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:42,936 INFO 127.0.0.1 - - [30/Dec/2024 18:18:42] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:43,896 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:43,897 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:43,897 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:43,926 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:43,926 INFO 127.0.0.1 - - [30/Dec/2024 18:18:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:44,915 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:44,915 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:44,915 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:44,929 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:44,930 INFO 127.0.0.1 - - [30/Dec/2024 18:18:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:45,874 INFO 127.0.0.1 - - [30/Dec/2024 18:18:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:45,955 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:45,955 INFO 127.0.0.1 - - [30/Dec/2024 18:18:45] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:46,206 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:46,206 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:46,207 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:46,909 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:46,909 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:46,909 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:47,232 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:47,233 INFO 127.0.0.1 - - [30/Dec/2024 18:18:47] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:47,897 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:47,897 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:47,897 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:47,945 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:47,945 INFO 127.0.0.1 - - [30/Dec/2024 18:18:47] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:48,896 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:48,896 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:48,896 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:48,926 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:48,927 INFO 127.0.0.1 - - [30/Dec/2024 18:18:48] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:49,902 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:49,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:49,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:49,919 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:49,920 INFO 127.0.0.1 - - [30/Dec/2024 18:18:49] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:50,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:50,903 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:50,903 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:50,956 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:50,957 INFO 127.0.0.1 - - [30/Dec/2024 18:18:50] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:51,890 INFO 127.0.0.1 - - [30/Dec/2024 18:18:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:51,943 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:51,943 INFO 127.0.0.1 - - [30/Dec/2024 18:18:51] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:52,226 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:52,226 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:52,226 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:52,899 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:52,900 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:52,900 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:53,248 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:53,249 INFO 127.0.0.1 - - [30/Dec/2024 18:18:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:53,904 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:53,907 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:53,907 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:53,934 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:53,935 INFO 127.0.0.1 - - [30/Dec/2024 18:18:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:54,891 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:54,892 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:54,892 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:54,954 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:54,956 INFO 127.0.0.1 - - [30/Dec/2024 18:18:54] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:55,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:55,900 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:55,901 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:55,968 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:55,969 INFO 127.0.0.1 - - [30/Dec/2024 18:18:55] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:56,897 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:56,897 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:56,898 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:56,922 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:56,924 INFO 127.0.0.1 - - [30/Dec/2024 18:18:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:57,872 INFO 127.0.0.1 - - [30/Dec/2024 18:18:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:57,930 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:57,932 INFO 127.0.0.1 - - [30/Dec/2024 18:18:57] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:58,201 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:58,202 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:58,202 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:58,902 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:58,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:58,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:59,238 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:59,238 INFO 127.0.0.1 - - [30/Dec/2024 18:18:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:18:59,896 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:18:59,897 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:18:59,897 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:18:59,938 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:18:59,938 INFO 127.0.0.1 - - [30/Dec/2024 18:18:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:00,901 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:00,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:00,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:00,938 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:00,938 INFO 127.0.0.1 - - [30/Dec/2024 18:19:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:01,901 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:01,901 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:01,901 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:01,934 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:01,934 INFO 127.0.0.1 - - [30/Dec/2024 18:19:01] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:02,902 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:02,903 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:02,903 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:02,927 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:02,927 INFO 127.0.0.1 - - [30/Dec/2024 18:19:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:03,870 INFO 127.0.0.1 - - [30/Dec/2024 18:19:03] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:03,942 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:03,944 INFO 127.0.0.1 - - [30/Dec/2024 18:19:03] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:04,200 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:04,201 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:04,201 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:04,897 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:04,897 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:04,897 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:05,229 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:05,229 INFO 127.0.0.1 - - [30/Dec/2024 18:19:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:05,898 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:05,899 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:05,899 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:05,928 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:05,928 INFO 127.0.0.1 - - [30/Dec/2024 18:19:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:06,888 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:06,889 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:06,889 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:06,920 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:06,920 INFO 127.0.0.1 - - [30/Dec/2024 18:19:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:07,905 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:07,905 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:07,906 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:07,922 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:07,922 INFO 127.0.0.1 - - [30/Dec/2024 18:19:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:08,902 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:08,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:08,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:08,946 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:08,946 INFO 127.0.0.1 - - [30/Dec/2024 18:19:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:09,870 INFO 127.0.0.1 - - [30/Dec/2024 18:19:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:09,932 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:09,933 INFO 127.0.0.1 - - [30/Dec/2024 18:19:09] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:10,196 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:10,197 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:10,197 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:10,908 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:10,908 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:10,908 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:11,229 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:11,230 INFO 127.0.0.1 - - [30/Dec/2024 18:19:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:11,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:11,901 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:11,901 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:11,946 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:11,947 INFO 127.0.0.1 - - [30/Dec/2024 18:19:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:12,902 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:12,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:12,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:12,923 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:12,923 INFO 127.0.0.1 - - [30/Dec/2024 18:19:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:13,894 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:13,894 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:13,895 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:13,924 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:13,924 INFO 127.0.0.1 - - [30/Dec/2024 18:19:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:14,905 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:14,905 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:14,905 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:14,920 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:14,920 INFO 127.0.0.1 - - [30/Dec/2024 18:19:14] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:15,881 INFO 127.0.0.1 - - [30/Dec/2024 18:19:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:15,949 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:15,949 INFO 127.0.0.1 - - [30/Dec/2024 18:19:15] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:16,216 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:16,216 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:16,216 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:16,906 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:16,908 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:16,908 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:17,246 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:17,247 INFO 127.0.0.1 - - [30/Dec/2024 18:19:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:17,894 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:17,894 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:17,894 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:17,935 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:17,935 INFO 127.0.0.1 - - [30/Dec/2024 18:19:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:18,921 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:18,921 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:18,922 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:18,927 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:18,928 INFO 127.0.0.1 - - [30/Dec/2024 18:19:18] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:19,908 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:19,908 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:19,908 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:19,972 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:19,972 INFO 127.0.0.1 - - [30/Dec/2024 18:19:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:20,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:20,906 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:20,906 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:20,936 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:20,936 INFO 127.0.0.1 - - [30/Dec/2024 18:19:20] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:21,874 INFO 127.0.0.1 - - [30/Dec/2024 18:19:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:21,941 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:21,942 INFO 127.0.0.1 - - [30/Dec/2024 18:19:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:22,205 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:22,206 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:22,206 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:22,904 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:22,904 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:22,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:23,248 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:23,248 INFO 127.0.0.1 - - [30/Dec/2024 18:19:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:23,897 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:23,897 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:23,897 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:23,928 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:23,929 INFO 127.0.0.1 - - [30/Dec/2024 18:19:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:24,892 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:24,892 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:24,894 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:24,959 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:24,959 INFO 127.0.0.1 - - [30/Dec/2024 18:19:24] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:25,902 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:25,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:25,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:25,919 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:25,919 INFO 127.0.0.1 - - [30/Dec/2024 18:19:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:26,885 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:26,885 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:26,885 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:26,958 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:26,960 INFO 127.0.0.1 - - [30/Dec/2024 18:19:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:27,878 INFO 127.0.0.1 - - [30/Dec/2024 18:19:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:27,915 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:27,915 INFO 127.0.0.1 - - [30/Dec/2024 18:19:27] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:28,213 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:28,213 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:28,213 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:28,896 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:28,896 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:28,896 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:29,255 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:29,255 INFO 127.0.0.1 - - [30/Dec/2024 18:19:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:29,908 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:29,908 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:29,909 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:29,923 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:29,924 INFO 127.0.0.1 - - [30/Dec/2024 18:19:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:30,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:30,904 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:30,905 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:30,938 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:30,939 INFO 127.0.0.1 - - [30/Dec/2024 18:19:30] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:31,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:31,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:31,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:31,934 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:31,934 INFO 127.0.0.1 - - [30/Dec/2024 18:19:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:32,895 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:32,895 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:32,895 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:32,923 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:32,923 INFO 127.0.0.1 - - [30/Dec/2024 18:19:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:33,878 INFO 127.0.0.1 - - [30/Dec/2024 18:19:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:33,923 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:33,923 INFO 127.0.0.1 - - [30/Dec/2024 18:19:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:34,212 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:34,212 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:34,212 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:34,898 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:34,899 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:34,899 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:35,239 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:35,240 INFO 127.0.0.1 - - [30/Dec/2024 18:19:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:35,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:35,903 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:35,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:35,939 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:35,939 INFO 127.0.0.1 - - [30/Dec/2024 18:19:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:36,909 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:36,909 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:36,909 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:36,931 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:36,932 INFO 127.0.0.1 - - [30/Dec/2024 18:19:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:37,920 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:37,920 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:37,921 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:37,951 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:37,952 INFO 127.0.0.1 - - [30/Dec/2024 18:19:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:38,898 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:38,898 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:38,898 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:38,963 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:38,964 INFO 127.0.0.1 - - [30/Dec/2024 18:19:38] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:39,878 INFO 127.0.0.1 - - [30/Dec/2024 18:19:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:39,932 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:39,933 INFO 127.0.0.1 - - [30/Dec/2024 18:19:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:40,218 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:40,218 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:40,219 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:40,898 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:40,899 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:40,899 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:41,248 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:41,249 INFO 127.0.0.1 - - [30/Dec/2024 18:19:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:41,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:41,904 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:41,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:41,928 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:41,928 INFO 127.0.0.1 - - [30/Dec/2024 18:19:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:42,899 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:42,899 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:42,899 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:42,931 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:42,932 INFO 127.0.0.1 - - [30/Dec/2024 18:19:42] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:43,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:43,904 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:43,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:43,930 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:43,930 INFO 127.0.0.1 - - [30/Dec/2024 18:19:43] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:44,899 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:44,899 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:44,899 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:44,961 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:44,962 INFO 127.0.0.1 - - [30/Dec/2024 18:19:44] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:45,878 INFO 127.0.0.1 - - [30/Dec/2024 18:19:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:45,933 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:45,934 INFO 127.0.0.1 - - [30/Dec/2024 18:19:45] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:46,214 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:46,214 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:46,214 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:46,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:46,900 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:46,900 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:47,243 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:47,243 INFO 127.0.0.1 - - [30/Dec/2024 18:19:47] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:47,911 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:47,912 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:47,912 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:47,918 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:47,919 INFO 127.0.0.1 - - [30/Dec/2024 18:19:47] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:48,891 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:48,891 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:48,891 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:48,937 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:48,937 INFO 127.0.0.1 - - [30/Dec/2024 18:19:48] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:49,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:49,900 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:49,900 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:49,918 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:49,919 INFO 127.0.0.1 - - [30/Dec/2024 18:19:49] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:50,893 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:50,893 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:50,893 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:50,927 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:50,928 INFO 127.0.0.1 - - [30/Dec/2024 18:19:50] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:51,871 INFO 127.0.0.1 - - [30/Dec/2024 18:19:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:51,923 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:51,923 INFO 127.0.0.1 - - [30/Dec/2024 18:19:51] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:52,203 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:52,203 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:52,203 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:52,902 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:52,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:52,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:53,268 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:53,269 INFO 127.0.0.1 - - [30/Dec/2024 18:19:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:53,887 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:53,887 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:53,887 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:53,970 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:53,975 INFO 127.0.0.1 - - [30/Dec/2024 18:19:53] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:54,897 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:54,898 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:54,898 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:54,912 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:54,912 INFO 127.0.0.1 - - [30/Dec/2024 18:19:54] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:55,901 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:55,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:55,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:55,933 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:55,934 INFO 127.0.0.1 - - [30/Dec/2024 18:19:55] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:56,904 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:56,905 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:56,905 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:56,958 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:56,959 INFO 127.0.0.1 - - [30/Dec/2024 18:19:56] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:57,883 INFO 127.0.0.1 - - [30/Dec/2024 18:19:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:57,941 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:57,942 INFO 127.0.0.1 - - [30/Dec/2024 18:19:57] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:58,218 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:58,218 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:58,218 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:58,912 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:58,913 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:58,913 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:59,257 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:59,258 INFO 127.0.0.1 - - [30/Dec/2024 18:19:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:19:59,907 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:19:59,908 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:19:59,908 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:19:59,951 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:19:59,951 INFO 127.0.0.1 - - [30/Dec/2024 18:19:59] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:00,904 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:00,905 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:00,905 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:00,946 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:00,947 INFO 127.0.0.1 - - [30/Dec/2024 18:20:00] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:01,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:01,901 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:01,901 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:01,956 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:01,956 INFO 127.0.0.1 - - [30/Dec/2024 18:20:01] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:02,892 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:02,892 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:02,892 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:02,955 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:02,955 INFO 127.0.0.1 - - [30/Dec/2024 18:20:02] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:03,887 INFO 127.0.0.1 - - [30/Dec/2024 18:20:03] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:03,932 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:03,934 INFO 127.0.0.1 - - [30/Dec/2024 18:20:03] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:04,224 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:04,224 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:04,224 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:04,895 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:04,895 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:04,895 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:05,254 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:05,255 INFO 127.0.0.1 - - [30/Dec/2024 18:20:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:05,908 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:05,909 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:05,909 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:05,935 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:05,935 INFO 127.0.0.1 - - [30/Dec/2024 18:20:05] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:06,893 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:06,894 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:06,894 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:06,940 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:06,942 INFO 127.0.0.1 - - [30/Dec/2024 18:20:06] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:07,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:07,903 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:07,903 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:07,922 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:07,922 INFO 127.0.0.1 - - [30/Dec/2024 18:20:07] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:08,888 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:08,889 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:08,889 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:08,933 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:08,934 INFO 127.0.0.1 - - [30/Dec/2024 18:20:08] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:09,878 INFO 127.0.0.1 - - [30/Dec/2024 18:20:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:09,912 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:09,913 INFO 127.0.0.1 - - [30/Dec/2024 18:20:09] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:10,207 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:10,207 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:10,207 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:10,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:10,904 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:10,904 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:11,237 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:11,238 INFO 127.0.0.1 - - [30/Dec/2024 18:20:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:11,903 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:11,903 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:11,903 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:11,930 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:11,930 INFO 127.0.0.1 - - [30/Dec/2024 18:20:11] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:12,892 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:12,892 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:12,893 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:12,927 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:12,927 INFO 127.0.0.1 - - [30/Dec/2024 18:20:12] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:13,894 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:13,894 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:13,894 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:13,939 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:13,939 INFO 127.0.0.1 - - [30/Dec/2024 18:20:13] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:14,890 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:14,891 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:14,891 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:14,921 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:14,921 INFO 127.0.0.1 - - [30/Dec/2024 18:20:14] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:15,880 INFO 127.0.0.1 - - [30/Dec/2024 18:20:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:15,934 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:15,935 INFO 127.0.0.1 - - [30/Dec/2024 18:20:15] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:16,211 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:16,211 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:16,211 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:16,895 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:16,896 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:16,896 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:17,243 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:17,243 INFO 127.0.0.1 - - [30/Dec/2024 18:20:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:17,895 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:17,895 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:17,895 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:17,925 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:17,926 INFO 127.0.0.1 - - [30/Dec/2024 18:20:17] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:18,910 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:18,910 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:18,910 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:18,924 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:18,924 INFO 127.0.0.1 - - [30/Dec/2024 18:20:18] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:19,896 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:19,896 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:19,896 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:19,947 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:19,948 INFO 127.0.0.1 - - [30/Dec/2024 18:20:19] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:20,895 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:20,895 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:20,895 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:20,923 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:20,923 INFO 127.0.0.1 - - [30/Dec/2024 18:20:20] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:21,876 INFO 127.0.0.1 - - [30/Dec/2024 18:20:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:21,927 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:21,928 INFO 127.0.0.1 - - [30/Dec/2024 18:20:21] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:22,213 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:22,213 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:22,213 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:22,892 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:22,892 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:22,892 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:23,257 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:23,258 INFO 127.0.0.1 - - [30/Dec/2024 18:20:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:23,910 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:23,910 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:23,910 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:23,956 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:23,957 INFO 127.0.0.1 - - [30/Dec/2024 18:20:23] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:24,899 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:24,899 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:24,901 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:24,951 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:24,952 INFO 127.0.0.1 - - [30/Dec/2024 18:20:24] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:25,915 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:25,915 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:25,915 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:25,929 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:25,929 INFO 127.0.0.1 - - [30/Dec/2024 18:20:25] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:26,886 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:26,887 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:26,887 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:26,966 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:26,967 INFO 127.0.0.1 - - [30/Dec/2024 18:20:26] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:27,882 INFO 127.0.0.1 - - [30/Dec/2024 18:20:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:27,915 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:27,915 INFO 127.0.0.1 - - [30/Dec/2024 18:20:27] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:28,227 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:28,228 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:28,228 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:28,896 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:28,896 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:28,896 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:29,262 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:29,262 INFO 127.0.0.1 - - [30/Dec/2024 18:20:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:29,896 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:29,897 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:29,897 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:29,929 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:29,929 INFO 127.0.0.1 - - [30/Dec/2024 18:20:29] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:30,909 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:30,909 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:30,909 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:30,926 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:30,926 INFO 127.0.0.1 - - [30/Dec/2024 18:20:30] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:31,900 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:31,901 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:31,901 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:31,931 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:31,931 INFO 127.0.0.1 - - [30/Dec/2024 18:20:31] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:32,905 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:32,905 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:32,905 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:32,931 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:32,932 INFO 127.0.0.1 - - [30/Dec/2024 18:20:32] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:33,880 INFO 127.0.0.1 - - [30/Dec/2024 18:20:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:33,947 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:33,947 INFO 127.0.0.1 - - [30/Dec/2024 18:20:33] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:34,211 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:34,211 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:34,211 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:34,894 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:34,894 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:34,894 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:35,239 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:35,240 INFO 127.0.0.1 - - [30/Dec/2024 18:20:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:35,922 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:35,922 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:35,923 INFO 127.0.0.1 - - [30/Dec/2024 18:20:35] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:35,923 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:35,924 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:36,923 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:36,923 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:36,923 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:36,960 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:36,960 INFO 127.0.0.1 - - [30/Dec/2024 18:20:36] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:37,901 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:37,902 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:37,902 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:37,968 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:37,968 INFO 127.0.0.1 - - [30/Dec/2024 18:20:37] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:38,899 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:38,900 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:38,900 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:38,930 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:38,930 INFO 127.0.0.1 - - [30/Dec/2024 18:20:38] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:39,871 INFO 127.0.0.1 - - [30/Dec/2024 18:20:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:39,924 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:39,924 INFO 127.0.0.1 - - [30/Dec/2024 18:20:39] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:40,204 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:40,205 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:40,205 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:40,904 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2024-12-30 18:20:40,907 INFO UUID: smtt22@example.com, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2024-12-30 18:20:40,907 INFO UUID: smtt22@example.com, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2024-12-30
+2024-12-30 18:20:41,241 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:41,243 INFO 127.0.0.1 - - [30/Dec/2024 18:20:41] "POST /squat-analysis HTTP/1.1" 200 -
+2024-12-30 18:20:41,945 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-01017: »ç¿ëÀÚ¸í/ºñ¹Ð¹øÈ£°¡ ºÎÀûÇÕ, ·Î±×¿ÂÇÒ ¼ö ¾ø½À´Ï´Ù.
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2024-12-30 18:20:41,946 INFO 127.0.0.1 - - [30/Dec/2024 18:20:41] "POST /squat-analysis HTTP/1.1" 200 -

@@ -101,6 +101,7 @@ public class PostsService {
 			}
 			PostsEntity existingEntity = existingEntityOpt.get();
 
+			posts.setPostCount(existingEntity.getPostCount());
 			posts.setPostDate(existingEntity.getPostDate());
 			posts.setPostUpdate(new Date(System.currentTimeMillis()));
 			postsRepository.save(posts.toEntity());

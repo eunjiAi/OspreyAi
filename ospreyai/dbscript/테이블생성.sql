@@ -165,6 +165,7 @@ CREATE TABLE Notice (
     ntitle VARCHAR2(60) NOT NULL,
     ncontent CLOB NOT NULL,
     nwriter VARCHAR2(30) NOT NULL,
+    n_nickname VARCHAR2(30) NOT NULL,
     ncreated_at DATE DEFAULT SYSDATE,
     nupdated_at DATE DEFAULT SYSDATE,
     ofilename VARCHAR2(200),
@@ -178,6 +179,7 @@ COMMENT ON COLUMN Notice.notice_no IS '글번호';
 COMMENT ON COLUMN Notice.ntitle IS '글제목';
 COMMENT ON COLUMN Notice.ncontent IS '내용';
 COMMENT ON COLUMN Notice.nwriter IS '작성자';
+COMMENT ON COLUMN Notice.n_nickname IS '닉네임';
 COMMENT ON COLUMN Notice.ncreated_at IS '생성일자';
 COMMENT ON COLUMN Notice.nupdated_at IS '수정일자';
 COMMENT ON COLUMN Notice.ofilename IS '원본파일이름';

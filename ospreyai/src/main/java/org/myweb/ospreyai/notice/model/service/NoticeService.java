@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -101,6 +102,8 @@ public class NoticeService {
 			NoticeEntity existingEntity = existingEntityOpt.get();
 
 			notice.setNCreatedAt(existingEntity.getNCreatedAt());
+			notice.setNUpdatedAt(new Date(System.currentTimeMillis()));
+			notice.setNCount(existingEntity.getNCount());
 			noticeRepository.save(notice.toEntity());
 			return 1;
 		} catch (Exception e) {

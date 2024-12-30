@@ -15,6 +15,7 @@ const NoticeEdit = () => {
     noticeNo: "",
     nTitle: "",
     nWriter: "",
+    nNickname: "",
     nContent: "",
     ofileName: "",
     rfileName: "",
@@ -38,6 +39,7 @@ const NoticeEdit = () => {
           noticeNo: response.data.noticeNo,
           nTitle: response.data.ntitle,
           nWriter: response.data.nwriter,
+          nNickname: response.data.nnickname,
           nContent: response.data.ncontent,
           ofileName: response.data.ofileName,
           rfileName: response.data.rfileName,
@@ -76,6 +78,7 @@ const NoticeEdit = () => {
     data.append("noticeNo", formData.noticeNo);
     data.append("nTitle", formData.nTitle);
     data.append("nWriter", formData.nWriter);
+    data.append("nNickname", formData.nNickname);
     data.append("nContent", formData.nContent);
     data.append("rfileName", formData.rfileName);
     data.append("ofileName", formData.ofileName);
@@ -154,9 +157,9 @@ const NoticeEdit = () => {
               <td>
                 <input
                   type="text"
-                  id="nWriter"
-                  name="nWriter"
-                  value={formData.nWriter}
+                  id="nNickname"
+                  name="nNickname"
+                  value={formData.nNickname}
                   readonly
                 />
               </td>

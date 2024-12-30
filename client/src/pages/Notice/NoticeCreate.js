@@ -9,20 +9,39 @@ function NoticeCreate() {
 
   const [formData, setFormData] = useState({
     nTitle: "",
-    nWriter: "관리자",
+    nWriter: userid || "",
+    nNickname: "",
     nContent: "",
   });
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (userid) {
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        nWriter: userid,
-      }));
-    }
-  }, [userid]);
+    const fetchNickname = async () => {
+      const masked = userid.includes("@")
+        ? `${userid.split("@")[0]}@*`
+        : userid;
+      if (userid) {
+        try {
+          const response = await apiClient.get(`/member/nickname`, {
+            params: { userid },
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          });
+          setFormData((prevFormData) => ({
+            ...prevFormData,
+            nNickname: response.data || masked,
+          }));
+        } catch (error) {
+          console.error("닉네임 조회 실패", error);
+          alert("닉네임을 조회할 수 없습니다.");
+        }
+      }
+    };
+
+    fetchNickname();
+  }, [userid, accessToken]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,7 +60,8 @@ function NoticeCreate() {
 
     const data = new FormData();
     data.append("nTitle", formData.nTitle);
-    data.append("nWriter", formData.nWriter);
+    data.append("nWriter", userid);
+    data.append("nNickname", formData.nNickname);
     data.append("nContent", formData.nContent);
     if (file) {
       data.append("ofile", file);
@@ -87,8 +107,8 @@ function NoticeCreate() {
               <td>
                 <input
                   type="text"
-                  name="nWriter"
-                  value={formData.nWriter}
+                  name="nNickname"
+                  value={formData.nNickname}
                   readOnly
                 />
               </td>

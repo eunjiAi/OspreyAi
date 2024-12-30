@@ -137,7 +137,7 @@ const PostsDetail = () => {
       </table>
       {/* 자신의 글만 수정 및 삭제 버튼 표시 */}
       {isLoggedIn && posts.writer === userid && (
-        <div>
+        <>
           <button onClick={handleMoveEdit} className="edit-button">
             수정 페이지로 이동
           </button>
@@ -147,8 +147,9 @@ const PostsDetail = () => {
           >
             삭제하기
           </button>
-        </div>
+        </>
       )}
+      <input type="button" value="목록" onClick={() => navigate("/posts")} />
     </div>
   );
 };

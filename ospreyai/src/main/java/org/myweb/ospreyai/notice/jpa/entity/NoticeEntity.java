@@ -25,6 +25,8 @@ public class NoticeEntity {
     private String nContent;    //    NCONTENT	CLOB
     @Column(name = "NWRITER", nullable = false)
     private String nWriter; //    NWRITER	VARCHAR2(30 BYTE)
+    @Column(name = "N_NICKNAME", nullable = false)
+    private String nNickname;   //  N_NICKNAME	VARCHAR2(30 BYTE)
     @Column(name = "NCREATED_AT")
     private Date nCreatedAt;    //    NCREATED_AT	DATE
     @Column(name = "NUPDATED_AT")
@@ -48,6 +50,7 @@ public class NoticeEntity {
                 .nTitle(nTitle)
                 .nContent(nContent)
                 .nWriter(nWriter)
+                .nNickname(nNickname)
                 .nCreatedAt(nCreatedAt)
                 .nUpdatedAt(nUpdatedAt)
                 .ofileName(ofileName != null && !ofileName.isEmpty() ? ofileName : "")

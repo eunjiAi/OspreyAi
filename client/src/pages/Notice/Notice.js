@@ -104,7 +104,8 @@ function Notice({ searchResults }) {
             <th>제목</th>
             <th>작성자</th>
             <th>첨부파일</th>
-            <th>날짜</th>
+            <th>등록일</th>
+            <th>수정일</th>
             <th>조회수</th>
           </tr>
         </thead>
@@ -124,11 +125,19 @@ function Notice({ searchResults }) {
                   {notice.ntitle}
                 </span>
               </td>
-              <td className={styles.nWriter}>{notice.nwriter}</td>
+              <td className={styles.nWriter}>{notice.nnickname}</td>
               <td className={styles.ofileName}>
-                {notice.ofileName ? <img src={fileDownIcon} style={{width: "20px", height: "20px",}} /> : ""}
+                {notice.ofileName ? (
+                  <img
+                    src={fileDownIcon}
+                    style={{ width: "20px", height: "20px" }}
+                  />
+                ) : (
+                  ""
+                )}
               </td>
               <td className={styles.ncreatedAt}>{notice.ncreatedAt}</td>
+              <td className={styles.nupdatedAt}>{notice.nupdatedAt}</td>
               <td className={styles.nCount}>{notice.ncount}</td>
             </tr>
           ))}
