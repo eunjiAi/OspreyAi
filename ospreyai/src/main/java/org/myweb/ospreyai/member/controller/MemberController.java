@@ -56,7 +56,6 @@ public class MemberController {
 		//가입정보 추가 입력 처리
 		member.setLoginOk("Y");
 		member.setAdminYn("N");
-		member.setSignType("direct");
 		log.info("회원가입 정보 : " + member);
 
 		memberService.insertMember(member);

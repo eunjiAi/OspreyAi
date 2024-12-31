@@ -22,7 +22,9 @@ CREATE TABLE Member (
     face_id VARCHAR2(255),
     enroll_date DATE DEFAULT SYSDATE,
     lastModified DATE DEFAULT SYSDATE,
-    signtype VARCHAR2(10) DEFAULT 'direct' NOT NULL,
+    google VARCHAR2(100),
+    naver VARCHAR2(100),
+    kakao VARCHAR2(100),
     login_ok CHAR(1) DEFAULT 'Y' NOT NULL,
     PRIMARY KEY (uuid),
     UNIQUE (email)
@@ -40,7 +42,9 @@ COMMENT ON COLUMN Member.admin_yn IS '관리자여부';
 COMMENT ON COLUMN Member.face_id IS '페이스아이디';
 COMMENT ON COLUMN Member.enroll_date IS '가입날짜';
 COMMENT ON COLUMN Member.lastModified IS '마지막수정날짜';
-COMMENT ON COLUMN Member.signtype IS '가입방식';
+COMMENT ON COLUMN Member.google IS '구글로그인';
+COMMENT ON COLUMN Member.naver IS '네이버로그인';
+COMMENT ON COLUMN Member.kakao IS '카카오로그인';
 COMMENT ON COLUMN Member.login_ok IS '로그인가능여부';
 
 

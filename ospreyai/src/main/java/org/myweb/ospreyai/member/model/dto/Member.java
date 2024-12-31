@@ -29,7 +29,9 @@ public class Member {
 	private Date enrollDate;	//	ENROLL_DATE	DATE
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date lastModified;	//	LASTMODIFIED	DATE
-	private String signType;	//	SIGNTYPE	VARCHAR2(10 BYTE)
+	private String google;		//	GOOGLE	VARCHAR2(100 BYTE)
+	private String naver;		//	NAVER	VARCHAR2(100 BYTE)
+	private String kakao;		//	KAKAO	VARCHAR2(100 BYTE)
 	private String loginOk;		//	LOGIN_OK	CHAR(1 BYTE)
 
 
@@ -46,7 +48,9 @@ public class Member {
 				.faceId(faceId)
 				.enrollDate(enrollDate)
 				.lastModified(lastModified)
-				.signType(signType)
+				.google(google)
+				.naver(naver)
+				.kakao(kakao)
 				.loginOk(loginOk)
 				.build();
 	}

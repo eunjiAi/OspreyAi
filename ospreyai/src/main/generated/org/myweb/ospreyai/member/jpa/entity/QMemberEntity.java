@@ -29,19 +29,23 @@ public class QMemberEntity extends EntityPathBase<MemberEntity> {
 
     public final StringPath gender = createString("gender");
 
+    public final StringPath google = createString("google");
+
+    public final StringPath kakao = createString("kakao");
+
     public final DatePath<java.sql.Date> lastModified = createDate("lastModified", java.sql.Date.class);
 
     public final StringPath loginOk = createString("loginOk");
 
     public final StringPath name = createString("name");
 
+    public final StringPath naver = createString("naver");
+
     public final StringPath nickname = createString("nickname");
 
     public final StringPath phoneNumber = createString("phoneNumber");
 
     public final StringPath pw = createString("pw");
-
-    public final StringPath signType = createString("signType");
 
     public final StringPath uuid = createString("uuid");
 

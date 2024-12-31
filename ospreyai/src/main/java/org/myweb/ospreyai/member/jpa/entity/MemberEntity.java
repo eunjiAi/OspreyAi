@@ -39,8 +39,12 @@ public class MemberEntity {
     private Date enrollDate;	//	ENROLL_DATE	DATE
     @Column(name = "LASTMODIFIED")
     private Date lastModified;	//	LASTMODIFIED	DATE
-    @Column(name = "SIGNTYPE", nullable = false, columnDefinition = "direct")
-    private String signType;	//	SIGNTYPE	VARCHAR2(10 BYTE)
+    @Column(name = "GOOGLE")
+    private String google;      //    GOOGLE	VARCHAR2(100 BYTE)
+    @Column(name = "NAVER")
+    private String naver;       //    NAVER	VARCHAR2(100 BYTE)
+    @Column(name = "KAKAO")
+    private String kakao;       //    KAKAO	VARCHAR2(100 BYTE)
     @Column(name = "LOGIN_OK", nullable = false, columnDefinition = "Y")
     private String loginOk;		//	LOGIN_OK	CHAR(1 BYTE)
 
@@ -63,7 +67,9 @@ public class MemberEntity {
                 .faceId(faceId)
                 .enrollDate(enrollDate)
                 .lastModified(lastModified)
-                .signType(signType)
+                .google(google)
+                .naver(naver)
+                .kakao(kakao)
                 .loginOk(loginOk)
                 .build();
     }

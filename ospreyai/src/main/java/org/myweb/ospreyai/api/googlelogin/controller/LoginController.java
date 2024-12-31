@@ -38,11 +38,14 @@ public class LoginController {
         ResponseEntity<GoogleResponse> resultEntity = restTemplate.postForEntity("https://oauth2.googleapis.com/token",
                 googleOAuthRequestParam, GoogleResponse.class);
         String jwtToken=resultEntity.getBody().getId_token();
-        Map<String, String> map=new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("id_token",jwtToken);
         ResponseEntity<GoogleInfResponse> resultEntity2 = restTemplate.postForEntity("https://oauth2.googleapis.com/tokeninfo",
                 map, GoogleInfResponse.class);
-        String email=resultEntity2.getBody().getEmail();
+        String email = resultEntity2.getBody().getEmail();
+
+
+
         return email;
     }
 }
