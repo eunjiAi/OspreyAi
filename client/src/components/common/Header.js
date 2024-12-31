@@ -130,7 +130,7 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
               onMouseEnter={toggleNoticeDropdown}
               onMouseLeave={toggleNoticeDropdown}
             >
-              공지 및 Q&A
+              공지 및 질문
               {showNoticeDropdown && (
                 <ul className={styles.dropdownMenu}>
                   <li>
