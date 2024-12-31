@@ -140,7 +140,7 @@ function NoticeCreate() {
                 <input type="submit" value="등록하기" /> &nbsp;
                 <input
                   type="reset"
-                  value="작성취소"
+                  value="작성 초기화"
                   onClick={() =>
                     setFormData({
                       ...formData,
