@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
-import styles from "./NoticeCreate.css";
+import styles from "./NoticeCreate.module.css";
 import { AuthContext } from "../../AuthProvider";
 
 function NoticeCreate() {
@@ -87,6 +87,7 @@ function NoticeCreate() {
     <div className={styles.container}>
       <h1 className={styles.header}>공지글 등록 페이지</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
+
         <table align="center" width="700" cellspacing="5" cellpadding="5">
           <tbody>
             <tr>
