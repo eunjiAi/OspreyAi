@@ -143,15 +143,11 @@ function Posts({ searchResults }) {
               <td className={styles.nickname}>{post.nickname}</td>
               <td className={styles.ofileName}>
                 {post.fileName ? (
-                  <a
-                    href={`/posts/pfdown?ofile=${post.fileName}&rfile=${post.renameFile}`}
-                  >
-                    <img
-                      src={fileDownIcon}
-                      style={{ width: "20px", height: "20px" }}
-                      alt="file download"
-                    />
-                  </a>
+                  <img
+                    src={fileDownIcon}
+                    style={{ width: "20px", height: "20px" }}
+                    alt="file download"
+                  />
                 ) : (
                   ""
                 )}
