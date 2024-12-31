@@ -118,8 +118,8 @@ function Notice({ searchResults }) {
                   style={{
                     color: "blue",
                     cursor: "pointer",
-                    textDecoration: "underline",
-                  }}
+                    fontWeight: "bold", 
+                  }}                  
                   onClick={() => handleTitleClick(notice.noticeNo)}
                 >
                   {notice.ntitle}

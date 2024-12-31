@@ -9,12 +9,12 @@
 /* 공지사항 제목 */
 .notice-title {
   text-align: center;
-  font-size: 28px; /* 크기를 키워 강조 */
-  font-weight: 700; /* 두껍게 설정 */
-  color: #333; /* 진한 색상 */
-  margin-bottom: 30px; /* 여백 추가 */
+  font-size: 28px; 
+  font-weight: 700; 
+  color: #333; 
+  margin-bottom: 30px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #e0e0e0; /* 은은한 하단 경계선 */
+  border-bottom: 2px solid #e0e0e0; 
 }
 
 /* 새 글쓰기 버튼 */
@@ -22,10 +22,10 @@
   display: inline-block;
   margin: 20px 0;
   padding: 12px 20px;
-  background-color: #007bff; /* 파란색 배경 */
+  background-color: #007bff; 
   color: #ffffff;
   border: none;
-  border-radius: 20px; /* 둥근 버튼 */
+  border-radius: 20px; 
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
@@ -33,61 +33,58 @@
 }
 
 .new-post-button:hover {
-  background-color: #0056b3; /* 어두운 파란색 호버 */
-  transform: scale(1.05); /* 살짝 확대 */
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 /* 공지사항 테이블 */
 .noticeList {
   width: 100%;
-  border-collapse: collapse; /* 테이블 경계 제거 */
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
 .noticeList th {
-  background-color: #f7f7f7; /* 연한 회색 배경 */
+  background-color: #f7f7f7;
   padding: 10px;
   font-size: 14px;
   font-weight: bold;
-  color: #555; /* 중간 진한 색상 */
+  color: #555; 
   text-align: left;
-  border-bottom: 2px solid #e0e0e0; /* 경계선 */
+  border-bottom: 2px solid #e0e0e0; 
 }
 
 .noticeList td {
   padding: 12px 10px;
   font-size: 14px;
   color: #333;
-  border-bottom: 1px solid #f0f0f0; /* 은은한 하단 경계선 */
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .noticeList tr:hover {
-  background-color: #f9f9f9; /* 연한 회색 배경 */
+  background-color: #f9f9f9; 
 }
 
 .notice-item {
-  cursor: pointer; /* 클릭 가능한 느낌 */
+  cursor: pointer; 
   transition: background-color 0.3s;
 }
 
 .notice-item:hover {
-  background-color: #f5f5f5; /* 연한 배경 변경 */
+  background-color: #f5f5f5; 
 }
 
 /* 제목 스타일 */
 .nTitle {
   font-weight: bold;
-  color: #007bff; /* 파란색 강조 */
+  color: #007bff; 
   cursor: pointer;
 }
 
-.nTitle:hover {
-  text-decoration: underline; /* 호버 시 밑줄 */
-}
 
 /* 작성자 */
 .nWriter {
-  color: #666; /* 연한 글자색 */
+  color: #666; 
   font-size: 13px;
 }
 
@@ -103,6 +100,6 @@
 .nupdatedAt,
 .nCount {
   font-size: 13px;
-  color: #999; /* 날짜 및 조회수 색상 */
+  color: #999; 
   text-align: center;
 }
