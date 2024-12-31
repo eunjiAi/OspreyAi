@@ -1,0 +1,126 @@
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #4a90e2, #007bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.table {
+    width: 100%;
+    border-spacing: 15px;
+}
+
+th {
+    text-align: left;
+    font-size: 18px;
+    color: #555;
+    font-weight: bold;
+}
+
+td input[type="text"],
+td textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafafa;
+}
+
+td input[type="text"]:focus,
+td textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+    background-color: #ffffff;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+td input[type="file"] {
+    font-size: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+td input[type="file"]:hover {
+    background-color: #f0f0f0;
+}
+
+th[colspan="2"] {
+    text-align: center;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    margin: 10px 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="submit"] {
+    background-color: #4a90e2;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+input[type="reset"] {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+input[type="reset"]:hover {
+    background-color: #e14b4b;
+    box-shadow: 0 4px 10px rgba(225, 75, 75, 0.2);
+}
+
+input[type="button"] {
+    background-color: #6c757d;
+    color: white;
+}
+
+input[type="button"]:hover {
+    background-color: #5a6268;
+    box-shadow: 0 4px 10px rgba(90, 98, 104, 0.2);
+}

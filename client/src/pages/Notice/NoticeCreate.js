@@ -152,7 +152,7 @@ function NoticeCreate() {
                 &nbsp;
                 <input
                   type="button"
-                  value="목록"
+                  value="등록취소"
                   onClick={() => navigate(-1)}
                 />
               </th>
