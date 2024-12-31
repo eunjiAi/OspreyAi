@@ -1,6 +1,5 @@
-// src/components/common/Header.js.
+// src/components/common/Header.js
 
-// 로그인 버튼 클릭시, 모달창에 로그인 페이지가 출력되게 함
 import React, { useState, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
@@ -16,12 +15,14 @@ import Signup from "../../pages/member/signup/Signup"; // Signup 컴포넌트 �
 function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
   const { isLoggedIn, username, logout } = useContext(AuthContext); // AuthProvider 에서 가져오기
 
-  //로그인 모달 상태변수 추가
+  // 로그인 모달 상태변수 추가
   const [showLoginModal, setShowLoginModal] = useState(false);
-  //회원가입 모달 상태변수 추가
+  // 회원가입 모달 상태변수 추가
   const [showSignupModal, setShowSignupModal] = useState(false);
-  // 드롭다운 메뉴 상태 추가
+  // 공지사항 드롭다운 상태
   const [showNoticeDropdown, setShowNoticeDropdown] = useState(false);
+  // 게시판 드롭다운 상태
+  const [showBoardDropdown, setShowBoardDropdown] = useState(false);
   // 검색 input 에 입력된 검색어 상태 관리 변수
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -62,53 +63,57 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
     }
   };
 
-  //로그아웃 클릭시 작동할 핸들러
+  // 로그아웃 클릭시 작동할 핸들러
   const handleLogout = () => {
     logout();
     navigate("/");
   };
 
-  //검색 input 초기화
+  // 검색 input 초기화
   const handleResetSearch = () => {
-    setSearchTerm(""); //검색 input 초기화
+    setSearchTerm(""); // 검색 input 초기화
     resetSearchInput(); // App.js 에서 검색 결과 초기화
   };
-
 
   // 공지사항 드롭다운 보이기/숨기기 처리
   const toggleNoticeDropdown = () => {
     setShowNoticeDropdown(!showNoticeDropdown);
   };
 
-  //회원가입 버튼 클릭시 작동할 핸들 함수 추가
+  // 게시판 드롭다운 보이기/숨기기 처리
+  const toggleBoardDropdown = () => {
+    setShowBoardDropdown(!showBoardDropdown);
+  };
+
+  // 회원가입 버튼 클릭시 작동할 핸들 함수 추가
   const handleSignupClick = () => {
-    //회원가입 모달창 열기함
+    // 회원가입 모달창 열기함
     setShowSignupModal(true);
   };
 
-  //로그인 버튼 클릭시 작동할 핸들 함수 추가
+  // 로그인 버튼 클릭시 작동할 핸들 함수 추가
   const handleLoginClick = () => {
-    //로그인 모달창 열기함
+    // 로그인 모달창 열기함
     setShowLoginModal(true);
   };
 
-  //모달의 창닫기(X) 클릭시 작동할 핸들 함수 추가
+  // 모달의 창닫기(X) 클릭시 작동할 핸들 함수 추가
   const handleCloseModal = () => {
-    //로그인 모달창 닫기함
+    // 로그인 모달창 닫기함
     setShowLoginModal(false);
-    //회원가입 모달창 닫기함
+    // 회원가입 모달창 닫기함
     setShowSignupModal(false);
   };
 
-  //로그인 성공시 모달창 닫기 처리
+  // 로그인 성공시 모달창 닫기 처리
   const handleLoginSuccess = () => {
-    isLoggedIn ? setShowLoginModal(false) : setShowLoginModal(false); //모달창 false 닫기 처리로 수정
+    isLoggedIn ? setShowLoginModal(false) : setShowLoginModal(false); // 모달창 false 닫기 처리로 수정
   };
 
-  //회원가입 성공시 회원가입 모달창 닫기하고, 바로 로그인 모달창 열기 처리
+  // 회원가입 성공시 회원가입 모달창 닫기하고, 바로 로그인 모달창 열기 처리
   const handleSignupSuccess = () => {
-    setShowSignupModal(false); //회원가입 모달창 false 닫기 처리로 수정
-    setShowLoginModal(true); //로그인 모달창 true 열기 처리로 수정
+    setShowSignupModal(false); // 회원가입 모달창 false 닫기 처리로 수정
+    setShowLoginModal(true); // 로그인 모달창 true 열기 처리로 수정
   };
 
   return (
@@ -120,11 +125,6 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
         </Link>
         <nav>
           <ul className={styles.navList}>
-            <li>
-              <Link to="/" className={styles.navItem}>
-                홈
-              </Link>
-            </li>
             <li
               className={styles.navItem}
               onMouseEnter={toggleNoticeDropdown}
@@ -151,10 +151,26 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
                 </ul>
               )}
             </li>
-            <li>
-              <Link to="/posts" className={styles.navItem}>
-                게시판
-              </Link>
+            <li
+              className={styles.navItem}
+              onMouseEnter={toggleBoardDropdown}
+              onMouseLeave={toggleBoardDropdown}
+            >
+              회원서비스
+              {showBoardDropdown && (
+                <ul className={styles.dropdownMenu}>
+                  <li>
+                    <Link to="/squatFeedback" className={styles.dropdownItem}>
+                      스쿼트피드백 AI
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/posts" className={styles.dropdownItem}>
+                      게시판
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
           </ul>
         </nav>

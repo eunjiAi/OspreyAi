@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center; /* 내부 요소 수직 중앙 정렬 */
-  padding: 15px 10px;
+  padding: 15px 28px;
   background-color: #ffffff;
   color: #333;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
