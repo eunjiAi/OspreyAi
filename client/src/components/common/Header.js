@@ -1,4 +1,5 @@
-// src/components/common/Header.js
+// src/components/common/Header.js.
+
 // 로그인 버튼 클릭시, 모달창에 로그인 페이지가 출력되게 함
 import React, { useState, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -11,7 +12,6 @@ import styles from "./Header.module.css"; // CSS Modules
 import Modal from "./Modal"; //Modal 컴포넌트 임포트
 import Login from "../../pages/member/login/Login"; // Login 컴포넌트 임포트 (Modal 로 출력)
 import Signup from "../../pages/member/signup/Signup"; // Signup 컴포넌트 임포트 (Modal 로 출력)
-import SideMenu from "./SideMenu"; // SideMenu 컴포넌트 임포트
 
 function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
   const { isLoggedIn, username, logout } = useContext(AuthContext); // AuthProvider 에서 가져오기
@@ -20,8 +20,6 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
   const [showLoginModal, setShowLoginModal] = useState(false);
   //회원가입 모달 상태변수 추가
   const [showSignupModal, setShowSignupModal] = useState(false);
-  // 사이드 메뉴 상태 추가
-  const [showSideMenu, setShowSideMenu] = useState(false);
   // 드롭다운 메뉴 상태 추가
   const [showNoticeDropdown, setShowNoticeDropdown] = useState(false);
   // 검색 input 에 입력된 검색어 상태 관리 변수
@@ -67,7 +65,6 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
   //로그아웃 클릭시 작동할 핸들러
   const handleLogout = () => {
     logout();
-    setShowSideMenu(false);
     navigate("/");
   };
 
@@ -77,10 +74,6 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
     resetSearchInput(); // App.js 에서 검색 결과 초기화
   };
 
-  // 사이드 메뉴 보이기 안보이기 처리용 핸들러
-  const toggleSideMenu = () => {
-    setShowSideMenu(!showSideMenu);
-  };
 
   // 공지사항 드롭다운 보이기/숨기기 처리
   const toggleNoticeDropdown = () => {
@@ -122,9 +115,6 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
     <header className={styles.header}>
       {/* 사이드 메뉴, 로고 및 네비게이션 */}
       <div className={styles.leftSection}>
-        <button onClick={toggleSideMenu} className={styles.menuButton}>
-          ☰ {/* 햄버거 메뉴 아이콘 */}
-        </button>
         <Link to="/" className={styles.logoLink}>
           <img src={mainlogo} alt="Site Logo" className={styles.mainlogo} />
         </Link>
@@ -218,7 +208,6 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
           <Signup onSignupSuccess={handleSignupSuccess} />
         </Modal>
       )}
-      {showSideMenu && <SideMenu />} {/* 사이드 메뉴 렌더링 */}
     </header>
   );
 }
