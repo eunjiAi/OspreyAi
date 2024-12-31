@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom"; //이전 페이지에서 전달온 값을 받기 위함
 import apiClient from "../../utils/axios";
-import styles from "./NoticeEdit.css";
+import styles from "./NoticeEdit.module.css";
 import { AuthContext } from "../../AuthProvider";
 
 const NoticeEdit = () => {
@@ -110,7 +110,7 @@ const NoticeEdit = () => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2> {id}번 공지사항 수정</h2>
       <form
         onSubmit={handleSubmit}
@@ -191,7 +191,7 @@ const NoticeEdit = () => {
 
             <tr>
               <th colspan="2">
-                <input type="submit" value="수정하기" /> &nbsp;
+                <input type="submit" value="수정완료" /> &nbsp;
                 <input
                   type="reset"
                   value="취소"

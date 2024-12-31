@@ -96,7 +96,7 @@ function Notice({ searchResults }) {
     <div className="notice-container">
       <h1 className="notice-title">공지사항</h1>
       {role === "ADMIN" && <button onClick={handleWriteClick}>글쓰기</button>}
-      <button onClick={handleListButtonClick}>목록</button>
+      <button onClick={handleListButtonClick}>새로고침</button>
       <table className={styles.noticeList}>
         <thead>
           <tr>
@@ -118,8 +118,8 @@ function Notice({ searchResults }) {
                   style={{
                     color: "blue",
                     cursor: "pointer",
-                    textDecoration: "underline",
-                  }}
+                    fontWeight: "bold", 
+                  }}                  
                   onClick={() => handleTitleClick(notice.noticeNo)}
                 >
                   {notice.ntitle}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
-import styles from "./NoticeCreate.css";
+import styles from "./NoticeCreate.module.css";
 import { AuthContext } from "../../AuthProvider";
 
 function NoticeCreate() {
@@ -85,21 +85,23 @@ function NoticeCreate() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>공지글 등록 페이지</h1>
+      <h1 className={styles.header}>공지글 등록</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
+
         <table align="center" width="700" cellspacing="5" cellpadding="5">
           <tbody>
             <tr>
               <th width="120">제 목</th>
               <td>
-                <input
-                  type="text"
-                  name="nTitle"
-                  size="50"
-                  value={formData.nTitle}
-                  onChange={handleChange}
-                  required
-                />
+              <input
+                type="text"
+                name="nTitle"
+                size="50"
+                value={formData.nTitle}
+                onChange={handleChange}
+                placeholder="공지제목을 입력하세요."
+                required
+              />
               </td>
             </tr>
             <tr>
@@ -122,14 +124,15 @@ function NoticeCreate() {
             <tr>
               <th>내 용</th>
               <td>
-                <textarea
-                  rows="5"
-                  cols="50"
-                  name="nContent"
-                  value={formData.nContent}
-                  onChange={handleChange}
-                  required
-                ></textarea>
+              <textarea
+                rows="5"
+                cols="50"
+                name="nContent"
+                value={formData.nContent}
+                onChange={handleChange}
+                placeholder="공지내용을 입력하세요."
+                required
+              ></textarea>
               </td>
             </tr>
             <tr>
@@ -137,7 +140,7 @@ function NoticeCreate() {
                 <input type="submit" value="등록하기" /> &nbsp;
                 <input
                   type="reset"
-                  value="작성취소"
+                  value="작성 초기화"
                   onClick={() =>
                     setFormData({
                       ...formData,
@@ -149,7 +152,7 @@ function NoticeCreate() {
                 &nbsp;
                 <input
                   type="button"
-                  value="목록"
+                  value="등록취소"
                   onClick={() => navigate(-1)}
                 />
               </th>
