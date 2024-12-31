@@ -1,18 +1,20 @@
+/* 헤더 스타일 */
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #fff; /* 흰색 헤더 */
+  align-items: center; /* 내부 요소 수직 중앙 정렬 */
+  padding: 15px 10px;
+  background-color: #ffffff;
   color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
-  z-index: 2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
+/* 왼쪽 로고 및 메뉴 섹션 */
 .leftSection {
   display: flex;
-  align-items: center;
+  align-items: center; /* 로고와 메뉴 수직 중앙 정렬 */
 }
 
 .logoLink {
@@ -20,32 +22,77 @@
 }
 
 .mainlogo {
-  height: 40px;
-  margin-right: 15px;
+  height: 50px;
+  margin-right: 20px;
 }
 
+/* 네비게이션 메뉴 */
 .navList {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px; /* 메뉴 간격 */
   margin: 0;
   padding: 0;
+  align-items: center; /* 메뉴 수직 중앙 정렬 */
 }
 
 .navItem {
+  position: relative;
   color: #333;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 15px; /* 메뉴 내부 여백 */
+  border-radius: 5px;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .navItem:hover {
-  color: #007bff; /* 연한 푸른색 텍스트 강조 */
+  color: #ffffff;
+  background-color: #007bff;
 }
 
+/* 드롭다운 메뉴 */
+.dropdownMenu {
+  position: absolute;
+  top: 100%; /* 부모 메뉴 바로 아래 */
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  list-style: none;
+  width: 200px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.navItem:hover .dropdownMenu {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdownItem:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+/* 검색 바 */
 .searchBar {
   display: flex;
-  align-items: center;
+  align-items: center; /* 내부 요소 수직 중앙 정렬 */
   gap: 10px;
   flex: 1;
   justify-content: center;
@@ -55,65 +102,78 @@
   padding: 8px 15px;
   border-radius: 20px;
   border: 1px solid #ddd;
-  width: 60%;
+  width: 200px;
   outline: none;
-  transition: border-color 0.3s;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .searchInput:focus {
   border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .searchButton {
   background-color: #007bff;
-  color: #fff;
+  color: #ffffff;
   border: none;
-  padding: 7px 20px;
+  padding: 8px 15px; /* 여백 */
   border-radius: 20px;
+  font-size: 13px;
+  white-space: nowrap; /* 줄바꿈 방지 */
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center; /* 텍스트 가운데 정렬 */
 }
+
 
 .searchButton:hover {
-  background-color: #5fa9f5; /* 연한 푸른색 배경 */
+  background-color: #0056b3;
 }
 
+.resetButton {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.resetButton:hover {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+}
+
+/* 오른쪽 로그인 섹션 */
 .rightSection {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  align-items: center; /* 내부 요소 수직 중앙 정렬 */
+  gap: 20px;
 }
 
 .authButton {
-  padding: 8px 20px;
-  color: #333;
-  background-color: #f0f0f0;
+  padding: 8px 15px;
+  color: #ffffff;
+  background-color: #007bff;
   text-decoration: none;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .authButton:hover {
-  background-color: #d6d6d6; /* 진한 회색 배경 */
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 .separator {
-  margin: 0 5px;
+  margin: 0 10px;
   color: #888;
-}
-
-.menuButton {
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: #333;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.menuButton:hover {
-  color: #007bff; /* 연한 푸른색 강조 */
+  font-size: 14px;
 }
