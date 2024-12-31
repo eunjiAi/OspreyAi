@@ -1,4 +1,5 @@
-/* 헤더 스타일 */
+
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -11,7 +12,7 @@
   z-index: 1000;
 }
 
-/* 왼쪽 로고 및 메뉴 섹션 */
+/* 왼쪽 로고 및 메뉴 */
 .leftSection {
   display: flex;
   align-items: center; /* 로고와 메뉴 수직 중앙 정렬 */
@@ -30,7 +31,7 @@
 .navList {
   list-style: none;
   display: flex;
-  gap: 25px; /* 메뉴 간격 */
+  gap: 13px;     /* 메뉴 간격 */
   margin: 0;
   padding: 0;
   align-items: center; /* 메뉴 수직 중앙 정렬 */
@@ -42,7 +43,7 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  padding: 10px 15px; /* 메뉴 내부 여백 */
+  padding: 10px 15px; 
   border-radius: 5px;
   transition: color 0.3s, background-color 0.3s;
 }
@@ -117,13 +118,13 @@
   background-color: #007bff;
   color: #ffffff;
   border: none;
-  padding: 8px 15px; /* 여백 */
+  padding: 8px 15px;
   border-radius: 20px;
   font-size: 13px;
   white-space: nowrap; /* 줄바꿈 방지 */
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  text-align: center; /* 텍스트 가운데 정렬 */
+  text-align: center;
 }
 
 
@@ -147,7 +148,7 @@
   border-color: #ccc;
 }
 
-/* 오른쪽 로그인 섹션 */
+
 .rightSection {
   display: flex;
   align-items: center; /* 내부 요소 수직 중앙 정렬 */
