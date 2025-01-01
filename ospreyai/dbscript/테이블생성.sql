@@ -65,14 +65,14 @@ END;
 CREATE TABLE Refresh_Tokens (
     id RAW(36) DEFAULT SYS_GUID() NOT NULL,
     userid VARCHAR2(50)    NOT NULL,
-    token_value VARCHAR2(255)   NOT NULL,
+    token_value VARCHAR2(512)   NOT NULL,
     issued_at TIMESTAMP   DEFAULT CURRENT_TIMESTAMP,
     expires_in NUMBER  NOT NULL,
     expiration_date TIMESTAMP   NOT NULL,
     member_agent VARCHAR2(255),
     status VARCHAR2(50),
     CONSTRAINT PK_RTOKENS PRIMARY KEY (id),
-    CONSTRAINT FK_RTOKENS FOREIGN KEY (userid) REFERENCES MEMBER (uuid) ON DELETE CASCADE
+    CONSTRAINT FK_RTOKENS FOREIGN KEY (userid) REFERENCES MEMBER (email) ON DELETE CASCADE
 );
 
 -- Refresh_Tokens 테이블 코멘트 생성
@@ -105,7 +105,8 @@ CREATE TABLE Squatfeedback (
     uuid VARCHAR2(36) NOT NULL,
     total_attempts NUMBER NOT NULL,
     correct_count NUMBER NOT NULL,
-    squat_date DATE DEFAULT SYSDATE,  
+    squat_date DATE DEFAULT SYSDATE,
+    name VARCHAR2(30),
     PRIMARY KEY (squat_id),
     CONSTRAINT FK_MEMBER_SQUATFEEDBACK FOREIGN KEY (uuid) REFERENCES Member (uuid)
 );
