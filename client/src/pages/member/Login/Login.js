@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import axios from "../../../utils/axios"; // Axios 인스턴스 가져오기
 import { AuthContext } from "../../../AuthProvider"; // AuthContext 가져오기
 import styles from "./Login.module.css"; // 스타일 가져오기
@@ -15,33 +15,50 @@ function Login({ onLoginSuccess }) {
   const GOOGLE_REDIRECT_URI = "http://localhost:3000";
   const GOOGLE_SCOPE = "email profile openid";
 
-  const handleGoogleLogin = async () => {
-    try {
-      // Google OAuth URL 생성
-      const googleLoginUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=token&scope=${GOOGLE_SCOPE}`;
-      console.log("Google Login URL:", googleLoginUrl);
+  const handleGoogleLogin = () => {
+    // Google OAuth URL 생성
+    const googleLoginUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=token&scope=${GOOGLE_SCOPE}`;
+    console.log("Google Login URL:", googleLoginUrl);
 
-      // Google 로그인 페이지로 리디렉트
-      window.location.href = googleLoginUrl;
-    } catch (error) {
-      console.error("Google 로그인 초기화 실패:", error);
-      alert("Google 로그인 초기화 중 문제가 발생했습니다. 다시 시도해주세요.");
+    // 팝업 창 열기
+    const popup = window.open(
+      googleLoginUrl,
+      "Google Login",
+      "width=500,height=600,scrollbars=yes"
+    );
+
+    if (!popup) {
+      alert("팝업이 차단된 것 같습니다. 팝업 차단을 해제해주세요.");
+      return;
     }
+
+    // 팝업 창의 URL 변경 감지
+    const interval = setInterval(() => {
+      try {
+        const currentUrl = popup.location.href;
+
+        if (currentUrl.includes("access_token")) {
+          // 액세스 토큰 추출
+          const params = new URLSearchParams(currentUrl.split("#")[1]);
+          const accessToken = params.get("access_token");
+          console.log("Google Access Token:", accessToken);
+
+          // 팝업 닫기
+          popup.close();
+          clearInterval(interval);
+
+          // 액세스 토큰을 처리
+          handleGoogleCallback(accessToken);
+        }
+      } catch (error) {
+        // URL 접근 권한이 없을 경우 발생 (무시 가능)
+      }
+    }, 500);
   };
 
-  const handleGoogleCallback = async () => {
+  const handleGoogleCallback = async (accessToken) => {
     try {
       console.log("Google Callback Handling Started");
-
-      // URL에서 Access Token 추출
-      const params = new URLSearchParams(window.location.hash.substring(1));
-      const accessToken = params.get("access_token");
-
-      if (!accessToken) {
-        alert("Google 인증 실패: Access Token을 찾을 수 없습니다.");
-        return;
-      }
-      console.log("Google Access Token:", accessToken);
 
       // Google API를 사용하여 사용자 이메일 가져오기
       const response = await axios.get(
@@ -82,7 +99,8 @@ function Login({ onLoginSuccess }) {
       // AuthProvider의 login 함수 호출
       login({ accessToken: jwtAccessToken, refreshToken });
 
-      // 로그인 성공 후 콜백 호출
+      console.log("Google 로그인 성공!");
+      // 로그인 성공 후 리디렉션
       if (onLoginSuccess) onLoginSuccess();
     } catch (error) {
       console.error(
@@ -125,7 +143,7 @@ function Login({ onLoginSuccess }) {
       // AuthProvider의 login 함수 호출
       login({ accessToken, refreshToken });
 
-      // 로그인 성공 후 콜백 호출
+      // 로그인 성공 후 리디렉션
       if (onLoginSuccess) onLoginSuccess();
     } catch (error) {
       console.error("로그인 실패:", error.response?.data || error.message);
@@ -137,13 +155,6 @@ function Login({ onLoginSuccess }) {
       setIsLoading(false); // 로딩 종료
     }
   };
-
-  // Google 로그인 콜백 처리
-  React.useEffect(() => {
-    if (window.location.hash.includes("access_token")) {
-      handleGoogleCallback();
-    }
-  }, []);
 
   return (
     <div className={styles.container}>
@@ -177,7 +188,7 @@ function Login({ onLoginSuccess }) {
           className={styles.googleButton}
           onClick={handleGoogleLogin}
         >
-          Login with Google
+          Login with Google (팝업)
         </button>
       </form>
     </div>
