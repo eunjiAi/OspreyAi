@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import axios from "../../../utils/axios"; // Axios 인스턴스 가져오기
 import { AuthContext } from "../../../AuthProvider"; // AuthContext 가져오기
 import styles from "./Login.module.css"; // 스타일 가져오기
+import googleSignInImage from "../../../images/SignInWithGoogle.png";
 
 function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState("");
@@ -180,16 +181,24 @@ function Login({ onLoginSuccess }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit" className={styles.button} disabled={isLoading}>
-          {isLoading ? "로그인 중..." : "로그인"}
-        </button>
-        <button
-          type="button"
-          className={styles.googleButton}
-          onClick={handleGoogleLogin}
-        >
-          Login with Google (팝업)
-        </button>
+        <div className={styles.buttonContainer}>
+          <button type="submit" className={styles.button} disabled={isLoading}>
+            {isLoading ? "Loading..." : "로그인"}
+          </button>
+        </div>
+        <div>
+          <button
+            type="button"
+            className={styles.googleButton}
+            onClick={handleGoogleLogin}
+          >
+            <img
+              src={googleSignInImage}
+              alt="Sign in with Google"
+              className={styles.googleButtonImage}
+            />
+          </button>
+        </div>
       </form>
     </div>
   );

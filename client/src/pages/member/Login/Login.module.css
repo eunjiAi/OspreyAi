@@ -1,45 +1,75 @@
 /* src/pages/member/Login.module.css */
 
 .container {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
 
 .form {
-    display: inline-block;
-    text-align: left;
+  display: inline-block;
+  text-align: left;
 }
 
 .inputGroup {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .inputGroup label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
 }
 
 .inputGroup input {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.buttonContainer {
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 (필요할 경우 추가) */
+  margin-top: 10px; /* 버튼 상단 여백 */
 }
 
 .button {
-    background-color: #2db400;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #0056b3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
-    background-color: #238a00;
+  background-color: #004080;
+}
+
+.googleButton {
+  background: none;
+  border: none; /* 테두리 제거 */
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: none; /* 클릭 시 테두리 제거 */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease; /* 애니메이션 추가 */
+}
+
+.googleButton:hover {
+  transform: scale(1.03); /* 버튼이 약간 커지도록 */
+}
+
+.googleButtonImage {
+  width: 200px; /* 원하는 너비 */
+  height: auto; /* 비율 유지 */
+  display: block; /* 버튼 안에서 정렬 */
+  margin: 0 auto; /* 가운데 정렬 */
 }
