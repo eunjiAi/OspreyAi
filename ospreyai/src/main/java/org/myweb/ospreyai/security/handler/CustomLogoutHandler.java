@@ -2,6 +2,7 @@ package org.myweb.ospreyai.security.handler;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.security.jwt.filter.output.CustomUserDetails;
 import org.myweb.ospreyai.security.jwt.jpa.entity.RefreshToken;
 import org.myweb.ospreyai.security.jwt.model.service.RefreshService;
@@ -13,6 +14,7 @@ import org.springframework.security.web.authentication.logout.LogoutHandler;
 import java.util.Optional;
 
 //@RequiredArgsConstructor  //필드 자동 의존성 주입
+@Slf4j
 public class CustomLogoutHandler implements LogoutHandler {
     private final JWTUtil jwtUtil;
     private final UserService userService;
@@ -35,14 +37,19 @@ public class CustomLogoutHandler implements LogoutHandler {
             //토큰문자열에서 사용자 아이디 추출함
             String userId = jwtUtil.getUserIdFromToken(token);
             //사용자의 아이디를 이용해서, 사용자 정보 조회해 옴
-            CustomUserDetails userDetails = (CustomUserDetails)userService.loadUserByUsername(userId);
-            if(userDetails != null) {
-                //해당 사용자의 Refresh-Token 을 db 에서 조회해 옴
-                Optional<RefreshToken> refresh = refreshService.findByTokenValue(token);
-                if(refresh.isPresent()) {
-                    RefreshToken refreshToken = refresh.get();
-                    //해당 리프레시 토큰을 db 에서 삭제함
-                    refreshService.deleteByRefreshToken(refreshToken.getTokenValue());
+            if(refreshService.selectTokenCount(userId) > 1){
+                log.info("{} 사용자 토큰을 클리어합니다", userId);
+                int result = refreshService.deleteByEtcToken(userId);
+            } else {
+                CustomUserDetails userDetails = (CustomUserDetails)userService.loadUserByUsername(userId);
+                if(userDetails != null) {
+                    //해당 사용자의 Refresh-Token 을 db 에서 조회해 옴
+                    Optional<RefreshToken> refresh = refreshService.findByTokenValue(token);
+                    if (refresh.isPresent()) {
+                        RefreshToken refreshToken = refresh.get();
+                        //해당 리프레시 토큰을 db 에서 삭제함
+                        refreshService.deleteByRefreshToken(refreshToken.getTokenValue());
+                    }
                 }
             }
         }

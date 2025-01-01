@@ -44,4 +44,12 @@ public class RefreshService {
     public List<RefreshToken> findByUserId(String userId) {
         return refreshRepository.findByUserId(userId);
     }
+
+    public int deleteByEtcToken(String userId) {
+        return refreshRepository.deleteEtcToken(userId);
+    }
+
+    public int selectTokenCount(String userId) {
+        return refreshRepository.selectTokenCount(userId);
+    }
 }
