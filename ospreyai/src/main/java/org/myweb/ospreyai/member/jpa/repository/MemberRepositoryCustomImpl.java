@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.myweb.ospreyai.member.jpa.entity.MemberEntity;
 import org.myweb.ospreyai.member.jpa.entity.QMemberEntity;
+import org.myweb.ospreyai.member.model.dto.Member;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
@@ -102,31 +103,6 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
                 .fetchCount();
     }
 
-//    @Override
-//    public List<MemberEntity> findSearchAge(int age, Pageable pageable) {
-//        return queryFactory
-//                .selectFrom(member)
-//                .where(
-//                        member.age.between(age, age + 9)
-//                                .and(member.adminYN.eq("N"))
-//                )
-//                .orderBy(member.enrollDate.desc())
-//                .offset(pageable.getOffset())
-//                .limit(pageable.getPageSize())
-//                .fetch();
-//    }
-
-//    @Override
-//    public long countSearchAge(int age) {
-//        return queryFactory
-//                .selectFrom(member)
-//                .where(
-//                        member.age.between(age, age + 9)
-//                                .and(member.adminYN.eq("N"))
-//                )
-//                .fetchCount();
-//    }
-
     @Override
     public List<MemberEntity> findSearchLoginOK(String keyword, Pageable pageable) {
         return queryFactory
@@ -160,6 +136,16 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
                 .fetchOne(); // 단일 결과 조회
 
         return Optional.ofNullable(result); // 결과가 없으면 Optional.empty() 반환
+    }
+
+    @Override
+    public Optional<MemberEntity> findByGoogle(String email) {
+        MemberEntity result = queryFactory
+                .selectFrom(member)
+                .where(member.google.eq(email))
+                .fetchOne();
+
+        return Optional.ofNullable(result);
     }
 
 }

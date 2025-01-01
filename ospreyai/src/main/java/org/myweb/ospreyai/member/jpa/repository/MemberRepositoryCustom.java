@@ -18,11 +18,11 @@ public interface MemberRepositoryCustom {
      long countSearchGender(String keyword);
      List<MemberEntity> findSearchDate(Date begin, Date end, Pageable pageable);
      long countSearchDate(Date begin, Date end);
-//     List<MemberEntity> findSearchAge(int age, Pageable pageable);
-//     long countSearchAge(int age);
      List<MemberEntity> findSearchLoginOK(String keyword, Pageable pageable);
      long countSearchLoginOK(String keyword);
 
     // 이메일로 정보 조회하기용
     Optional<MemberEntity> findByEmail(String userId);
+    // 구글 이메일 조회
+    Optional<MemberEntity> findByGoogle(String email);
 }

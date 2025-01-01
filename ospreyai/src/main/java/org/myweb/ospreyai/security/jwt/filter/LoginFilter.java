@@ -15,6 +15,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -50,29 +51,50 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
             throws AuthenticationException {
-        log.info("LoginFilter running attemptAuthentication()");
         try {
-            InputMember loginData = new ObjectMapper().readValue(request.getInputStream(), InputMember.class);
-            log.info("login data: {}", loginData);
-            UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                    loginData.getUserId(), loginData.getUserPwd());
-            log.info("authToken: {}", authToken);
+            // 요청 속성에서 사용자 ID와 비밀번호 가져오기
+            String googleEmail = request.getParameter("googleEmail");
+            log.info("googleEmail: " + googleEmail);
 
+            if (googleEmail != null) {
+                // Google 사용자 인증 처리
+                log.info("Google 사용자 인증 처리 시작: userId={}", googleEmail);
+
+                // Spring Security의 UserDetails를 로드
+                CustomUserDetails userDetails = (CustomUserDetails) userService.loadUserByGoogle(googleEmail);
+                if (userDetails == null) {
+                    throw new UsernameNotFoundException("사용자를 찾을 수 없습니다: " + googleEmail);
+                }
+
+                // 비밀번호 검증 생략
+                return new UsernamePasswordAuthenticationToken(
+                        userDetails, null, userDetails.getAuthorities());
+            }
+
+            // 일반 로그인 데이터 읽기
+            log.info("일반 로그인 인증 시작");
+            InputMember loginData = new ObjectMapper().readValue(request.getInputStream(), InputMember.class);
+            log.info("로그인 정보: {}", loginData);
+
+            UsernamePasswordAuthenticationToken authToken =
+                    new UsernamePasswordAuthenticationToken(loginData.getUserId(), loginData.getUserPwd());
             return authenticationManager.authenticate(authToken);
         } catch (IOException e) {
             throw new RuntimeException("Failed to parse login request", e);
         }
     }
 
+
+
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
                                             FilterChain chain, Authentication authResult) throws IOException {
         // 인증절차가 성공되면 자동으로 구동됨
-        log.info("LoginFilter successfulAuthentication()");
+        log.info("토큰 생성 시작");
 
         CustomUserDetails userDetails = (CustomUserDetails) authResult.getPrincipal();
         String username = userDetails.getUsername();  //로그인한 userId 임
-        log.info("successfulAuthentication: {}", username);
+        log.info("토큰에 사용될 ID: {}", username);
 
         //로그인 성공이므로, 토큰 만들기함
         String accessToken = jwtUtil.generateToken(username, "access", 900000L);

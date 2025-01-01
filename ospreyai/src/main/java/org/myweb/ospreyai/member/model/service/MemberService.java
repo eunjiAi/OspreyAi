@@ -5,14 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.member.jpa.entity.MemberEntity;
 import org.myweb.ospreyai.member.jpa.repository.MemberRepository;
 import org.myweb.ospreyai.member.model.dto.Member;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -24,17 +19,24 @@ public class MemberService {
 	//jpa 가 제공하는 기본 메소드와 추가한 메소드 사용
 	private final MemberRepository memberRepository;
 
-	// Email로 회원 정보 검색
+	// 일반 Email로 회원 정보 검색
 	public Member selectMember(String userId) {
-		log.info("selectMember(String userId): {}", userId);
-
 		// 이메일을 기준으로 조회한다고 가정
 		Optional<MemberEntity> entityOptional = memberRepository.findByEmail(userId);
 
 		// 데이터가 없을 경우 예외 처리
 		return entityOptional
 				.map(MemberEntity::toDto) // Optional로 안전하게 DTO 변환
-				.orElseThrow(() -> new NoSuchElementException("Member not found with email: " + userId));
+				.orElseThrow(() -> new NoSuchElementException("해당 이메일을 조회할 수 없습니다 : " + userId));
+	}
+
+	//구글 이메일로 회원 정보 조회
+	public Member findGoogleEmail(String email) {
+		Optional<MemberEntity> entityOptional =  memberRepository.findByGoogle(email);
+
+		return entityOptional
+				.map(MemberEntity::toDto) // Optional로 안전하게 DTO 변환
+				.orElseThrow(() -> new NoSuchElementException("해당 구글정보를 조회할 수 없습니다 : " + email));
 	}
 
 
@@ -66,7 +68,8 @@ public class MemberService {
 		return memberRepository.findByEmail(userid)
 				.map(MemberEntity::getNickname) // 메서드 참조 대신 람다식 사용
 				.orElseThrow(() -> new IllegalArgumentException("해당 사용자 ID를 찾을 수 없습니다: " + userid));
-}
+	}
+
 
 
 

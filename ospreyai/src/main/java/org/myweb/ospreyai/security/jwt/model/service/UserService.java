@@ -32,4 +32,15 @@ public class UserService implements UserDetailsService {
         // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
         return new CustomUserDetails(member.toEntity());
     }
+
+    public UserDetails loadUserByGoogle(String username) throws UsernameNotFoundException {
+        //데이터베이스에서 사용자 정보를 조회해 옴
+        Member member = memberService.findGoogleEmail(username);
+        if (member == null) {
+            throw new UsernameNotFoundException("조회된 회원 정보 없음 : " + username);
+        }
+
+        // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
+        return new CustomUserDetails(member.toEntity());
+    }
 }
