@@ -64,12 +64,17 @@
 }
 
 .googleButton:hover {
-  transform: scale(1.03); /* 버튼이 약간 커지도록 */
+  background: none;
 }
 
+
 .googleButtonImage {
-  width: 200px; /* 원하는 너비 */
-  height: auto; /* 비율 유지 */
-  display: block; /* 버튼 안에서 정렬 */
-  margin: 0 auto; /* 가운데 정렬 */
+  width: 200px; 
+  height: auto;
+  display: block; 
+  margin: 0 auto;
+}
+
+.googleButton:hover .googleButtonImage {
+  filter: brightness(0.9);
 }

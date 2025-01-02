@@ -187,9 +187,7 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
         <button className={styles.searchButton} onClick={handleSearch}>
           검색
         </button>
-        <button className={styles.searchButton} onClick={handleResetSearch}>
-          초기화
-        </button>
+
       </div>
       {/* 로그인/로그아웃 버튼 */}
       <div className={styles.rightSection}>
