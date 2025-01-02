@@ -38,11 +38,10 @@ public class SquatFeedbackController {
 
 	@GetMapping("/daily-stats")
 	public ResponseEntity<Map<String, Object>> getDailyStats(
-			@RequestHeader("Authorization") String authorization, // JWT 토큰 추가
+			@RequestHeader("Authorization") String authorization,
 			@RequestParam(defaultValue = "0") int page,
 			@RequestParam(defaultValue = "6") int size) {
 
-		// JWT 토큰에서 사용자 정보 추출
 		String token = authorization.replace("Bearer ", "");
 		String uuid = jwtUtil.getUuidFromToken(token);
 		String name = jwtUtil.getNameFromToken(token);
@@ -51,7 +50,11 @@ public class SquatFeedbackController {
 		List<SquatFeedbackDTO> feedbackList = squatFeedbackService.getDailyStats(page, size, name, uuid);
 		long totalFeedbackCount = squatFeedbackService.getTotalFeedbackCount(name, uuid);
 
-		// 날짜 형식 변환 (yyyy-MM-dd)
+		// 로그 추가
+		System.out.println("Fetching daily stats for user: " + name + ", uuid: " + uuid);
+		feedbackList.forEach(feedback -> System.out.println("Daily Stat: " + feedback));
+		System.out.println("Total Feedback Count: " + totalFeedbackCount);
+
 		feedbackList.forEach(feedback -> {
 			feedback.setDateFormatted(
 					new SimpleDateFormat("yyyy-MM-dd").format(feedback.getDate())
@@ -66,6 +69,7 @@ public class SquatFeedbackController {
 
 		return ResponseEntity.ok(response);
 	}
+
 
 	@GetMapping("/feedback-by-date")
 	public ResponseEntity<List<SquatFeedbackDTO>> getFeedbackByDate(
