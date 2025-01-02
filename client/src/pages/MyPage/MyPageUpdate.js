@@ -208,6 +208,9 @@ function MyPageUpdate() {
           />
         </label>
 
+        <button type="button" className="save-btn">
+          페이스 아이디 등록
+        </button>
         <button type="button" onClick={handleSave} className="save-btn">
           저장
         </button>
