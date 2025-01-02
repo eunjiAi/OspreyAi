@@ -296,7 +296,7 @@ function SquatFeedback() {
         </div>
 
         <div className="daily-stats">
-        <h2>{name || '사용자 이름 없음'}의 일일 운동 기록</h2>
+        <h2>{name || '사용자 이름 없음'} 님의 일일 운동 기록</h2>
           {loading ? (
             <p>로딩 중...</p>
           ) : (
