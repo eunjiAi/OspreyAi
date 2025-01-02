@@ -3,6 +3,7 @@ import axios from "../../../utils/axios"; // Axios 인스턴스 가져오기
 import { AuthContext } from "../../../AuthProvider"; // AuthContext 가져오기
 import styles from "./Login.module.css"; // 스타일 가져오기
 import googleSignInImage from "../../../images/SignInWithGoogle.png";
+import kakaoSignInImage from "../../../images/SignInWithKakao.png";
 
 function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState("");
@@ -189,13 +190,20 @@ function Login({ onLoginSuccess }) {
         <div>
           <button
             type="button"
-            className={styles.googleButton}
+            className={styles.apiButton}
             onClick={handleGoogleLogin}
           >
             <img
               src={googleSignInImage}
               alt="Sign in with Google"
-              className={styles.googleButtonImage}
+              className={styles.apiButtonImage}
+            />
+          </button>
+          <button type="button" className={styles.apiButton}>
+            <img
+              src={kakaoSignInImage}
+              alt="Sign in with Kakao"
+              className={styles.apiButtonImage}
             />
           </button>
         </div>
