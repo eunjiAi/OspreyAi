@@ -187,13 +187,14 @@ function Header({ updatePostsResults, updateNoticeResults, resetSearchInput }) {
         <button className={styles.searchButton} onClick={handleSearch}>
           검색
         </button>
-
       </div>
       {/* 로그인/로그아웃 버튼 */}
       <div className={styles.rightSection}>
         {isLoggedIn ? (
           <>
-            <span className={styles.username}>{username}</span>
+            <span className={styles.username}>
+              <Link to="/myPage">{username}</Link>
+            </span>
             <button onClick={handleLogout} className={styles.authButton}>
               로그아웃
             </button>
