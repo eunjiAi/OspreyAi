@@ -13,7 +13,7 @@ function SquatFeedback() {
   const [detected, setDetected] = useState(false);
   const [loading, setLoading] = useState(false);           // 로딩 상태
 
-  const [username, setUsername] = useState('');           // 사용자 이름 상태
+  const [name, setName] = useState('');           // 사용자 이름 상태
   const videoRef = useRef(null);
   const intervalIdRef = useRef(null);
 
@@ -21,17 +21,29 @@ function SquatFeedback() {
   const getPayloadFromToken = (token) => {
     if (!token) return null;
     try {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      return payload;
-    } catch {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const decodedPayload = atob(base64);
+      
+      // UTF-8로 복원
+      const utf8DecodedPayload = decodeURIComponent(
+        Array.from(decodedPayload)
+          .map((char) => `%${char.charCodeAt(0).toString(16).padStart(2, '0')}`)
+          .join('')
+      );
+  
+      return JSON.parse(utf8DecodedPayload); // JSON으로 파싱
+    } catch (e) {
+      console.error('JWT 디코딩 오류:', e);
       return null;
     }
-  };
+  };  
+  
 
   const getNameFromToken = () => {
     const token = localStorage.getItem('accessToken');
     const payload = getPayloadFromToken(token);
-    return payload ? payload.name : '';        // JWT에 사용자 이름(name) 저장된 경우
+    return payload ? payload.name : '';       
   };
 
   // JWT 토큰 유효성 검사 및 갱신 함수
@@ -84,8 +96,16 @@ function SquatFeedback() {
     };
 
     startWebcam();
-    setUsername(getNameFromToken());               // 초기 사용자 이름 설정
+
+    const token = localStorage.getItem('accessToken'); // JWT 토큰 가져오기
+    const payload = getPayloadFromToken(token); // JWT에서 payload 추출
+    const fetchedName = payload ? payload.name : '알 수 없는 사용자'; // 이름 가져오기
+
+    setName(fetchedName); // React 상태에 설정
+    console.log('Decoded user name:', fetchedName); // 디코딩된 이름 출력
   }, []);
+    
+    
 
   // 데이터 전송
   const fetchData = () => {
@@ -157,6 +177,8 @@ function SquatFeedback() {
     setLoading(true); // 로딩 시작
     try {
       const validToken = await ensureValidToken();
+      console.log('Current user name (daily stats):', name); // 현재 이름 출력
+  
       const response = await fetch(
         `http://localhost:8888/api/squat/daily-stats?page=${currentPage}&size=5`,
         {
@@ -174,7 +196,7 @@ function SquatFeedback() {
       }
   
       const data = await response.json();
-      console.log('Fetched data from API:', data);
+      console.log('Fetched daily stats:', data);
   
       const formattedStats = data.feedbackList.map((stat) => ({
         ...stat,
@@ -194,6 +216,8 @@ function SquatFeedback() {
       setLoading(false); // 로딩 종료
     }
   };
+  
+
   
 
   // 슬라이더 배경 업데이트
@@ -272,7 +296,7 @@ function SquatFeedback() {
         </div>
 
         <div className="daily-stats">
-          <h2>{username}의 일일 운동 기록</h2>
+        <h2>{name || '사용자 이름 없음'}의 일일 운동 기록</h2>
           {loading ? (
             <p>로딩 중...</p>
           ) : (
