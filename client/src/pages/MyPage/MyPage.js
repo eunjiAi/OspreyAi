@@ -46,7 +46,7 @@ function MyPage() {
   }, [userid, accessToken]);
 
   const handleEditClick = () => {
-    navigate("/mypage/edit"); // 정보 수정 페이지로 이동
+    navigate("/myPageUpdate"); // 정보 수정 페이지로 이동
   };
 
   if (loading) {
