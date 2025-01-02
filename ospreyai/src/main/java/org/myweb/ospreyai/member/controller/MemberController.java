@@ -89,77 +89,25 @@ public class MemberController {
 
 	}
 
-//	@PutMapping("/{userId}")
-//	public ResponseEntity memberUpdateMethod(
-//		    @ModelAttribute Member member,
-//			@RequestParam(name="photofile", required=false) MultipartFile mfile,
-//		 	@RequestParam("originalUserPwd") String originalUserPwd,
-//		 	@RequestParam("ofile") String originalFileName) {
-//		log.info("put update member : " + member); // 전송온 값 확인
-//
-//		if (member.getUserPwd() != null && member.getUserPwd().length() > 0) { // 암호가 변경되었다면
-//			// 패스워드 암호화 처리
-//			member.setUserPwd(bcryptPasswordEncoder.encode(member.getUserPwd()));
-//			log.info("after encode : " + member.getUserPwd() + ", length : " + member.getUserPwd().length());
-//
-//		} else { // 암호가 변경되지 않았다면 userPwd == null
-//			member.setUserPwd(originalUserPwd); // 원래 패스워드로 기록 저장
-//		}
-//
-//		// 회원가입시 사진 파일첨부가 있을 경우, 저장 폴더 경로 지정 -----------------------------------
-//		String savePath = uploadDir + "/photo";
-//		log.info("savePath : " + savePath);
-//
-//		File directory = new File(savePath);
-//		if(!directory.exists()){
-//			directory.mkdirs();
-//		}
-//
-//			// 수정된 첨부파일이 있다면
-//		if (mfile == null && !mfile.isEmpty()) {
-//			// 전송온 파일 이름 추출함
-//			String fileName = mfile.getOriginalFilename();
-//
-//			// 이전 파일명과 새로 첨부된 파일명이 다른지 확인
-//			if (!fileName.equals(originalFileName)) {
-//
-//				// 여러 회원이 업로드한 사진파일명이 중복될 경우를 대비해서 저장파일명 이름바꾸기함
-//				// 바꿀 파일이름은 개발자가 정함
-//				// userId 가 기본키이므로 중복이 안됨 => userId_filename 저장형태로 정해봄
-//				String renameFileName = member.getUserId() + "_" + fileName;
-//
-//				// 저장 폴더에 저장 처리
-//				if (fileName != null && fileName.length() > 0) {
-//					try {
-//						// mfile.transferTo(new File(savePath + "\\" + fileName));
-//						// 저장시 바뀐 이름으로 저장 처리함
-//						mfile.transferTo(new File(savePath + "\\" + renameFileName));
-//					} catch (Exception e) {
-//						// 첨부파일 저장시 에러 발생
-//						e.printStackTrace();
-//						return new ResponseEntity<String>("첨부파일 업로드 실패", HttpStatus.BAD_REQUEST);
-//					}
-//				}
-//
-//				// 파일 업로드 정상 처리되었다면
-//				// member.setPhotoFileName(fileName); //db 저장시에는 원래 이름으로 기록함
-//				member.setPhotoFileName(renameFileName); // db 저장시에는 변경된 이름으로 기록함
-//			} // 첨부파일이 있을 때
-//		} else { // 수정된 첨부파일과 원래 첨부파일명이 같은 경우 (폴더에 저장된 상태임)
-//			member.setPhotoFileName(member.getUserId() + "_" + originalFileName);
-//		}
-//
-//		//마지막 수정날짜 저장 처리
-//		member.setLastModified(new Date(System.currentTimeMillis()));
-//
-//		try {
-//			memberService.updateMember(member); // 회원정보 수정 성공시
-//			return ResponseEntity.ok().build();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-//		}
-//	}
+	@PutMapping("/mypage/{userId}")
+	public ResponseEntity memberUpdateMethod(
+		    @ModelAttribute Member member) {
+		log.info("회원페이지 업데이트 정보 : " + member);
+
+		if (member.getPw() != null && member.getPw().length() > 0) {
+			member.setPw(bcryptPasswordEncoder.encode(member.getPw()));
+		}
+
+		member.setLastModified(new Date(System.currentTimeMillis()));
+
+		try {
+			memberService.updateMember(member); // 회원정보 수정 성공시
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}
+	}
 
 	// 회원 탈퇴(삭제) 요청 처리용
 	// 요청 행위가 delete (쿼리문) 이면 전송방식이 delete 이고, 매핑은 @DeleteMapping 으로 지정함

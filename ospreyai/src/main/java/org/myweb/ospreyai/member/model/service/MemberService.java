@@ -70,20 +70,18 @@ public class MemberService {
 				.orElseThrow(() -> new IllegalArgumentException("해당 사용자 ID를 찾을 수 없습니다: " + userid));
 	}
 
-
-
-
-//	@Transactional
-//	public int updateMember(Member member) {
-//		//save() -> 성공시 Entity, 실패시 null 리턴함, JPA 가 제공하는 메소드임
-//		try{
-//			memberRepository.save(member.toEntity()).toDto();
-//			return 1;
-//		}catch (Exception e) {
-//			log.error(e.getMessage());
-//			return 0;
-//		}
-//	}
+	//회원정보 수정
+	@Transactional
+	public int updateMember(Member member) {
+		//save() -> 성공시 Entity, 실패시 null 리턴함, JPA 가 제공하는 메소드임
+		try{
+			memberRepository.save(member.toEntity()).toDto();
+			return 1;
+		}catch (Exception e) {
+			log.error(e.getMessage());
+			return 0;
+		}
+	}
 
 //	@Transactional
 //	public int deleteMember(String userId) {

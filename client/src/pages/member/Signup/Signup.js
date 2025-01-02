@@ -29,7 +29,7 @@ function Signup({ onSignupSuccess }) {
   // 이메일 중복검사 버튼 클릭시 작동할 핸들러 함수
   const handleIdCheck = async () => {
     if (!formData.email) {
-      alert("이메일을 입력하세요.");
+      alert("아이디를 입력하세요.");
       return;
     }
 
