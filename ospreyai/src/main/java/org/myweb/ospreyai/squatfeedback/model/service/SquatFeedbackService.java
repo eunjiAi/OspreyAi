@@ -36,10 +36,11 @@ public class SquatFeedbackService {
 	}
 
 	public List<SquatFeedbackDTO> getDailyStats(int page, int size, String name, String uuid) {
+		// SQUAT_ID 기준 내림차순 정렬로 변경
 		return squatFeedbackRepository.findByNameAndUuid(
 						name,
 						uuid,
-						PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "squatDate"))
+						PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "squatId")) // SQUAT_ID 기준 정렬
 				)
 				.stream()
 				.map(SquatFeedback::toDto)

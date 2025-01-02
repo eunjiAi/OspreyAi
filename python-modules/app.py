@@ -48,14 +48,40 @@ class SquatFeedback(Base):
 current_posture = "stand"
 completed_once = False
 
-# JWT 토큰에서 UUID 추출
-def extract_uuid_from_token(token):
+# JWT 토큰에서 UUID와 이름 추출
+def extract_uuid_and_name_from_token(token):
     try:
         payload = jwt.decode(token, options={"verify_signature": False})
-        return payload.get("sub") 
+        uuid = payload.get("sub")  # UUID
+        name = payload.get("name")  # 사용자 이름
+        print(f"Decoded JWT payload: {payload}")  # 디버깅용으로 전체 페이로드 출력
+        return uuid, name
     except Exception as e:
         logging.error(f"JWT 디코딩 오류: {e}")
-        return None
+        return None, None
+
+
+@app.route('/log-user', methods=['GET'])
+def log_current_user():
+    try:
+        # Authorization 헤더에서 JWT 토큰 읽기
+        auth_header = request.headers.get('Authorization', '')
+        if not auth_header:
+            return jsonify({"error": "Authorization 헤더가 없습니다."}), 400
+        
+        token = auth_header.split(' ')[1]
+
+        # 토큰 디코딩
+        uuid, name = extract_uuid_and_name_from_token(token)
+
+        if uuid and name:
+            print(f"현재 로그인된 사용자 UUID: {uuid}, 이름: {name}")
+            return jsonify({"uuid": uuid, "name": name}), 200
+        else:
+            return jsonify({"error": "JWT 토큰에서 UUID 또는 이름을 가져올 수 없습니다."}), 400
+    except Exception as e:
+        logging.error(f"JWT 디코딩 중 오류 발생: {e}")
+        return jsonify({"error": "JWT 디코딩 중 오류 발생"}), 500
 
 # Pose 분석 
 def analyze_pose(image):
@@ -119,7 +145,6 @@ def calculate_knee_position(landmarks):
     return knee.x - foot.x
 
 
-
 def update_daily_feedback(uuid, feedback_correct):
     session = Session()
     try:
@@ -175,16 +200,14 @@ def squat_analysis():
         result = analyze_pose(frame)
         print("분석 결과:", result)
 
-        # JWT에서 UUID 추출
+        # JWT에서 UUID와 이름 추출
         token = request.headers.get('Authorization', '').split(' ')[1]
-        uuid = extract_uuid_from_token(token)
+        uuid, name = extract_uuid_and_name_from_token(token)
 
         if uuid:
-            print(f"이메일: {uuid}, 피드백 결과: {result.get('feedback')}")
-            # 피드백이 "동작 완료"인 경우 True, 그렇지 않으면 False
+            print(f"UUID: {uuid}, Name: {name}, 피드백 결과: {result.get('feedback')}")
             feedback_correct = result.get('feedback') == "동작 완료"
-            logging.info(f"UUID: {uuid}, 동작 완료 여부: {feedback_correct}")
-            # 데이터베이스 업데이트 호출
+            logging.info(f"UUID: {uuid}, Name: {name}, 동작 완료 여부: {feedback_correct}")
             update_daily_feedback(uuid, feedback_correct)
         else:
             print("JWT에서 UUID를 추출할 수 없습니다.")
@@ -193,6 +216,7 @@ def squat_analysis():
     except Exception as e:
         print(f"분석 실패: {e}")
         return jsonify({"feedback": "분석 실패"}), 500
+
 
 
 if __name__ == '__main__':
