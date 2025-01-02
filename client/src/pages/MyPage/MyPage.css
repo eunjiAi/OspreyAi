@@ -1,40 +1,102 @@
+/* 공통 컨테이너 스타일 */
 .mypage-container {
-    max-width: 600px; /* 컨텐츠의 최대 폭 */
-    margin: 50px auto; /* 화면 중앙 정렬 */
-    text-align: center;
-    font-family: Arial, sans-serif; /* 폰트 설정 */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #fdfdfd;
+}
+
+/* 타이틀 스타일 */
+.mypage-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* 사용자 정보 */
+.user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-info p strong {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* 버튼 스타일 */
+.update-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.update-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 로딩 및 에러 스타일 */
+.loading,
+.error {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.loading {
+  color: #007bff;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .mypage-container {
+    padding: 15px;
   }
-  
-  .mypage-title {
-    font-size: 32px;
-    color: #4a4a4a;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
+
   .user-info {
-    margin-bottom: 30px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
-  
-  .user-info p {
-    font-size: 18px;
-    color: #555;
-    margin: 10px 0;
-    line-height: 1.6;
+
+  .mypage-title {
+    font-size: 20px;
   }
-  
+
   .update-btn {
-    background-color: #6a8dff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
+    padding: 10px 0;
   }
-  
-  .update-btn:hover {
-    background-color: #506cd0;
-  }
-  
+}

@@ -72,28 +72,22 @@ public class MemberController {
 			return ResponseEntity.notFound().build();
 		}
 	}
-	// '내 정보 보기' 클릭시 회원 정보 조회 요청 처리용 메소드
-//	@GetMapping("/myinfo/{userId}")
-//	public ResponseEntity<Member> memberDetailMethod(@PathVariable String userId) {
-//		log.info("memberDetailMethod : " + userId);
-//
-//		// 서비스 메소드로 아이디 전달하고, 해당 회원 정보 받기
-//		Member member = memberService.selectMember(userId);
-//		log.info("member : " + member);
-//
-//		// 저장된 사진파일명이 "userId_파일명.확장자"이므로, 프론트로 나갈때는 "userId_"를 제외시킴
-//		if(member.getPhotoFileName() != null) {
-//			member.setPhotoFileName(member.getPhotoFileName().split("_")[1]);
-//			log.info("photoFilename : " + member.getPhotoFileName());
-//		}
-//
-//		if(member != null){
-//			return ResponseEntity.status(HttpStatus.OK).body(member);
-//		} else {
-//			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-//		}
-//
-//	}
+
+	// 마이페이지
+	@GetMapping("/mypage/{userId}")
+	public ResponseEntity<Member> memberDetailMethod(@PathVariable String userId) {
+		log.info("마이페이지 회원 아이디 : " + userId);
+
+		Member member = memberService.selectMember(userId);
+		log.info("마이페이지 회원 정보 : " + member);
+
+		if(member != null){
+			return ResponseEntity.status(HttpStatus.OK).body(member);
+		} else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+
+	}
 
 //	@PutMapping("/{userId}")
 //	public ResponseEntity memberUpdateMethod(
