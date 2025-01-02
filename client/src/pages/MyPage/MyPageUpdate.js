@@ -9,10 +9,10 @@ function MyPageUpdate() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    id: "",
-    pw: "",
     name: "",
     nickname: "",
+    email: "",
+    pw: "",
     phoneNumber: "",
     gender: "",
     google: "",
@@ -33,7 +33,7 @@ function MyPageUpdate() {
           },
         });
         setFormData({
-          id: response.data.email,
+          email: response.data.email,
           pw: response.data.pw,
           name: response.data.name,
           nickname: response.data.nickname,
@@ -152,7 +152,7 @@ function MyPageUpdate() {
           <input
             type="text"
             name="email"
-            value={formData.id}
+            value={formData.email}
             onChange={handleInputChange}
             readOnly
           />

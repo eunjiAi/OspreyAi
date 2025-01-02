@@ -89,16 +89,22 @@ public class MemberController {
 
 	}
 
+	//회원정보 수정
 	@PutMapping("/mypage/{userId}")
 	public ResponseEntity memberUpdateMethod(
-		    @ModelAttribute Member member) {
-		log.info("회원페이지 업데이트 정보 : " + member);
+		    @RequestBody Member member) {
+		Member preMember = memberService.selectMember(member.getEmail());
 
 		if (member.getPw() != null && member.getPw().length() > 0) {
 			member.setPw(bcryptPasswordEncoder.encode(member.getPw()));
 		}
 
+		member.setUuid(preMember.getUuid());
+		member.setAdminYn(preMember.getAdminYn());
+		member.setFaceId(preMember.getFaceId());
+		member.setEnrollDate(preMember.getEnrollDate());
 		member.setLastModified(new Date(System.currentTimeMillis()));
+		member.setLoginOk(preMember.getLoginOk());
 
 		try {
 			memberService.updateMember(member); // 회원정보 수정 성공시
