@@ -40,10 +40,10 @@ function Signup({ onSignupSuccess }) {
 
       if (response.data === "ok") {
         setIsIdAvailable(true);
-        alert("사용 가능한 이메일입니다.");
+        alert("사용 가능한 아이디입니다.");
       } else {
         setIsIdAvailable(false);
-        alert("이미 사용중인 이메일입니다. 확인 후 다시 작성하세요.");
+        alert("이미 사용중인 아이디입니다. 확인 후 다시 작성하세요.");
       }
     } catch (error) {
       console.error("이메일 중복검사 실패 : ", error);
@@ -116,7 +116,7 @@ function Signup({ onSignupSuccess }) {
       <h1>회원 가입</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="email">이메일: </label>
+          <label htmlFor="email">아이디: </label>
           <input
             type="text"
             id="email"
@@ -195,6 +195,17 @@ function Signup({ onSignupSuccess }) {
             id="phone"
             name="phoneNumber"
             value={formData.phoneNumber}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="phone">구글: </label>
+          <input
+            type="email"
+            id="google"
+            name="google"
+            value={formData.google}
             onChange={handleChange}
             required
           />
