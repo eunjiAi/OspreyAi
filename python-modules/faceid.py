@@ -1,15 +1,15 @@
 import os
 import base64
 import io
+import json
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from PIL import Image
-from sqlalchemy import create_engine, Column, String, JSON
+from sqlalchemy import create_engine, Column, String, Text
 from sqlalchemy.orm import declarative_base, sessionmaker
 from keras_facenet import FaceNet
-import numpy as np
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
+import numpy as np 
 
 # FastAPI 앱 생성
 app = FastAPI()
@@ -38,7 +38,7 @@ class Member(Base):
     __tablename__ = "MEMBER"
     __table_args__ = {"schema": "C##FP3TEAM"}
     uuid = Column("UUID", String, primary_key=True, nullable=False)
-    face_vector = Column("FACE_VECTOR", JSON, nullable=True)  # 얼굴 특징 벡터 저장
+    face_vector = Column("FACE_VECTOR", Text, nullable=True)  # 얼굴 벡터 데이터 저장
 
 # 요청 모델 정의
 class FaceIdRequest(BaseModel):
@@ -90,7 +90,7 @@ async def register_faceid(request: FaceIdRequest):
             raise HTTPException(status_code=500, detail="Feature extraction failed")
 
         # 얼굴 벡터 저장
-        user.face_vector = features.tolist()  # 벡터를 JSON 형식으로 저장
+        user.face_vector = json.dumps(features.tolist())  # JSON 문자열로 저장
         db.commit()
         print("4. Face vector saved to database.")
 
@@ -113,7 +113,6 @@ async def register_faceid(request: FaceIdRequest):
     finally:
         db.close()
 
-
 if __name__ == "__main__":
-    
+    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=5001)
