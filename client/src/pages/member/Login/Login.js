@@ -3,6 +3,7 @@ import axios from "../../../utils/axios"; // Axios 인스턴스 가져오기
 import { AuthContext } from "../../../AuthProvider"; // AuthContext 가져오기
 import styles from "./Login.module.css"; // 스타일 가져오기
 import googleSignInImage from "../../../images/SignInWithGoogle.png";
+import NaverSignInImage from "../../../images/SignInWithNaver.png";
 import kakaoSignInImage from "../../../images/SignInWithKakao.png";
 
 function Login({ onLoginSuccess }) {
@@ -112,6 +113,105 @@ function Login({ onLoginSuccess }) {
       );
       alert(
         "Google 로그인 실패: " +
+          (error.response?.data?.message || "다시 시도하십시오.")
+      );
+    }
+  };
+
+  // Naver Login -----------------------------------------------------------------------------
+  // Naver OAuth 설정
+  const NAVER_STATE = "51W3oivPtjmn8kdmcql9QOQQDnPOUBgriwV1vMH3e0Y";
+
+  const handleNaverLogin = () => {
+    const naverLoginUrl = `http://localhost:8080/naver/login?state=${NAVER_STATE}`;
+    console.log("Naver Login URL:", naverLoginUrl);
+
+    const popup = window.open(
+      naverLoginUrl,
+      "Naver Login",
+      "width=500,height=600,scrollbars=yes"
+    );
+
+    if (!popup) {
+      alert("팝업이 차단된 것 같습니다. 팝업 차단을 해제해주세요.");
+      return;
+    }
+
+    const interval = setInterval(async () => {
+      try {
+        const currentUrl = popup.location.href;
+
+        if (currentUrl.includes("code")) {
+          popup.close();
+          clearInterval(interval);
+
+          const params = new URLSearchParams(currentUrl.split("?")[1]);
+          const authCode = params.get("code");
+          const state = params.get("state");
+
+          // 네이버 콜백 처리
+          await handleNaverCallback(authCode, state);
+        }
+      } catch (error) {
+        // URL 접근 권한이 없을 경우 발생 (무시 가능)
+      }
+    }, 500);
+  };
+
+  const handleNaverCallback = async (authCode, state) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8888/naver/callback?code=${authCode}&state=${state}`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      const userInfo = response.data; // 서버에서 반환된 사용자 정보
+      console.log("Naver 사용자 정보:", userInfo);
+
+      // 서버로 이메일을 이용한 로그인 요청
+      await loginWithNaverEmail(userInfo.email);
+    } catch (error) {
+      console.error(
+        "네이버 콜백 처리 실패:",
+        error.response?.data || error.message
+      );
+      alert(
+        "네이버 로그인 실패: " +
+          (error.response?.data?.message || "다시 시도하십시오.")
+      );
+    }
+  };
+
+  const loginWithNaverEmail = async (email) => {
+    try {
+      const formData = new FormData();
+      formData.append("naverEmail", email);
+
+      const loginResponse = await axios.post("/login", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      const jwtAccessToken =
+        loginResponse.headers["authorization"]?.split(" ")[1];
+      const refreshToken = loginResponse.data.refreshToken;
+
+      if (jwtAccessToken && refreshToken) {
+        console.log("Naver 로그인 성공:", jwtAccessToken, refreshToken);
+        // 로그인 성공 처리
+        alert("Naver 로그인 성공!");
+        // 로그인 성공 후 리디렉션
+        if (onLoginSuccess) onLoginSuccess();
+      } else {
+        throw new Error("로그인 토큰이 없습니다.");
+      }
+    } catch (error) {
+      console.error("로그인 요청 실패:", error.message);
+      alert(
+        "로그인 요청 실패: " +
           (error.response?.data?.message || "다시 시도하십시오.")
       );
     }
@@ -319,6 +419,17 @@ function Login({ onLoginSuccess }) {
           >
             <img
               src={googleSignInImage}
+              alt="Sign in with Google"
+              className={styles.apiButtonImage}
+            />
+          </button>
+          <button
+            type="button"
+            className={styles.apiButton}
+            onClick={handleNaverLogin}
+          >
+            <img
+              src={NaverSignInImage}
               alt="Sign in with Google"
               className={styles.apiButtonImage}
             />

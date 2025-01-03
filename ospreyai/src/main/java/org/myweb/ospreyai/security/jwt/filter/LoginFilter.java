@@ -54,6 +54,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         try {
             // 요청 속성에서 사용자 ID와 비밀번호 가져오기
             String googleEmail = request.getParameter("googleEmail");
+            String naverEmail = request.getParameter("naverEmail");
             String kakaoEmail = request.getParameter("kakaoEmail");
             log.info("googleEmail: " + googleEmail + ", kakaoEmail: " + kakaoEmail);
 
@@ -64,6 +65,18 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
                 CustomUserDetails userDetails = (CustomUserDetails) userService.loadUserByGoogle(googleEmail);
                 if (userDetails == null) {
                     throw new UsernameNotFoundException("사용자를 찾을 수 없습니다: " + googleEmail);
+                }
+
+                // 비밀번호 검증 생략
+                return new UsernamePasswordAuthenticationToken(
+                        userDetails, null, userDetails.getAuthorities());
+            } else if (naverEmail != null && !naverEmail.isEmpty()) {
+                // Naver 사용자 인증 처리
+                log.info("Naver 사용자 인증 처리 시작: userId={}", naverEmail);
+
+                CustomUserDetails userDetails = (CustomUserDetails) userService.loadUserByNaver(naverEmail);
+                if (userDetails == null) {
+                    throw new UsernameNotFoundException("사용자를 찾을 수 없습니다: " + naverEmail);
                 }
 
                 // 비밀번호 검증 생략

@@ -149,6 +149,16 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
     }
 
     @Override
+    public Optional<MemberEntity> findByNaver(String email) {
+        MemberEntity result = queryFactory
+                .selectFrom(member)
+                .where(member.naver.eq(email))
+                .fetchOne();
+
+        return Optional.ofNullable(result);
+    }
+
+    @Override
     public Optional<MemberEntity> findByKakao(String email) {
         MemberEntity result = queryFactory
                 .selectFrom(member)
