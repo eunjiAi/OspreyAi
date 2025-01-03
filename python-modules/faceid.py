@@ -1,3 +1,5 @@
+# pip install fastapi uvicorn sqlalchemy cx_Oracle pydantic pillow keras-facenet numpy
+
 import os
 import base64
 import io
