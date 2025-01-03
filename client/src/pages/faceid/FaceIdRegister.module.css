@@ -1,0 +1,102 @@
+.faceIdContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 위로 올리기 위해 'flex-start' 사용 */
+    margin-top: 50px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.webcamWrapper {
+    position: relative;
+    display: inline-block;
+    width: 80%;  /* 화면 크기에 맞춰 80%로 설정 */
+    height: 500px; /* 웹캠 높이를 500px로 조정 */
+    max-width: 1000px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* 회색 박스 제거 */
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.statusMessage {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    color: #444;
+    text-align: center;
+}
+
+.registerButton {
+    margin-top: 20px;
+    padding: 14px 28px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+}
+
+.registerButton:hover {
+    background-color: #0056b3;
+}
+
+.registerButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.redRectangle {
+    border: 5px solid red;  /* 빨간 네모 두께 */
+    position: absolute;
+    top: 18%;
+    left: 25%;
+    width: 50%;  /* 빨간 박스를 화면에 맞게 크기 조정 */
+    height: 65%; /* 얼굴이 박스 안에 맞을 정도로 조정 */
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.greenRectangle {
+    border: 5px solid green;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.greenStatus {
+    color: green;
+    font-weight: bold;
+}
+
+.redStatus {
+    color: red;
+    font-weight: bold;
+}
