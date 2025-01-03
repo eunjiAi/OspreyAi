@@ -90,9 +90,12 @@ async def register_faceid(request: FaceIdRequest):
             raise HTTPException(status_code=500, detail="Feature extraction failed")
 
         # 얼굴 벡터 저장
-        user.face_vector = json.dumps(features.tolist())  # JSON 문자열로 저장
+        print("4. Storing face vector in database...")
+        face_vector_json = json.dumps(features.tolist())
+        print(f"JSON length: {len(face_vector_json)}")
+        user.face_vector = face_vector_json
         db.commit()
-        print("4. Face vector saved to database.")
+        print("Database commit successful")
 
         # 이미지 저장
         try:
@@ -112,6 +115,8 @@ async def register_faceid(request: FaceIdRequest):
         raise HTTPException(status_code=500, detail=f"Face ID 등록 실패: {str(e)}")
     finally:
         db.close()
+
+
 
 if __name__ == "__main__":
     import uvicorn
