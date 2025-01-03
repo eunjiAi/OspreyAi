@@ -6,6 +6,7 @@ import squatFeedbackRouter from "./squatFeedbackRouter";
 import postsRouter from "./postsRouter";
 import noticeRouter from "./noticeRouter";
 import faqRouter from "./faqRouter";
+import qnaRouter from "./qnaRouter";
 
 const AppRouter = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouter = () => {
       {postsRouter}
       {noticeRouter}
       {faqRouter}
+      {qnaRouter}
     </Routes>
   );
 };
