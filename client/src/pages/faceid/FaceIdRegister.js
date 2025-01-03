@@ -144,12 +144,14 @@ function FaceIdRegister() {
         <div className={styles.faceIdContainer}>
             <h1 className={styles.title}>Face ID 등록</h1>
             <div className={styles.webcamWrapper}>
-                <Webcam
-                    audio={false}
-                    ref={webcamRef}
-                    screenshotFormat="image/jpeg"
-                    width={300}
-                />
+            <Webcam
+                audio={false}
+                ref={webcamRef}
+                screenshotFormat="image/jpeg"
+                width="100%"   // 화면 크기에 맞게 100%로 설정
+                height="100%"  // 100% 높이로 설정하여 전체 화면을 꽉 채우도록
+            />
+
                 {!isRegistering && (
                     <div className={styles.redRectangle}></div>
                 )}
