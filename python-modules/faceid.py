@@ -1,11 +1,15 @@
-import os
 from flask import Flask, request, jsonify
 from io import BytesIO
 from PIL import Image
 import base64
 from datetime import datetime
+from flask_cors import CORS  # CORS 모듈 
+import os
 
 app = Flask(__name__)
+
+# CORS를 활성화합니다.
+CORS(app)
 
 # 바탕화면 경로
 USER_DESKTOP_PATH = r"C:\Users\ict01-20\OneDrive\바탕 화면"
@@ -17,6 +21,8 @@ if not os.path.exists(SAVE_DIR):
 
 @app.route('/register-faceid', methods=['POST'])
 def register_faceid():
+    print("요청을 받았습니다.")  # 요청이 들어오는지 확인하는 로그
+
     try:
         data = request.json
         image_data = data.get('image')

@@ -9,7 +9,6 @@ function FaceIdRegister() {
     const [userUuid, setUserUuid] = useState("");
     const [modelsLoaded, setModelsLoaded] = useState(false); // 모델 로딩 상태
     const [faceDetected, setFaceDetected] = useState(false);
-    const [registering, setRegistering] = useState(false); // 등록 중 상태
     const webcamRef = useRef(null);
 
     // JWT 토큰에서 UUID 추출
@@ -42,13 +41,14 @@ function FaceIdRegister() {
         const loadModels = async () => {
             try {
                 setStatusMessage("모델 로딩 중...");
+                console.log("모델 로딩 시작...");
                 await faceapi.nets.ssdMobilenetv1.loadFromUri("https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js/weights/");
                 await faceapi.nets.faceLandmark68Net.loadFromUri("https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js/weights/");
                 await faceapi.nets.faceRecognitionNet.loadFromUri("https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js/weights/");
 
                 setModelsLoaded(true); // 모델 로드 완료 상태
                 setStatusMessage("모델 로딩 완료! 얼굴을 맞춰주세요.");
-                console.log("Face-api models loaded");
+                console.log("모델 로딩 완료");
             } catch (error) {
                 console.error("모델 로드 실패:", error);
                 setStatusMessage("모델 로드 실패!");
@@ -62,31 +62,39 @@ function FaceIdRegister() {
     useEffect(() => {
         if (modelsLoaded) {
             // 모델 로딩 완료 후 얼굴 감지 시작
+            console.log("모델 로딩 완료 후 얼굴 감지 시작");
             detectFace();
         }
     }, [modelsLoaded]);
 
     const detectFace = async () => {
-        if (webcamRef.current && webcamRef.current.video.readyState === 4) {
-            const video = webcamRef.current.video;
-            const detections = await faceapi.detectAllFaces(video).withFaceLandmarks().withFaceDescriptors();
+        setInterval(async () => { // 1초마다 얼굴을 인식
+            console.log("detectFace 함수 호출됨");
 
-            if (detections.length > 0) {
-                setFaceDetected(true); // 얼굴 인식 성공
-                setStatusMessage("얼굴 인식 중...");
-                // 얼굴을 인식하면 3초 후에 등록
-                setRegistering(true);
-                setTimeout(() => {
+            // 비디오가 준비되었을 때만 얼굴 인식 진행
+            if (webcamRef.current && webcamRef.current.video.readyState === 4) {
+                const video = webcamRef.current.video;
+                console.log("비디오가 준비되었습니다.", video);
+                const detections = await faceapi.detectAllFaces(video).withFaceLandmarks().withFaceDescriptors();
+                console.log("얼굴 감지 결과:", detections); // 얼굴 인식 결과 출력
+
+                if (detections.length > 0) {
+                    setFaceDetected(true); // 얼굴 인식 성공
+                    setStatusMessage("얼굴 인식 중...");
+                    console.log("얼굴이 인식되었습니다.");  // 얼굴 인식 성공 로그
+                    
+                    // 얼굴을 인식하면 3초 후에 등록
                     setStatusMessage("얼굴 인식 완료! 3초간 멈춰주세요.");
                     setTimeout(() => {
                         sendImageToServer();
                     }, 3000); // 3초 대기 후 서버로 이미지 전송
-                }, 1000); // 얼굴 인식 완료 후 1초 대기
-            } else {
-                setFaceDetected(false);
-                setStatusMessage("얼굴을 맞춰주세요.");
+                } else {
+                    setFaceDetected(false);
+                    setStatusMessage("얼굴을 맞춰주세요.");
+                    console.log("얼굴이 인식되지 않았습니다.");  // 얼굴 인식 실패 로그
+                }
             }
-        }
+        }, 1000); // 1초마다 얼굴 인식
     };
 
     const sendImageToServer = async () => {
