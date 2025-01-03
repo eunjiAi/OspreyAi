@@ -39,6 +39,15 @@ public class MemberService {
 				.orElseThrow(() -> new NoSuchElementException("해당 구글정보를 조회할 수 없습니다 : " + email));
 	}
 
+	//카카오 이메일로 회원 정보 조회
+	public Member findKakaoEmail(String email) {
+		Optional<MemberEntity> entityOptional =  memberRepository.findByKakao(email);
+
+		return entityOptional
+				.map(MemberEntity::toDto) // Optional로 안전하게 DTO 변환
+				.orElseThrow(() -> new NoSuchElementException("해당 카카오정보를 조회할 수 없습니다 : " + email));
+	}
+
 
 	//회원가입시 이메일 중복 검사용
 	public int selectCheckEmail(String email) {
@@ -82,6 +91,8 @@ public class MemberService {
 			return 0;
 		}
 	}
+
+
 
 //	@Transactional
 //	public int deleteMember(String userId) {

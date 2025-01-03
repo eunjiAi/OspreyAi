@@ -37,9 +37,7 @@ public class JWTUtil {
 
     public String generateToken(String userId, String category, Long expiredMs) {
         log.info("generate token : {}", secretKey);
-
         Member member = memberService.selectMember(userId);
-        log.info("member : {}", member);
 
         if (member == null) {
             throw new UsernameNotFoundException("userId : " + userId + " not found.");

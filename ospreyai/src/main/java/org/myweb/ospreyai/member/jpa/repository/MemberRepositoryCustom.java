@@ -25,4 +25,6 @@ public interface MemberRepositoryCustom {
     Optional<MemberEntity> findByEmail(String userId);
     // 구글 이메일 조회
     Optional<MemberEntity> findByGoogle(String email);
+    // 카카오 이메일 조회
+    Optional<MemberEntity> findByKakao(String email);
 }
