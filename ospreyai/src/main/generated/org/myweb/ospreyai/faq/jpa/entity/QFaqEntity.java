@@ -27,6 +27,8 @@ public class QFaqEntity extends EntityPathBase<FaqEntity> {
 
     public final NumberPath<Integer> faqId = createNumber("faqId", Integer.class);
 
+    public final StringPath faqQa = createString("faqQa");
+
     public final StringPath faqTitle = createString("faqTitle");
 
     public final StringPath faqWriter = createString("faqWriter");

@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.faq.jpa.entity.FaqEntity;
 import org.myweb.ospreyai.faq.jpa.repository.FaqRepository;
 import org.myweb.ospreyai.faq.model.dto.Faq;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,9 +23,9 @@ public class FaqService {
         log.info("selectFaq : " + list);
         Map<String, Faq> map = new HashMap<>();
         for (FaqEntity faqEntity : list) {
-            if (faqEntity.getCategory().equals("Q")){
+            if (faqEntity.getFaqQa().equals("Q")){
                 map.put("Q", faqEntity.toDto());
-            }else if (faqEntity.getCategory().equals("A")){
+            }else if (faqEntity.getFaqQa().equals("A")){
                 map.put("A", faqEntity.toDto());
             }
         }
@@ -41,26 +40,26 @@ public class FaqService {
         faqRepository.save(faqEntity);	//jpa가 제공
     }
 
-    public int selectListCount() {
-        //jpa 가 제공하는 메소드 사용
-        //count() : long
-        //테이블의 전체 행 수를 반환함
-        return (int) faqRepository.findCount();
-    }
+//    public int selectListCount() {
+//        //jpa 가 제공하는 메소드 사용
+//        //count() : long
+//        //테이블의 전체 행 수를 반환함
+//        return faqRepository.findCount();
+//    }
 
-    private ArrayList<Faq> toList(List<FaqEntity> entityList) {
-        //컨트롤러로 리턴할 ArrayList<Faq> 타입으로 변경 처리 필요함
-        ArrayList<Faq> list = new ArrayList<>();
-        //Page 안의 FaqEntity 를 Faq 로 변환해서 리스트에 추가 처리함
-        for(FaqEntity entity : entityList){
-            list.add(entity.toDto());
-        }
-        return list;
-    }
+//    private ArrayList<Faq> toList(List<FaqEntity> entityList) {
+//        //컨트롤러로 리턴할 ArrayList<Faq> 타입으로 변경 처리 필요함
+//        ArrayList<Faq> list = new ArrayList<>();
+//        //Page 안의 FaqEntity 를 Faq 로 변환해서 리스트에 추가 처리함
+//        for(FaqEntity entity : entityList){
+//            list.add(entity.toDto());
+//        }
+//        return list;
+//    }
 
-    public ArrayList<Faq> selectList(Pageable pageable) {
-        return toList(faqRepository.findList(pageable));
-    }
+//    public ArrayList<Faq> selectList(Pageable pageable) {
+//        return toList(faqRepository.findList(pageable));
+//    }
 
     public int insertfaq(Faq faq) {
         //save(Entity) : Entity 가 반환되는 메소드 사용, 실패하면 에러 발생임
@@ -68,7 +67,7 @@ public class FaqService {
         try {
             faq.setFaqId(faqRepository.findLastFaqId() + 1);  //추가한 메소드
             faq.setQnaId(faqRepository.findLastFaqId() + 1);  //추가한 메소드
-            faq.setCategory("Q");
+            faq.setFaqQa("Q");
             faqRepository.save(faq.toEntity());  //jpa 제공
             return 1;
         }catch(Exception e){
@@ -80,7 +79,7 @@ public class FaqService {
     public int insertfaqa(Faq faq) {
         try {
             faq.setFaqId(faqRepository.findLastFaqId() + 1);  //추가한 메소드
-            faq.setCategory("A");
+            faq.setFaqQa("A");
             faqRepository.save(faq.toEntity());  //jpa 제공
             return 1;
         }catch(Exception e){
@@ -101,5 +100,14 @@ public class FaqService {
 
     public int lastFaqId() {
         return faqRepository.findLastFaqId();
+    }
+
+    public int selectListCountByCategory(String category) {
+        return faqRepository.countByCategory(category);
+    }
+
+    public ArrayList<FaqEntity> selectListByCategory(Pageable pageable, String category) {
+        List<FaqEntity> list = faqRepository.findByCategory(category, pageable);
+        return new ArrayList<>(list);
     }
 }

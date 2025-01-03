@@ -3,8 +3,10 @@ package org.myweb.ospreyai.faq.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.common.Paging;
+import org.myweb.ospreyai.faq.jpa.entity.FaqEntity;
 import org.myweb.ospreyai.faq.model.dto.Faq;
 import org.myweb.ospreyai.faq.model.service.FaqService;
+import org.myweb.ospreyai.common.Paging;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -45,11 +47,12 @@ public class FaqController {
     @GetMapping
     public Map<String, Object> faqListMethod(
             @RequestParam(name = "page", defaultValue = "1") int currentPage,
-            @RequestParam(name = "limit", defaultValue = "10") int limit) {
-        // page : 출력할 페이지, limit : 한 페이지에 출력할 목록 갯수
+            @RequestParam(name = "limit", defaultValue = "10") int limit,
+            @RequestParam(name = "category", defaultValue = "") String category) { // 카테고리 필터 추가
 
         // 총 목록갯수 조회해서 총 페이지 수 계산함
-        int listCount = faqService.selectListCount();
+        int listCount = faqService.selectListCountByCategory(category);
+
         // 페이지 관련 항목 계산 처리
         Paging paging = new Paging(listCount, limit, currentPage);
         paging.calculate();
@@ -59,8 +62,9 @@ public class FaqController {
                 Sort.by(Sort.Direction.DESC, "faqId"));
 
         // 서비스롤 목록 조회 요청하고 결과 받기
-        ArrayList<Faq> list = faqService.selectList(pageable);
+        ArrayList<FaqEntity> list = faqService.selectListByCategory(pageable, category);
 
+        // 결과를 맵에 담아 반환
         Map<String, Object> map = new HashMap<>();
         map.put("list", list);
         map.put("paging", paging);
@@ -80,6 +84,7 @@ public class FaqController {
             faqa.setFaqWriter(faq.getFaqWriter());
             faqa.setFaqTitle(faq.getFaqTitle() + " 답변");
             faqa.setFaqContent(answerContent);
+            faqa.setCategory(faq.getCategory());
             faqService.insertfaqa(faqa);
             // 새 faq글 등록 성공시 목록 페이지 내보내기 요청
             return ResponseEntity.ok().build();

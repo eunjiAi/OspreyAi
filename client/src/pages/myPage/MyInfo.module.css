@@ -1,0 +1,110 @@
+/* 전체 컨테이너 */
+.myInfoContainer {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* mainContent 영역에 flexbox 적용하여 사이드바와 콘텐츠를 나란히 배치 */
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* 사이드바와 콘텐츠 사이의 간격 */
+}
+
+/* 사이드바 */
+.sidebar {
+  width: 25%;  /* 사이드바 너비 */
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+.categoryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categoryItem {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.categoryItem:hover {
+  background-color: #e6e6e6;
+}
+
+.activeCategory {
+  background-color: #0073e6;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 콘텐츠 영역 */
+.content {
+  width: 75%;  /* 콘텐츠 영역 너비 */
+  padding: 10px;
+}
+
+/* 항목 리스트 */
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.listItem {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.listItem span {
+  color: blue;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.listItem span:hover {
+  color: #0073e6;
+}
+
+/* 섹션 제목 */
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* 페이징 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #005bb5;
+}
+
+/* 로딩 중 */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #0073e6;
+}

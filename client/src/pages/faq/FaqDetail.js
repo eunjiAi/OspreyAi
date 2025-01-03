@@ -69,16 +69,12 @@ const FaqDetail = () => {
             <table border="1">
                 <tbody>
                     <tr>
-                        <th>번호</th>
-                        <td>{faqQ.faqId}</td>
-                    </tr>
-                    <tr>
                         <th>제목</th>
                         <td>{faqQ.faqTitle}</td>
                     </tr>
                     <tr>
-                        <th>작성자</th>
-                        <td>{faqQ.faqWriter}</td>
+                        <th>카테고리</th>
+                        <td>{faqQ.category}</td>
                     </tr>
                     <tr>
                         <th>등록날짜</th>
@@ -100,16 +96,12 @@ const FaqDetail = () => {
             <table border="1">
                 <tbody>
                     <tr>
-                        <th>번호</th>
-                        <td>{faqA.faqId}</td>
-                    </tr>
-                    <tr>
                         <th>제목</th>
                         <td>{faqA.faqTitle}</td>
                     </tr>
                     <tr>
-                        <th>작성자</th>
-                        <td>{faqA.faqWriter}</td>
+                        <th>카테고리</th>
+                        <td>{faqA.category}</td>
                     </tr>
                     <tr>
                         <th>등록날짜</th>
@@ -118,10 +110,6 @@ const FaqDetail = () => {
                     <tr>
                         <th>내용</th>
                         <td>{faqA.faqContent}</td>
-                    </tr>
-                    <tr>
-                        <th>조회수</th>
-                        <td>{faqA.viewCount}</td>
                     </tr>
                 </tbody>
             </table>

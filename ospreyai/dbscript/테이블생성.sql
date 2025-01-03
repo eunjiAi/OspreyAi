@@ -210,20 +210,22 @@ CREATE TABLE FAQ (
     faq_id NUMBER PRIMARY KEY,                    -- 글번호 (PK)
     faq_title VARCHAR2(1000) NOT NULL,              -- 글제목
     faq_content VARCHAR2(2000) NOT NULL,                     -- 글내용
-    category CHAR(1) NOT NULL,               -- 글구분 (FAQ의 카테고리)
+    faq_qa CHAR(1) NOT NULL,               -- 글구분 (FAQ의 카테고리)
+    category VARCHAR2(100) NOT NULL,             -- FAQ종류
     view_count NUMBER DEFAULT 0 NOT NULL,                   -- 조회수
     created_at DATE DEFAULT SYSDATE NOT NULL, -- 등록날짜
     qna_id NUMBER,                                 -- Q&A 글번호 (FK)
     faq_writer VARCHAR2(100) NOT NULL,
     CONSTRAINT fk_qna_id FOREIGN KEY (qna_id) REFERENCES FAQ(faq_id) ON DELETE SET NULL -- QNA와 외래키 관계
-    ,CONSTRAINT CHK_category check (category in ('Q', 'A'))
+    ,CONSTRAINT CHK_faq_qa check (faq_qa in ('Q', 'A'))
     ,CONSTRAINT fk_faq_writer FOREIGN KEY (faq_writer) REFERENCES MEMBER(email) ON DELETE SET NULL
 );
 
--- FAQ 테이블 코멘트 생성
+-- 컬럼에 대한 설명 추가
 COMMENT ON COLUMN FAQ.faq_id IS 'FAQ 글 번호';
 COMMENT ON COLUMN FAQ.faq_title IS 'FAQ 글 제목';
 COMMENT ON COLUMN FAQ.faq_content IS 'FAQ 글 내용';
+COMMENT ON COLUMN FAQ.faq_qa IS 'FAQ 글구분';
 COMMENT ON COLUMN FAQ.category IS 'FAQ 카테고리';
 COMMENT ON COLUMN FAQ.view_count IS 'FAQ 조회수';
 COMMENT ON COLUMN FAQ.created_at IS 'FAQ 등록일';

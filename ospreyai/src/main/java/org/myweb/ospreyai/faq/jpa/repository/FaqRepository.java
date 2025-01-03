@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FaqRepository extends JpaRepository<FaqEntity, Integer>, FaqRepositoryCustom {
+public interface FaqRepository extends JpaRepository<FaqEntity, Integer>, org.myweb.ospreyai.faq.jpa.repository.FaqRepositoryCustom {
 }

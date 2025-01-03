@@ -16,6 +16,7 @@ public class Faq {
     private int faqId;
     private String faqTitle;
     private String faqContent;
+    private String faqQa;
     private String category;
     private int viewCount;
     private java.sql.Date createdAt;
@@ -27,6 +28,7 @@ public class Faq {
                 .faqId(faqId)
                 .faqTitle(faqTitle)
                 .faqContent(faqContent)
+                .faqQa(faqQa)
                 .category(category)
                 .viewCount(viewCount)
                 .createdAt(createdAt)

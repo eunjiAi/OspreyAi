@@ -23,6 +23,8 @@ public class FaqEntity {
     private String faqTitle;
     @Column(name = "FAQ_CONTENT", nullable = false)
     private String faqContent;
+    @Column(name = "FAQ_QA", nullable = false)
+    private String faqQa;
     @Column(name = "CATEGORY", nullable = false)
     private String category;
     @Column(name = "VIEW_COUNT", nullable = false, columnDefinition = "0")
@@ -44,6 +46,7 @@ public class FaqEntity {
                 .faqId(faqId)
                 .faqTitle(faqTitle)
                 .faqContent(faqContent)
+                .faqQa(faqQa)
                 .category(category)
                 .viewCount(viewCount)
                 .createdAt(createdAt)

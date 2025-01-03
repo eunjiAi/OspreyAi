@@ -13,7 +13,8 @@ function FaqWrite() {
     //상태 변수 지정
     const [formData, setFormData] = useState({
         faqTitle: '',
-        faqWriter: '', //초기 상태      
+        faqWriter: '', //초기 상태 
+        category: '',     
         faqContent: '',
     });
 
@@ -47,6 +48,7 @@ function FaqWrite() {
         const data = new FormData();
         data.append('faqTitle', formData.faqTitle);
         data.append('faqWriter', formData.faqWriter);
+        data.append('category', formData.category);
         data.append('faqContent', formData.faqContent);
 
         try {
@@ -96,6 +98,19 @@ function FaqWrite() {
                             name="faqWriter" 
                             value={formData.faqWriter}
                             readonly />         
+                    </td></tr>
+                <tr><th width="120">카테고리</th>
+                    <td>
+                        <select
+                            name="category" 
+                            value={formData.category}
+                            onChange={handleChange}
+                            required
+                        >
+                            <option value="질문 TOP">질문 TOP</option>
+                            <option value="회원정보">회원정보</option>
+                            <option value="피드백">피드백</option>
+                        </select>       
                     </td></tr>
                 <tr><th>질문 내용</th>
                     <td><textarea 
