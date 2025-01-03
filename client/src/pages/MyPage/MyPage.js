@@ -100,6 +100,15 @@ function MyPage() {
       <button className="update-btn" onClick={handleEditClick}>
         정보 수정
       </button>
+
+      <button
+        className="faceid-register-btn"
+        onClick={() => navigate("/FaceIdRegister")} // Face ID 등록 페이지로 이동
+      >
+        Face ID 등록
+      </button>
+
+
     </div>
   );
 }

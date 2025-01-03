@@ -206,6 +206,16 @@ function Login({ onLoginSuccess }) {
               className={styles.apiButtonImage}
             />
           </button>
+
+          <button
+            type="button"
+            className={`${styles.apiButton} ${styles.faceIdButton}`} // 기존 스타일과 faceIdButton 추가
+            onClick={() => (window.location.href = "/faceid")}
+          >
+            Face ID로 로그인
+          </button>
+
+
         </div>
       </form>
     </div>
