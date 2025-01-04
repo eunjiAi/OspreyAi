@@ -199,17 +199,6 @@ function Signup({ onSignupSuccess }) {
             required
           />
         </div>
-        <div>
-          <label htmlFor="phone">구글: </label>
-          <input
-            type="email"
-            id="google"
-            name="google"
-            value={formData.google}
-            onChange={handleChange}
-            required
-          />
-        </div>
         <button type="submit">가입하기</button>
       </form>
     </div>

@@ -132,10 +132,10 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
     public Optional<MemberEntity> findByEmail(String email) {
         MemberEntity result = queryFactory
                 .selectFrom(member)
-                .where(member.email.eq(email)) // 이메일 조건
-                .fetchOne(); // 단일 결과 조회
+                .where(member.email.eq(email))
+                .fetchOne();
 
-        return Optional.ofNullable(result); // 결과가 없으면 Optional.empty() 반환
+        return Optional.ofNullable(result);
     }
 
     @Override

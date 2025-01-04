@@ -12,7 +12,6 @@ function MyPageUpdate() {
     name: "",
     nickname: "",
     email: "",
-    pw: "",
     phoneNumber: "",
     gender: "",
     google: "",
@@ -34,7 +33,6 @@ function MyPageUpdate() {
         });
         setFormData({
           email: response.data.email,
-          pw: response.data.pw,
           name: response.data.name,
           nickname: response.data.nickname,
           phoneNumber: response.data.phoneNumber,
@@ -59,39 +57,11 @@ function MyPageUpdate() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const validate = () => {
-    //암호와 암호 확인이 일치하는지 확인
-    if (formData.pw !== formData.confirmPwd) {
-      alert("비밀번호가 서로 일치하지 않습니다. 다시 입력해주세요.");
-      return false;
-    }
-
-    //모든 유효성 검사를 통과하면
-    return true;
-  };
-
-  // 암호확인 input 의 포커스(focus) 가 사라지면 작동되는 핸들러 함수임
-  const handleConfirmPwd = () => {
-    if (formData.confirmPwd) {
-      validate();
-    }
-  };
-
   const handleSave = async () => {
     try {
-      const dataToSend = { ...formData };
-
-      // 비밀번호가 비어 있다면 필드 제거
-      if (!dataToSend.pw) {
-        delete dataToSend.pw;
-      }
-      if (!dataToSend.confirmPwd) {
-        delete dataToSend.confirmPwd;
-      }
-
       const response = await apiClient.put(
         `/member/mypage/${userid}`,
-        dataToSend,
+        formData,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -146,38 +116,7 @@ function MyPageUpdate() {
             onChange={handleInputChange}
           />
         </label>
-        <p></p>
-        <label>
-          아이디(수정불가):
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            readOnly
-          />
-        </label>
-        <label>
-          비밀번호:
-          <input
-            type="password"
-            id="userPwd"
-            name="pw"
-            placeholder="기존 비밀번호를 유지하려면 비워두세요."
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          비밀번호 확인:
-          <input
-            type="password"
-            id="confirmPwd"
-            name="confirmPwd"
-            placeholder="기존 비밀번호를 유지하려면 비워두세요."
-            onChange={handleInputChange}
-            onBlur={handleConfirmPwd}
-          />
-        </label>
+
         <p></p>
         <label>이메일 연동</label>
         <label>

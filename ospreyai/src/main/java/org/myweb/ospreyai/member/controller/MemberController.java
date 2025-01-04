@@ -95,12 +95,9 @@ public class MemberController {
 		    @RequestBody Member member) {
 		Member preMember = memberService.selectMember(member.getEmail());
 
-		if (member.getPw() != null && member.getPw().length() > 0) {
-			member.setPw(bcryptPasswordEncoder.encode(member.getPw()));
-		}
-
 		member.setUuid(preMember.getUuid());
 		member.setAdminYn(preMember.getAdminYn());
+		member.setPw(preMember.getPw());
 		member.setFaceId(preMember.getFaceId());
 		member.setEnrollDate(preMember.getEnrollDate());
 		member.setLastModified(new Date(System.currentTimeMillis()));
@@ -114,6 +111,20 @@ public class MemberController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 	}
+
+	// 비밀번호 체크(비밀번호 변경시)
+	@PostMapping("/mypage/chkpw/{userId}")
+	public ResponseEntity<?> pwCheckIdMethod(@PathVariable String userId, @RequestBody Map<String, String> request) {
+		String inputPassword = request.get("pw");
+		boolean pwChk = memberService.checkPassword(userId, inputPassword);
+
+		if (pwChk) {
+			return ResponseEntity.ok().build();
+		} else {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+		}
+	}
+
 
 	// 회원 탈퇴(삭제) 요청 처리용
 	// 요청 행위가 delete (쿼리문) 이면 전송방식이 delete 이고, 매핑은 @DeleteMapping 으로 지정함

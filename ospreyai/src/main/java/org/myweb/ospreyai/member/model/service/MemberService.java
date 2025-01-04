@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.member.jpa.entity.MemberEntity;
 import org.myweb.ospreyai.member.jpa.repository.MemberRepository;
 import org.myweb.ospreyai.member.model.dto.Member;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,6 +20,7 @@ import java.util.Optional;
 public class MemberService {
 	//jpa 가 제공하는 기본 메소드와 추가한 메소드 사용
 	private final MemberRepository memberRepository;
+	private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
 	// 일반 Email로 회원 정보 검색
 	public Member selectMember(String userId) {
@@ -101,7 +104,13 @@ public class MemberService {
 		}
 	}
 
+	public boolean checkPassword(String userId, String inputPassword) {
+		Member member = memberRepository.findByEmail(userId)
+				.orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없습니다.")).toDto();
+		log.info("checkPassword() : " + member);
 
+		return bCryptPasswordEncoder.matches(inputPassword, member.getPw());
+	}
 
 
 //	@Transactional
