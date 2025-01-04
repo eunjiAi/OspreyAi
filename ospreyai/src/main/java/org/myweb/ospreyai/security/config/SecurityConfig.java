@@ -93,7 +93,7 @@ public class SecurityConfig {
                         //회원 서비스
                         .requestMatchers(HttpMethod.GET, "/member/myinfo").hasAnyRole("USER", "ADMIN") // GET 요청은 USER 롤 필요
                         .requestMatchers(HttpMethod.PUT, "/member").hasRole("USER") // PUT 요청은 USER 롤 필요
-                        .requestMatchers(HttpMethod.DELETE, "/member/{userId}").hasRole("USER") // DELETE 요청은 USER 롤 필요
+                        .requestMatchers(HttpMethod.DELETE, "/member/{userId}").hasAnyRole("USER", "ADMIN") // DELETE 요청은 USER 롤 필요
                         //회원관리 서비스
                         .requestMatchers(HttpMethod.PUT, "/member/loginok/{userId}/{loginOk}").hasRole("ADMIN") // PUT 요청은 ADMIN 롤 필요
                         .requestMatchers(HttpMethod.GET, "/member/search").hasRole("ADMIN") // GET 요청은 ADMIN 롤 필요

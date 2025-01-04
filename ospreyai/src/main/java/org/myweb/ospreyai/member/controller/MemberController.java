@@ -127,19 +127,16 @@ public class MemberController {
 
 
 	// 회원 탈퇴(삭제) 요청 처리용
-	// 요청 행위가 delete (쿼리문) 이면 전송방식이 delete 이고, 매핑은 @DeleteMapping 으로 지정함
-	// 탈퇴처리의 요청 행위가 update (쿼리문, 탈퇴여부 컬럼을 Y로 변경 등) 이면, 전송방식이 put 임
-	// @PutMapping 으로 지정함 => 컨트롤러 안에 같은 매핑이 여러 개이면 하위 url 을 추가해서 구분 지정함
-//	@DeleteMapping("/{userId}")
-//	public ResponseEntity memberDeleteMethod(@PathVariable String userId) {
-//		try {
-//			memberService.deleteMember(userId);
-//			return ResponseEntity.ok().build();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//		}
-//	}
+	@DeleteMapping("/{uuid}")
+	public ResponseEntity memberDeleteMethod(@PathVariable String uuid) {
+		try {
+			memberService.deleteMember(uuid);
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+	}
 	
 	// 관리자용 기능 *********************************************************
 	// 회원 목록 보기 요청 처리용 (페이징 처리 포함)

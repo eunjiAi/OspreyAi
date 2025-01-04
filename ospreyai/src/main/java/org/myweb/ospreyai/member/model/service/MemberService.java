@@ -113,18 +113,16 @@ public class MemberService {
 	}
 
 
-//	@Transactional
-//	public int deleteMember(String userId) {
-//		try {   //리턴 타입을 int 로 맞추기 위해서 처리함
-//			//deleteById() -> 리턴 타입이 void 임
-//			//전달인자인 userid 가 null 인 경우 IllegalArgumentException 발생함
-//			memberRepository.deleteById(userId);
-//			return 1;
-//		} catch (Exception e) {
-//			log.info(e.getMessage());
-//			return 0;
-//		}
-//	}
+	@Transactional
+	public int deleteMember(String userId) {
+		try {
+			memberRepository.deleteById(userId);
+			return 1;
+		} catch (Exception e) {
+			log.info(e.getMessage());
+			return 0;
+		}
+	}
 
 
 	//관리자용 ******************************************

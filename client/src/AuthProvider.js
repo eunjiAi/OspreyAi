@@ -32,6 +32,7 @@ export const AuthProvider = ({ children }) => {
     role: "",
     username: "",
     userid: "",
+    uuid: "",
   });
 
   // 로그아웃 함수
@@ -63,6 +64,7 @@ export const AuthProvider = ({ children }) => {
         role: "",
         username: "",
         userid: "",
+        uuid: "",
       });
       console.log("로그아웃 완료: authInfo가 초기화되었습니다.");
     }
@@ -86,7 +88,8 @@ export const AuthProvider = ({ children }) => {
       );
 
       const newAccessToken = response.data.accessToken;
-      if (!newAccessToken) throw new Error("새로운 Access Token을 받을 수 없습니다.");
+      if (!newAccessToken)
+        throw new Error("새로운 Access Token을 받을 수 없습니다.");
 
       console.log("Access Token 갱신 성공: 새 Access Token을 저장합니다.");
       localStorage.setItem("accessToken", newAccessToken);
@@ -99,6 +102,7 @@ export const AuthProvider = ({ children }) => {
         role: parsedToken?.role || prev.role,
         username: parsedToken?.name || prev.username,
         userid: parsedToken?.sub || prev.userid,
+        uuid: parsedToken?.uuid || prev.uuid,
       }));
     } catch (error) {
       if (error.response && error.response.status === 401) {
@@ -113,7 +117,9 @@ export const AuthProvider = ({ children }) => {
   // 로그인 함수
   const login = ({ accessToken, refreshToken }) => {
     if (!accessToken || !refreshToken) {
-      console.error("로그인 중 Access Token 또는 Refresh Token이 누락되었습니다.");
+      console.error(
+        "로그인 중 Access Token 또는 Refresh Token이 누락되었습니다."
+      );
       return;
     }
 
@@ -131,9 +137,10 @@ export const AuthProvider = ({ children }) => {
       isLoggedIn: true,
       accessToken,
       refreshToken,
-      role: parsedToken?.role || "user",
+      role: parsedToken?.role || "USER",
       username: parsedToken?.name || "알 수 없음",
       userid: parsedToken?.sub || "알 수 없음",
+      uuid: parsedToken?.uuid || "알 수 없음",
     });
 
     console.log("로그인 성공: authInfo가 업데이트되었습니다.");
@@ -147,7 +154,9 @@ export const AuthProvider = ({ children }) => {
         const storedRefreshToken = localStorage.getItem("refreshToken");
 
         if (!storedRefreshToken) {
-          console.log("저장된 Refresh Token이 없습니다. 로그아웃 상태로 시작합니다.");
+          console.log(
+            "저장된 Refresh Token이 없습니다. 로그아웃 상태로 시작합니다."
+          );
           logout();
           return;
         }
@@ -163,7 +172,9 @@ export const AuthProvider = ({ children }) => {
         if (storedAccessToken) {
           const parsedToken = parseAccessToken(storedAccessToken);
           if (parsedToken && parsedToken.exp * 1000 > Date.now()) {
-            console.log("유효한 Access Token을 발견했습니다. 로그인 상태를 복원합니다.");
+            console.log(
+              "유효한 Access Token을 발견했습니다. 로그인 상태를 복원합니다."
+            );
             setAuthInfo({
               isLoggedIn: true,
               accessToken: storedAccessToken,
@@ -171,13 +182,18 @@ export const AuthProvider = ({ children }) => {
               role: parsedToken.role || "user",
               username: parsedToken.name || "알 수 없음",
               userid: parsedToken.sub || "알 수 없음",
+              uuid: parsedToken.uuid || "알 수 없음",
             });
           } else {
-            console.warn("Access Token이 만료되었습니다. 리프레시 토큰으로 갱신을 시도합니다.");
+            console.warn(
+              "Access Token이 만료되었습니다. 리프레시 토큰으로 갱신을 시도합니다."
+            );
             await refreshAccessToken();
           }
         } else {
-          console.log("저장된 Access Token이 없습니다. 리프레시 토큰으로 갱신을 시도합니다.");
+          console.log(
+            "저장된 Access Token이 없습니다. 리프레시 토큰으로 갱신을 시도합니다."
+          );
           await refreshAccessToken();
         }
       } catch (error) {
