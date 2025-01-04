@@ -75,7 +75,7 @@ function SquatFeedback() {
       } catch (error) {
         console.error('Token refresh failed:', error);
         alert('로그인이 만료되었습니다. 다시 로그인해주세요.');
-        window.location.href = '/login';              // 로그인 페이지로 리다이렉트
+        window.location.href = '/';              // 홈 페이지로 리다이렉트
         throw error;
       }
     }
