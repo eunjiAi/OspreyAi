@@ -39,7 +39,7 @@
 }
 
 /* 버튼 스타일 */
-.update-btn {
+.update-btn, .faceid-register-btn {
   display: block;
   width: 100%;
   padding: 12px 0;
@@ -54,7 +54,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.update-btn:hover {
+.update-btn:hover, .faceid-register-btn:hover {
   background-color: #0056b3;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -91,7 +91,7 @@
     font-size: 20px;
   }
 
-  .update-btn {
+  .update-btn .faceid-register-btn {
     font-size: 14px;
     padding: 10px 0;
   }

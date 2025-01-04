@@ -38,9 +38,14 @@ function App() {
         {/* 검색 결과 전달 및 기본 경로 */}
         <Route path="/" element={<Home searchResults={generalResults} />} />
         <Route path="/posts" element={<Posts searchResults={postsResults} />} />
-        <Route path="/notice" element={<Notice searchResults={noticeResults} />} />
-        <Route path="/question" element={<QuestionList searchResults={questionResults} />} />
-        <Route path="/qna" element={<QuestionList searchResults={questionResults} />} />
+        <Route
+          path="/notice"
+          element={<Notice searchResults={noticeResults} />}
+        />
+        <Route
+          path="/qna"
+          element={<QuestionList searchResults={questionResults} />}
+        />
         ,{/* 나머지경로 AppRouter 에서 처리리 */}
         <Route path="/*" element={<AppRouter />} />
       </Routes>
