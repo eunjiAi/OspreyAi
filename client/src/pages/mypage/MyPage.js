@@ -36,7 +36,7 @@ function MyPage() {
           onClick={() => navigate("/mypage/qna")}
           className={`tab ${location.pathname === "/mypage/qna" ? "active" : ""}`}
         >
-          QnA
+          my QnA
         </button>
         <button
           onClick={() => navigate("/mypage/withdrawal")}
