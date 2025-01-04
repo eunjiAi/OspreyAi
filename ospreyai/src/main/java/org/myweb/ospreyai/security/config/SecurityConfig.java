@@ -107,6 +107,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 // JWT 필터와 Login 필터 추가
+                .addFilterBefore(new DebugFilter("디버그 필터"), UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(new JWTFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class)
                 .addFilterAt(new LoginFilter(userService, refreshService, authenticationManager(), jwtUtil), UsernamePasswordAuthenticationFilter.class)
                 .logout(logout -> logout
