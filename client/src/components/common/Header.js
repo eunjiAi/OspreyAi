@@ -202,7 +202,7 @@ function Header({
         {isLoggedIn ? (
           <>
             <span className={styles.username}>
-              <Link to="/myPage">{username}</Link>
+              <Link to="/mypage">{username}</Link>
             </span>
             <button onClick={handleLogout} className={styles.authButton}>
               로그아웃

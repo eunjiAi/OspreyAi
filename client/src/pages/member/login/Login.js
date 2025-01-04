@@ -453,8 +453,6 @@ function Login({ onLoginSuccess }) {
           >
             Face ID로 로그인
           </button>
-
-
         </div>
       </form>
     </div>
