@@ -21,7 +21,7 @@ public interface MemberRepositoryCustom {
      List<MemberEntity> findSearchLoginOK(String keyword, Pageable pageable);
      long countSearchLoginOK(String keyword);
 
-    // 이메일로 정보 조회하기용
+    // 아이디 정보 조회하기용
     Optional<MemberEntity> findByMemberId(String memberId);
     // 구글 이메일 조회
     Optional<MemberEntity> findByGoogle(String email);

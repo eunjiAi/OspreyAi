@@ -29,7 +29,7 @@ public class MemberService {
 		// 데이터가 없을 경우 예외 처리
 		return entityOptional
 				.map(MemberEntity::toDto) // Optional로 안전하게 DTO 변환
-				.orElseThrow(() -> new NoSuchElementException("해당 이메일을 조회할 수 없습니다 : " + userId));
+				.orElseThrow(() -> new NoSuchElementException("해당 아이디를 조회할 수 없습니다 : " + userId));
 	}
 
 	//구글 이메일로 회원 정보 조회
@@ -119,6 +119,10 @@ public class MemberService {
 			log.info(e.getMessage());
 			return 0;
 		}
+	}
+
+	public Member selectUuid(String uuid) {
+		return memberRepository.findById(uuid).get().toDto();
 	}
 
 

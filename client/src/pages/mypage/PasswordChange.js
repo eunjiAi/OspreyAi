@@ -5,7 +5,7 @@ import "./PasswordChange.css";
 import { AuthContext } from "../../AuthProvider";
 
 function PasswordChange() {
-  const { userid, accessToken } = useContext(AuthContext);
+  const { uuid, userid, accessToken } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [passwordData, setPasswordData] = useState({
@@ -83,7 +83,7 @@ function PasswordChange() {
       };
 
       const updateResponse = await apiClient.put(
-        `/member/mypage/${userid}`,
+        `/member/mypage/pwchange/${uuid}`,
         updatedData,
         {
           headers: {

@@ -74,13 +74,12 @@ public class MemberController {
 		}
 	}
 
-	// 마이페이지
+	// 마이페이지 메인
 	@GetMapping("/mypage/{userId}")
 	public ResponseEntity<Member> memberDetailMethod(@PathVariable String userId) {
 		log.info("마이페이지 회원 아이디 : " + userId);
 
 		Member member = memberService.selectMember(userId);
-		log.info("마이페이지 회원 정보 : " + member);
 
 		if(member != null){
 			return ResponseEntity.status(HttpStatus.OK).body(member);
@@ -92,21 +91,18 @@ public class MemberController {
 
 	//회원정보 수정
 	@PutMapping("/mypage/{uuid}")
-	public ResponseEntity memberUpdateMethod(
-		    @RequestBody Member member) {
-		Member preMember = memberService.selectMember(member.getMemberId());
+	public ResponseEntity memberUpdateMethod(@PathVariable String uuid, @RequestBody Member member) {
+		Member preMember = memberService.selectUuid(uuid);
 
-		member.setUuid(preMember.getUuid());
-		member.setAdminYn(preMember.getAdminYn());
-		member.setPw(preMember.getPw());
-		member.setFaceId(preMember.getFaceId());
-		member.setFaceVector(preMember.getFaceVector());
-		member.setEnrollDate(preMember.getEnrollDate());
-		member.setLastModified(new Date(System.currentTimeMillis()));
-		member.setLoginOk(preMember.getLoginOk());
+		preMember.setName(member.getName());
+		preMember.setNickname(member.getNickname());
+		preMember.setPhoneNumber(member.getPhoneNumber());
+		preMember.setGoogle(member.getGoogle());
+		preMember.setNaver(member.getNaver());
+		preMember.setKakao(member.getKakao());
 
 		try {
-			memberService.updateMember(member); // 회원정보 수정 성공시
+			memberService.updateMember(preMember); // 회원정보 수정 성공시
 			return ResponseEntity.ok().build();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -124,6 +120,21 @@ public class MemberController {
 			return ResponseEntity.ok().build();
 		} else {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+		}
+	}
+
+	// 새로운 비밀번호로 변경
+	@PutMapping("/mypage/pwchange/{uuid}")
+	public ResponseEntity<?> pwChangeMethod(@PathVariable String uuid, @RequestBody Map<String, String> request) {
+		Member member = memberService.selectUuid(uuid);
+
+		member.setPw(bcryptPasswordEncoder.encode(request.get("pw")));
+
+		try {
+			memberService.updateMember(member);
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 	}
 
