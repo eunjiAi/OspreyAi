@@ -42,7 +42,7 @@ public class CustomUserDetails implements UserDetails {
     //사용자의 이름(로그인시 사용된 아이디 또는 이메일) 반환하는 메소드임
     @Override
     public String getUsername() {
-        return member.getEmail();
+        return member.getMemberId();
     }
 
     //계정이 만료되었는지를 반환하는 메소드임. 

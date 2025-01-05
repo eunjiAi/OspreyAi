@@ -5,7 +5,7 @@ import style from "./Signup.module.css";
 
 function Signup({ onSignupSuccess }) {
   const [formData, setFormData] = useState({
-    email: "",
+    memberId: "",
     userNickName: "",
     userPwd: "",
     confirmPwd: "",
@@ -23,19 +23,18 @@ function Signup({ onSignupSuccess }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  // 작성된 이메일 사용 가능 여부에 대한 상태변수 추가함
   const [isIdAvailable, setIsIdAvailable] = useState(null);
 
-  // 이메일 중복검사 버튼 클릭시 작동할 핸들러 함수
+  // 아이디디 중복검사 버튼 클릭시 작동할 핸들러 함수
   const handleIdCheck = async () => {
-    if (!formData.email) {
+    if (!formData.memberId) {
       alert("아이디를 입력하세요.");
       return;
     }
 
     try {
-      const response = await apiClient.post("/member/emailchk", null, {
-        params: { email: formData.email },
+      const response = await apiClient.post("/member/memberidchk", null, {
+        params: { memberId: formData.memberId },
       });
 
       if (response.data === "ok") {
@@ -74,12 +73,12 @@ function Signup({ onSignupSuccess }) {
     e.preventDefault(); // submit 이벤트 취소함 (axios 로 따로 전송할 것이므로)
 
     if (isIdAvailable === false) {
-      alert("이미 사용중인 이메일입니다.");
+      alert("이미 사용중인 아이디입니다.");
       return;
     }
 
     if (isIdAvailable === null) {
-      alert("이메일 중복검사를 해주세요.");
+      alert("아이디 중복검사를 해주세요.");
       return;
     }
 
@@ -116,12 +115,12 @@ function Signup({ onSignupSuccess }) {
       <h1>회원 가입</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="email">아이디: </label>
+          <label htmlFor="memberId">아이디: </label>
           <input
             type="text"
-            id="email"
-            name="email"
-            value={formData.email}
+            id="memberId"
+            name="memberId"
+            value={formData.memberId}
             onChange={handleChange}
             required
           />

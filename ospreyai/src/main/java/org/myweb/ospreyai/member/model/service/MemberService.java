@@ -22,10 +22,9 @@ public class MemberService {
 	private final MemberRepository memberRepository;
 	private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
-	// 일반 Email로 회원 정보 검색
+	// id로 회원 정보 검색
 	public Member selectMember(String userId) {
-		// 이메일을 기준으로 조회한다고 가정
-		Optional<MemberEntity> entityOptional = memberRepository.findByEmail(userId);
+		Optional<MemberEntity> entityOptional = memberRepository.findByMemberId(userId);
 
 		// 데이터가 없을 경우 예외 처리
 		return entityOptional
@@ -61,13 +60,12 @@ public class MemberService {
 	}
 
 
-	//회원가입시 이메일 중복 검사용
-	public int selectCheckEmail(String email) {
-		// email로 회원정보 가져와서 uuid 추출
-		String uuid = memberRepository.findByEmail(email)
+	//회원가입시 id 중복 검사용
+	public int selectCheckId(String memberId) {
+		// id 회원정보 가져와서 uuid 추출
+		String uuid = memberRepository.findByMemberId(memberId)
 				.map(MemberEntity::getUuid)
 				.orElse(null);
-		log.info("selectCheckEmail() : " + uuid);
 
 		return (uuid != null && memberRepository.existsById(uuid)) ? 1 : 0;
 	}
@@ -86,7 +84,7 @@ public class MemberService {
 
 	//닉네임 조회
 	public String getNicknameByUserId(String userid) {
-		return memberRepository.findByEmail(userid)
+		return memberRepository.findByMemberId(userid)
 				.map(MemberEntity::getNickname) // 메서드 참조 대신 람다식 사용
 				.orElseThrow(() -> new IllegalArgumentException("해당 사용자 ID를 찾을 수 없습니다: " + userid));
 	}
@@ -94,7 +92,6 @@ public class MemberService {
 	//회원정보 수정
 	@Transactional
 	public int updateMember(Member member) {
-		//save() -> 성공시 Entity, 실패시 null 리턴함, JPA 가 제공하는 메소드임
 		try{
 			memberRepository.save(member.toEntity()).toDto();
 			return 1;
@@ -105,7 +102,7 @@ public class MemberService {
 	}
 
 	public boolean checkPassword(String userId, String inputPassword) {
-		Member member = memberRepository.findByEmail(userId)
+		Member member = memberRepository.findByMemberId(userId)
 				.orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없습니다.")).toDto();
 		log.info("checkPassword() : " + member);
 

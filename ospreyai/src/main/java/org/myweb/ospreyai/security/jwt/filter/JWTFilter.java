@@ -80,7 +80,7 @@ public class JWTFilter extends OncePerRequestFilter {
 
             // 사용자 인증 객체 생성
             MemberEntity member = new MemberEntity();
-            member.setEmail(username);
+            member.setMemberId(username);
             member.setName(name); // 추가: Name 설정
             member.setUuid(uuid); // 추가: UUID 설정
             member.setAdminYn(role.equals("ADMIN") ? "Y" : "N");

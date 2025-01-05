@@ -31,10 +31,10 @@ public class MemberController {
 
 	private final BCryptPasswordEncoder bcryptPasswordEncoder;
 
-	//ajax 통신으로 가입할 회원의 이메일(유니크) 중복 검사 요청 처리용 메소드
-	@PostMapping("/emailchk")
-	public ResponseEntity<String> dupCheckIdMethod(@RequestParam("email") String email) {
-		if(memberService.selectCheckEmail(email) == 0){
+	//ajax 통신으로 가입할 회원의 아이디(유니크) 중복 검사 요청 처리용 메소드
+	@PostMapping("/memberidchk")
+	public ResponseEntity<String> dupCheckIdMethod(@RequestParam("memberId") String memberId) {
+		if(memberService.selectCheckId(memberId) == 0){
 			return new ResponseEntity<String>("ok", HttpStatus.OK);
 		}else{
 			return new ResponseEntity<String>("dup", HttpStatus.OK);
@@ -63,6 +63,7 @@ public class MemberController {
 
 	}
 
+	// 닉네임 가져오기
 	@GetMapping("/nickname")
 	public ResponseEntity<String> getNicknameByUserId(@RequestParam String userid) {
 		String nickname = memberService.getNicknameByUserId(userid);
@@ -90,15 +91,16 @@ public class MemberController {
 	}
 
 	//회원정보 수정
-	@PutMapping("/mypage/{userId}")
+	@PutMapping("/mypage/{uuid}")
 	public ResponseEntity memberUpdateMethod(
 		    @RequestBody Member member) {
-		Member preMember = memberService.selectMember(member.getEmail());
+		Member preMember = memberService.selectMember(member.getMemberId());
 
 		member.setUuid(preMember.getUuid());
 		member.setAdminYn(preMember.getAdminYn());
 		member.setPw(preMember.getPw());
 		member.setFaceId(preMember.getFaceId());
+		member.setFaceVector(preMember.getFaceVector());
 		member.setEnrollDate(preMember.getEnrollDate());
 		member.setLastModified(new Date(System.currentTimeMillis()));
 		member.setLoginOk(preMember.getLoginOk());

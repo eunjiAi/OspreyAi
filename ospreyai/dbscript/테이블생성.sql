@@ -14,7 +14,7 @@ CREATE TABLE Member (
     uuid VARCHAR2(36) NOT NULL,
     name VARCHAR2(20) NOT NULL,
     nickname VARCHAR2(30),
-    email VARCHAR2(100) NOT NULL,
+    memberid VARCHAR2(100) NOT NULL,
     pw VARCHAR2(100),
     phone_number VARCHAR2(15),
     gender CHAR(1) NOT NULL,
@@ -27,14 +27,14 @@ CREATE TABLE Member (
     kakao VARCHAR2(100),
     login_ok CHAR(1) DEFAULT 'Y' NOT NULL,
     PRIMARY KEY (uuid),
-    UNIQUE (email)
+    UNIQUE (memberid)
 );
 
 -- Member 테이블 코멘트 생성
 COMMENT ON COLUMN Member.uuid IS '고유키';
 COMMENT ON COLUMN Member.name IS '이름';
 COMMENT ON COLUMN Member.nickname IS '닉네임';
-COMMENT ON COLUMN Member.email IS '이메일';
+COMMENT ON COLUMN Member.memberid IS '아이디';
 COMMENT ON COLUMN Member.pw IS '비밀번호';
 COMMENT ON COLUMN Member.phone_number IS '전화번호';
 COMMENT ON COLUMN Member.gender IS '성별';
@@ -72,7 +72,7 @@ CREATE TABLE Refresh_Tokens (
     member_agent VARCHAR2(255),
     status VARCHAR2(50),
     CONSTRAINT PK_RTOKENS PRIMARY KEY (id),
-    CONSTRAINT FK_RTOKENS FOREIGN KEY (userid) REFERENCES MEMBER (email) ON DELETE CASCADE
+    CONSTRAINT FK_RTOKENS FOREIGN KEY (userid) REFERENCES MEMBER (memberid) ON DELETE CASCADE
 );
 
 -- Refresh_Tokens 테이블 코멘트 생성
@@ -138,7 +138,7 @@ CREATE TABLE Posts (
     rename_file VARCHAR2(200),
     post_count NUMBER DEFAULT 0,
     PRIMARY KEY (post_id),
-    CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (writer) REFERENCES Member (email)
+    CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (writer) REFERENCES Member (memberid)
 );
 
 -- Posts 테이블 코멘트 생성
@@ -218,7 +218,7 @@ CREATE TABLE FAQ (
     faq_writer VARCHAR2(100) NOT NULL,
     CONSTRAINT fk_qna_id FOREIGN KEY (qna_id) REFERENCES FAQ(faq_id) ON DELETE SET NULL -- QNA와 외래키 관계
     ,CONSTRAINT CHK_faq_qa check (faq_qa in ('Q', 'A'))
-    ,CONSTRAINT fk_faq_writer FOREIGN KEY (faq_writer) REFERENCES MEMBER(email) ON DELETE SET NULL
+    ,CONSTRAINT fk_faq_writer FOREIGN KEY (faq_writer) REFERENCES MEMBER(memberid) ON DELETE SET NULL
 );
 
 -- 컬럼에 대한 설명 추가

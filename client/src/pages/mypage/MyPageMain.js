@@ -11,7 +11,7 @@ function MyPage() {
   const [userData, setUserData] = useState({
     name: "",
     nickname: "",
-    id: "",
+    memberId: "",
     phoneNumber: "",
     gender: "",
     enrollDate: "",
@@ -68,7 +68,7 @@ function MyPage() {
           <strong>닉네임:</strong> {userData.nickname || "정보 없음"}
         </p>
         <p>
-          <strong>아이디:</strong> {userData.email || "정보 없음"}
+          <strong>아이디:</strong> {userData.memberId || "정보 없음"}
         </p>
         <p>
           <strong>전화번호:</strong> {userData.phoneNumber || "정보 없음"}
@@ -100,8 +100,6 @@ function MyPage() {
       <button className="update-btn" onClick={handleEditClick}>
         정보 수정
       </button>
-
-      
     </div>
   );
 }

@@ -111,7 +111,9 @@ function Posts({ searchResults }) {
   return (
     <div className="posts-container">
       <h1 className="posts-title">게시판</h1>
-      {role === "ADMIN" && <button onClick={handleWriteClick}>글쓰기</button>}
+      {(role === "ADMIN" || role === "USER") && (
+        <button onClick={handleWriteClick}>글쓰기</button>
+      )}
       <table className={styles.postsList}>
         <thead>
           <tr>

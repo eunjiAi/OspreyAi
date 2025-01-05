@@ -47,7 +47,7 @@ const QuestionWrite = () => {
             });
 
             alert('새 질문글 등록 성공');
-            navigate(`/question`);
+            navigate(`/qna`);
         } catch (error) {
             console.error('질문글 등록 실패', error);
             alert('새 질문글 등록 실패');

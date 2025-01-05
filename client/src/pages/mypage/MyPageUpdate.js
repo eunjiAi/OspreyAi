@@ -5,13 +5,13 @@ import styles from "./MyPageUpdate.css";
 import { AuthContext } from "../../AuthProvider";
 
 function MyPageUpdate() {
-  const { userid, accessToken } = useContext(AuthContext);
+  const { uuid, userid, accessToken } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
     nickname: "",
-    email: "",
+    memberid: "",
     phoneNumber: "",
     gender: "",
     google: "",
@@ -32,7 +32,7 @@ function MyPageUpdate() {
           },
         });
         setFormData({
-          email: response.data.email,
+          memberid: response.data.memberid,
           name: response.data.name,
           nickname: response.data.nickname,
           phoneNumber: response.data.phoneNumber,
@@ -59,15 +59,11 @@ function MyPageUpdate() {
 
   const handleSave = async () => {
     try {
-      const response = await apiClient.put(
-        `/member/mypage/${userid}`,
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
+      const response = await apiClient.put(`/member/mypage/${uuid}`, formData, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
       alert("회원 정보가 성공적으로 수정되었습니다.");
       navigate("/mypage"); // 수정 완료 후 마이페이지로 이동
     } catch (err) {

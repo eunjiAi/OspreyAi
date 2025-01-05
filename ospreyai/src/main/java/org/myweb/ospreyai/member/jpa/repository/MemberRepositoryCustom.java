@@ -22,7 +22,7 @@ public interface MemberRepositoryCustom {
      long countSearchLoginOK(String keyword);
 
     // 이메일로 정보 조회하기용
-    Optional<MemberEntity> findByEmail(String userId);
+    Optional<MemberEntity> findByMemberId(String memberId);
     // 구글 이메일 조회
     Optional<MemberEntity> findByGoogle(String email);
     // 네이버 이메일 조회

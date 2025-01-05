@@ -79,7 +79,7 @@ const QuestionDetail = () => {
               alert('삭제가 완료되었습니다.');
               //브라우저 히스토리를 이용해서, 목록 출력 페이지로 이동 <= 리액트의 히스토리를 이용한다면
               //history.push('/notice');
-              navigate('/question');  //목록 출력 페이지로 이동
+              navigate('/qna');  //목록 출력 페이지로 이동
           } catch (error) {
               console.error('Delete error : ', error);
               alert('삭제 실패!');

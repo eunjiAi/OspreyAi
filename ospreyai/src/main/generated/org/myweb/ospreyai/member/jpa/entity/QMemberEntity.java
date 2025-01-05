@@ -21,11 +21,11 @@ public class QMemberEntity extends EntityPathBase<MemberEntity> {
 
     public final StringPath adminYn = createString("adminYn");
 
-    public final StringPath email = createString("email");
-
     public final DatePath<java.sql.Date> enrollDate = createDate("enrollDate", java.sql.Date.class);
 
     public final StringPath faceId = createString("faceId");
+
+    public final StringPath faceVector = createString("faceVector");
 
     public final StringPath gender = createString("gender");
 
@@ -36,6 +36,8 @@ public class QMemberEntity extends EntityPathBase<MemberEntity> {
     public final DatePath<java.sql.Date> lastModified = createDate("lastModified", java.sql.Date.class);
 
     public final StringPath loginOk = createString("loginOk");
+
+    public final StringPath memberId = createString("memberId");
 
     public final StringPath name = createString("name");
 

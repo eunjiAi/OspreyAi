@@ -34,7 +34,7 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
         return queryFactory
                 .selectFrom(member)
                 .where(
-                        member.email.like("%" + keyword + "%")
+                        member.memberId.like("%" + keyword + "%")
                                 .and(member.adminYn.eq("N"))
                 )
                 .orderBy(member.enrollDate.desc())
@@ -48,7 +48,7 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
         return queryFactory
                 .selectFrom(member)     //select * from notice
                 .where(
-                        member.email.like("%" + keyword + "%")
+                        member.memberId.like("%" + keyword + "%")
                                 .and(member.adminYn.eq("N"))
                 )//where noticetitle %keyword%
                 .fetchCount();
@@ -129,10 +129,10 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
     }
 
     @Override
-    public Optional<MemberEntity> findByEmail(String email) {
+    public Optional<MemberEntity> findByMemberId(String memberId) {
         MemberEntity result = queryFactory
                 .selectFrom(member)
-                .where(member.email.eq(email))
+                .where(member.memberId.eq(memberId))
                 .fetchOne();
 
         return Optional.ofNullable(result);
