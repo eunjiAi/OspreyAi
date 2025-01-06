@@ -1,10 +1,12 @@
+
+// npm install face-api.js
 import React, { useState, useRef, useEffect } from 'react';
-import * as faceapi from 'face-api.js';  // Import face-api.js
+import * as faceapi from 'face-api.js';
 
 const FaceIdComponent = () => {
   const [status, setStatus] = useState('');
-  const [imageData, setImageData] = useState(null);  // 촬영된 이미지 상태
-  const [userUuid, setUserUuid] = useState('');  // UUID 저장
+  const [imageData, setImageData] = useState(null);   // 촬영된 이미지 상태
+  const [userUuid, setUserUuid] = useState('');       // UUID 저장
   const imageInputRef = useRef(null);
 
   // 로그인한 사용자 UUID를 서버에서 받아오기 (useEffect로 초기화)
