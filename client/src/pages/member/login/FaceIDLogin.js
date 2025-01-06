@@ -48,7 +48,7 @@ const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     const imageData = canvas.toDataURL("image/jpeg"); // 캔버스의 이미지를 base64로 변환
 
-    console.log("Captured image data:", imageData); // 디버깅: 캡처된 이미지 데이터 확인
+    console.log("Captured image data:", imageData); // 캡처된 이미지 데이터 확인
 
     // 얼굴 인식 결과를 서버로 전송
     axios
