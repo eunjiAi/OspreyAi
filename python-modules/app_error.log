@@ -13879,3 +13879,837 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
 2025-01-06 10:25:39,966 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
 2025-01-06 10:25:39,977 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
 2025-01-06 10:25:39,977 INFO 127.0.0.1 - - [06/Jan/2025 10:25:39] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:29:07,190 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:29:24,900 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:29:24,900 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:29:24,901 INFO  * Restarting with stat
+2025-01-06 10:29:28,364 WARNING  * Debugger is active!
+2025-01-06 10:29:28,366 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:29:29,481 INFO 127.0.0.1 - - [06/Jan/2025 10:29:29] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:29:29,800 INFO Analyzed Pose -> Angle: 13.221008547562203, Knee Position: 0.007140815258026123, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:29:29,801 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:29:29,875 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:29:29,889 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:29:29,906 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:29:29,906 INFO 127.0.0.1 - - [06/Jan/2025 10:29:29] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:29:30,199 INFO Analyzed Pose -> Angle: 14.916812224939797, Knee Position: 0.002156674861907959, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:29:30,200 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:29:30,200 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:29:30,208 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:29:30,225 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:29:30,226 INFO 127.0.0.1 - - [06/Jan/2025 10:29:30] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:29:31,506 INFO Analyzed Pose -> Angle: 91.47409690871426, Knee Position: 0.037228167057037354, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:29:31,507 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:29:31,507 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:29:31,516 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:29:31,530 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:29:31,532 INFO 127.0.0.1 - - [06/Jan/2025 10:29:31] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:29:32,203 INFO Analyzed Pose -> Angle: 75.27439868558662, Knee Position: -0.02374565601348877, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:29:32,203 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:29:32,203 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:29:32,212 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:29:32,224 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:29:32,224 INFO 127.0.0.1 - - [06/Jan/2025 10:29:32] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:29:33,533 INFO Analyzed Pose -> Angle: 24.369448064287706, Knee Position: -0.006840348243713379, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:29:33,535 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:29:33,535 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:29:33,543 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:29:33,560 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:29:33,560 INFO 127.0.0.1 - - [06/Jan/2025 10:29:33] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:29:34,203 INFO Analyzed Pose -> Angle: 17.259181130694735, Knee Position: -0.0014971494674682617, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:29:34,204 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:29:34,204 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:29:34,211 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:29:34,227 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:29:34,227 INFO 127.0.0.1 - - [06/Jan/2025 10:29:34] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:19,883 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:30:24,710 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:30:24,710 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:30:24,711 INFO  * Restarting with stat
+2025-01-06 10:30:28,294 WARNING  * Debugger is active!
+2025-01-06 10:30:28,296 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:30:28,305 INFO 127.0.0.1 - - [06/Jan/2025 10:30:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:28,307 INFO 127.0.0.1 - - [06/Jan/2025 10:30:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:28,309 INFO 127.0.0.1 - - [06/Jan/2025 10:30:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:28,710 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:30:28,710 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:30:28,711 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:30:28,711 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:30:28,711 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:30:28,711 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:30:28,785 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:28,788 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:28,788 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:28,801 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:28,818 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:28,820 INFO 127.0.0.1 - - [06/Jan/2025 10:30:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:28,919 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:28,937 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:28,937 INFO 127.0.0.1 - - [06/Jan/2025 10:30:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:28,943 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:30:28,945 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:30:28,945 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:28,954 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:28,966 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:28,966 INFO 127.0.0.1 - - [06/Jan/2025 10:30:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:29,108 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:29,122 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:29,122 INFO 127.0.0.1 - - [06/Jan/2025 10:30:29] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:29,958 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:30:29,959 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:30:29,959 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:29,971 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:29,989 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:29,989 INFO 127.0.0.1 - - [06/Jan/2025 10:30:29] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:30,684 INFO Analyzed Pose -> Angle: 13.792282300167503, Knee Position: -0.0005483031272888184, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:30:30,685 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:30:30,685 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:30,695 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:30,708 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:30,708 INFO 127.0.0.1 - - [06/Jan/2025 10:30:30] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:31,985 INFO Analyzed Pose -> Angle: 71.17198249361901, Knee Position: 0.028068840503692627, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:30:31,987 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:30:31,987 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:31,998 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:32,014 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:32,014 INFO 127.0.0.1 - - [06/Jan/2025 10:30:32] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:32,664 INFO Analyzed Pose -> Angle: 19.794404371370163, Knee Position: -0.03269475698471069, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:30:32,666 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:30:32,666 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:32,675 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:32,692 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:32,693 INFO 127.0.0.1 - - [06/Jan/2025 10:30:32] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:33,937 INFO 127.0.0.1 - - [06/Jan/2025 10:30:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:34,241 INFO Analyzed Pose -> Angle: 20.005608124449488, Knee Position: -0.006765484809875488, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:30:34,242 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:30:34,242 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:34,250 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:34,263 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:34,263 INFO 127.0.0.1 - - [06/Jan/2025 10:30:34] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:30:34,689 INFO Analyzed Pose -> Angle: 19.459060317367758, Knee Position: -0.0064231157302856445, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:30:34,691 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:30:34,691 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:30:34,701 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:30:34,714 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:30:34,714 INFO 127.0.0.1 - - [06/Jan/2025 10:30:34] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:31:34,001 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:31:37,830 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:31:37,830 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:31:37,831 INFO  * Restarting with stat
+2025-01-06 10:31:40,799 WARNING  * Debugger is active!
+2025-01-06 10:31:40,801 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:32:10,071 INFO 127.0.0.1 - - [06/Jan/2025 10:32:10] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:10,398 INFO Analyzed Pose -> Angle: 159.30856090826958, Knee Position: -0.060990601778030396, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:32:10,399 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:10,483 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:10,498 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:10,514 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:10,515 INFO 127.0.0.1 - - [06/Jan/2025 10:32:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:10,804 INFO Analyzed Pose -> Angle: 153.57522489693858, Knee Position: -0.06065890192985535, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:32:10,805 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:10,805 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:10,816 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:10,833 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:10,833 INFO 127.0.0.1 - - [06/Jan/2025 10:32:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:12,089 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:32:12,089 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:12,089 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:12,099 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:12,116 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:12,116 INFO 127.0.0.1 - - [06/Jan/2025 10:32:12] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:12,816 INFO Analyzed Pose -> Angle: 120.47304769125124, Knee Position: 0.0435299277305603, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:32:12,817 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:12,817 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:12,829 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:12,846 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:12,846 INFO 127.0.0.1 - - [06/Jan/2025 10:32:12] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:14,111 INFO Analyzed Pose -> Angle: 144.48861329574834, Knee Position: 0.0719488263130188, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:32:14,113 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:14,113 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:14,124 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:14,141 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:14,142 INFO 127.0.0.1 - - [06/Jan/2025 10:32:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:14,801 INFO Analyzed Pose -> Angle: 154.59594805280776, Knee Position: 0.09880116581916809, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:32:14,801 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:14,802 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:14,812 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:14,828 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:14,829 INFO 127.0.0.1 - - [06/Jan/2025 10:32:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:16,735 INFO 127.0.0.1 - - [06/Jan/2025 10:32:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:17,013 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:32:17,016 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:17,016 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:17,025 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:17,041 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:17,041 INFO 127.0.0.1 - - [06/Jan/2025 10:32:17] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:17,481 INFO Analyzed Pose -> Angle: 14.394948193331313, Knee Position: -0.002541959285736084, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:32:17,482 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:32:17,482 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: True
+2025-01-06 10:32:17,492 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:17,509 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:17,509 INFO 127.0.0.1 - - [06/Jan/2025 10:32:17] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:18,764 INFO Analyzed Pose -> Angle: 14.388930592816168, Knee Position: -0.0030899643898010254, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:18,765 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:18,765 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:18,776 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:18,793 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:18,793 INFO 127.0.0.1 - - [06/Jan/2025 10:32:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:19,458 INFO Analyzed Pose -> Angle: 13.607956327118023, Knee Position: -0.01289898157119751, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:19,460 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:19,460 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:19,470 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:19,487 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:19,488 INFO 127.0.0.1 - - [06/Jan/2025 10:32:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:20,768 INFO Analyzed Pose -> Angle: 90.843925879767, Knee Position: 0.013882875442504883, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:32:20,769 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:20,769 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:20,779 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:20,802 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:20,802 INFO 127.0.0.1 - - [06/Jan/2025 10:32:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:21,451 INFO Analyzed Pose -> Angle: 25.387099431556898, Knee Position: 0.03140902519226074, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:32:21,452 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:32:21,452 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: True
+2025-01-06 10:32:21,461 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:21,478 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:21,478 INFO 127.0.0.1 - - [06/Jan/2025 10:32:21] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:22,816 INFO 127.0.0.1 - - [06/Jan/2025 10:32:22] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:23,024 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:32:23,025 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:23,025 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:23,036 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:23,053 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:23,053 INFO 127.0.0.1 - - [06/Jan/2025 10:32:23] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:23,464 INFO Analyzed Pose -> Angle: 14.136086480216177, Knee Position: -0.0056362152099609375, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:23,464 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:23,464 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:23,472 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:23,489 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:23,489 INFO 127.0.0.1 - - [06/Jan/2025 10:32:23] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:36,394 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:32:41,003 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:32:41,003 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:32:41,004 INFO  * Restarting with stat
+2025-01-06 10:32:45,048 WARNING  * Debugger is active!
+2025-01-06 10:32:45,053 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:32:45,060 INFO 127.0.0.1 - - [06/Jan/2025 10:32:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:45,061 INFO 127.0.0.1 - - [06/Jan/2025 10:32:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:45,061 INFO 127.0.0.1 - - [06/Jan/2025 10:32:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:45,062 INFO 127.0.0.1 - - [06/Jan/2025 10:32:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:45,065 INFO 127.0.0.1 - - [06/Jan/2025 10:32:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:45,505 INFO Analyzed Pose -> Angle: 0.25110798034415294, Knee Position: 0.030170202255249023, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:45,506 INFO Analyzed Pose -> Angle: 0.25110798034415294, Knee Position: 0.030170202255249023, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:45,506 INFO Analyzed Pose -> Angle: 0.25110798034415294, Knee Position: 0.030170202255249023, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:45,506 INFO Analyzed Pose -> Angle: 0.25110798034415294, Knee Position: 0.030170202255249023, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:45,506 INFO Analyzed Pose -> Angle: 0.25110798034415294, Knee Position: 0.030170202255249023, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:45,507 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:45,508 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:45,508 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:45,509 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:45,509 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:45,600 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:45,605 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:45,605 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:45,605 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:45,605 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:45,613 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:45,629 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:45,629 INFO 127.0.0.1 - - [06/Jan/2025 10:32:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:45,788 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:32:45,788 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:45,788 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:45,797 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:45,810 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:45,811 INFO 127.0.0.1 - - [06/Jan/2025 10:32:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:45,926 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:45,937 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:45,938 INFO 127.0.0.1 - - [06/Jan/2025 10:32:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:45,955 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:45,971 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:45,971 INFO 127.0.0.1 - - [06/Jan/2025 10:32:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:46,124 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:46,125 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:46,135 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:46,136 INFO 127.0.0.1 - - [06/Jan/2025 10:32:46] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:46,138 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:46,141 INFO 127.0.0.1 - - [06/Jan/2025 10:32:46] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:46,837 INFO Analyzed Pose -> Angle: 13.569786112653974, Knee Position: 0.0017298460006713867, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:46,837 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:46,837 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:46,847 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:46,862 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:46,862 INFO 127.0.0.1 - - [06/Jan/2025 10:32:46] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:47,478 INFO Analyzed Pose -> Angle: 105.30146081636528, Knee Position: 0.03077375888824463, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:32:47,478 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:47,478 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:47,487 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:47,499 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:47,499 INFO 127.0.0.1 - - [06/Jan/2025 10:32:47] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:48,769 INFO Analyzed Pose -> Angle: 1.3372130052293554, Knee Position: 0.016513407230377197, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:32:48,771 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:32:48,771 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: True
+2025-01-06 10:32:48,876 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:48,893 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:48,893 INFO 127.0.0.1 - - [06/Jan/2025 10:32:48] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:32:49,472 INFO Analyzed Pose -> Angle: 5.490062263839011, Knee Position: 0.035849153995513916, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:32:49,472 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:32:49,473 INFO update_daily_feedback È£ÃâµÊ - UUID: ieunji, ³¯Â¥: 2025-01-06, ÇÇµå¹é »óÅÂ: False
+2025-01-06 10:32:49,480 INFO ±âÁ¸ ·¹ÄÚµå ¾øÀ½. »õ·Î¿î ·¹ÄÚµå »ý¼º Áß...
+2025-01-06 10:32:49,493 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:32:49,493 INFO 127.0.0.1 - - [06/Jan/2025 10:32:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:31,221 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:34:36,653 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:34:36,653 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:34:36,655 INFO  * Restarting with stat
+2025-01-06 10:34:39,862 WARNING  * Debugger is active!
+2025-01-06 10:34:39,865 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:34:39,871 INFO 127.0.0.1 - - [06/Jan/2025 10:34:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:39,873 INFO 127.0.0.1 - - [06/Jan/2025 10:34:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:40,221 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:40,221 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:40,221 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:40,222 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:40,333 INFO 127.0.0.1 - - [06/Jan/2025 10:34:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:40,682 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:40,682 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:40,708 INFO 127.0.0.1 - - [06/Jan/2025 10:34:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:40,843 INFO 127.0.0.1 - - [06/Jan/2025 10:34:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:41,658 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:41,659 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:41,683 INFO 127.0.0.1 - - [06/Jan/2025 10:34:41] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:42,353 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:42,354 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:42,381 INFO 127.0.0.1 - - [06/Jan/2025 10:34:42] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:43,667 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:43,668 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:43,692 INFO 127.0.0.1 - - [06/Jan/2025 10:34:43] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:44,351 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:44,351 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:44,378 INFO 127.0.0.1 - - [06/Jan/2025 10:34:44] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:45,632 INFO 127.0.0.1 - - [06/Jan/2025 10:34:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:45,917 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:45,918 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:45,948 INFO 127.0.0.1 - - [06/Jan/2025 10:34:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:46,368 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:46,368 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:46,397 INFO 127.0.0.1 - - [06/Jan/2025 10:34:46] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:47,716 INFO Analyzed Pose -> Angle: 116.98835756505748, Knee Position: 0.04238545894622803, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:34:47,717 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:47,742 INFO 127.0.0.1 - - [06/Jan/2025 10:34:47] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:48,385 INFO Analyzed Pose -> Angle: 119.39038356585637, Knee Position: 0.04156428575515747, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:34:48,386 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:48,507 INFO 127.0.0.1 - - [06/Jan/2025 10:34:48] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:49,672 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:49,672 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:49,697 INFO 127.0.0.1 - - [06/Jan/2025 10:34:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:50,399 INFO Analyzed Pose -> Angle: 108.94828355410338, Knee Position: 0.04167574644088745, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:34:50,400 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:50,431 INFO 127.0.0.1 - - [06/Jan/2025 10:34:50] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:51,648 INFO 127.0.0.1 - - [06/Jan/2025 10:34:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:51,941 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:51,941 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:51,964 INFO 127.0.0.1 - - [06/Jan/2025 10:34:51] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:52,403 INFO Analyzed Pose -> Angle: 6.218290712018027, Knee Position: 0.009931355714797974, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:34:52,403 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:34:52,430 INFO 127.0.0.1 - - [06/Jan/2025 10:34:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:53,690 INFO Analyzed Pose -> Angle: 10.956851743266878, Knee Position: 0.006393015384674072, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:34:53,691 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:53,715 INFO 127.0.0.1 - - [06/Jan/2025 10:34:53] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:54,384 INFO Analyzed Pose -> Angle: 13.86108199380103, Knee Position: 0.006279110908508301, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:34:54,384 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:54,411 INFO 127.0.0.1 - - [06/Jan/2025 10:34:54] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:34:55,668 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:34:55,669 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:34:55,693 INFO 127.0.0.1 - - [06/Jan/2025 10:34:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:36:43,127 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:37:26,684 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:37:26,684 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:37:26,685 INFO  * Restarting with stat
+2025-01-06 10:37:30,254 WARNING  * Debugger is active!
+2025-01-06 10:37:30,257 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:37:30,264 INFO 127.0.0.1 - - [06/Jan/2025 10:37:30] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:30,265 INFO 127.0.0.1 - - [06/Jan/2025 10:37:30] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:30,266 INFO 127.0.0.1 - - [06/Jan/2025 10:37:30] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:30,267 INFO 127.0.0.1 - - [06/Jan/2025 10:37:30] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:30,742 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:37:30,743 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:37:30,743 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:37:30,743 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:37:30,743 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:37:30,745 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:30,746 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:30,746 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:30,746 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:30,746 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:30,844 INFO 127.0.0.1 - - [06/Jan/2025 10:37:30] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:30,960 INFO 127.0.0.1 - - [06/Jan/2025 10:37:30] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:31,012 INFO 127.0.0.1 - - [06/Jan/2025 10:37:31] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:31,259 INFO 127.0.0.1 - - [06/Jan/2025 10:37:31] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:31,260 INFO 127.0.0.1 - - [06/Jan/2025 10:37:31] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:31,697 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:37:31,697 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:31,721 INFO 127.0.0.1 - - [06/Jan/2025 10:37:31] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:32,384 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:37:32,385 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:32,416 INFO 127.0.0.1 - - [06/Jan/2025 10:37:32] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:33,736 INFO Analyzed Pose -> Angle: 12.947449062631991, Knee Position: 0.0007686614990234375, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:37:33,738 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:33,761 INFO 127.0.0.1 - - [06/Jan/2025 10:37:33] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:34,401 INFO Analyzed Pose -> Angle: 15.072326300077956, Knee Position: 0.004044532775878906, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:37:34,402 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:34,514 INFO 127.0.0.1 - - [06/Jan/2025 10:37:34] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:35,668 INFO 127.0.0.1 - - [06/Jan/2025 10:37:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:35,976 INFO Analyzed Pose -> Angle: 96.04619745400434, Knee Position: 0.02516043186187744, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:37:35,977 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:35,997 INFO 127.0.0.1 - - [06/Jan/2025 10:37:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:36,402 INFO Analyzed Pose -> Angle: 101.13881341217868, Knee Position: -0.015421688556671143, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:37:36,402 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:36,429 INFO 127.0.0.1 - - [06/Jan/2025 10:37:36] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:37,714 INFO Analyzed Pose -> Angle: 10.693125821405733, Knee Position: -0.016067028045654297, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:37:37,715 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:37:37,743 INFO 127.0.0.1 - - [06/Jan/2025 10:37:37] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:37:38,416 INFO Analyzed Pose -> Angle: 14.427203137337777, Knee Position: -0.006113171577453613, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:37:38,416 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:37:38,434 INFO 127.0.0.1 - - [06/Jan/2025 10:37:38] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:39:32,593 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:39:39,860 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:39:39,861 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:39:39,861 INFO  * Restarting with stat
+2025-01-06 10:39:43,531 WARNING  * Debugger is active!
+2025-01-06 10:39:43,533 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:39:43,542 INFO 127.0.0.1 - - [06/Jan/2025 10:39:43] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:39:43,572 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:39:43,573 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:43,573 INFO 127.0.0.1 - - [06/Jan/2025 10:39:43] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:43,940 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:39:43,941 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:43,941 INFO 127.0.0.1 - - [06/Jan/2025 10:39:43] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:44,621 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:39:44,622 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:44,622 INFO 127.0.0.1 - - [06/Jan/2025 10:39:44] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:45,923 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:39:45,923 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:45,924 INFO 127.0.0.1 - - [06/Jan/2025 10:39:45] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:46,669 INFO Analyzed Pose -> Angle: 13.384741462797255, Knee Position: -0.0039969682693481445, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:39:46,670 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:46,671 INFO 127.0.0.1 - - [06/Jan/2025 10:39:46] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:47,955 INFO Analyzed Pose -> Angle: 13.888549743966879, Knee Position: 0.003624439239501953, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:39:47,956 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:47,957 INFO 127.0.0.1 - - [06/Jan/2025 10:39:47] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:48,597 INFO 127.0.0.1 - - [06/Jan/2025 10:39:48] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:39:48,952 INFO Analyzed Pose -> Angle: 16.939199001359775, Knee Position: -0.01634266972541809, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:39:48,952 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:48,953 INFO 127.0.0.1 - - [06/Jan/2025 10:39:48] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:49,640 INFO Analyzed Pose -> Angle: 49.11282714481085, Knee Position: 0.038857996463775635, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:39:49,641 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:49,641 INFO 127.0.0.1 - - [06/Jan/2025 10:39:49] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:50,954 INFO Analyzed Pose -> Angle: 18.683744212209195, Knee Position: 0.07160800695419312, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:39:50,956 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:50,956 INFO 127.0.0.1 - - [06/Jan/2025 10:39:50] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:51,643 INFO Analyzed Pose -> Angle: 15.753886229652126, Knee Position: 0.014231979846954346, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:39:51,644 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:51,644 INFO 127.0.0.1 - - [06/Jan/2025 10:39:51] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:52,963 INFO Analyzed Pose -> Angle: 96.4913147990973, Knee Position: 0.036280691623687744, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:39:52,965 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:52,965 INFO 127.0.0.1 - - [06/Jan/2025 10:39:52] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:53,629 INFO Analyzed Pose -> Angle: 114.55398562922542, Knee Position: 0.03834974765777588, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:39:53,630 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:53,630 INFO 127.0.0.1 - - [06/Jan/2025 10:39:53] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:54,910 INFO 127.0.0.1 - - [06/Jan/2025 10:39:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:39:55,198 INFO Analyzed Pose -> Angle: 45.43029920953666, Knee Position: -0.022633731365203857, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:39:55,198 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:39:55,198 INFO 127.0.0.1 - - [06/Jan/2025 10:39:55] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:39:55,639 INFO Analyzed Pose -> Angle: 20.990489830600936, Knee Position: -0.010397732257843018, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:39:55,640 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:39:55,641 INFO 127.0.0.1 - - [06/Jan/2025 10:39:55] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
+2025-01-06 10:40:33,070 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:40:51,263 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:40:51,263 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:40:51,265 INFO  * Restarting with stat
+2025-01-06 10:40:54,682 WARNING  * Debugger is active!
+2025-01-06 10:40:54,684 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:40:54,691 INFO 127.0.0.1 - - [06/Jan/2025 10:40:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:54,692 INFO 127.0.0.1 - - [06/Jan/2025 10:40:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:54,693 INFO 127.0.0.1 - - [06/Jan/2025 10:40:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:54,696 INFO 127.0.0.1 - - [06/Jan/2025 10:40:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:55,111 INFO Analyzed Pose -> Angle: 16.070049556995567, Knee Position: -0.0026776790618896484, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:40:55,112 INFO Analyzed Pose -> Angle: 16.070049556995567, Knee Position: -0.0026776790618896484, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:40:55,112 INFO Analyzed Pose -> Angle: 16.070049556995567, Knee Position: -0.0026776790618896484, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:40:55,112 INFO Analyzed Pose -> Angle: 16.070049556995567, Knee Position: -0.0026776790618896484, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:40:55,113 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:40:55,113 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:40:55,113 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:40:55,113 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:40:55,212 INFO 127.0.0.1 - - [06/Jan/2025 10:40:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:55,330 INFO 127.0.0.1 - - [06/Jan/2025 10:40:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:55,351 INFO Analyzed Pose -> Angle: 14.642495059762906, Knee Position: 0.005490303039550781, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:40:55,351 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:40:55,374 INFO 127.0.0.1 - - [06/Jan/2025 10:40:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:55,582 INFO 127.0.0.1 - - [06/Jan/2025 10:40:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:55,763 INFO 127.0.0.1 - - [06/Jan/2025 10:40:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:56,364 INFO Analyzed Pose -> Angle: 16.374201957547456, Knee Position: 0.006997883319854736, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:40:56,365 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:40:56,390 INFO 127.0.0.1 - - [06/Jan/2025 10:40:56] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:57,043 INFO Analyzed Pose -> Angle: 100.39990753518946, Knee Position: 0.03289985656738281, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:40:57,045 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:40:57,073 INFO 127.0.0.1 - - [06/Jan/2025 10:40:57] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:58,357 INFO Analyzed Pose -> Angle: 31.220565536864093, Knee Position: 0.000999748706817627, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:40:58,358 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:40:58,380 INFO 127.0.0.1 - - [06/Jan/2025 10:40:58] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:40:59,036 INFO Analyzed Pose -> Angle: 10.286452892572338, Knee Position: 0.035704970359802246, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:40:59,036 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:40:59,060 INFO 127.0.0.1 - - [06/Jan/2025 10:40:59] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:36,145 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:41:41,260 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:41:41,260 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:41:41,262 INFO  * Restarting with stat
+2025-01-06 10:41:44,951 WARNING  * Debugger is active!
+2025-01-06 10:41:44,953 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:41:44,959 INFO 127.0.0.1 - - [06/Jan/2025 10:41:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:44,961 INFO 127.0.0.1 - - [06/Jan/2025 10:41:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:44,963 INFO 127.0.0.1 - - [06/Jan/2025 10:41:44] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:45,082 INFO 127.0.0.1 - - [06/Jan/2025 10:41:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:45,319 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:41:45,320 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:41:45,320 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:41:45,321 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:45,321 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:45,321 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:45,413 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:41:45,414 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:45,433 INFO 127.0.0.1 - - [06/Jan/2025 10:41:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:45,551 INFO 127.0.0.1 - - [06/Jan/2025 10:41:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:46,071 INFO 127.0.0.1 - - [06/Jan/2025 10:41:46] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:46,089 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:41:46,089 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:46,114 INFO 127.0.0.1 - - [06/Jan/2025 10:41:46] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:46,396 INFO 127.0.0.1 - - [06/Jan/2025 10:41:46] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:47,070 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:41:47,070 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:47,091 INFO 127.0.0.1 - - [06/Jan/2025 10:41:47] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:47,819 INFO Analyzed Pose -> Angle: 11.983581925599058, Knee Position: -0.0025899410247802734, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:41:47,819 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:47,852 INFO 127.0.0.1 - - [06/Jan/2025 10:41:47] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:49,104 INFO Analyzed Pose -> Angle: 98.24094566339832, Knee Position: 0.025119781494140625, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:41:49,104 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:49,133 INFO 127.0.0.1 - - [06/Jan/2025 10:41:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:49,805 INFO Analyzed Pose -> Angle: 16.980298112965013, Knee Position: 0.0013145208358764648, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:41:49,806 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:41:49,833 INFO 127.0.0.1 - - [06/Jan/2025 10:41:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:51,064 INFO 127.0.0.1 - - [06/Jan/2025 10:41:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:51,368 INFO Analyzed Pose -> Angle: 14.641437254336783, Knee Position: -0.000610053539276123, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:41:51,369 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:51,388 INFO 127.0.0.1 - - [06/Jan/2025 10:41:51] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:41:51,808 INFO Analyzed Pose -> Angle: 13.662854520937765, Knee Position: -0.002365708351135254, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:41:51,808 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:41:51,934 INFO 127.0.0.1 - - [06/Jan/2025 10:41:51] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:35,924 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:42:35,924 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:42:35,925 INFO  * Restarting with stat
+2025-01-06 10:42:39,207 WARNING  * Debugger is active!
+2025-01-06 10:42:39,212 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:42:39,236 INFO 127.0.0.1 - - [06/Jan/2025 10:42:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:39,238 INFO 127.0.0.1 - - [06/Jan/2025 10:42:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:39,242 INFO 127.0.0.1 - - [06/Jan/2025 10:42:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:39,605 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:42:39,606 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:42:39,606 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:42:39,606 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:39,607 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:39,607 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:39,714 INFO 127.0.0.1 - - [06/Jan/2025 10:42:39] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:40,018 INFO 127.0.0.1 - - [06/Jan/2025 10:42:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:40,064 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:42:40,066 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:40,094 INFO 127.0.0.1 - - [06/Jan/2025 10:42:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:40,135 INFO 127.0.0.1 - - [06/Jan/2025 10:42:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:41,063 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:42:41,063 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:41,091 INFO 127.0.0.1 - - [06/Jan/2025 10:42:41] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:41,757 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:42:41,758 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:41,786 INFO 127.0.0.1 - - [06/Jan/2025 10:42:41] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:43,065 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:42:43,066 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:43,097 INFO 127.0.0.1 - - [06/Jan/2025 10:42:43] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:43,807 INFO Analyzed Pose -> Angle: 15.744336109301129, Knee Position: -0.007550477981567383, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:42:43,807 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:43,834 INFO 127.0.0.1 - - [06/Jan/2025 10:42:43] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:45,038 INFO 127.0.0.1 - - [06/Jan/2025 10:42:45] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:45,342 INFO Analyzed Pose -> Angle: 103.60344779540102, Knee Position: 0.02230548858642578, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:42:45,342 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:45,370 INFO 127.0.0.1 - - [06/Jan/2025 10:42:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:45,783 INFO Analyzed Pose -> Angle: 112.91919002626594, Knee Position: 0.031587421894073486, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:42:45,784 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:45,813 INFO 127.0.0.1 - - [06/Jan/2025 10:42:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:47,101 INFO Analyzed Pose -> Angle: 7.984692790484541, Knee Position: 0.02248522639274597, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:42:47,102 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:42:47,227 INFO 127.0.0.1 - - [06/Jan/2025 10:42:47] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:42:47,776 INFO Analyzed Pose -> Angle: 13.48177515246112, Knee Position: 0.005287885665893555, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:42:47,776 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:42:47,807 INFO 127.0.0.1 - - [06/Jan/2025 10:42:47] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:31,822 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:43:36,446 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:43:36,446 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:43:36,447 INFO  * Restarting with stat
+2025-01-06 10:43:39,931 WARNING  * Debugger is active!
+2025-01-06 10:43:39,933 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:43:39,942 INFO 127.0.0.1 - - [06/Jan/2025 10:43:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:39,943 INFO 127.0.0.1 - - [06/Jan/2025 10:43:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:39,976 INFO 127.0.0.1 - - [06/Jan/2025 10:43:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:40,320 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:43:40,321 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:43:40,321 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:43:40,322 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:43:40,323 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:43:40,323 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:43:40,437 INFO 127.0.0.1 - - [06/Jan/2025 10:43:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:40,571 INFO 127.0.0.1 - - [06/Jan/2025 10:43:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:40,792 INFO 127.0.0.1 - - [06/Jan/2025 10:43:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:41,013 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:43:41,014 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:43:41,035 INFO 127.0.0.1 - - [06/Jan/2025 10:43:41] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:41,996 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:43:41,997 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:43:42,023 INFO 127.0.0.1 - - [06/Jan/2025 10:43:42] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:42,699 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:43:42,699 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:43:42,727 INFO 127.0.0.1 - - [06/Jan/2025 10:43:42] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:43:44,026 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:43:44,026 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:43:44,048 INFO 127.0.0.1 - - [06/Jan/2025 10:43:44] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:17,315 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:44:30,971 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:44:30,971 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:44:30,973 INFO  * Restarting with stat
+2025-01-06 10:44:34,164 WARNING  * Debugger is active!
+2025-01-06 10:44:34,166 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:44:34,177 INFO 127.0.0.1 - - [06/Jan/2025 10:44:34] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:34,178 INFO 127.0.0.1 - - [06/Jan/2025 10:44:34] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:34,179 INFO 127.0.0.1 - - [06/Jan/2025 10:44:34] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:34,180 INFO 127.0.0.1 - - [06/Jan/2025 10:44:34] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:34,355 INFO 127.0.0.1 - - [06/Jan/2025 10:44:34] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:34,610 INFO Analyzed Pose -> Angle: 134.289547585013, Knee Position: -0.055097490549087524, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:44:34,610 INFO Analyzed Pose -> Angle: 134.289547585013, Knee Position: -0.055097490549087524, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:44:34,610 INFO Analyzed Pose -> Angle: 134.289547585013, Knee Position: -0.055097490549087524, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:44:34,610 INFO Analyzed Pose -> Angle: 134.289547585013, Knee Position: -0.055097490549087524, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:44:34,611 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:34,611 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:34,611 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:34,611 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:34,690 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:44:34,691 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:34,711 INFO 127.0.0.1 - - [06/Jan/2025 10:44:34] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:35,133 INFO 127.0.0.1 - - [06/Jan/2025 10:44:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:35,250 INFO 127.0.0.1 - - [06/Jan/2025 10:44:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:35,281 INFO 127.0.0.1 - - [06/Jan/2025 10:44:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:35,281 INFO 127.0.0.1 - - [06/Jan/2025 10:44:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:35,367 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:44:35,369 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:35,391 INFO 127.0.0.1 - - [06/Jan/2025 10:44:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:36,410 INFO Analyzed Pose -> Angle: 164.23197516658487, Knee Position: 0.015895575284957886, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:44:36,411 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:36,432 INFO 127.0.0.1 - - [06/Jan/2025 10:44:36] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:37,060 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:44:37,060 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:37,086 INFO 127.0.0.1 - - [06/Jan/2025 10:44:37] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:38,413 INFO Analyzed Pose -> Angle: 14.095494154636762, Knee Position: 0.011877655982971191, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:44:38,414 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:44:38,534 INFO 127.0.0.1 - - [06/Jan/2025 10:44:38] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:39,081 INFO Analyzed Pose -> Angle: 13.53052753788004, Knee Position: -0.0015313029289245605, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:44:39,082 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:39,110 INFO 127.0.0.1 - - [06/Jan/2025 10:44:39] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:40,344 INFO 127.0.0.1 - - [06/Jan/2025 10:44:40] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:44:40,654 INFO Analyzed Pose -> Angle: 14.221302011322413, Knee Position: 0.004232496023178101, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:44:40,655 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:44:40,683 INFO 127.0.0.1 - - [06/Jan/2025 10:44:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:16,635 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:45:21,850 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:45:21,850 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:45:21,851 INFO  * Restarting with stat
+2025-01-06 10:45:25,361 WARNING  * Debugger is active!
+2025-01-06 10:45:25,364 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:45:25,371 INFO 127.0.0.1 - - [06/Jan/2025 10:45:25] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:25,373 INFO 127.0.0.1 - - [06/Jan/2025 10:45:25] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:25,374 INFO 127.0.0.1 - - [06/Jan/2025 10:45:25] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:25,454 INFO 127.0.0.1 - - [06/Jan/2025 10:45:25] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:25,747 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:45:25,747 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:45:25,747 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:45:25,749 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:45:25,749 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:45:25,750 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:45:25,787 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:45:25,787 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:45:25,861 INFO 127.0.0.1 - - [06/Jan/2025 10:45:25] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:26,288 INFO 127.0.0.1 - - [06/Jan/2025 10:45:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:26,431 INFO 127.0.0.1 - - [06/Jan/2025 10:45:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:26,461 INFO 127.0.0.1 - - [06/Jan/2025 10:45:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:26,482 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:45:26,486 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:45:26,511 INFO 127.0.0.1 - - [06/Jan/2025 10:45:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:27,481 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:45:27,481 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:45:27,501 INFO 127.0.0.1 - - [06/Jan/2025 10:45:27] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:45:28,171 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:45:28,172 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:45:28,198 INFO 127.0.0.1 - - [06/Jan/2025 10:45:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:16,910 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:46:31,874 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:46:31,874 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:46:31,875 INFO  * Restarting with stat
+2025-01-06 10:46:35,254 WARNING  * Debugger is active!
+2025-01-06 10:46:35,256 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:46:35,264 INFO 127.0.0.1 - - [06/Jan/2025 10:46:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:35,265 INFO 127.0.0.1 - - [06/Jan/2025 10:46:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:35,267 INFO 127.0.0.1 - - [06/Jan/2025 10:46:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:35,271 INFO 127.0.0.1 - - [06/Jan/2025 10:46:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:35,274 INFO 127.0.0.1 - - [06/Jan/2025 10:46:35] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:35,668 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:46:35,668 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:46:35,668 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:46:35,668 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:46:35,669 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:46:35,671 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:46:35,671 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:46:35,671 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:46:35,671 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:46:35,672 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:46:35,776 INFO 127.0.0.1 - - [06/Jan/2025 10:46:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:35,929 INFO 127.0.0.1 - - [06/Jan/2025 10:46:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:36,163 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:46:36,164 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:46:36,194 INFO 127.0.0.1 - - [06/Jan/2025 10:46:36] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:36,381 INFO 127.0.0.1 - - [06/Jan/2025 10:46:36] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:36,382 INFO 127.0.0.1 - - [06/Jan/2025 10:46:36] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:36,457 INFO 127.0.0.1 - - [06/Jan/2025 10:46:36] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:37,174 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:46:37,175 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:46:37,200 INFO 127.0.0.1 - - [06/Jan/2025 10:46:37] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:46:37,858 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:46:37,858 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:46:37,888 INFO 127.0.0.1 - - [06/Jan/2025 10:46:37] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:47:33,231 INFO 127.0.0.1 - - [06/Jan/2025 10:47:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:47:33,517 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:47:33,517 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:47:33,649 INFO 127.0.0.1 - - [06/Jan/2025 10:47:33] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:47:33,938 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:47:33,940 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:47:33,973 INFO 127.0.0.1 - - [06/Jan/2025 10:47:33] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:47:35,252 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:47:35,252 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:47:35,278 INFO 127.0.0.1 - - [06/Jan/2025 10:47:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:48:31,963 INFO 127.0.0.1 - - [06/Jan/2025 10:48:31] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:48:32,290 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:48:32,292 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:48:32,335 INFO 127.0.0.1 - - [06/Jan/2025 10:48:32] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:48:32,973 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:48:32,973 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:48:33,022 INFO 127.0.0.1 - - [06/Jan/2025 10:48:33] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:48:34,282 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:48:34,282 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:48:34,329 INFO 127.0.0.1 - - [06/Jan/2025 10:48:34] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:48:34,988 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:48:34,988 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:48:35,034 INFO 127.0.0.1 - - [06/Jan/2025 10:48:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:48:36,307 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:48:36,308 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:48:36,338 INFO 127.0.0.1 - - [06/Jan/2025 10:48:36] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:48:36,973 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:48:36,973 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:48:37,001 INFO 127.0.0.1 - - [06/Jan/2025 10:48:37] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:49:58,458 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:50:14,840 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:50:14,840 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:50:14,841 INFO  * Restarting with stat
+2025-01-06 10:50:18,660 WARNING  * Debugger is active!
+2025-01-06 10:50:18,663 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:50:18,672 INFO 127.0.0.1 - - [06/Jan/2025 10:50:18] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:50:18,673 INFO 127.0.0.1 - - [06/Jan/2025 10:50:18] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:50:18,674 INFO 127.0.0.1 - - [06/Jan/2025 10:50:18] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:50:19,037 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:50:19,038 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:50:19,038 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:50:19,038 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:50:19,038 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:50:19,039 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:50:19,148 INFO 127.0.0.1 - - [06/Jan/2025 10:50:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:50:19,270 INFO 127.0.0.1 - - [06/Jan/2025 10:50:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:50:19,383 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:50:19,384 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:50:19,410 INFO 127.0.0.1 - - [06/Jan/2025 10:50:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:50:19,472 INFO 127.0.0.1 - - [06/Jan/2025 10:50:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:50:20,381 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:50:20,382 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:50:20,409 INFO 127.0.0.1 - - [06/Jan/2025 10:50:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:07,173 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:51:19,263 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:51:19,263 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:51:19,263 INFO  * Restarting with stat
+2025-01-06 10:51:22,429 WARNING  * Debugger is active!
+2025-01-06 10:51:22,432 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:51:33,543 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:51:48,154 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:51:48,154 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:51:48,155 INFO  * Restarting with stat
+2025-01-06 10:51:51,283 WARNING  * Debugger is active!
+2025-01-06 10:51:51,285 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:51:51,292 INFO 127.0.0.1 - - [06/Jan/2025 10:51:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:51,293 INFO 127.0.0.1 - - [06/Jan/2025 10:51:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:51,295 INFO 127.0.0.1 - - [06/Jan/2025 10:51:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:51,297 INFO 127.0.0.1 - - [06/Jan/2025 10:51:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:51,672 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:51,673 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:51,673 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:51,673 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:51,675 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:51,675 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:51,675 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:51,675 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:51,730 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:51,731 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:51,778 INFO 127.0.0.1 - - [06/Jan/2025 10:51:51] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:52,102 INFO 127.0.0.1 - - [06/Jan/2025 10:51:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:52,254 INFO 127.0.0.1 - - [06/Jan/2025 10:51:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:52,279 INFO 127.0.0.1 - - [06/Jan/2025 10:51:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:52,281 INFO 127.0.0.1 - - [06/Jan/2025 10:51:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:52,738 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:52,739 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:52,758 INFO 127.0.0.1 - - [06/Jan/2025 10:51:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:53,422 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:53,422 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:53,445 INFO 127.0.0.1 - - [06/Jan/2025 10:51:53] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:54,733 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:54,735 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:54,768 INFO 127.0.0.1 - - [06/Jan/2025 10:51:54] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:55,421 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:55,422 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:55,450 INFO 127.0.0.1 - - [06/Jan/2025 10:51:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:56,703 INFO 127.0.0.1 - - [06/Jan/2025 10:51:56] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:51:56,992 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:51:56,992 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:51:57,119 INFO 127.0.0.1 - - [06/Jan/2025 10:51:57] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:55:26,018 INFO 127.0.0.1 - - [06/Jan/2025 10:55:26] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:55:26,305 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:55:26,306 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:55:26,328 INFO 127.0.0.1 - - [06/Jan/2025 10:55:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:55:26,717 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:55:26,718 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:55:26,744 INFO 127.0.0.1 - - [06/Jan/2025 10:55:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:55:59,012 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading

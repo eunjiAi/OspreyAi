@@ -159,7 +159,7 @@ def calculate_knee_position(landmarks):
     return knee.x - foot.x
 
 
-def update_daily_feedback(uuid, feedback_correct):
+def update_daily_feedback(uuid, feedback_correct, name):  # name을 추가로 전달받음
     session = Session()
     try:
         # 한국 시간으로 현재 날짜 가져오기
@@ -167,37 +167,39 @@ def update_daily_feedback(uuid, feedback_correct):
         today = datetime.datetime.now(kst).date()
         correct_increment = 1 if feedback_correct else 0
 
-        logging.info(f"UUID: {uuid}, 피드백 상태: {feedback_correct}, 날짜: {today}")
+        print(f"UUID: {uuid}, 피드백 상태: {feedback_correct}, 날짜: {today}, 이름: {name}")  # print로 확인
 
         # UUID와 날짜로 데이터베이스에서 기존 레코드 조회
         entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
 
         if entry:
-            logging.info(f"기존 데이터 발견: {entry}")
-            entry.total_attempts += 1                       # 총 시도 횟수 증가
-            entry.correct_count += correct_increment        # 바른 자세 횟수 증가
-            logging.info(f"업데이트 후 entry: {entry}")
+            # 기존 레코드가 있을 경우
+            print(f"기존 데이터 발견: {entry}")  # print로 확인
+            entry.total_attempts += 1  # 시도 횟수 증가
+            entry.correct_count += correct_increment  # 바른 자세 횟수 증가 (동작 완료일 때만 증가)
+            print(f"업데이트 후 entry: {entry}")  # print로 확인
         else:
-            logging.info("기존 데이터 없음. 새로운 데이터 생성 중...")
-            # 첫 번째 시도일 때, correct_count를 0으로 설정하여 레코드 추가
+            # 기존 레코드가 없을 경우 새로운 데이터 생성
+            print("기존 데이터 없음. 새로운 데이터 생성 중...")  # print로 확인
             new_entry = SquatFeedback(
                 uuid=uuid,
                 total_attempts=1,  # 첫 번째 시도
-                correct_count=0,   # 첫 번째 시도에서는 바른 자세 카운트 0
+                correct_count=0,   # 첫 번째 시도에서는 바른 자세 횟수 0
                 squat_date=today,
-                name="Unknown"  # 사용자의 이름도 저장하거나 필요시 추가
+                name=name  # name을 여기에 전달
             )
             session.add(new_entry)
+            print(f"새로운 레코드 추가됨: {new_entry}")  # print로 확인
 
-        logging.info("데이터베이스 업데이트 커밋 중...")
+        # 디비 업데이트 시도 로그
+        print("데이터베이스 업데이트 커밋 중...")  # print로 확인
         session.commit()
-        logging.info("데이터베이스 업데이트 성공")
+        print("데이터베이스 업데이트 성공")  # print로 확인
     except Exception as e:
         session.rollback()
-        logging.error(f"데이터베이스 업데이트 실패: {e}")
+        print(f"데이터베이스 업데이트 실패: {e}")  # print로 확인
     finally:
         session.close()
-
 
 
 @app.route('/squat-analysis', methods=['POST'])
@@ -225,7 +227,9 @@ def squat_analysis():
             print(f"UUID: {uuid}, Name: {name}, 피드백 결과: {result.get('feedback')}")
             feedback_correct = result.get('feedback') == "동작 완료"
             logging.info(f"UUID: {uuid}, Name: {name}, 동작 완료 여부: {feedback_correct}")
-            update_daily_feedback(uuid, feedback_correct)
+
+            # 피드백 저장
+            update_daily_feedback(uuid, feedback_correct, name)  # name을 넘겨줌
         else:
             print("JWT에서 UUID를 추출할 수 없습니다.")
 
@@ -233,6 +237,8 @@ def squat_analysis():
     except Exception as e:
         print(f"분석 실패: {e}")
         return jsonify({"feedback": "분석 실패"}), 500
+
+
 
 if __name__ == '__main__':
     check_db_connection()  # 데이터베이스 연결 확인
