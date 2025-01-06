@@ -129,14 +129,14 @@ function QuestionList({ searchResults }){
       <h1 className={styles.title}>Q & A</h1>
       {/* 글쓰기 버튼 : 로그인 상태일 때만 표시 */}
       {isLoggedIn && (<button onClick={handleWriteClick}>글쓰기</button> )}
-      <button onClick={handleListButtonClick}>목록</button>
+      <button onClick={handleListButtonClick}>새로고침</button>
       <table className={styles.QuestionList}>
         <thead>
             <tr>
                 <th>번호</th>
                 <th>제목</th>
-                <th>날짜</th>
                 <th>작성자</th>
+                <th>등록일</th>
                 <th>답변여부</th>
             </tr>
         </thead>
@@ -148,7 +148,7 @@ function QuestionList({ searchResults }){
               {/* 로그인 상태이며, 작성자가 자신일때만 링크 동작 */}
               {isLoggedIn && (userid === question.qwriter || role === 'ADMIN') ?
                 (<span 
-                    style={{color: 'blue', cursor: 'pointer', textDecoration: 'underline'}} 
+                    style={{color: 'blue', cursor: 'pointer', fontWeight: 'bold'}} 
                     onClick={() => handleTitleClick(question.qno)}  //클릭시 글번호 전달  
                 >            
                     {question.qtitle}
@@ -158,8 +158,8 @@ function QuestionList({ searchResults }){
                 )
               }
             </td>
-            <td>{question.qdate}</td>
             <td>{question.qwriter}</td>
+            <td>{question.qdate}</td>
             <td>{getAnswerStatus(question.answerYn)}</td>
           </tr>
         ))}

@@ -136,7 +136,12 @@ function NoticeCreate() {
               </td>
             </tr>
             <tr>
-              <th colSpan="2">
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <div className={styles.button}>
+          <div className="button-group">
                 <input type="submit" value="등록하기" /> &nbsp;
                 <input
                   type="reset"
@@ -155,11 +160,8 @@ function NoticeCreate() {
                   value="등록취소"
                   onClick={() => navigate(-1)}
                 />
-              </th>
-            </tr>
-          </tbody>
-        </table>
-      </form>
+           </div>
+        </div>
     </div>
   );
 }

@@ -94,10 +94,6 @@ const NoticeDetail = () => {
       <table border="1">
         <tbody>
           <tr>
-            <th>번호</th>
-            <td>{notice.noticeNo}</td>
-          </tr>
-          <tr>
             <th>제목</th>
             <td>{notice.ntitle}</td>
           </tr>

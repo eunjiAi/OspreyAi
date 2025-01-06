@@ -93,6 +93,11 @@ function Posts({ searchResults }) {
     navigate("/posts/new");
   };
 
+  const handleListButtonClick = () => {
+    setIsSearchMode(false);
+    fetchPosts(1);
+  };
+
   /**
    * 게시글 상세 페이지 이동
    */
@@ -114,6 +119,7 @@ function Posts({ searchResults }) {
       {(role === "ADMIN" || role === "USER") && (
         <button onClick={handleWriteClick}>글쓰기</button>
       )}
+      <button onClick={handleListButtonClick}>새로고침</button>
       <table className={styles.postsList}>
         <thead>
           <tr>
@@ -135,7 +141,7 @@ function Posts({ searchResults }) {
                   style={{
                     color: "blue",
                     cursor: "pointer",
-                    textDecoration: "underline",
+                    fontWeight: "bold",
                   }}
                   onClick={() => handleTitleClick(post.postId)}
                 >
