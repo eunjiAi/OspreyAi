@@ -48,10 +48,14 @@ const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     const imageData = canvas.toDataURL("image/jpeg"); // 캔버스의 이미지를 base64로 변환
 
+    console.log("Captured image data:", imageData); // 디버깅: 캡처된 이미지 데이터 확인
+
     // 얼굴 인식 결과를 서버로 전송
     axios
       .post("http://localhost:5001/compare-faceid", { image: imageData })
       .then((response) => {
+        console.log("Server response:", response.data); // 서버 응답 로그 추가
+
         const { uuid, id, password } = response.data;
 
         if (uuid && id && password) {
@@ -85,7 +89,9 @@ const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
         alert("얼굴 인식 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
         setIsProcessing(false); // 처리 종료
       });
-  };
+};
+
+
 
   return (
     <div style={{ textAlign: "center" }}>

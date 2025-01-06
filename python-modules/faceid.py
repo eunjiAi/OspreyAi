@@ -47,9 +47,12 @@ Base = declarative_base()
 class Member(Base):
     __tablename__ = "MEMBER"
     __table_args__ = {"schema": "C##FP3TEAM"}
+    
     uuid = Column("UUID", String, primary_key=True, nullable=False)
+    member_id = Column("MEMBERID", String, nullable=False)
     face_id = Column("FACE_ID", String, nullable=True)
-    member_id = Column("MEMBERID", String, nullable=False)  # MEMBERID 컬럼
+    pw = Column("PW", String, nullable=False)  # 비밀번호 컬럼
+
 
 # 데이터베이스 테이블 생성
 Base.metadata.create_all(bind=engine)
@@ -159,7 +162,7 @@ def compare_faces(image_data):
             encodings = face_recognition.face_encodings(image)
             if encodings:
                 known_faces.append(encodings[0])
-                known_face_names.append(filename)  # 파일명 추가
+                known_face_names.append(filename)
     
     # 디버깅용 로그: 불러온 얼굴 이미지 파일들 확인
     print(f"Known face names: {known_face_names}")  # 여기서 known_face_names가 무엇인지 확인
@@ -172,6 +175,7 @@ def compare_faces(image_data):
         face_encodings = face_recognition.face_encodings(image, face_locations)
         
         if not face_encodings:
+            print("No faces found in the image")  # 얼굴을 찾지 못한 경우 디버깅 로그 추가
             return None
 
         # 얼굴 비교
@@ -203,10 +207,27 @@ def compare_faceid():
         while time.time() - start_time < 3:  # 3초 동안 인증을 시도
             matched_filename = compare_faces(data["image"])  # 얼굴 비교 함수 호출
             if matched_filename:
-                return jsonify({
-                    "message": "인증 성공!",
-                    "uuid": matched_filename.split('_')[0]  # UUID 반환
-                })
+                # 파일명에서 UUID 추출 (파일명 예시: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1_20250106_130709.jpg)
+                user_uuid = matched_filename.split('_')[0]
+                
+                # UUID에 해당하는 사용자 정보 조회
+                db = SessionLocal()
+                user = db.query(Member).filter_by(uuid=user_uuid).first()
+                
+                if not user:
+                    db.close()
+                    return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
+                
+                # id, password 반환
+                response_data = {
+                    "uuid": user.uuid,
+                    "id": user.member_id,  # 실제 데이터베이스에서 member_id 컬럼을 사용하여 id 반환
+                    "password": user.pw     # 비밀번호 컬럼을 pw로 수정
+                }
+
+                db.commit()  # 트랜잭션 커밋
+                db.close()
+                return jsonify(response_data)  # 로그인 성공 후 사용자 정보 반환
 
             time.sleep(1)  # 1초 대기 후 다시 시도
         
@@ -214,8 +235,13 @@ def compare_faceid():
         return jsonify({"message": "인증 실패: 얼굴을 찾을 수 없습니다."}), 400
     
     except Exception as e:
+        # 예외 발생 시 롤백
+        db.rollback()
         print(f"Error in compare_faceid: {str(e)}")  # 오류 메시지 출력
         return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
+
+
+
 
 
 if __name__ == '__main__':
