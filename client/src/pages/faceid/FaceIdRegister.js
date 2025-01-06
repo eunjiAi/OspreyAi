@@ -121,7 +121,7 @@ function FaceIdRegister() {
             });
 
             if (response.status === 200) {
-                setStatusMessage("저장 완료! 이미지가 서버에 저장되었습니다.");
+                setStatusMessage("저장 완료! 이미지가 저장됐습니다.");
                 console.log("Face ID 등록 성공:", response.data);
                 setImageCaptured(true); // 촬영 상태 업데이트
             } else {
@@ -147,10 +147,10 @@ function FaceIdRegister() {
             });
 
             if (response.status === 200) {
-                setStatusMessage("기존 이미지가 삭제되었습니다. 다시 촬영을 시작합니다.");
-                setImageCaptured(false); // 다시 촬영할 수 있도록 상태 초기화
-                setFaceDetected(false);  // 얼굴 인식 상태 초기화
-                detectFace();  // 얼굴 감지 시작
+                setStatusMessage("기존 이미지가 삭제됐습니다. 다시 촬영을 시작합니다.");
+                setImageCaptured(false);        // 다시 촬영할 수 있도록 상태 초기화
+                setFaceDetected(false);         // 얼굴 인식 상태 초기화
+                detectFace();                   // 얼굴 감지 시작
             } else {
                 setStatusMessage("기존 이미지 삭제 실패!");
             }
@@ -172,8 +172,8 @@ function FaceIdRegister() {
                     audio={false}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    width="100%"   // 화면 크기에 맞게 100%로 설정
-                    height="100%"  // 100% 높이로 설정하여 전체 화면을 꽉 채우도록
+                    width="100%"  
+                    height="100%" 
                 />
             </div>
             <p>{statusMessage}</p>
