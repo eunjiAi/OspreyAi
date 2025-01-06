@@ -11,6 +11,7 @@ function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false); 
+  const [imageData, setImageData] = useState(null); // 이미지 데이터 저장
   const [showFaceIDModal, setShowFaceIDModal] = useState(false); // FaceID 모달 
   const { login } = useContext(AuthContext); // AuthProvider의 login 함수 가져오기
 
@@ -386,7 +387,9 @@ function Login({ onLoginSuccess }) {
     }
   };
 
-  
+  const handleImageCaptured = (capturedImage) => {
+    setImageData(capturedImage); // 받은 이미지 데이터를 state에 저장
+  };
 
   const handleFaceIDLogin = async () => {
     setShowFaceIDModal(true); // Face ID 모달 열기
@@ -512,10 +515,10 @@ function Login({ onLoginSuccess }) {
 
       {/* Face ID 로그인 모달 */}
       {showFaceIDModal && (
-        /**/
         <FaceIDLogin
           onClose={() => setShowFaceIDModal(false)} // 모달 닫기
           onLoginSuccess={onLoginSuccess} // 로그인 성공 시 콜백
+          onImageCaptured={handleImageCaptured} // 이미지 캡처 후 콜백 전달
         />
       )}
 
