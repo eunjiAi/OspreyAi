@@ -14967,3 +14967,92 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
 2025-01-06 11:23:28,892 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
 2025-01-06 11:23:28,894 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
 2025-01-06 11:23:29,100 INFO 127.0.0.1 - - [06/Jan/2025 11:23:29] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:08,114 INFO 127.0.0.1 - - [06/Jan/2025 11:24:08] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:08,413 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:24:08,414 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:24:08,765 INFO 127.0.0.1 - - [06/Jan/2025 11:24:08] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:08,816 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:24:08,817 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:24:09,245 INFO 127.0.0.1 - - [06/Jan/2025 11:24:09] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:10,172 INFO Analyzed Pose -> Angle: 12.359168235793533, Knee Position: 0.0025779008865356445, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 11:24:10,172 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:24:10,439 INFO 127.0.0.1 - - [06/Jan/2025 11:24:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:10,856 INFO Analyzed Pose -> Angle: 14.933602564839981, Knee Position: -0.003170788288116455, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 11:24:10,857 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:24:10,914 INFO 127.0.0.1 - - [06/Jan/2025 11:24:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:12,159 INFO Analyzed Pose -> Angle: 89.63631224651527, Knee Position: 0.027215898036956787, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 11:24:12,160 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:24:12,405 INFO 127.0.0.1 - - [06/Jan/2025 11:24:12] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:12,838 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:24:12,839 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:24:12,897 INFO 127.0.0.1 - - [06/Jan/2025 11:24:12] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:14,129 INFO 127.0.0.1 - - [06/Jan/2025 11:24:14] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:14,446 INFO Analyzed Pose -> Angle: 13.799532784570694, Knee Position: 0.01270681619644165, Feedback: µø¿€ øœ∑·
+2025-01-06 11:24:14,446 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: True
+2025-01-06 11:24:14,655 INFO 127.0.0.1 - - [06/Jan/2025 11:24:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:24:14,855 INFO Analyzed Pose -> Angle: 12.735728653001845, Knee Position: -0.005864620208740234, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 11:24:14,856 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:24:14,912 INFO 127.0.0.1 - - [06/Jan/2025 11:24:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:12,618 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 11:29:12,618 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 11:29:12,619 INFO  * Restarting with stat
+2025-01-06 11:29:15,964 WARNING  * Debugger is active!
+2025-01-06 11:29:15,967 INFO  * Debugger PIN: 125-377-655
+2025-01-06 11:29:17,530 INFO 127.0.0.1 - - [06/Jan/2025 11:29:17] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:17,819 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:29:17,819 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:17,973 INFO 127.0.0.1 - - [06/Jan/2025 11:29:17] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:18,244 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:29:18,245 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:18,499 INFO 127.0.0.1 - - [06/Jan/2025 11:29:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:19,560 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:29:19,562 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:19,727 INFO 127.0.0.1 - - [06/Jan/2025 11:29:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:20,269 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:29:20,270 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:20,466 INFO 127.0.0.1 - - [06/Jan/2025 11:29:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:21,555 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:29:21,555 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:21,618 INFO 127.0.0.1 - - [06/Jan/2025 11:29:21] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:22,238 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:29:22,240 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:22,498 INFO 127.0.0.1 - - [06/Jan/2025 11:29:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:23,551 INFO 127.0.0.1 - - [06/Jan/2025 11:29:23] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:23,853 INFO Analyzed Pose -> Angle: 114.59334701694335, Knee Position: 0.048125267028808594, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 11:29:23,854 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:23,909 INFO 127.0.0.1 - - [06/Jan/2025 11:29:23] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:24,245 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:29:24,246 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:24,463 INFO 127.0.0.1 - - [06/Jan/2025 11:29:24] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:25,583 INFO Analyzed Pose -> Angle: 110.69688169494295, Knee Position: 0.03667008876800537, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 11:29:25,584 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:25,788 INFO 127.0.0.1 - - [06/Jan/2025 11:29:25] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:26,259 INFO Analyzed Pose -> Angle: 0.043324377525547256, Knee Position: 0.017271459102630615, Feedback: µø¿€ øœ∑·
+2025-01-06 11:29:26,259 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: True
+2025-01-06 11:29:26,318 INFO 127.0.0.1 - - [06/Jan/2025 11:29:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:27,578 INFO Analyzed Pose -> Angle: 13.882344076641974, Knee Position: 0.005540072917938232, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 11:29:27,579 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:27,873 INFO 127.0.0.1 - - [06/Jan/2025 11:29:27] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:28,288 INFO Analyzed Pose -> Angle: 12.878831204691023, Knee Position: 0.00017851591110229492, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 11:29:28,290 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:28,347 INFO 127.0.0.1 - - [06/Jan/2025 11:29:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:40,066 INFO 127.0.0.1 - - [06/Jan/2025 11:29:40] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:40,359 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:29:40,360 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:40,625 INFO 127.0.0.1 - - [06/Jan/2025 11:29:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:40,788 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 11:29:40,788 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:40,845 INFO 127.0.0.1 - - [06/Jan/2025 11:29:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:42,141 INFO Analyzed Pose -> Angle: 115.18347245260846, Knee Position: 0.026185929775238037, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 11:29:42,141 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:42,380 INFO 127.0.0.1 - - [06/Jan/2025 11:29:42] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:42,809 INFO Analyzed Pose -> Angle: 26.03554355469124, Knee Position: 0.0028806328773498535, Feedback: µø¿€ øœ∑·
+2025-01-06 11:29:42,809 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: True
+2025-01-06 11:29:42,863 INFO 127.0.0.1 - - [06/Jan/2025 11:29:42] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:44,129 INFO Analyzed Pose -> Angle: 14.245532965055013, Knee Position: 0.001736283302307129, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 11:29:44,129 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:44,188 INFO 127.0.0.1 - - [06/Jan/2025 11:29:44] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 11:29:44,823 INFO Analyzed Pose -> Angle: 20.65963194645597, Knee Position: 0.005844831466674805, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 11:29:44,824 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 11:29:45,126 INFO 127.0.0.1 - - [06/Jan/2025 11:29:45] "POST /squat-analysis HTTP/1.1" 200 -

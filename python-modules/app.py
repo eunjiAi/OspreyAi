@@ -6,12 +6,12 @@ import base64
 import numpy as np
 import cv2
 import mediapipe as mp
-from sqlalchemy import create_engine, Column, Integer, String, Date, Sequence
-from sqlalchemy.orm import sessionmaker, scoped_session
+from sqlalchemy import create_engine, Column, Integer, String, Date, Sequence, ForeignKey
+from sqlalchemy.orm import sessionmaker, scoped_session, relationship
 from sqlalchemy.ext.declarative import declarative_base
 import datetime
 from pytz import timezone
-import jwt  
+import jwt
 from sqlalchemy import text
 
 # 로그 설정
@@ -38,15 +38,32 @@ class Member(Base):
     __tablename__ = 'MEMBER'
     uuid = Column(String, primary_key=True)
     name = Column(String)
+    nickname = Column(String)
+    memberid = Column(String)
+    pw = Column(String)
+    phone_number = Column(String)
+    gender = Column(String)
+    admin_yn = Column(String)
+    enroll_date = Column(Date)
+    lastmodified = Column(Date)
+    google = Column(String)
+    naver = Column(String)
+    kakao = Column(String)
+    login_ok = Column(String)
+    face_vector = Column(String)
+    face_id = Column(String)
+    email = Column(String)
 
 class SquatFeedback(Base):
     __tablename__ = 'SQUATFEEDBACK'
     squat_id = Column(Integer, Sequence('squat_id_seq', start=1, increment=1), primary_key=True)
-    uuid = Column(String, nullable=False)
+    uuid = Column(String, ForeignKey('MEMBER.uuid'), nullable=False)  # 외래키로 연결
     total_attempts = Column(Integer, nullable=False)
     correct_count = Column(Integer, nullable=False)
     squat_date = Column(Date, nullable=False)
     name = Column(String, nullable=False)  # name 필드 추가
+
+    member = relationship("Member", backref="squat_feedback")  # Member 테이블과의 관계 정의
 
 # 현재 자세 상태 추적 변수
 current_posture = "stand"
@@ -74,8 +91,6 @@ def extract_uuid_and_name_from_token(token):
     except Exception as e:
         logging.error(f"JWT 디코딩 오류: {e}")
         return None, None
-
-
 
 # 사용자 UUID를 MEMBER 테이블에 삽입하는 함수
 def insert_uuid_into_member(uuid, name):
@@ -106,7 +121,6 @@ def check_db_connection():
         logging.error(f"디코딩 중 오류 발생: {e}")
         sys.exit(1)
 
-
 # log_current_user에서 UUID와 이름을 받아서 MEMBER 테이블에 삽입하는 부분
 @app.route('/log-user', methods=['GET'])
 def log_current_user():
@@ -131,7 +145,6 @@ def log_current_user():
     except Exception as e:
         logging.error(f"JWT 디코딩 중 오류 발생: {e}")
         return jsonify({"error": "JWT 디코딩 중 오류 발생"}), 500
-
 
 # Pose 분석 
 def analyze_pose(image):
@@ -178,7 +191,6 @@ def analyze_pose(image):
         logging.error(f"자세 분석 오류: {e}")
         return {"angle": None, "knee_position": None, "feedback": "분석 실패"}
 
-
 def calculate_upper_body_angle(landmarks):
     shoulder = landmarks[mp_holistic.PoseLandmark.LEFT_SHOULDER]
     hip = landmarks[mp_holistic.PoseLandmark.LEFT_HIP]
@@ -193,7 +205,6 @@ def calculate_knee_position(landmarks):
     knee = landmarks[mp_holistic.PoseLandmark.LEFT_KNEE]
     foot = landmarks[mp_holistic.PoseLandmark.LEFT_ANKLE]
     return knee.x - foot.x
-
 
 def update_daily_feedback(uuid, feedback_correct, name):  # name을 추가로 전달받음
     session = Session()
@@ -237,7 +248,6 @@ def update_daily_feedback(uuid, feedback_correct, name):  # name을 추가로 �
     finally:
         session.close()
 
-
 @app.route('/squat-analysis', methods=['POST'])
 def squat_analysis():
     print("요청 메소드:", request.method)
@@ -273,7 +283,6 @@ def squat_analysis():
     except Exception as e:
         print(f"분석 실패: {e}")
         return jsonify({"feedback": "분석 실패"}), 500
-
 
 if __name__ == '__main__':
     check_db_connection()  # 데이터베이스 연결 확인
