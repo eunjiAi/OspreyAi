@@ -12469,3 +12469,1413 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
 2025-01-03 16:04:39,035 INFO 127.0.0.1 - - [03/Jan/2025 16:04:39] "[35m[1mPOST /squat-analysis HTTP/1.1[0m" 500 -
 2025-01-03 16:04:45,763 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 09:57:52,940 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 09:57:52,940 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 09:57:52,942 INFO  * Restarting with stat
+2025-01-06 09:57:55,379 WARNING  * Debugger is active!
+2025-01-06 09:57:55,381 INFO  * Debugger PIN: 125-377-655
+2025-01-06 09:57:59,813 INFO 127.0.0.1 - - [06/Jan/2025 09:57:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:00,089 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 09:58:00,089 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:00,171 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:00,527 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 09:58:00,527 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:00,527 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:01,083 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:01,083 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:01,083 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:01,083 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:01,834 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:01,835 INFO 127.0.0.1 - - [06/Jan/2025 09:58:01] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:01,858 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 09:58:01,860 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:01,861 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:01,877 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:01,877 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:02,254 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:02,254 INFO 127.0.0.1 - - [06/Jan/2025 09:58:02] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:02,676 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:02,677 INFO 127.0.0.1 - - [06/Jan/2025 09:58:02] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:02,842 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 09:58:02,842 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:02,842 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:02,853 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:02,854 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:03,458 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:03,458 INFO 127.0.0.1 - - [06/Jan/2025 09:58:03] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:03,888 INFO Analyzed Pose -> Angle: 13.63848713723744, Knee Position: 0.0007999539375305176, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 09:58:03,889 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:03,889 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:03,901 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:03,901 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:04,560 INFO Analyzed Pose -> Angle: 10.438342409894029, Knee Position: -0.008899450302124023, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 09:58:04,560 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:04,560 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:04,571 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:04,571 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:04,598 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:04,599 INFO 127.0.0.1 - - [06/Jan/2025 09:58:04] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:05,269 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:05,269 INFO 127.0.0.1 - - [06/Jan/2025 09:58:05] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:05,824 INFO 127.0.0.1 - - [06/Jan/2025 09:58:05] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:06,126 INFO Analyzed Pose -> Angle: 94.2706187875328, Knee Position: 0.03004831075668335, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 09:58:06,127 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:06,221 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:06,232 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:06,232 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:06,518 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:06,518 INFO 127.0.0.1 - - [06/Jan/2025 09:58:06] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:06,561 INFO Analyzed Pose -> Angle: 117.79447447152808, Knee Position: 0.10455900430679321, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 09:58:06,561 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:06,561 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:06,569 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:06,569 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:07,257 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:07,257 INFO 127.0.0.1 - - [06/Jan/2025 09:58:07] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:07,871 INFO Analyzed Pose -> Angle: 29.6690990131232, Knee Position: 0.002937018871307373, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 09:58:07,871 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 09:58:07,872 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:07,881 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:07,881 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:08,410 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 1, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:08,411 INFO 127.0.0.1 - - [06/Jan/2025 09:58:08] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:08,551 INFO Analyzed Pose -> Angle: 15.73626412636959, Knee Position: -0.0031446218490600586, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 09:58:08,552 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:08,552 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:08,564 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:08,564 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:09,368 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:09,369 INFO 127.0.0.1 - - [06/Jan/2025 09:58:09] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:58:09,874 INFO Analyzed Pose -> Angle: 15.662410853882125, Knee Position: 0.0002778172492980957, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 09:58:09,875 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 09:58:09,875 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 09:58:09,886 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 09:58:09,886 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 09:58:10,244 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 09:58:10,245 INFO 127.0.0.1 - - [06/Jan/2025 09:58:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 09:59:22,344 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:01:01,718 ERROR µðºñ ¿¬°á ½ÇÆÐ: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-01-06 10:01:13,220 ERROR µðºñ ¿¬°á ½ÇÆÐ: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-01-06 10:01:48,507 ERROR µðºñ ¿¬°á ½ÇÆÐ: (cx_Oracle.DatabaseError) ORA-00923: FROM Å°¿öµå°¡ ÇÊ¿äÇÑ À§Ä¡¿¡ ¾ø½À´Ï´Ù.
+[SQL: SELECT 1]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-01-06 10:02:08,777 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:02:08,777 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:02:08,777 INFO  * Restarting with stat
+2025-01-06 10:02:11,786 WARNING  * Debugger is active!
+2025-01-06 10:02:11,788 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:02:37,482 INFO 127.0.0.1 - - [06/Jan/2025 10:02:37] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:02:37,773 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:02:37,775 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:02:37,864 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:02:37,877 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:02:37,877 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:02:38,098 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:02:38,098 INFO 127.0.0.1 - - [06/Jan/2025 10:02:38] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:02:38,192 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:02:38,193 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:02:38,193 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:02:38,203 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:02:38,203 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:02:38,448 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:02:38,449 INFO 127.0.0.1 - - [06/Jan/2025 10:02:38] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:02:39,601 INFO Analyzed Pose -> Angle: 10.665871226394614, Knee Position: -0.010831177234649658, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:02:39,602 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:02:39,603 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:02:39,613 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:02:39,613 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:02:39,802 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:02:39,803 INFO 127.0.0.1 - - [06/Jan/2025 10:02:39] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:02:40,266 INFO Analyzed Pose -> Angle: 8.230734384826114, Knee Position: -0.014724433422088623, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:02:40,267 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:02:40,267 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:02:40,276 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:02:40,276 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:02:40,554 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:02:40,555 INFO 127.0.0.1 - - [06/Jan/2025 10:02:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:02:41,527 INFO Analyzed Pose -> Angle: 100.4944421505874, Knee Position: 0.03201037645339966, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:02:41,531 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:02:41,531 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:02:41,539 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:02:41,539 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:02:41,778 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:02:41,778 INFO 127.0.0.1 - - [06/Jan/2025 10:02:41] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:02:42,224 INFO Analyzed Pose -> Angle: 95.70278312380239, Knee Position: -0.03539848327636719, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:02:42,225 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:02:42,225 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:02:42,234 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:02:42,234 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:02:42,514 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:02:42,514 INFO 127.0.0.1 - - [06/Jan/2025 10:02:42] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:02:43,485 INFO 127.0.0.1 - - [06/Jan/2025 10:02:43] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:02:43,872 INFO Analyzed Pose -> Angle: 30.312661846505893, Knee Position: 9.98377799987793e-05, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:02:43,873 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:02:43,873 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:02:43,885 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:02:43,886 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:02:44,189 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 1, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:02:44,189 INFO 127.0.0.1 - - [06/Jan/2025 10:02:44] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:02:44,212 INFO Analyzed Pose -> Angle: 19.108304883998446, Knee Position: -0.0004086494445800781, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:02:44,214 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:02:44,216 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:02:44,225 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:02:44,225 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:02:44,642 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:02:44,643 INFO 127.0.0.1 - - [06/Jan/2025 10:02:44] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:32,597 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:03:37,753 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:03:37,753 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:03:37,755 INFO  * Restarting with stat
+2025-01-06 10:03:41,267 WARNING  * Debugger is active!
+2025-01-06 10:03:41,269 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:03:41,280 INFO 127.0.0.1 - - [06/Jan/2025 10:03:41] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:41,281 INFO 127.0.0.1 - - [06/Jan/2025 10:03:41] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:41,651 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:03:41,651 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:03:41,652 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:41,652 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:41,733 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:41,733 INFO correct_increment °ª: 0
+2025-01-06 10:03:41,733 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:41,736 INFO correct_increment °ª: 0
+2025-01-06 10:03:41,745 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:41,745 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:41,989 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:41,991 INFO 127.0.0.1 - - [06/Jan/2025 10:03:41] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:42,013 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:03:42,014 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:42,014 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:42,014 INFO correct_increment °ª: 0
+2025-01-06 10:03:42,021 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:42,021 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:42,110 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:42,110 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:42,475 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:42,475 INFO 127.0.0.1 - - [06/Jan/2025 10:03:42] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:42,712 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:42,712 INFO 127.0.0.1 - - [06/Jan/2025 10:03:42] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:43,061 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:03:43,062 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:43,062 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:43,062 INFO correct_increment °ª: 0
+2025-01-06 10:03:43,070 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:43,070 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:43,331 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:43,331 INFO 127.0.0.1 - - [06/Jan/2025 10:03:43] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:43,759 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:03:43,760 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:43,760 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:43,760 INFO correct_increment °ª: 0
+2025-01-06 10:03:43,770 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:43,770 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:43,967 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:43,967 INFO 127.0.0.1 - - [06/Jan/2025 10:03:43] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:45,047 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:03:45,048 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:45,048 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:45,048 INFO correct_increment °ª: 0
+2025-01-06 10:03:45,056 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:45,057 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:45,281 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:45,282 INFO 127.0.0.1 - - [06/Jan/2025 10:03:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:45,823 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:03:45,823 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:45,823 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:45,824 INFO correct_increment °ª: 0
+2025-01-06 10:03:45,833 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:45,833 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:46,066 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:46,067 INFO 127.0.0.1 - - [06/Jan/2025 10:03:46] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:47,023 INFO 127.0.0.1 - - [06/Jan/2025 10:03:47] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:47,306 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:03:47,307 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:47,307 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:47,307 INFO correct_increment °ª: 0
+2025-01-06 10:03:47,316 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:47,316 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:47,675 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:47,676 INFO 127.0.0.1 - - [06/Jan/2025 10:03:47] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:47,777 INFO Analyzed Pose -> Angle: 170.27178999181857, Knee Position: -0.022011160850524902, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:03:47,777 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:47,778 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:47,778 INFO correct_increment °ª: 0
+2025-01-06 10:03:47,788 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:47,789 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:48,083 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:48,084 INFO 127.0.0.1 - - [06/Jan/2025 10:03:48] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:49,064 INFO Analyzed Pose -> Angle: 96.45405854966802, Knee Position: 0.05429941415786743, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:03:49,064 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:49,064 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:49,064 INFO correct_increment °ª: 0
+2025-01-06 10:03:49,080 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:49,080 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:49,346 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:49,346 INFO 127.0.0.1 - - [06/Jan/2025 10:03:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:49,785 INFO Analyzed Pose -> Angle: 104.88629979585416, Knee Position: -0.018899142742156982, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:03:49,787 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:49,788 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:49,788 INFO correct_increment °ª: 0
+2025-01-06 10:03:49,798 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:49,798 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:50,061 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:50,061 INFO 127.0.0.1 - - [06/Jan/2025 10:03:50] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:51,065 INFO Analyzed Pose -> Angle: 138.6326809662596, Knee Position: 0.012521445751190186, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:03:51,065 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:51,065 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:51,065 INFO correct_increment °ª: 0
+2025-01-06 10:03:51,074 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:51,075 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:51,296 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:51,296 INFO 127.0.0.1 - - [06/Jan/2025 10:03:51] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:51,784 INFO Analyzed Pose -> Angle: 50.57117463923168, Knee Position: -0.024419277906417847, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:03:51,785 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:03:51,785 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:51,785 INFO correct_increment °ª: 1
+2025-01-06 10:03:51,796 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:51,796 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:52,028 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 1, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:52,029 INFO 127.0.0.1 - - [06/Jan/2025 10:03:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:53,028 INFO 127.0.0.1 - - [06/Jan/2025 10:03:53] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:53,334 INFO Analyzed Pose -> Angle: 72.23707863500596, Knee Position: -0.036790281534194946, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:03:53,335 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:53,335 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:53,335 INFO correct_increment °ª: 0
+2025-01-06 10:03:53,344 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:53,344 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:53,568 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:53,569 INFO 127.0.0.1 - - [06/Jan/2025 10:03:53] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:53,754 INFO Analyzed Pose -> Angle: 18.32021528896501, Knee Position: -0.03037118911743164, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:03:53,754 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:03:53,754 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:53,754 INFO correct_increment °ª: 1
+2025-01-06 10:03:53,764 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:53,764 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:54,079 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 1, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:54,079 INFO 127.0.0.1 - - [06/Jan/2025 10:03:54] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:55,058 INFO Analyzed Pose -> Angle: 136.78071785173103, Knee Position: -0.02147004008293152, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:03:55,059 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:55,059 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:55,059 INFO correct_increment °ª: 0
+2025-01-06 10:03:55,068 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:55,068 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:55,321 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:55,321 INFO 127.0.0.1 - - [06/Jan/2025 10:03:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:55,754 INFO Analyzed Pose -> Angle: 162.6107988643231, Knee Position: 0.0009117722511291504, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:03:55,754 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:55,754 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:55,754 INFO correct_increment °ª: 0
+2025-01-06 10:03:55,762 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:55,762 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:56,021 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:56,021 INFO 127.0.0.1 - - [06/Jan/2025 10:03:56] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:57,065 INFO Analyzed Pose -> Angle: 22.130531255748274, Knee Position: -0.005830109119415283, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:03:57,066 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:03:57,066 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:57,066 INFO correct_increment °ª: 1
+2025-01-06 10:03:57,072 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:57,072 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:57,505 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 1, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:57,506 INFO 127.0.0.1 - - [06/Jan/2025 10:03:57] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:57,752 INFO Analyzed Pose -> Angle: 13.671568682284597, Knee Position: 0.04020977020263672, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:03:57,752 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:57,752 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:57,752 INFO correct_increment °ª: 0
+2025-01-06 10:03:57,761 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:57,762 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:58,008 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:58,008 INFO 127.0.0.1 - - [06/Jan/2025 10:03:58] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:59,028 INFO 127.0.0.1 - - [06/Jan/2025 10:03:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:59,336 INFO Analyzed Pose -> Angle: 41.829769888128574, Knee Position: 0.08776021003723145, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:03:59,337 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:59,337 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:59,337 INFO correct_increment °ª: 0
+2025-01-06 10:03:59,345 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:59,345 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:03:59,544 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:03:59,544 INFO 127.0.0.1 - - [06/Jan/2025 10:03:59] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:03:59,748 INFO Analyzed Pose -> Angle: 33.99162702154652, Knee Position: 0.050115346908569336, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:03:59,749 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:03:59,749 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:03:59,749 INFO correct_increment °ª: 0
+2025-01-06 10:03:59,757 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:03:59,757 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:04:00,040 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:04:00,041 INFO 127.0.0.1 - - [06/Jan/2025 10:04:00] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:04:01,068 INFO Analyzed Pose -> Angle: 160.6629109643233, Knee Position: 0.013946324586868286, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:04:01,068 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:04:01,068 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:04:01,068 INFO correct_increment °ª: 0
+2025-01-06 10:04:01,075 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:04:01,076 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:04:01,505 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:04:01,505 INFO 127.0.0.1 - - [06/Jan/2025 10:04:01] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:04:01,756 INFO Analyzed Pose -> Angle: 164.88338425081852, Knee Position: 0.035549700260162354, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:04:01,756 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:04:01,757 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:04:01,757 INFO correct_increment °ª: 0
+2025-01-06 10:04:01,763 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:04:01,764 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:04:02,199 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:04:02,199 INFO 127.0.0.1 - - [06/Jan/2025 10:04:02] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:04:03,048 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:04:03,048 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:04:03,049 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:04:03,049 INFO correct_increment °ª: 0
+2025-01-06 10:04:03,056 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:04:03,057 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:04:03,295 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:04:03,295 INFO 127.0.0.1 - - [06/Jan/2025 10:04:03] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:04:03,770 INFO Analyzed Pose -> Angle: 13.258576244603079, Knee Position: -0.016126036643981934, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:04:03,770 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:04:03,771 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:04:03,771 INFO correct_increment °ª: 1
+2025-01-06 10:04:03,779 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:04:03,780 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:04:04,656 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 1, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:04:04,657 INFO 127.0.0.1 - - [06/Jan/2025 10:04:04] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:04:05,023 INFO 127.0.0.1 - - [06/Jan/2025 10:04:05] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:04:05,316 INFO Analyzed Pose -> Angle: 14.04447594405149, Knee Position: -0.008564412593841553, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:04:05,316 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:04:05,316 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:04:05,316 INFO correct_increment °ª: 0
+2025-01-06 10:04:05,323 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:04:05,323 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:04:05,731 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:04:05,732 INFO 127.0.0.1 - - [06/Jan/2025 10:04:05] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:04:05,733 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:04:05,733 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:04:05,733 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:04:05,733 INFO correct_increment °ª: 0
+2025-01-06 10:04:05,744 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:04:05,744 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:04:06,235 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:04:06,236 INFO 127.0.0.1 - - [06/Jan/2025 10:04:06] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:04:07,051 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:04:07,052 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:04:07,052 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:04:07,052 INFO correct_increment °ª: 0
+2025-01-06 10:04:07,064 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:04:07,064 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:04:07,427 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:04:07,427 INFO 127.0.0.1 - - [06/Jan/2025 10:04:07] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:04:24,758 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:07:58,304 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:07:58,304 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:07:58,305 INFO  * Restarting with stat
+2025-01-06 10:08:02,032 WARNING  * Debugger is active!
+2025-01-06 10:08:02,036 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:08:02,043 INFO 127.0.0.1 - - [06/Jan/2025 10:08:02] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:02,044 INFO 127.0.0.1 - - [06/Jan/2025 10:08:02] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:02,045 INFO 127.0.0.1 - - [06/Jan/2025 10:08:02] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:02,048 INFO 127.0.0.1 - - [06/Jan/2025 10:08:02] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:02,451 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:08:02,451 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:08:02,451 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:08:02,451 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:08:02,452 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:08:02,453 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:02,453 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:02,454 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:02,454 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:02,454 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:02,532 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:02,532 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:02,532 INFO correct_increment °ª: 0
+2025-01-06 10:08:02,532 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:02,532 INFO correct_increment °ª: 0
+2025-01-06 10:08:02,533 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:02,533 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:02,537 INFO correct_increment °ª: 0
+2025-01-06 10:08:02,538 INFO correct_increment °ª: 0
+2025-01-06 10:08:02,538 INFO correct_increment °ª: 0
+2025-01-06 10:08:02,549 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:02,549 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:02,692 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:02,692 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:03,210 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:03,210 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:03,312 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:03,312 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:03,313 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:03,313 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:03,390 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:08:03,391 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:03,391 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:03,391 INFO correct_increment °ª: 0
+2025-01-06 10:08:03,495 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:03,496 INFO 127.0.0.1 - - [06/Jan/2025 10:08:03] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:03,858 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:03,858 INFO 127.0.0.1 - - [06/Jan/2025 10:08:03] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:03,861 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:03,862 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:04,381 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:08:04,381 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:04,382 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:04,382 INFO correct_increment °ª: 0
+2025-01-06 10:08:04,392 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:04,392 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:04,407 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:04,407 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:04,407 INFO 127.0.0.1 - - [06/Jan/2025 10:08:04] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:04,407 INFO 127.0.0.1 - - [06/Jan/2025 10:08:04] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:04,408 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:04,408 INFO 127.0.0.1 - - [06/Jan/2025 10:08:04] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:05,298 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:05,299 INFO 127.0.0.1 - - [06/Jan/2025 10:08:05] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:05,316 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:05,316 INFO 127.0.0.1 - - [06/Jan/2025 10:08:05] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:05,421 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:08:05,422 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:05,422 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:05,422 INFO correct_increment °ª: 0
+2025-01-06 10:08:05,431 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:05,431 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:06,039 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:06,040 INFO 127.0.0.1 - - [06/Jan/2025 10:08:06] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:06,445 INFO Analyzed Pose -> Angle: 13.313616664378495, Knee Position: -0.001248180866241455, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:08:06,445 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:06,445 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:06,445 INFO correct_increment °ª: 0
+2025-01-06 10:08:06,455 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:06,455 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:07,060 INFO 127.0.0.1 - - [06/Jan/2025 10:08:07] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:07,153 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:07,154 INFO 127.0.0.1 - - [06/Jan/2025 10:08:07] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:07,420 INFO Analyzed Pose -> Angle: 14.365108093662304, Knee Position: 0.006353914737701416, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:08:07,421 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:07,421 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:07,421 INFO correct_increment °ª: 0
+2025-01-06 10:08:07,430 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:07,430 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:07,852 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:07,852 INFO 127.0.0.1 - - [06/Jan/2025 10:08:07] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:08,409 INFO Analyzed Pose -> Angle: 82.14249636048841, Knee Position: 0.02203953266143799, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:08:08,410 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:08,410 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:08,410 INFO correct_increment °ª: 0
+2025-01-06 10:08:08,419 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:08,420 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:08,795 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:08,795 INFO 127.0.0.1 - - [06/Jan/2025 10:08:08] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:09,104 INFO Analyzed Pose -> Angle: 111.04482390547041, Knee Position: 0.038759469985961914, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:08:09,105 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:09,105 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:09,105 INFO correct_increment °ª: 0
+2025-01-06 10:08:09,111 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:09,111 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:09,761 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:09,761 INFO 127.0.0.1 - - [06/Jan/2025 10:08:09] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:10,423 INFO Analyzed Pose -> Angle: 17.918616874849285, Knee Position: 0.0030168890953063965, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:08:10,423 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:08:10,423 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:10,423 INFO correct_increment °ª: 1
+2025-01-06 10:08:10,432 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:10,433 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:10,858 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 1, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:10,858 INFO 127.0.0.1 - - [06/Jan/2025 10:08:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:08:11,115 INFO Analyzed Pose -> Angle: 15.548417278631211, Knee Position: -9.21487808227539e-05, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:08:11,116 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:08:11,116 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:08:11,116 INFO correct_increment °ª: 0
+2025-01-06 10:08:11,127 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:08:11,127 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:08:11,738 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:08:11,738 INFO 127.0.0.1 - - [06/Jan/2025 10:08:11] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:10:57,041 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:11:54,459 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:11:54,459 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:11:54,460 INFO  * Restarting with stat
+2025-01-06 10:11:57,752 WARNING  * Debugger is active!
+2025-01-06 10:11:57,755 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:11:57,762 INFO 127.0.0.1 - - [06/Jan/2025 10:11:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:11:57,762 INFO 127.0.0.1 - - [06/Jan/2025 10:11:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:11:57,764 INFO 127.0.0.1 - - [06/Jan/2025 10:11:57] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:11:58,137 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:11:58,137 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:11:58,137 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:11:58,138 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:11:58,138 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:11:58,138 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:11:58,231 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:11:58,237 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:11:58,239 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:11:58,247 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:11:58,265 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:11:58,265 INFO 127.0.0.1 - - [06/Jan/2025 10:11:58] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:11:58,428 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:11:58,429 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:11:58,429 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:11:58,438 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:11:58,453 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:11:58,454 INFO 127.0.0.1 - - [06/Jan/2025 10:11:58] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:11:58,543 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:11:58,556 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:11:58,556 INFO 127.0.0.1 - - [06/Jan/2025 10:11:58] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:11:58,669 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:11:58,685 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:11:58,686 INFO 127.0.0.1 - - [06/Jan/2025 10:11:58] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:11:59,425 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:11:59,425 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:11:59,425 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:11:59,435 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:11:59,448 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:11:59,449 INFO 127.0.0.1 - - [06/Jan/2025 10:11:59] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:12:00,177 INFO Analyzed Pose -> Angle: 7.496284450262652, Knee Position: 0.02554062008857727, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:12:00,179 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:12:00,180 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:12:00,190 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:12:00,205 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:12:00,206 INFO 127.0.0.1 - - [06/Jan/2025 10:12:00] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:12:01,437 INFO Analyzed Pose -> Angle: 30.63819229864956, Knee Position: 0.007906526327133179, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:12:01,440 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:12:01,440 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:12:01,448 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:12:01,465 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:12:01,465 INFO 127.0.0.1 - - [06/Jan/2025 10:12:01] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:12:02,157 INFO Analyzed Pose -> Angle: 112.45009040264387, Knee Position: 0.03786206245422363, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:12:02,158 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:12:02,158 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:12:02,168 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:12:02,182 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:12:02,182 INFO 127.0.0.1 - - [06/Jan/2025 10:12:02] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:12:03,400 INFO 127.0.0.1 - - [06/Jan/2025 10:12:03] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:12:03,688 INFO Analyzed Pose -> Angle: 21.124165327376357, Knee Position: 0.0025448203086853027, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:12:03,689 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:12:03,689 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:12:03,697 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:12:03,710 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:12:03,710 INFO 127.0.0.1 - - [06/Jan/2025 10:12:03] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:12:04,146 INFO Analyzed Pose -> Angle: 13.338647061201105, Knee Position: 0.0007793903350830078, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:12:04,146 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:12:04,146 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:12:04,239 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:12:04,255 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:12:04,255 INFO 127.0.0.1 - - [06/Jan/2025 10:12:04] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:13:42,948 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:14:09,008 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:14:09,008 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:14:09,009 INFO  * Restarting with stat
+2025-01-06 10:14:12,745 WARNING  * Debugger is active!
+2025-01-06 10:14:12,749 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:14:15,887 INFO 127.0.0.1 - - [06/Jan/2025 10:14:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:16,172 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:14:16,172 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:16,249 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:16,261 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:16,274 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:16,274 INFO 127.0.0.1 - - [06/Jan/2025 10:14:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:16,611 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:14:16,612 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:16,612 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:16,621 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:16,634 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:16,635 INFO 127.0.0.1 - - [06/Jan/2025 10:14:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:17,921 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:14:17,921 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:17,921 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:17,929 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:17,944 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:17,944 INFO 127.0.0.1 - - [06/Jan/2025 10:14:17] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:18,604 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:14:18,606 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:18,606 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:18,614 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:18,629 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:18,629 INFO 127.0.0.1 - - [06/Jan/2025 10:14:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:19,943 INFO Analyzed Pose -> Angle: 119.43559586671118, Knee Position: 0.05806073546409607, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:14:19,944 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:19,944 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:19,952 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:19,967 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:19,969 INFO 127.0.0.1 - - [06/Jan/2025 10:14:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:20,612 INFO Analyzed Pose -> Angle: 112.68631031689321, Knee Position: 0.049810171127319336, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:14:20,613 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:20,613 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:20,623 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:20,640 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:20,640 INFO 127.0.0.1 - - [06/Jan/2025 10:14:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:21,886 INFO 127.0.0.1 - - [06/Jan/2025 10:14:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:22,179 INFO Analyzed Pose -> Angle: 101.36256391984436, Knee Position: 0.021979570388793945, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:14:22,179 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:22,180 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:22,192 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:22,207 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:22,207 INFO 127.0.0.1 - - [06/Jan/2025 10:14:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:22,622 INFO Analyzed Pose -> Angle: 105.23898374821086, Knee Position: -6.556510925292969e-07, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:14:22,622 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:22,622 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:22,631 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:22,646 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:22,646 INFO 127.0.0.1 - - [06/Jan/2025 10:14:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:23,945 INFO Analyzed Pose -> Angle: 101.12692570839057, Knee Position: -0.020108401775360107, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:14:23,945 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:23,945 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:23,955 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:23,971 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:23,971 INFO 127.0.0.1 - - [06/Jan/2025 10:14:23] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:24,626 INFO Analyzed Pose -> Angle: 127.44471715245845, Knee Position: 0.01854395866394043, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:14:24,626 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:24,626 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:24,635 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:24,651 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:24,651 INFO 127.0.0.1 - - [06/Jan/2025 10:14:24] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:25,931 INFO Analyzed Pose -> Angle: 101.37933547871901, Knee Position: 0.03915292024612427, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:14:25,931 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:25,931 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:25,942 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:25,956 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:25,956 INFO 127.0.0.1 - - [06/Jan/2025 10:14:25] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:26,627 INFO Analyzed Pose -> Angle: 103.3115894840654, Knee Position: 0.004304468631744385, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:14:26,627 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:26,627 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:26,636 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:26,650 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:26,651 INFO 127.0.0.1 - - [06/Jan/2025 10:14:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:27,895 INFO 127.0.0.1 - - [06/Jan/2025 10:14:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:28,332 INFO Analyzed Pose -> Angle: 16.232106831065032, Knee Position: -0.004248857498168945, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:14:28,332 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:14:28,332 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:28,341 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:28,357 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:28,358 INFO 127.0.0.1 - - [06/Jan/2025 10:14:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:29,363 INFO Analyzed Pose -> Angle: 42.791491485506434, Knee Position: -0.046945929527282715, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:14:29,363 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:29,364 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:29,375 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:29,394 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:29,395 INFO 127.0.0.1 - - [06/Jan/2025 10:14:29] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:30,661 INFO Analyzed Pose -> Angle: 28.68553227176464, Knee Position: 0.012046456336975098, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:14:30,661 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:30,661 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:30,670 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:30,686 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:30,687 INFO 127.0.0.1 - - [06/Jan/2025 10:14:30] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:31,326 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:14:31,327 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:31,327 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:31,335 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:31,350 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:31,350 INFO 127.0.0.1 - - [06/Jan/2025 10:14:31] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:32,679 INFO Analyzed Pose -> Angle: 114.54831923733488, Knee Position: 0.036211252212524414, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:14:32,680 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:32,680 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:32,690 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:32,703 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:32,704 INFO 127.0.0.1 - - [06/Jan/2025 10:14:32] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:33,301 INFO 127.0.0.1 - - [06/Jan/2025 10:14:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:33,651 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:14:33,651 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:33,651 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:33,659 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:33,677 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:33,677 INFO 127.0.0.1 - - [06/Jan/2025 10:14:33] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:34,360 INFO Analyzed Pose -> Angle: 11.76515776262041, Knee Position: -0.0024036169052124023, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:14:34,360 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:14:34,361 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:34,368 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:34,386 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:34,386 INFO 127.0.0.1 - - [06/Jan/2025 10:14:34] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:14:35,658 INFO Analyzed Pose -> Angle: 15.294918733245655, Knee Position: -0.0031332969665527344, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:14:35,660 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:14:35,660 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:14:35,670 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:14:35,685 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:14:35,685 INFO 127.0.0.1 - - [06/Jan/2025 10:14:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:00,307 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:21:06,195 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:21:06,195 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:21:06,196 INFO  * Restarting with stat
+2025-01-06 10:21:09,723 WARNING  * Debugger is active!
+2025-01-06 10:21:09,725 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:21:09,834 INFO 127.0.0.1 - - [06/Jan/2025 10:21:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:10,120 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:21:10,120 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:10,194 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:10,212 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:10,212 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:10,539 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:21:10,539 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:10,539 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:10,546 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:10,547 INFO 127.0.0.1 - - [06/Jan/2025 10:21:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:10,668 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:10,669 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:11,015 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:11,016 INFO 127.0.0.1 - - [06/Jan/2025 10:21:11] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:11,834 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:21:11,835 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:11,835 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:11,847 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:11,847 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:12,202 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:12,203 INFO 127.0.0.1 - - [06/Jan/2025 10:21:12] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:12,540 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:21:12,541 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:12,541 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:12,551 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:12,552 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:12,981 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:12,982 INFO 127.0.0.1 - - [06/Jan/2025 10:21:12] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:13,840 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:21:13,841 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:13,841 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:13,854 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:13,855 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:14,318 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:14,318 INFO 127.0.0.1 - - [06/Jan/2025 10:21:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:14,524 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:21:14,525 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:14,525 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:14,534 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:14,535 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:14,790 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:14,790 INFO 127.0.0.1 - - [06/Jan/2025 10:21:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:15,838 INFO 127.0.0.1 - - [06/Jan/2025 10:21:15] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:16,250 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:16,251 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:16,251 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:16,261 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:16,261 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:16,552 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:16,554 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:16,554 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:16,563 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:16,563 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:16,619 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:16,621 INFO 127.0.0.1 - - [06/Jan/2025 10:21:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:16,824 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:16,825 INFO 127.0.0.1 - - [06/Jan/2025 10:21:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:17,874 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:17,875 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:17,875 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:17,885 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:17,887 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:18,168 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:18,169 INFO 127.0.0.1 - - [06/Jan/2025 10:21:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:18,569 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:18,570 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:18,571 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:18,579 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:18,579 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:18,819 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:18,820 INFO 127.0.0.1 - - [06/Jan/2025 10:21:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:19,859 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:19,860 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:19,860 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:19,872 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:19,872 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:20,171 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:20,172 INFO 127.0.0.1 - - [06/Jan/2025 10:21:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:20,547 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:20,547 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:20,548 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:20,556 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:20,556 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:20,865 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:20,865 INFO 127.0.0.1 - - [06/Jan/2025 10:21:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:21,822 INFO 127.0.0.1 - - [06/Jan/2025 10:21:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:22,116 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:22,117 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:22,117 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:22,129 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:22,129 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:22,393 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:22,394 INFO 127.0.0.1 - - [06/Jan/2025 10:21:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:22,545 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:22,545 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:22,545 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:22,554 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:22,554 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:22,831 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:22,831 INFO 127.0.0.1 - - [06/Jan/2025 10:21:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:23,824 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:21:23,825 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:23,825 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:23,834 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:23,834 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:24,110 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:24,110 INFO 127.0.0.1 - - [06/Jan/2025 10:21:24] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:24,526 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:21:24,526 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:24,526 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:24,533 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:24,533 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:25,080 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:25,082 INFO 127.0.0.1 - - [06/Jan/2025 10:21:25] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:25,819 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:21:25,819 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:25,820 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:25,832 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:25,832 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:26,105 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:26,106 INFO 127.0.0.1 - - [06/Jan/2025 10:21:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:26,561 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:26,562 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:26,562 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:26,571 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:26,571 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:26,855 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:26,856 INFO 127.0.0.1 - - [06/Jan/2025 10:21:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:27,815 INFO 127.0.0.1 - - [06/Jan/2025 10:21:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:28,116 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:28,117 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:28,117 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:28,126 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:28,126 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:28,389 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:28,390 INFO 127.0.0.1 - - [06/Jan/2025 10:21:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:21:28,541 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:21:28,542 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:21:28,542 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:21:28,552 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:21:28,552 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:21:28,836 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:21:28,838 INFO 127.0.0.1 - - [06/Jan/2025 10:21:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:05,968 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:23:17,011 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:23:17,011 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:23:17,012 INFO  * Restarting with stat
+2025-01-06 10:23:20,336 WARNING  * Debugger is active!
+2025-01-06 10:23:20,339 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:23:21,586 INFO 127.0.0.1 - - [06/Jan/2025 10:23:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:21,856 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:23:21,857 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:21,934 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:21,945 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:21,945 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:22,304 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:23:22,305 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:22,305 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:22,340 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:22,341 INFO 127.0.0.1 - - [06/Jan/2025 10:23:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:22,441 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:22,441 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:22,831 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:22,832 INFO 127.0.0.1 - - [06/Jan/2025 10:23:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:23,623 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:23:23,624 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:23,624 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:23,634 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:23,634 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:24,183 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:24,183 INFO 127.0.0.1 - - [06/Jan/2025 10:23:24] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:24,291 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:23:24,291 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:24,291 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:24,303 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:24,304 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:24,612 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:24,613 INFO 127.0.0.1 - - [06/Jan/2025 10:23:24] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:25,625 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:23:25,625 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:25,625 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:25,634 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:25,634 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:25,936 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:25,936 INFO 127.0.0.1 - - [06/Jan/2025 10:23:25] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:26,351 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:23:26,352 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:26,352 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:26,361 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:26,361 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:26,695 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:26,696 INFO 127.0.0.1 - - [06/Jan/2025 10:23:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:27,589 INFO 127.0.0.1 - - [06/Jan/2025 10:23:27] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:27,978 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:23:27,979 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:27,979 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:27,988 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:27,988 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:28,305 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:28,305 INFO 127.0.0.1 - - [06/Jan/2025 10:23:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:28,312 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:23:28,312 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:28,312 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:28,322 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:28,323 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:28,677 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:28,678 INFO 127.0.0.1 - - [06/Jan/2025 10:23:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:29,660 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:23:29,660 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:29,660 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:29,671 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:29,671 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:29,943 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:29,944 INFO 127.0.0.1 - - [06/Jan/2025 10:23:29] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:23:30,324 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:23:30,325 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:23:30,325 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:23:30,338 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:23:30,338 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:23:30,696 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:23:30,698 INFO 127.0.0.1 - - [06/Jan/2025 10:23:30] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:38,170 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:24:43,756 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:24:43,756 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:24:43,758 INFO  * Restarting with stat
+2025-01-06 10:24:47,166 WARNING  * Debugger is active!
+2025-01-06 10:24:47,168 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:24:47,177 INFO 127.0.0.1 - - [06/Jan/2025 10:24:47] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:47,179 INFO 127.0.0.1 - - [06/Jan/2025 10:24:47] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:47,182 INFO 127.0.0.1 - - [06/Jan/2025 10:24:47] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:47,218 INFO 127.0.0.1 - - [06/Jan/2025 10:24:47] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:47,559 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2025-01-06 10:24:47,559 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2025-01-06 10:24:47,559 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2025-01-06 10:24:47,560 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ °¨ÁöµÇÁö ¾Ê¾Ò½À´Ï´Ù.
+2025-01-06 10:24:47,562 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:47,562 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:47,564 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:47,564 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:47,635 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:47,638 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:47,638 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:47,639 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:47,647 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:47,647 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:48,097 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:48,097 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:48,126 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:48,126 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:48,127 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:48,127 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:48,296 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:24:48,298 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:48,298 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:48,352 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:48,352 INFO 127.0.0.1 - - [06/Jan/2025 10:24:48] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:48,965 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:48,965 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:49,043 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:49,043 INFO 127.0.0.1 - - [06/Jan/2025 10:24:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:49,063 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:49,063 INFO 127.0.0.1 - - [06/Jan/2025 10:24:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:49,064 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:49,064 INFO 127.0.0.1 - - [06/Jan/2025 10:24:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:49,262 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:24:49,263 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:49,264 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:49,275 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:49,275 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:49,558 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:49,558 INFO 127.0.0.1 - - [06/Jan/2025 10:24:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:49,720 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:49,720 INFO 127.0.0.1 - - [06/Jan/2025 10:24:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:50,255 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:24:50,255 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:50,255 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:50,267 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:50,267 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:50,568 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:50,568 INFO 127.0.0.1 - - [06/Jan/2025 10:24:50] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:50,937 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:24:50,937 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:50,938 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:50,948 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:50,948 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:51,208 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:51,209 INFO 127.0.0.1 - - [06/Jan/2025 10:24:51] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:52,257 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:24:52,257 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:52,258 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:52,269 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:52,269 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:52,568 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:52,568 INFO 127.0.0.1 - - [06/Jan/2025 10:24:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:52,901 INFO 127.0.0.1 - - [06/Jan/2025 10:24:52] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:53,261 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:24:53,262 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:53,262 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:53,272 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:53,272 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:53,522 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:53,523 INFO 127.0.0.1 - - [06/Jan/2025 10:24:53] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:55,323 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:24:55,323 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:55,324 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:55,334 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:55,334 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:55,592 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:55,593 INFO 127.0.0.1 - - [06/Jan/2025 10:24:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:24:56,637 ERROR ÀÚ¼¼ ºÐ¼® ¿À·ù: name 'current_posture' is not defined
+2025-01-06 10:24:56,637 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:24:56,637 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:24:56,647 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:24:56,648 INFO µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® Ä¿¹Ô Áß...
+2025-01-06 10:24:56,906 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: (cx_Oracle.IntegrityError) ORA-02291: ¹«°á¼º Á¦¾àÁ¶°Ç(C##FP3TEAM.FK_MEMBER_SQUATFEEDBACK)ÀÌ À§¹èµÇ¾ú½À´Ï´Ù- ºÎ¸ð Å°°¡ ¾ø½À´Ï´Ù
+[SQL: INSERT INTO "SQUATFEEDBACK" (squat_id, uuid, total_attempts, correct_count, squat_date, name) VALUES (squat_id_seq.nextval, :uuid, :total_attempts, :correct_count, :squat_date, :name) RETURNING "SQUATFEEDBACK".squat_id INTO :ret_0]
+[parameters: {'uuid': 'ieunji', 'total_attempts': 1, 'correct_count': 0, 'squat_date': datetime.date(2025, 1, 6), 'name': 'Unknown', 'ret_0': <cx_Oracle.Var of type DB_TYPE_VARCHAR with value []>}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-01-06 10:24:56,906 INFO 127.0.0.1 - - [06/Jan/2025 10:24:56] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:02,371 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
+2025-01-06 10:25:26,448 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 10:25:26,448 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 10:25:26,448 INFO  * Restarting with stat
+2025-01-06 10:25:29,734 WARNING  * Debugger is active!
+2025-01-06 10:25:29,736 INFO  * Debugger PIN: 125-377-655
+2025-01-06 10:25:33,232 INFO 127.0.0.1 - - [06/Jan/2025 10:25:33] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:33,552 INFO Analyzed Pose -> Angle: 14.901984737469355, Knee Position: 0.004583299160003662, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:25:33,554 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:25:33,625 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:25:33,638 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:25:33,651 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:25:33,651 INFO 127.0.0.1 - - [06/Jan/2025 10:25:33] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:33,962 INFO Analyzed Pose -> Angle: 13.309754450460035, Knee Position: 0.0005518198013305664, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:25:33,963 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:25:33,964 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:25:33,972 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:25:33,985 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:25:33,985 INFO 127.0.0.1 - - [06/Jan/2025 10:25:33] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:35,266 INFO Analyzed Pose -> Angle: 53.50339118653916, Knee Position: 0.011981725692749023, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:25:35,266 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:25:35,267 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:25:35,275 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:25:35,287 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:25:35,287 INFO 127.0.0.1 - - [06/Jan/2025 10:25:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:35,960 INFO Analyzed Pose -> Angle: 105.80811345493505, Knee Position: 0.03287172317504883, Feedback: ¹Ù¸¥ ÀÚ¼¼ÀÔ´Ï´Ù
+2025-01-06 10:25:35,961 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:25:35,961 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:25:35,972 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:25:35,985 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:25:35,985 INFO 127.0.0.1 - - [06/Jan/2025 10:25:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:37,252 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 10:25:37,253 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:25:37,253 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:25:37,259 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:25:37,272 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:25:37,272 INFO 127.0.0.1 - - [06/Jan/2025 10:25:37] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:37,983 INFO Analyzed Pose -> Angle: 12.327045181167065, Knee Position: 0.003563106060028076, Feedback: µ¿ÀÛ ¿Ï·á
+2025-01-06 10:25:37,983 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: True
+2025-01-06 10:25:37,984 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: True, ³¯Â¥: 2025-01-06
+2025-01-06 10:25:37,992 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:25:38,007 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:25:38,007 INFO 127.0.0.1 - - [06/Jan/2025 10:25:38] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:39,223 INFO 127.0.0.1 - - [06/Jan/2025 10:25:39] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:39,534 INFO Analyzed Pose -> Angle: 13.82635881543426, Knee Position: 0.005316376686096191, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:25:39,535 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:25:39,535 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:25:39,542 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:25:39,555 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:25:39,555 INFO 127.0.0.1 - - [06/Jan/2025 10:25:39] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 10:25:39,956 INFO Analyzed Pose -> Angle: 13.575061641216369, Knee Position: 0.007790088653564453, Feedback: »óÃ¼¸¦ ´õ ¼÷ÀÌ¼¼¿ä
+2025-01-06 10:25:39,956 INFO UUID: ieunji, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 10:25:39,956 INFO UUID: ieunji, ÇÇµå¹é »óÅÂ: False, ³¯Â¥: 2025-01-06
+2025-01-06 10:25:39,966 INFO ±âÁ¸ µ¥ÀÌÅÍ ¾øÀ½. »õ·Î¿î µ¥ÀÌÅÍ »ý¼º Áß...
+2025-01-06 10:25:39,977 ERROR µ¥ÀÌÅÍº£ÀÌ½º ¾÷µ¥ÀÌÆ® ½ÇÆÐ: 'name' is an invalid keyword argument for SquatFeedback
+2025-01-06 10:25:39,977 INFO 127.0.0.1 - - [06/Jan/2025 10:25:39] "POST /squat-analysis HTTP/1.1" 200 -

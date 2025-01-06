@@ -15,6 +15,7 @@ from sqlalchemy.ext.declarative import declarative_base
 import datetime
 from pytz import timezone
 import jwt  
+from sqlalchemy import text
 
 # 로그 설정
 logging.basicConfig(filename='app_error.log', level=logging.DEBUG, 
@@ -28,7 +29,7 @@ mp_holistic = mp.solutions.holistic
 holistic = mp_holistic.Holistic()
 
 # 데이터베이스 연결 설정
-DATABASE_URI = 'oracle+cx_oracle://c##ospreyai:123456@localhost:1521/XE'
+DATABASE_URI = 'oracle+cx_oracle://c##fp3team:1234@ktj0514.synology.me:1521/XE'
 engine = create_engine(DATABASE_URI)
 session_factory = sessionmaker(bind=engine)
 Session = scoped_session(session_factory)
@@ -59,6 +60,19 @@ def extract_uuid_and_name_from_token(token):
     except Exception as e:
         logging.error(f"JWT 디코딩 오류: {e}")
         return None, None
+
+# 데이터베이스 연결 확인
+def check_db_connection():
+    try:
+        # 세션을 통해 데이터베이스 연결 테스트
+        session = Session()
+        session.execute(text('SELECT 1 FROM dual'))  # Oracle에서 dual 테이블을 사용
+        session.close()
+        print("디비 연결 완료")
+    except Exception as e:
+        print(f"디비 연결 실패: {e}")
+        logging.error(f"디비 연결 실패: {e}")
+        sys.exit(1)
 
 
 @app.route('/log-user', methods=['GET'])
@@ -162,13 +176,16 @@ def update_daily_feedback(uuid, feedback_correct):
             logging.info(f"기존 데이터 발견: {entry}")
             entry.total_attempts += 1                       # 총 시도 횟수 증가
             entry.correct_count += correct_increment        # 바른 자세 횟수 증가
+            logging.info(f"업데이트 후 entry: {entry}")
         else:
             logging.info("기존 데이터 없음. 새로운 데이터 생성 중...")
+            # 첫 번째 시도일 때, correct_count를 0으로 설정하여 레코드 추가
             new_entry = SquatFeedback(
                 uuid=uuid,
-                total_attempts=1,
-                correct_count=correct_increment,
-                squat_date=today
+                total_attempts=1,  # 첫 번째 시도
+                correct_count=0,   # 첫 번째 시도에서는 바른 자세 카운트 0
+                squat_date=today,
+                name="Unknown"  # 사용자의 이름도 저장하거나 필요시 추가
             )
             session.add(new_entry)
 
@@ -217,7 +234,6 @@ def squat_analysis():
         print(f"분석 실패: {e}")
         return jsonify({"feedback": "분석 실패"}), 500
 
-
-
 if __name__ == '__main__':
+    check_db_connection()  # 데이터베이스 연결 확인
     app.run(port=5000, debug=True)

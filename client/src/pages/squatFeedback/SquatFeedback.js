@@ -118,13 +118,20 @@ function SquatFeedback() {
       const imageData = canvas.toDataURL('image/png');
   
       console.log('Python 서버에 데이터 전송 중...');
+      
+      // 첫 번째 시도일 때 feedback 값을 'start'로 설정하여 서버에 전송
+      const feedbackType = isRunning ? 'start' : 'continue';  // 'start'로 첫 번째 시도를 나타냄
+      
       fetch('http://localhost:5000/squat-analysis', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('accessToken')}`,   // JWT 
         },
-        body: JSON.stringify({ frame: imageData }),
+        body: JSON.stringify({ 
+          frame: imageData,
+          feedback: feedbackType,  // 첫 번째 시도 알리기
+        }),
       })
         .then((response) => {
           if (!response.ok) {
@@ -149,7 +156,9 @@ function SquatFeedback() {
           setFeedback('서버 오류가 발생했습니다.');
         });
     }
-  };  
+  };
+  
+  
   
 
   // 분석 시작
