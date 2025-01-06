@@ -40,7 +40,7 @@ Base.metadata.create_all(bind=engine)
 
 @app.route('/register-faceid', methods=['POST'])
 def register_faceid():
-    print("요청을 받았습니다.")  # 요청이 들어오는지 확인하는 로그
+    print("요청 받음")
 
     try:
         data = request.json
@@ -56,11 +56,11 @@ def register_faceid():
             return jsonify({"message": "얼굴이 인식되지 않았습니다."}), 400
 
         # 이미지 데이터 디코딩
-        image_data = image_data.split(",")[1]  # base64 이미지에서 'data:image/jpeg;base64,' 부분 제거
+        image_data = image_data.split(",")[1]       # base64 이미지에서 'data:image/jpeg;base64,' 부분 제거
         img_bytes = base64.b64decode(image_data)
 
         # 이미지 저장 경로
-        filename = f"{user_uuid}_{timestamp}.jpg"  # UUID와 타임스탬프 기반 파일명
+        filename = f"{user_uuid}_{timestamp}.jpg"   # UUID와 타임스탬프 기반 파일명
         image_path = os.path.join(SAVE_DIR, filename)
 
         # 이미지 저장

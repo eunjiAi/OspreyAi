@@ -15060,3 +15060,48 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
  * Running on http://127.0.0.1:5000
 2025-01-06 12:01:25,333 INFO [33mPress CTRL+C to quit[0m
 2025-01-06 12:01:25,334 INFO  * Restarting with stat
+2025-01-06 13:09:38,922 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 13:09:38,922 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 13:09:38,923 INFO  * Restarting with stat
+2025-01-06 13:09:42,362 WARNING  * Debugger is active!
+2025-01-06 13:09:42,364 INFO  * Debugger PIN: 125-377-655
+2025-01-06 13:09:42,611 INFO 127.0.0.1 - - [06/Jan/2025 13:09:42] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:42,903 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 13:09:42,904 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:43,085 INFO 127.0.0.1 - - [06/Jan/2025 13:09:43] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:43,314 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 13:09:43,314 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:43,557 INFO 127.0.0.1 - - [06/Jan/2025 13:09:43] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:44,644 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 13:09:44,644 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:44,809 INFO 127.0.0.1 - - [06/Jan/2025 13:09:44] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:45,310 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 13:09:45,311 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:45,488 INFO 127.0.0.1 - - [06/Jan/2025 13:09:45] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:46,608 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 13:09:46,609 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:46,666 INFO 127.0.0.1 - - [06/Jan/2025 13:09:46] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:47,292 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 13:09:47,293 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:47,361 INFO 127.0.0.1 - - [06/Jan/2025 13:09:47] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:48,599 INFO 127.0.0.1 - - [06/Jan/2025 13:09:48] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:48,907 INFO Analyzed Pose -> Angle: 9.563112902823864, Knee Position: 0.706680417060852, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 13:09:48,908 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:48,967 INFO 127.0.0.1 - - [06/Jan/2025 13:09:48] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:49,310 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 13:09:49,311 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:49,553 INFO 127.0.0.1 - - [06/Jan/2025 13:09:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:50,660 INFO Analyzed Pose -> Angle: 118.73544936934356, Knee Position: 0.03690415620803833, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 13:09:50,660 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:50,723 INFO 127.0.0.1 - - [06/Jan/2025 13:09:50] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:51,331 INFO Analyzed Pose -> Angle: 120.26169099697893, Knee Position: 0.032561421394348145, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 13:09:51,332 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:51,551 INFO 127.0.0.1 - - [06/Jan/2025 13:09:51] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:52,626 INFO Analyzed Pose -> Angle: 20.977236132007597, Knee Position: -0.026305079460144043, Feedback: µø¿€ øœ∑·
+2025-01-06 13:09:52,627 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: True
+2025-01-06 13:09:52,690 INFO 127.0.0.1 - - [06/Jan/2025 13:09:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:09:53,326 INFO Analyzed Pose -> Angle: 15.795830985585743, Knee Position: -0.020182132720947266, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 13:09:53,329 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 13:09:53,552 INFO 127.0.0.1 - - [06/Jan/2025 13:09:53] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 13:10:26,861 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\faceid.py', reloading
