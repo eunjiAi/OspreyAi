@@ -63,7 +63,7 @@ function Login({ onLoginSuccess }) {
   const handleGoogleCallback = async (accessToken) => {
     try {
       console.log("Google Callback Handling Started");
-
+  
       // Google API를 사용하여 사용자 이메일 가져오기
       const response = await axios.get(
         "https://www.googleapis.com/oauth2/v2/userinfo",
@@ -71,41 +71,42 @@ function Login({ onLoginSuccess }) {
           headers: { Authorization: `Bearer ${accessToken}` },
         }
       );
-
+  
       const email = response.data.email;
       console.log("Google 사용자 이메일:", email);
-
+  
       // 이메일을 FormData로 /login으로 전송
       const formData = new FormData();
       formData.append("googleEmail", email);
-
+  
       const loginResponse = await axios.post("/login", formData, {
         headers: {
           "Content-Type": "multipart/form-data", // FormData 전송을 위해 Content-Type 설정
         },
       });
-
+  
       // 헤더에서 Authorization 정보 추출
       const authorizationHeader = loginResponse.headers["authorization"];
       if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
         throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
       }
-
+  
       // Access Token 추출
       const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
-
+  
       // Response 데이터에서 Refresh Token 추출
       const { refreshToken } = loginResponse.data;
       if (!refreshToken) {
         throw new Error("Refresh Token이 응답에 없습니다.");
       }
-
+  
       // AuthProvider의 login 함수 호출
       login({ accessToken: jwtAccessToken, refreshToken });
-
+  
       console.log("Google 로그인 성공!");
-      // 로그인 성공 후 리디렉션
+      // 로그인 성공 후 리디렉션 (이전 페이지로 이동)
       if (onLoginSuccess) onLoginSuccess();
+      window.history.back(); // 이전 페이지로 이동
     } catch (error) {
       console.error(
         "Google Callback 처리 실패:",
@@ -117,6 +118,7 @@ function Login({ onLoginSuccess }) {
       );
     }
   };
+  
 
   // Naver Login -----------------------------------------------------------------------------
   // Naver OAuth 설정
