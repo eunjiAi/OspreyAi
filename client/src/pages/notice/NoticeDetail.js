@@ -89,8 +89,8 @@ const NoticeDetail = () => {
   }
 
   return (
-    <div className="detail-container">
-      <h2 className="detail-title"> {id}번 공지사항 상세보기</h2>
+    <div className={styles.detailcontainer}>
+      <h2 className={styles.detailtitle}> {id}번 공지사항 상세보기</h2>
       <table border="2">
         <tbody>
           <tr>
@@ -132,15 +132,15 @@ const NoticeDetail = () => {
         </tbody>
       </table>
       {/* ADMIN 권한만 수정 및 삭제 버튼 표시 */}
-      <div className="button-group">
+      <div className={styles.buttongroup}>
         {isLoggedIn && role === "ADMIN" && (
           <>
-            <button onClick={handleMoveEdit} className="edit-button">
+            <button onClick={handleMoveEdit} className={styles.editbutton}>
               수정 페이지로 이동
             </button>
             <button
               onClick={() => handleDelete(notice.rfileName)}
-              className="delete-button"
+              className={styles.deletebutton}
             >
               삭제하기
             </button>
@@ -148,7 +148,7 @@ const NoticeDetail = () => {
         )}
         <button
           onClick={() => navigate("/notice")}
-          className="button"
+          className={styles.backbutton}
         >
           목록
         </button>

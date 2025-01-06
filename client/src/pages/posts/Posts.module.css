@@ -1,5 +1,5 @@
 /* 포스트 컨테이너 */
-.posts-container {
+.postscontainer {
   max-width: 800px;
   margin: 50px auto;
   padding: 0;
@@ -7,7 +7,7 @@
 }
 
 /* 포스트 제목 */
-.posts-title {
+.poststitle {
   text-align: center;
   padding-bottom: 20px;
   border-bottom: 2px solid #e0e0e0; 
@@ -21,7 +21,7 @@
 }
 
 /* 새 글쓰기 버튼 */
-.new-posts-button {
+.newpostsbutton {
   display: inline-block;
   margin: 20px 0;
   padding: 12px 20px;
@@ -35,7 +35,7 @@
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.new-posts-button:hover {
+.newpostsbutton:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }
@@ -68,12 +68,12 @@
   background-color: #f9f9f9; 
 }
 
-.notice-item {
+.postsitem {
   cursor: pointer; 
   transition: background-color 0.3s;
 }
 
-.posts-item:hover {
+.postsitem:hover {
   background-color: #f5f5f5; 
 }
 
@@ -101,7 +101,7 @@
 
 .createdAt,
 .updatedAt,
-.Count {
+.count {
   font-size: 13px;
   color: #999; 
   text-align: center;

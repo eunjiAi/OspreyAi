@@ -114,9 +114,9 @@ function Posts({ searchResults }) {
   }
 
   return (
-    <div className="posts-container">
-      <h1 className="posts-title">게시판</h1>
-      <div className="headerButtons">
+    <div className={styles.postscontainer}>
+      <h1 className={styles.poststitle}>게시판</h1>
+      <div className={styles.headerButtons}>
         {(role === "ADMIN" || role === "USER") && (
           <button onClick={handleWriteClick}>글쓰기</button>
         )}

@@ -1,5 +1,5 @@
 /* 상세보기 컨테이너 */
-.detail-container {
+.detailcontainer {
   max-width: 1100px;
   margin: 50px auto;
   padding: 20px;
@@ -12,51 +12,39 @@
   box-sizing: border-box; /* 테두리와 내용이 정확히 맞도록 설정 */
 }
 
-.back-button {
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.back-button:hover {
-  background: #0056b3;
-}
-
-.detail-title {
+.detailtitle {
   font-size: 1.8rem;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.detail-content,
-.edit-content {
+.detailcontent,
+.editcontent {
   font-size: 1rem;
   margin-bottom: 20px;
 }
 
-.edit-content {
+.editcontent {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.button-group {
+.buttongroup {
   margin-bottom: 20px;
   padding: 10px 15px;
   margin-right: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .back-button,
 .edit-button,
-.delete-button
-.button {
+.delete-button {
   padding: 10px 15px;
   margin-right: 10px;
   border: none;
@@ -65,35 +53,35 @@
   cursor: pointer;
 }
 
-.back-button {
+.backbutton {
   background: #6c757d;
   color: #fff;
 }
 
-.back-button:hover {
+.backbutton:hover {
   background: #5a6268;
 }
 
-.edit-button {
+.editbutton {
   background: #ffc107;
   color: #fff;
 }
 
-.edit-button:hover {
+.editbutton:hover {
   background: #e0a800;
 }
 
-.delete-button {
+.deletebutton {
   background: #dc3545;
   color: #fff;
 }
 
-.delete-button:hover {
+.deletebutton:hover {
   background: #c82333;
 }
 
 /* 작성자, 등록날짜, 조회수 줄 */
-.post-info {
+.postinfo {
   font-size: 0.9rem; /* 폰트 크기 약간 축소 */
   color: #555;
   margin-bottom: 15px;
@@ -101,20 +89,20 @@
   align-items: center;
 }
 
-.post-info span {
+.postinfo span {
   margin-right: 8px;
 }
 
-.post-info .separator {
+.postinfo .separator {
   margin: 0 5px; /* 구분선 간격 축소 */
 }
 
 /* 첨부파일 버튼 */
-.download-file {
+.downloadfile {
   margin-left: auto;
 }
 
-.download-button {
+.downloadbutton {
   padding: 10px 15px;
   background: #007bff;
   color: #fff;
@@ -123,12 +111,12 @@
   cursor: pointer;
 }
 
-.download-button:hover {
+.downloadbutton:hover {
   background: #0056b3;
 }
 
 /* 내용 */
-.detail-content {
+.detailcontent {
   background-color: #ffffff; /* 깔끔한 흰색 배경 */
   border: 1px solid #e0e0e0; /* 연한 회색 테두리 */
   border-radius: 5px; /* 둥근 모서리 */

@@ -93,9 +93,9 @@ function Notice({ searchResults }) {
   }
 
   return (
-    <div className="notice-container">
-      <h1 className="notice-title">공지사항</h1>
-      <div className="headerButtons">
+    <div className={styles.noticecontainer}>
+      <h1 className={styles.noticetitle}>공지사항</h1>
+      <div className={styles.headerButtons}>
         {role === "ADMIN" && <button onClick={handleWriteClick}>글쓰기</button>}
         <button onClick={handleListButtonClick}>새로고침</button>
       </div>

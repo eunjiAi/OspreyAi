@@ -86,7 +86,7 @@ td input[type="file"]:hover {
 }
 
 /* 버튼 그룹 스타일 */
-.button-group {
+.buttongroup {
   display: flex;
   flex-direction: row; /* 버튼들을 가로로 나열 */
   justify-content: center; /* 버튼들을 가운데 정렬 */
@@ -163,11 +163,11 @@ th[colspan="2"] {
     font-size: 14px;
   }
 
-  .button-group {
+  .buttongroup {
     flex-direction: column; /* 모바일에서는 버튼들을 세로로 나열 */
   }
 
-  .button-group input {
+  .buttongroup input {
     width: 100%; /* 모바일에서 버튼들을 가로폭에 맞춰 100%로 */
     margin-bottom: 10px; /* 버튼 간 간격 */
   }

@@ -141,7 +141,7 @@ function PostsCreate() {
         </table>
       </form>
       <div className={styles.button}>
-          <div className="button-group">
+          <div className={styles.buttongroup}>
                 <input type="submit" value="등록하기" /> &nbsp;
                 <input
                   type="reset"
