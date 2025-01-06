@@ -15105,3 +15105,58 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
 2025-01-06 13:09:53,329 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ÀÌÀºÁö, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
 2025-01-06 13:09:53,552 INFO 127.0.0.1 - - [06/Jan/2025 13:09:53] "POST /squat-analysis HTTP/1.1" 200 -
 2025-01-06 13:10:26,861 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\faceid.py', reloading
+2025-01-06 15:03:36,338 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 15:03:36,338 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 15:03:36,339 INFO  * Restarting with stat
+2025-01-06 15:03:39,384 WARNING  * Debugger is active!
+2025-01-06 15:03:39,386 INFO  * Debugger PIN: 125-377-655
+2025-01-06 15:30:10,076 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 15:30:10,076 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 15:30:10,077 INFO  * Restarting with stat
+2025-01-06 15:30:13,009 WARNING  * Debugger is active!
+2025-01-06 15:30:13,011 INFO  * Debugger PIN: 125-377-655
+2025-01-06 15:31:14,096 INFO 127.0.0.1 - - [06/Jan/2025 15:31:14] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:14,387 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:14,389 INFO UUID: 73364941-4aab-48a0-a6c0-fac4fe0379ee, Name: Å×½ºÆ®¿ë, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:14,808 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:14,809 INFO UUID: 73364941-4aab-48a0-a6c0-fac4fe0379ee, Name: Å×½ºÆ®¿ë, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:14,895 INFO 127.0.0.1 - - [06/Jan/2025 15:31:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:14,963 INFO 127.0.0.1 - - [06/Jan/2025 15:31:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:16,095 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:16,095 INFO UUID: 73364941-4aab-48a0-a6c0-fac4fe0379ee, Name: Å×½ºÆ®¿ë, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:16,300 INFO 127.0.0.1 - - [06/Jan/2025 15:31:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:16,811 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:16,812 INFO UUID: 73364941-4aab-48a0-a6c0-fac4fe0379ee, Name: Å×½ºÆ®¿ë, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:16,871 INFO 127.0.0.1 - - [06/Jan/2025 15:31:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:18,116 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:18,117 INFO UUID: 73364941-4aab-48a0-a6c0-fac4fe0379ee, Name: Å×½ºÆ®¿ë, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:18,407 INFO 127.0.0.1 - - [06/Jan/2025 15:31:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:18,810 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:18,812 INFO UUID: 73364941-4aab-48a0-a6c0-fac4fe0379ee, Name: Å×½ºÆ®¿ë, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:18,866 INFO 127.0.0.1 - - [06/Jan/2025 15:31:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:20,094 INFO 127.0.0.1 - - [06/Jan/2025 15:31:20] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:20,379 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:20,380 INFO UUID: 73364941-4aab-48a0-a6c0-fac4fe0379ee, Name: Å×½ºÆ®¿ë, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:20,437 INFO 127.0.0.1 - - [06/Jan/2025 15:31:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:20,806 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:20,807 INFO UUID: 73364941-4aab-48a0-a6c0-fac4fe0379ee, Name: Å×½ºÆ®¿ë, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:21,039 INFO 127.0.0.1 - - [06/Jan/2025 15:31:21] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:22,125 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:22,127 INFO UUID: 73364941-4aab-48a0-a6c0-fac4fe0379ee, Name: Å×½ºÆ®¿ë, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:22,183 INFO 127.0.0.1 - - [06/Jan/2025 15:31:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:49,807 INFO 127.0.0.1 - - [06/Jan/2025 15:31:49] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:50,140 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:50,140 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ÀçÀ±, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:50,470 INFO 127.0.0.1 - - [06/Jan/2025 15:31:50] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:50,824 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:50,824 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ÀçÀ±, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:50,882 INFO 127.0.0.1 - - [06/Jan/2025 15:31:50] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:52,146 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:52,146 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ÀçÀ±, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:52,426 INFO 127.0.0.1 - - [06/Jan/2025 15:31:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:31:52,828 DEBUG Æ÷Áî ·£µå¸¶Å©°¡ ¾ø½À´Ï´Ù.
+2025-01-06 15:31:52,829 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ÀçÀ±, µ¿ÀÛ ¿Ï·á ¿©ºÎ: False
+2025-01-06 15:31:52,881 INFO 127.0.0.1 - - [06/Jan/2025 15:31:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:53:13,584 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\app.py', reloading
