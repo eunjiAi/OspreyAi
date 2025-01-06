@@ -9,6 +9,8 @@ function FaceIdRegister() {
     const [userUuid, setUserUuid] = useState("");
     const [modelsLoaded, setModelsLoaded] = useState(false); // 모델 로딩 상태
     const [faceDetected, setFaceDetected] = useState(false);
+    const [captureTimer, setCaptureTimer] = useState(null);  // 3초 타이머 관리
+    const [imageCaptured, setImageCaptured] = useState(false); // 촬영 여부 상태
     const webcamRef = useRef(null);
 
     // JWT 토큰에서 UUID 추출
@@ -85,9 +87,11 @@ function FaceIdRegister() {
                     
                     // 얼굴을 인식하면 3초 후에 등록
                     setStatusMessage("얼굴 인식 완료! 3초간 멈춰주세요.");
-                    setTimeout(() => {
+                    if (captureTimer) clearTimeout(captureTimer);  // 기존 타이머가 있으면 취소
+                    const timer = setTimeout(() => {
                         sendImageToServer();
                     }, 3000); // 3초 대기 후 서버로 이미지 전송
+                    setCaptureTimer(timer);  // 새 타이머 저장
                 } else {
                     setFaceDetected(false);
                     setStatusMessage("얼굴을 맞춰주세요.");
@@ -119,6 +123,7 @@ function FaceIdRegister() {
             if (response.status === 200) {
                 setStatusMessage("저장 완료! 이미지가 서버에 저장되었습니다.");
                 console.log("Face ID 등록 성공:", response.data);
+                setImageCaptured(true); // 촬영 상태 업데이트
             } else {
                 setStatusMessage("Face ID 등록 실패!");
                 console.log("Face ID 등록 실패:", response.data);
@@ -127,6 +132,36 @@ function FaceIdRegister() {
             console.error("Face ID 등록 오류:", error);
             setStatusMessage("Face ID 등록 실패!");
         }
+    };
+
+    const retryCapture = async () => {
+        if (!imageCaptured) {
+            setStatusMessage("이미 촬영된 이미지가 없습니다.");
+            return;
+        }
+
+        try {
+            // 기존 이미지 삭제 요청
+            const response = await axios.post("http://localhost:5001/delete-faceid", {
+                uuid: userUuid
+            });
+
+            if (response.status === 200) {
+                setStatusMessage("기존 이미지가 삭제되었습니다. 다시 촬영을 시작합니다.");
+                setImageCaptured(false); // 다시 촬영할 수 있도록 상태 초기화
+                setFaceDetected(false);  // 얼굴 인식 상태 초기화
+                detectFace();  // 얼굴 감지 시작
+            } else {
+                setStatusMessage("기존 이미지 삭제 실패!");
+            }
+        } catch (error) {
+            console.error("기존 이미지 삭제 오류:", error);
+            setStatusMessage("기존 이미지 삭제 실패!");
+        }
+    };
+
+    const goBack = () => {
+        window.history.back(); // 이전 페이지로 이동
     };
 
     return (
@@ -142,6 +177,14 @@ function FaceIdRegister() {
                 />
             </div>
             <p>{statusMessage}</p>
+
+            {/* 뒤로가기 버튼 */}
+            <button onClick={goBack}>뒤로가기</button>
+
+            {/* 다시 촬영 버튼 (이미지 촬영 후에만 활성화) */}
+            {imageCaptured && (
+                <button onClick={retryCapture}>다시 촬영</button>
+            )}
         </div>
     );
 }
