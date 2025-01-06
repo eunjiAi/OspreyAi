@@ -1,24 +1,27 @@
-/* 공지사항 컨테이너 */
-.notice-container {
+/* 포스트 컨테이너 */
+.posts-container {
   max-width: 800px;
   margin: 50px auto;
   padding: 0;
   font-family: Arial, sans-serif;
 }
 
-/* 공지사항 제목 */
-.notice-title {
+/* 포스트 제목 */
+.posts-title {
   text-align: center;
-  font-size: 28px; 
-  font-weight: 700; 
-  color: #333; 
-  margin-bottom: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   border-bottom: 2px solid #e0e0e0; 
 }
 
+.headerButtons{
+  background-color: white;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 30px;
+}
+
 /* 새 글쓰기 버튼 */
-.new-post-button {
+.new-posts-button {
   display: inline-block;
   margin: 20px 0;
   padding: 12px 20px;
@@ -32,19 +35,19 @@
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.new-post-button:hover {
+.new-posts-button:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }
 
-/* 공지사항 테이블 */
-.noticeList {
+/* 포스트 테이블 */
+.postsList {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.noticeList th {
+.postsList th {
   background-color: #f7f7f7;
   padding: 10px;
   font-size: 14px;
@@ -54,14 +57,14 @@
   border-bottom: 2px solid #e0e0e0; 
 }
 
-.noticeList td {
+.postsList td {
   padding: 12px 10px;
   font-size: 14px;
   color: #333;
   border-bottom: 1px solid #f0f0f0;
 }
 
-.noticeList tr:hover {
+.postsList tr:hover {
   background-color: #f9f9f9; 
 }
 
@@ -70,12 +73,12 @@
   transition: background-color 0.3s;
 }
 
-.notice-item:hover {
+.posts-item:hover {
   background-color: #f5f5f5; 
 }
 
 /* 제목 스타일 */
-.nTitle {
+.title {
   font-weight: bold;
   color: #007bff; 
   cursor: pointer;
@@ -83,7 +86,7 @@
 
 
 /* 작성자 */
-.nWriter {
+.nickname {
   color: #666; 
   font-size: 13px;
 }
@@ -96,9 +99,9 @@
   cursor: pointer;
 }
 
-.ncreatedAt,
-.nupdatedAt,
-.nCount {
+.createdAt,
+.updatedAt,
+.Count {
   font-size: 13px;
   color: #999; 
   text-align: center;

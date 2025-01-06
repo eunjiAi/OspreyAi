@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
-import styles from "./Posts.css";
+import styles from "./Posts.module.css";
 import PagingView from "../../components/common/PagingView";
 import { AuthContext } from "../../AuthProvider";
 
@@ -93,6 +93,11 @@ function Posts({ searchResults }) {
     navigate("/posts/new");
   };
 
+  const handleListButtonClick = () => {
+    setIsSearchMode(false);
+    fetchPosts(1);
+  };
+
   /**
    * 게시글 상세 페이지 이동
    */
@@ -111,9 +116,12 @@ function Posts({ searchResults }) {
   return (
     <div className="posts-container">
       <h1 className="posts-title">게시판</h1>
-      {(role === "ADMIN" || role === "USER") && (
-        <button onClick={handleWriteClick}>글쓰기</button>
-      )}
+      <div className="headerButtons">
+        {(role === "ADMIN" || role === "USER") && (
+          <button onClick={handleWriteClick}>글쓰기</button>
+        )}
+        <button onClick={handleListButtonClick}>새로고침</button>
+      </div>
       <table className={styles.postsList}>
         <thead>
           <tr>
@@ -135,7 +143,6 @@ function Posts({ searchResults }) {
                   style={{
                     color: "blue",
                     cursor: "pointer",
-                    textDecoration: "underline",
                   }}
                   onClick={() => handleTitleClick(post.postId)}
                 >

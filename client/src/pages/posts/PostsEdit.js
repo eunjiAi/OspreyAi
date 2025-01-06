@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom"; //이전 페이지에서 전달온 값을 받기 위함
 import apiClient from "../../utils/axios";
-import styles from "./PostsEdit.css";
+import styles from "./PostsEdit.module.css";
 import { AuthContext } from "../../AuthProvider";
 
 const PostsEdit = () => {

@@ -87,7 +87,6 @@ function NoticeCreate() {
     <div className={styles.container}>
       <h1 className={styles.header}>공지글 등록</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
-
         <table align="center" width="700" cellspacing="5" cellpadding="5">
           <tbody>
             <tr>

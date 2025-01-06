@@ -75,7 +75,7 @@ function FaqWrite() {
 
     return (
         <div className={styles.container}>
-        <h1 className={styles.header}>자주하는 질문 등록 페이지</h1>
+        <h1 className={styles.header}>자주하는 질문 등록</h1>
         <form 
             onSubmit={handleSubmit}
             enctype="multipart/form-data"

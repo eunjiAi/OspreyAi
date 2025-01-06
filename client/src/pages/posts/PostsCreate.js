@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
-import styles from "./PostsCreate.css";
+import styles from "./PostsCreate.module.css"
 import { AuthContext } from "../../AuthProvider";
 
 function PostsCreate() {
@@ -86,7 +86,7 @@ function PostsCreate() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>게시글 등록 페이지</h1>
+      <h1 className={styles.header}>게시글 등록</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <table align="center" width="700" cellspacing="5" cellpadding="5">
           <tbody>
@@ -99,6 +99,7 @@ function PostsCreate() {
                   size="50"
                   value={formData.title}
                   onChange={handleChange}
+                  placeholder="게시판제목을 입력하세요."
                   required
                 />
               </td>
@@ -129,16 +130,22 @@ function PostsCreate() {
                   name="content"
                   value={formData.content}
                   onChange={handleChange}
+                  placeholder="게시판내용을 입력하세요."
                   required
                 ></textarea>
               </td>
             </tr>
             <tr>
-              <th colSpan="2">
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <div className={styles.button}>
+          <div className="button-group">
                 <input type="submit" value="등록하기" /> &nbsp;
                 <input
                   type="reset"
-                  value="작성취소"
+                  value="작성 초기화"
                   onClick={() =>
                     setFormData({
                       ...formData,
@@ -150,14 +157,11 @@ function PostsCreate() {
                 &nbsp;
                 <input
                   type="button"
-                  value="목록"
+                  value="등록취소"
                   onClick={() => navigate(-1)}
                 />
-              </th>
-            </tr>
-          </tbody>
-        </table>
-      </form>
+            </div>
+        </div>
     </div>
   );
 }

@@ -1,0 +1,108 @@
+/* 공지사항 컨테이너 */
+.notice-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 공지사항 제목 */
+.notice-title {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0; 
+}
+
+.headerButtons{
+  background-color: white;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 30px;
+}
+
+/* 새 글쓰기 버튼 */
+.new-post-button {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 12px 20px;
+  background-color: #007bff; 
+  color: #ffffff;
+  border: none;
+  border-radius: 20px; 
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.new-post-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* 공지사항 테이블 */
+.noticeList {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.noticeList th {
+  background-color: #f7f7f7;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555; 
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0; 
+}
+
+.noticeList td {
+  padding: 12px 10px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.noticeList tr:hover {
+  background-color: #f9f9f9; 
+}
+
+.notice-item {
+  cursor: pointer; 
+  transition: background-color 0.3s;
+}
+
+.notice-item:hover {
+  background-color: #f5f5f5; 
+}
+
+/* 제목 스타일 */
+.nTitle {
+  font-weight: bold;
+  color: #007bff; 
+  cursor: pointer;
+}
+
+
+/* 작성자 */
+.nWriter {
+  color: #666; 
+  font-size: 13px;
+}
+
+/* 첨부파일 아이콘 */
+.ofileName img {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.ncreatedAt,
+.nupdatedAt,
+.nCount {
+  font-size: 13px;
+  color: #999; 
+  text-align: center;
+}

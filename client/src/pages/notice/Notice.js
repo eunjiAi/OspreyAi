@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
-import styles from "./Notice.css";
+import styles from "./Notice.module.css";
 import PagingView from "../../components/common/PagingView";
 import { AuthContext } from "../../AuthProvider";
 
@@ -95,8 +95,10 @@ function Notice({ searchResults }) {
   return (
     <div className="notice-container">
       <h1 className="notice-title">공지사항</h1>
-      {role === "ADMIN" && <button onClick={handleWriteClick}>글쓰기</button>}
-      <button onClick={handleListButtonClick}>새로고침</button>
+      <div className="headerButtons">
+        {role === "ADMIN" && <button onClick={handleWriteClick}>글쓰기</button>}
+        <button onClick={handleListButtonClick}>새로고침</button>
+      </div>
       <table className={styles.noticeList}>
         <thead>
           <tr>
@@ -118,7 +120,6 @@ function Notice({ searchResults }) {
                   style={{
                     color: "blue",
                     cursor: "pointer",
-                    fontWeight: "bold", 
                   }}                  
                   onClick={() => handleTitleClick(notice.noticeNo)}
                 >

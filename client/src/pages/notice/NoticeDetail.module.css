@@ -8,7 +8,6 @@
 }
 
 .back-button {
-  margin-bottom: 20px;
   background: #007bff;
   color: #fff;
   border: none;
@@ -24,6 +23,7 @@
 .detail-title {
   font-size: 1.8rem;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .detail-content,
@@ -41,10 +41,16 @@
 
 .button-group {
   margin-bottom: 20px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .edit-button,
-.delete-button {
+.delete-button
+.button {
   padding: 10px 15px;
   margin-right: 10px;
   border: none;

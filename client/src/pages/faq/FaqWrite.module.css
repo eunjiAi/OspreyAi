@@ -15,10 +15,15 @@
 /* 헤더 스타일 */
 .header {
     text-align: center;
-    font-size: 28px;
-    font-weight: bold;
+    margin-bottom: 40px;
+    font-size: 32px;
     color: #333;
-    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #4a90e2, #007bff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* 폼 스타일 */

@@ -111,7 +111,7 @@ const NoticeEdit = () => {
 
   return (
     <div className={styles.container}>
-      <h2> {id}번 공지사항 수정</h2>
+      <h2 className={styles.header}> {id}번 공지사항 수정</h2>
       <form
         onSubmit={handleSubmit}
         enctype="multipart/form-data"

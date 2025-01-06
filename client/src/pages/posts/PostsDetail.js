@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom"; //이전 페이지에서 전달온 값을 받기 위함
 import apiClient from "../../utils/axios";
-import styles from "./PostsDetail.css";
+import styles from "./PostsDetail.module.css";
 import { AuthContext } from "../../AuthProvider";
 
 const PostsDetail = () => {
@@ -91,7 +91,7 @@ const PostsDetail = () => {
   return (
     <div className="detail-container">
       <h2 className="detail-title"> {id}번 게시글 상세보기</h2>
-      <table border="1">
+      <table border="2">
         <tbody>
           <tr>
             <th>번호</th>
@@ -136,20 +136,27 @@ const PostsDetail = () => {
         </tbody>
       </table>
       {/* 자신의 글만 수정 및 삭제 버튼 표시 */}
-      {isLoggedIn && posts.writer === userid && (
-        <>
-          <button onClick={handleMoveEdit} className="edit-button">
-            수정 페이지로 이동
-          </button>
-          <button
-            onClick={() => handleDelete(posts.renameFile)}
-            className="delete-button"
-          >
-            삭제하기
-          </button>
-        </>
-      )}
-      <input type="button" value="목록" onClick={() => navigate("/posts")} />
+      <div className="button-group">
+        {isLoggedIn && (posts.writer === userid || role === "ADMIN") && (
+          <>
+            <button onClick={handleMoveEdit} className="edit-button">
+              수정 페이지로 이동
+            </button>
+            <button
+              onClick={() => handleDelete(posts.renameFile)}
+              className="delete-button"
+            >
+              삭제하기
+            </button>
+          </>
+        )}
+        <button
+          onClick={() => navigate("/posts")}
+          className="button"
+        >
+          목록
+        </button>
+      </div>
     </div>
   );
 };
