@@ -61,7 +61,7 @@ class SquatFeedback(Base):
     total_attempts = Column(Integer, nullable=False)
     correct_count = Column(Integer, nullable=False)
     squat_date = Column(Date, nullable=False)
-    name = Column(String, nullable=False)  # name 필드 추가
+    name = Column(String, nullable=False) 
 
     member = relationship("Member", backref="squat_feedback")  # Member 테이블과의 관계 정의
 
@@ -75,12 +75,11 @@ def extract_uuid_and_name_from_token(token):
         payload = jwt.decode(token, options={"verify_signature": False})
         print(f"Decoded JWT payload: {payload}")  # 전체 페이로드 출력 (디버깅용)
 
-        # `sub`는 이메일로 저장될 수 있으므로, 다른 필드에서 `uuid` 추출
-        uuid = payload.get("uuid")  # uuid는 다른 필드에 있을 수 있습니다.
+        uuid = payload.get("uuid") 
         if not uuid:
-            uuid = payload.get("sub")  # `sub`에 이메일이 들어갈 경우 `uuid`는 별도 필드에 있을 수 있음
+            uuid = payload.get("sub")  # `sub`에 이메일이 들어갈 경우
 
-        name = payload.get("name")  # 이메일을 `name`으로 처리 (이메일은 이름으로 저장)
+        name = payload.get("name")  # 이메일을 `name`으로 처리
 
         # 만약 uuid가 없으면 에러 처리
         if not uuid:
@@ -100,7 +99,7 @@ def insert_uuid_into_member(uuid, name):
         if not session.query(Member).filter_by(uuid=uuid).first():  # 이미 존재하지 않으면 삽입
             new_member = Member(uuid=uuid, name=name)
             session.add(new_member)
-            session.commit()  # 커밋하여 삽입
+            session.commit()  
             print(f"UUID '{uuid}'와 이름 '{name}'을 MEMBER 테이블에 성공적으로 삽입했습니다.")
     except Exception as e:
         session.rollback()
@@ -113,7 +112,7 @@ def check_db_connection():
     try:
         # 세션을 통해 데이터베이스 연결 테스트
         session = Session()
-        session.execute(text('SELECT 1 FROM dual'))  # Oracle에서 dual 테이블을 사용
+        session.execute(text('SELECT 1 FROM dual'))  # Oracle dual 테이블 사용
         session.close()
         print("디비 연결 완료")
     except Exception as e:
@@ -206,7 +205,7 @@ def calculate_knee_position(landmarks):
     foot = landmarks[mp_holistic.PoseLandmark.LEFT_ANKLE]
     return knee.x - foot.x
 
-def update_daily_feedback(uuid, feedback_correct, name):  # name을 추가로 전달받음
+def update_daily_feedback(uuid, feedback_correct, name):  
     session = Session()
     try:
         # 한국 시간으로 현재 날짜 가져오기
@@ -214,37 +213,37 @@ def update_daily_feedback(uuid, feedback_correct, name):  # name을 추가로 �
         today = datetime.datetime.now(kst).date()
         correct_increment = 1 if feedback_correct else 0
 
-        print(f"UUID: {uuid}, 피드백 상태: {feedback_correct}, 날짜: {today}, 이름: {name}")  # print로 확인
+        print(f"UUID: {uuid}, 피드백 상태: {feedback_correct}, 날짜: {today}, 이름: {name}")  
 
         # UUID와 날짜로 데이터베이스에서 기존 레코드 조회
         entry = session.query(SquatFeedback).filter_by(uuid=uuid, squat_date=today).first()
 
         if entry:
             # 기존 레코드가 있을 경우
-            print(f"기존 데이터 발견: {entry}")  # print로 확인
-            entry.total_attempts += 1  # 시도 횟수 증가
+            print(f"기존 데이터 발견: {entry}")  
+            entry.total_attempts += 1               # 시도 횟수 증가
             entry.correct_count += correct_increment  # 바른 자세 횟수 증가 (동작 완료일 때만 증가)
-            print(f"업데이트 후 entry: {entry}")  # print로 확인
+            print(f"업데이트 후 entry: {entry}")  
         else:
             # 기존 레코드가 없을 경우 새로운 데이터 생성
-            print("기존 데이터 없음. 새로운 데이터 생성 중...")  # print로 확인
+            print("기존 데이터 없음. 새로운 데이터 생성 중...")
             new_entry = SquatFeedback(
                 uuid=uuid,
                 total_attempts=1,  # 첫 번째 시도
                 correct_count=0,   # 첫 번째 시도에서는 바른 자세 횟수 0
                 squat_date=today,
-                name=name  # name을 여기에 전달
+                name=name  
             )
             session.add(new_entry)
-            print(f"새로운 레코드 추가됨: {new_entry}")  # print로 확인
+            print(f"새로운 레코드 추가됨: {new_entry}") 
 
         # 디비 업데이트 시도 로그
-        print("데이터베이스 업데이트 커밋 중...")  # print로 확인
+        print("데이터베이스 업데이트 커밋 중...") 
         session.commit()
-        print("데이터베이스 업데이트 성공")  # print로 확인
+        print("데이터베이스 업데이트 성공") 
     except Exception as e:
         session.rollback()
-        print(f"데이터베이스 업데이트 실패: {e}")  # print로 확인
+        print(f"데이터베이스 업데이트 실패: {e}") 
     finally:
         session.close()
 

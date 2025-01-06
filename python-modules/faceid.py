@@ -18,7 +18,7 @@ CORS(app)
 USER_DESKTOP_PATH = r"C:\Users\ict01-20\OneDrive\바탕 화면"
 SAVE_DIR = os.path.join(USER_DESKTOP_PATH, "FaceID_Images")
 
-# 이미지 저장을 위한 디렉토리 생성
+# 이미지 저장을 위한 폴더 생성
 if not os.path.exists(SAVE_DIR):
     os.makedirs(SAVE_DIR)
 
@@ -28,12 +28,12 @@ engine = create_engine(DATABASE_URI, echo=True)
 SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
 
-# Member 테이블 정의 (예시)
+# Member 테이블 정의
 class Member(Base):
     __tablename__ = "MEMBER"
     __table_args__ = {"schema": "C##FP3TEAM"}
     uuid = Column("UUID", String, primary_key=True, nullable=False)
-    face_id = Column("FACE_ID", String, nullable=True)  # face_id 컬럼 추가
+    face_id = Column("FACE_ID", String, nullable=True) 
 
 # 데이터베이스 테이블 생성
 Base.metadata.create_all(bind=engine)
@@ -45,8 +45,8 @@ def register_faceid():
     try:
         data = request.json
         image_data = data.get('image')
-        user_uuid = data.get('uuid')  # 로그인한 사용자 UUID
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')  # 타임스탬프 생성
+        user_uuid = data.get('uuid')                             # 로그인한 사용자 UUID
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')     # 타임스탬프 생성
 
         if not image_data or not user_uuid:
             return jsonify({"message": "이미지 데이터 또는 UUID가 누락되었습니다."}), 400
@@ -56,7 +56,7 @@ def register_faceid():
             return jsonify({"message": "얼굴이 인식되지 않았습니다."}), 400
 
         # 이미지 데이터 디코딩
-        image_data = image_data.split(",")[1]  # base64 이미지에서 'data:image/jpeg;base64,' 부분을 제거
+        image_data = image_data.split(",")[1]  # base64 이미지에서 'data:image/jpeg;base64,' 부분 제거
         img_bytes = base64.b64decode(image_data)
 
         # 이미지 저장 경로
@@ -79,9 +79,9 @@ def register_faceid():
             if user.face_id:
                 old_image_path = os.path.join(SAVE_DIR, user.face_id)
                 if os.path.exists(old_image_path):
-                    os.remove(old_image_path)  # 기존 이미지 파일 삭제
+                    os.remove(old_image_path)        # 기존 이미지 파일 삭제
 
-            user.face_id = filename  # face_id 컬럼에 새로운 이미지 파일명 저장
+            user.face_id = filename                  # face_id 컬럼에 새로운 이미지 파일명 저장
             db.commit()
 
             print(f"Image path saved to DB: {filename}")
