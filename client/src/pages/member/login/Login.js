@@ -390,38 +390,48 @@ function Login({ onLoginSuccess }) {
 
   const handleFaceIDLogin = async () => {
     setShowFaceIDModal(true); // Face ID 모달 열기
-
-  try {
-    setIsLoading(true); // 로딩 시작
-    const response = await axios.post("http://localhost:5001/compare-faceid");
-
-    const { uuid, id, password } = response.data;
-
-    if (uuid && id && password) {
-      // Face ID에 맞는 사용자 정보로 로그인
-      const loginResponse = await axios.post("/login", { userId: id, userPwd: password });
-
-      const authorizationHeader = loginResponse.headers["authorization"];
-      if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
-        throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
+  
+    try {
+      setIsLoading(true); // 로딩 시작
+  
+      // 서버로 얼굴 인식 요청 보내기
+      const response = await axios.post("http://localhost:5001/compare-faceid", {
+        image: imageData,  // Face ID 이미지 데이터
+      });
+  
+      const { uuid, MEMBERID, password } = response.data;
+  
+      if (uuid && MEMBERID && password) {
+        // Face ID에 맞는 사용자 정보로 로그인
+        const loginResponse = await axios.post("/login", { userId: MEMBERID, userPwd: password });
+  
+        // 로그인 성공 후 서버에서 받은 JWT 토큰
+        const authorizationHeader = loginResponse.headers["authorization"];
+        if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
+          throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
+        }
+  
+        const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
+        const { refreshToken } = loginResponse.data;
+  
+        // AuthProvider의 login 함수 호출
+        login({ accessToken: jwtAccessToken, refreshToken });
+  
+        console.log("로그인 성공!");
+        alert("로그인 성공!");
+        // 로그인 성공 후 리디렉션
+        if (onLoginSuccess) onLoginSuccess();
+      } else {
+        alert("얼굴 인식에 실패했습니다.");
       }
-
-      const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
-      const { refreshToken } = loginResponse.data;
-
-      login({ accessToken: jwtAccessToken, refreshToken });
-      alert("로그인 성공!");
-      if (onLoginSuccess) onLoginSuccess();
-    } else {
-      alert("얼굴 인식에 실패했습니다.");
+    } catch (error) {
+      console.error("Face ID 로그인 실패:", error.response?.data || error.message);
+      alert("Face ID 로그인 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
+    } finally {
+      setIsLoading(false); // 로딩 종료
     }
-  } catch (error) {
-    console.error("Face ID 로그인 실패:", error.response?.data || error.message);
-    alert("Face ID 로그인 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
-  } finally {
-    setIsLoading(false); // 로딩 종료
-  }
-};
+  };
+  
 
 
   return (
