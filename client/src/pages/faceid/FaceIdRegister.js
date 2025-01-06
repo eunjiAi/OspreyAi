@@ -70,7 +70,7 @@ function FaceIdRegister() {
     }, [modelsLoaded]);
 
     const detectFace = async () => {
-        setInterval(async () => { // 1초마다 얼굴을 인식
+        setInterval(async () => {           // 1초마다 얼굴을 인식
             console.log("detectFace 함수 호출됨");
 
             // 비디오가 준비되었을 때만 얼굴 인식 진행
@@ -78,20 +78,20 @@ function FaceIdRegister() {
                 const video = webcamRef.current.video;
                 console.log("비디오가 준비되었습니다.", video);
                 const detections = await faceapi.detectAllFaces(video).withFaceLandmarks().withFaceDescriptors();
-                console.log("얼굴 감지 결과:", detections); // 얼굴 인식 결과 출력
+                console.log("얼굴 감지 결과:", detections);            // 얼굴 인식 결과 출력
 
                 if (detections.length > 0) {
                     setFaceDetected(true); // 얼굴 인식 성공
                     setStatusMessage("얼굴 인식 중...");
-                    console.log("얼굴이 인식되었습니다.");  // 얼굴 인식 성공 로그
+                    console.log("얼굴이 인식되었습니다.");              // 얼굴 인식 성공 로그
                     
                     // 얼굴을 인식하면 3초 후에 등록
                     setStatusMessage("얼굴 인식 완료! 3초간 멈춰주세요.");
-                    if (captureTimer) clearTimeout(captureTimer);  // 기존 타이머가 있으면 취소
+                    if (captureTimer) clearTimeout(captureTimer);    // 기존 타이머가 있으면 취소
                     const timer = setTimeout(() => {
                         sendImageToServer();
-                    }, 3000); // 3초 대기 후 서버로 이미지 전송
-                    setCaptureTimer(timer);  // 새 타이머 저장
+                    }, 3000);                            // 3초 대기 후 서버로 이미지 전송
+                    setCaptureTimer(timer);              // 새 타이머 저장
                 } else {
                     setFaceDetected(false);
                     setStatusMessage("얼굴을 맞춰주세요.");

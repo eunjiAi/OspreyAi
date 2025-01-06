@@ -11,6 +11,7 @@ import MyPageUpdate from "../pages/mypage/MyPageUpdate";
 import FaceIdRegister from "../pages/faceid/FaceIdRegister";
 import FaceId from "../pages/member/login/FaceId";
 import Login from "../pages/member/login/Login";
+import MyInfo from "../pages/mypage/MyInfo";
 
 const memberRouter = [
   <Route path="/signup" element={<Signup />} />,
@@ -24,6 +25,7 @@ const memberRouter = [
     <Route path="/mypage/withdrawal" element={<Withdrawal />} />
     <Route path="/mypage/mypageUpdate" element={<MyPageUpdate />} />
   </Route>,
+  <Route path="/myinfo" element={<MyInfo />}></Route>
 ];
 
 export default memberRouter;

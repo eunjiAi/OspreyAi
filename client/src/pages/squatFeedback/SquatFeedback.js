@@ -97,12 +97,12 @@ function SquatFeedback() {
 
     startWebcam();
 
-    const token = localStorage.getItem('accessToken'); // JWT 토큰 가져오기
-    const payload = getPayloadFromToken(token); // JWT에서 payload 추출
-    const fetchedName = payload ? payload.name : '알 수 없는 사용자'; // 이름 가져오기
+    const token = localStorage.getItem('accessToken');                 // JWT 토큰 가져오기
+    const payload = getPayloadFromToken(token);                        // JWT에서 payload 추출
+    const fetchedName = payload ? payload.name : '알 수 없는 사용자';   // 이름 가져오기
 
-    setName(fetchedName); // React 상태에 설정
-    console.log('Decoded user name:', fetchedName); // 디코딩된 이름 출력
+    setName(fetchedName);       // React 상태에 설정
+    console.log('Decoded user name:', fetchedName);                    // 디코딩된 이름 출력
   }, []);
     
     
