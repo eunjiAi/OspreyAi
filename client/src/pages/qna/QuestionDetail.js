@@ -146,10 +146,6 @@ const QuestionDetail = () => {
           <table border="1">
               <tbody>
                   <tr>
-                      <th>번호</th>
-                      <td>{question.qno}</td>
-                  </tr>
-                  <tr>
                       <th>제목</th>
                       <td>{question.qtitle}</td>
                   </tr>
