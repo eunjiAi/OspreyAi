@@ -14,7 +14,7 @@ from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__)
 
-# CORS를 활성화하고, 특정 메서드와 헤더를 허용합니다.
+# CORS를 활성화하고, 특정 메서드랑 헤더 허용
 CORS(app, methods=["GET", "POST", "OPTIONS"], supports_credentials=True)
 
 USER_HOME_PATH = os.path.expanduser("~")
@@ -221,7 +221,7 @@ def compare_faceid():
                 # id, password 반환
                 response_data = {
                     "uuid": user.uuid,
-                    "id": user.member_id,  # 실제 데이터베이스에서 member_id 컬럼을 사용하여 id 반환
+                    "id": user.member_id,  #  데이터베이스에서 member_id 컬럼을 사용해서 id 반환
                     "password": user.pw     # 비밀번호 컬럼을 pw로 수정
                 }
 
