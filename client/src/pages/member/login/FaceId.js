@@ -1,10 +1,12 @@
+
+// npm install face-api.js
 import React, { useState, useRef, useEffect } from 'react';
-import * as faceapi from 'face-api.js';  // Import face-api.js
+import * as faceapi from 'face-api.js';
 
 const FaceIdComponent = () => {
   const [status, setStatus] = useState('');
-  const [imageData, setImageData] = useState(null);  // 촬영된 이미지 상태
-  const [userUuid, setUserUuid] = useState('');  // UUID 저장
+  const [imageData, setImageData] = useState(null);   // 촬영된 이미지 상태
+  const [userUuid, setUserUuid] = useState('');       // UUID 저장
   const imageInputRef = useRef(null);
 
   // 로그인한 사용자 UUID를 서버에서 받아오기 (useEffect로 초기화)
@@ -60,7 +62,7 @@ const FaceIdComponent = () => {
           setImageData(imageUrl);  // 캡처된 이미지 URL
           setStatus('얼굴 인식 후 이미지 캡처 완료!');
           
-          // 추가적으로 이미지 데이터를 서버에 전송하는 로직을 추가할 수 있습니다.
+
           await handleImageSave(imageUrl, userUuid);  // 로그인된 사용자의 UUID 사용
         }, 3000);  // 3초 후 촬영
       } else {

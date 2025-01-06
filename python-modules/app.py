@@ -1,3 +1,9 @@
+# USAGE
+# conda install -c conda-forge dlib
+# pip install Flask Flask-Cors sqlalchemy pillow numpy opencv-python mediapipe pytz cx_Oracle jwt
+# pip install PyJWT
+# pip install opencv-python face_recognition
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sys
