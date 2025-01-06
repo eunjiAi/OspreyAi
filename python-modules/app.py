@@ -1,6 +1,3 @@
-# USAGE
-# pip install Flask Flask-Cors SQLAlchemy cx_Oracle PyJWT pytz numpy opencv-python mediapipe
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sys
@@ -37,6 +34,11 @@ Session = scoped_session(session_factory)
 # 모델 정의
 Base = declarative_base()
 
+class Member(Base):
+    __tablename__ = 'MEMBER'
+    uuid = Column(String, primary_key=True)
+    name = Column(String)
+
 class SquatFeedback(Base):
     __tablename__ = 'SQUATFEEDBACK'
     squat_id = Column(Integer, Sequence('squat_id_seq', start=1, increment=1), primary_key=True)
@@ -44,6 +46,7 @@ class SquatFeedback(Base):
     total_attempts = Column(Integer, nullable=False)
     correct_count = Column(Integer, nullable=False)
     squat_date = Column(Date, nullable=False)
+    name = Column(String, nullable=False)  # name 필드 추가
 
 # 현재 자세 상태 추적 변수
 current_posture = "stand"
@@ -53,13 +56,42 @@ completed_once = False
 def extract_uuid_and_name_from_token(token):
     try:
         payload = jwt.decode(token, options={"verify_signature": False})
-        uuid = payload.get("sub")  # UUID
-        name = payload.get("name")  # 사용자 이름
-        print(f"Decoded JWT payload: {payload}")  # 디버깅용으로 전체 페이로드 출력
+        print(f"Decoded JWT payload: {payload}")  # 전체 페이로드 출력 (디버깅용)
+
+        # `sub`는 이메일로 저장될 수 있으므로, 다른 필드에서 `uuid` 추출
+        uuid = payload.get("uuid")  # uuid는 다른 필드에 있을 수 있습니다.
+        if not uuid:
+            uuid = payload.get("sub")  # `sub`에 이메일이 들어갈 경우 `uuid`는 별도 필드에 있을 수 있음
+
+        name = payload.get("name")  # 이메일을 `name`으로 처리 (이메일은 이름으로 저장)
+
+        # 만약 uuid가 없으면 에러 처리
+        if not uuid:
+            raise ValueError("UUID를 찾을 수 없습니다.")
+
+        print(f"추출된 UUID: {uuid}, 이름: {name}")
         return uuid, name
     except Exception as e:
         logging.error(f"JWT 디코딩 오류: {e}")
         return None, None
+
+
+
+# 사용자 UUID를 MEMBER 테이블에 삽입하는 함수
+def insert_uuid_into_member(uuid, name):
+    session = Session()
+    try:
+        # MEMBER 테이블에 uuid와 name을 삽입
+        if not session.query(Member).filter_by(uuid=uuid).first():  # 이미 존재하지 않으면 삽입
+            new_member = Member(uuid=uuid, name=name)
+            session.add(new_member)
+            session.commit()  # 커밋하여 삽입
+            print(f"UUID '{uuid}'와 이름 '{name}'을 MEMBER 테이블에 성공적으로 삽입했습니다.")
+    except Exception as e:
+        session.rollback()
+        print(f"UUID 삽입 실패: {e}")
+    finally:
+        session.close()
 
 # 데이터베이스 연결 확인
 def check_db_connection():
@@ -71,10 +103,11 @@ def check_db_connection():
         print("디비 연결 완료")
     except Exception as e:
         print(f"디비 연결 실패: {e}")
-        logging.error(f"디비 연결 실패: {e}")
+        logging.error(f"디코딩 중 오류 발생: {e}")
         sys.exit(1)
 
 
+# log_current_user에서 UUID와 이름을 받아서 MEMBER 테이블에 삽입하는 부분
 @app.route('/log-user', methods=['GET'])
 def log_current_user():
     try:
@@ -90,12 +123,15 @@ def log_current_user():
 
         if uuid and name:
             print(f"현재 로그인된 사용자 UUID: {uuid}, 이름: {name}")
+            # 로그인된 사용자 UUID를 MEMBER 테이블에 삽입
+            insert_uuid_into_member(uuid, name)  # uuid 변수 사용
             return jsonify({"uuid": uuid, "name": name}), 200
         else:
             return jsonify({"error": "JWT 토큰에서 UUID 또는 이름을 가져올 수 없습니다."}), 400
     except Exception as e:
         logging.error(f"JWT 디코딩 중 오류 발생: {e}")
         return jsonify({"error": "JWT 디코딩 중 오류 발생"}), 500
+
 
 # Pose 분석 
 def analyze_pose(image):
@@ -237,7 +273,6 @@ def squat_analysis():
     except Exception as e:
         print(f"분석 실패: {e}")
         return jsonify({"feedback": "분석 실패"}), 500
-
 
 
 if __name__ == '__main__':
