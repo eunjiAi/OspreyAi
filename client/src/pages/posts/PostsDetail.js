@@ -1,20 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom"; //이전 페이지에서 전달온 값을 받기 위함
+import { useParams, useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
 import styles from "./PostsDetail.module.css";
 import { AuthContext } from "../../AuthProvider";
 
 const PostsDetail = () => {
-  const { id } = useParams(); // URL 에서 no 파라미터를 가져옴(추출함)
-  const navigate = useNavigate(); //useNavigate 훅 사용
-  const [posts, setPosts] = useState(null); //공지 데이터 저장할 상태 변수 선언과 초기화함
-  const [error, setError] = useState(null); //에러 메세지 저장용 상태 변수 선언과 초기화
-  const [loading, setLoading] = useState(true); // 로딩 상태
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [posts, setPosts] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const { isLoggedIn, role, accessToken, userid } = useContext(AuthContext);
 
   useEffect(() => {
-    //서버측에 요청해서 해당 공지글 가져오는 ajax 통신 처리 함수를 작성할 수 있음
     const fetchPostsDetail = async () => {
       try {
         setLoading(true);
@@ -28,21 +27,15 @@ const PostsDetail = () => {
       }
     };
 
-    //작성된 함수 실행
     fetchPostsDetail();
   }, [id]);
 
   const handleFileDownload = async (ofileName, rfileName) => {
     try {
       const response = await apiClient.get("/posts/pfdown", {
-        params: {
-          ofile: ofileName,
-          rfile: rfileName,
-        },
-        responseType: "blob", //파일 다운로드를 위한 설정
+        params: { ofile: ofileName, rfile: rfileName },
+        responseType: "blob",
       });
-
-      //파일 다운로드 처리
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
       link.href = url;
@@ -66,13 +59,11 @@ const PostsDetail = () => {
         await apiClient.delete(`/posts/${id}`, {
           params: { rfile: rfile },
           headers: {
-            Authorization: `Bearer ${accessToken}`, // accessToken 추가
+            Authorization: `Bearer ${accessToken}`,
           },
         });
         alert("삭제가 완료되었습니다.");
-        //브라우저 히스토리를 이용해서, 목록 출력 페이지로 이동 <= 리액트의 히스토리를 이용한다면
-        //history.push('/notice');
-        navigate("/posts"); //목록 출력 페이지로 이동
+        navigate("/posts");
       } catch (error) {
         console.error("Delete error : ", error);
         alert("삭제 실패!");
@@ -81,11 +72,11 @@ const PostsDetail = () => {
   };
 
   if (!posts) {
-    return <div className={styles.loading}>로딩 중...</div>; // 로딩 표시
+    return <div className={styles.loading}>로딩 중...</div>;
   }
 
   if (error) {
-    return <div className={styles.error}>{error}</div>; // 에러 메시지 표시
+    return <div className={styles.error}>{error}</div>;
   }
 
   return (

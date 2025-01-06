@@ -1,10 +1,15 @@
+/* 상세보기 컨테이너 */
 .detail-container {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 50px auto;
   padding: 20px;
   background: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
   border-radius: 10px;
+  font-family: 'Arial', sans-serif;
+  padding-bottom: 40px;
+  min-height: 550px;
+  box-sizing: border-box; /* 테두리와 내용이 정확히 맞도록 설정 */
 }
 
 .back-button {
@@ -48,6 +53,7 @@
   cursor: pointer;
 }
 
+.back-button,
 .edit-button,
 .delete-button
 .button {
@@ -55,7 +61,17 @@
   margin-right: 10px;
   border: none;
   border-radius: 5px;
+  font-size: 0.85rem; /* 버튼 텍스트 크기 조정 */
   cursor: pointer;
+}
+
+.back-button {
+  background: #6c757d;
+  color: #fff;
+}
+
+.back-button:hover {
+  background: #5a6268;
 }
 
 .edit-button {
@@ -75,3 +91,53 @@
 .delete-button:hover {
   background: #c82333;
 }
+
+/* 작성자, 등록날짜, 조회수 줄 */
+.post-info {
+  font-size: 0.9rem; /* 폰트 크기 약간 축소 */
+  color: #555;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.post-info span {
+  margin-right: 8px;
+}
+
+.post-info .separator {
+  margin: 0 5px; /* 구분선 간격 축소 */
+}
+
+/* 첨부파일 버튼 */
+.download-file {
+  margin-left: auto;
+}
+
+.download-button {
+  padding: 10px 15px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.download-button:hover {
+  background: #0056b3;
+}
+
+/* 내용 */
+.detail-content {
+  background-color: #ffffff; /* 깔끔한 흰색 배경 */
+  border: 1px solid #e0e0e0; /* 연한 회색 테두리 */
+  border-radius: 5px; /* 둥근 모서리 */
+  border-top: 1px solid #ddd;
+  padding: 20px;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-top: 15px;
+  box-sizing: border-box; /* 테두리와 내용이 어긋나지 않도록 설정 */
+  min-height: 550px;
+}
+
