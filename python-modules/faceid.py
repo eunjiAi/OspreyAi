@@ -5,22 +5,37 @@ import base64
 from datetime import datetime
 from flask_cors import CORS  # CORS 모듈
 import os
+import cv2
+import time
+import face_recognition
 from sqlalchemy import create_engine, Column, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__)
 
-# CORS를 활성화합니다.
-CORS(app)
+# CORS를 활성화하고, 특정 메서드와 헤더를 허용합니다.
+CORS(app, methods=["GET", "POST", "OPTIONS"], supports_credentials=True)
 
-# 바탕화면 경로
-USER_DESKTOP_PATH = "C:\Users\ict01_22\OneDrive\바탕 화면"
-SAVE_DIR = os.path.join(USER_DESKTOP_PATH, "FaceID_Images")
+USER_HOME_PATH = os.path.expanduser("~")
+print(f"USER_HOME_PATH: {USER_HOME_PATH}")
 
-# 이미지 저장을 위한 폴더 생성
+# "OneDrive" -> "바탕 화면" 경로로 연결
+desktop_path = os.path.join(USER_HOME_PATH, "OneDrive", "바탕 화면")
+print(f"Desktop path: {desktop_path}")
+
+# "FaceID_Images" 폴더 경로
+SAVE_DIR = os.path.join(desktop_path, "FaceID_Images")
+
+# "FaceID_Images" 폴더가 없다면 생성
 if not os.path.exists(SAVE_DIR):
     os.makedirs(SAVE_DIR)
+    print(f"Created folder: {SAVE_DIR}")
+else:
+    print(f"Folder already exists: {SAVE_DIR}")
+
+# 이미지 저장을 위한 폴더 생성 확인
+print(f"Saving images to: {SAVE_DIR}")
 
 # 데이터베이스 설정
 DATABASE_URI = 'oracle+cx_oracle://c##fp3team:1234@ktj0514.synology.me:1521/XE'
@@ -33,7 +48,8 @@ class Member(Base):
     __tablename__ = "MEMBER"
     __table_args__ = {"schema": "C##FP3TEAM"}
     uuid = Column("UUID", String, primary_key=True, nullable=False)
-    face_id = Column("FACE_ID", String, nullable=True) 
+    face_id = Column("FACE_ID", String, nullable=True)
+    member_id = Column("MEMBERID", String, nullable=False)  # MEMBERID 컬럼
 
 # 데이터베이스 테이블 생성
 Base.metadata.create_all(bind=engine)
@@ -129,6 +145,78 @@ def delete_faceid():
         return jsonify({"message": "이미지 삭제 실패!"}), 500
     finally:
         db.close()
+
+
+def compare_faces(image_data):
+    known_faces = []
+    known_face_names = []
+    
+    # "FaceID_Images" 폴더 내 이미지 가져오기
+    for filename in os.listdir(SAVE_DIR):
+        if filename.endswith(".jpg"):
+            img_path = os.path.join(SAVE_DIR, filename)
+            image = face_recognition.load_image_file(img_path)
+            encodings = face_recognition.face_encodings(image)
+            if encodings:
+                known_faces.append(encodings[0])
+                known_face_names.append(filename)  # 파일명 추가
+    
+    # 디버깅용 로그: 불러온 얼굴 이미지 파일들 확인
+    print(f"Known face names: {known_face_names}")  # 여기서 known_face_names가 무엇인지 확인
+
+    try:
+        # base64로 인코딩된 이미지를 디코딩하여 얼굴 비교
+        img_bytes = base64.b64decode(image_data.split(",")[1])  # base64에서 이미지 데이터 추출
+        image = face_recognition.load_image_file(BytesIO(img_bytes))
+        face_locations = face_recognition.face_locations(image)
+        face_encodings = face_recognition.face_encodings(image, face_locations)
+        
+        if not face_encodings:
+            return None
+
+        # 얼굴 비교
+        for encoding in face_encodings:
+            results = face_recognition.compare_faces(known_faces, encoding)
+            if True in results:
+                match_index = results.index(True)
+                matched_filename = known_face_names[match_index]  # 일치하는 이미지 파일명 리턴
+                print(f"Matched filename: {matched_filename}")  # 일치하는 파일명 확인
+                return matched_filename
+        return None
+    except Exception as e:
+        print(f"Error during face comparison: {e}")
+        return None
+
+
+@app.route('/compare-faceid', methods=['POST'])
+def compare_faceid():
+    try:
+        data = request.json
+        if not data or "image" not in data:
+            return jsonify({"message": "이미지 데이터가 누락되었습니다."}), 400
+        
+        # 얼굴 비교 요청 받음
+        start_time = time.time()  # 시작 시간 기록
+        matched_filename = None
+
+        # 3초 동안 1초 간격으로 얼굴 비교 시도
+        while time.time() - start_time < 3:  # 3초 동안 인증을 시도
+            matched_filename = compare_faces(data["image"])  # 얼굴 비교 함수 호출
+            if matched_filename:
+                return jsonify({
+                    "message": "인증 성공!",
+                    "uuid": matched_filename.split('_')[0]  # UUID 반환
+                })
+
+            time.sleep(1)  # 1초 대기 후 다시 시도
+        
+        # 3초 동안 얼굴을 찾지 못한 경우
+        return jsonify({"message": "인증 실패: 얼굴을 찾을 수 없습니다."}), 400
+    
+    except Exception as e:
+        print(f"Error in compare_faceid: {str(e)}")  # 오류 메시지 출력
+        return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)

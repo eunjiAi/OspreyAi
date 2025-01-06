@@ -9,14 +9,14 @@ import QnA from "../pages/mypage/QnA";
 import Withdrawal from "../pages/mypage/Withdrawal";
 import MyPageUpdate from "../pages/mypage/MyPageUpdate";
 import FaceIdRegister from "../pages/faceid/FaceIdRegister";
-import FaceId from "../pages/member/login/FaceId";
+import FaceIDLogin from "../pages/member/login/FaceIDLogin";
 import Login from "../pages/member/login/Login";
 import MyInfo from "../pages/mypage/MyInfo";
 
 const memberRouter = [
   <Route path="/signup" element={<Signup />} />,
+  <Route path="/faceIDLogin" element={<FaceIDLogin />} />,
   <Route path="/login" element={<Login />} />,
-  <Route path="/faceid" element={<FaceId />} />,
   <Route path="/faceIdRegister" element={<FaceIdRegister />} />,
   <Route path="/mypage" element={<MyPage />}>
     <Route path="/mypage/mypageMain" element={<MyPageMain />} />
