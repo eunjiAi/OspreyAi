@@ -62,7 +62,7 @@ const FaceIdComponent = () => {
           setImageData(imageUrl);  // 캡처된 이미지 URL
           setStatus('얼굴 인식 후 이미지 캡처 완료!');
           
-          // 추가적으로 이미지 데이터를 서버에 전송하는 로직을 추가할 수 있습니다.
+
           await handleImageSave(imageUrl, userUuid);  // 로그인된 사용자의 UUID 사용
         }, 3000);  // 3초 후 촬영
       } else {
