@@ -16,6 +16,7 @@ function FaqWrite() {
         faqWriter: '', //초기 상태 
         category: '',     
         faqContent: '',
+        answerContent: '',
     });
 
     // 글등록 성공시 'FaqList' 페이지로 이동 처리할 것이므로
@@ -132,21 +133,30 @@ function FaqWrite() {
                         required
                         ></textarea>
                 </td></tr>
-                <tr><th colspan="2">
-                    <input type="submit" value="등록하기" /> &nbsp; 
-                    <input type="reset" value="작성취소" 
-                        onClick={() => setFormData({ ...formData, faqContent: ''})} />{' '} &nbsp;
-                    <input 
-                        type="button" 
-                        value="목록" 
-                        onClick={() => {
-                            navigate(-1);   //자바스크립트의 history.go(-1); 과 같음
-                        }} />
-                </th></tr>
                 </tbody>
             </table>
-            </form>
+        </form>
+        <div className={styles.button}>
+                <div className="button-group">
+                    <input type="submit" value="등록하기" /> &nbsp;
+                    <input type="reset" value="작성 초기화" 
+                        onClick={() => {setFormData({ ...formData, faqTitle: '',
+                            faqWriter: formData.faqWriter, // 작성자는 그대로 둠
+                            category: '',
+                            faqContent: '',
+                        });
+                        setAnswerContent('');
+                    }}
+                         />{' '} &nbsp;
+                    <input 
+                        type="button" 
+                        value="등록취소" 
+                        onClick={() => {
+                            navigate(-1);   // 자바스크립트의 history.go(-1); 과 같음
+                        }} />
+                </div>
         </div>
+    </div>
     );
 }
 

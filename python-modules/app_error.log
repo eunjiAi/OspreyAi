@@ -15105,3 +15105,308 @@ Packet type mismatch on a calculator receiving from stream "image": Expected a P
 2025-01-06 13:09:53,329 INFO UUID: ee117af5-6f0f-42fe-bd1b-4d67d1c28f7a, Name: ¿Ã¿∫¡ˆ, µø¿€ øœ∑· ø©∫Œ: False
 2025-01-06 13:09:53,552 INFO 127.0.0.1 - - [06/Jan/2025 13:09:53] "POST /squat-analysis HTTP/1.1" 200 -
 2025-01-06 13:10:26,861 INFO  * Detected change in 'D:\\eunjiAi\\OspreyAi\\python-modules\\faceid.py', reloading
+2025-01-06 15:24:24,367 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 15:24:24,367 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 15:24:24,367 INFO  * Restarting with stat
+2025-01-06 15:24:25,766 WARNING  * Debugger is active!
+2025-01-06 15:24:25,769 INFO  * Debugger PIN: 296-644-293
+2025-01-06 15:26:01,305 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 15:26:01,305 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 15:26:01,305 INFO  * Restarting with stat
+2025-01-06 15:26:02,410 WARNING  * Debugger is active!
+2025-01-06 15:26:02,412 INFO  * Debugger PIN: 296-644-293
+2025-01-06 15:26:14,488 INFO 127.0.0.1 - - [06/Jan/2025 15:26:14] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:14,818 INFO Analyzed Pose -> Angle: 133.6138115064759, Knee Position: -0.01898166537284851, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:26:14,818 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:14,818 INFO 127.0.0.1 - - [06/Jan/2025 15:26:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:15,223 INFO Analyzed Pose -> Angle: 131.35601619038644, Knee Position: -0.10166573524475098, Feedback: ∫–ºÆ Ω«∆–
+2025-01-06 15:26:15,224 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:15,224 INFO 127.0.0.1 - - [06/Jan/2025 15:26:15] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:16,494 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:26:16,495 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:16,495 INFO 127.0.0.1 - - [06/Jan/2025 15:26:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:17,205 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:26:17,206 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:17,207 INFO 127.0.0.1 - - [06/Jan/2025 15:26:17] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:18,513 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:26:18,514 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:18,514 INFO 127.0.0.1 - - [06/Jan/2025 15:26:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:19,204 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:26:19,204 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:19,205 INFO 127.0.0.1 - - [06/Jan/2025 15:26:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:20,493 INFO 127.0.0.1 - - [06/Jan/2025 15:26:20] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:20,815 INFO Analyzed Pose -> Angle: 3.6638553728478143, Knee Position: -0.02333676815032959, Feedback: µø¿€ øœ∑·
+2025-01-06 15:26:20,815 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:20,816 INFO 127.0.0.1 - - [06/Jan/2025 15:26:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:21,223 INFO Analyzed Pose -> Angle: 6.1752187165683505, Knee Position: 0.0003681182861328125, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:26:21,223 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:21,224 INFO 127.0.0.1 - - [06/Jan/2025 15:26:21] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:22,525 INFO Analyzed Pose -> Angle: 4.937568758585348, Knee Position: -0.0033465921878814697, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:26:22,525 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:22,526 INFO 127.0.0.1 - - [06/Jan/2025 15:26:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:26:23,228 INFO Analyzed Pose -> Angle: 8.225026448137372, Knee Position: -0.004088699817657471, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:26:23,229 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:26:23,229 INFO 127.0.0.1 - - [06/Jan/2025 15:26:23] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:16,637 INFO 127.0.0.1 - - [06/Jan/2025 15:27:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:16,928 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:16,929 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:16,930 INFO 127.0.0.1 - - [06/Jan/2025 15:27:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:17,345 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:17,345 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:17,346 INFO 127.0.0.1 - - [06/Jan/2025 15:27:17] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:18,648 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:18,648 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:18,649 INFO 127.0.0.1 - - [06/Jan/2025 15:27:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:19,346 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:19,346 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:19,347 INFO 127.0.0.1 - - [06/Jan/2025 15:27:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:20,658 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:20,660 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:20,660 INFO 127.0.0.1 - - [06/Jan/2025 15:27:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:21,322 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:21,322 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:21,322 INFO 127.0.0.1 - - [06/Jan/2025 15:27:21] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:22,611 INFO 127.0.0.1 - - [06/Jan/2025 15:27:22] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:22,894 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:22,895 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:22,895 INFO 127.0.0.1 - - [06/Jan/2025 15:27:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:23,370 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:23,371 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:23,371 INFO 127.0.0.1 - - [06/Jan/2025 15:27:23] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:24,649 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:24,649 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:24,650 INFO 127.0.0.1 - - [06/Jan/2025 15:27:24] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:25,349 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:25,350 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:25,350 INFO 127.0.0.1 - - [06/Jan/2025 15:27:25] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:26,626 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:26,627 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:26,627 INFO 127.0.0.1 - - [06/Jan/2025 15:27:26] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:27,373 INFO Analyzed Pose -> Angle: 174.01514438074403, Knee Position: 0.25800544023513794, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:27:27,374 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:27,374 INFO 127.0.0.1 - - [06/Jan/2025 15:27:27] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:28,631 INFO 127.0.0.1 - - [06/Jan/2025 15:27:28] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:28,920 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:28,920 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:28,921 INFO 127.0.0.1 - - [06/Jan/2025 15:27:28] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:29,344 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:29,344 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:29,344 INFO 127.0.0.1 - - [06/Jan/2025 15:27:29] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:30,655 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:30,655 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:30,656 INFO 127.0.0.1 - - [06/Jan/2025 15:27:30] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:31,342 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:31,343 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:31,343 INFO 127.0.0.1 - - [06/Jan/2025 15:27:31] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:32,684 INFO Analyzed Pose -> Angle: 163.85772372532102, Knee Position: -0.14826524257659912, Feedback: ∫–ºÆ Ω«∆–
+2025-01-06 15:27:32,684 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:32,684 INFO 127.0.0.1 - - [06/Jan/2025 15:27:32] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:33,361 INFO Analyzed Pose -> Angle: 99.02073547654808, Knee Position: -0.6294548511505127, Feedback: ∫–ºÆ Ω«∆–
+2025-01-06 15:27:33,361 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:33,362 INFO 127.0.0.1 - - [06/Jan/2025 15:27:33] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:34,631 INFO 127.0.0.1 - - [06/Jan/2025 15:27:34] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:34,941 INFO Analyzed Pose -> Angle: 164.0114611991883, Knee Position: -0.3235619068145752, Feedback: ∫–ºÆ Ω«∆–
+2025-01-06 15:27:34,941 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:34,941 INFO 127.0.0.1 - - [06/Jan/2025 15:27:34] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:35,363 INFO Analyzed Pose -> Angle: 173.99665946795056, Knee Position: -0.3342123031616211, Feedback: ∫–ºÆ Ω«∆–
+2025-01-06 15:27:35,364 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:35,364 INFO 127.0.0.1 - - [06/Jan/2025 15:27:35] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:36,670 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:27:36,670 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:36,670 INFO 127.0.0.1 - - [06/Jan/2025 15:27:36] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:37,382 INFO Analyzed Pose -> Angle: 4.295265568080871, Knee Position: -0.00541570782661438, Feedback: µø¿€ øœ∑·
+2025-01-06 15:27:37,383 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:37,383 INFO 127.0.0.1 - - [06/Jan/2025 15:27:37] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:38,673 INFO Analyzed Pose -> Angle: 4.388421247850698, Knee Position: -0.006143510341644287, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:27:38,673 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:38,674 INFO 127.0.0.1 - - [06/Jan/2025 15:27:38] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:39,362 INFO Analyzed Pose -> Angle: 6.748493659191575, Knee Position: -0.008986026048660278, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:27:39,362 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:39,362 INFO 127.0.0.1 - - [06/Jan/2025 15:27:39] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:40,634 INFO 127.0.0.1 - - [06/Jan/2025 15:27:40] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:27:40,941 INFO Analyzed Pose -> Angle: 7.301494349518738, Knee Position: -0.00885915756225586, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:27:40,941 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:27:40,941 INFO 127.0.0.1 - - [06/Jan/2025 15:27:40] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:28:45,644 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 15:28:45,644 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 15:28:45,645 INFO  * Restarting with stat
+2025-01-06 15:28:47,136 WARNING  * Debugger is active!
+2025-01-06 15:28:47,138 INFO  * Debugger PIN: 296-644-293
+2025-01-06 15:28:51,670 INFO 127.0.0.1 - - [06/Jan/2025 15:28:51] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:28:51,959 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:28:51,959 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:28:51,960 INFO 127.0.0.1 - - [06/Jan/2025 15:28:51] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:28:52,384 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:28:52,384 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:28:52,385 INFO 127.0.0.1 - - [06/Jan/2025 15:28:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:28:53,687 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:28:53,688 ERROR JWT µƒ⁄µ˘ ø¿∑˘: module 'jwt' has no attribute 'decode'
+2025-01-06 15:28:53,689 INFO 127.0.0.1 - - [06/Jan/2025 15:28:53] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:35:57,333 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 15:35:57,333 INFO [33mPress CTRL+C to quit[0m
+2025-01-06 15:35:57,334 INFO  * Restarting with stat
+2025-01-06 15:35:58,461 WARNING  * Debugger is active!
+2025-01-06 15:35:58,463 INFO  * Debugger PIN: 296-644-293
+2025-01-06 15:36:09,791 INFO 127.0.0.1 - - [06/Jan/2025 15:36:09] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:10,079 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:10,079 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:10,228 INFO 127.0.0.1 - - [06/Jan/2025 15:36:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:10,493 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:10,494 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:10,721 INFO 127.0.0.1 - - [06/Jan/2025 15:36:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:11,812 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:11,813 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:11,876 INFO 127.0.0.1 - - [06/Jan/2025 15:36:11] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:12,506 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:12,507 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:12,764 INFO 127.0.0.1 - - [06/Jan/2025 15:36:12] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:13,810 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:13,811 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:13,877 INFO 127.0.0.1 - - [06/Jan/2025 15:36:13] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:14,991 INFO 127.0.0.1 - - [06/Jan/2025 15:36:14] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:15,324 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:15,324 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:15,580 INFO 127.0.0.1 - - [06/Jan/2025 15:36:15] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:16,018 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:16,018 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:16,075 INFO 127.0.0.1 - - [06/Jan/2025 15:36:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:17,322 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:17,324 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:17,745 INFO 127.0.0.1 - - [06/Jan/2025 15:36:17] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:18,010 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:18,010 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:18,084 INFO 127.0.0.1 - - [06/Jan/2025 15:36:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:19,333 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:19,334 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:19,400 INFO 127.0.0.1 - - [06/Jan/2025 15:36:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:20,006 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:20,006 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:20,285 INFO 127.0.0.1 - - [06/Jan/2025 15:36:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:21,301 INFO 127.0.0.1 - - [06/Jan/2025 15:36:21] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:21,584 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:21,584 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:21,648 INFO 127.0.0.1 - - [06/Jan/2025 15:36:21] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:22,044 INFO Analyzed Pose -> Angle: 179.69506519657338, Knee Position: -0.018513381481170654, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:36:22,044 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:22,293 INFO 127.0.0.1 - - [06/Jan/2025 15:36:22] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:23,343 INFO Analyzed Pose -> Angle: 178.70230366827238, Knee Position: -0.03762102127075195, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:36:23,344 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:23,408 INFO 127.0.0.1 - - [06/Jan/2025 15:36:23] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:23,981 INFO Analyzed Pose -> Angle: 174.22876032788085, Knee Position: -0.05124366283416748, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:36:23,982 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:24,268 INFO 127.0.0.1 - - [06/Jan/2025 15:36:24] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:24,825 INFO Analyzed Pose -> Angle: 171.45582766585343, Knee Position: 0.02722182869911194, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:36:24,825 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:24,888 INFO 127.0.0.1 - - [06/Jan/2025 15:36:24] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:48,324 INFO 127.0.0.1 - - [06/Jan/2025 15:36:48] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:48,669 INFO Analyzed Pose -> Angle: 136.19247589214095, Knee Position: -0.024282634258270264, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:36:48,673 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:48,738 INFO 127.0.0.1 - - [06/Jan/2025 15:36:48] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:49,360 INFO Analyzed Pose -> Angle: 149.5704336818994, Knee Position: -0.022436022758483887, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:36:49,361 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:49,657 INFO 127.0.0.1 - - [06/Jan/2025 15:36:49] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:50,673 INFO Analyzed Pose -> Angle: 134.83906069448372, Knee Position: -0.047632813453674316, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:36:50,674 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:50,737 INFO 127.0.0.1 - - [06/Jan/2025 15:36:50] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:52,026 INFO Analyzed Pose -> Angle: 157.22250396313098, Knee Position: 0.03962051868438721, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:36:52,026 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:52,225 INFO 127.0.0.1 - - [06/Jan/2025 15:36:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:52,676 INFO Analyzed Pose -> Angle: 35.85855313081679, Knee Position: 0.07529336214065552, Feedback: µø¿€ øœ∑·
+2025-01-06 15:36:52,677 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: True
+2025-01-06 15:36:52,744 INFO 127.0.0.1 - - [06/Jan/2025 15:36:52] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:53,360 INFO Analyzed Pose -> Angle: 8.376952330640114, Knee Position: -0.01322317123413086, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:36:53,360 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:53,655 INFO 127.0.0.1 - - [06/Jan/2025 15:36:53] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:54,627 INFO 127.0.0.1 - - [06/Jan/2025 15:36:54] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:54,930 INFO Analyzed Pose -> Angle: 20.347034016635263, Knee Position: 0.05726483464241028, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:36:54,932 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:55,002 INFO 127.0.0.1 - - [06/Jan/2025 15:36:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:55,351 INFO Analyzed Pose -> Angle: 9.225450166813882, Knee Position: 0.04970979690551758, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:36:55,351 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:55,640 INFO 127.0.0.1 - - [06/Jan/2025 15:36:55] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:56,667 INFO Analyzed Pose -> Angle: 11.036978794575356, Knee Position: 0.07900130748748779, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:36:56,668 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:56,760 INFO 127.0.0.1 - - [06/Jan/2025 15:36:56] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:57,345 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:57,346 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:57,426 INFO 127.0.0.1 - - [06/Jan/2025 15:36:57] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:58,663 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:36:58,663 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:36:58,928 INFO 127.0.0.1 - - [06/Jan/2025 15:36:58] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:36:59,828 INFO 127.0.0.1 - - [06/Jan/2025 15:36:59] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:00,168 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:00,168 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:00,235 INFO 127.0.0.1 - - [06/Jan/2025 15:37:00] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:00,418 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:00,418 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:00,611 INFO 127.0.0.1 - - [06/Jan/2025 15:37:00] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:01,338 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:01,340 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:01,409 INFO 127.0.0.1 - - [06/Jan/2025 15:37:01] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:02,658 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:02,659 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:02,920 INFO 127.0.0.1 - - [06/Jan/2025 15:37:02] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:03,343 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:03,344 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:03,407 INFO 127.0.0.1 - - [06/Jan/2025 15:37:03] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:04,651 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:04,651 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:04,716 INFO 127.0.0.1 - - [06/Jan/2025 15:37:04] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:05,321 INFO 127.0.0.1 - - [06/Jan/2025 15:37:05] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:05,661 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:05,661 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:05,960 INFO 127.0.0.1 - - [06/Jan/2025 15:37:05] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:06,343 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:06,344 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:06,406 INFO 127.0.0.1 - - [06/Jan/2025 15:37:06] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:07,650 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:07,650 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:07,868 INFO 127.0.0.1 - - [06/Jan/2025 15:37:07] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:08,344 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:08,345 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:08,408 INFO 127.0.0.1 - - [06/Jan/2025 15:37:08] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:09,652 DEBUG ∆˜¡Ó ∑£µÂ∏∂≈©∞° æ¯Ω¿¥œ¥Ÿ.
+2025-01-06 15:37:09,653 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:09,950 INFO 127.0.0.1 - - [06/Jan/2025 15:37:09] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:10,325 INFO 127.0.0.1 - - [06/Jan/2025 15:37:10] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:10,694 INFO Analyzed Pose -> Angle: 5.087617105408148, Knee Position: -0.014930576086044312, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:37:10,697 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:10,765 INFO 127.0.0.1 - - [06/Jan/2025 15:37:10] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:11,363 INFO Analyzed Pose -> Angle: 5.270685718393072, Knee Position: -0.01911178231239319, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:37:11,363 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:11,641 INFO 127.0.0.1 - - [06/Jan/2025 15:37:11] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:12,672 INFO Analyzed Pose -> Angle: 8.32856018352458, Knee Position: -0.017822325229644775, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:37:12,672 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:12,738 INFO 127.0.0.1 - - [06/Jan/2025 15:37:12] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:13,362 INFO Analyzed Pose -> Angle: 4.560476216214014, Knee Position: -0.023735761642456055, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:37:13,362 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:13,541 INFO 127.0.0.1 - - [06/Jan/2025 15:37:13] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:14,678 INFO Analyzed Pose -> Angle: 37.05972502208679, Knee Position: 0.009521305561065674, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:37:14,680 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:14,738 INFO 127.0.0.1 - - [06/Jan/2025 15:37:14] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:15,356 INFO Analyzed Pose -> Angle: 61.167644292902125, Knee Position: 0.04602751135826111, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:37:15,357 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:15,665 INFO 127.0.0.1 - - [06/Jan/2025 15:37:15] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:16,632 INFO 127.0.0.1 - - [06/Jan/2025 15:37:16] "OPTIONS /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:16,934 INFO Analyzed Pose -> Angle: 74.09564435985237, Knee Position: 0.027307331562042236, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:37:16,935 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:16,997 INFO 127.0.0.1 - - [06/Jan/2025 15:37:16] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:17,361 INFO Analyzed Pose -> Angle: 85.79480295026636, Knee Position: 0.02786475419998169, Feedback: πŸ∏• ¿⁄ºº¿‘¥œ¥Ÿ
+2025-01-06 15:37:17,363 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:17,633 INFO 127.0.0.1 - - [06/Jan/2025 15:37:17] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:18,662 INFO Analyzed Pose -> Angle: 12.455442156922459, Knee Position: -0.0061851441860198975, Feedback: µø¿€ øœ∑·
+2025-01-06 15:37:18,662 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: True
+2025-01-06 15:37:18,717 INFO 127.0.0.1 - - [06/Jan/2025 15:37:18] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:19,364 INFO Analyzed Pose -> Angle: 2.105611233704795, Knee Position: -0.01883530616760254, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:37:19,364 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:19,580 INFO 127.0.0.1 - - [06/Jan/2025 15:37:19] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:20,668 INFO Analyzed Pose -> Angle: 11.445278561835975, Knee Position: -0.04175090789794922, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:37:20,668 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:20,734 INFO 127.0.0.1 - - [06/Jan/2025 15:37:20] "POST /squat-analysis HTTP/1.1" 200 -
+2025-01-06 15:37:21,364 INFO Analyzed Pose -> Angle: 7.502786593892563, Knee Position: -0.03444826602935791, Feedback: ªÛ√º∏¶ ¥ı º˜¿Ãººø‰
+2025-01-06 15:37:21,365 INFO UUID: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1, Name: ¿Á¿±, µø¿€ øœ∑· ø©∫Œ: False
+2025-01-06 15:37:21,646 INFO 127.0.0.1 - - [06/Jan/2025 15:37:21] "POST /squat-analysis HTTP/1.1" 200 -

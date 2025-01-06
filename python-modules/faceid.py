@@ -15,7 +15,7 @@ app = Flask(__name__)
 CORS(app)
 
 # 바탕화면 경로
-USER_DESKTOP_PATH = r"C:\Users\ict01-20\OneDrive\바탕 화면"
+USER_DESKTOP_PATH = "C:\Users\ict01_26\OneDrive\바탕 화면"
 SAVE_DIR = os.path.join(USER_DESKTOP_PATH, "FaceID_Images")
 
 # 이미지 저장을 위한 폴더 생성
