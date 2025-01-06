@@ -5,11 +5,13 @@ import styles from "./Login.module.css"; // 스타일 가져오기
 import googleSignInImage from "../../../images/SignInWithGoogle.png";
 import NaverSignInImage from "../../../images/SignInWithNaver.png";
 import kakaoSignInImage from "../../../images/SignInWithKakao.png";
+import FaceIDLogin from "../login/FaceIDLogin";
 
 function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // 로딩 상태 추가
+  const [isLoading, setIsLoading] = useState(false); 
+  const [showFaceIDModal, setShowFaceIDModal] = useState(false); // FaceID 모달 
   const { login } = useContext(AuthContext); // AuthProvider의 login 함수 가져오기
 
   // Google Login -----------------------------------------------------------------------------
@@ -384,6 +386,44 @@ function Login({ onLoginSuccess }) {
     }
   };
 
+  
+
+  const handleFaceIDLogin = async () => {
+    setShowFaceIDModal(true); // Face ID 모달 열기
+
+  try {
+    setIsLoading(true); // 로딩 시작
+    const response = await axios.post("http://localhost:5001/compare-faceid");
+
+    const { uuid, id, password } = response.data;
+
+    if (uuid && id && password) {
+      // Face ID에 맞는 사용자 정보로 로그인
+      const loginResponse = await axios.post("/login", { userId: id, userPwd: password });
+
+      const authorizationHeader = loginResponse.headers["authorization"];
+      if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
+        throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
+      }
+
+      const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
+      const { refreshToken } = loginResponse.data;
+
+      login({ accessToken: jwtAccessToken, refreshToken });
+      alert("로그인 성공!");
+      if (onLoginSuccess) onLoginSuccess();
+    } else {
+      alert("얼굴 인식에 실패했습니다.");
+    }
+  } catch (error) {
+    console.error("Face ID 로그인 실패:", error.response?.data || error.message);
+    alert("Face ID 로그인 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
+  } finally {
+    setIsLoading(false); // 로딩 종료
+  }
+};
+
+
   return (
     <div className={styles.container}>
       <h2>로그인 페이지</h2>
@@ -447,16 +487,28 @@ function Login({ onLoginSuccess }) {
               className={styles.apiButtonImage}
             />
           </button>
-
-          <button
-            type="button"
-            className={`${styles.apiButton} ${styles.faceIdButton}`} // 기존 스타일과 faceIdButton 추가
-            onClick={() => (window.location.href = "/faceid")}
-          >
-            Face ID로 로그인
-          </button>
+          
         </div>
       </form>
+
+      {/* Face ID 버튼 추가 */}
+      <button
+        type="button"
+        className={`${styles.apiButton} ${styles.faceIdButton}`}
+        onClick={handleFaceIDLogin} /**/ 
+      >
+        Face ID로 로그인
+      </button>
+
+      {/* Face ID 로그인 모달 */}
+      {showFaceIDModal && (
+        /**/
+        <FaceIDLogin
+          onClose={() => setShowFaceIDModal(false)} // 모달 닫기
+          onLoginSuccess={onLoginSuccess} // 로그인 성공 시 콜백
+        />
+      )}
+
     </div>
   );
 }

@@ -5,14 +5,16 @@ import base64
 from datetime import datetime
 from flask_cors import CORS  # CORS 모듈
 import os
+import cv2
+import face_recognition
 from sqlalchemy import create_engine, Column, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__)
 
-# CORS를 활성화합니다.
-CORS(app)
+# CORS를 활성화하고, 특정 메서드와 헤더를 허용합니다.
+CORS(app, methods=["GET", "POST", "OPTIONS"], supports_credentials=True)
 
 # 바탕화면 경로
 USER_DESKTOP_PATH = r"C:\Users\ict01-20\OneDrive\바탕 화면"
@@ -129,6 +131,86 @@ def delete_faceid():
         return jsonify({"message": "이미지 삭제 실패!"}), 500
     finally:
         db.close()
+
+
+# 얼굴 인식을 위한 함수
+def compare_faces(image_path):
+    known_faces = []
+    known_face_names = []
+    
+    # 저장된 모든 이미지 가져오기
+    for filename in os.listdir(SAVE_DIR):
+        if filename.endswith(".jpg"):
+            img_path = os.path.join(SAVE_DIR, filename)
+            image = face_recognition.load_image_file(img_path)
+            encodings = face_recognition.face_encodings(image)
+            if encodings:
+                known_faces.append(encodings[0])
+                known_face_names.append(filename)
+    
+    # 웹캠에서 이미지를 받아와 비교
+    # 1. 인덱스 변경: 0 -> 1 또는 다른 인덱스 시도
+    # 2. 백엔드 변경: CAP_ANY, CAP_DSHOW 또는 CAP_V4L2 사용
+    webcam = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # DirectShow 백엔드 사용 (Windows에서)
+
+    # 1. 인덱스 변경: 다른 웹캠을 시도
+    # webcam = cv2.VideoCapture(1, cv2.CAP_DSHOW)  # 웹캠 인덱스 1 사용
+
+    if not webcam.isOpened():
+        print("웹캠을 열 수 없습니다.")
+        return None
+
+    ret, frame = webcam.read()
+    if not ret:
+        print("웹캠에서 프레임을 읽을 수 없습니다.")
+        webcam.release()
+        return None
+
+    # 웹캠 이미지에서 얼굴 찾기
+    rgb_frame = frame[:, :, ::-1]  # BGR to RGB
+    face_locations = face_recognition.face_locations(rgb_frame)
+    face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
+    
+    webcam.release()
+    
+    if not face_encodings:
+        return None
+
+    # 얼굴 비교
+    for encoding in face_encodings:
+        results = face_recognition.compare_faces(known_faces, encoding)
+        if True in results:
+            match_index = results.index(True)
+            return known_face_names[match_index]  # 이미지 파일명 리턴
+
+    return None
+
+
+
+
+@app.route('/compare-faceid', methods=['POST'])
+def compare_faceid():
+    try:
+        # 얼굴 비교 요청 받음
+        matched_filename = compare_faces(SAVE_DIR)
+        
+        if not matched_filename:
+            return jsonify({"message": "얼굴을 찾을 수 없거나 일치하는 얼굴이 없습니다."}), 400
+        
+        # UUID를 추출하고 해당하는 사용자의 id, pw를 DB에서 조회
+        user_uuid = matched_filename.split('_')[0]  # 파일명에서 UUID 추출
+        db = SessionLocal()
+        user = db.query(Member).filter_by(uuid=user_uuid).first()
+        if not user:
+            return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
+
+        return jsonify({
+            "uuid": user.uuid,
+            "id": user.id,
+            "password": user.password  # db에서 id랑 pw불러옴
+        })
+    except Exception as e:
+        return jsonify({"message": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
