@@ -62,6 +62,15 @@ public class MemberService {
 				.orElseThrow(() -> new NoSuchElementException("해당 카카오정보를 조회할 수 없습니다 : " + email));
 	}
 
+	// 페이스 로그인!!
+	public Member findByMemberId(String memberId) {
+		Optional<MemberEntity> entityOptional = memberRepository.findByMemberId(memberId);
+
+		return entityOptional
+				.map(MemberEntity::toDto) // Optional로 안전하게 DTO 변환
+				.orElseThrow(() -> new NoSuchElementException("해당 member_id를 조회할 수 없습니다 : " + memberId));
+	}
+
 
 	//회원가입시 id 중복 검사용
 	public int selectCheckId(String memberId) {
@@ -151,20 +160,17 @@ public class MemberService {
 		return entityList.map(MemberEntity::toDto); // MemberEntity의 toDto() 메서드를 사용
 	}*/
 
-//	public int updateLoginOK(String userId, String loginOk) {
-//		try {
-//			//이전 데이터를 가진 회원정보를 조회해 옴 (수정전)
-//			Member updateMember = memberRepository.findById(userId).get().toDto();
-//			//전달받은 객체에서 loginOk 정보만 수정할 것이므로, 수정할 값으로 변경함
-//			updateMember.setLoginOk(loginOk);
-//			//수정할 객체를 가진 회원정보를 jpa 로 넘김
-//			memberRepository.save(updateMember.toEntity());  //jpa 제공
-//			return 1;
-//		}catch (Exception e) {
-//			log.error(e.getMessage());
-//			return 0;
-//		}
-//	}
+	public int updateLoginOK(String uuid, String loginOk) {
+		try {
+			Member updateMember = memberRepository.findById(uuid).get().toDto();
+			updateMember.setLoginOk(loginOk);
+			memberRepository.save(updateMember.toEntity());  //jpa 제공
+			return 1;
+		}catch (Exception e) {
+			log.error(e.getMessage());
+			return 0;
+		}
+	}
 
 	//검색 카운트 관련 ------------------------------------------------------------------
 //	public int selectSearchUserIdCount(String keyword) {

@@ -3,8 +3,6 @@ from io import BytesIO
 from PIL import Image
 import base64
 from datetime import datetime
-import jwt
-import datetime
 from flask_cors import CORS  # CORS 모듈
 import os
 import cv2
@@ -14,7 +12,6 @@ from sqlalchemy import create_engine, Column, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-import bcrypt  # 해시된 비밀번호랑 비교할 때 사용
 
 app = Flask(__name__)
 
@@ -68,22 +65,24 @@ def register_faceid():
     try:
         data = request.json
         image_data = data.get('image')
-        user_uuid = data.get('uuid')                             # 로그인한 사용자 UUID
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')     # 타임스탬프 생성
+        user_uuid = data.get('uuid')  # 로그인한 사용자 UUID
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')  # 타임스탬프 생성
 
         if not image_data or not user_uuid:
+            print("이미지 데이터 또는 UUID가 누락되었습니다.")
             return jsonify({"message": "이미지 데이터 또는 UUID가 누락되었습니다."}), 400
 
         # 얼굴 인식 여부 확인
         if image_data == "face_not_detected":
+            print("얼굴이 인식되지 않았습니다.")
             return jsonify({"message": "얼굴이 인식되지 않았습니다."}), 400
 
         # 이미지 데이터 디코딩
-        image_data = image_data.split(",")[1]       # base64 이미지에서 'data:image/jpeg;base64,' 부분 제거
+        image_data = image_data.split(",")[1]  # base64 이미지에서 'data:image/jpeg;base64,' 부분 제거
         img_bytes = base64.b64decode(image_data)
 
         # 이미지 저장 경로
-        filename = f"{user_uuid}_{timestamp}.jpg"   # UUID와 타임스탬프 기반 파일명
+        filename = f"{user_uuid}_{timestamp}.jpg"  # UUID와 타임스탬프 기반 파일명
         image_path = os.path.join(SAVE_DIR, filename)
 
         # 이미지 저장
@@ -95,15 +94,16 @@ def register_faceid():
             # 사용자 조회
             user = db.query(Member).filter_by(uuid=user_uuid.strip()).first()
             if not user:
+                print(f"사용자를 찾을 수 없습니다. UUID: {user_uuid}")
                 return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
 
             # 기존 face_id 이미지 삭제 및 DB 갱신
             if user.face_id:
                 old_image_path = os.path.join(SAVE_DIR, user.face_id)
                 if os.path.exists(old_image_path):
-                    os.remove(old_image_path)        # 기존 이미지 파일 삭제
+                    os.remove(old_image_path)  # 기존 이미지 파일 삭제
 
-            user.face_id = filename                  # face_id 컬럼에 새로운 이미지 파일명 저장
+            user.face_id = filename  # face_id 컬럼에 새로운 이미지 파일명 저장
             db.commit()
 
             print(f"Image path saved to DB: {filename}")
@@ -113,6 +113,9 @@ def register_faceid():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"message": "이미지 등록 실패!"}), 500
+
+
+
 
 @app.route('/delete-faceid', methods=['POST'])
 def delete_faceid():
@@ -158,10 +161,18 @@ def compare_faces(image_data):
                 if encodings:
                     known_faces.append(encodings[0])
                     known_face_names.append(filename)
-        
+
+        if image_data is None:
+            print("이미지 데이터가 없습니다.")
+            return None
+
         # base64로 인코딩된 이미지를 디코딩하여 얼굴 비교
         img_bytes = base64.b64decode(image_data.split(",")[1])  # base64에서 이미지 데이터 추출
         image = face_recognition.load_image_file(BytesIO(img_bytes))
+
+        # 얼굴을 찾기 전에 이미지 크기를 조정
+        image = cv2.resize(image, (800, 800))  # 이미지를 리사이즈하여 얼굴 인식 정확도 개선
+
         face_locations = face_recognition.face_locations(image)
         face_encodings = face_recognition.face_encodings(image, face_locations)
 
@@ -176,12 +187,27 @@ def compare_faces(image_data):
                 match_index = results.index(True)
                 matched_filename = known_face_names[match_index]
                 print(f"Matched filename: {matched_filename}")
+                
+                # 파일명에서 UUID 추출
+                user_uuid = matched_filename.split('_')[0] if matched_filename else None
+
+                if user_uuid:
+                    # UUID에 해당하는 사용자 정보 조회
+                    with SessionLocal() as db:
+                        user = db.query(Member).filter_by(uuid=user_uuid).first()
+                        if user:
+                            # 해당 ID와 PW 출력
+                            print(f"User ID: {user.member_id}, Password: {user.pw}")
+                        else:
+                            print(f"사용자를 찾을 수 없습니다. UUID: {user_uuid}")
+                
                 return matched_filename
 
         return None
     except Exception as e:
         print(f"Error during face comparison: {e}")
         return None
+
     
 
 @app.route('/compare-faceid', methods=['POST'])
@@ -191,44 +217,42 @@ def compare_faceid():
         if not data or "image" not in data:
             return jsonify({"message": "이미지 데이터가 누락되었습니다."}), 400
         
-        # 얼굴 비교 요청 받음
-        start_time = time.time()  # 시작 시간 기록
+        start_time = time.time()
         matched_filename = None
 
-        # 3초 동안 1초 간격으로 얼굴 비교 시도
-        while time.time() - start_time < 3:  # 3초 동안 인증을 시도
+        while time.time() - start_time < 3:
             matched_filename = compare_faces(data["image"])  # 얼굴 비교 함수 호출
             if matched_filename:
-                # 파일명에서 UUID 추출 (파일명 예시: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1_20250106_130709.jpg)
+                # 파일명에서 UUID 추출
                 user_uuid = matched_filename.split('_')[0] if matched_filename else None
 
                 if user_uuid:
                     # UUID에 해당하는 사용자 정보 조회
                     with SessionLocal() as db:
+                        # 트랜잭션 없이 데이터 조회만 수행
                         user = db.query(Member).filter_by(uuid=user_uuid).first()
                         if not user:
                             return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
 
-                        # 디버깅 로그: id와 비밀번호를 출력
-                        print(f"User ID: {user.member_id}, Password: {user.pw}")  # 이 부분에서 id와 pw 확인
+                        # ID와 비밀번호 출력
+                        print(f"User ID: {user.member_id}, Password: {user.pw}")  # 로그로 출력
 
-                        # 얼굴 인식 성공 후 비밀번호 없이 로그인 처리
-                        response_data = {
+                        # React로 UUID와 memberId를 보내는 부분
+                        return jsonify({
                             "uuid": user.uuid,
-                            "id": user.member_id  # 데이터베이스에서 member_id 컬럼을 사용해서 id 반환
-                        }
+                            "memberId": user.member_id  # React로 memberId 전송
+                        }), 200
 
-                        db.commit()  # 트랜잭션 커밋
-                        return jsonify(response_data)  # 로그인 성공 후 사용자 정보 반환
+            time.sleep(1)
 
-            time.sleep(1)  # 1초 대기 후 다시 시도
-        
-        # 3초 동안 얼굴을 찾지 못한 경우
         return jsonify({"message": "인증 실패: 얼굴을 찾을 수 없습니다."}), 400
-    
+
     except Exception as e:
         print(f"Error in compare_faceid: {str(e)}")  # 오류 메시지 출력
         return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
+
+
+
     
 
 if __name__ == '__main__':
