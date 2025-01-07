@@ -76,6 +76,7 @@ public class MemberEntity {
                 .naver(naver)
                 .kakao(kakao)
                 .loginOk(loginOk)
+                .email(email)
                 .build();
     }
 }
