@@ -110,7 +110,8 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             }
 
             // 페이스 로그인!!
-            String memberId = request.getHeader("member_id"); // HTTP 헤더에서 member_id 추출
+            String memberId = request.getHeader("memberId"); // HTTP 헤더에서 member_id 추출
+            log.info("memberId: " + memberId);
             if (memberId != null) {
                 // member_id로 회원 정보 조회
                 CustomUserDetails userDetails = (CustomUserDetails) userService.loadUserByMemberId(memberId);

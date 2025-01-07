@@ -391,7 +391,7 @@ function Login({ onLoginSuccess }) {
 
  
 
-  // 페이스 로그인
+  // 페이스 로그인 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
   const handleFaceIDLogin = async () => {
     try {
       setIsLoading(true); // 로딩 상태 시작
@@ -409,24 +409,26 @@ function Login({ onLoginSuccess }) {
   
       console.log("Captured Image:", capturedImage); // 캡처된 이미지 로그
   
-      // 서버로 이미지 전송
+      // Python 서버로 이미지 전송
       const response = await axios.post("http://localhost:5001/compare-faceid", {
         image: capturedImage, // Face ID 이미지 데이터
       });
   
-      const { memberId } = response.data; // 서버에서 받은 memberId
+      const { memberId } = response.data; // Python 서버에서 받은 memberId
       console.log("받은 memberId:", memberId);
   
       if (memberId) {
+        // Spring Boot 서버로 FormData를 사용하여 로그인 요청
         const formData = new FormData();
-        formData.append("memberId", memberId); // Spring Boot로 전달할 memberId
+        formData.append("id", memberId);
   
-        const loginResponse = await axios.post("http://localhost:8888/login", formData, {
+        const loginResponse = await axios.post("/login", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         });
   
+        // Access Token 및 Refresh Token 추출
         const authorizationHeader = loginResponse.headers["authorization"];
         if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
           throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
@@ -435,10 +437,13 @@ function Login({ onLoginSuccess }) {
         const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
         const { refreshToken } = loginResponse.data;
   
-        login({ accessToken: jwtAccessToken, refreshToken }); // 로그인 처리
+        // AuthProvider의 login 함수 호출
+        login({ accessToken: jwtAccessToken, refreshToken });
+  
+        console.log("Face ID 로그인 성공!");
         if (onLoginSuccess) onLoginSuccess(); // 성공 콜백 호출
       } else {
-        alert("얼굴 인식 실패");
+        alert("얼굴 인식 실패: 회원 정보가 없습니다.");
       }
     } catch (error) {
       console.error("Face ID 로그인 실패:", error.response?.data || error.message);
@@ -447,6 +452,7 @@ function Login({ onLoginSuccess }) {
       setIsLoading(false); // 로딩 상태 종료
     }
   };
+  
   
 
   
