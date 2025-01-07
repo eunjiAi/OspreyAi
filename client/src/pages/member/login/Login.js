@@ -396,7 +396,6 @@ function Login({ onLoginSuccess }) {
   const handleLoginSuccess = () => {
     // 로그인 성공 후 모달 닫기
     setShowFaceIDModal(false); // FaceID 모달 닫기
-    alert("로그인 성공!");
   };
 
   const handleFaceIDLogin = async () => {
