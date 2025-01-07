@@ -57,7 +57,7 @@ const FaceIDLogin = forwardRef((props, ref) => {
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.header}>얼굴 인식 로그인</h3>
+      <h3 className={styles.header}>얼굴 인식</h3>
       {!isWebcamActive && (
         <button onClick={startWebcam} className={styles.button}>
           캠 열기
