@@ -3,6 +3,7 @@ import axios from "../../../utils/axios"; // axios import
 
 const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
   const [isProcessing, setIsProcessing] = useState(false); // 얼굴 인식 진행 중 여부
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태
   const videoRef = useRef(null); // 웹캠 video 엘리먼트 참조
   const canvasRef = useRef(null); // 얼굴 인식 후 이미지를 그릴 canvas 참조
 
@@ -35,6 +36,11 @@ const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
   }, []); // 빈 배열로 인해 컴포넌트가 처음 렌더링될 때만 실행됨
 
   const handleCapture = () => {
+    if (isLoggedIn) {
+      alert("이미 로그인되었습니다.");
+      return;
+    }
+
     setIsProcessing(true); // 얼굴 인식 시작
     const video = videoRef.current;
     const canvas = canvasRef.current;
@@ -56,42 +62,28 @@ const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
       .then((response) => {
         console.log("Server response:", response.data); // 서버 응답 로그 추가
 
-        const { uuid, id, password } = response.data;
+        const { uuid, id } = response.data;
 
-        if (uuid && id && password) {
-          // 얼굴 인식 후 id, pw로 로그인
-          axios
-            .post("/login", { userId: id, userPwd: password })
-            .then((loginResponse) => {
-              const authorizationHeader = loginResponse.headers["authorization"];
-              if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
-                throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
-              }
+        if (uuid && id) {
+          // 얼굴 인식 후 UUID로 로그인
+          alert("로그인 성공!");
 
-              const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
-              const { refreshToken } = loginResponse.data;
+          // 로그인 상태 갱신
+          setIsLoggedIn(true);
 
-              // 로그인 성공 처리
-              alert("로그인 성공!");
-              onLoginSuccess(); // 로그인 성공 시 콜백 호출
-              onClose(); // 모달 닫기
-            })
-            .catch((error) => {
-              alert("로그인 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
-              setIsProcessing(false); // 처리 종료
-            });
+          // 로그인 후 성공적으로 모달 닫기
+          onLoginSuccess(); // 로그인 성공 시 콜백 호출
+          onClose(); // 모달 닫기
         } else {
           alert("얼굴 인식 실패: 일치하는 사용자를 찾을 수 없습니다.");
-          setIsProcessing(false);    // 처리 종료
+          setIsProcessing(false); // 처리 종료
         }
       })
       .catch((error) => {
         alert("얼굴 인식 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
-        setIsProcessing(false);     // 처리 종료
+        setIsProcessing(false); // 처리 종료
       });
-};
-
-
+  };
 
   return (
     <div style={{ textAlign: "center" }}>
@@ -103,8 +95,8 @@ const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
 
       <div>
         {/* 얼굴 인식 버튼 */}
-        <button onClick={handleCapture} disabled={isProcessing}>
-          {isProcessing ? "인식 중..." : "얼굴 인식 시작"}
+        <button onClick={handleCapture} disabled={isProcessing || isLoggedIn}>
+          {isProcessing ? "인식 중..." : isLoggedIn ? "이미 로그인되었습니다" : "얼굴 인식 시작"}
         </button>
         {/* 모달 닫기 버튼 */}
         <button onClick={onClose}>닫기</button>
