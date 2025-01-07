@@ -183,25 +183,6 @@ def compare_faces(image_data):
         print(f"Error during face comparison: {e}")
         return None
     
-    # JWT 토큰을 생성하는 함수
-def generate_jwt_token(user):
-    payload = {
-        'uuid': user.uuid,
-        'id': user.member_id,
-        'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1),  # 만료 시간 1시간 설정
-    }
-    # 비밀 키를 사용하여 JWT 생성
-    return jwt.encode(payload, 'your_secret_key', algorithm='HS256')
-
-# Refresh 토큰을 생성하는 함수
-def generate_refresh_token(user):
-    payload = {
-        'uuid': user.uuid,
-        'id': user.member_id,
-        'exp': datetime.datetime.utcnow() + datetime.timedelta(days=30),  # Refresh 토큰 만료 시간 30일 설정
-    }
-    # 비밀 키를 사용하여 Refresh 토큰 생성
-    return jwt.encode(payload, 'your_refresh_secret_key', algorithm='HS256')
 
 @app.route('/compare-faceid', methods=['POST'])
 def compare_faceid():
