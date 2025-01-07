@@ -393,6 +393,7 @@ function Login({ onLoginSuccess }) {
   // 페이스 로그인 ----------------------
 
   const handleImageCaptured = (capturedImage) => {
+    console.log("Captured Image:", capturedImage);  // 이미지 데이터 확인
     setImageData(capturedImage); // 받은 이미지 데이터 저장
   };  
 
@@ -407,13 +408,13 @@ function Login({ onLoginSuccess }) {
         image: imageData,  // Face ID 이미지 데이터
       });
 
-      const { memberId } = response.data;  // 받은 memberId만 사용
-      console.log("받은 memberId:", memberId);  // 여기에 로그를 찍어보세요
+      const { memberId } = response.data;  // 받은 memberId 사용
+      console.log("받은 memberId:", memberId);  // 받은 memberId 로그
 
       if (memberId) {
         // 로그인 후 서버로 memberId 보내기
         const formData = new FormData();
-        formData.append("memberId", memberId);  // Spring Boot로 전달할 memberId
+        formData.append("memberId", memberId);  // Spring Boot로 전달할 id
 
         const loginResponse = await axios.post("http://localhost:8888/login", formData, {
           headers: {

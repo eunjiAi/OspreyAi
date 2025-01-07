@@ -220,7 +220,6 @@ def compare_faceid():
         start_time = time.time()
         matched_filename = None
 
-        # 3초 동안 얼굴 비교 시도
         while time.time() - start_time < 3:
             matched_filename = compare_faces(data["image"])  # 얼굴 비교 함수 호출
             if matched_filename:
@@ -230,9 +229,13 @@ def compare_faceid():
                 if user_uuid:
                     # UUID에 해당하는 사용자 정보 조회
                     with SessionLocal() as db:
+                        # 트랜잭션 없이 데이터 조회만 수행
                         user = db.query(Member).filter_by(uuid=user_uuid).first()
                         if not user:
                             return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
+
+                        # ID와 비밀번호 출력
+                        print(f"User ID: {user.member_id}, Password: {user.pw}")  # 로그로 출력
 
                         # React로 UUID와 memberId를 보내는 부분
                         return jsonify({
@@ -240,14 +243,14 @@ def compare_faceid():
                             "memberId": user.member_id  # React로 memberId 전송
                         }), 200
 
-            time.sleep(1)  # 1초 대기 후 다시 시도
-        
-        # 3초 동안 얼굴을 찾지 못한 경우
+            time.sleep(1)
+
         return jsonify({"message": "인증 실패: 얼굴을 찾을 수 없습니다."}), 400
 
     except Exception as e:
-        print(f"Error in compare_faceid: {str(e)}")
+        print(f"Error in compare_faceid: {str(e)}")  # 오류 메시지 출력
         return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
+
 
 
     
