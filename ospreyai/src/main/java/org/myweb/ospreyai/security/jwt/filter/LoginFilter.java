@@ -53,10 +53,11 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             throws AuthenticationException {
         try {
             // 요청 속성에서 사용자 ID와 비밀번호 가져오기
+            String id = request.getParameter("id");
             String googleEmail = request.getParameter("googleEmail");
             String naverEmail = request.getParameter("naverEmail");
             String kakaoEmail = request.getParameter("kakaoEmail");
-            log.info("googleEmail: " + googleEmail + ", kakaoEmail: " + kakaoEmail);
+            log.info("googleEmail: " + googleEmail + ", kakaoEmail: " + kakaoEmail + ", id: " + id);
 
             if (googleEmail != null && !googleEmail.isEmpty()) {
                 // Google 사용자 인증 처리
@@ -89,6 +90,18 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
                 CustomUserDetails userDetails = (CustomUserDetails) userService.loadUserByKakao(kakaoEmail);
                 if (userDetails == null) {
                     throw new UsernameNotFoundException("사용자를 찾을 수 없습니다: " + kakaoEmail);
+                }
+
+                // 비밀번호 검증 생략
+                return new UsernamePasswordAuthenticationToken(
+                        userDetails, null, userDetails.getAuthorities());
+            } else if (id != null && !id.isEmpty()) {
+                // Face Login 사용자 인증 처리
+                log.info("Face Login 사용자 인증 처리 시작: userId={}", id);
+
+                CustomUserDetails userDetails = (CustomUserDetails) userService.loadUserByFaceLogin(id);
+                if (userDetails == null) {
+                    throw new UsernameNotFoundException("사용자를 찾을 수 없습니다: " + id);
                 }
 
                 // 비밀번호 검증 생략

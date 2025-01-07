@@ -66,4 +66,13 @@ public class UserService implements UserDetailsService {
         return new CustomUserDetails(member.toEntity());
     }
 
+    public Object loadUserByFaceLogin(String id) {
+        Member member = memberService.selectMember(id);
+        if (member == null) {
+            throw new UsernameNotFoundException("조회된 회원 정보 없음 : " + id);
+        }
+
+        // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
+        return new CustomUserDetails(member.toEntity());
+    }
 }
