@@ -109,22 +109,6 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
                         userDetails, null, userDetails.getAuthorities());
             }
 
-            // 페이스 로그인!!
-            String memberId = request.getHeader("memberId"); // HTTP 헤더에서 member_id 추출
-            log.info("memberId: " + memberId);
-            if (memberId != null) {
-                // member_id로 회원 정보 조회
-                CustomUserDetails userDetails = (CustomUserDetails) userService.loadUserByMemberId(memberId);
-                if (userDetails == null) {
-                    throw new UsernameNotFoundException("사용자를 찾을 수 없습니다: " + memberId);
-                }
-
-                // 로그인 처리
-                return new UsernamePasswordAuthenticationToken(
-                        userDetails, null, userDetails.getAuthorities());
-            }
-
-
             // 일반 로그인 데이터 읽기
             log.info("일반 로그인 인증 시작");
             InputMember loginData = new ObjectMapper().readValue(request.getInputStream(), InputMember.class);

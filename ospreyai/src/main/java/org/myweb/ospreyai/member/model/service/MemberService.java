@@ -62,16 +62,6 @@ public class MemberService {
 				.orElseThrow(() -> new NoSuchElementException("해당 카카오정보를 조회할 수 없습니다 : " + email));
 	}
 
-	// 페이스 로그인!!
-	public Member findByMemberId(String memberId) {
-		Optional<MemberEntity> entityOptional = memberRepository.findByMemberId(memberId);
-
-		return entityOptional
-				.map(MemberEntity::toDto) // Optional로 안전하게 DTO 변환
-				.orElseThrow(() -> new NoSuchElementException("해당 member_id를 조회할 수 없습니다 : " + memberId));
-	}
-
-
 	//회원가입시 id 중복 검사용
 	public int selectCheckId(String memberId) {
 		// id 회원정보 가져와서 uuid 추출
