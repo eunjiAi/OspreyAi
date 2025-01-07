@@ -1,8 +1,14 @@
 # USAGE
+# - - - - - - - 250106
 # conda install -c conda-forge dlib
 # pip install Flask Flask-Cors sqlalchemy pillow numpy opencv-python mediapipe pytz cx_Oracle jwt
 # pip install PyJWT
 # pip install opencv-python face_recognition
+
+# - - - - - - - 250107
+# pip install cffi
+# pip install bcrypt
+
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
