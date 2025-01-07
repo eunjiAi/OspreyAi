@@ -96,6 +96,9 @@ const QuestionDetail = () => {
                   },
               });
               setAnswers((prevAnswers) => prevAnswers.filter((answer) => answer.ano !== ano));
+              alert('답변이 삭제되었습니다.');
+
+              window.location.reload();
           }catch(error){
               alert('답변 삭제에 실패했습니다.');
           }
@@ -170,8 +173,8 @@ const QuestionDetail = () => {
           {/* 본인 글일 때만 수정과 삭제 표시, 본인 글이 아니면 댓글달기 표시 */}
           {isLoggedIn && userid === question.qwriter && question.answerYn === 'N' ? (
               <>
-                  <button onClick={handleMoveEdit}>수정 페이지로 이동</button>
-                  <button onClick={() => handleDelete()}>삭제하기</button>
+                  <button onClick={handleMoveEdit}>수정</button>
+                  <button onClick={() => handleDelete()}>삭제</button>
               </> ) : (isLoggedIn && role === 'ADMIN' && question.answerYn === 'N' && (                   
                       <button onClick={() => openModal({ qno: question.qno })}>답변하기</button>                    
               ))
@@ -213,7 +216,7 @@ const QuestionDetail = () => {
                           </td>
                           <td>{answer.aDate}</td>
                           <td>
-                            {isLoggedIn && userid === answer.aWriter && (
+                            {isLoggedIn && userid === answer.awriter && (
                               editingAnswer === answer.ano ? (
                                 <button onClick={() => handleSaveAnswerEdit(answer.ano)}>저장</button>
                             ) : (

@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.qna.jpa.entity.AnswerEntity;
 import org.myweb.ospreyai.qna.jpa.repository.AnswerRepository;
 import org.myweb.ospreyai.qna.model.dto.Answer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Transactional
 public class AnswerService {
+
+    @Autowired
+    private QuestionService questionService;
+
 
     private final AnswerRepository answerRepository;
 
@@ -54,11 +59,12 @@ public class AnswerService {
 
     @Transactional
     public int deleteAnswer(int ano) {
-        //댓글, 대댓글 삭제
-        //댓글 삭제시 제약조건에 의해 대댓글도 함께 삭제됨(on delete cascade 설정되어 있음)
+        // 답변 삭제
         //jpa 제공 메소드 사용
         try {
+            Answer answer = answerRepository.findById(ano).orElse(null).toDto();
             answerRepository.deleteById(ano);  //jpa 제공
+            questionService.updateanswerYn("N", answer.getAnswerRef());
             return 1;
         }catch (Exception e){
             log.info(e.getMessage());
