@@ -48,7 +48,7 @@ function FaqList() {
   };
 
   const handleTitleClick = (faqId) => {
-    navigate(`/faqd/${faqId}`);
+    navigate(`/faq/${faqId}`);
   };
 
   const handleWriteClick = () => {
