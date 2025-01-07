@@ -396,54 +396,55 @@ function Login({ onLoginSuccess }) {
   const handleLoginSuccess = () => {
     // 로그인 성공 후 모달 닫기
     setShowFaceIDModal(false); // FaceID 모달 닫기
-    alert("로그인 성공!");
   };
 
-  const handleFaceIDLogin = async () => {
-    setShowFaceIDModal(true); // Face ID 모달 열기
-  
-    
-    try {
-      setIsLoading(true); // 로딩 시작
-  
-      // 서버로 얼굴 인식 요청 보내기
-      const response = await axios.post("http://localhost:5001/compare-faceid", {
-        image: imageData,  // Face ID 이미지 데이터
-        // password: password  // 로그인하려는 사용자의 비밀번호
+  // Login.js
 
-      });
-  
-      const { uuid, id, password } = response.data;
-  
-      if (uuid && id && password) {
-        // Face ID에 맞는 사용자 정보로 로그인
-        const loginResponse = await axios.post("/login", { userId: id, userPwd: password });
-  
-        const authorizationHeader = loginResponse.headers["authorization"];
-        if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
-          throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
-        }
-  
-        const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
-        const { refreshToken } = loginResponse.data;
-  
-        // 로그인 성공 처리
-        alert("로그인 성공!");
-        login({ accessToken: jwtAccessToken, refreshToken });
-  
-        // 로그인 성공 후 리디렉션
-        if (onLoginSuccess) onLoginSuccess();
+// Login.js
 
-      } else {
-        alert("얼굴 인식에 실패했습니다.");
+const handleFaceIDLogin = async () => {
+  setShowFaceIDModal(true); // Face ID 모달 열기
+
+  try {
+    setIsLoading(true); // 로딩 시작
+
+    // 서버로 얼굴 인식 요청 보내기
+    const response = await axios.post("http://localhost:5001/compare-faceid", {
+      image: imageData,  // Face ID 이미지 데이터
+    });
+
+    const { uuid, id } = response.data;
+
+    if (uuid && id) {
+      // 로그인 후 JWT 토큰으로 로그인 상태 처리
+      const loginResponse = await axios.post("/login", { userId: id });
+
+      const authorizationHeader = loginResponse.headers["authorization"];
+      if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
+        throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
       }
-    } catch (error) {
-      console.error("Face ID 로그인 실패:", error.response?.data || error.message);
-      alert("Face ID 로그인 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
-    } finally {
-      setIsLoading(false); // 로딩 종료
+
+      const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
+      const { refreshToken } = loginResponse.data;
+
+      // 로그인 성공 처리
+      login({ accessToken: jwtAccessToken, refreshToken });
+
+      // 로그인 성공 후 바로 모달을 닫고 로그인 처리
+      setShowFaceIDModal(false); // 모달 닫기
+      if (onLoginSuccess) onLoginSuccess(); // 로그인 성공 시 콜백 호출
+    } else {
+      alert("얼굴 인식에 실패했습니다.");
     }
-  };
+  } catch (error) {
+    console.error("Face ID 로그인 실패:", error.response?.data || error.message);
+    alert("Face ID 로그인 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
+  } finally {
+    setIsLoading(false); // 로딩 종료
+  }
+};
+
+
 
 
   return (
