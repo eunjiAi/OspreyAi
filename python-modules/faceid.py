@@ -3,8 +3,6 @@ from io import BytesIO
 from PIL import Image
 import base64
 from datetime import datetime
-import jwt
-import datetime
 from flask_cors import CORS  # CORS 모듈
 import os
 import cv2
@@ -14,7 +12,6 @@ from sqlalchemy import create_engine, Column, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-import requests  # 추가: Spring Boot와 통신하려고
 
 app = Flask(__name__)
 
@@ -68,22 +65,24 @@ def register_faceid():
     try:
         data = request.json
         image_data = data.get('image')
-        user_uuid = data.get('uuid')                             # 로그인한 사용자 UUID
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')     # 타임스탬프 생성
+        user_uuid = data.get('uuid')  # 로그인한 사용자 UUID
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')  # 타임스탬프 생성
 
         if not image_data or not user_uuid:
+            print("이미지 데이터 또는 UUID가 누락되었습니다.")
             return jsonify({"message": "이미지 데이터 또는 UUID가 누락되었습니다."}), 400
 
         # 얼굴 인식 여부 확인
         if image_data == "face_not_detected":
+            print("얼굴이 인식되지 않았습니다.")
             return jsonify({"message": "얼굴이 인식되지 않았습니다."}), 400
 
         # 이미지 데이터 디코딩
-        image_data = image_data.split(",")[1]       # base64 이미지에서 'data:image/jpeg;base64,' 부분 제거
+        image_data = image_data.split(",")[1]  # base64 이미지에서 'data:image/jpeg;base64,' 부분 제거
         img_bytes = base64.b64decode(image_data)
 
         # 이미지 저장 경로
-        filename = f"{user_uuid}_{timestamp}.jpg"   # UUID와 타임스탬프 기반 파일명
+        filename = f"{user_uuid}_{timestamp}.jpg"  # UUID와 타임스탬프 기반 파일명
         image_path = os.path.join(SAVE_DIR, filename)
 
         # 이미지 저장
@@ -95,15 +94,16 @@ def register_faceid():
             # 사용자 조회
             user = db.query(Member).filter_by(uuid=user_uuid.strip()).first()
             if not user:
+                print(f"사용자를 찾을 수 없습니다. UUID: {user_uuid}")
                 return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
 
             # 기존 face_id 이미지 삭제 및 DB 갱신
             if user.face_id:
                 old_image_path = os.path.join(SAVE_DIR, user.face_id)
                 if os.path.exists(old_image_path):
-                    os.remove(old_image_path)        # 기존 이미지 파일 삭제
+                    os.remove(old_image_path)  # 기존 이미지 파일 삭제
 
-            user.face_id = filename                  # face_id 컬럼에 새로운 이미지 파일명 저장
+            user.face_id = filename  # face_id 컬럼에 새로운 이미지 파일명 저장
             db.commit()
 
             print(f"Image path saved to DB: {filename}")
@@ -113,6 +113,9 @@ def register_faceid():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"message": "이미지 등록 실패!"}), 500
+
+
+
 
 @app.route('/delete-faceid', methods=['POST'])
 def delete_faceid():
@@ -201,24 +204,28 @@ def compare_faceid():
                 user_uuid = matched_filename.split('_')[0] if matched_filename else None
 
                 if user_uuid:
-                    # UUID와 ID를 Spring Boot로 전송하여 로그인 처리
+                    # UUID와 memberId를 React로 전송하여 로그인 처리
                     with SessionLocal() as db:
-                        user = db.query(Member).filter_by(uuid=user_uuid).first()
-                        if not user:
-                            return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
+                        try:
+                            # 사용자 조회
+                            user = db.query(Member).filter_by(uuid=user_uuid).first()
+                            print(f"User found: {user}")  # user 객체 로그 출력
 
-                        # Spring Boot 서버로 로그인 요청
-                        payload = {
-                            "id": user.member_id,  # member_id
-                        }
-                        spring_boot_url = "http://localhost:8888/login"  # Spring Boot 로그인 API URL
-                        response = requests.post(spring_boot_url, json=payload)  # Spring Boot로 요청 보내기
+                            if not user:
+                                return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
 
-                        if response.status_code == 200:
-                            token = response.headers.get("Authorization")  # JWT 토큰은 Authorization 헤더에 포함됨
-                            return jsonify({"message": "로그인 성공", "token": token}), 200
-                        else:
-                            return jsonify({"message": "Spring Boot 인증 실패"}), 400
+                            # React로 UUID와 memberId를 보내는 부분
+                            return jsonify({
+                                "uuid": user.uuid,
+                                "memberId": user.member_id  # React로 memberId 전송
+                            }), 200
+
+                        except Exception as e:
+                            db.rollback()  # 예외 발생 시 롤백
+                            print(f"Database error: {e}")  # 오류 메시지 출력
+                            return jsonify({"message": f"데이터베이스 오류 발생: {str(e)}"}), 500
+                        finally:
+                            db.close()  # 세션 닫기
 
             time.sleep(1)
 
@@ -227,6 +234,8 @@ def compare_faceid():
     except Exception as e:
         print(f"Error in compare_faceid: {str(e)}")
         return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
+
+
     
 
 if __name__ == '__main__':
