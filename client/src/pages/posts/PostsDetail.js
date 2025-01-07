@@ -80,75 +80,63 @@ const PostsDetail = () => {
   }
 
   return (
-    <div className="detail-container">
-      <h2 className="detail-title"> {id}번 게시글 상세보기</h2>
-      <table border="2">
-        <tbody>
-          <tr>
-            <th>번호</th>
-            <td>{posts.postId}</td>
-          </tr>
-          <tr>
-            <th>제목</th>
-            <td>{posts.title}</td>
-          </tr>
-          <tr>
-            <th>작성자</th>
-            <td>{posts.nickname}</td>
-          </tr>
-          <tr>
-            <th>첨부파일</th>
-            <td>
-              {posts.fileName ? (
-                <button
-                  onClick={() =>
-                    handleFileDownload(posts.fileName, posts.renameFile)
-                  }
-                >
-                  {posts.fileName}
+    <>
+      <div className={styles.detailContainer}>
+        {/* 제목과 버튼 그룹을 한 줄로 정렬 */}
+        <div className={styles.titleAndButtons}>
+          <h2 className={styles.detailTitle}>{posts.title}</h2>
+          <div className={styles.topButtons}>
+            <input
+              type="button"
+              value="뒤로가기"
+              className={styles.backButton}
+              onClick={() => navigate("/posts")}
+            />
+            {isLoggedIn && posts.writer === userid && (
+              <>
+                <button onClick={handleMoveEdit} className={styles.editButton}>
+                  수정
                 </button>
-              ) : (
-                "첨부파일 없음"
-              )}
-            </td>
-          </tr>
-          <tr>
-            <th>등록날짜</th>
-            <td>{posts.postDate}</td>
-          </tr>
-          <tr>
-            <th>내용</th>
-            <td>{posts.content}</td>
-          </tr>
-          <tr>
-            <th>조회수</th>
-            <td>{posts.postCount}</td>
-          </tr>
-        </tbody>
-      </table>
-      {/* 자신의 글만 수정 및 삭제 버튼 표시 */}
-      <div className="button-group">
-        {isLoggedIn && (posts.writer === userid || role === "ADMIN") && (
-          <>
-            <button onClick={handleMoveEdit} className="edit-button">
-              수정 페이지로 이동
-            </button>
-            <button
-              onClick={() => handleDelete(posts.renameFile)}
-              className="delete-button"
-            >
-              삭제하기
-            </button>
-          </>
-        )}
-        <button
-          onClick={() => navigate("/posts")}
-          className="button"
-        >
-          목록
-        </button>
+                <button
+                  onClick={() => handleDelete(posts.renameFile)}
+                  className={styles.deleteButton}
+                >
+                  삭제
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* 작성자, 등록날짜, 조회수 */}
+        <div className={styles.postInfo}>
+          <span>{posts.nickname}</span>
+          <span className={styles.separator}>|</span>
+          <span>{posts.postDate}</span>
+          <span className={styles.separator}>|</span>
+          <span>조회수: {posts.postCount}</span>
+
+          {/* 첨부파일 버튼 */}
+          <div className={styles.downloadFile}>
+            {posts.fileName ? (
+              <button
+                className={styles.downloadButton}
+                onClick={() =>
+                  handleFileDownload(posts.fileName, posts.renameFile)
+                }
+              >
+                {posts.fileName}
+              </button>
+            ) : (
+              "첨부파일 없음"
+            )}
+          </div>
+        </div>
+
+        {/* 게시글 내용 */}
+        <div className={styles.detailContent}>{posts.content}</div>
       </div>
-    </div>
+    </>
   );
 };
 
