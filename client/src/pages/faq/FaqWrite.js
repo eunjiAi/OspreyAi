@@ -90,6 +90,7 @@ function FaqWrite() {
                             size="50"
                             value={formData.faqTitle}
                             onChange={handleChange}
+                            placeholder="저주하는 질문 제목을 입력하세요."
                             required />         
                     </td></tr>
                 <tr><th width="120">작성자</th>
@@ -120,6 +121,7 @@ function FaqWrite() {
                             name="faqContent"
                             value={formData.faqContent}
                             onChange={handleChange}
+                            placeholder="질문 내용을 입력하세요."
                             required
                             ></textarea>
                     </td></tr>
@@ -130,6 +132,7 @@ function FaqWrite() {
                         name="answerContent"
                         value={answerContent}
                         onChange={handleChange}
+                        placeholder="답변 내용을 입력하세요."
                         required
                         ></textarea>
                 </td></tr>

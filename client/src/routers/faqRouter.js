@@ -7,7 +7,7 @@ import FaqList from "../pages/faq/FaqList";
 
 const faqRouter = [
   <Route path="/faq" element={<FaqList />} />,
-  <Route path="/faqd/:no" element={<FaqDetail />} />,
+  <Route path="/faq/:no" element={<FaqDetail />} />,
   <Route path="/faqw" element={<FaqWrite />} />,
 ];
 
