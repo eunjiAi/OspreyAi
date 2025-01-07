@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import axios from "../../../utils/axios"; // Axios 인스턴스 가져오기
 import { AuthContext } from "../../../AuthProvider"; // AuthContext 가져오기
 import styles from "./Login.module.css"; // 스타일 가져오기
@@ -14,6 +14,7 @@ function Login({ onLoginSuccess }) {
   const [imageData, setImageData] = useState(null); // 이미지 데이터 저장
   const [showFaceIDModal, setShowFaceIDModal] = useState(false); // FaceID 모달 
   const { login } = useContext(AuthContext); // AuthProvider의 login 함수 가져오기
+  const faceIdRef = useRef(null); // FaceIDLogin 컴포넌트 참조
 
   // Google Login -----------------------------------------------------------------------------
   // Google OAuth 설정
@@ -390,63 +391,63 @@ function Login({ onLoginSuccess }) {
 
  
 
-  // 페이스 로그인 ----------------------
-
-  const handleImageCaptured = (capturedImage) => {
-    console.log("Captured Image:", capturedImage);  // 이미지 데이터 확인
-    setImageData(capturedImage); // 받은 이미지 데이터 저장
-  };  
-
+  // 페이스 로그인
   const handleFaceIDLogin = async () => {
-    setShowFaceIDModal(true); // Face ID 모달 열기
-
     try {
-      setIsLoading(true); // 로딩 시작
-
-      // 서버로 얼굴 인식 요청 보내기
+      setIsLoading(true); // 로딩 상태 시작
+      if (!faceIdRef.current) {
+        console.error("FaceIDLogin 컴포넌트를 찾을 수 없습니다.");
+        return;
+      }
+  
+      // FaceIDLogin에서 이미지 캡처
+      const capturedImage = faceIdRef.current.captureImage();
+      if (!capturedImage) {
+        alert("얼굴을 캡처하지 못했습니다. 다시 시도해주세요.");
+        return;
+      }
+  
+      console.log("Captured Image:", capturedImage); // 캡처된 이미지 로그
+  
+      // 서버로 이미지 전송
       const response = await axios.post("http://localhost:5001/compare-faceid", {
-        image: imageData,  // Face ID 이미지 데이터
+        image: capturedImage, // Face ID 이미지 데이터
       });
-
-      const { memberId } = response.data;  // 받은 memberId 사용
-      console.log("받은 memberId:", memberId);  // 받은 memberId 로그
-
+  
+      const { memberId } = response.data; // 서버에서 받은 memberId
+      console.log("받은 memberId:", memberId);
+  
       if (memberId) {
-        // 로그인 후 서버로 memberId 보내기
         const formData = new FormData();
-        formData.append("memberId", memberId);  // Spring Boot로 전달할 id
-
+        formData.append("memberId", memberId); // Spring Boot로 전달할 memberId
+  
         const loginResponse = await axios.post("http://localhost:8888/login", formData, {
           headers: {
-            "Content-Type": "multipart/form-data",  // multipart/form-data로 전송
+            "Content-Type": "multipart/form-data",
           },
         });
-
-        // 헤더에서 Authorization 정보 추출
+  
         const authorizationHeader = loginResponse.headers["authorization"];
         if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
           throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
         }
-
+  
         const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
         const { refreshToken } = loginResponse.data;
-
-        // 로그인 성공 처리
-        login({ accessToken: jwtAccessToken, refreshToken });
-
-        setShowFaceIDModal(false); // 모달 닫기
-        if (onLoginSuccess) onLoginSuccess(); // 로그인 성공 시 콜백 호출
+  
+        login({ accessToken: jwtAccessToken, refreshToken }); // 로그인 처리
+        if (onLoginSuccess) onLoginSuccess(); // 성공 콜백 호출
       } else {
-        alert("얼굴 인식에 실패했습니다.");
+        alert("얼굴 인식 실패");
       }
     } catch (error) {
       console.error("Face ID 로그인 실패:", error.response?.data || error.message);
       alert("Face ID 로그인 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
     } finally {
-      setIsLoading(false); // 로딩 종료
+      setIsLoading(false); // 로딩 상태 종료
     }
   };
-
+  
 
   
   return (
@@ -517,7 +518,7 @@ function Login({ onLoginSuccess }) {
       </form>
 
        {/* Face ID 버튼 */}
-       <button
+      <button
         type="button"
         className={`${styles.apiButton} ${styles.faceIdButton}`}
         onClick={handleFaceIDLogin} // Face ID 로그인 클릭
@@ -525,15 +526,9 @@ function Login({ onLoginSuccess }) {
         Face ID로 로그인
       </button>
 
+      {/* FaceIDLogin 컴포넌트 */}
+      <FaceIDLogin ref={faceIdRef} />
 
-      {/* Face ID 로그인 모달 */}
-      {showFaceIDModal && (
-          <FaceIDLogin
-          onLoginSuccess={onLoginSuccess}
-          onImageCaptured={handleImageCaptured} // 이미지 캡처 후 처리
-        />
-        
-      )}
 
       
     </div>

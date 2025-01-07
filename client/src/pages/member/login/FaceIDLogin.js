@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, forwardRef, useImperativeHandle } from "react";
 
-const FaceIDLogin = ({ onImageCaptured }) => {
+const FaceIDLogin = forwardRef((props, ref) => {
   const videoRef = useRef(null); // 웹캠 video 엘리먼트 참조
   const canvasRef = useRef(null); // 얼굴 캡처 후 이미지를 저장할 canvas 참조
 
@@ -31,7 +31,7 @@ const FaceIDLogin = ({ onImageCaptured }) => {
     };
   }, []);
 
-  const handleCapture = () => {
+  const captureImage = () => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
@@ -44,13 +44,13 @@ const FaceIDLogin = ({ onImageCaptured }) => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     // 캡처된 이미지를 base64로 변환
-    const imageData = canvas.toDataURL("image/jpeg");
-
-    // 캡처된 이미지를 부모 컴포넌트로 전달
-    if (onImageCaptured) {
-      onImageCaptured(imageData);
-    }
+    return canvas.toDataURL("image/jpeg");
   };
+
+  // 외부에서 captureImage 호출 가능하도록 설정
+  useImperativeHandle(ref, () => ({
+    captureImage,
+  }));
 
   return (
     <div style={{ textAlign: "center" }}>
@@ -59,13 +59,8 @@ const FaceIDLogin = ({ onImageCaptured }) => {
       <video ref={videoRef} autoPlay width="300" height="200" />
       {/* 캡처된 이미지를 처리할 캔버스 (화면에 보이지 않음) */}
       <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
-
-      <div>
-        {/* 캡처 버튼 */}
-        <button onClick={handleCapture}>얼굴 캡처</button>
-      </div>
     </div>
   );
-};
+});
 
 export default FaceIDLogin;
