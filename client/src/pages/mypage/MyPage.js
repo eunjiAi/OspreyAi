@@ -46,6 +46,14 @@ function MyPage() {
         >
           회원탈퇴
         </button>
+        <button
+          onClick={() => navigate("/mypage/mypageAdmin")}
+          className={`tab ${
+            location.pathname === "/mypage/mypageAdmin" ? "active" : ""
+          }`}
+        >
+          (관리자)회원 관리
+        </button>
       </div>
 
       {/* 오른쪽 페이지 */}

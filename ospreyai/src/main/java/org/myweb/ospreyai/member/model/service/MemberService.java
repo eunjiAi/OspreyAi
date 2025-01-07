@@ -5,11 +5,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.member.jpa.entity.MemberEntity;
 import org.myweb.ospreyai.member.jpa.repository.MemberRepository;
 import org.myweb.ospreyai.member.model.dto.Member;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -127,22 +130,21 @@ public class MemberService {
 
 
 	//관리자용 ******************************************
-//	public int selectListCount() {
-//		return (int)memberRepository.count();  //jpa 제공
-//	}
+	public int selectListCount() {
+		return (int)memberRepository.count();
+	}
 
-//	public ArrayList<Member> selectList(Pageable pageable) {
-//		Page<MemberEntity> entityList = memberRepository.findAll(pageable);  //jpa 제공
-//		ArrayList<Member> list = new ArrayList<>();
-//		//Page 안의 MemberEntity 를 Member 로 변환해서 리스트에 추가 처리함
-//		for(MemberEntity entity : entityList){
-//			//전체 조회이므로 관리자가 아닌 회원만 리스트에 저장함
-//			if(entity.getAdminYN().equals("N")) {
-//				list.add(entity.toDto());
-//			}
-//		}
-//		return list;
-//	}
+	public ArrayList<Member> selectList(Pageable pageable) {
+		Page<MemberEntity> entityList = memberRepository.findAll(pageable);
+		ArrayList<Member> list = new ArrayList<>();
+		for(MemberEntity entity : entityList){
+			//관리자가 아닌 회원만 리스트에 저장
+			if(entity.getAdminYn().equals("N")) {
+				list.add(entity.toDto());
+			}
+		}
+		return list;
+	}
 
 	/*public Page<Member> selectList(Pageable pageable) {
 		Page<MemberEntity> entityList = memberRepository.findAll(pageable);  //jpa 제공

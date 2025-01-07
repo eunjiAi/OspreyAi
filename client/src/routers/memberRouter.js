@@ -12,6 +12,7 @@ import FaceIdRegister from "../pages/faceid/FaceIdRegister";
 import FaceIDLogin from "../pages/member/login/FaceIDLogin";
 import Login from "../pages/member/login/Login";
 import MyInfo from "../pages/mypage/MyInfo";
+import MypageAdmin from "../pages/mypage/MypageAdmin";
 
 const memberRouter = [
   <Route path="/signup" element={<Signup />} />,
@@ -24,6 +25,7 @@ const memberRouter = [
     <Route path="/mypage/qna" element={<QnA />} />
     <Route path="/mypage/withdrawal" element={<Withdrawal />} />
     <Route path="/mypage/mypageUpdate" element={<MyPageUpdate />} />
+    <Route path="/mypage/mypageAdmin" element={<MypageAdmin />} />
   </Route>,
   <Route path="/myinfo" element={<MyInfo />}></Route>
 ];

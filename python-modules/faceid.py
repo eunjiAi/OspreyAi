@@ -12,6 +12,8 @@ from sqlalchemy import create_engine, Column, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+import bcrypt  # 해시된 비밀번호랑 비교할 때 사용
+
 app = Flask(__name__)
 
 # CORS를 활성화하고, 특정 메서드랑 헤더 허용
@@ -154,28 +156,25 @@ def compare_faces(image_data):
     known_faces = []
     known_face_names = []
     
-    # "FaceID_Images" 폴더 내 이미지 가져오기
-    for filename in os.listdir(SAVE_DIR):
-        if filename.endswith(".jpg"):
-            img_path = os.path.join(SAVE_DIR, filename)
-            image = face_recognition.load_image_file(img_path)
-            encodings = face_recognition.face_encodings(image)
-            if encodings:
-                known_faces.append(encodings[0])
-                known_face_names.append(filename)
-    
-    # 디버깅용 로그: 불러온 얼굴 이미지 파일들 확인
-    print(f"Known face names: {known_face_names}")  # 여기서 known_face_names가 무엇인지 확인
-
     try:
+        # "FaceID_Images" 폴더 내 이미지 가져오기
+        for filename in os.listdir(SAVE_DIR):
+            if filename.endswith(".jpg"):
+                img_path = os.path.join(SAVE_DIR, filename)
+                image = face_recognition.load_image_file(img_path)
+                encodings = face_recognition.face_encodings(image)
+                if encodings:
+                    known_faces.append(encodings[0])
+                    known_face_names.append(filename)
+        
         # base64로 인코딩된 이미지를 디코딩하여 얼굴 비교
         img_bytes = base64.b64decode(image_data.split(",")[1])  # base64에서 이미지 데이터 추출
         image = face_recognition.load_image_file(BytesIO(img_bytes))
         face_locations = face_recognition.face_locations(image)
         face_encodings = face_recognition.face_encodings(image, face_locations)
-        
+
         if not face_encodings:
-            print("No faces found in the image")  # 얼굴을 찾지 못한 경우 디버깅 로그 추가
+            print("No faces found in the image")
             return None
 
         # 얼굴 비교
@@ -183,13 +182,15 @@ def compare_faces(image_data):
             results = face_recognition.compare_faces(known_faces, encoding)
             if True in results:
                 match_index = results.index(True)
-                matched_filename = known_face_names[match_index]  # 일치하는 이미지 파일명 리턴
-                print(f"Matched filename: {matched_filename}")  # 일치하는 파일명 확인
+                matched_filename = known_face_names[match_index]
+                print(f"Matched filename: {matched_filename}")
                 return matched_filename
+
         return None
     except Exception as e:
         print(f"Error during face comparison: {e}")
         return None
+
 
 
 @app.route('/compare-faceid', methods=['POST'])
@@ -218,16 +219,28 @@ def compare_faceid():
                     db.close()
                     return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
                 
-                # id, password 반환
-                response_data = {
-                    "uuid": user.uuid,
-                    "id": user.member_id,  #  데이터베이스에서 member_id 컬럼을 사용해서 id 반환
-                    "password": user.pw     # 비밀번호 컬럼을 pw로 수정
-                }
+                # 클라이언트로부터 받은 비밀번호 (plain text)
+                input_password = data.get('password')  # 로그인 요청에서 비밀번호 받기
+                
+                # bcrypt로 해시된 비밀번호 비교
+                if bcrypt.checkpw(input_password.encode('utf-8'), user.pw.encode('utf-8')):
+                    # 비밀번호가 일치하는 경우 로그인 성공 처리
+                    response_data = {
+                        "uuid": user.uuid,
+                        "id": user.member_id,  # 데이터베이스에서 member_id 컬럼을 사용해서 id 반환
+                        "password": user.pw     # 비밀번호 컬럼을 pw로 수정
+                    }
 
-                db.commit()  # 트랜잭션 커밋
-                db.close()
-                return jsonify(response_data)  # 로그인 성공 후 사용자 정보 반환
+                    # 디버깅용 로그 추가: 조회된 ID와 비밀번호 출력
+                    print(f"User ID: {user.member_id}, Password: {user.pw}")
+
+                    db.commit()  # 트랜잭션 커밋
+                    db.close()
+                    return jsonify(response_data)  # 로그인 성공 후 사용자 정보 반환
+                else:
+                    # 비밀번호가 일치하지 않는 경우
+                    db.close()
+                    return jsonify({"message": "비밀번호가 일치하지 않습니다."}), 401
 
             time.sleep(1)  # 1초 대기 후 다시 시도
         
@@ -239,9 +252,6 @@ def compare_faceid():
         db.rollback()
         print(f"Error in compare_faceid: {str(e)}")  # 오류 메시지 출력
         return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
-
-
-
 
 
 if __name__ == '__main__':

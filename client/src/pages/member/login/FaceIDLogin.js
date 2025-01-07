@@ -82,12 +82,12 @@ const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
             });
         } else {
           alert("얼굴 인식 실패: 일치하는 사용자를 찾을 수 없습니다.");
-          setIsProcessing(false); // 처리 종료
+          setIsProcessing(false);    // 처리 종료
         }
       })
       .catch((error) => {
         alert("얼굴 인식 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
-        setIsProcessing(false); // 처리 종료
+        setIsProcessing(false);     // 처리 종료
       });
 };
 
