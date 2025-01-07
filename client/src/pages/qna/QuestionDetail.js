@@ -145,13 +145,9 @@ const QuestionDetail = () => {
 
   return (
       <div>
-          <h2> { qno }번 게시글 상세보기</h2>
+          <h2>{question.qtitle}</h2>
           <table border="1">
               <tbody>
-                  <tr>
-                      <th>제목</th>
-                      <td>{question.qtitle}</td>
-                  </tr>
                   <tr>
                       <th>작성자</th>
                       <td>{question.qwriter}</td>
@@ -168,7 +164,7 @@ const QuestionDetail = () => {
           </table>
           {/* 이전 페이지로 이동 버튼 */}
           <div className={styles.buttonGroup}>
-              <button className={styles.actionButton} onClick={() => navigate(-1)}>이전 페이지로 이동</button>
+              <button className={styles.actionButton} onClick={() => navigate(-1)}>뒤로가기</button>
           
           {/* 본인 글일 때만 수정과 삭제 표시, 본인 글이 아니면 댓글달기 표시 */}
           {isLoggedIn && userid === question.qwriter && question.answerYn === 'N' ? (
