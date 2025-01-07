@@ -14,7 +14,7 @@ from sqlalchemy import create_engine, Column, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-import bcrypt  # 해시된 비밀번호랑 비교할 때 사용
+import requests  # 추가: Spring Boot와 통신하려고
 
 app = Flask(__name__)
 
@@ -191,43 +191,41 @@ def compare_faceid():
         if not data or "image" not in data:
             return jsonify({"message": "이미지 데이터가 누락되었습니다."}), 400
         
-        # 얼굴 비교 요청 받음
-        start_time = time.time()  # 시작 시간 기록
+        start_time = time.time()
         matched_filename = None
 
-        # 3초 동안 1초 간격으로 얼굴 비교 시도
-        while time.time() - start_time < 3:  # 3초 동안 인증을 시도
-            matched_filename = compare_faces(data["image"])  # 얼굴 비교 함수 호출
+        while time.time() - start_time < 3:
+            matched_filename = compare_faces(data["image"])
             if matched_filename:
-                # 파일명에서 UUID 추출 (파일명 예시: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1_20250106_130709.jpg)
+                # 파일명에서 UUID 추출
                 user_uuid = matched_filename.split('_')[0] if matched_filename else None
 
                 if user_uuid:
-                    # UUID에 해당하는 사용자 정보 조회
+                    # UUID와 ID를 Spring Boot로 전송하여 로그인 처리
                     with SessionLocal() as db:
                         user = db.query(Member).filter_by(uuid=user_uuid).first()
                         if not user:
                             return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
 
-                        # 디버깅 로그: id와 비밀번호를 출력
-                        print(f"User ID: {user.member_id}, Password: {user.pw}")  # 이 부분에서 id와 pw 확인
-
-                        # 얼굴 인식 성공 후 비밀번호 없이 로그인 처리
-                        response_data = {
-                            "uuid": user.uuid,
-                            "id": user.member_id  # 데이터베이스에서 member_id 컬럼을 사용해서 id 반환
+                        # Spring Boot 서버로 로그인 요청
+                        payload = {
+                            "id": user.member_id,  # member_id
                         }
+                        spring_boot_url = "http://localhost:8888/login"  # Spring Boot 로그인 API URL
+                        response = requests.post(spring_boot_url, json=payload)  # Spring Boot로 요청 보내기
 
-                        db.commit()  # 트랜잭션 커밋
-                        return jsonify(response_data)  # 로그인 성공 후 사용자 정보 반환
+                        if response.status_code == 200:
+                            token = response.headers.get("Authorization")  # JWT 토큰은 Authorization 헤더에 포함됨
+                            return jsonify({"message": "로그인 성공", "token": token}), 200
+                        else:
+                            return jsonify({"message": "Spring Boot 인증 실패"}), 400
 
-            time.sleep(1)  # 1초 대기 후 다시 시도
-        
-        # 3초 동안 얼굴을 찾지 못한 경우
+            time.sleep(1)
+
         return jsonify({"message": "인증 실패: 얼굴을 찾을 수 없습니다."}), 400
-    
+
     except Exception as e:
-        print(f"Error in compare_faceid: {str(e)}")  # 오류 메시지 출력
+        print(f"Error in compare_faceid: {str(e)}")
         return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
     
 
