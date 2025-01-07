@@ -1,8 +1,9 @@
 /* 포스트 컨테이너 */
 .postscontainer {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 0;
+  max-width: 1440px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
   font-family: Arial, sans-serif;
 }
 

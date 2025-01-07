@@ -7,8 +7,8 @@ import PagingView from '../../components/common/PagingView';
 
 function MyInfo() {
   const [notices, setNotices] = useState([]); // 공지사항
-  const [faqs, setFaqs] = useState([]); // FAQ
-  const [boards, setBoards] = useState([]); // 게시글
+  const [questions, setQuestions] = useState([]); // QNA
+  const [posts, setPosts] = useState([]); // 게시글
   const [selectedCategory, setSelectedCategory] = useState('notice');  // 기본 카테고리 설정
   const [pagingInfo, setPagingInfo] = useState({ currentPage: 1, maxPage: 1, startPage: 1, endPage: 1 });
   const { userid } = useContext(AuthContext);  // 로그인된 유저의 userid
@@ -16,11 +16,11 @@ function MyInfo() {
   const [loading, setLoading] = useState(true);
 
   // 게시글 클릭 시 처리
-  const handleTitleClick = (category, postId) => {
-    if (category === 'board') {
-      navigate(`/board/detail/${postId}`); // board 카테고리일 경우
+  const handleTitleClick = (category, Id) => {
+    if (category === 'qna') {
+      navigate(`/question/detail/${Id}`); // qna 카테고리일 경우
     } else {
-      navigate(`/${category}d/${postId}`); // 그 외의 카테고리는 기존 형식
+      navigate(`/${category}/${Id}`); // 그 외의 카테고리는 기존 형식
     }
   };
 
@@ -29,45 +29,38 @@ function MyInfo() {
     setSelectedCategory(category);  // 선택된 카테고리로 상태 변경
   };
 
-  // 게시글, FAQ, 공지사항을 가져오는 함수
+  // 게시글, QNA, 공지사항을 가져오는 함수
   const fetchPosts = async (page, category, userid) => {
     setLoading(true);
     try {
-      let response;
       const limit = 10; // 한 페이지에 보여줄 항목 개수
       const offset = (page - 1) * limit;  // 첫 페이지는 0부터 시작
-  
+      let response;
+
       // 각 카테고리에 대해 API 요청
       if (category === 'notice') {
-        response = await apiClient.get('/notice', {
-          params: { page, limit, offset }
-        });
-        const filteredNotices = response.data.list.filter(notice => notice.noticeWriter === userid);
+        response = await apiClient.get('/notice', { params: { page, limit, offset } });
+        const filteredNotices = response.data.list.filter(notice => notice.nwriter === userid);
         setNotices(filteredNotices);
-      } else if (category === 'faq') {
-        response = await apiClient.get('/faq', {
-          params: { page, limit, offset }
-        });
-        const filteredFaqs = response.data.list.filter(faq => faq.faqWriter === userid);
-        setFaqs(filteredFaqs);
-      } else if (category === 'board') {
-        response = await apiClient.get('/board', {
-          params: { page, limit, offset }
-        });
-        const filteredBoards = response.data.list.filter(board => board.boardWriter === userid);
-        console.log(filteredBoards); // 여기에 데이터가 제대로 들어오는지 확인
-        setBoards(filteredBoards);
+      } else if (category === 'qna') {
+        response = await apiClient.get('/question', { params: { page, limit, offset } });
+        const filteredQnas = response.data.list.filter(question => question.qwriter === userid);
+        setQuestions(filteredQnas);
+      } else if (category === 'posts') {
+        response = await apiClient.get('/posts', { params: { page, limit, offset } });
+        const filteredPosts = response.data.list.filter(post => post.writer === userid);
+        setPosts(filteredPosts);
       }
-  
+
       // 페이징 정보 설정
-      setPagingInfo(response.data.paging);  // 페이징 정보 받기
+      // setPagingInfo(response.data.paging);  // 페이징 정보 받기
     } catch (error) {
       console.error('Error fetching posts:', error);
     } finally {
       setLoading(false);
     }
   };
-  
+
   useEffect(() => {
     if (userid) {
       fetchPosts(1, selectedCategory, userid);  // 페이지 1에서 시작
@@ -88,75 +81,87 @@ function MyInfo() {
         {/* 사이드바 (카테고리 선택) */}
         <div className={styles.sidebar}>
           <ul className={styles.categoryList}>
-            {['notice', 'faq', 'board'].map((category) => (
+            {['notice', 'qna', 'posts'].map((category) => (
               <li
                 key={category}
                 className={`${styles.categoryItem} ${selectedCategory === category ? styles.activeCategory : ''}`}
                 onClick={() => handleCategoryClick(category)}
               >
                 {category === 'notice' && '공지사항'}
-                {category === 'faq' && 'FAQ'}
-                {category === 'board' && '게시글'}
+                {category === 'qna' && 'QNA'}
+                {category === 'posts' && '게시글'}
               </li>
             ))}
           </ul>
         </div>
-  
+
         {/* 선택된 카테고리별 데이터 테이블 */}
         <div className={styles.content}>
           {selectedCategory === 'notice' && (
             <div className={styles.section}>
               <ul className={styles.list}>
-                {notices.map((notice) => (
-                  <li key={notice.noticeNo} className={styles.listItem}>
-                    <span
-                      onClick={() => handleTitleClick('notice', notice.noticeNo)}
-                      style={{ color: 'blue', cursor: 'pointer' }}
-                    >
-                      {notice.noticeTitle}
-                    </span>
-                  </li>
-                ))}
+                {notices.length > 0 ? (
+                  notices.map((notice) => (
+                    <li key={notice.noticeNo} className={styles.listItem}>
+                      <span
+                        onClick={() => handleTitleClick('notice', notice.noticeNo)}
+                        style={{ color: 'blue', cursor: 'pointer' }}
+                      >
+                        {notice.ntitle}
+                      </span>
+                    </li>
+                  ))
+                ) : (
+                  <li>공지사항이 없습니다.</li>  // 데이터가 없을 경우 처리
+                )}
               </ul>
             </div>
           )}
-  
-          {selectedCategory === 'faq' && (
+
+          {selectedCategory === 'qna' && (
             <div className={styles.section}>
               <ul className={styles.list}>
-                {faqs.map((faq) => (
-                  <li key={faq.faqId} className={styles.listItem}>
-                    <span
-                      onClick={() => handleTitleClick('faq', faq.faqId)}
-                      style={{ color: 'blue', cursor: 'pointer' }}
-                    >
-                      {faq.faqTitle}
-                    </span>
-                  </li>
-                ))}
+                {questions.length > 0 ? (
+                  questions.map((question) => (
+                    <li key={question.qNo} className={styles.listItem}>
+                      <span
+                        onClick={() => handleTitleClick('qna', question.qno)}
+                        style={{ color: 'blue', cursor: 'pointer' }}
+                      >
+                        {question.qtitle}
+                      </span>
+                    </li>
+                  ))
+                ) : (
+                  <li>QNA가 없습니다.</li>  // 데이터가 없을 경우 처리
+                )}
               </ul>
             </div>
           )}
-  
-          {selectedCategory === 'board' && (
+
+          {selectedCategory === 'posts' && (
             <div className={styles.section}>
               <ul className={styles.list}>
-                {boards.map((board) => (
-                  <li key={board.boardNum} className={styles.listItem}>
-                    <span
-                      onClick={() => handleTitleClick('board', board.boardNum)}
-                      style={{ color: 'blue', cursor: 'pointer' }}
-                    >
-                      {board.boardTitle}
-                    </span>
-                  </li>
-                ))}
+                {posts.length > 0 ? (
+                  posts.map((post) => (
+                    <li key={post.postId} className={styles.listItem}>
+                      <span
+                        onClick={() => handleTitleClick('posts', post.postId)}
+                        style={{ color: 'blue', cursor: 'pointer' }}
+                      >
+                        {post.Title}
+                      </span>
+                    </li>
+                  ))
+                ) : (
+                  <li>게시글이 없습니다.</li>  // 데이터가 없을 경우 처리
+                )}
               </ul>
             </div>
           )}
         </div>
       </div>
-  
+
       {/* 페이징 뷰 */}
       <PagingView
         currentPage={pagingInfo.currentPage}
