@@ -15,6 +15,44 @@ VALUES ('uuid-3', 'Charlie', 'Charlie', 'charlie', '$2a$10$qlpgw16FieOHTMVaMiQG6
 INSERT INTO Member (uuid, name, nickname, memberid, pw, phone_number, gender, admin_yn, face_id, enroll_date, lastModified, google, naver, kakao, login_ok)
 VALUES ('uuid-4', 'Shayne', 'Shayne', 'smtt22', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-0101-1234', 'M', 'Y', 'face-4', SYSDATE, NULL, NULL, NULL, NULL, 'Y');
 
+INSERT INTO MEMBER (
+    UUID, NAME, NICKNAME, MEMBERID, PW, PHONE_NUMBER, GENDER, ADMIN_YN, ENROLL_DATE, LASTMODIFIED, GOOGLE, NAVER, KAKAO, LOGIN_OK, FACE_VECTOR, FACE_ID, EMAIL
+) VALUES
+('55b6c5e7-1234-5678-9012-abcdef123456', 'È«±æµ¿', '±æµ¿', 'user001', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-1234-5678', 'M', 'N', TO_DATE('25/01/01', 'YY/MM/DD'), TO_DATE('25/01/01', 'YY/MM/DD'), 'gil_dong@gmail.com', 'gil_dong@naver.com', 'gil_dong@kakao.com', 'Y', NULL, NULL, 'gil_dong@gmail.com');
+INSERT INTO MEMBER (
+    UUID, NAME, NICKNAME, MEMBERID, PW, PHONE_NUMBER, GENDER, ADMIN_YN, ENROLL_DATE, LASTMODIFIED, GOOGLE, NAVER, KAKAO, LOGIN_OK, FACE_VECTOR, FACE_ID, EMAIL
+) VALUES
+('77d6c5e7-2234-5678-9012-abcdef223457', '±èÃ¶¼ö', 'Ã¶¼ö', 'user002', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-2345-6789', 'M', 'N', TO_DATE('25/01/02', 'YY/MM/DD'), TO_DATE('25/01/02', 'YY/MM/DD'), 'chul_su@gmail.com', 'chul_su@naver.com', 'chul_su@kakao.com', 'Y', NULL, NULL, 'chul_su@gmail.com');
+INSERT INTO MEMBER (
+    UUID, NAME, NICKNAME, MEMBERID, PW, PHONE_NUMBER, GENDER, ADMIN_YN, ENROLL_DATE, LASTMODIFIED, GOOGLE, NAVER, KAKAO, LOGIN_OK, FACE_VECTOR, FACE_ID, EMAIL
+) VALUES
+('99f7c5e7-3334-5678-9012-abcdef323458', '¹Ú¿µÈñ', '¿µÈñ', 'user003', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-3456-7890', 'F', 'N', TO_DATE('25/01/03', 'YY/MM/DD'), TO_DATE('25/01/03', 'YY/MM/DD'), 'young_hee@gmail.com', 'young_hee@naver.com', 'young_hee@kakao.com', 'Y', NULL, NULL, 'young_hee@gmail.com');
+INSERT INTO MEMBER (
+    UUID, NAME, NICKNAME, MEMBERID, PW, PHONE_NUMBER, GENDER, ADMIN_YN, ENROLL_DATE, LASTMODIFIED, GOOGLE, NAVER, KAKAO, LOGIN_OK, FACE_VECTOR, FACE_ID, EMAIL
+) VALUES
+('44e8c5e7-4434-5678-9012-abcdef423459', 'ÃÖ¹ÎÈ£', '¹ÎÈ£', 'user004', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-4567-8901', 'M', 'N', TO_DATE('25/01/04', 'YY/MM/DD'), TO_DATE('25/01/04', 'YY/MM/DD'), 'minho@gmail.com', 'minho@naver.com', 'minho@kakao.com', 'Y', NULL, NULL, 'minho@gmail.com');
+INSERT INTO MEMBER (
+    UUID, NAME, NICKNAME, MEMBERID, PW, PHONE_NUMBER, GENDER, ADMIN_YN, ENROLL_DATE, LASTMODIFIED, GOOGLE, NAVER, KAKAO, LOGIN_OK, FACE_VECTOR, FACE_ID, EMAIL
+) VALUES
+('11b6c5e7-5534-5678-9012-abcdef523450', 'À±Áö¿ì', 'Áö¿ì', 'user005', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-5678-9012', 'F', 'N', TO_DATE('25/01/05', 'YY/MM/DD'), TO_DATE('25/01/05', 'YY/MM/DD'), 'jiwoo@gmail.com', 'jiwoo@naver.com', 'jiwoo@kakao.com', 'Y', NULL, NULL, 'jiwoo@gmail.com');
+INSERT INTO MEMBER (
+    UUID, NAME, NICKNAME, MEMBERID, PW, PHONE_NUMBER, GENDER, ADMIN_YN, ENROLL_DATE, LASTMODIFIED, GOOGLE, NAVER, KAKAO, LOGIN_OK, FACE_VECTOR, FACE_ID, EMAIL
+) VALUES
+('65c6c5e7-6634-5678-9012-abcdef623451', 'ÀÌµµÇö', 'µµÇö', 'user006', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-6789-0123', 'M', 'N', TO_DATE('25/01/06', 'YY/MM/DD'), TO_DATE('25/01/06', 'YY/MM/DD'), 'dohyun@gmail.com', 'dohyun@naver.com', 'dohyun@kakao.com', 'Y', NULL, NULL, 'dohyun@gmail.com');
+INSERT INTO MEMBER (
+    UUID, NAME, NICKNAME, MEMBERID, PW, PHONE_NUMBER, GENDER, ADMIN_YN, ENROLL_DATE, LASTMODIFIED, GOOGLE, NAVER, KAKAO, LOGIN_OK, FACE_VECTOR, FACE_ID, EMAIL
+) VALUES
+('78d7c5e7-7734-5678-9012-abcdef723452', 'ÇÑÁö¹Î', 'Áö¹Î', 'user007', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-7890-1234', 'F', 'N', TO_DATE('25/01/07', 'YY/MM/DD'), TO_DATE('25/01/07', 'YY/MM/DD'), 'jimin@gmail.com', 'jimin@naver.com', 'jimin@kakao.com', 'Y', NULL, NULL, 'jimin@gmail.com');
+INSERT INTO MEMBER (
+    UUID, NAME, NICKNAME, MEMBERID, PW, PHONE_NUMBER, GENDER, ADMIN_YN, ENROLL_DATE, LASTMODIFIED, GOOGLE, NAVER, KAKAO, LOGIN_OK, FACE_VECTOR, FACE_ID, EMAIL
+) VALUES
+('90f8c5e7-8834-5678-9012-abcdef823453', '±èÀ¯Áø', 'À¯Áø', 'user008', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-8901-2345', 'F', 'N', TO_DATE('25/01/08', 'YY/MM/DD'), TO_DATE('25/01/08', 'YY/MM/DD'), 'yujin@gmail.com', 'yujin@naver.com', 'yujin@kakao.com', 'Y', NULL, NULL, 'yujin@gmail.com');
+INSERT INTO MEMBER (
+    UUID, NAME, NICKNAME, MEMBERID, PW, PHONE_NUMBER, GENDER, ADMIN_YN, ENROLL_DATE, LASTMODIFIED, GOOGLE, NAVER, KAKAO, LOGIN_OK, FACE_VECTOR, FACE_ID, EMAIL
+) VALUES
+('23e9c5e7-9934-5678-9012-abcdef923454', 'ÃÖÅÂ¹Î', 'ÅÂ¹Î', 'user009', '$2a$10$qlpgw16FieOHTMVaMiQG6uwxsywy3SRLlhDbtE4ZQq8uSYql3SXBa', '010-9012-3456', 'M', 'N', TO_DATE('25/01/09', 'YY/MM/DD'), TO_DATE('25/01/09', 'YY/MM/DD'), 'taemin@gmail.com', 'taemin@naver.com', 'taemin@kakao.com', 'Y', NULL, NULL, 'taemin@gmail.com');
+
+
 
 -- Æ÷½ºÆ® ´õ¹Ì µ¥ÀÌÅÍ
 INSERT ALL

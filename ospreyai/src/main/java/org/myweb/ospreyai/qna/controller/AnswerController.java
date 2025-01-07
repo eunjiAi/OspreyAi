@@ -61,6 +61,8 @@ public class AnswerController {
     public ResponseEntity answerInsertMethod(@ModelAttribute Answer answer) {
         log.info("answerInsertMethod : " + answer);
 
+        answer.setADate(new Date(System.currentTimeMillis()));
+
         // 답변 등록 메소드 호출
         if(answerService.insertAnswer(answer) > 0) {
             questionService.updateanswerYn("Y", answer.getAnswerRef());
@@ -79,10 +81,10 @@ public class AnswerController {
         //수정날짜로 변경 처리
         answer.setADate(new Date(System.currentTimeMillis()));
 
-        if(answerService.insertAnswer(answer) > 0) {
-            questionService.updateanswerYn("Y", answer.getAnswerRef());
-            //댓글과 대댓글 수정 성공시 다시 상세보기가 보여지게 처리
-            return ResponseEntity.ok().build();
+        if(answerService.updateAnswer(answer) > 0) {
+                questionService.updateanswerYn("Y", answer.getAnswerRef());
+                //댓글과 대댓글 수정 성공시 다시 상세보기가 보여지게 처리
+                return ResponseEntity.ok().build();
         }else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

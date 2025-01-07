@@ -179,21 +179,21 @@ public class MemberController {
 	}
 
 	//회원 로그인 제한/허용 처리용 메소드
-//	@PutMapping("/loginok/{userId}/{loginOk}")
-//	public ResponseEntity<String> changeLoginOKMethod(
-//			@PathVariable String userId,
-//			@PathVariable String loginOk,
-//			@RequestBody Member member) {
-//		log.info("loginok : " + userId + ", " + loginOk);
-//
-//		try {
-//			memberService.updateLoginOK(userId, loginOk);
-//			return new ResponseEntity(HttpStatus.OK);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//		}
-//	}
+	@PutMapping("/loginok/{uuid}/{loginOk}")
+	public ResponseEntity<String> changeLoginOKMethod(
+			@PathVariable String uuid,
+			@PathVariable String loginOk,
+			@RequestBody Member member) {
+		log.info("회원 제한 메서드() : " + uuid + ", " + loginOk);
+
+		try {
+			memberService.updateLoginOK(uuid, loginOk);
+			return new ResponseEntity(HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+	}
 	
 	//관리자용 검색 기능 요청 처리용
 //	@GetMapping("/search")
