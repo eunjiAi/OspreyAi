@@ -66,6 +66,20 @@ public class UserService implements UserDetailsService {
         return new CustomUserDetails(member.toEntity());
     }
 
+    // 페이스 로그인 !!
+    public UserDetails loadUserByMemberId(String memberId) throws UsernameNotFoundException {
+        // 데이터베이스에서 memberId로 사용자 정보를 조회해 옴
+        Member member = memberService.findByMemberId(memberId);  // 이 메서드를 memberService에 구현해야 함
+        if (member == null) {
+            throw new UsernameNotFoundException("조회된 회원 정보 없음 : " + memberId);
+        }
+
+        // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
+        return new CustomUserDetails(member.toEntity());
+    }
+
+
+
     public Object loadUserByFaceLogin(String id) {
         Member member = memberService.selectMember(id);
         if (member == null) {
@@ -75,4 +89,7 @@ public class UserService implements UserDetailsService {
         // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
         return new CustomUserDetails(member.toEntity());
     }
+
+
+
 }
