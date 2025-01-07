@@ -388,52 +388,50 @@ function Login({ onLoginSuccess }) {
     }
   };
 
+ 
+
+  // 페이스 로그인 ----------------------
+
   const handleImageCaptured = (capturedImage) => {
     setImageData(capturedImage); // 받은 이미지 데이터 저장
   };  
 
-  
-  const handleLoginSuccess = () => {
-    // 로그인 성공 후 모달 닫기
-    setShowFaceIDModal(false); // FaceID 모달 닫기
-  };
-
-
   const handleFaceIDLogin = async () => {
     setShowFaceIDModal(true); // Face ID 모달 열기
-  
+
     try {
       setIsLoading(true); // 로딩 시작
-  
+
       // 서버로 얼굴 인식 요청 보내기
       const response = await axios.post("http://localhost:5001/compare-faceid", {
         image: imageData,  // Face ID 이미지 데이터
       });
-  
-      const { uuid, memberId } = response.data;
-  
-      if (uuid && memberId) {
+
+      const { memberId } = response.data;  // 받은 memberId만 사용
+
+      if (memberId) {
         // 로그인 후 서버로 memberId 보내기
         const formData = new FormData();
         formData.append("memberId", memberId);  // Spring Boot로 전달할 memberId
-  
+
         const loginResponse = await axios.post("http://localhost:8888/login", formData, {
           headers: {
             "Content-Type": "multipart/form-data",  // multipart/form-data로 전송
           },
         });
-  
+
+        // 헤더에서 Authorization 정보 추출
         const authorizationHeader = loginResponse.headers["authorization"];
         if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
           throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
         }
-  
+
         const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
         const { refreshToken } = loginResponse.data;
-  
+
         // 로그인 성공 처리
         login({ accessToken: jwtAccessToken, refreshToken });
-  
+
         setShowFaceIDModal(false); // 모달 닫기
         if (onLoginSuccess) onLoginSuccess(); // 로그인 성공 시 콜백 호출
       } else {
@@ -446,9 +444,8 @@ function Login({ onLoginSuccess }) {
       setIsLoading(false); // 로딩 종료
     }
   };
+
   
-
-
   return (
     <div className={styles.container}>
       <h2>로그인 페이지</h2>
@@ -520,7 +517,7 @@ function Login({ onLoginSuccess }) {
        <button
         type="button"
         className={`${styles.apiButton} ${styles.faceIdButton}`}
-        onClick={() => setShowFaceIDModal(true)} // 모달 열기
+        onClick={handleFaceIDLogin} // Face ID 로그인 클릭
       >
         Face ID로 로그인
       </button>
@@ -528,10 +525,11 @@ function Login({ onLoginSuccess }) {
 
       {/* Face ID 로그인 모달 */}
       {showFaceIDModal && (
-        <FaceIDLogin
+          <FaceIDLogin
           onLoginSuccess={onLoginSuccess}
           onImageCaptured={handleImageCaptured} // 이미지 캡처 후 처리
         />
+        
       )}
 
       

@@ -161,10 +161,18 @@ def compare_faces(image_data):
                 if encodings:
                     known_faces.append(encodings[0])
                     known_face_names.append(filename)
-        
+
+        if image_data is None:
+            print("이미지 데이터가 없습니다.")
+            return None
+
         # base64로 인코딩된 이미지를 디코딩하여 얼굴 비교
         img_bytes = base64.b64decode(image_data.split(",")[1])  # base64에서 이미지 데이터 추출
         image = face_recognition.load_image_file(BytesIO(img_bytes))
+
+        # 얼굴을 찾기 전에 이미지 크기를 조정
+        image = cv2.resize(image, (800, 800))  # 이미지를 리사이즈하여 얼굴 인식 정확도 개선
+
         face_locations = face_recognition.face_locations(image)
         face_encodings = face_recognition.face_encodings(image, face_locations)
 
@@ -179,12 +187,27 @@ def compare_faces(image_data):
                 match_index = results.index(True)
                 matched_filename = known_face_names[match_index]
                 print(f"Matched filename: {matched_filename}")
+                
+                # 파일명에서 UUID 추출
+                user_uuid = matched_filename.split('_')[0] if matched_filename else None
+
+                if user_uuid:
+                    # UUID에 해당하는 사용자 정보 조회
+                    with SessionLocal() as db:
+                        user = db.query(Member).filter_by(uuid=user_uuid).first()
+                        if user:
+                            # 해당 ID와 PW 출력
+                            print(f"User ID: {user.member_id}, Password: {user.pw}")
+                        else:
+                            print(f"사용자를 찾을 수 없습니다. UUID: {user_uuid}")
+                
                 return matched_filename
 
         return None
     except Exception as e:
         print(f"Error during face comparison: {e}")
         return None
+
     
 
 @app.route('/compare-faceid', methods=['POST'])
@@ -197,38 +220,29 @@ def compare_faceid():
         start_time = time.time()
         matched_filename = None
 
+        # 3초 동안 얼굴 비교 시도
         while time.time() - start_time < 3:
-            matched_filename = compare_faces(data["image"])
+            matched_filename = compare_faces(data["image"])  # 얼굴 비교 함수 호출
             if matched_filename:
-                # 파일명에서 UUID 추출
+                # 파일명에서 UUID 추출 (파일명 예시: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1_20250106_130709.jpg)
                 user_uuid = matched_filename.split('_')[0] if matched_filename else None
 
                 if user_uuid:
-                    # UUID와 memberId를 React로 전송하여 로그인 처리
+                    # UUID에 해당하는 사용자 정보 조회
                     with SessionLocal() as db:
-                        try:
-                            # 사용자 조회
-                            user = db.query(Member).filter_by(uuid=user_uuid).first()
-                            print(f"User found: {user}")  # user 객체 로그 출력
+                        user = db.query(Member).filter_by(uuid=user_uuid).first()
+                        if not user:
+                            return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
 
-                            if not user:
-                                return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
+                        # React로 UUID와 memberId를 보내는 부분
+                        return jsonify({
+                            "uuid": user.uuid,
+                            "memberId": user.member_id  # React로 memberId 전송
+                        }), 200
 
-                            # React로 UUID와 memberId를 보내는 부분
-                            return jsonify({
-                                "uuid": user.uuid,
-                                "memberId": user.member_id  # React로 memberId 전송
-                            }), 200
-
-                        except Exception as e:
-                            db.rollback()  # 예외 발생 시 롤백
-                            print(f"Database error: {e}")  # 오류 메시지 출력
-                            return jsonify({"message": f"데이터베이스 오류 발생: {str(e)}"}), 500
-                        finally:
-                            db.close()  # 세션 닫기
-
-            time.sleep(1)
-
+            time.sleep(1)  # 1초 대기 후 다시 시도
+        
+        # 3초 동안 얼굴을 찾지 못한 경우
         return jsonify({"message": "인증 실패: 얼굴을 찾을 수 없습니다."}), 400
 
     except Exception as e:
