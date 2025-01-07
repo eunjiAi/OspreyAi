@@ -49,6 +49,8 @@ public class MemberEntity {
     private String kakao;       //    KAKAO	VARCHAR2(100 BYTE)
     @Column(name = "LOGIN_OK", nullable = false, columnDefinition = "Y")
     private String loginOk;		//	LOGIN_OK	CHAR(1 BYTE)
+    @Column(name = "EMAIL")
+    private String email;       //  EMAIL	VARCHAR2(255 CHAR)
 
     @PrePersist
     public void prePersist(){

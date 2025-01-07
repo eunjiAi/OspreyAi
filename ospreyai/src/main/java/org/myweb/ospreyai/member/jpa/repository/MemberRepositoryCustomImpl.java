@@ -8,6 +8,7 @@ import org.myweb.ospreyai.member.jpa.entity.QMemberEntity;
 import org.myweb.ospreyai.member.model.dto.Member;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.util.List;
@@ -167,6 +168,42 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
 
         return Optional.ofNullable(result);
     }
+
+    @Override
+    public Optional<MemberEntity> findByNameAndEmail(String name, String email) {
+        MemberEntity result = queryFactory
+                .selectFrom(member)
+                .where(
+                        member.name.eq(name),
+                        member.email.eq(email)
+                )
+                .fetchOne();
+
+        return Optional.ofNullable(result);
+    }
+
+    @Override
+    public Optional<MemberEntity> existsByUserIdAndEmail(String userId, String email) {
+        MemberEntity result = queryFactory
+                .selectFrom(member)
+                .where(
+                        member.memberId.eq(userId),
+                        member.email.eq(email)
+                )
+                .fetchOne();
+        return Optional.ofNullable(result);
+    }
+
+    @Override
+    @Transactional
+    public void updatePassword(String userId, String encryptedPassword) {
+        queryFactory
+                .update(member)
+                .set(member.pw, encryptedPassword)
+                .where(member.memberId.eq(userId))
+                .execute();
+    }
+
 
 }
 

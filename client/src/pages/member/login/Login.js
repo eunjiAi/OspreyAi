@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
+
 import axios from "../../../utils/axios"; // Axios 인스턴스 가져오기
 import { AuthContext } from "../../../AuthProvider"; // AuthContext 가져오기
 import styles from "./Login.module.css"; // 스타일 가져오기
@@ -10,9 +11,9 @@ import FaceIDLogin from "../login/FaceIDLogin";
 function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
   const [imageData, setImageData] = useState(null); // 이미지 데이터 저장
-  const [showFaceIDModal, setShowFaceIDModal] = useState(false); // FaceID 모달 
+  const [showFaceIDModal, setShowFaceIDModal] = useState(false); // FaceID 모달
   const { login } = useContext(AuthContext); // AuthProvider의 login 함수 가져오기
   const faceIdRef = useRef(null); // FaceIDLogin 컴포넌트 참조
 
@@ -67,7 +68,7 @@ function Login({ onLoginSuccess }) {
   const handleGoogleCallback = async (accessToken) => {
     try {
       console.log("Google Callback Handling Started");
-  
+
       // Google API를 사용하여 사용자 이메일 가져오기
       const response = await axios.get(
         "https://www.googleapis.com/oauth2/v2/userinfo",
@@ -75,38 +76,38 @@ function Login({ onLoginSuccess }) {
           headers: { Authorization: `Bearer ${accessToken}` },
         }
       );
-  
+
       const email = response.data.email;
       console.log("Google 사용자 이메일:", email);
-  
+
       // 이메일을 FormData로 /login으로 전송
       const formData = new FormData();
       formData.append("googleEmail", email);
-  
+
       const loginResponse = await axios.post("/login", formData, {
         headers: {
           "Content-Type": "multipart/form-data", // FormData 전송을 위해 Content-Type 설정
         },
       });
-  
+
       // 헤더에서 Authorization 정보 추출
       const authorizationHeader = loginResponse.headers["authorization"];
       if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
         throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
       }
-  
+
       // Access Token 추출
       const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
-  
+
       // Response 데이터에서 Refresh Token 추출
       const { refreshToken } = loginResponse.data;
       if (!refreshToken) {
         throw new Error("Refresh Token이 응답에 없습니다.");
       }
-  
+
       // AuthProvider의 login 함수 호출
       login({ accessToken: jwtAccessToken, refreshToken });
-  
+
       console.log("Google 로그인 성공!");
       // 로그인 성공 후 리디렉션 (이전 페이지로 이동)
       if (onLoginSuccess) onLoginSuccess();
@@ -122,7 +123,6 @@ function Login({ onLoginSuccess }) {
       );
     }
   };
-  
 
   // Naver Login -----------------------------------------------------------------------------
   // Naver OAuth 설정
@@ -372,7 +372,6 @@ function Login({ onLoginSuccess }) {
         throw new Error("Refresh Token이 응답에 없습니다.");
       }
 
-
       // AuthProvider의 login 함수 호출
       login({ accessToken, refreshToken });
 
@@ -389,9 +388,7 @@ function Login({ onLoginSuccess }) {
     }
   };
 
- 
-
-  // 페이스 로그인 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  // 페이스 로그인 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   const handleFaceIDLogin = async () => {
     try {
       setIsLoading(true); // 로딩 상태 시작
@@ -399,63 +396,72 @@ function Login({ onLoginSuccess }) {
         console.error("FaceIDLogin 컴포넌트를 찾을 수 없습니다.");
         return;
       }
-  
+
       // FaceIDLogin에서 이미지 캡처
       const capturedImage = faceIdRef.current.captureImage();
       if (!capturedImage) {
         alert("얼굴을 캡처하지 못했습니다. 다시 시도해주세요.");
         return;
       }
-  
+
       console.log("Captured Image:", capturedImage); // 캡처된 이미지 로그
-  
+
       // Python 서버로 이미지 전송
-      const response = await axios.post("http://localhost:5001/compare-faceid", {
-        image: capturedImage, // Face ID 이미지 데이터
-      });
-  
+      const response = await axios.post(
+        "http://localhost:5001/compare-faceid",
+        {
+          image: capturedImage, // Face ID 이미지 데이터
+        }
+      );
+
       const { memberId } = response.data; // Python 서버에서 받은 memberId
       console.log("받은 memberId:", memberId);
-  
+
       if (memberId) {
         // Spring Boot 서버로 FormData를 사용하여 로그인 요청
         const formData = new FormData();
         formData.append("id", memberId);
-  
+
         const loginResponse = await axios.post("/login", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         });
-  
+
         // Access Token 및 Refresh Token 추출
         const authorizationHeader = loginResponse.headers["authorization"];
-        if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
+        if (
+          !authorizationHeader ||
+          !authorizationHeader.startsWith("Bearer ")
+        ) {
           throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
         }
-  
+
         const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
         const { refreshToken } = loginResponse.data;
-  
+
         // AuthProvider의 login 함수 호출
         login({ accessToken: jwtAccessToken, refreshToken });
-  
+
         console.log("Face ID 로그인 성공!");
         if (onLoginSuccess) onLoginSuccess(); // 성공 콜백 호출
       } else {
         alert("얼굴 인식 실패: 회원 정보가 없습니다.");
       }
     } catch (error) {
-      console.error("Face ID 로그인 실패:", error.response?.data || error.message);
-      alert("Face ID 로그인 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
+      console.error(
+        "Face ID 로그인 실패:",
+        error.response?.data || error.message
+      );
+      alert(
+        "Face ID 로그인 실패: " +
+          (error.response?.data?.message || "다시 시도하십시오.")
+      );
     } finally {
       setIsLoading(false); // 로딩 상태 종료
     }
   };
-  
-  
 
-  
   return (
     <div className={styles.container}>
       <h2>로그인 페이지</h2>
@@ -484,6 +490,15 @@ function Login({ onLoginSuccess }) {
           <button type="submit" className={styles.button} disabled={isLoading}>
             {isLoading ? "Loading..." : "로그인"}
           </button>
+        </div>
+        <div className={styles.findInfo}>
+          <a href="/findId" className={styles.link}>
+            아이디찾기
+          </a>
+          {" | "}
+          <a href="/findPassword" className={styles.link}>
+            비밀번호찾기
+          </a>
         </div>
         <div>
           <button
@@ -519,11 +534,10 @@ function Login({ onLoginSuccess }) {
               className={styles.apiButtonImage}
             />
           </button>
-          
         </div>
       </form>
 
-       {/* Face ID 버튼 */}
+      {/* Face ID 버튼 */}
       <button
         type="button"
         className={`${styles.apiButton} ${styles.faceIdButton}`}
@@ -534,9 +548,6 @@ function Login({ onLoginSuccess }) {
 
       {/* FaceIDLogin 컴포넌트 */}
       <FaceIDLogin ref={faceIdRef} />
-
-
-      
     </div>
   );
 }
