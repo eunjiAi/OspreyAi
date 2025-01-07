@@ -151,38 +151,32 @@ public class MemberController {
 		}
 	}
 	
-	// 관리자용 기능 *********************************************************
-	// 회원 목록 보기 요청 처리용 (페이징 처리 포함)
-//	@GetMapping
-//	public ResponseEntity<Map<String, Object>> memberListMethod(
-//			//ajax 통신에서는 반환형을 ResponseEntity<객체자료형> 을 사용하지 않아도 됨
-//			//List 를 그대로 보내도 됨 => 뷰측에서 json 데이터로 받으면 됨
-//			@RequestParam(name = "page", defaultValue = "1") int currentPage,
-//			@RequestParam(name = "limit", defaultValue = "10") int limit) {
-//		// page : 출력할 페이지, limit : 한 페이지에 출력할 목록 갯수
-//
-//		// 총 목록갯수 조회해서 총 페이지 수 계산함
-//		int listCount = memberService.selectListCount();
-//		// 페이지 관련 항목 계산 처리
-//		Paging paging = new Paging(listCount, limit, currentPage, "mlist.do");
-//		paging.calculate();
-//
-//		//JPA 가 제공하는 메소드에 필요한 Pageable 객체 생성함 ---------------------------------------
-//		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
-//				Sort.by(Sort.Direction.DESC, "enrollDate"));
-//
-//		try {
-//			// 서비스롤 목록 조회 요청하고 결과 받기
-//			List<Member> members = memberService.selectList(pageable);
-//			Map<String, Object> map = new HashMap<>();
-//			map.put("list", members);
-//			map.put("paging", paging);
-//			return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//		}
-//	}
+	// 관리자 기능 *********************************************************
+	// 회원 목록 보기 요청
+	@GetMapping("/admin/members")
+	public ResponseEntity<Map<String, Object>> memberListMethod(
+			//ajax 통신에서는 반환형을 ResponseEntity<객체자료형> 을 사용하지 않아도 됨
+			@RequestParam(name = "page", defaultValue = "1") int currentPage,
+			@RequestParam(name = "limit", defaultValue = "10") int limit) {
+
+		int listCount = memberService.selectListCount();
+		Paging paging = new Paging(listCount, limit, currentPage);
+		paging.calculate();
+
+		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
+				Sort.by(Sort.Direction.DESC, "enrollDate"));
+
+		try {
+			List<Member> members = memberService.selectList(pageable);
+			Map<String, Object> map = new HashMap<>();
+			map.put("list", members);
+			map.put("paging", paging);
+			return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+	}
 
 	//회원 로그인 제한/허용 처리용 메소드
 //	@PutMapping("/loginok/{userId}/{loginOk}")
