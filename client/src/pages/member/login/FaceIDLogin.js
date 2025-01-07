@@ -37,8 +37,8 @@ const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
 
   const handleCapture = () => {
     if (isLoggedIn) {
-      alert("이미 로그인되었습니다.");
-      return;
+        alert("이미 로그인되었습니다.");
+        return;
     }
 
     setIsProcessing(true); // 얼굴 인식 시작
@@ -58,33 +58,29 @@ const FaceIDLogin = ({ onClose, onLoginSuccess }) => {
 
     // 얼굴 인식 결과를 서버로 전송
     axios
-      .post("http://localhost:5001/compare-faceid", { image: imageData })
-      .then((response) => {
-        console.log("Server response:", response.data); // 서버 응답 로그 추가
+        .post("http://localhost:5001/compare-faceid", { image: imageData })
+        .then((response) => {
+            console.log("Server response:", response.data); // 서버 응답 로그 추가
 
-        const { uuid, id } = response.data;
+            const { uuid, id } = response.data;
 
-        if (uuid && id) {
-          // 얼굴 인식 후 UUID로 로그인
-          alert("로그인 성공!");
+            if (uuid && id) {   
+                setIsLoggedIn(true); // 로그인 상태 갱신
+                alert("Face 로그인 성공!"); // 얼굴 인식 후 UUID로 로그인
 
-          // 로그인 상태 갱신
-          setIsLoggedIn(true);
-
-          // 로그인 후 성공적으로 모달 닫기
-          onLoginSuccess(); // 로그인 성공 시 콜백 호출
-          onClose(); // 모달 닫기
-        } else {
-          alert("얼굴 인식 실패: 일치하는 사용자를 찾을 수 없습니다.");
-          setIsProcessing(false); // 처리 종료
-        }
-      })
-      .catch((error) => {
-        alert("얼굴 인식 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
-        setIsProcessing(false); // 처리 종료
-      });
-  };
-
+                // 로그인 후 성공적으로 모달 닫기
+                onLoginSuccess(); // 로그인 성공 시 콜백 호출
+                onClose(); // 모달 닫기
+            } else {
+                alert("얼굴 인식 실패: 일치하는 사용자를 찾을 수 없습니다.");
+                setIsProcessing(false); // 처리 종료
+            }
+        })
+        .catch((error) => {
+            alert("얼굴 인식 실패: " + (error.response?.data?.message || "다시 시도하십시오."));
+            setIsProcessing(false); // 처리 종료
+        });
+};
   return (
     <div style={{ textAlign: "center" }}>
       <h3>얼굴 인식 로그인</h3>

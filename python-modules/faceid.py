@@ -3,6 +3,8 @@ from io import BytesIO
 from PIL import Image
 import base64
 from datetime import datetime
+import jwt
+import datetime
 from flask_cors import CORS  # CORS 모듈
 import os
 import cv2
@@ -180,6 +182,26 @@ def compare_faces(image_data):
     except Exception as e:
         print(f"Error during face comparison: {e}")
         return None
+    
+    # JWT 토큰을 생성하는 함수
+def generate_jwt_token(user):
+    payload = {
+        'uuid': user.uuid,
+        'id': user.member_id,
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1),  # 만료 시간 1시간 설정
+    }
+    # 비밀 키를 사용하여 JWT 생성
+    return jwt.encode(payload, 'your_secret_key', algorithm='HS256')
+
+# Refresh 토큰을 생성하는 함수
+def generate_refresh_token(user):
+    payload = {
+        'uuid': user.uuid,
+        'id': user.member_id,
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(days=30),  # Refresh 토큰 만료 시간 30일 설정
+    }
+    # 비밀 키를 사용하여 Refresh 토큰 생성
+    return jwt.encode(payload, 'your_refresh_secret_key', algorithm='HS256')
 
 @app.route('/compare-faceid', methods=['POST'])
 def compare_faceid():
@@ -197,26 +219,26 @@ def compare_faceid():
             matched_filename = compare_faces(data["image"])  # 얼굴 비교 함수 호출
             if matched_filename:
                 # 파일명에서 UUID 추출 (파일명 예시: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1_20250106_130709.jpg)
-                user_uuid = matched_filename.split('_')[0]
-                
-                # UUID에 해당하는 사용자 정보 조회
-                with SessionLocal() as db:
-                    user = db.query(Member).filter_by(uuid=user_uuid).first()
-                    if not user:
-                        return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
+                user_uuid = matched_filename.split('_')[0] if matched_filename else None
 
-                    # 디버깅 로그: id와 비밀번호를 출력
-                    print(f"User ID: {user.member_id}, Password: {user.pw}")  # 이 부분에서 id와 pw 확인
+                if user_uuid:
+                    # UUID에 해당하는 사용자 정보 조회
+                    with SessionLocal() as db:
+                        user = db.query(Member).filter_by(uuid=user_uuid).first()
+                        if not user:
+                            return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
 
-                    # 얼굴 인식 성공 후 비밀번호 없이 로그인 처리
-                    response_data = {
-                        "uuid": user.uuid,
-                        "id": user.member_id  # 데이터베이스에서 member_id 컬럼을 사용해서 id 반환
-                    }
+                        # 디버깅 로그: id와 비밀번호를 출력
+                        print(f"User ID: {user.member_id}, Password: {user.pw}")  # 이 부분에서 id와 pw 확인
 
-                    db.commit()  # 트랜잭션 커밋
-                    # 로그인 후 모달 닫기 (혹은 로그인 상태를 관리하는 코드 추가)
-                    return jsonify(response_data)  # 로그인 성공 후 사용자 정보 반환
+                        # 얼굴 인식 성공 후 비밀번호 없이 로그인 처리
+                        response_data = {
+                            "uuid": user.uuid,
+                            "id": user.member_id  # 데이터베이스에서 member_id 컬럼을 사용해서 id 반환
+                        }
+
+                        db.commit()  # 트랜잭션 커밋
+                        return jsonify(response_data)  # 로그인 성공 후 사용자 정보 반환
 
             time.sleep(1)  # 1초 대기 후 다시 시도
         
@@ -226,7 +248,7 @@ def compare_faceid():
     except Exception as e:
         print(f"Error in compare_faceid: {str(e)}")  # 오류 메시지 출력
         return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
-
+    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
