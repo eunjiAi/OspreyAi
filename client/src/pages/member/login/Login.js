@@ -516,7 +516,7 @@ function Login({ onLoginSuccess }) {
         </div>
       </form>
 
-       {/* Face ID 버튼 추가 */}
+       {/* Face ID 버튼 */}
        <button
         type="button"
         className={`${styles.apiButton} ${styles.faceIdButton}`}
