@@ -224,7 +224,7 @@ def compare_faceid():
         while time.time() - start_time < 3:
             matched_filename = compare_faces(data["image"])  # 얼굴 비교 함수 호출
             if matched_filename:
-                # 파일명에서 UUID 추출 (파일명 예시: 4ce9a1e3-8de1-46f2-a070-9c8e1d6b13d1_20250106_130709.jpg)
+                # 파일명에서 UUID 추출
                 user_uuid = matched_filename.split('_')[0] if matched_filename else None
 
                 if user_uuid:

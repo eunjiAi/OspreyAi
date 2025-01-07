@@ -408,6 +408,7 @@ function Login({ onLoginSuccess }) {
       });
 
       const { memberId } = response.data;  // 받은 memberId만 사용
+      console.log("받은 memberId:", memberId);  // 여기에 로그를 찍어보세요
 
       if (memberId) {
         // 로그인 후 서버로 memberId 보내기
@@ -444,6 +445,7 @@ function Login({ onLoginSuccess }) {
       setIsLoading(false); // 로딩 종료
     }
   };
+
 
   
   return (
