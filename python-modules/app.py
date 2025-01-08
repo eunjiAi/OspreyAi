@@ -1,3 +1,16 @@
+'''
+[MediaPipe라이브러리의 Holistic cnn기반 딥러닝 모델 사용: 관절 감지]
+MediaPipe Holistic 초기화:
+mp_holistic = mp.solutions.holistic
+holistic = mp_holistic.Holistic()
+
+포즈 랜드마크 추출:
+result = holistic.process(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+if not result.pose_landmarks or len(result.pose_landmarks.landmark) < 33:
+    logging.debug("포즈 랜드마크가 없습니다.")
+    return {"angle": None, "knee_position": None, "feedback": "포즈가 감지되지 않았습니다"}
+'''
+
 # USAGE
 # - - - - - - - 250106
 # conda install -c conda-forge dlib
@@ -202,6 +215,8 @@ def analyze_pose(image):
         logging.error(f"자세 분석 오류: {e}")
         return {"angle": None, "knee_position": None, "feedback": "분석 실패"}
 
+
+# 상체 각도 계산
 def calculate_upper_body_angle(landmarks):
     shoulder = landmarks[mp_holistic.PoseLandmark.LEFT_SHOULDER]
     hip = landmarks[mp_holistic.PoseLandmark.LEFT_HIP]
@@ -212,10 +227,14 @@ def calculate_upper_body_angle(landmarks):
     angle = np.arccos(cosine_angle)
     return np.degrees(angle)
 
+
+# 무릎 위치 계산
 def calculate_knee_position(landmarks):
     knee = landmarks[mp_holistic.PoseLandmark.LEFT_KNEE]
     foot = landmarks[mp_holistic.PoseLandmark.LEFT_ANKLE]
     return knee.x - foot.x
+
+
 
 def update_daily_feedback(uuid, feedback_correct, name):  
     session = Session()
