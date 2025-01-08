@@ -7,6 +7,7 @@ import postsRouter from "./postsRouter";
 import noticeRouter from "./noticeRouter";
 import faqRouter from "./faqRouter";
 import qnaRouter from "./qnaRouter";
+import mypageRouter from "./mypageRouter";
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
       {noticeRouter}
       {faqRouter}
       {qnaRouter}
+      {mypageRouter}
     </Routes>
   );
 };
