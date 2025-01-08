@@ -125,101 +125,77 @@ function Login({ onLoginSuccess }) {
   };
 
   // Naver Login -----------------------------------------------------------------------------
-  // Naver OAuth 설정
-  const generateRandomState = () => Math.random().toString(36).substr(2, 15); // 동적 State 생성
-  const NAVER_STATE = generateRandomState();
-
-  // 네이버 로그인 핸들러
   const handleNaverLogin = () => {
-    const naverLoginUrl = `http://localhost:8888/naver/login?state=${NAVER_STATE}`;
-    console.log("Naver Login URL:", naverLoginUrl);
+    const popup = window.open(
+      "http://localhost:8888/naver/login", // 백엔드의 네이버 로그인 URL
+      "Naver Login",
+      "width=500,height=600,scrollbars=yes"
+    );
 
-    // 부모 창에서 URL로 이동 (리디렉션)
-    window.location.href = naverLoginUrl;
+    if (!popup) {
+      alert("팝업이 차단된 것 같습니다. 팝업 차단을 해제해주세요.");
+      return;
+    }
+
+    // 팝업 URL 변경 감지
+    const interval = setInterval(() => {
+      try {
+        if (!popup || popup.closed) {
+          clearInterval(interval);
+          return;
+        }
+
+        const currentUrl = popup.location.href;
+
+        // 네이버 인증 완료 후 리다이렉트된 URL에서 인증 코드 확인
+        if (currentUrl.includes("code") && currentUrl.includes("state")) {
+          const params = new URLSearchParams(currentUrl.split("?")[1]);
+          const authCode = params.get("code");
+          const state = params.get("state");
+
+          console.log("Naver Authorization Code:", authCode);
+          console.log("Naver State:", state);
+
+          popup.close();
+          clearInterval(interval);
+
+          // 인증 코드 처리
+          handleNaverCallback(authCode, state);
+        }
+      } catch (error) {
+        // URL 접근 권한이 없을 경우 발생 (무시 가능)
+      }
+    }, 500);
   };
 
-  // 네이버 콜백 처리
-  const handleNaverCallback = async () => {
+  // 인증 코드를 백엔드에 전달하여 로그인 처리
+  const handleNaverCallback = async (authCode, state) => {
     try {
-      // 현재 URL에서 인증 코드 및 상태 값을 추출
-      const currentUrl = window.location.href;
-      if (!currentUrl.includes("code")) {
-        console.error("인증 코드가 URL에 없습니다.");
-        return;
-      }
+      setIsLoading(true);
 
-      const params = new URLSearchParams(currentUrl.split("?")[1]);
-      const authCode = params.get("code");
-      const state = params.get("state");
-
-      console.log("Naver Authorization Code:", authCode);
-      console.log("Naver State:", state);
-
-      // 네이버 콜백 엔드포인트 호출
+      // 백엔드의 /naver/callback에 인증 코드 전달
       const response = await axios.get(
-        `http://localhost:8888/naver/callback?code=${authCode}&state=${state}`,
-        {
-          withCredentials: true, // 쿠키를 포함해 요청
-        }
+        `http://localhost:8888/naver/callback?code=${authCode}&state=${state}`
       );
 
-      const userInfo = response.data; // 서버에서 반환된 사용자 정보
-      console.log("Naver 사용자 정보:", userInfo);
+      const { accessToken, refreshToken } = response.data;
 
-      // 사용자 이메일을 이용해 로그인 요청
-      if (userInfo.email) {
-        await loginWithNaverEmail(userInfo.email);
-      } else {
-        throw new Error("서버에서 이메일 정보를 받지 못했습니다.");
+      if (!accessToken || !refreshToken) {
+        throw new Error("로그인에 필요한 토큰을 받지 못했습니다.");
       }
+
+      console.log("로그인 성공! Access Token:", accessToken);
+
+      // 필요한 경우, 로그인 성공 후 콜백 처리
+      if (onLoginSuccess) onLoginSuccess();
     } catch (error) {
-      console.error(
-        "네이버 콜백 처리 실패:",
-        error.response?.data || error.message
-      );
+      console.error("네이버 로그인 처리 실패:", error.message);
       alert(
         "네이버 로그인 실패: " +
           (error.response?.data?.message || "다시 시도하십시오.")
       );
-    }
-  };
-
-  // 이메일 기반 로그인 요청
-  const loginWithNaverEmail = async (email) => {
-    try {
-      const formData = new FormData();
-      formData.append("naverEmail", email);
-
-      const loginResponse = await axios.post("/login", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      const authorizationHeader = loginResponse.headers["authorization"];
-      if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
-        throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
-      }
-
-      const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
-      const { refreshToken } = loginResponse.data;
-
-      if (!refreshToken) {
-        throw new Error("Refresh Token이 응답에 없습니다.");
-      }
-
-      login({ accessToken: jwtAccessToken, refreshToken });
-
-      console.log("Naver 로그인 성공!");
-      alert("Naver 로그인 성공!");
-
-      if (onLoginSuccess) onLoginSuccess();
-    } catch (error) {
-      console.error("로그인 요청 실패:", error.message);
-      alert(
-        "로그인 요청 실패: " +
-          (error.response?.data?.message || "다시 시도하십시오.")
-      );
+    } finally {
+      setIsLoading(false);
     }
   };
 

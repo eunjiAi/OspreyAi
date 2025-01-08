@@ -39,8 +39,20 @@ public class NaverCallbackController {
 
         // 사용자 정보 요청
         String email = getUserEmail(accessToken);
-        return ResponseEntity.ok(email); // 이메일만 반환
+
+        // 이메일을 POST 요청으로 /login 엔드포인트로 전달
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Content-Type", "application/x-www-form-urlencoded");
+
+        String body = "naverEmail=" + email;
+        HttpEntity<String> request = new HttpEntity<>(body, headers);
+
+        ResponseEntity<String> loginResponse = restTemplate.postForEntity("http://localhost:8888/login", request, String.class);
+
+        // 클라이언트에게 로그인 결과 반환
+        return ResponseEntity.ok(loginResponse.getBody());
     }
+
 
     private String extractAccessToken(String responseBody) {
         try {
