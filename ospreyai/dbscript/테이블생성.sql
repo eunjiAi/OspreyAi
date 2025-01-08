@@ -1,4 +1,4 @@
--- Member Å×ÀÌºí »èÁ¦
+-- Member ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Member CASCADE CONSTRAINTS';
 EXCEPTION
@@ -9,7 +9,7 @@ EXCEPTION
 END;
 /
 
--- Member Å×ÀÌºí »ý¼º
+-- Member ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE Member (
     uuid VARCHAR2(36) NOT NULL,
     name VARCHAR2(20) NOT NULL,
@@ -30,27 +30,27 @@ CREATE TABLE Member (
     UNIQUE (memberid)
 );
 
--- Member Å×ÀÌºí ÄÚ¸àÆ® »ý¼º
-COMMENT ON COLUMN Member.uuid IS '°íÀ¯Å°';
-COMMENT ON COLUMN Member.name IS 'ÀÌ¸§';
-COMMENT ON COLUMN Member.nickname IS '´Ð³×ÀÓ';
-COMMENT ON COLUMN Member.memberid IS '¾ÆÀÌµð';
-COMMENT ON COLUMN Member.pw IS 'ºñ¹Ð¹øÈ£';
-COMMENT ON COLUMN Member.phone_number IS 'ÀüÈ­¹øÈ£';
-COMMENT ON COLUMN Member.gender IS '¼ºº°';
-COMMENT ON COLUMN Member.admin_yn IS '°ü¸®ÀÚ¿©ºÎ';
-COMMENT ON COLUMN Member.face_id IS 'ÆäÀÌ½º¾ÆÀÌµð';
-COMMENT ON COLUMN Member.enroll_date IS '°¡ÀÔ³¯Â¥';
-COMMENT ON COLUMN Member.lastModified IS '¸¶Áö¸·¼öÁ¤³¯Â¥';
-COMMENT ON COLUMN Member.google IS '±¸±Û·Î±×ÀÎ';
-COMMENT ON COLUMN Member.naver IS '³×ÀÌ¹ö·Î±×ÀÎ';
-COMMENT ON COLUMN Member.kakao IS 'Ä«Ä«¿À·Î±×ÀÎ';
-COMMENT ON COLUMN Member.login_ok IS '·Î±×ÀÎ°¡´É¿©ºÎ';
+-- Member ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ú¸ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+COMMENT ON COLUMN Member.uuid IS 'ï¿½ï¿½ï¿½ï¿½Å°';
+COMMENT ON COLUMN Member.name IS 'ï¿½Ì¸ï¿½';
+COMMENT ON COLUMN Member.nickname IS 'ï¿½Ð³ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Member.memberid IS 'ï¿½ï¿½ï¿½Ìµï¿½';
+COMMENT ON COLUMN Member.pw IS 'ï¿½ï¿½Ð¹ï¿½È£';
+COMMENT ON COLUMN Member.phone_number IS 'ï¿½ï¿½È­ï¿½ï¿½È£';
+COMMENT ON COLUMN Member.gender IS 'ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Member.admin_yn IS 'ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Member.face_id IS 'ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ï¿½Ìµï¿½';
+COMMENT ON COLUMN Member.enroll_date IS 'ï¿½ï¿½ï¿½Ô³ï¿½Â¥';
+COMMENT ON COLUMN Member.lastModified IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥';
+COMMENT ON COLUMN Member.google IS 'ï¿½ï¿½ï¿½Û·Î±ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Member.naver IS 'ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½Î±ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Member.kakao IS 'Ä«Ä«ï¿½ï¿½ï¿½Î±ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Member.login_ok IS 'ï¿½Î±ï¿½ï¿½Î°ï¿½ï¿½É¿ï¿½ï¿½ï¿½';
 
 
 
 
--- Refresh_Tokens Å×ÀÌºí »èÁ¦
+-- Refresh_Tokens ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Refresh_Tokens CASCADE CONSTRAINTS';
 EXCEPTION
@@ -61,7 +61,7 @@ EXCEPTION
 END;
 /
 
--- Refresh_Tokens Å×ÀÌºí »ý¼º
+-- Refresh_Tokens ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE Refresh_Tokens (
     id RAW(36) DEFAULT SYS_GUID() NOT NULL,
     userid VARCHAR2(50)    NOT NULL,
@@ -75,20 +75,20 @@ CREATE TABLE Refresh_Tokens (
     CONSTRAINT FK_RTOKENS FOREIGN KEY (userid) REFERENCES MEMBER (memberid) ON DELETE CASCADE
 );
 
--- Refresh_Tokens Å×ÀÌºí ÄÚ¸àÆ® »ý¼º
-COMMENT ON COLUMN Refresh_Tokens.id IS 'ÅäÅ«½Äº°ID';
-COMMENT ON COLUMN Refresh_Tokens.userid IS 'ÅäÅ«»ç¿ëÀÚ¾ÆÀÌµð';
-COMMENT ON COLUMN Refresh_Tokens.token_value IS 'ÅäÅ«°ª';
-COMMENT ON COLUMN Refresh_Tokens.issued_at IS 'ÅäÅ«»ý¼º³¯Â¥½Ã°£';
-COMMENT ON COLUMN Refresh_Tokens.expires_in IS 'ÅäÅ«¸¸·á¹Ð¸®ÃÊ';
-COMMENT ON COLUMN Refresh_Tokens.expiration_date IS 'ÅäÅ«¸¸·á³¯Â¥½Ã°£';
-COMMENT ON COLUMN Refresh_Tokens.member_agent IS 'ÅäÅ«¹ß±Þ¿¡ÀÌÀüÆ®';
-COMMENT ON COLUMN Refresh_Tokens.status IS 'ÅäÅ«»óÅÂ';
+-- Refresh_Tokens ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ú¸ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+COMMENT ON COLUMN Refresh_Tokens.id IS 'ï¿½ï¿½Å«ï¿½Äºï¿½ID';
+COMMENT ON COLUMN Refresh_Tokens.userid IS 'ï¿½ï¿½Å«ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½Ìµï¿½';
+COMMENT ON COLUMN Refresh_Tokens.token_value IS 'ï¿½ï¿½Å«ï¿½ï¿½';
+COMMENT ON COLUMN Refresh_Tokens.issued_at IS 'ï¿½ï¿½Å«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥ï¿½Ã°ï¿½';
+COMMENT ON COLUMN Refresh_Tokens.expires_in IS 'ï¿½ï¿½Å«ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Refresh_Tokens.expiration_date IS 'ï¿½ï¿½Å«ï¿½ï¿½ï¿½á³¯Â¥ï¿½Ã°ï¿½';
+COMMENT ON COLUMN Refresh_Tokens.member_agent IS 'ï¿½ï¿½Å«ï¿½ß±Þ¿ï¿½ï¿½ï¿½ï¿½ï¿½Æ®';
+COMMENT ON COLUMN Refresh_Tokens.status IS 'ï¿½ï¿½Å«ï¿½ï¿½ï¿½ï¿½';
 
 
 
 
--- Squatfeedback Å×ÀÌºí »èÁ¦
+-- Squatfeedback ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Squatfeedback CASCADE CONSTRAINTS';
 EXCEPTION
@@ -99,7 +99,7 @@ EXCEPTION
 END;
 /
 
--- Squatfeedback Å×ÀÌºí »ý¼º
+-- Squatfeedback ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE Squatfeedback (
     squat_id NUMBER NOT NULL,
     uuid VARCHAR2(36) NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE Squatfeedback (
 
 
 
--- Posts Å×ÀÌºí »èÁ¦
+-- Posts ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Posts CASCADE CONSTRAINTS';
 EXCEPTION
@@ -125,7 +125,7 @@ EXCEPTION
 END;
 /
 
--- Posts Å×ÀÌºí »ý¼º
+-- Posts ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE Posts (
     post_id NUMBER NOT NULL,
     title VARCHAR2(200) NOT NULL,
@@ -141,19 +141,21 @@ CREATE TABLE Posts (
     CONSTRAINT FK_MEMBER_POSTS FOREIGN KEY (writer) REFERENCES Member (memberid)
 );
 
--- Posts Å×ÀÌºí ÄÚ¸àÆ® »ý¼º
-COMMENT ON COLUMN Posts.post_id IS '±Û¹øÈ£';
-COMMENT ON COLUMN Posts.title IS 'Á¦¸ñ';
-COMMENT ON COLUMN Posts.content IS '³»¿ë';
-COMMENT ON COLUMN Posts.writer IS 'ÀÛ¼ºÀÚ';
-COMMENT ON COLUMN Posts.nickname IS 'º°¸í';
-COMMENT ON COLUMN Posts.post_date IS '»ý¼ºÀÏÀÚ';
-COMMENT ON COLUMN Posts.post_update IS '¼öÁ¤ÀÏÀÚ';
-COMMENT ON COLUMN Posts.filename IS '¿øº»ÆÄÀÏÀÌ¸§';
-COMMENT ON COLUMN Posts.rename_file IS '¼öÁ¤ÆÄÀÏÀÌ¸§';
-COMMENT ON COLUMN Posts.post_count IS 'Á¶È¸¼ö';
+-- Posts ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ú¸ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+COMMENT ON COLUMN Posts.post_id IS 'ï¿½Û¹ï¿½È£';
+COMMENT ON COLUMN Posts.title IS 'ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Posts.content IS 'ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Posts.writer IS 'ï¿½Û¼ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Posts.nickname IS 'ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Posts.post_date IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Posts.post_update IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Posts.filename IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½';
+COMMENT ON COLUMN Posts.rename_file IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½';
+COMMENT ON COLUMN Posts.post_count IS 'ï¿½ï¿½È¸ï¿½ï¿½';
 
--- Notice Å×ÀÌºí »èÁ¦
+CREATE TABLE Reply
+
+-- Notice ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Notice CASCADE CONSTRAINTS';
 EXCEPTION
@@ -164,7 +166,7 @@ EXCEPTION
 END;
 /
 
--- Notice Å×ÀÌºí »ý¼º
+-- Notice ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE Notice (
     notice_no NUMBER NOT NULL,
     ntitle VARCHAR2(60) NOT NULL,
@@ -179,22 +181,22 @@ CREATE TABLE Notice (
     PRIMARY KEY (notice_no)
 );
 
--- Notice Å×ÀÌºí ÄÚ¸àÆ® »ý¼º
-COMMENT ON COLUMN Notice.notice_no IS '±Û¹øÈ£';
-COMMENT ON COLUMN Notice.ntitle IS '±ÛÁ¦¸ñ';
-COMMENT ON COLUMN Notice.ncontent IS '³»¿ë';
-COMMENT ON COLUMN Notice.nwriter IS 'ÀÛ¼ºÀÚ';
-COMMENT ON COLUMN Notice.n_nickname IS '´Ð³×ÀÓ';
-COMMENT ON COLUMN Notice.ncreated_at IS '»ý¼ºÀÏÀÚ';
-COMMENT ON COLUMN Notice.nupdated_at IS '¼öÁ¤ÀÏÀÚ';
-COMMENT ON COLUMN Notice.ofilename IS '¿øº»ÆÄÀÏÀÌ¸§';
-COMMENT ON COLUMN Notice.rfilename IS '¼öÁ¤ÆÄÀÏÀÌ¸§';
-COMMENT ON COLUMN Notice.ncount IS 'Á¶È¸¼ö';
+-- Notice ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ú¸ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+COMMENT ON COLUMN Notice.notice_no IS 'ï¿½Û¹ï¿½È£';
+COMMENT ON COLUMN Notice.ntitle IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Notice.ncontent IS 'ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Notice.nwriter IS 'ï¿½Û¼ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Notice.n_nickname IS 'ï¿½Ð³ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Notice.ncreated_at IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Notice.nupdated_at IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN Notice.ofilename IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½';
+COMMENT ON COLUMN Notice.rfilename IS 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½';
+COMMENT ON COLUMN Notice.ncount IS 'ï¿½ï¿½È¸ï¿½ï¿½';
 
 
 
 
--- FAQ Å×ÀÌºí »èÁ¦
+-- FAQ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE FAQ CASCADE CONSTRAINTS';
 EXCEPTION
@@ -205,37 +207,37 @@ EXCEPTION
 END;
 /
 
--- FAQ Å×ÀÌºí »ý¼º
+-- FAQ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE FAQ (
-    faq_id NUMBER PRIMARY KEY,                    -- ±Û¹øÈ£ (PK)
-    faq_title VARCHAR2(1000) NOT NULL,              -- ±ÛÁ¦¸ñ
-    faq_content VARCHAR2(2000) NOT NULL,                     -- ±Û³»¿ë
-    faq_qa CHAR(1) NOT NULL,               -- ±Û±¸ºÐ (FAQÀÇ Ä«Å×°í¸®)
-    category VARCHAR2(100) NOT NULL,             -- FAQÁ¾·ù
-    view_count NUMBER DEFAULT 0 NOT NULL,                   -- Á¶È¸¼ö
-    created_at DATE DEFAULT SYSDATE NOT NULL, -- µî·Ï³¯Â¥
-    qna_id NUMBER,                                 -- Q&A ±Û¹øÈ£ (FK)
+    faq_id NUMBER PRIMARY KEY,                    -- ï¿½Û¹ï¿½È£ (PK)
+    faq_title VARCHAR2(1000) NOT NULL,              -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    faq_content VARCHAR2(2000) NOT NULL,                     -- ï¿½Û³ï¿½ï¿½ï¿½
+    faq_qa CHAR(1) NOT NULL,               -- ï¿½Û±ï¿½ï¿½ï¿½ (FAQï¿½ï¿½ Ä«ï¿½×°ï¿½)
+    category VARCHAR2(100) NOT NULL,             -- FAQï¿½ï¿½ï¿½ï¿½
+    view_count NUMBER DEFAULT 0 NOT NULL,                   -- ï¿½ï¿½È¸ï¿½ï¿½
+    created_at DATE DEFAULT SYSDATE NOT NULL, -- ï¿½ï¿½Ï³ï¿½Â¥
+    qna_id NUMBER,                                 -- Q&A ï¿½Û¹ï¿½È£ (FK)
     faq_writer VARCHAR2(100) NOT NULL,
-    CONSTRAINT fk_qna_id FOREIGN KEY (qna_id) REFERENCES FAQ(faq_id) ON DELETE SET NULL -- QNA¿Í ¿Ü·¡Å° °ü°è
+    CONSTRAINT fk_qna_id FOREIGN KEY (qna_id) REFERENCES FAQ(faq_id) ON DELETE SET NULL -- QNAï¿½ï¿½ ï¿½Ü·ï¿½Å° ï¿½ï¿½ï¿½ï¿½
     ,CONSTRAINT CHK_faq_qa check (faq_qa in ('Q', 'A'))
     ,CONSTRAINT fk_faq_writer FOREIGN KEY (faq_writer) REFERENCES MEMBER(memberid) ON DELETE SET NULL
 );
 
--- ÄÃ·³¿¡ ´ëÇÑ ¼³¸í Ãß°¡
-COMMENT ON COLUMN FAQ.faq_id IS 'FAQ ±Û ¹øÈ£';
-COMMENT ON COLUMN FAQ.faq_title IS 'FAQ ±Û Á¦¸ñ';
-COMMENT ON COLUMN FAQ.faq_content IS 'FAQ ±Û ³»¿ë';
-COMMENT ON COLUMN FAQ.faq_qa IS 'FAQ ±Û±¸ºÐ';
-COMMENT ON COLUMN FAQ.category IS 'FAQ Ä«Å×°í¸®';
-COMMENT ON COLUMN FAQ.view_count IS 'FAQ Á¶È¸¼ö';
-COMMENT ON COLUMN FAQ.created_at IS 'FAQ µî·ÏÀÏ';
-COMMENT ON COLUMN FAQ.qna_id IS 'QNA ±Û¹øÈ£';
-COMMENT ON COLUMN FAQ.faq_writer IS 'ÀÛ¼ºÀÚ';
+-- ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
+COMMENT ON COLUMN FAQ.faq_id IS 'FAQ ï¿½ï¿½ ï¿½ï¿½È£';
+COMMENT ON COLUMN FAQ.faq_title IS 'FAQ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN FAQ.faq_content IS 'FAQ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN FAQ.faq_qa IS 'FAQ ï¿½Û±ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN FAQ.category IS 'FAQ Ä«ï¿½×°ï¿½';
+COMMENT ON COLUMN FAQ.view_count IS 'FAQ ï¿½ï¿½È¸ï¿½ï¿½';
+COMMENT ON COLUMN FAQ.created_at IS 'FAQ ï¿½ï¿½ï¿½ï¿½ï¿½';
+COMMENT ON COLUMN FAQ.qna_id IS 'QNA ï¿½Û¹ï¿½È£';
+COMMENT ON COLUMN FAQ.faq_writer IS 'ï¿½Û¼ï¿½ï¿½ï¿½';
 
 
 
 
--- ½ÃÄö½º »ý¼º
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 CREATE SEQUENCE squat_id_seq
 START WITH 1
 INCREMENT BY 1
