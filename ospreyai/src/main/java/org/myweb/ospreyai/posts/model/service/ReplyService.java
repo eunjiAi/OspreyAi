@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.posts.jpa.entity.ReplyEntity;
 import org.myweb.ospreyai.posts.jpa.repository.ReplyRepository;
+import org.myweb.ospreyai.posts.jpa.repository.ReplyRepositoryCustom;
 import org.myweb.ospreyai.posts.model.dto.Reply;
 import org.myweb.ospreyai.posts.model.service.PostsService;
 import org.myweb.ospreyai.qna.jpa.entity.AnswerEntity;
@@ -27,9 +28,10 @@ public class ReplyService {
 
     private final ReplyRepository replyRepository;
 
-    public ArrayList<Reply> selectReplyList(int postId) {
+
+    public ArrayList<Reply> selectReplyList(int id) {
         // 전달받은 원글번호로 board_ref 컬럼의 값이 일치하는 댓글과 대댓글 조회용
-        List<ReplyEntity> entities = replyRepository.findAllReply(postId); // 인스턴스를 통해 호출
+        List<ReplyEntity> entities = replyRepository.findAllReply(id); // 인스턴스를 통해 호출
         ArrayList<Reply> list = new ArrayList<>();
         for (ReplyEntity entity : entities) {
             list.add(entity.toDto());
@@ -42,7 +44,11 @@ public class ReplyService {
     public int insertReply(Reply reply) {
         log.info("ReplyService reply insert : " + reply);
 
-        reply.setReplyId(replyRepository.findLastReplyId() + 1);
+        if (replyRepository.findLastReplyId() == 0) {
+            reply.setReplyId(1);
+        } else {
+            reply.setReplyId(replyRepository.findLastReplyId() + 1);
+        }
 
         try {
             // Answer DTO를 AnswerEntity로 변환하여 저장

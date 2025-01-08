@@ -3,9 +3,11 @@ package org.myweb.ospreyai.posts.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.posts.model.dto.Posts;
+import org.myweb.ospreyai.posts.model.dto.Reply;
 import org.myweb.ospreyai.posts.model.service.PostsService;
 import org.myweb.ospreyai.common.FileNameChange;
 import org.myweb.ospreyai.common.Paging;
+import org.myweb.ospreyai.posts.model.service.ReplyService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -35,6 +37,7 @@ import java.util.Map;
 public class PostsController {
 
 	private final PostsService postsService;
+	private final ReplyService replyService;
 
 	@Value("${file.upload-dir}")
 	private String uploadDir;
@@ -53,6 +56,7 @@ public class PostsController {
 			log.error("Error fetching posts details", e);
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
 		}
+
 	}
 
 	// 게시글 목록 조회
