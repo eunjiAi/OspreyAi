@@ -9,18 +9,22 @@
 /* mainContent 영역에 flexbox 적용하여 사이드바와 콘텐츠를 나란히 배치 */
 .mainContent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px; /* 사이드바와 콘텐츠 사이의 간격 */
 }
 
 /* 사이드바 */
 .sidebar {
-  width: 25%;  /* 사이드바 너비 */
+  width: 80%;  /* 사이드바 너비 */
   padding: 10px;
-  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .categoryList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
   list-style: none;
   padding: 0;
   margin: 0;

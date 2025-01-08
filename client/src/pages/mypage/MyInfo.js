@@ -33,7 +33,7 @@ function MyInfo() {
   const fetchPosts = async (page, category, userid) => {
     setLoading(true);
     try {
-      const limit = 2;  // 한 페이지에 보여줄 항목 개수
+      const limit = 10;  // 한 페이지에 보여줄 항목 개수
       let response;
   
       // 각 카테고리에 대해 API 요청 (백엔드에서 필터링된 데이터를 받음)

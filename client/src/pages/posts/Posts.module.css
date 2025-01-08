@@ -21,24 +21,26 @@
   margin-bottom: 30px;
 }
 
-/* 새 글쓰기 버튼 */
-.newpostsbutton {
-  display: inline-block;
-  margin: 20px 0;
-  padding: 12px 20px;
-  background-color: #007bff; 
-  color: #ffffff;
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 20px; 
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-.newpostsbutton:hover {
+button:hover {
   background-color: #0056b3;
-  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
 }
 
 /* 포스트 테이블 */
@@ -51,7 +53,7 @@
 .postsList th {
   background-color: #f7f7f7;
   padding: 10px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #555; 
   text-align: left;
@@ -60,7 +62,7 @@
 
 .postsList td {
   padding: 12px 10px;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   border-bottom: 1px solid #f0f0f0;
 }
@@ -89,7 +91,7 @@
 /* 작성자 */
 .nickname {
   color: #666; 
-  font-size: 13px;
+  font-size: 16px;
 }
 
 /* 첨부파일 아이콘 */
@@ -97,13 +99,25 @@
   display: inline-block;
   width: 18px;
   height: 18px;
-  cursor: pointer;
 }
 
 .createdAt,
 .updatedAt,
 .count {
-  font-size: 13px;
+  font-size: 16px;
   color: #999; 
+}
+
+.loading {
   text-align: center;
+  font-size: 1.5rem;
+  color: #555;
+  margin: 20px 0;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: red;
+  margin: 20px 0;
 }

@@ -127,9 +127,11 @@ function QuestionList({ searchResults }){
   return (
     <div className={styles.questionContainer}>
       <h1 className={styles.title}>Q & A</h1>
+      <div className={styles.headerButtons}>
       {/* 글쓰기 버튼 : 로그인 상태일 때만 표시 */}
       {isLoggedIn && (<button onClick={handleWriteClick}>글쓰기</button> )}
       <button onClick={handleListButtonClick}>새로고침</button>
+      </div>
       <table className={styles.QuestionList}>
         <thead>
             <tr>
