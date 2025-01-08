@@ -147,7 +147,7 @@ def delete_faceid():
         print(f"Error: {e}")
         return jsonify({"message": "이미지 삭제 실패!"}), 500
 
-def compare_faces(image_data):
+def compare_faces(image_data, tolerance=0.4):           # 0.6이 기본값, 더 정교하려면 0.4
     known_faces = []
     known_face_names = []
     
@@ -182,7 +182,7 @@ def compare_faces(image_data):
 
         # 얼굴 비교
         for encoding in face_encodings:
-            results = face_recognition.compare_faces(known_faces, encoding)
+            results = face_recognition.compare_faces(known_faces, encoding, tolerance=tolerance)
             if True in results:
                 match_index = results.index(True)
                 matched_filename = known_face_names[match_index]
