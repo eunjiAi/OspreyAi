@@ -68,6 +68,8 @@ class Member(Base):
 Base.metadata.create_all(bind=engine)
 
 @app.route('/register-faceid', methods=['POST'])
+
+# 회원 얼굴 이미지를 저장하고, DB에 해당 파일명을 저장함
 def register_faceid():
     print("요청 받음")
 
@@ -127,6 +129,7 @@ def register_faceid():
 
 
 @app.route('/delete-faceid', methods=['POST'])
+# 회원 얼굴 이미지와 DB 기록을 삭제함
 def delete_faceid():
     try:
         data = request.json
@@ -156,7 +159,9 @@ def delete_faceid():
         print(f"Error: {e}")
         return jsonify({"message": "이미지 삭제 실패!"}), 500
 
-def compare_faces(image_data, tolerance=0.4):           # 0.6이 기본값, 더 정교하려면 0.4
+
+# 로그인중인 이미지 데이터를 로컬 저장된 이미지의 얼굴들과 비교해서 일치 여부 확인
+def compare_faces(image_data, tolerance=0.4):   # 0.6이 기본값, 더 정교하려면 0.4
     known_faces = []
     known_face_names = []
     
@@ -220,6 +225,7 @@ def compare_faces(image_data, tolerance=0.4):           # 0.6이 기본값, 더 
     
 
 @app.route('/compare-faceid', methods=['POST'])
+# 이미지 데이터를 비교하고, 매칭된 회원의 UUID 및 ID를 반환함
 def compare_faceid():
     try:
         data = request.json
