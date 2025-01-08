@@ -15,7 +15,7 @@ from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__)
 
-# CORS를 활성화하고, 특정 메서드랑 헤더 허용
+# CORS 활성화, 특정 메서드랑 헤더 허용
 CORS(app, methods=["GET", "POST", "OPTIONS"], supports_credentials=True)
 
 USER_HOME_PATH = os.path.expanduser("~")
@@ -35,7 +35,7 @@ if not os.path.exists(SAVE_DIR):
 else:
     print(f"Folder already exists: {SAVE_DIR}")
 
-# 이미지 저장을 위한 폴더 생성 확인
+# 이미지 저장 폴더 생성 확인
 print(f"Saving images to: {SAVE_DIR}")
 
 # 데이터베이스 설정
@@ -52,7 +52,7 @@ class Member(Base):
     uuid = Column("UUID", String, primary_key=True, nullable=False)
     member_id = Column("MEMBERID", String, nullable=False)
     face_id = Column("FACE_ID", String, nullable=True)
-    pw = Column("PW", String, nullable=False)  # 비밀번호 컬럼
+    pw = Column("PW", String, nullable=False)
 
 
 # 데이터베이스 테이블 생성
@@ -170,8 +170,8 @@ def compare_faces(image_data, tolerance=0.4):           # 0.6이 기본값, 더 
         img_bytes = base64.b64decode(image_data.split(",")[1])  # base64에서 이미지 데이터 추출
         image = face_recognition.load_image_file(BytesIO(img_bytes))
 
-        # 얼굴을 찾기 전에 이미지 크기를 조정
-        image = cv2.resize(image, (800, 800))  # 이미지를 리사이즈하여 얼굴 인식 정확도 개선
+        # 얼굴을 찾기 전에 이미지 크기 조정
+        image = cv2.resize(image, (800, 800))  
 
         face_locations = face_recognition.face_locations(image)
         face_encodings = face_recognition.face_encodings(image, face_locations)
@@ -227,9 +227,9 @@ def compare_faceid():
                 user_uuid = matched_filename.split('_')[0] if matched_filename else None
 
                 if user_uuid:
-                    # UUID에 해당하는 사용자 정보 조회
+                      # UUID에 해당하는 사용자 정보 조회
                     with SessionLocal() as db:
-                        # 트랜잭션 없이 데이터 조회만 수행
+                        # 트랜잭션 없이 데이터 조회
                         user = db.query(Member).filter_by(uuid=user_uuid).first()
                         if not user:
                             return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
@@ -248,7 +248,7 @@ def compare_faceid():
         return jsonify({"message": "인증 실패: 얼굴을 찾을 수 없습니다."}), 400
 
     except Exception as e:
-        print(f"Error in compare_faceid: {str(e)}")  # 오류 메시지 출력
+        print(f"Error in compare_faceid: {str(e)}")  
         return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
 
 
