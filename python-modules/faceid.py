@@ -1,3 +1,12 @@
+'''
+[face_recognition 라이브러리 사용: 딥러닝모델(Dlib)의 사전 학습된 얼굴 인코더랑 비교 알고리즘 활용함]
+얼굴 감지 및 인코딩:
+image = face_recognition.load_image_file(img_path)
+encodings = face_recognition.face_encodings(image)
+얼굴 비교:
+results = face_recognition.compare_faces(known_faces, encoding, tolerance=tolerance)
+'''
+
 from flask import Flask, request, jsonify
 from io import BytesIO
 from PIL import Image
@@ -166,11 +175,11 @@ def compare_faces(image_data, tolerance=0.4):           # 0.6이 기본값, 더 
             print("이미지 데이터가 없습니다.")
             return None
 
-        # base64로 인코딩된 이미지를 디코딩하여 얼굴 비교
+        # base64로 인코딩된 이미지 디코딩해서 얼굴 비교
         img_bytes = base64.b64decode(image_data.split(",")[1])  # base64에서 이미지 데이터 추출
         image = face_recognition.load_image_file(BytesIO(img_bytes))
 
-        # 얼굴을 찾기 전에 이미지 크기 조정
+        # 얼굴 찾기 전에 이미지 크기 조정
         image = cv2.resize(image, (800, 800))  
 
         face_locations = face_recognition.face_locations(image)
