@@ -134,47 +134,27 @@ function Login({ onLoginSuccess }) {
     const naverLoginUrl = `http://localhost:8888/naver/login?state=${NAVER_STATE}`;
     console.log("Naver Login URL:", naverLoginUrl);
 
-    // 팝업 창 열기
-    const popup = window.open(
-      naverLoginUrl,
-      "Naver Login",
-      "width=500,height=600,scrollbars=yes"
-    );
-
-    if (!popup) {
-      alert("팝업이 차단된 것 같습니다. 팝업 차단을 해제해주세요.");
-      return;
-    }
-
-    // 팝업 창의 URL 변경 감지
-    const interval = setInterval(async () => {
-      try {
-        const currentUrl = popup.location.href;
-
-        // 인증 코드가 URL에 포함된 경우
-        if (currentUrl.includes("code")) {
-          popup.close();
-          clearInterval(interval);
-
-          const params = new URLSearchParams(currentUrl.split("?")[1]);
-          const authCode = params.get("code");
-          const state = params.get("state");
-
-          console.log("Naver Authorization Code:", authCode);
-          console.log("Naver State:", state);
-
-          // 네이버 콜백 처리
-          await handleNaverCallback(authCode, state);
-        }
-      } catch (error) {
-        // URL 접근 권한이 없을 경우 발생 (무시 가능)
-      }
-    }, 500);
+    // 부모 창에서 URL로 이동 (리디렉션)
+    window.location.href = naverLoginUrl;
   };
 
   // 네이버 콜백 처리
-  const handleNaverCallback = async (authCode, state) => {
+  const handleNaverCallback = async () => {
     try {
+      // 현재 URL에서 인증 코드 및 상태 값을 추출
+      const currentUrl = window.location.href;
+      if (!currentUrl.includes("code")) {
+        console.error("인증 코드가 URL에 없습니다.");
+        return;
+      }
+
+      const params = new URLSearchParams(currentUrl.split("?")[1]);
+      const authCode = params.get("code");
+      const state = params.get("state");
+
+      console.log("Naver Authorization Code:", authCode);
+      console.log("Naver State:", state);
+
       // 네이버 콜백 엔드포인트 호출
       const response = await axios.get(
         `http://localhost:8888/naver/callback?code=${authCode}&state=${state}`,
@@ -207,7 +187,6 @@ function Login({ onLoginSuccess }) {
   // 이메일 기반 로그인 요청
   const loginWithNaverEmail = async (email) => {
     try {
-      // FormData를 이용해 이메일 전송
       const formData = new FormData();
       formData.append("naverEmail", email);
 
@@ -217,13 +196,11 @@ function Login({ onLoginSuccess }) {
         },
       });
 
-      // 로그인 성공 시 토큰 처리
       const authorizationHeader = loginResponse.headers["authorization"];
       if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
         throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
       }
 
-      // Access Token 및 Refresh Token 추출
       const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
       const { refreshToken } = loginResponse.data;
 
@@ -231,13 +208,11 @@ function Login({ onLoginSuccess }) {
         throw new Error("Refresh Token이 응답에 없습니다.");
       }
 
-      // 로그인 처리 (AuthProvider 또는 다른 로직 호출)
       login({ accessToken: jwtAccessToken, refreshToken });
 
       console.log("Naver 로그인 성공!");
       alert("Naver 로그인 성공!");
 
-      // 로그인 성공 후 리디렉션
       if (onLoginSuccess) onLoginSuccess();
     } catch (error) {
       console.error("로그인 요청 실패:", error.message);
@@ -513,7 +488,11 @@ function Login({ onLoginSuccess }) {
             />
           </div>
           <div className={styles.buttonContainer}>
-            <button type="submit" className={styles.button} disabled={isLoading}>
+            <button
+              type="submit"
+              className={styles.button}
+              disabled={isLoading}
+            >
               {isLoading ? "Loading..." : "로그인"}
             </button>
           </div>
@@ -563,11 +542,10 @@ function Login({ onLoginSuccess }) {
           </div>
         </form>
       </div>
-  
+
       {/* Face ID 섹션 */}
       <div className={styles.faceIdSection}>
         <FaceIDLogin ref={faceIdRef} /> {/* ref 전달 */}
-        
         <button
           type="button"
           className={styles.faceIdButton}
@@ -578,8 +556,6 @@ function Login({ onLoginSuccess }) {
       </div>
     </div>
   );
-  
-
 }
 
 export default Login;
