@@ -121,6 +121,16 @@ public class PostsService {
 	public int selectSearchTitleCount(String keyword) {
 		return (int)postsRepository.countSearchTitle(keyword);
 	}
+
+    public int selectListIdCount(String userid) {
+		return (int) postsRepository.countBypWriter(userid);
+    }
+
+	public ArrayList<Posts> selectListId(Pageable pageable, String userid) {
+		List<PostsEntity> list = postsRepository.findBypWriter(userid, pageable);
+
+		return toList(list);
+	}
 //
 //	public ArrayList<Notice> selectSearchContent(String keyword, Pageable pageable) {
 //		return toList(noticeRepository.findSearchContent(keyword, pageable));

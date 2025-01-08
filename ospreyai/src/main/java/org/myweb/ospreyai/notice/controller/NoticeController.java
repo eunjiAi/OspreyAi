@@ -80,6 +80,34 @@ public class NoticeController {
 		return map;
 	}
 
+	// 공지사항 필터링 목록보기 요청 처리용 (페이징 처리 : 한 페이지에 10개씩 출력 처리)
+	@GetMapping("/my")
+	public Map<String, Object> noticeListIdMethod(
+			@RequestParam(name = "page", defaultValue = "1") int currentPage,
+			@RequestParam(name = "limit", defaultValue = "10") int limit,
+			@RequestParam(name = "userid", required = false) String userid) {
+
+		// userid로 필터링된 공지사항 개수 가져오기
+		int listCount = noticeService.selectListIdCount(userid);  // userid로 필터링된 공지사항 수 계산
+		Paging paging = new Paging(listCount, limit, currentPage, "noticeList");
+		paging.calculate();
+
+		// Pageable 객체 생성 (페이징 처리)
+		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
+				Sort.by(Sort.Direction.DESC, "noticeNo"));
+
+		// userid로 필터링된 공지사항 리스트 가져오기
+		ArrayList<Notice> list = noticeService.selectListId(pageable, userid);  // userid로 필터링된 공지사항만 가져오기
+
+		Map<String, Object> map = new HashMap<>();
+		map.put("list", list);
+		map.put("paging", paging);
+
+		return map;
+	}
+
+
+
 	// 공지글 등록 요청(파일 업로드)
 	@PostMapping
 	public ResponseEntity noticeInsertMethod(

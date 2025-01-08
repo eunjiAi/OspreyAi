@@ -60,9 +60,23 @@ public class NoticeService {
 		return toList(noticeRepository.findAll(pageable));
 	}
 
+	// userid에 맞는 공지사항 리스트 조회 (페이징 처리)
+	public ArrayList<Notice> selectListId(Pageable pageable, String userid) {
+		// userid에 맞는 공지사항만 필터링하여 페이징 처리된 결과를 반환
+		List<NoticeEntity> list = noticeRepository.findBynWriter(userid, pageable);
+
+		// NoticeEntity를 Notice로 변환하여 ArrayList로 반환
+		return toList(list);  // toList를 사용하여 변환 후 반환
+	}
+
 	// 공지사항 전체 개수 조회
 	public int selectListCount() {
 		return (int)noticeRepository.count();
+	}
+
+	public int selectListIdCount(String userid) {
+		// userid에 맞는 공지사항의 개수를 반환
+		return (int) noticeRepository.countBynWriter(userid);
 	}
 
 	// 공지사항 추가
@@ -121,6 +135,8 @@ public class NoticeService {
 	public int selectSearchTitleCount(String keyword) {
 		return (int)noticeRepository.countSearchTitle(keyword);
 	}
+
+
 //
 //	public ArrayList<Notice> selectSearchContent(String keyword, Pageable pageable) {
 //		return toList(noticeRepository.findSearchContent(keyword, pageable));

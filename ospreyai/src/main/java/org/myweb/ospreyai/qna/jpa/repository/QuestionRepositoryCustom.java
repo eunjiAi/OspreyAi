@@ -16,4 +16,8 @@ public interface QuestionRepositoryCustom {
     int findLastQno();
     long countSearchTitle(String keyword);
     long countSearchContent(String keyword);
+
+    long countByqWriter(String userid);
+
+    List<QuestionEntity> findByqWriter(String userid, Pageable pageable);
 }

@@ -56,6 +56,25 @@ public class PostsRepositoryCustomImpl implements PostsRepositoryCustom {
                 .fetchCount();
     }
 
+    @Override
+    public long countBypWriter(String userid) {
+        return queryFactory
+                .selectFrom(posts)
+                .where(posts.writer.eq(userid))
+                .fetchCount();
+    }
+
+    @Override
+    public List<PostsEntity> findBypWriter(String userid, Pageable pageable) {
+        return queryFactory
+                .selectFrom(posts)
+                .where(posts.writer.eq(userid))
+                .orderBy(posts.postId.desc())
+                .offset(pageable.getOffset())
+                .limit(pageable.getPageSize())
+                .fetch();
+    }
+
 //    @Override
 //    public List<PostsEntity> findSearchContent(String keyword, Pageable pageable) {
 //        return queryFactory
