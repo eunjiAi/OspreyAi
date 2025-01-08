@@ -80,6 +80,35 @@ public class QuestionController {
         return map;
     }
 
+    // 전체 필터링 리스트
+    @GetMapping("/my")
+    public Map<String, Object> QuestionListIdMethod(
+            @RequestParam(name = "page", defaultValue = "1") int currentPage,
+            @RequestParam(name = "limit", defaultValue = "10") int limit,
+            @RequestParam(name = "userid", required = false) String userid) {
+        // page : 출력할 페이지, limit : 한 페이지에 출력할 목록 갯수
+
+        // 총 목록갯수 조회해서 총 페이지 수 계산함
+        int listCount = questionService.selectListIdCount(userid);
+        // 페이지 관련 항목 계산 처리
+        Paging paging = new Paging(listCount, limit, currentPage, "/question");
+        paging.calculate();
+
+        //JPA 에 사용될 Pageable 객체 생성
+        Pageable pageable = PageRequest.of(
+                paging.getCurrentPage() - 1,
+                paging.getLimit(),
+                Sort.by(Sort.Direction.DESC, "qno"));
+
+        // 서비스롤 목록 조회 요청하고 결과 받기
+        ArrayList<Question> list = questionService.selectListId(pageable, userid);
+        Map<String, Object> map = new HashMap<>();
+        map.put("list", list);
+        map.put("paging", paging);
+
+        return map;
+    }
+
     // 게시글 원글 상세 내용보기 요청 처리용
     @GetMapping("/detail/{qno}")
     public ResponseEntity<Map> questionDetailMethod(@PathVariable("qno") int qno) {

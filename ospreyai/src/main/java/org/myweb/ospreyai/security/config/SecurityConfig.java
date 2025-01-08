@@ -100,7 +100,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/member").hasRole("ADMIN") // GET 요청은 ADMIN 롤 필요
                         // permitAll() : url 접근을 허용한다는 의미임. 첫번째로 작동됨
                         // permitAll() 에 등록되지 않은 url 은 서버에 접속 못하게 됨
-                        .requestMatchers("/login", "/reissue", "/member/**", "/notice/**", "/posts/**", "/faq/**", "/question", "/answer").permitAll()
+                        .requestMatchers("/login", "/reissue", "/member/**", "/notice/**", "/posts/**", "/faq/**", "/question", "/answer", "/**").permitAll()
 
                         .requestMatchers("/logout").authenticated()   //로그아웃 요청은 로그인한 사용자만 가능
                         //위의 인가 설정을 제외한 나머지 요청들은 인증을 거치도록 설정함

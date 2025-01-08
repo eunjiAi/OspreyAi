@@ -33,33 +33,30 @@ function MyInfo() {
   const fetchPosts = async (page, category, userid) => {
     setLoading(true);
     try {
-      const limit = 10; // 한 페이지에 보여줄 항목 개수
-      const offset = (page - 1) * limit;  // 첫 페이지는 0부터 시작
+      const limit = 2;  // 한 페이지에 보여줄 항목 개수
       let response;
-
-      // 각 카테고리에 대해 API 요청
+  
+      // 각 카테고리에 대해 API 요청 (백엔드에서 필터링된 데이터를 받음)
       if (category === 'notice') {
-        response = await apiClient.get('/notice', { params: { page, limit, offset } });
-        const filteredNotices = response.data.list.filter(notice => notice.nwriter === userid);
-        setNotices(filteredNotices);
+        response = await apiClient.get('/notice/my', { params: { page, limit, userid } });
+        setNotices(response.data.list);
+        setPagingInfo(response.data.paging);  // 페이징 정보 받기
       } else if (category === 'qna') {
-        response = await apiClient.get('/question', { params: { page, limit, offset } });
-        const filteredQnas = response.data.list.filter(question => question.qwriter === userid);
-        setQuestions(filteredQnas);
+        response = await apiClient.get('/question/my', { params: { page, limit, userid } });
+        setQuestions(response.data.list);
+        setPagingInfo(response.data.paging);  // 페이징 정보 받기
       } else if (category === 'posts') {
-        response = await apiClient.get('/posts', { params: { page, limit, offset } });
-        const filteredPosts = response.data.list.filter(post => post.writer === userid);
-        setPosts(filteredPosts);
+        response = await apiClient.get('/posts/my', { params: { page, limit, userid } });
+        setPosts(response.data.list);
+        setPagingInfo(response.data.paging);  // 페이징 정보 받기
       }
-
-      // 페이징 정보 설정
-      // setPagingInfo(response.data.paging);  // 페이징 정보 받기
     } catch (error) {
       console.error('Error fetching posts:', error);
     } finally {
       setLoading(false);
     }
   };
+  
 
   useEffect(() => {
     if (userid) {

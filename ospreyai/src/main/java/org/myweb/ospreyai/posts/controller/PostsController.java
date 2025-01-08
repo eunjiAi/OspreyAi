@@ -81,6 +81,29 @@ public class PostsController {
 		return map;
 	}
 
+	// 게시글 필터링 조회
+	@GetMapping("/my")
+	public Map<String, Object> postsListIdMethod(
+			@RequestParam(name = "page", defaultValue = "1") int currentPage,
+			@RequestParam(name = "limit", defaultValue = "10") int limit,
+			@RequestParam(name = "userid", required = false) String userid) {
+
+		int listCount = postsService.selectListIdCount(userid);
+		Paging paging = new Paging(listCount, limit, currentPage);
+		paging.calculate();
+
+		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
+				Sort.by(Sort.Direction.DESC, "postId"));
+
+		ArrayList<Posts> list = postsService.selectListId(pageable, userid);
+
+		Map<String, Object> map = new HashMap<>();
+		map.put("list", list);
+		map.put("paging", paging);
+
+		return map;
+	}
+
 	// 게시글 등록
 	@PostMapping
 	public ResponseEntity postsInsertMethod(

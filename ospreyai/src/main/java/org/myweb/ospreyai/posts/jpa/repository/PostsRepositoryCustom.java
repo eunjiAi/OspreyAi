@@ -14,6 +14,10 @@ public interface PostsRepositoryCustom {
     //검색 관련 메소드 ------------------------------------
      List<PostsEntity> findSearchTitle(String keyword, Pageable pageable);
      long countSearchTitle(String keyword);
+
+    long countBypWriter(String userid);
+
+    List<PostsEntity> findBypWriter(String userid, Pageable pageable);
 //     List<PostsEntity> findSearchContent(String keyword, Pageable pageable);
 //     long countSearchContent(String keyword);
 //     List<PostsEntity> findSearchDate(Date begin, Date end, Pageable pageable);

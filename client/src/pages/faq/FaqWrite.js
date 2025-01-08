@@ -141,7 +141,8 @@ function FaqWrite() {
         </form>
         <div className={styles.button}>
                 <div className="button-group">
-                    <input type="submit" value="등록하기" /> &nbsp;
+                    <input type="submit" value="등록하기" 
+                    onClick={handleSubmit}/> &nbsp;
                     <input type="reset" value="작성 초기화" 
                         onClick={() => {setFormData({ ...formData, faqTitle: '',
                             faqWriter: formData.faqWriter, // 작성자는 그대로 둠

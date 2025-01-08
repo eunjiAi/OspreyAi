@@ -126,12 +126,15 @@ function Login({ onLoginSuccess }) {
 
   // Naver Login -----------------------------------------------------------------------------
   // Naver OAuth 설정
-  const NAVER_STATE = "51W3oivPtjmn8kdmcql9QOQQDnPOUBgriwV1vMH3e0Y";
+  const generateRandomState = () => Math.random().toString(36).substr(2, 15); // 동적 State 생성
+  const NAVER_STATE = generateRandomState();
 
+  // 네이버 로그인 핸들러
   const handleNaverLogin = () => {
-    const naverLoginUrl = `http://localhost:8080/naver/login?state=${NAVER_STATE}`;
+    const naverLoginUrl = `http://localhost:8888/naver/login?state=${NAVER_STATE}`;
     console.log("Naver Login URL:", naverLoginUrl);
 
+    // 팝업 창 열기
     const popup = window.open(
       naverLoginUrl,
       "Naver Login",
@@ -143,10 +146,12 @@ function Login({ onLoginSuccess }) {
       return;
     }
 
+    // 팝업 창의 URL 변경 감지
     const interval = setInterval(async () => {
       try {
         const currentUrl = popup.location.href;
 
+        // 인증 코드가 URL에 포함된 경우
         if (currentUrl.includes("code")) {
           popup.close();
           clearInterval(interval);
@@ -154,6 +159,9 @@ function Login({ onLoginSuccess }) {
           const params = new URLSearchParams(currentUrl.split("?")[1]);
           const authCode = params.get("code");
           const state = params.get("state");
+
+          console.log("Naver Authorization Code:", authCode);
+          console.log("Naver State:", state);
 
           // 네이버 콜백 처리
           await handleNaverCallback(authCode, state);
@@ -164,20 +172,26 @@ function Login({ onLoginSuccess }) {
     }, 500);
   };
 
+  // 네이버 콜백 처리
   const handleNaverCallback = async (authCode, state) => {
     try {
+      // 네이버 콜백 엔드포인트 호출
       const response = await axios.get(
         `http://localhost:8888/naver/callback?code=${authCode}&state=${state}`,
         {
-          withCredentials: true,
+          withCredentials: true, // 쿠키를 포함해 요청
         }
       );
 
       const userInfo = response.data; // 서버에서 반환된 사용자 정보
       console.log("Naver 사용자 정보:", userInfo);
 
-      // 서버로 이메일을 이용한 로그인 요청
-      await loginWithNaverEmail(userInfo.email);
+      // 사용자 이메일을 이용해 로그인 요청
+      if (userInfo.email) {
+        await loginWithNaverEmail(userInfo.email);
+      } else {
+        throw new Error("서버에서 이메일 정보를 받지 못했습니다.");
+      }
     } catch (error) {
       console.error(
         "네이버 콜백 처리 실패:",
@@ -190,8 +204,10 @@ function Login({ onLoginSuccess }) {
     }
   };
 
+  // 이메일 기반 로그인 요청
   const loginWithNaverEmail = async (email) => {
     try {
+      // FormData를 이용해 이메일 전송
       const formData = new FormData();
       formData.append("naverEmail", email);
 
@@ -201,19 +217,28 @@ function Login({ onLoginSuccess }) {
         },
       });
 
-      const jwtAccessToken =
-        loginResponse.headers["authorization"]?.split(" ")[1];
-      const refreshToken = loginResponse.data.refreshToken;
-
-      if (jwtAccessToken && refreshToken) {
-        console.log("Naver 로그인 성공:", jwtAccessToken, refreshToken);
-        // 로그인 성공 처리
-        alert("Naver 로그인 성공!");
-        // 로그인 성공 후 리디렉션
-        if (onLoginSuccess) onLoginSuccess();
-      } else {
-        throw new Error("로그인 토큰이 없습니다.");
+      // 로그인 성공 시 토큰 처리
+      const authorizationHeader = loginResponse.headers["authorization"];
+      if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
+        throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
       }
+
+      // Access Token 및 Refresh Token 추출
+      const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
+      const { refreshToken } = loginResponse.data;
+
+      if (!refreshToken) {
+        throw new Error("Refresh Token이 응답에 없습니다.");
+      }
+
+      // 로그인 처리 (AuthProvider 또는 다른 로직 호출)
+      login({ accessToken: jwtAccessToken, refreshToken });
+
+      console.log("Naver 로그인 성공!");
+      alert("Naver 로그인 성공!");
+
+      // 로그인 성공 후 리디렉션
+      if (onLoginSuccess) onLoginSuccess();
     } catch (error) {
       console.error("로그인 요청 실패:", error.message);
       alert(
@@ -464,92 +489,97 @@ function Login({ onLoginSuccess }) {
 
   return (
     <div className={styles.container}>
-      <h2>로그인 페이지</h2>
-      <form className={styles.form} onSubmit={handleLogin}>
-        <div className={styles.inputGroup}>
-          <label htmlFor="username">아이디:</label>
-          <input
-            type="text"
-            id="username"
-            placeholder="아이디를 입력하세요"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="password">비밀번호:</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="비밀번호를 입력하세요"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className={styles.buttonContainer}>
-          <button type="submit" className={styles.button} disabled={isLoading}>
-            {isLoading ? "Loading..." : "로그인"}
-          </button>
-        </div>
-        <div className={styles.findInfo}>
-          <a href="/findId" className={styles.link}>
-            아이디찾기
-          </a>
-          {" | "}
-          <a href="/findPassword" className={styles.link}>
-            비밀번호찾기
-          </a>
-        </div>
-        <div>
-          <button
-            type="button"
-            className={styles.apiButton}
-            onClick={handleGoogleLogin}
-          >
-            <img
-              src={googleSignInImage}
-              alt="Sign in with Google"
-              className={styles.apiButtonImage}
+      <div className={styles.form}>
+        <h2 className={styles.title}>로그인</h2>
+        <form onSubmit={handleLogin}>
+          <div className={styles.inputGroup}>
+            <label htmlFor="username">아이디:</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="아이디를 입력하세요"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
-          </button>
-          <button
-            type="button"
-            className={styles.apiButton}
-            onClick={handleNaverLogin}
-          >
-            <img
-              src={NaverSignInImage}
-              alt="Sign in with Google"
-              className={styles.apiButtonImage}
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="password">비밀번호:</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력하세요"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
-          </button>
-          <button
-            type="button"
-            className={styles.apiButton}
-            onClick={handleKakaoLogin}
-          >
-            <img
-              src={kakaoSignInImage}
-              alt="Sign in with Kakao"
-              className={styles.apiButtonImage}
-            />
-          </button>
-        </div>
-      </form>
-
-      {/* Face ID 버튼 */}
-      <button
-        type="button"
-        className={`${styles.apiButton} ${styles.faceIdButton}`}
-        onClick={handleFaceIDLogin} // Face ID 로그인 클릭
-      >
-        Face ID로 로그인
-      </button>
-
-      {/* FaceIDLogin 컴포넌트 */}
-      <FaceIDLogin ref={faceIdRef} />
+          </div>
+          <div className={styles.buttonContainer}>
+            <button type="submit" className={styles.button} disabled={isLoading}>
+              {isLoading ? "Loading..." : "로그인"}
+            </button>
+          </div>
+          <div className={styles.findInfo}>
+            <a href="/findId" className={styles.link}>
+              아이디찾기
+            </a>{" "}
+            |{" "}
+            <a href="/findPassword" className={styles.link}>
+              비밀번호찾기
+            </a>
+          </div>
+          <div>
+            <button
+              type="button"
+              className={styles.apiButton}
+              onClick={handleGoogleLogin}
+            >
+              <img
+                src={googleSignInImage}
+                alt="Sign in with Google"
+                className={styles.apiButtonImage}
+              />
+            </button>
+            <button
+              type="button"
+              className={styles.apiButton}
+              onClick={handleNaverLogin}
+            >
+              <img
+                src={NaverSignInImage}
+                alt="Sign in with Naver"
+                className={styles.apiButtonImage}
+              />
+            </button>
+            <button
+              type="button"
+              className={styles.apiButton}
+              onClick={handleKakaoLogin}
+            >
+              <img
+                src={kakaoSignInImage}
+                alt="Sign in with Kakao"
+                className={styles.apiButtonImage}
+              />
+            </button>
+          </div>
+        </form>
+      </div>
+  
+      {/* Face ID 섹션 */}
+      <div className={styles.faceIdSection}>
+        <FaceIDLogin ref={faceIdRef} /> {/* ref 전달 */}
+        
+        <button
+          type="button"
+          className={styles.faceIdButton}
+          onClick={handleFaceIDLogin}
+        >
+          Face ID로 로그인
+        </button>
+      </div>
     </div>
   );
+  
+
 }
 
 export default Login;
