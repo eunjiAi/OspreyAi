@@ -33,6 +33,14 @@ function MyPage() {
           비밀번호 변경
         </button>
         <button
+          onClick={() => navigate("/mypage/myinfo")}
+          className={`tab ${
+            location.pathname === "/mypage/myinfo" ? "active" : ""
+          }`}
+        >
+          내가 쓴 글
+        </button>
+        <button
           onClick={() => navigate("/mypage/qna")}
           className={`tab ${location.pathname === "/mypage/qna" ? "active" : ""}`}
         >

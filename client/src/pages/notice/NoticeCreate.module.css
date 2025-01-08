@@ -95,7 +95,6 @@ td input[type="file"]:hover {
 }
 
 /* 버튼 스타일 (공통) */
-button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {

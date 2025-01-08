@@ -21,6 +21,8 @@ public class QMemberEntity extends EntityPathBase<MemberEntity> {
 
     public final StringPath adminYn = createString("adminYn");
 
+    public final StringPath email = createString("email");
+
     public final DatePath<java.sql.Date> enrollDate = createDate("enrollDate", java.sql.Date.class);
 
     public final StringPath faceId = createString("faceId");

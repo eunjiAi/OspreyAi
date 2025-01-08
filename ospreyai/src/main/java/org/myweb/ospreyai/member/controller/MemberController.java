@@ -5,14 +5,19 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.common.Paging;
 import org.myweb.ospreyai.common.Search;
+import org.myweb.ospreyai.member.jpa.entity.MemberEntity;
 import org.myweb.ospreyai.member.model.dto.Member;
+import org.myweb.ospreyai.member.model.service.EmailService;
 import org.myweb.ospreyai.member.model.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,175 +32,229 @@ import java.util.*;
 @RequiredArgsConstructor
 @CrossOrigin
 public class MemberController {
-	private final MemberService memberService;
+    private final MemberService memberService;
+    private final EmailService emailService;
+    private final BCryptPasswordEncoder bcryptPasswordEncoder;
 
-	private final BCryptPasswordEncoder bcryptPasswordEncoder;
+    //ajax 통신으로 가입할 회원의 아이디(유니크) 중복 검사 요청 처리용 메소드
+    @PostMapping("/memberidchk")
+    public ResponseEntity<String> dupCheckIdMethod(@RequestParam("memberId") String memberId) {
+        if (memberService.selectCheckId(memberId) == 0) {
+            return new ResponseEntity<String>("ok", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<String>("dup", HttpStatus.OK);
+        }
+    }
 
-	//ajax 통신으로 가입할 회원의 아이디(유니크) 중복 검사 요청 처리용 메소드
-	@PostMapping("/memberidchk")
-	public ResponseEntity<String> dupCheckIdMethod(@RequestParam("memberId") String memberId) {
-		if(memberService.selectCheckId(memberId) == 0){
-			return new ResponseEntity<String>("ok", HttpStatus.OK);
-		}else{
-			return new ResponseEntity<String>("dup", HttpStatus.OK);
-		}
-	}
+    // 회원 가입
+    @PostMapping
+    public ResponseEntity memberInsertMethod(
+            @ModelAttribute Member member) {
 
-	// 회원 가입
-	@PostMapping
-	public ResponseEntity memberInsertMethod(
-			@ModelAttribute Member member) {
+        //UUID 자동 생성
+        member.setUuid(UUID.randomUUID().toString());
+        log.info("생성된 UUID : " + member.getUuid());
 
-		//UUID 자동 생성
-		member.setUuid(UUID.randomUUID().toString());
-		log.info("생성된 UUID : " + member.getUuid());
+        // 패스워드 암호화 처리
+        member.setPw(bcryptPasswordEncoder.encode(member.getPw()));
 
-		// 패스워드 암호화 처리
-		member.setPw(bcryptPasswordEncoder.encode(member.getPw()));
+        //가입정보 추가 입력 처리
+        member.setLoginOk("Y");
+        member.setAdminYn("N");
+        log.info("회원가입 정보 : " + member);
 
-		//가입정보 추가 입력 처리
-		member.setLoginOk("Y");
-		member.setAdminYn("N");
-		log.info("회원가입 정보 : " + member);
+        memberService.insertMember(member);
+        return ResponseEntity.status(HttpStatus.OK).build();
 
-		memberService.insertMember(member);
-		return ResponseEntity.status(HttpStatus.OK).build();
+    }
 
-	}
+    // 닉네임 가져오기
+    @GetMapping("/nickname")
+    public ResponseEntity<String> getNicknameByUserId(@RequestParam String userid) {
+        String nickname = memberService.getNicknameByUserId(userid);
+        if (nickname != null) {
+            return ResponseEntity.ok(nickname);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
-	// 닉네임 가져오기
-	@GetMapping("/nickname")
-	public ResponseEntity<String> getNicknameByUserId(@RequestParam String userid) {
-		String nickname = memberService.getNicknameByUserId(userid);
-		if (nickname != null) {
-			return ResponseEntity.ok(nickname);
-		} else {
-			return ResponseEntity.notFound().build();
-		}
-	}
+    // 아이디 찾기
+    @GetMapping("/findId")
+    public ResponseEntity<?> findIdMethod(
+            @RequestParam("name") String name,
+            @RequestParam("email") String email) {
+        Member member = memberService.findByNameAndEmail(name, email);
 
-	// 마이페이지 메인
-	@GetMapping("/mypage/{userId}")
-	public ResponseEntity<Member> memberDetailMethod(@PathVariable String userId) {
-		log.info("마이페이지 회원 아이디 : " + userId);
+        if (member != null) {
+            return ResponseEntity.ok(Collections.singletonMap("id", member.getMemberId()));
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Collections.singletonMap("message", "아이디를 찾을 수 없습니다."));
+        }
+    }
 
-		Member member = memberService.selectMember(userId);
+    @PostMapping("/resetPassword")
+    public ResponseEntity<?> sendTemporaryPassword(@RequestBody Map<String, String> request) {
+        String userId = request.get("userId");
+        String email = request.get("email");
 
-		if(member != null){
-			return ResponseEntity.status(HttpStatus.OK).body(member);
-		} else {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
+        // 사용자 확인
+        Optional<MemberEntity> userOptional = memberService.checkUserExists(userId, email);
+        if (userOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Collections.singletonMap("message", "아이디와 이메일 정보가 일치하지 않습니다."));
+        }
 
-	}
+        // 임시 비밀번호 생성
+        String tempPassword = generateTemporaryPassword();
 
-	//회원정보 수정
-	@PutMapping("/mypage/{uuid}")
-	public ResponseEntity memberUpdateMethod(@PathVariable String uuid, @RequestBody Member member) {
-		Member preMember = memberService.selectUuid(uuid);
+        // 임시 비밀번호 암호화
+        String encryptedPassword = bcryptPasswordEncoder.encode(tempPassword);
 
-		preMember.setName(member.getName());
-		preMember.setNickname(member.getNickname());
-		preMember.setPhoneNumber(member.getPhoneNumber());
-		preMember.setGoogle(member.getGoogle());
-		preMember.setNaver(member.getNaver());
-		preMember.setKakao(member.getKakao());
+        // 비밀번호 업데이트
+        memberService.updatePassword(userId, encryptedPassword);
 
-		try {
-			memberService.updateMember(preMember); // 회원정보 수정 성공시
-			return ResponseEntity.ok().build();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-		}
-	}
+        // 이메일 전송
+        emailService.sendEmail(email, "OspreyAI 임시 비밀번호 발급",
+                "안녕하세요, OspreyAI 사용자님.\n\n임시 비밀번호 :\n" +
+                tempPassword +
+                "\n\n안전한 사용을 위해 발급된 임시 비밀번호는 즉시 변경해 주시길 권장합니다.\n" +
+                "비밀번호 변경과 관련하여 도움이 필요하신 경우, 언제든지 문의해 주십시오.\n" +
+                "\n" +
+                "감사합니다.\n" +
+                "OspreyAI 드림");
 
-	// 비밀번호 체크(비밀번호 변경시)
-	@PostMapping("/mypage/chkpw/{userId}")
-	public ResponseEntity<?> pwCheckIdMethod(@PathVariable String userId, @RequestBody Map<String, String> request) {
-		String inputPassword = request.get("pw");
-		boolean pwChk = memberService.checkPassword(userId, inputPassword);
+        return ResponseEntity.ok(Collections.singletonMap("message", "임시 비밀번호가 이메일로 전송되었습니다."));
+    }
 
-		if (pwChk) {
-			return ResponseEntity.ok().build();
-		} else {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-		}
-	}
-
-	// 새로운 비밀번호로 변경
-	@PutMapping("/mypage/pwchange/{uuid}")
-	public ResponseEntity<?> pwChangeMethod(@PathVariable String uuid, @RequestBody Map<String, String> request) {
-		Member member = memberService.selectUuid(uuid);
-
-		member.setPw(bcryptPasswordEncoder.encode(request.get("pw")));
-
-		try {
-			memberService.updateMember(member);
-			return ResponseEntity.ok().build();
-		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-		}
-	}
+    private String generateTemporaryPassword() {
+        return UUID.randomUUID().toString().substring(0, 16);
+    }
 
 
-	// 회원 탈퇴(삭제) 요청 처리용
-	@DeleteMapping("/{uuid}")
-	public ResponseEntity memberDeleteMethod(@PathVariable String uuid) {
-		try {
-			memberService.deleteMember(uuid);
-			return ResponseEntity.ok().build();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-	}
-	
-	// 관리자 기능 *********************************************************
-	// 회원 목록 보기 요청
-	@GetMapping("/admin/members")
-	public ResponseEntity<Map<String, Object>> memberListMethod(
-			//ajax 통신에서는 반환형을 ResponseEntity<객체자료형> 을 사용하지 않아도 됨
-			@RequestParam(name = "page", defaultValue = "1") int currentPage,
-			@RequestParam(name = "limit", defaultValue = "10") int limit) {
+    // 마이페이지 메인
+    @GetMapping("/mypage/{userId}")
+    public ResponseEntity<Member> memberDetailMethod(@PathVariable String userId) {
+        log.info("마이페이지 회원 아이디 : " + userId);
 
-		int listCount = memberService.selectListCount();
-		Paging paging = new Paging(listCount, limit, currentPage);
-		paging.calculate();
+        Member member = memberService.selectMember(userId);
 
-		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
-				Sort.by(Sort.Direction.DESC, "enrollDate"));
+        if (member != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(member);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
 
-		try {
-			List<Member> members = memberService.selectList(pageable);
-			Map<String, Object> map = new HashMap<>();
-			map.put("list", members);
-			map.put("paging", paging);
-			return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-	}
+    }
 
-	//회원 로그인 제한/허용 처리용 메소드
-	@PutMapping("/loginok/{uuid}/{loginOk}")
-	public ResponseEntity<String> changeLoginOKMethod(
-			@PathVariable String uuid,
-			@PathVariable String loginOk,
-			@RequestBody Member member) {
-		log.info("회원 제한 메서드() : " + uuid + ", " + loginOk);
+    //회원정보 수정
+    @PutMapping("/mypage/{uuid}")
+    public ResponseEntity memberUpdateMethod(@PathVariable String uuid, @RequestBody Member member) {
+        Member preMember = memberService.selectUuid(uuid);
 
-		try {
-			memberService.updateLoginOK(uuid, loginOk);
-			return new ResponseEntity(HttpStatus.OK);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-	}
-	
-	//관리자용 검색 기능 요청 처리용
+        preMember.setName(member.getName());
+        preMember.setNickname(member.getNickname());
+        preMember.setPhoneNumber(member.getPhoneNumber());
+        preMember.setGoogle(member.getGoogle());
+        preMember.setNaver(member.getNaver());
+        preMember.setKakao(member.getKakao());
+
+        try {
+            memberService.updateMember(preMember); // 회원정보 수정 성공시
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+    // 비밀번호 체크(비밀번호 변경시)
+    @PostMapping("/mypage/chkpw/{userId}")
+    public ResponseEntity<?> pwCheckIdMethod(@PathVariable String userId, @RequestBody Map<String, String> request) {
+        String inputPassword = request.get("pw");
+        boolean pwChk = memberService.checkPassword(userId, inputPassword);
+
+        if (pwChk) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
+
+    // 새로운 비밀번호로 변경
+    @PutMapping("/mypage/pwchange/{uuid}")
+    public ResponseEntity<?> pwChangeMethod(@PathVariable String uuid, @RequestBody Map<String, String> request) {
+        Member member = memberService.selectUuid(uuid);
+
+        member.setPw(bcryptPasswordEncoder.encode(request.get("pw")));
+
+        try {
+            memberService.updateMember(member);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+
+    // 회원 탈퇴(삭제) 요청 처리용
+    @DeleteMapping("/{uuid}")
+    public ResponseEntity memberDeleteMethod(@PathVariable String uuid) {
+        try {
+            memberService.deleteMember(uuid);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    // 관리자 기능 *********************************************************
+// 회원 목록 보기 요청
+    @GetMapping("/admin/members")
+    public ResponseEntity<Map<String, Object>> memberListMethod(
+            //ajax 통신에서는 반환형을 ResponseEntity<객체자료형> 을 사용하지 않아도 됨
+            @RequestParam(name = "page", defaultValue = "1") int currentPage,
+            @RequestParam(name = "limit", defaultValue = "10") int limit) {
+
+        int listCount = memberService.selectListCount();
+        Paging paging = new Paging(listCount, limit, currentPage);
+        paging.calculate();
+
+        Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
+                Sort.by(Sort.Direction.DESC, "enrollDate"));
+
+        try {
+            List<Member> members = memberService.selectList(pageable);
+            Map<String, Object> map = new HashMap<>();
+            map.put("list", members);
+            map.put("paging", paging);
+            return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    //회원 로그인 제한/허용 처리용 메소드
+    @PutMapping("/loginok/{uuid}/{loginOk}")
+    public ResponseEntity<String> changeLoginOKMethod(
+            @PathVariable String uuid,
+            @PathVariable String loginOk,
+            @RequestBody Member member) {
+        log.info("회원 제한 메서드() : " + uuid + ", " + loginOk);
+
+        try {
+            memberService.updateLoginOK(uuid, loginOk);
+            return new ResponseEntity(HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+//관리자용 검색 기능 요청 처리용
 //	@GetMapping("/search")
 //	public ResponseEntity<Map> memberSearchMethod(
 //			HttpServletRequest request) {

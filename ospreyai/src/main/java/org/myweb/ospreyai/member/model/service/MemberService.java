@@ -8,7 +8,6 @@ import org.myweb.ospreyai.member.model.dto.Member;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -61,16 +60,6 @@ public class MemberService {
 				.map(MemberEntity::toDto) // Optional로 안전하게 DTO 변환
 				.orElseThrow(() -> new NoSuchElementException("해당 카카오정보를 조회할 수 없습니다 : " + email));
 	}
-
-	// 페이스 로그인!!
-	public Member findByMemberId(String memberId) {
-		Optional<MemberEntity> entityOptional = memberRepository.findByMemberId(memberId);
-
-		return entityOptional
-				.map(MemberEntity::toDto) // Optional로 안전하게 DTO 변환
-				.orElseThrow(() -> new NoSuchElementException("해당 member_id를 조회할 수 없습니다 : " + memberId));
-	}
-
 
 	//회원가입시 id 중복 검사용
 	public int selectCheckId(String memberId) {
@@ -170,6 +159,18 @@ public class MemberService {
 			log.error(e.getMessage());
 			return 0;
 		}
+	}
+
+	public Member findByNameAndEmail(String name, String email) {
+		return memberRepository.findByNameAndEmail(name, email).get().toDto();
+	}
+
+	public Optional<MemberEntity> checkUserExists(String userId, String email) {
+		return memberRepository.existsByUserIdAndEmail(userId, email);
+	}
+
+	public void updatePassword(String userId, String encryptedPassword) {
+		memberRepository.updatePassword(userId, encryptedPassword);
 	}
 
 	//검색 카운트 관련 ------------------------------------------------------------------

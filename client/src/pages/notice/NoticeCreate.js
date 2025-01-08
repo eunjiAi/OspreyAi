@@ -139,9 +139,10 @@ function NoticeCreate() {
           </tbody>
         </table>
       </form>
-      <div className={styles.button}>
+      <div>
           <div className={styles.buttongroup}>
-                <input type="submit" value="등록하기" /> &nbsp;
+                <input type="submit" value="등록하기" 
+                onClick={(handleSubmit)}/> &nbsp;
                 <input
                   type="reset"
                   value="작성 초기화"
