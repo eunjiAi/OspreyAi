@@ -418,7 +418,7 @@ function Login({ onLoginSuccess }) {
       console.log("받은 memberId:", memberId);
 
       if (memberId) {
-        // Spring Boot 서버로 FormData를 사용하여 로그인 요청
+        // Spring Boot 서버로 FormData를 사용해서 로그인 요청
         const formData = new FormData();
         formData.append("id", memberId);
 

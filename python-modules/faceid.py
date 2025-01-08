@@ -1,3 +1,12 @@
+'''
+[face_recognition 라이브러리 사용: 딥러닝모델(Dlib)의 사전 학습된 얼굴 인코더랑 비교 알고리즘 활용함]
+얼굴 감지 및 인코딩:
+image = face_recognition.load_image_file(img_path)
+encodings = face_recognition.face_encodings(image)
+얼굴 비교:
+results = face_recognition.compare_faces(known_faces, encoding, tolerance=tolerance)
+'''
+
 from flask import Flask, request, jsonify
 from io import BytesIO
 from PIL import Image
@@ -15,7 +24,7 @@ from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__)
 
-# CORS를 활성화하고, 특정 메서드랑 헤더 허용
+# CORS 활성화, 특정 메서드랑 헤더 허용
 CORS(app, methods=["GET", "POST", "OPTIONS"], supports_credentials=True)
 
 USER_HOME_PATH = os.path.expanduser("~")
@@ -35,7 +44,7 @@ if not os.path.exists(SAVE_DIR):
 else:
     print(f"Folder already exists: {SAVE_DIR}")
 
-# 이미지 저장을 위한 폴더 생성 확인
+# 이미지 저장 폴더 생성 확인
 print(f"Saving images to: {SAVE_DIR}")
 
 # 데이터베이스 설정
@@ -52,13 +61,15 @@ class Member(Base):
     uuid = Column("UUID", String, primary_key=True, nullable=False)
     member_id = Column("MEMBERID", String, nullable=False)
     face_id = Column("FACE_ID", String, nullable=True)
-    pw = Column("PW", String, nullable=False)  # 비밀번호 컬럼
+    pw = Column("PW", String, nullable=False)
 
 
 # 데이터베이스 테이블 생성
 Base.metadata.create_all(bind=engine)
 
 @app.route('/register-faceid', methods=['POST'])
+
+# 회원 얼굴 이미지를 저장하고, DB에 해당 파일명을 저장함
 def register_faceid():
     print("요청 받음")
 
@@ -118,6 +129,7 @@ def register_faceid():
 
 
 @app.route('/delete-faceid', methods=['POST'])
+# 회원 얼굴 이미지와 DB 기록을 삭제함
 def delete_faceid():
     try:
         data = request.json
@@ -147,7 +159,9 @@ def delete_faceid():
         print(f"Error: {e}")
         return jsonify({"message": "이미지 삭제 실패!"}), 500
 
-def compare_faces(image_data):
+
+# 로그인중인 이미지 데이터를 로컬 저장된 이미지의 얼굴들과 비교해서 일치 여부 확인
+def compare_faces(image_data, tolerance=0.4):   # 0.6이 기본값, 더 정교하려면 0.4
     known_faces = []
     known_face_names = []
     
@@ -166,12 +180,12 @@ def compare_faces(image_data):
             print("이미지 데이터가 없습니다.")
             return None
 
-        # base64로 인코딩된 이미지를 디코딩하여 얼굴 비교
+        # base64로 인코딩된 이미지 디코딩해서 얼굴 비교
         img_bytes = base64.b64decode(image_data.split(",")[1])  # base64에서 이미지 데이터 추출
         image = face_recognition.load_image_file(BytesIO(img_bytes))
 
-        # 얼굴을 찾기 전에 이미지 크기를 조정
-        image = cv2.resize(image, (800, 800))  # 이미지를 리사이즈하여 얼굴 인식 정확도 개선
+        # 얼굴 찾기 전에 이미지 크기 조정
+        image = cv2.resize(image, (800, 800))  
 
         face_locations = face_recognition.face_locations(image)
         face_encodings = face_recognition.face_encodings(image, face_locations)
@@ -182,7 +196,7 @@ def compare_faces(image_data):
 
         # 얼굴 비교
         for encoding in face_encodings:
-            results = face_recognition.compare_faces(known_faces, encoding)
+            results = face_recognition.compare_faces(known_faces, encoding, tolerance=tolerance)
             if True in results:
                 match_index = results.index(True)
                 matched_filename = known_face_names[match_index]
@@ -211,6 +225,7 @@ def compare_faces(image_data):
     
 
 @app.route('/compare-faceid', methods=['POST'])
+# 이미지 데이터를 비교하고, 매칭된 회원의 UUID 및 ID를 반환함
 def compare_faceid():
     try:
         data = request.json
@@ -227,9 +242,9 @@ def compare_faceid():
                 user_uuid = matched_filename.split('_')[0] if matched_filename else None
 
                 if user_uuid:
-                    # UUID에 해당하는 사용자 정보 조회
+                      # UUID에 해당하는 사용자 정보 조회
                     with SessionLocal() as db:
-                        # 트랜잭션 없이 데이터 조회만 수행
+                        # 트랜잭션 없이 데이터 조회
                         user = db.query(Member).filter_by(uuid=user_uuid).first()
                         if not user:
                             return jsonify({"message": "사용자를 찾을 수 없습니다."}), 404
@@ -248,7 +263,7 @@ def compare_faceid():
         return jsonify({"message": "인증 실패: 얼굴을 찾을 수 없습니다."}), 400
 
     except Exception as e:
-        print(f"Error in compare_faceid: {str(e)}")  # 오류 메시지 출력
+        print(f"Error in compare_faceid: {str(e)}")  
         return jsonify({"message": "서버 오류 발생: " + str(e)}), 500
 
 

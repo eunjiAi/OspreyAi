@@ -1,3 +1,16 @@
+'''
+[MediaPipe라이브러리의 Holistic cnn기반 딥러닝 모델 사용: 관절 감지]
+MediaPipe Holistic 초기화:
+mp_holistic = mp.solutions.holistic
+holistic = mp_holistic.Holistic()
+
+포즈 랜드마크 추출:
+result = holistic.process(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+if not result.pose_landmarks or len(result.pose_landmarks.landmark) < 33:
+    logging.debug("포즈 랜드마크가 없습니다.")
+    return {"angle": None, "knee_position": None, "feedback": "포즈가 감지되지 않았습니다"}
+'''
+
 # USAGE
 # - - - - - - - 250106
 # conda install -c conda-forge dlib
@@ -26,7 +39,8 @@ from pytz import timezone
 import jwt
 from sqlalchemy import text
 
-# 로그 설정
+
+# 에러, 디버깅 정보 로그 파일에 저장
 logging.basicConfig(filename='app_error.log', level=logging.DEBUG, 
                     format='%(asctime)s %(levelname)s %(message)s')
 
@@ -103,7 +117,7 @@ def extract_uuid_and_name_from_token(token):
         logging.error(f"JWT 디코딩 오류: {e}")
         return None, None
 
-# 사용자 UUID를 MEMBER 테이블에 삽입하는 함수
+# 사용자 UUID를 MEMBER 테이블에 삽입함
 def insert_uuid_into_member(uuid, name):
     session = Session()
     try:
@@ -132,7 +146,7 @@ def check_db_connection():
         logging.error(f"디코딩 중 오류 발생: {e}")
         sys.exit(1)
 
-# log_current_user에서 UUID와 이름을 받아서 MEMBER 테이블에 삽입하는 부분
+# JWT에서 UUID와 이름을 추출하고, DB(MEMBER 테이블)에 삽입함
 @app.route('/log-user', methods=['GET'])
 def log_current_user():
     try:
@@ -157,7 +171,8 @@ def log_current_user():
         logging.error(f"JWT 디코딩 중 오류 발생: {e}")
         return jsonify({"error": "JWT 디코딩 중 오류 발생"}), 500
 
-# Pose 분석 
+
+# Pose 분석 및 피드백 제공
 def analyze_pose(image):
     global current_posture, completed_once
     try:
@@ -202,6 +217,8 @@ def analyze_pose(image):
         logging.error(f"자세 분석 오류: {e}")
         return {"angle": None, "knee_position": None, "feedback": "분석 실패"}
 
+
+# 상체 각도 계산
 def calculate_upper_body_angle(landmarks):
     shoulder = landmarks[mp_holistic.PoseLandmark.LEFT_SHOULDER]
     hip = landmarks[mp_holistic.PoseLandmark.LEFT_HIP]
@@ -212,11 +229,15 @@ def calculate_upper_body_angle(landmarks):
     angle = np.arccos(cosine_angle)
     return np.degrees(angle)
 
+
+# 무릎 위치 계산
 def calculate_knee_position(landmarks):
     knee = landmarks[mp_holistic.PoseLandmark.LEFT_KNEE]
     foot = landmarks[mp_holistic.PoseLandmark.LEFT_ANKLE]
     return knee.x - foot.x
 
+
+# DB 저장 및 업데이트
 def update_daily_feedback(uuid, feedback_correct, name):  
     session = Session()
     try:
@@ -259,6 +280,8 @@ def update_daily_feedback(uuid, feedback_correct, name):
     finally:
         session.close()
 
+
+# 이미지 프레임 받고, 자세 분석 및 피드백 반환
 @app.route('/squat-analysis', methods=['POST'])
 def squat_analysis():
     print("요청 메소드:", request.method)
