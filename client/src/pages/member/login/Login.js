@@ -489,92 +489,97 @@ function Login({ onLoginSuccess }) {
 
   return (
     <div className={styles.container}>
-      <h2>로그인 페이지</h2>
-      <form className={styles.form} onSubmit={handleLogin}>
-        <div className={styles.inputGroup}>
-          <label htmlFor="username">아이디:</label>
-          <input
-            type="text"
-            id="username"
-            placeholder="아이디를 입력하세요"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="password">비밀번호:</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="비밀번호를 입력하세요"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className={styles.buttonContainer}>
-          <button type="submit" className={styles.button} disabled={isLoading}>
-            {isLoading ? "Loading..." : "로그인"}
-          </button>
-        </div>
-        <div className={styles.findInfo}>
-          <a href="/findId" className={styles.link}>
-            아이디찾기
-          </a>
-          {" | "}
-          <a href="/findPassword" className={styles.link}>
-            비밀번호찾기
-          </a>
-        </div>
-        <div>
-          <button
-            type="button"
-            className={styles.apiButton}
-            onClick={handleGoogleLogin}
-          >
-            <img
-              src={googleSignInImage}
-              alt="Sign in with Google"
-              className={styles.apiButtonImage}
+      <div className={styles.form}>
+        <h2 className={styles.title}>로그인</h2>
+        <form onSubmit={handleLogin}>
+          <div className={styles.inputGroup}>
+            <label htmlFor="username">아이디:</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="아이디를 입력하세요"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
-          </button>
-          <button
-            type="button"
-            className={styles.apiButton}
-            onClick={handleNaverLogin}
-          >
-            <img
-              src={NaverSignInImage}
-              alt="Sign in with Google"
-              className={styles.apiButtonImage}
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="password">비밀번호:</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력하세요"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
-          </button>
-          <button
-            type="button"
-            className={styles.apiButton}
-            onClick={handleKakaoLogin}
-          >
-            <img
-              src={kakaoSignInImage}
-              alt="Sign in with Kakao"
-              className={styles.apiButtonImage}
-            />
-          </button>
-        </div>
-      </form>
-
-      {/* Face ID 버튼 */}
-      <button
-        type="button"
-        className={`${styles.apiButton} ${styles.faceIdButton}`}
-        onClick={handleFaceIDLogin} // Face ID 로그인 클릭
-      >
-        Face ID로 로그인
-      </button>
-
-      {/* FaceIDLogin 컴포넌트 */}
-      <FaceIDLogin ref={faceIdRef} />
+          </div>
+          <div className={styles.buttonContainer}>
+            <button type="submit" className={styles.button} disabled={isLoading}>
+              {isLoading ? "Loading..." : "로그인"}
+            </button>
+          </div>
+          <div className={styles.findInfo}>
+            <a href="/findId" className={styles.link}>
+              아이디찾기
+            </a>{" "}
+            |{" "}
+            <a href="/findPassword" className={styles.link}>
+              비밀번호찾기
+            </a>
+          </div>
+          <div>
+            <button
+              type="button"
+              className={styles.apiButton}
+              onClick={handleGoogleLogin}
+            >
+              <img
+                src={googleSignInImage}
+                alt="Sign in with Google"
+                className={styles.apiButtonImage}
+              />
+            </button>
+            <button
+              type="button"
+              className={styles.apiButton}
+              onClick={handleNaverLogin}
+            >
+              <img
+                src={NaverSignInImage}
+                alt="Sign in with Naver"
+                className={styles.apiButtonImage}
+              />
+            </button>
+            <button
+              type="button"
+              className={styles.apiButton}
+              onClick={handleKakaoLogin}
+            >
+              <img
+                src={kakaoSignInImage}
+                alt="Sign in with Kakao"
+                className={styles.apiButtonImage}
+              />
+            </button>
+          </div>
+        </form>
+      </div>
+  
+      {/* Face ID 섹션 */}
+      <div className={styles.faceIdSection}>
+        <FaceIDLogin ref={faceIdRef} /> {/* ref 전달 */}
+        
+        <button
+          type="button"
+          className={styles.faceIdButton}
+          onClick={handleFaceIDLogin}
+        >
+          Face ID로 로그인
+        </button>
+      </div>
     </div>
   );
+  
+
 }
 
 export default Login;

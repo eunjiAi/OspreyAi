@@ -1,6 +1,8 @@
-/* src/pages/member/Login.module.css */
 
 .container {
+  display: flex; /* 좌우 정렬 */
+  justify-content: space-between; /* 공간 분배 */
+  align-items: flex-start; 
   text-align: center;
   padding: 20px;
 }
@@ -8,6 +10,10 @@
 .form {
   display: inline-block;
   text-align: left;
+  width: 50%; /* 왼쪽 폼 섹션 */
+  padding-right: 20px; /* 오른쪽과 여백 */
+  border-right: 1px solid #ccc; /* 구분선 */
+  box-sizing: border-box;
 }
 
 .inputGroup {
@@ -31,10 +37,10 @@
 }
 
 .buttonContainer {
-  display: flex; /* Flexbox 사용 */
-  justify-content: center; /* 수평 중앙 정렬 */
-  align-items: center; /* 수직 중앙 정렬 (필요할 경우 추가) */
-  margin-top: 10px; /* 버튼 상단 여백 */
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .button {
@@ -53,48 +59,34 @@
 
 .apiButton {
   background: none;
-  border: none; /* 테두리 제거 */
+  border: none;
   padding: 0;
   cursor: pointer;
   display: inline-block;
-  outline: none; /* 클릭 시 테두리 제거 */
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease; /* 애니메이션 추가 */
+  outline: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.apiButton:hover {
-  background: none;
+.apiButton:focus,
+.apiButton:active {
+  outline: none;
+  border: none;
 }
+
 
 .apiButtonImage {
   width: 200px;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
+}
+
+.apiButton:hover {
+  background-color: white; 
 }
 
 .apiButton:hover .apiButtonImage {
   filter: brightness(0.9);
-}
-
-.faceIdButton {
-  background-color: #fff;
-  border: 1px solid #000;
-  color: #000;
-  padding: 11px 35px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 25px;
-  cursor: pointer;
-  text-align: center;
-  transition:
-    background-color 0.3s ease,
-    box-shadow 0.2s ease;
-}
-
-.faceIdButton:hover {
-  background-color: #f0f0f0;
 }
 
 .findInfo {
@@ -109,9 +101,49 @@
 .link {
   color: #007bff;
   text-decoration: none;
+  
 }
 
 .link:hover {
   text-decoration: underline;
 }
 
+
+
+
+/* 오른쪽 Face ID 섹션 */
+.faceIdSection {
+  width: 45%; /* 오른쪽 섹션 */
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start; 
+  text-align: center;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.faceIdButton {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 15px 0; /* 상하 여백 */
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  white-space: nowrap; /* 텍스트 안잘리도록 설정  */
+}
+
+.faceIdButton:hover {
+  background-color: #f0f0f0;
+}
+
+.faceIdText {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  white-space: nowrap; /* 텍스트 안잘리도록 설정 */
+}
