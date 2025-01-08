@@ -120,7 +120,7 @@ function MypageAdmin() {
       </table>
 
       <PagingView
-        currentPag={pagingInfo.currentPage || 1}
+        currentPage={pagingInfo.currentPage || 1}
         maxPage={pagingInfo.maxPage || 1}
         startPage={pagingInfo.startPage || 1}
         endPage={pagingInfo.endPage || 1}

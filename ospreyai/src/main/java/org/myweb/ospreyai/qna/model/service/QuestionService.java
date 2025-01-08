@@ -9,6 +9,8 @@ import java.util.Optional;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.myweb.ospreyai.posts.jpa.entity.PostsEntity;
+import org.myweb.ospreyai.posts.model.dto.Posts;
 import org.myweb.ospreyai.qna.jpa.entity.QuestionEntity;
 import org.myweb.ospreyai.qna.jpa.repository.QuestionRepository;
 import org.myweb.ospreyai.qna.model.dto.Question;
@@ -26,6 +28,24 @@ public class QuestionService {
 
     private final QuestionRepository questionRepository;
 
+    // 엔티티 리스트를 DTO 리스트로 변환 (Page 타입 처리)
+    private ArrayList<Question> toList(Page<QuestionEntity> entityList) {
+        ArrayList<Question> list = new ArrayList<>();
+        for(QuestionEntity entity : entityList){
+            list.add(entity.toDto());
+        }
+        return list;
+    }
+
+    // 엔티티 리스트를 DTO 리스트로 반환 (List 타입 처리) => 오버로딩
+    private ArrayList<Question> toList(List<QuestionEntity> entityList) {
+        ArrayList<Question> list = new ArrayList<>();
+        for(QuestionEntity entity : entityList){
+            list.add(entity.toDto());
+        }
+        return list;
+    }
+
     public int selectListCount() {
         //jpa 가 제공 : count() 사용
         return (int)questionRepository.count();
@@ -33,12 +53,7 @@ public class QuestionService {
 
     public ArrayList<Question> selectList(Pageable pageable) {
         //jpa 가 제공 : findAll(Pageable) : Page<Entity>
-        Page<QuestionEntity> page = questionRepository.findAll(pageable);
-        ArrayList<Question> list = new ArrayList<>();
-        for(QuestionEntity entity : page){
-            list.add(entity.toDto());
-        }
-        return list;
+        return toList(questionRepository.findAll(pageable));
     }
 
     public Question selectQuestion(int qno) {
@@ -102,23 +117,13 @@ public class QuestionService {
     public ArrayList<Question> selectSearchTitle(String keyword, Pageable pageable) {
         //jpa 가 제공하는 findAll(pageable) 메소드가 있으나, 키워드도 함께 전달되는 메소드는 없음
         //추가해서 사용함 : BoardRepository 인터페이스에 메소드 추가함
-        List<QuestionEntity> page = questionRepository.findSearchTitle(keyword, pageable);
-        ArrayList<Question> list = new ArrayList<>();
-        for(QuestionEntity entity : page){
-            list.add(entity.toDto());
-        }
-        return list;
+        return toList(questionRepository.findSearchTitle(keyword, pageable));
     }
 
     public ArrayList<Question> selectSearchContent(String keyword, Pageable pageable) {
         //jpa 가 제공하는 findAll(pageable) 메소드가 있으나, 키워드도 함께 전달되는 메소드는 없음
         //추가해서 사용함 : BoardRepository 인터페이스에 메소드 추가함
-        List<QuestionEntity> page = questionRepository.findSearchContent(keyword, pageable);
-        ArrayList<Question> list = new ArrayList<>();
-        for(QuestionEntity entity : page){
-            list.add(entity.toDto());
-        }
-        return list;
+        return toList(questionRepository.findSearchContent(keyword, pageable));
     }
 
 
@@ -128,5 +133,14 @@ public class QuestionService {
 
 
 
+    }
+
+    public int selectListIdCount(String userid) {
+        return (int)questionRepository.countByqWriter(userid);
+    }
+
+    public ArrayList<Question> selectListId(Pageable pageable, String userid) {
+        List<QuestionEntity> list = questionRepository.findByqWriter(userid, pageable);
+        return toList(list);
     }
 }

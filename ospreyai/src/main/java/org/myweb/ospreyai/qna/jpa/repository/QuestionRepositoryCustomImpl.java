@@ -82,4 +82,23 @@ public class QuestionRepositoryCustomImpl implements QuestionRepositoryCustom {
                 .where(question.qcontent.containsIgnoreCase(keyword)) // 내용 검색 개수
                 .fetchCount();
     }
+
+    @Override
+    public long countByqWriter(String userid) {
+        return queryFactory
+                .selectFrom(question)
+                .where(question.qwriter.eq(userid))
+                .fetchCount();
+    }
+
+    @Override
+    public List<QuestionEntity> findByqWriter(String userid, Pageable pageable) {
+        return queryFactory
+                .selectFrom(question)
+                .where(question.qwriter.eq(userid))
+                .orderBy(question.qno.desc())
+                .offset(pageable.getOffset())
+                .limit(pageable.getPageSize())
+                .fetch();
+    }
 }
