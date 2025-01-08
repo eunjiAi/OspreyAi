@@ -34,6 +34,7 @@ public class Member {
 	private String naver;		//	NAVER	VARCHAR2(100 BYTE)
 	private String kakao;		//	KAKAO	VARCHAR2(100 BYTE)
 	private String loginOk;		//	LOGIN_OK	CHAR(1 BYTE)
+	private String email;		//	EMAIL	VARCHAR2(255 CHAR)
 
 
 	public MemberEntity toEntity() {
@@ -54,6 +55,7 @@ public class Member {
 				.naver(naver)
 				.kakao(kakao)
 				.loginOk(loginOk)
+				.email(email)
 				.build();
 	}
 }

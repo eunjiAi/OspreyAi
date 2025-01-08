@@ -8,7 +8,6 @@ import org.myweb.ospreyai.member.model.dto.Member;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -160,6 +159,18 @@ public class MemberService {
 			log.error(e.getMessage());
 			return 0;
 		}
+	}
+
+	public Member findByNameAndEmail(String name, String email) {
+		return memberRepository.findByNameAndEmail(name, email).get().toDto();
+	}
+
+	public Optional<MemberEntity> checkUserExists(String userId, String email) {
+		return memberRepository.existsByUserIdAndEmail(userId, email);
+	}
+
+	public void updatePassword(String userId, String encryptedPassword) {
+		memberRepository.updatePassword(userId, encryptedPassword);
 	}
 
 	//검색 카운트 관련 ------------------------------------------------------------------
