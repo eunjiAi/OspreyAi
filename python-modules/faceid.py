@@ -3,12 +3,9 @@
 얼굴 감지 및 인코딩:
 image = face_recognition.load_image_file(img_path)
 encodings = face_recognition.face_encodings(image)
-
 얼굴 비교:
 results = face_recognition.compare_faces(known_faces, encoding, tolerance=tolerance)
 '''
-# USAGE
-# pip install deepface
 
 from flask import Flask, request, jsonify
 from io import BytesIO
@@ -23,7 +20,6 @@ import face_recognition
 from sqlalchemy import create_engine, Column, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from deepface import DeepFace
 
 
 app = Flask(__name__)
@@ -72,6 +68,8 @@ class Member(Base):
 Base.metadata.create_all(bind=engine)
 
 @app.route('/register-faceid', methods=['POST'])
+
+# 회원 얼굴 이미지를 저장하고, DB에 해당 파일명을 저장함
 def register_faceid():
     print("요청 받음")
 
@@ -131,6 +129,7 @@ def register_faceid():
 
 
 @app.route('/delete-faceid', methods=['POST'])
+# 회원 얼굴 이미지와 DB 기록을 삭제함
 def delete_faceid():
     try:
         data = request.json
@@ -161,53 +160,72 @@ def delete_faceid():
         return jsonify({"message": "이미지 삭제 실패!"}), 500
 
 
-
-def compare_faces(image_data, model_name="Facenet", threshold=0.4):   # DeepFace모델 및 파라미터 조정: 모델네임 변경가능(ArcFace, Facenet), 아크페이스보다 페이스넷이 더 빠름 / 
-    # 기본값: 0.6 => 더 정교하게 비교하려고 0.4로 변경
-
+# 로그인중인 이미지 데이터를 로컬 저장된 이미지의 얼굴들과 비교해서 일치 여부 확인
+def compare_faces(image_data, tolerance=0.4):   # 0.6이 기본값, 더 정교하려면 0.4
+    known_faces = []
+    known_face_names = []
+    
     try:
-        # base64로 전달된 이미지를 디코딩해서 임시 파일로 저장
-        img_bytes = base64.b64decode(image_data.split(",")[1])
-        input_image_path = os.path.join(SAVE_DIR, "temp_input_image.jpg")
-        with open(input_image_path, "wb") as temp_file:
-            temp_file.write(img_bytes)
-
-        # 저장된 얼굴 이미지들과 비교
+        # "FaceID_Images" 폴더 내 이미지 가져오기
         for filename in os.listdir(SAVE_DIR):
-            if filename.endswith(".jpg") and filename != "temp_input_image.jpg":
-                stored_image_path = os.path.join(SAVE_DIR, filename)
+            if filename.endswith(".jpg"):
+                img_path = os.path.join(SAVE_DIR, filename)
+                image = face_recognition.load_image_file(img_path)
+                encodings = face_recognition.face_encodings(image)
+                if encodings:
+                    known_faces.append(encodings[0])
+                    known_face_names.append(filename)
 
-                # DeepFace 사용=> 얼굴 비교
-                try:
-                    result = DeepFace.verify(
-                        img1_path=input_image_path,
-                        img2_path=stored_image_path,
-                        model_name=model_name
-                    )
+        if image_data is None:
+            print("이미지 데이터가 없습니다.")
+            return None
 
-                    # 결과 분석
-                    distance = result["distance"]
-                    verified = result["verified"]
+        # base64로 인코딩된 이미지 디코딩해서 얼굴 비교
+        img_bytes = base64.b64decode(image_data.split(",")[1])  # base64에서 이미지 데이터 추출
+        image = face_recognition.load_image_file(BytesIO(img_bytes))
 
-                    print(f"Comparing with {filename}: Distance = {distance}, Verified = {verified}")
+        # 얼굴 찾기 전에 이미지 크기 조정
+        image = cv2.resize(image, (800, 800))  
 
-                    if verified and distance < threshold:
-                        print(f"Matched with {filename}")
-                        return filename  # 매칭된 이미지 파일 이름 반환
+        face_locations = face_recognition.face_locations(image)
+        face_encodings = face_recognition.face_encodings(image, face_locations)
 
-                except Exception as e:
-                    print(f"DeepFace error comparing with {filename}: {e}")
-                    continue
+        if not face_encodings:
+            print("No faces found in the image")
+            return None
 
-        print("No matching faces found.")
+        # 얼굴 비교
+        for encoding in face_encodings:
+            results = face_recognition.compare_faces(known_faces, encoding, tolerance=tolerance)
+            if True in results:
+                match_index = results.index(True)
+                matched_filename = known_face_names[match_index]
+                print(f"Matched filename: {matched_filename}")
+                
+                # 파일명에서 UUID 추출
+                user_uuid = matched_filename.split('_')[0] if matched_filename else None
+
+                if user_uuid:
+                    # UUID에 해당하는 사용자 정보 조회
+                    with SessionLocal() as db:
+                        user = db.query(Member).filter_by(uuid=user_uuid).first()
+                        if user:
+                            # 해당 ID와 PW 출력
+                            print(f"User ID: {user.member_id}, Password: {user.pw}")
+                        else:
+                            print(f"사용자를 찾을 수 없습니다. UUID: {user_uuid}")
+                
+                return matched_filename
+
         return None
-
     except Exception as e:
-        print(f"Error during face comparison with DeepFace: {e}")
+        print(f"Error during face comparison: {e}")
         return None
+
     
 
 @app.route('/compare-faceid', methods=['POST'])
+# 이미지 데이터를 비교하고, 매칭된 회원의 UUID 및 ID를 반환함
 def compare_faceid():
     try:
         data = request.json
