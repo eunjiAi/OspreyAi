@@ -160,7 +160,7 @@ function Login({ onLoginSuccess }) {
           clearInterval(interval);
 
           // 인증 코드 처리
-          handleNaverCallback(authCode, state);
+          handleNaverCallback(authCode, state, popup);
         }
       } catch (error) {
         // URL 접근 권한이 없을 경우 발생 (무시 가능)
@@ -169,7 +169,7 @@ function Login({ onLoginSuccess }) {
   };
 
   // 인증 코드를 백엔드에 전달하여 로그인 처리
-  const handleNaverCallback = async (authCode, state) => {
+  const handleNaverCallback = async (authCode, state, popup) => {
     try {
       setIsLoading(true);
 
@@ -186,8 +186,16 @@ function Login({ onLoginSuccess }) {
 
       console.log("로그인 성공! Access Token:", accessToken);
 
-      // 필요한 경우, 로그인 성공 후 콜백 처리
-      if (onLoginSuccess) onLoginSuccess();
+      // 팝업에서 부모 창으로 토큰 전달
+      if (window.opener && !window.opener.closed) {
+        window.opener.postMessage(
+          { accessToken, refreshToken },
+          window.location.origin // 안전한 도메인 설정
+        );
+      }
+
+      // 팝업 종료
+      popup.close();
     } catch (error) {
       console.error("네이버 로그인 처리 실패:", error.message);
       alert(
@@ -198,6 +206,23 @@ function Login({ onLoginSuccess }) {
       setIsLoading(false);
     }
   };
+
+  // 부모 창에서 메시지 수신 처리
+  window.addEventListener("message", (event) => {
+    if (event.origin !== window.location.origin) {
+      console.warn("허용되지 않은 도메인에서의 메시지입니다.");
+      return;
+    }
+
+    const { accessToken, refreshToken } = event.data;
+
+    if (accessToken && refreshToken) {
+      console.log("부모 창에서 받은 토큰:", { accessToken, refreshToken });
+
+      // 토큰을 활용한 추가 로직
+      if (onLoginSuccess) onLoginSuccess();
+    }
+  });
 
   // kakao Login ------------------------------------------------------------------------------------
   const KAKAO_CLIENT_ID = "2622b65a32dcd94387b5723343731afc";
