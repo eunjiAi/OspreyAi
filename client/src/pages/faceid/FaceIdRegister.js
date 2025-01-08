@@ -1,3 +1,21 @@
+/* 
+[face-api.js 라이브러리 사용 => 텐서플로우.js기반 작동]
+ - 딥러닝 모델: ssdMobilenetv1, faceLandmark68Net, faceRecognitionNet 
+ - 파일로 안불러오고 cdn으로 불러옴
+
+모델로딩:
+await faceapi.nets.ssdMobilenetv1.loadFromUri("path/to/weights/");
+await faceapi.nets.faceLandmark68Net.loadFromUri("path/to/weights/");
+await faceapi.nets.faceRecognitionNet.loadFromUri("path/to/weights/");
+
+
+얼굴 감지 및 인식:
+const detections = await faceapi
+    .detectAllFaces(video)
+    .withFaceLandmarks()
+    .withFaceDescriptors();
+*/
+
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Webcam from "react-webcam";
