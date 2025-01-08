@@ -127,7 +127,7 @@ function Login({ onLoginSuccess }) {
   // Naver Login -----------------------------------------------------------------------------
   const handleNaverLogin = () => {
     const popup = window.open(
-      "http://localhost:8888/naver/login", // 백엔드의 네이버 로그인 URL
+      "http://localhost:8888/naver/login",
       "Naver Login",
       "width=500,height=600,scrollbars=yes"
     );
@@ -137,92 +137,26 @@ function Login({ onLoginSuccess }) {
       return;
     }
 
-    // 팝업 URL 변경 감지
-    const interval = setInterval(() => {
-      try {
-        if (!popup || popup.closed) {
-          clearInterval(interval);
-          return;
-        }
-
-        const currentUrl = popup.location.href;
-
-        // 네이버 인증 완료 후 리다이렉트된 URL에서 인증 코드 확인
-        if (currentUrl.includes("code") && currentUrl.includes("state")) {
-          const params = new URLSearchParams(currentUrl.split("?")[1]);
-          const authCode = params.get("code");
-          const state = params.get("state");
-
-          console.log("Naver Authorization Code:", authCode);
-          console.log("Naver State:", state);
-
-          popup.close();
-          clearInterval(interval);
-
-          // 인증 코드 처리
-          handleNaverCallback(authCode, state, popup);
-        }
-      } catch (error) {
-        // URL 접근 권한이 없을 경우 발생 (무시 가능)
+    window.addEventListener("message", (event) => {
+      if (event.origin !== "http://localhost:8888") {
+        console.warn("허용되지 않은 도메인에서의 메시지입니다.");
+        return;
       }
-    }, 500);
+
+      const { success, accessToken, refreshToken } = event.data;
+
+      if (success) {
+        console.log("로그인 성공! 받은 토큰:", { accessToken, refreshToken });
+        localStorage.setItem("naverAccessToken", accessToken);
+        localStorage.setItem("naverRefreshToken", refreshToken);
+        alert("로그인 성공!");
+      } else {
+        console.error("로그인 실패");
+        alert("로그인 실패: 다시 시도해주세요.");
+      }
+    });
   };
 
-  // 인증 코드를 백엔드에 전달하여 로그인 처리
-  const handleNaverCallback = async (authCode, state, popup) => {
-    try {
-      setIsLoading(true);
-
-      // 백엔드의 /naver/callback에 인증 코드 전달
-      const response = await axios.get(
-        `http://localhost:8888/naver/callback?code=${authCode}&state=${state}`
-      );
-
-      const { accessToken, refreshToken } = response.data;
-
-      if (!accessToken || !refreshToken) {
-        throw new Error("로그인에 필요한 토큰을 받지 못했습니다.");
-      }
-
-      console.log("로그인 성공! Access Token:", accessToken);
-
-      // 팝업에서 부모 창으로 토큰 전달
-      if (window.opener && !window.opener.closed) {
-        window.opener.postMessage(
-          { accessToken, refreshToken },
-          window.location.origin // 안전한 도메인 설정
-        );
-      }
-
-      // 팝업 종료
-      popup.close();
-    } catch (error) {
-      console.error("네이버 로그인 처리 실패:", error.message);
-      alert(
-        "네이버 로그인 실패: " +
-          (error.response?.data?.message || "다시 시도하십시오.")
-      );
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  // 부모 창에서 메시지 수신 처리
-  window.addEventListener("message", (event) => {
-    if (event.origin !== window.location.origin) {
-      console.warn("허용되지 않은 도메인에서의 메시지입니다.");
-      return;
-    }
-
-    const { accessToken, refreshToken } = event.data;
-
-    if (accessToken && refreshToken) {
-      console.log("부모 창에서 받은 토큰:", { accessToken, refreshToken });
-
-      // 토큰을 활용한 추가 로직
-      if (onLoginSuccess) onLoginSuccess();
-    }
-  });
 
   // kakao Login ------------------------------------------------------------------------------------
   const KAKAO_CLIENT_ID = "2622b65a32dcd94387b5723343731afc";
