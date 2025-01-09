@@ -90,6 +90,7 @@ td input[type="file"]:hover {
   display: flex;
   flex-direction: row; /* 버튼들을 가로로 나열 */
   justify-content: center; /* 버튼들을 가운데 정렬 */
+  border-radius: 12px;
   gap: 10px; /* 버튼 간의 간격 */
   width: 100%; /* 부모 요소의 너비를 100%로 설정 */
 }
@@ -98,7 +99,7 @@ td input[type="file"]:hover {
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  margin: 10px 5px;
+  margin: 20px 15px;
   padding: 12px 20px;
   font-size: 16px;
   border: none;
@@ -106,6 +107,7 @@ input[type="button"] {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 130px;
 }
 
 /* 개별 버튼 색상 설정 */
@@ -169,5 +171,9 @@ th[colspan="2"] {
   .buttongroup input {
     width: 100%; /* 모바일에서 버튼들을 가로폭에 맞춰 100%로 */
     margin-bottom: 10px; /* 버튼 간 간격 */
+  }
+
+  .submitbutton {
+    border-radius: 10px !important;
   }
 }
