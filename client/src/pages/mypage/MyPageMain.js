@@ -95,7 +95,7 @@ function MyPage() {
           <strong>카카오 연동:</strong> {userData.kakao || "미연동"}
         </p>
         <p>
-          <strong>Face ID 상태:</strong> {userData.faceId ? "등록" : "미등록"}
+          <strong>Face ID:</strong> {userData.faceId ? "등록" : "미등록"}
         </p>
       </div>
       <button className="update-btn" onClick={handleEditClick}>
