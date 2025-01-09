@@ -100,7 +100,7 @@ public class PostsController {
 			@RequestParam(name = "userid", required = false) String userid) {
 
 		int listCount = postsService.selectListIdCount(userid);
-		Paging paging = new Paging(listCount, limit, currentPage);
+		Paging paging = new Paging(listCount, limit, currentPage, "postsList");
 		paging.calculate();
 
 		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),

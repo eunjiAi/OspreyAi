@@ -146,7 +146,7 @@ function MyInfo() {
                         onClick={() => handleTitleClick('posts', post.postId)}
                         style={{ color: 'blue', cursor: 'pointer' }}
                       >
-                        {post.Title}
+                        {post.title}
                       </span>
                     </li>
                   ))

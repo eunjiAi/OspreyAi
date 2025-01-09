@@ -137,7 +137,8 @@ function Login({ onLoginSuccess }) {
       return;
     }
 
-    window.addEventListener("message", (event) => {
+    // 팝업 메시지 수신 처리
+    const handleMessage = (event) => {
       if (event.origin !== "http://localhost:8888") {
         console.warn("허용되지 않은 도메인에서의 메시지입니다.");
         return;
@@ -146,17 +147,32 @@ function Login({ onLoginSuccess }) {
       const { success, accessToken, refreshToken } = event.data;
 
       if (success) {
-        console.log("로그인 성공! 받은 토큰:", { accessToken, refreshToken });
-        localStorage.setItem("naverAccessToken", accessToken);
-        localStorage.setItem("naverRefreshToken", refreshToken);
-        alert("로그인 성공!");
-      } else {
-        console.error("로그인 실패");
-        alert("로그인 실패: 다시 시도해주세요.");
-      }
-    });
-  };
+        console.log("네이버 로그인 성공! 받은 토큰:", {
+          accessToken,
+          refreshToken,
+        });
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
 
+        // 로그인 성공 콜백 호출
+        onLoginSuccess();
+      } else {
+        console.error("네이버 로그인 실패");
+        alert("네이버 로그인 실패!");
+      }
+    };
+
+    // 메시지 이벤트 리스너 등록
+    window.addEventListener("message", handleMessage);
+
+    // 팝업 닫힌 후 이벤트 리스너 제거
+    const interval = setInterval(() => {
+      if (popup.closed) {
+        clearInterval(interval);
+        window.removeEventListener("message", handleMessage);
+      }
+    }, 500);
+  };
 
   // kakao Login ------------------------------------------------------------------------------------
   const KAKAO_CLIENT_ID = "2622b65a32dcd94387b5723343731afc";
