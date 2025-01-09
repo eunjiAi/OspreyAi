@@ -1,14 +1,16 @@
 import React from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import MyPageMain from "./MyPageMain";
 import "./MyPage.css";
 
 function MyPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-
-  const isRootPath = location.pathname === "/mypage" || location.pathname === "/mypage/mypageMain";
+  // "마이페이지"와 관련된 모든 경로 상태 확인
+  const isMyPagePath =
+    location.pathname === "/mypage" ||
+    location.pathname.startsWith("/mypage/mypageMain") || // "마이페이지 메인" 경로
+    location.pathname.startsWith("/mypage/mypageUpdate"); // "정보 수정" 경로
 
   return (
     <div className="mypage-layout">
@@ -16,13 +18,15 @@ function MyPage() {
       <div className="tabs-container">
         <button
           onClick={() => navigate("/mypage/mypageMain")}
-          className={`tab ${isRootPath ? "active" : ""}`}
+          className={`tab ${isMyPagePath ? "active" : ""}`}
         >
           마이페이지
         </button>
         <button
           onClick={() => navigate("/mypage/password-change")}
-          className={`tab ${location.pathname === "/mypage/password-change" ? "active" : ""}`}
+          className={`tab ${
+            location.pathname === "/mypage/password-change" ? "active" : ""
+          }`}
         >
           비밀번호 변경
         </button>
@@ -32,7 +36,6 @@ function MyPage() {
         >
           내가 쓴 글
         </button>
-
         <button
           onClick={() => navigate("/mypage/withdrawal")}
           className={`tab ${location.pathname === "/mypage/withdrawal" ? "active" : ""}`}
@@ -49,7 +52,7 @@ function MyPage() {
 
       {/* 오른쪽 페이지 */}
       <div className="content-container">
-        {isRootPath ? <MyPageMain /> : <Outlet />}
+        <Outlet />
       </div>
     </div>
   );
