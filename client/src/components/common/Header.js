@@ -36,65 +36,6 @@ function Header({
   // 라우터 정보를 관리할 상태변수
   const location = useLocation();
 
-  ///////////////////////////////////////////////////////////////////////////////네이버 테스트 중
-  // 콘솔 DevTools 메시지 무한반복 처리
-  const handleMessage = (event) => {
-    if (
-      event.source === window ||
-      event.data.source === "react-devtools-content-script"
-    ) {
-      return;
-    }
-
-    // 허용된 도메인에서 온 메시지만 처리
-    // if (event.origin !== "http://localhost:8888") {
-    //   console.warn("허용되지 않은 도메인에서의 메시지입니다.");
-    //   return;
-    // }
-
-    // 메시지 데이터 유효성 확인
-    if (!event.data) {
-      console.warn("메시지 데이터가 없습니다.");
-      return;
-    }
-
-    const { success, accessToken, refreshToken, message } = event.data;
-
-    if (success) {
-      console.log("로그인 성공! 받은 토큰:", { accessToken, refreshToken });
-
-      // 로컬스토리지에 저장
-      localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("refreshToken", refreshToken);
-
-      alert("로그인 성공!");
-    } else {
-      console.error("로그인 실패 메시지:", message);
-      alert(message || "로그인 실패: 다시 시도해주세요.");
-    }
-  };
-
-  useEffect(() => {
-    const accessToken = localStorage.getItem("accessToken");
-    const refreshToken = localStorage.getItem("refreshToken");
-
-    // 초기 로컬스토리지 검증 및 초기화
-    if (!accessToken || !refreshToken) {
-      localStorage.removeItem("accessToken");
-      localStorage.removeItem("refreshToken");
-    }
-
-    // 메시지 이벤트 리스너 등록
-    window.addEventListener("message", handleMessage);
-
-    // 컴포넌트 언마운트 시 리스너 제거
-    return () => {
-      window.removeEventListener("message", handleMessage);
-    };
-  }, []);
-
-  /////////////////////////////////////////////////////////////////////////////네이버 팝업 테스트 중중
-
   // 현재 라우터(/notice:NoticeList or /board:BoardList)를 기반으로 검색 input 의 placeholder 를 표시 처리
   const getSearchPlaceholder = () => {
     if (location.pathname.startsWith("/posts")) {
