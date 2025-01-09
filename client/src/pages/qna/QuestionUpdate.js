@@ -122,7 +122,7 @@ const QuestionUpdate = () => {
                 <input
                   type="text"
                   id="qtitle"
-                  name="qTitle"
+                  name="qtitle"
                   size="50"
                   value={formData.qtitle}
                   onChange={handleChange}
@@ -135,7 +135,7 @@ const QuestionUpdate = () => {
                 <input
                   type="text"
                   id="qwriter"
-                  name="qWriter"
+                  name="qwriter"
                   value={formData.qwriter}
                   readonly
                 />
