@@ -32,7 +32,7 @@
     background-color: white;
     display: flex;
     justify-content: end;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
 button {
@@ -60,7 +60,7 @@ button:disabled {
 .QuestionList {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .QuestionList th {
@@ -69,7 +69,7 @@ button:disabled {
     font-size: 16px;
     font-weight: bold;
     color: #555; 
-    text-align: left;
+    text-align: center;
     border-bottom: 2px solid #e0e0e0; 
 }
 
@@ -78,6 +78,7 @@ button:disabled {
     font-size: 16px;
     color: #333;
     border-bottom: 1px solid #f0f0f0;
+    text-align: center;
 }
 
 .QuestionList tr:hover {

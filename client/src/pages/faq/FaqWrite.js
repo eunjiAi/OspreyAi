@@ -80,9 +80,9 @@ function FaqWrite() {
             onSubmit={handleSubmit}
             enctype="multipart/form-data"
             className={styles.form}>
-            <table id="outer" align="center" width="700" cellspacing="5" cellpadding="5">   
+            <table className={styles.table}>   
                 <tbody>
-                <tr><th width="120">제 목</th>
+                <tr><th>제 목</th>
                     <td>
                         <input 
                             type="text" 
@@ -90,10 +90,10 @@ function FaqWrite() {
                             size="50"
                             value={formData.faqTitle}
                             onChange={handleChange}
-                            placeholder="저주하는 질문 제목을 입력하세요."
+                            placeholder="자주하는 질문 제목을 입력하세요."
                             required />         
                     </td></tr>
-                <tr><th width="120">작성자</th>
+                <tr><th>작성자</th>
                     <td>
                         <input 
                             type="text" 
@@ -101,7 +101,7 @@ function FaqWrite() {
                             value={formData.faqWriter}
                             readonly />         
                     </td></tr>
-                <tr><th width="120">카테고리</th>
+                <tr><th>카테고리</th>
                     <td>
                         <select
                             name="category" 
@@ -115,9 +115,7 @@ function FaqWrite() {
                         </select>       
                     </td></tr>
                 <tr><th>질문 내용</th>
-                    <td><textarea 
-                            rows="5" 
-                            cols="50" 
+                    <td><textarea className={styles.textarea}
                             name="faqContent"
                             value={formData.faqContent}
                             onChange={handleChange}
@@ -126,9 +124,7 @@ function FaqWrite() {
                             ></textarea>
                     </td></tr>
                 <tr><th>답변 내용</th>
-                <td><textarea 
-                        rows="5" 
-                        cols="50" 
+                <td><textarea className={styles.textarea} 
                         name="answerContent"
                         value={answerContent}
                         onChange={handleChange}
@@ -139,26 +135,35 @@ function FaqWrite() {
                 </tbody>
             </table>
         </form>
-        <div className={styles.button}>
-                <div className="button-group">
-                    <input type="submit" value="등록하기" 
-                    onClick={handleSubmit}/> &nbsp;
-                    <input type="reset" value="작성 초기화" 
-                        onClick={() => {setFormData({ ...formData, faqTitle: '',
-                            faqWriter: formData.faqWriter, // 작성자는 그대로 둠
-                            category: '',
-                            faqContent: '',
-                        });
-                        setAnswerContent('');
-                    }}
-                         />{' '} &nbsp;
-                    <input 
-                        type="button" 
-                        value="등록취소" 
-                        onClick={() => {
-                            navigate(-1);   // 자바스크립트의 history.go(-1); 과 같음
-                        }} />
-                </div>
+        <div className={styles.buttongroup}>
+            <button 
+            className={styles.submit} 
+            onClick={handleSubmit}
+            >
+            등록하기
+            </button>
+            &nbsp;
+            <button
+            className={styles.reset}
+            onClick={() =>
+                {setFormData({
+                ...formData,
+                faqTitle: '',
+                category: '',
+                faqContent: '',
+                });
+                setAnswerContent('');
+            }}
+            >
+            작성 초기화
+            </button>
+            &nbsp;
+            <button
+            className={styles.back}
+            onClick={() => navigate(-1)}
+            >
+            등록취소
+            </button>
         </div>
     </div>
     );

@@ -1,0 +1,67 @@
+/* 댓글 작성 입력창 스타일 */
+.replyForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .replyForm textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .replyForm button {
+    align-self: flex-end;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .replyForm button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* 댓글 목록 스타일 */
+  .replyTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .replyTable th, .replyTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .replyTable th {
+    background-color: #f4f4f4;
+  }
+  
+  /* 댓글 수정, 삭제 버튼 */
+  .replyTable button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .replyTable button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* 댓글 등록 창 표시 */
+  .replyWriteShow {
+    display: block;
+  }
+  
+  .replyWriteHide {
+    display: none;
+  }

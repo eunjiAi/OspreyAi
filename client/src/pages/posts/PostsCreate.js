@@ -88,10 +88,10 @@ function PostsCreate() {
     <div className={styles.container}>
       <h1 className={styles.header}>게시글 등록</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <table align="center" width="700" cellspacing="5" cellpadding="5">
+        <table className={styles.table}>
           <tbody>
             <tr>
-              <th width="120">제 목</th>
+              <th>제 목</th>
               <td>
                 <input
                   type="text"
@@ -105,7 +105,7 @@ function PostsCreate() {
               </td>
             </tr>
             <tr>
-              <th width="120">작성자 닉네임</th>
+              <th>작성자 닉네임</th>
               <td>
                 <input
                   type="text"
@@ -124,7 +124,7 @@ function PostsCreate() {
             <tr>
               <th>내 용</th>
               <td>
-                <textarea
+                <textarea className={styles.textarea}
                   rows="5"
                   cols="50"
                   name="content"
@@ -140,28 +140,35 @@ function PostsCreate() {
           </tbody>
         </table>
       </form>
-      <div className={styles.button}>
-          <div className={styles.buttongroup}>
-                <input type="submit" value="등록하기" 
-                onClick={(handleSubmit)}/> &nbsp;
-                <input
-                  type="reset"
-                  value="작성 초기화"
-                  onClick={() =>
-                    setFormData({
-                      ...formData,
-                      title: "",
-                      content: "",
-                    })
-                  }
-                />
-                &nbsp;
-                <input
-                  type="button"
-                  value="등록취소"
-                  onClick={() => navigate(-1)}
-                />
-            </div>
+      <div>
+        <div className={styles.buttongroup}>
+              <button 
+                className={styles.submit} 
+                onClick={handleSubmit}
+              >
+                등록하기
+              </button>
+              &nbsp;
+              <button
+                className={styles.reset}
+                onClick={() =>
+                  setFormData({
+                    ...formData,
+                    title: "",
+                    content: "",
+                  })
+                }
+              >
+                작성 초기화
+              </button>
+              &nbsp;
+              <button
+                className={styles.back}
+                onClick={() => navigate(-1)}
+              >
+                등록취소
+              </button>
+          </div>
         </div>
     </div>
   );

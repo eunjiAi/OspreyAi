@@ -77,13 +77,13 @@ const QuestionUpdate = () => {
         },
       });
 
-      alert("답변 수정 성공");
+      alert("질문 수정 성공");
       // 답변 수정이 성공되면 게시글 상세보기 페이지로 이동
       // navigate(`/question/detail/${qno}`);
       navigate("/qna");
     } catch (error) {
-      console.error("답변 수정 실패", error);
-      alert("답변 수정 실패");
+      console.error("질문 수정 실패", error);
+      alert("질문 수정 실패");
     }
   };
 
@@ -93,44 +93,37 @@ const QuestionUpdate = () => {
 
   return (
     <div className={styles.container}>
-      <h2> {qno}번 게시글 수정</h2>
+      <h2 className={styles.header}> {qno}번 질문글 수정</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <table
-          id="outer"
-          align="center"
-          width="700"
-          cellspacing="5"
-          cellpadding="5"
+        <table className={styles.table}
         >
           <tbody>
             <tr>
-              <th width="120">번 호</th>
+              <th>번 호</th>
               <td>
                 <input
                   type="text"
                   id="qno"
                   name="qno"
-                  size="50"
                   value={formData.qno}
                   readOnly
                 />
               </td>
             </tr>
             <tr>
-              <th width="120">제 목</th>
+              <th>제 목</th>
               <td>
                 <input
                   type="text"
                   id="qtitle"
                   name="qtitle"
-                  size="50"
                   value={formData.qtitle}
                   onChange={handleChange}
                 />
               </td>
             </tr>
             <tr>
-              <th width="120">작성자</th>
+              <th>작성자</th>
               <td>
                 <input
                   type="text"
@@ -144,9 +137,7 @@ const QuestionUpdate = () => {
             <tr>
               <th>내 용</th>
               <td>
-                <textarea
-                  rows="5"
-                  cols="50"
+                <textarea className={styles.textarea}
                   name="qcontent"
                   value={formData.qcontent}
                   onChange={handleChange}
@@ -154,20 +145,37 @@ const QuestionUpdate = () => {
                 ></textarea>
               </td>
             </tr>
-
-            <tr>
-              <th colspan="2">
-                <input type="submit" value="수정하기" /> &nbsp;
-                <input
-                  type="reset"
-                  value="취소"
-                  onClick={() => navigate(`/board/detail/${qno}`)}
-                />
-              </th>
-            </tr>
           </tbody>
         </table>
       </form>
+      <div className={styles.buttongroup}>
+          <button 
+            className={styles.submit} 
+            onClick={handleSubmit}
+          >
+            수정완료
+          </button>
+          &nbsp;
+          <button
+            className={styles.reset}
+            onClick={() =>
+              setFormData({
+                ...formData,
+                qtitle: "",
+                qcontent: "",
+              })
+            }
+          >
+            초기화
+          </button>
+          &nbsp;
+          <button
+            className={styles.back}
+            onClick={() => navigate(-1)}
+          >
+            취소
+          </button>
+      </div>
     </div>
   );
 };
