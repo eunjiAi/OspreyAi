@@ -1,0 +1,65 @@
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20%;
+  }
+  
+  .footerLeft {
+    flex: 1;
+    min-width: 300px; 
+  }
+  
+  .footerRight {
+    flex: 1;
+    min-width: 300px; 
+    margin-left: 20%; 
+  }
+  
+  .companyName {
+    font-size: 1.em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  .siteName {
+    font-size: 1em;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 10px;
+  }
+  
+  .siteDescription {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5; 
+    margin-bottom: 20px;
+  }
+  
+  .contactTitle {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .contactDetails {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .footerBottom {
+    text-align: center;
+    font-size: 0.9em;
+    color: #adb5bd;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #e9ecef;
+    width: 100%;
+  }
+  
