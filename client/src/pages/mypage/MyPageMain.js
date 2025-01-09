@@ -19,7 +19,7 @@ function MyPage() {
     google: "",
     naver: "",
     kakao: "",
-    faceId: "", // Face ID 상태 추가
+    faceId: "", 
   });
 
   const [loading, setLoading] = useState(true);
