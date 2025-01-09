@@ -123,7 +123,7 @@ const NoticeDetail = () => {
           </tr>
           <tr>
             <th>내용</th>
-            <td>{notice.ncontent}</td>
+            <td style={{ whiteSpace: "pre-line" }}>{notice.ncontent}</td>
           </tr>
           <tr>
             <th>조회수</th>

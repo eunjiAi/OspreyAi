@@ -36,13 +36,13 @@ const PostsEdit = () => {
 
         //form 의 초기값으로 지정
         setFormData({
-          postId: response.data.postId,
-          title: response.data.title,
-          writer: response.data.writer,
-          nickname: response.data.nickname,
-          content: response.data.content,
-          fileName: response.data.fileName,
-          renameFile: response.data.renameFile,
+          postId: response.data.posts.postId,
+          title: response.data.posts.title,
+          writer: response.data.posts.writer,
+          nickname: response.data.posts.nickname,
+          content: response.data.posts.content,
+          fileName: response.data.posts.fileName,
+          renameFile: response.data.posts.renameFile,
         }); //서버측에서 받은 데이터 저장 처리
         console.log(formData);
       } catch (error) {
