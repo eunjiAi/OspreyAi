@@ -17,6 +17,7 @@ function MyPageUpdate() {
     google: "",
     naver: "",
     kakao: "",
+    faceId: "", // Face ID 상태 추가
   });
 
   const [loading, setLoading] = useState(true);
@@ -40,6 +41,7 @@ function MyPageUpdate() {
           google: response.data.google,
           naver: response.data.naver,
           kakao: response.data.kakao,
+          faceId: response.data.faceId, // Face ID 값 가져오기
         });
       } catch (err) {
         console.error("Error fetching user data:", err);
@@ -59,16 +61,35 @@ function MyPageUpdate() {
 
   const handleSave = async () => {
     try {
-      const response = await apiClient.put(`/member/mypage/${uuid}`, formData, {
+      await apiClient.put(`/member/mypage/${uuid}`, formData, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       });
       alert("회원 정보가 성공적으로 수정되었습니다.");
-      navigate("/mypage"); // 수정 완료 후 마이페이지로 이동
+      navigate("/mypage");
     } catch (err) {
       console.error("Error updating user data:", err);
       alert("회원 정보 수정에 실패했습니다.");
+    }
+  };
+
+  const handleDeleteFaceID = async () => {
+    try {
+      await apiClient.post(
+        "http://localhost:5001/delete-faceid",
+        { uuid },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      alert("Face ID가 성공적으로 삭제되었습니다.");
+      setFormData({ ...formData, faceId: "" }); // Face ID 초기화
+    } catch (err) {
+      console.error("Error deleting Face ID:", err);
+      alert("Face ID 삭제에 실패했습니다.");
     }
   };
 
@@ -113,8 +134,7 @@ function MyPageUpdate() {
           />
         </label>
 
-        <p></p>
-        <label>이메일 연동</label>
+        <p>이메일 연동</p>
         <label>
           구글:
           <input
@@ -142,6 +162,25 @@ function MyPageUpdate() {
             onChange={handleInputChange}
           />
         </label>
+
+        {/* Face ID 등록/삭제 버튼 조건부 렌더링 */}
+        {formData.faceId ? (
+          <button
+            type="button"
+            onClick={handleDeleteFaceID}
+            className="delete-faceid-btn"
+          >
+            Face ID 삭제
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="faceid-register-btn"
+            onClick={() => navigate("/FaceIdRegister")}
+          >
+            Face ID 등록
+          </button>
+        )}
 
         <button type="button" onClick={handleSave} className="save-btn">
           저장
