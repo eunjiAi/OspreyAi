@@ -39,9 +39,9 @@ function Header({
   // 현재 라우터(/notice:NoticeList or /board:BoardList)를 기반으로 검색 input 의 placeholder 를 표시 처리
   const getSearchPlaceholder = () => {
     if (location.pathname.startsWith("/posts")) {
-      return "게시판 검색어를 입력하세요.";
+      return "검색어를 입력하세요.";
     } else if (location.pathname.startsWith("/notice")) {
-      return "공지사항 검색어를 입력하세요.";
+      return "검색어를 입력하세요.";
     }
     return "검색어를 입력하세요";
   };
