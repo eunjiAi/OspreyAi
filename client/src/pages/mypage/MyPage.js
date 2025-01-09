@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider";
 import "./MyPage.css";
 
 function MyPage() {
+  const { isLoggedIn, role } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -42,12 +44,12 @@ function MyPage() {
         >
           회원탈퇴
         </button>
-        <button
+        {isLoggedIn && role === "ADMIN" && (<button
           onClick={() => navigate("/mypage/mypageAdmin")}
           className={`tab ${location.pathname === "/mypage/mypageAdmin" ? "active" : ""}`}
         >
           (관리자)회원 관리
-        </button>
+        </button>)}
       </div>
 
       {/* 오른쪽 페이지 */}
