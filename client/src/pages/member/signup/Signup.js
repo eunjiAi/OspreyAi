@@ -130,110 +130,150 @@ function Signup({ onSignupSuccess }) {
 
   return (
     <div className={style.container}>
-      <h1>회원 가입</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="memberId">아이디: </label>
-          <input
-            type="text"
-            id="memberId"
-            name="memberId"
-            value={formData.memberId}
-            onChange={handleChange}
-            required
-          />
-          <button type="button" onClick={handleIdCheck}>
-            중복검사
-          </button>
+      <h1 className={style.title}>회원 가입</h1>
+      <form className={style.form} onSubmit={handleSubmit}>
+        <div className={style.field}>
+          <label htmlFor="memberId" className={style.label}>
+            아이디:
+          </label>
+          <div className={style.inlineGroup}>
+            <input
+              type="text"
+              id="memberId"
+              name="memberId"
+              className={style.inlineInput}
+              value={formData.memberId}
+              onChange={handleChange}
+              required
+            />
+            <button
+              type="button"
+              className={style.inlineButton}
+              onClick={handleIdCheck}
+            >
+              중복검사
+            </button>
+          </div>
         </div>
-        <div>
-          <label htmlFor="pw">비밀번호: </label>
+        <div className={style.field}>
+          <label htmlFor="pw" className={style.label}>
+            비밀번호:
+          </label>
           <input
             type="password"
             id="pw"
             name="pw"
+            className={style.input}
             value={formData.pw}
             onChange={handleChange}
             required
           />
         </div>
-        <div>
-          <label htmlFor="confirmPwd">비밀번호 확인: </label>
+        <div className={style.field}>
+          <label htmlFor="confirmPwd" className={style.label}>
+            비밀번호 확인:
+          </label>
           <input
             type="password"
             id="confirmPwd"
             name="confirmPwd"
+            className={style.input}
             value={formData.confirmPwd}
             onChange={handleChange}
             required
           />
         </div>
-        <div>
-          <label htmlFor="email">이메일: </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            disabled={isLoading || isEmailVerified || isConfirm}
-          />
-          <button
-            type="button"
-            onClick={handleSendEmail}
-            disabled={isLoading || isEmailVerified}
-          >
-            {isLoading ? "전송 중..." : "인증하기"}
-          </button>
+        <div className={style.field}>
+          <label htmlFor="email" className={style.label}>
+            이메일:
+          </label>
+          <div className={style.inlineGroup}>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className={style.inlineInput}
+              value={formData.email}
+              onChange={handleChange}
+              required
+              disabled={isLoading || isEmailVerified || isConfirm}
+            />
+            <button
+              type="button"
+              className={style.inlineButton}
+              onClick={handleSendEmail}
+              disabled={isLoading || isEmailVerified}
+            >
+              {isLoading ? "전송 중..." : "인증하기"}
+            </button>
+          </div>
         </div>
-        <div>
-          <label htmlFor="emailCode">인증 코드: </label>
-          <input
-            type="text"
-            id="emailCode"
-            name="emailCode"
-            value={userInputCode}
-            onChange={(e) => setUserInputCode(e.target.value)}
-            required
-            disabled={isEmailVerified}
-          />
-          <button
-            type="button"
-            onClick={handleVerifyCode}
-            disabled={isEmailVerified}
-          >
-            인증 확인
-          </button>
-          {isEmailVerified && <p>이메일 인증이 완료되었습니다.</p>}
+        <div className={style.field}>
+          <label htmlFor="emailCode" className={style.label}>
+            인증 코드:
+          </label>
+          <div className={style.inlineGroup}>
+            <input
+              type="text"
+              id="emailCode"
+              name="emailCode"
+              className={style.inlineInput}
+              value={userInputCode}
+              onChange={(e) => setUserInputCode(e.target.value)}
+              required
+              disabled={isEmailVerified}
+            />
+            <button
+              type="button"
+              className={style.inlineButton}
+              onClick={handleVerifyCode}
+              disabled={isEmailVerified}
+            >
+              인증 확인
+            </button>
+          </div>
+          {isEmailVerified && (
+            <p className={style.successMessage}>
+              이메일 인증이 완료되었습니다.
+            </p>
+          )}
         </div>
-        <div>
-          <label htmlFor="name">이름: </label>
+        <div className={style.field}>
+          <label htmlFor="name" className={style.label}>
+            이름:
+          </label>
           <input
             type="text"
             id="name"
             name="name"
+            className={style.input}
             value={formData.name}
             onChange={handleChange}
             required
           />
         </div>
-        <div>
-          <label htmlFor="nickname">닉네임: </label>
+        <div className={style.field}>
+          <label htmlFor="nickname" className={style.label}>
+            닉네임:
+          </label>
           <input
             type="text"
             id="nickname"
             name="nickname"
+            className={style.input}
             value={formData.nickname}
             onChange={handleChange}
             required
           />
         </div>
-        <div>
-          <label htmlFor="gender">성별: </label>
+        <div className={style.field}>
+          <label htmlFor="gender" className={style.label}>
+            성별:
+          </label>
           <select
             id="gender"
             name="gender"
+            className={style.select}
             value={formData.gender}
             onChange={handleChange}
             required
@@ -243,11 +283,13 @@ function Signup({ onSignupSuccess }) {
             <option value="F">여자</option>
           </select>
         </div>
-
-        <button type="submit">가입하기</button>
+        <button type="submit" className={style.submitButton}>
+          가입하기
+        </button>
       </form>
     </div>
   );
+
 }
 
 export default Signup;

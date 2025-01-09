@@ -186,23 +186,31 @@ function Header({
       </div>
       {/* 검색바 */}
       <div className={styles.searchBar}>
-        <input
-          type="text"
-          placeholder={getSearchPlaceholder()}
-          value={searchTerm}
-          className={styles.searchInput}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button className={styles.searchButton} onClick={handleSearch}>
-          검색
-        </button>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSearch();
+          }}
+          className={styles.searchForm}
+        >
+          <input
+            type="text"
+            placeholder={getSearchPlaceholder()}
+            value={searchTerm}
+            className={styles.searchInput}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button className={styles.searchButton} onClick={handleSearch}>
+            검색
+          </button>
+        </form>
       </div>
       {/* 로그인/로그아웃 버튼 */}
       <div className={styles.rightSection}>
         {isLoggedIn ? (
           <>
             <span className={styles.username}>
-              <Link to="/mypage/mypageMain/">{username}</Link>님 환영합니다.
+              <Link to="/mypage/mypageMain/" className={styles.linkUserName}>{username}</Link> 님 환영합니다.
             </span>
             <button onClick={handleLogout} className={styles.authButton}>
               로그아웃
