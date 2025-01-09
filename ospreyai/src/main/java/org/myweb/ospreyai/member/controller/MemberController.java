@@ -1,29 +1,20 @@
 package org.myweb.ospreyai.member.controller;
 
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.myweb.ospreyai.common.Paging;
-import org.myweb.ospreyai.common.Search;
 import org.myweb.ospreyai.member.jpa.entity.MemberEntity;
 import org.myweb.ospreyai.member.model.dto.Member;
 import org.myweb.ospreyai.member.model.service.EmailService;
 import org.myweb.ospreyai.member.model.service.MemberService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.sql.Date;
 import java.util.*;
 
 @Slf4j
@@ -54,7 +45,7 @@ public class MemberController {
         //UUID 자동 생성
         member.setUuid(UUID.randomUUID().toString());
         log.info("생성된 UUID : " + member.getUuid());
-
+        log.info("회원 가입 정보 member : " + member);
         // 패스워드 암호화 처리
         member.setPw(bcryptPasswordEncoder.encode(member.getPw()));
 
@@ -94,6 +85,7 @@ public class MemberController {
         }
     }
 
+    // 비밀번호 변경
     @PostMapping("/resetPassword")
     public ResponseEntity<?> sendTemporaryPassword(@RequestBody Map<String, String> request) {
         String userId = request.get("userId");
@@ -107,7 +99,7 @@ public class MemberController {
         }
 
         // 임시 비밀번호 생성
-        String tempPassword = generateTemporaryPassword();
+        String tempPassword = UUID.randomUUID().toString().substring(0, 16);
 
         // 임시 비밀번호 암호화
         String encryptedPassword = bcryptPasswordEncoder.encode(tempPassword);
@@ -118,18 +110,39 @@ public class MemberController {
         // 이메일 전송
         emailService.sendEmail(email, "OspreyAI 임시 비밀번호 발급",
                 "안녕하세요, OspreyAI 사용자님.\n\n임시 비밀번호 :\n" +
-                tempPassword +
-                "\n\n안전한 사용을 위해 발급된 임시 비밀번호는 즉시 변경해 주시길 권장합니다.\n" +
-                "비밀번호 변경과 관련하여 도움이 필요하신 경우, 언제든지 문의해 주십시오.\n" +
-                "\n" +
-                "감사합니다.\n" +
-                "OspreyAI 드림");
+                        tempPassword +
+                        "\n\n안전한 사용을 위해 발급된 임시 비밀번호는 즉시 변경해 주시길 권장합니다.\n" +
+                        "비밀번호 변경과 관련하여 도움이 필요하신 경우, 언제든지 문의해 주십시오.\n" +
+                        "\n" +
+                        "감사합니다.\n" +
+                        "OspreyAI 드림");
 
         return ResponseEntity.ok(Collections.singletonMap("message", "임시 비밀번호가 이메일로 전송되었습니다."));
     }
 
-    private String generateTemporaryPassword() {
-        return UUID.randomUUID().toString().substring(0, 16);
+    // 이메일 인증 메일
+    @PostMapping("/emailCheck")
+    public ResponseEntity<?> checkingEmail(@RequestBody Map<String, String> request) {
+        String email = request.get("email");
+
+        // 6자리 무작위 숫자 생성
+        String randomNumber = String.format("%06d", new Random().nextInt(999999));
+
+        // 이메일 전송
+        emailService.sendEmail(email, "OspreyAI 인증 코드 발급",
+                "안녕하세요, OspreyAI 사용자님.\n\n인증 코드 :\n" +
+                        randomNumber +
+                        "\n\n안전한 사용을 위해 발급된 인증 코드를 즉시 사용해 주시길 권장합니다.\n" +
+                        "코드 사용과 관련하여 도움이 필요하신 경우, 언제든지 문의해 주십시오.\n" +
+                        "\n" +
+                        "감사합니다.\n" +
+                        "OspreyAI 드림");
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "인증 코드가 이메일로 전송되었습니다.");
+        response.put("code", randomNumber);
+
+        return ResponseEntity.ok(response);
     }
 
 

@@ -1,29 +1,55 @@
-import React, { useState } from "react";
+// src/pages/member/Signup.js
+import React, { useEffect, useState } from "react";
 import apiClient from "../../../utils/axios";
 import style from "./Signup.module.css";
 
 function Signup({ onSignupSuccess }) {
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isConfirm, setIsConfirm] = useState(false);
-  const [isIdAvailable, setIsIdAvailable] = useState(null);
-  const [isEmailVerified, setIsEmailVerified] = useState(false);
-  const [emailCode, setEmailCode] = useState("");
-  const [userInputCode, setUserInputCode] = useState("");
   const [formData, setFormData] = useState({
     memberId: "",
     pw: "",
     confirmPwd: "",
     email: "",
     name: "",
-    nickname: "",
+    userNickName: "",
     gender: "",
   });
 
+  // input 의 값을 입력하면 입력된 값으로 formData 의 property 값으로 반영되게 하기 위해
+  // 타이핑한 글자가 input 에 보여지게 하는 부분이기도 함
+  // 타이핑하는 글자가 input 에 표시되지 않으면 handleChange 와 useState 가 연결되지 않은 오류임(확인 필요)
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({ ...formData, [name]: value });
   };
 
+  const [isIdAvailable, setIsIdAvailable] = useState(null);
+
+  const handleSendEmail = async () => {
+    try {
+      const response = await axios.post("/member/emailcheck", { email });
+      setMessage(response.data.message);
+      localStorage.setItem("emailVerificationCode", response.data.code); // 인증 코드를 localStorage에 저장
+      alert("인증 코드가 이메일로 전송되었습니다.");
+    } catch (error) {
+      console.error(error);
+      alert("인증 코드 전송 실패");
+    }
+  };
+
+  const handleVerifyCode = () => {
+    const storedCode = localStorage.getItem("emailVerificationCode"); // localStorage에서 코드 가져오기
+    if (userInputCode === storedCode) {
+      alert("인증 성공!");
+    } else {
+      alert("인증 코드가 일치하지 않습니다.");
+    }
+  };
+
+  // 아이디 중복검사 버튼 클릭시 작동할 핸들러 함수
   const handleIdCheck = async () => {
     if (!formData.memberId) {
       alert("아이디를 입력하세요.");
@@ -40,67 +66,47 @@ function Signup({ onSignupSuccess }) {
         alert("사용 가능한 아이디입니다.");
       } else {
         setIsIdAvailable(false);
-        alert("이미 사용 중인 아이디입니다. 다른 아이디를 사용하세요.");
+        alert("이미 사용중인 아이디입니다. 확인 후 다시 작성하세요.");
       }
     } catch (error) {
-      console.error("아이디 중복 검사 실패: ", error);
-      alert("중복 검사 중 오류가 발생했습니다. 관리자에게 문의하세요.");
+      console.error("이메일 중복검사 실패 : ", error);
+      alert("중복검사 중 오류가 발생했습니다. 관리자에게 문의하세요.");
     }
   };
 
-  const handleSendEmail = async () => {
-    if (!formData.email) {
-      alert("이메일을 입력해주세요.");
-      return;
-    }
-
-    setIsLoading(true);
-    setIsConfirm(true);
-    try {
-      const response = await apiClient.post("/member/emailCheck", {
-        email: formData.email,
-      });
-
-      setEmailCode(response.data.code);
-      alert("인증 코드가 이메일로 전송되었습니다.");
-    } catch (error) {
-      console.error(error);
-      alert("인증 코드 전송 실패. 다시 시도해주세요.");
-    } finally {
-      setIsLoading(false); // 로딩 종료
-    }
-  };
-
-  const handleVerifyCode = () => {
-    if (userInputCode === emailCode) {
-      setIsEmailVerified(true);
-      alert("이메일 인증이 완료되었습니다.");
-    } else {
-      alert("인증 코드가 일치하지 않습니다. 다시 확인해주세요.");
-    }
-  };
-
+  //전송 전에 input 값 유효성 검사 처리
   const validate = () => {
+    //암호와 암호 확인이 일치하는지 확인
     if (formData.pw !== formData.confirmPwd) {
-      alert("비밀번호가 서로 일치하지 않습니다.");
+      alert("비밀번호가 서로 일치하지 않습니다. 다시 입력해주세요.");
       return false;
     }
+
+    //모든 유효성 검사를 통과하면
     return true;
   };
 
+  // 암호확인 input 의 포커스(focus) 가 사라지면 작동되는 핸들러 함수임
+  const handleConfirmPwd = () => {
+    if (formData.confirmPwd) {
+      validate();
+    }
+  };
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // submit 이벤트 취소함 (axios 로 따로 전송할 것이므로)
 
-    if (!isIdAvailable) {
-      alert("아이디 중복 검사를 완료해주세요.");
+    if (isIdAvailable === false) {
+      alert("이미 사용중인 아이디입니다.");
       return;
     }
 
-    if (!isEmailVerified) {
-      alert("이메일 인증을 완료해주세요.");
+    if (isIdAvailable === null) {
+      alert("아이디 중복검사를 해주세요.");
       return;
     }
 
+    // 전송 전에 유효성 검사 확인
     if (!validate()) {
       return;
     }
@@ -147,10 +153,10 @@ function Signup({ onSignupSuccess }) {
           </button>
         </div>
         <div>
-          <label htmlFor="pw">비밀번호: </label>
+          <label htmlFor="userPwd">비밀번호: </label>
           <input
             type="password"
-            id="pw"
+            id="userPwd"
             name="pw"
             value={formData.pw}
             onChange={handleChange}
@@ -165,6 +171,7 @@ function Signup({ onSignupSuccess }) {
             name="confirmPwd"
             value={formData.confirmPwd}
             onChange={handleChange}
+            onBlur={handleConfirmPwd}
             required
           />
         </div>
@@ -177,41 +184,16 @@ function Signup({ onSignupSuccess }) {
             value={formData.email}
             onChange={handleChange}
             required
-            disabled={isLoading || isEmailVerified || isConfirm}
           />
-          <button
-            type="button"
-            onClick={handleSendEmail}
-            disabled={isLoading || isEmailVerified}
-          >
-            {isLoading ? "전송 중..." : "인증하기"}
+          <button type="button" onClick={handleSendEmail}>
+            인증하기
           </button>
         </div>
         <div>
-          <label htmlFor="emailCode">인증 코드: </label>
+          <label htmlFor="userName">이름: </label>
           <input
             type="text"
-            id="emailCode"
-            name="emailCode"
-            value={userInputCode}
-            onChange={(e) => setUserInputCode(e.target.value)}
-            required
-            disabled={isEmailVerified}
-          />
-          <button
-            type="button"
-            onClick={handleVerifyCode}
-            disabled={isEmailVerified}
-          >
-            인증 확인
-          </button>
-          {isEmailVerified && <p>이메일 인증이 완료되었습니다.</p>}
-        </div>
-        <div>
-          <label htmlFor="name">이름: </label>
-          <input
-            type="text"
-            id="name"
+            id="userName"
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -219,10 +201,10 @@ function Signup({ onSignupSuccess }) {
           />
         </div>
         <div>
-          <label htmlFor="nickname">닉네임: </label>
+          <label htmlFor="userName">닉네임: </label>
           <input
             type="text"
-            id="nickname"
+            id="nickName"
             name="nickname"
             value={formData.nickname}
             onChange={handleChange}
