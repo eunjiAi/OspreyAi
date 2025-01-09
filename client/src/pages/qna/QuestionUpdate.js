@@ -126,7 +126,6 @@ const QuestionUpdate = () => {
                   size="50"
                   value={formData.qtitle}
                   onChange={handleChange}
-                  required
                 />
               </td>
             </tr>
