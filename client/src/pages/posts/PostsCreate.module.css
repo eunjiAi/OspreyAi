@@ -1,7 +1,8 @@
-/* src/pages/posts/PostsCreate.css */
+/* src/pages/notice/NoticeCreate.module.css */
 
 .container {
-  max-width: 700px;
+  max-width: 1440px;
+  width: 60%;
   margin: 50px auto;
   padding: 30px;
   background: #ffffff;
@@ -15,13 +16,9 @@
   text-align: center;
   margin-bottom: 40px;
   font-size: 32px;
-  color: #333;
+  color: #333333;
   font-weight: bold;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
-  background: linear-gradient(to right, #4a90e2, #007bff);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* 폼 스타일 */
@@ -32,21 +29,24 @@
 }
 
 /* 테이블 스타일 */
-table {
+.table {
   width: 100%;
   border-spacing: 15px;
   margin-bottom: 20px;
 }
 
-th {
+.table th {
+  width: 120px;
   text-align: left;
   font-size: 18px;
   color: #555;
+  background-color: white;
   font-weight: bold;
+  text-align: center;
 }
 
-td input[type="text"],
-td textarea {
+.table td input[type="text"],
+.table textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ddd;
@@ -56,8 +56,8 @@ td textarea {
   background-color: #fafafa;
 }
 
-td input[type="text"]:focus,
-td textarea:focus {
+.table td input[type="text"]:focus,
+.table td textarea:focus {
   border-color: #4a90e2;
   box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
   background-color: #ffffff;
@@ -65,14 +65,14 @@ td textarea:focus {
 }
 
 /* textarea 기본 스타일 */
-textarea {
+.textarea {
   resize: none;
-  height: 120px;
+  height: 300px;
 }
 
 /* 파일 입력 스타일 */
-td input[type="file"] {
-  font-size: 15px;
+.table input[type="file"] {
+  font-size: 16px;
   padding: 10px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -81,7 +81,7 @@ td input[type="file"] {
   transition: background-color 0.3s ease;
 }
 
-td input[type="file"]:hover {
+.table input[type="file"]:hover {
   background-color: #f0f0f0;
 }
 
@@ -90,59 +90,56 @@ td input[type="file"]:hover {
   display: flex;
   flex-direction: row; /* 버튼들을 가로로 나열 */
   justify-content: center; /* 버튼들을 가운데 정렬 */
+  border-radius: 12px;
   gap: 10px; /* 버튼 간의 간격 */
   width: 100%; /* 부모 요소의 너비를 100%로 설정 */
 }
 
 /* 버튼 스타일 (공통) */
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-  margin: 10px 5px;
-  padding: 12px 20px;
+.submit,
+.reset,
+.back {
+  margin: 20px 15px;
+  padding: 12px 5px;
   font-size: 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 130px;
+  text-align: center;
 }
 
 /* 개별 버튼 색상 설정 */
-input[type="submit"] {
+.submit {
   background-color: #4a90e2;
   color: white;
 }
 
-input[type="submit"]:hover {
+.submit:hover {
   background-color: #007bff;
   box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
 }
 
-input[type="reset"] {
-  background-color: #ff6b6b;
+.reset {
+  background-color: #FFB84D;
   color: white;
 }
 
-input[type="reset"]:hover {
-  background-color: #e14b4b;
+.reset:hover {
+  background-color: #FFB84D;
   box-shadow: 0 4px 10px rgba(225, 75, 75, 0.2);
 }
 
-input[type="button"] {
+.back {
   background-color: #6c757d;
   color: white;
 }
 
-input[type="button"]:hover {
+.back:hover {
   background-color: #5a6268;
   box-shadow: 0 4px 10px rgba(90, 98, 104, 0.2);
-}
-
-/* 버튼 그룹 정렬 */
-th[colspan="2"] {
-  text-align: center;
 }
 
 /* 반응형 스타일 */
@@ -157,18 +154,22 @@ th[colspan="2"] {
   }
 
   /* 버튼 크기 조정 (모바일에서) */
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"] {
+  .submit,
+  .reset,
+  .back {
     font-size: 14px;
   }
 
-  .button-group {
+  .buttongroup {
     flex-direction: column; /* 모바일에서는 버튼들을 세로로 나열 */
   }
 
-  .button-group input {
+  .buttongroup button {
     width: 100%; /* 모바일에서 버튼들을 가로폭에 맞춰 100%로 */
     margin-bottom: 10px; /* 버튼 간 간격 */
+  }
+
+  .submitbutton {
+    border-radius: 10px !important;
   }
 }

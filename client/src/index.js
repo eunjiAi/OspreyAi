@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { AuthProvider } from './AuthProvider'; // AuthProvider 가져오기
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { AuthProvider } from "./AuthProvider"; // AuthProvider 가져오기
+import { BrowserRouter } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <React.StrictMode>는 React의 개발 모드에서만 동작하는 컴포넌트입니다. 
@@ -24,10 +24,10 @@ root.render(
     */}
     <AuthProvider>
       {/* <BrowserRouter> 검색 결과 처리 코드 수정으로 삭제해야 함 */}
-        <App />
+      <App />
       {/* </BrowserRouter> */}
     </AuthProvider>
-    // </React.StrictMode>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

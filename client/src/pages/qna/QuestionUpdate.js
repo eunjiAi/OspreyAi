@@ -77,13 +77,13 @@ const QuestionUpdate = () => {
         },
       });
 
-      alert("답변 수정 성공");
+      alert("질문 수정 성공");
       // 답변 수정이 성공되면 게시글 상세보기 페이지로 이동
       // navigate(`/question/detail/${qno}`);
       navigate("/qna");
     } catch (error) {
-      console.error("답변 수정 실패", error);
-      alert("답변 수정 실패");
+      console.error("질문 수정 실패", error);
+      alert("질문 수정 실패");
     }
   };
 

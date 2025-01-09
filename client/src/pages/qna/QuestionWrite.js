@@ -58,10 +58,10 @@ const QuestionWrite = () => {
         <div className={styles.container}>
             <h1 className={styles.header}>새 질문글 등록 페이지</h1>
             <form onSubmit={handleSubmit} className={styles.form}>
-                <table id="outer" align="center" width="700" cellspacing="5" cellpadding="5">
+                <table className={styles.table}>
                     <tbody>
                         <tr>
-                            <th width="120">제 목</th>
+                            <th>제 목</th>
                             <td>
                                 <input
                                     type="text"
@@ -69,12 +69,13 @@ const QuestionWrite = () => {
                                     size="50"
                                     value={formData.qtitle}
                                     onChange={handleChange}
+                                    placeholder="질문제목을 입력하세요."
                                     required
                                 />
                             </td>
                         </tr>
                         <tr>
-                            <th width="120">작성자</th>
+                            <th>작성자</th>
                             <td>
                                 <input
                                     type="text"
@@ -87,39 +88,50 @@ const QuestionWrite = () => {
                         <tr>
                             <th>내 용</th>
                             <td>
-                                <textarea
+                                <textarea className={styles.textarea}
                                     rows="5"
                                     cols="50"
                                     name="qcontent"
                                     value={formData.qcontent}
                                     onChange={handleChange}
+                                    placeholder="질문내용을 입력하세요."
                                     required
                                 ></textarea>
                             </td>
                         </tr>
-                        <tr>
-                            <th colSpan="2">
-                                <input type="submit" value="등록하기" /> &nbsp;
-                                <input
-                                    type="reset"
-                                    value="작성취소"
-                                    onClick={() =>
-                                        setFormData({ ...formData, qcontent: '' })
-                                    }
-                                />{' '}
-                                &nbsp;
-                                <input
-                                    type="button"
-                                    value="목록"
-                                    onClick={() => {
-                                        navigate(-1);
-                                    }}
-                                />
-                            </th>
-                        </tr>
                     </tbody>
                 </table>
             </form>
+            <div>
+                <div className={styles.buttongroup}>
+                    <button 
+                    className={styles.submit} 
+                    onClick={handleSubmit}
+                    >
+                    등록하기
+                    </button>
+                    &nbsp;
+                    <button
+                    className={styles.reset}
+                    onClick={() =>
+                        setFormData({
+                        ...formData,
+                        qtitle: "",
+                        qcontent: "",
+                        })
+                    }
+                    >
+                    작성 초기화
+                    </button>
+                    &nbsp;
+                    <button
+                    className={styles.back}
+                    onClick={() => navigate(-1)}
+                    >
+                    등록취소
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };

@@ -143,19 +143,19 @@ function Header({
               {showNoticeDropdown && (
                 <ul className={styles.dropdownMenu}>
                   <li>
-                    <Link to="/notice" className={styles.dropdownItem}>
+                    <a href="/notice" className={styles.dropdownItem}>
                       공지사항
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to="/faq" className={styles.dropdownItem}>
+                    <a href="/faq" className={styles.dropdownItem}>
                       FAQ
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to="/qna" className={styles.dropdownItem}>
+                    <a href="/qna" className={styles.dropdownItem}>
                       Q&A
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               )}
@@ -169,14 +169,14 @@ function Header({
               {showBoardDropdown && (
                 <ul className={styles.dropdownMenu}>
                   <li>
-                    <Link to="/squatFeedback" className={styles.dropdownItem}>
+                    <a href="/squatFeedback" className={styles.dropdownItem}>
                       스쿼트피드백 AI
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to="/posts" className={styles.dropdownItem}>
+                    <a href="/posts" className={styles.dropdownItem}>
                       게시판
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               )}

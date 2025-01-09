@@ -94,7 +94,7 @@ function FaqList() {
             {Faqs.map((faq) => (
               <li key={faq.faqId} className={styles.faqItem}>
                 <span
-                  style={{ color: 'blue', cursor: 'pointer' }}
+                  style={{ cursor: 'pointer' }}
                   onClick={() => handleTitleClick(faq.faqId)}
                 >
                   {faq.faqTitle}
