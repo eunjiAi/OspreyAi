@@ -109,42 +109,35 @@ const PostsEdit = () => {
   }
 
   return (
-    <div>
-      <h2> {id}번 게시글 수정</h2>
+    <div className={styles.container}>
+      <h2 className={styles.header}> {id}번 게시글 수정</h2>
       <form
         onSubmit={handleSubmit}
         enctype="multipart/form-data"
         className={styles.form}
       >
-        <table
-          id="outer"
-          align="center"
-          width="700"
-          cellspacing="5"
-          cellpadding="5"
+        <table className={styles.table}
         >
           <tbody>
             <tr>
-              <th width="120">번 호</th>
+              <th>번 호</th>
               <td>
                 <input
                   type="text"
                   id="postId"
                   name="postId"
-                  size="50"
                   value={formData.postId}
                   readOnly
                 />
               </td>
             </tr>
             <tr>
-              <th width="120">제 목</th>
+              <th>제 목</th>
               <td>
                 <input
                   type="text"
                   id="title"
                   name="title"
-                  size="50"
                   value={formData.title}
                   onChange={handleChange}
                   required
@@ -152,7 +145,7 @@ const PostsEdit = () => {
               </td>
             </tr>
             <tr>
-              <th width="120">작성자</th>
+              <th>작성자</th>
               <td>
                 <input
                   type="text"
@@ -177,9 +170,7 @@ const PostsEdit = () => {
             <tr>
               <th>내 용</th>
               <td>
-                <textarea
-                  rows="5"
-                  cols="50"
+                <textarea className={styles.textarea}
                   name="content"
                   value={formData.content}
                   onChange={handleChange}
@@ -187,20 +178,37 @@ const PostsEdit = () => {
                 ></textarea>
               </td>
             </tr>
-
-            <tr>
-              <th colspan="2">
-                <input type="submit" value="수정하기" /> &nbsp;
-                <input
-                  type="reset"
-                  value="취소"
-                  onClick={() => navigate(`/posts/${id}`)}
-                />
-              </th>
-            </tr>
           </tbody>
         </table>
       </form>
+      <div className={styles.buttongroup}>
+          <button 
+            className={styles.submit} 
+            onClick={handleSubmit}
+          >
+            수정완료
+          </button>
+          &nbsp;
+          <button
+            className={styles.reset}
+            onClick={() =>
+              setFormData({
+                ...formData,
+                title: "",
+                content: "",
+              })
+            }
+          >
+            초기화
+          </button>
+          &nbsp;
+          <button
+            className={styles.back}
+            onClick={() => navigate(-1)}
+          >
+            취소
+          </button>
+      </div>
     </div>
   );
 };
