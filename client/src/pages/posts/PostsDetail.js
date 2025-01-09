@@ -31,7 +31,9 @@ const PostsDetail = () => {
       try {
         setLoading(true);
         const response = await apiClient.get(`/posts/${id}`);
-        setPosts(response.data);
+        const { posts, replies } = response.data;
+        setPosts(posts);
+        setReplies(replies);
       } catch (error) {
         console.error("Error fetching notice details:", error);
         setError("게시글 상세 조회 실패!");

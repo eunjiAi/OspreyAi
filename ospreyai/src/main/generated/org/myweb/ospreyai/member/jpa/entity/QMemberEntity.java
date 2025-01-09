@@ -27,8 +27,6 @@ public class QMemberEntity extends EntityPathBase<MemberEntity> {
 
     public final StringPath faceId = createString("faceId");
 
-    public final StringPath faceVector = createString("faceVector");
-
     public final StringPath gender = createString("gender");
 
     public final StringPath google = createString("google");

@@ -19,6 +19,7 @@ function MyPage() {
     google: "",
     naver: "",
     kakao: "",
+    faceId: "", 
   });
 
   const [loading, setLoading] = useState(true);
@@ -78,23 +79,23 @@ function MyPage() {
           {userData.gender === "F"
             ? "Female"
             : userData.gender === "M"
-              ? "Male"
-              : "정보 없음"}
+            ? "Male"
+            : "정보 없음"}
         </p>
         <p>
           <strong>가입 날짜:</strong> {userData.enrollDate || "정보 없음"}
         </p>
         <p>
-          <strong>구글 연동:</strong>
-          {userData.google || "미연동"}
+          <strong>구글 연동:</strong> {userData.google || "미연동"}
         </p>
         <p>
-          <strong>네이버 연동:</strong>
-          {userData.naver || "미연동"}
+          <strong>네이버 연동:</strong> {userData.naver || "미연동"}
         </p>
         <p>
-          <strong>카카오 연동:</strong>
-          {userData.kakao || "미연동"}
+          <strong>카카오 연동:</strong> {userData.kakao || "미연동"}
+        </p>
+        <p>
+          <strong>Face ID 상태:</strong> {userData.faceId ? "등록" : "미등록"}
         </p>
       </div>
       <button className="update-btn" onClick={handleEditClick}>

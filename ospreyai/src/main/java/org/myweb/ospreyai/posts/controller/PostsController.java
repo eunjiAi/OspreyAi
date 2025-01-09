@@ -2,6 +2,7 @@ package org.myweb.ospreyai.posts.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.tags.shaded.org.apache.bcel.generic.ARRAYLENGTH;
 import org.myweb.ospreyai.posts.model.dto.Posts;
 import org.myweb.ospreyai.posts.model.dto.Reply;
 import org.myweb.ospreyai.posts.model.service.PostsService;
@@ -44,19 +45,29 @@ public class PostsController {
 
 	// 게시글 상세보기
 	@GetMapping("/{id}")
-	public ResponseEntity<Posts> getPostsById(@PathVariable int id) {
+	public ResponseEntity<Map<String, Object>> getPostsById(@PathVariable int id) {
 		try {
 			Posts posts = postsService.selectPosts(id);
 			if (posts == null) {
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 			}
+
+			// 게시글 조회수 증가
 			postsService.updateAddPostsCount(id);
-			return ResponseEntity.ok(posts);
+
+			// 댓글 리스트 조회
+			ArrayList<Reply> replies = replyService.selectReplyList(id);
+
+			// Map에 게시글과 댓글 추가
+			Map<String, Object> response = new HashMap<>();
+			response.put("posts", posts);
+			response.put("replies", replies);
+
+			return ResponseEntity.ok(response);
 		} catch (Exception e) {
 			log.error("Error fetching posts details", e);
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
 		}
-
 	}
 
 	// 게시글 목록 조회

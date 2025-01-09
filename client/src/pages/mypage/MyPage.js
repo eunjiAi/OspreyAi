@@ -1,26 +1,24 @@
 import React from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import MyPageMain from "./MyPageMain";
 import "./MyPage.css";
 
 function MyPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isRootPath = location.pathname === "/mypage";
+  // "마이페이지"와 관련된 모든 경로 상태 확인
+  const isMyPagePath =
+    location.pathname === "/mypage" ||
+    location.pathname.startsWith("/mypage/mypageMain") || // "마이페이지 메인" 경로
+    location.pathname.startsWith("/mypage/mypageUpdate"); // "정보 수정" 경로
 
   return (
     <div className="mypage-layout">
+      {/* 왼쪽 탭 메뉴 */}
       <div className="tabs-container">
         <button
-          className="faceid-register-btn"
-          onClick={() => navigate("/FaceIdRegister")} // Face ID 등록 페이지로 이동
-        >
-          Face ID 등록
-        </button>
-        <button
-          onClick={() => navigate("/mypage")}
-          className={`tab ${location.pathname === "/mypage/mypageMain" ? "active" : ""}`}
+          onClick={() => navigate("/mypage/mypageMain")}
+          className={`tab ${isMyPagePath ? "active" : ""}`}
         >
           마이페이지
         </button>
@@ -34,31 +32,19 @@ function MyPage() {
         </button>
         <button
           onClick={() => navigate("/mypage/myinfo")}
-          className={`tab ${
-            location.pathname === "/mypage/myinfo" ? "active" : ""
-          }`}
+          className={`tab ${location.pathname === "/mypage/myinfo" ? "active" : ""}`}
         >
           내가 쓴 글
         </button>
         <button
-          onClick={() => navigate("/mypage/qna")}
-          className={`tab ${location.pathname === "/mypage/qna" ? "active" : ""}`}
-        >
-          my QnA
-        </button>
-        <button
           onClick={() => navigate("/mypage/withdrawal")}
-          className={`tab ${
-            location.pathname === "/mypage/withdrawal" ? "active" : ""
-          }`}
+          className={`tab ${location.pathname === "/mypage/withdrawal" ? "active" : ""}`}
         >
           회원탈퇴
         </button>
         <button
           onClick={() => navigate("/mypage/mypageAdmin")}
-          className={`tab ${
-            location.pathname === "/mypage/mypageAdmin" ? "active" : ""
-          }`}
+          className={`tab ${location.pathname === "/mypage/mypageAdmin" ? "active" : ""}`}
         >
           (관리자)회원 관리
         </button>
@@ -66,7 +52,7 @@ function MyPage() {
 
       {/* 오른쪽 페이지 */}
       <div className="content-container">
-        {isRootPath ? <MyPageMain /> : <Outlet />}
+        <Outlet />
       </div>
     </div>
   );
