@@ -18,7 +18,7 @@
   background-color: white;
   display: flex;
   justify-content: end;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 button {
@@ -47,7 +47,7 @@ button:disabled {
 .postsList {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .postsList th {
