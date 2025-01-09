@@ -154,6 +154,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         body.put("refreshToken", refreshToken);
 
         response.setContentType("application/json");
+        body.put("redirectUrl", "/"); // 리디렉션 URL 포함(25.01.19 추가)
         new ObjectMapper().writeValue(response.getWriter(), body);
     }
 

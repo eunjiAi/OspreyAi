@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.f662eaef.css",
-    "main.js": "/static/js/main.b14bc8fa.js",
+    "main.js": "/static/js/main.b4656283.js",
     "static/js/453.419a5d54.chunk.js": "/static/js/453.419a5d54.chunk.js",
     "static/media/SignInWithNaver.png": "/static/media/SignInWithNaver.c876de3650dd1e42ee4d.png",
     "static/media/logo.png": "/static/media/logo.36190b28045b5def6c20.png",
@@ -11,11 +11,11 @@
     "static/media/SignInWithGoogle.png": "/static/media/SignInWithGoogle.efad756da941579739b1.png",
     "index.html": "/index.html",
     "main.f662eaef.css.map": "/static/css/main.f662eaef.css.map",
-    "main.b14bc8fa.js.map": "/static/js/main.b14bc8fa.js.map",
+    "main.b4656283.js.map": "/static/js/main.b4656283.js.map",
     "453.419a5d54.chunk.js.map": "/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f662eaef.css",
-    "static/js/main.b14bc8fa.js"
+    "static/js/main.b4656283.js"
   ]
 }
