@@ -19,19 +19,10 @@ function Footer() {
             <a href="/services" className="footer-link">공지사항</a>
             <a href="/contact" className="footer-link">게시판</a>
           </div>
-          <div className="footer-socials">
-            <a href="https://twitter.com" className="footer-social-link" aria-label="Twitter">
-              <img src="path/to/twitter-icon.png" alt="Instagram" />
-            </a>
-            <a href="https://facebook.com" className="footer-social-link" aria-label="Facebook">
-              <img src="path/to/facebook-icon.png" alt="Facebook" />
-            </a>
-
-          </div>
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; 2024 OspreyAI
+        &copy; 2024 OspreyAI 
       </div>
     </footer>
   );
