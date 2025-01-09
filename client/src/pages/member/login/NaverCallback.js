@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 function NaverCallback() {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.hash.substring(1));
-    const accessToken = urlParams.get("access_token");
-    const refreshToken = urlParams.get("refresh_token");
+    const accessToken = urlParams.get("accessToken");
+    const refreshToken = urlParams.get("refreshToken");
 
     // 부모 창이 있는 경우 메시지 전달
     if (window.opener) {
@@ -15,7 +15,7 @@ function NaverCallback() {
           refreshToken,
           message: accessToken ? "로그인 성공" : "로그인 실패",
         },
-        "http://localhost:3000" // 부모 창의 도메인
+        "http://localhost:8888" // 부모 창의 도메인
       );
 
       // 팝업 창 닫기
@@ -23,10 +23,9 @@ function NaverCallback() {
     } else {
       console.error("부모 창이 존재하지 않습니다.");
     }
-
   }, []);
 
-  return null; // 화면에 UI가 필요 없으므로 null 반환
+  return null;
 }
 
 export default NaverCallback;

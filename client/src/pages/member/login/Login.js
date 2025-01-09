@@ -138,25 +138,23 @@ function Login({ onLoginSuccess }) {
     }
 
     window.addEventListener("message", (event) => {
-      if (event.origin !== "http://localhost:8888") {
-        console.warn("허용되지 않은 도메인에서의 메시지입니다.");
-        return;
-      }
+      // if (event.origin !== "http://localhost:8888") {
+      //   console.warn("허용되지 않은 도메인에서의 메시지입니다.");
+      //   return;
+      // }
 
       const { success, accessToken, refreshToken } = event.data;
 
       if (success) {
         console.log("로그인 성공! 받은 토큰:", { accessToken, refreshToken });
-        localStorage.setItem("naverAccessToken", accessToken);
-        localStorage.setItem("naverRefreshToken", refreshToken);
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
         alert("로그인 성공!");
       } else {
         console.error("로그인 실패");
-        alert("로그인 실패: 다시 시도해주세요.");
       }
     });
   };
-
 
   // kakao Login ------------------------------------------------------------------------------------
   const KAKAO_CLIENT_ID = "2622b65a32dcd94387b5723343731afc";

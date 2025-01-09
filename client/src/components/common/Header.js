@@ -36,24 +36,21 @@ function Header({
   // 라우터 정보를 관리할 상태변수
   const location = useLocation();
 
-  ///////////////////////////////////////////////////////////////////////////////테스트중중
-  // 메시지 수신 핸들러 정의
+  ///////////////////////////////////////////////////////////////////////////////네이버 테스트 중
+  // 콘솔 DevTools 메시지 무한반복 처리
   const handleMessage = (event) => {
-    console.log("수신된 메시지:", event.data); // 디버깅용 메시지 출력
-
-    // React DevTools에서 보낸 메시지 무시
     if (
       event.source === window ||
       event.data.source === "react-devtools-content-script"
     ) {
-      return; // DevTools 메시지는 처리하지 않음
+      return;
     }
 
     // 허용된 도메인에서 온 메시지만 처리
-    if (event.origin !== "http://localhost:8888") {
-      console.warn("허용되지 않은 도메인에서의 메시지입니다.");
-      return;
-    }
+    // if (event.origin !== "http://localhost:8888") {
+    //   console.warn("허용되지 않은 도메인에서의 메시지입니다.");
+    //   return;
+    // }
 
     // 메시지 데이터 유효성 확인
     if (!event.data) {
@@ -67,8 +64,8 @@ function Header({
       console.log("로그인 성공! 받은 토큰:", { accessToken, refreshToken });
 
       // 로컬스토리지에 저장
-      localStorage.setItem("naverAccessToken", accessToken);
-      localStorage.setItem("naverRefreshToken", refreshToken);
+      localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("refreshToken", refreshToken);
 
       alert("로그인 성공!");
     } else {
@@ -77,16 +74,14 @@ function Header({
     }
   };
 
-  // useEffect 내부 로직 정리
   useEffect(() => {
-    const accessToken = localStorage.getItem("naverAccessToken");
-    const refreshToken = localStorage.getItem("naverRefreshToken");
+    const accessToken = localStorage.getItem("accessToken");
+    const refreshToken = localStorage.getItem("refreshToken");
 
     // 초기 로컬스토리지 검증 및 초기화
     if (!accessToken || !refreshToken) {
-      console.log("로그인 정보가 없습니다. 초기화 중...");
-      localStorage.removeItem("naverAccessToken");
-      localStorage.removeItem("naverRefreshToken");
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
     }
 
     // 메시지 이벤트 리스너 등록
@@ -96,9 +91,9 @@ function Header({
     return () => {
       window.removeEventListener("message", handleMessage);
     };
-  }, []); // 빈 의존성 배열로 한 번만 실행
+  }, []);
 
-  /////////////////////////////////////////////////////////////////////////////테스트중중
+  /////////////////////////////////////////////////////////////////////////////네이버 팝업 테스트 중중
 
   // 현재 라우터(/notice:NoticeList or /board:BoardList)를 기반으로 검색 input 의 placeholder 를 표시 처리
   const getSearchPlaceholder = () => {
