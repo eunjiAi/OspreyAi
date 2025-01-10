@@ -20,7 +20,7 @@ public class Reply {
     private String rwriter; // rwriter VARCHAR2(30)
     private String rnickname; // rnickname VARCHAR2(30)
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+//    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date rdate; // rdate DATE
 
     private int replyRef; // replyref NUMBER

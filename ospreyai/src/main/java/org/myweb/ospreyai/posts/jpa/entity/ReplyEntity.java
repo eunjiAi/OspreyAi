@@ -32,8 +32,8 @@ public class ReplyEntity {
     @Column(name = "RNICKNAME", length = 30)
     private String rnickname; // rnickname VARCHAR2(30)
 
-    @Column(name = "RDATE", columnDefinition = "DATE DEFAULT SYSDATE")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "RDATE")
+//    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date rdate; // rdate DATE
 
     @Column(name = "REPLYREF")
