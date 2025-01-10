@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.myweb.ospreyai.qna.jpa.entity.AnswerEntity;
 
+import java.sql.Date;
+
 @Data    //@Getter, @Setter, @ToString, @EqualsAndHashCode, @RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,8 +17,8 @@ public class Answer {
     private int ano;       //ANO	NUMBER
     private String aTitle;     //ATITLE	VARCHAR2(200 BYTE)
     private String aContent;   //ACONTENT	VARCHAR2(4000 BYTE)
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private java.sql.Date aDate;  //ADATE	DATE
+//    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date aDate;  //ADATE	DATE
     private String aWriter;     //AWRITER	VARCHAR2(50 BYTE)
     private int answerRef;
 
