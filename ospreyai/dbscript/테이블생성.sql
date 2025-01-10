@@ -1,3 +1,5 @@
+-- Osprey AI
+
 -- Member 테이블 삭제
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Member CASCADE CONSTRAINTS';
@@ -51,7 +53,6 @@ COMMENT ON COLUMN Member.email IS '이메일';
 
 
 
-
 -- Refresh_Tokens 테이블 삭제
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Refresh_Tokens CASCADE CONSTRAINTS';
@@ -89,7 +90,6 @@ COMMENT ON COLUMN Refresh_Tokens.status IS '토큰상태';
 
 
 
-
 -- Squatfeedback 테이블 삭제
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE Squatfeedback CASCADE CONSTRAINTS';
@@ -120,6 +120,7 @@ COMMENT ON COLUMN Squatfeedback.total_attempts IS '스쿼트총시도횟수';
 COMMENT ON COLUMN Squatfeedback.correct_count IS '스쿼트바른자세횟수';
 COMMENT ON COLUMN Squatfeedback.squat_date IS '스쿼트날짜';
 COMMENT ON COLUMN Squatfeedback.name IS '이름';
+
 
 
 -- Posts 테이블 삭제
@@ -160,6 +161,41 @@ COMMENT ON COLUMN Posts.post_update IS '수정일자';
 COMMENT ON COLUMN Posts.filename IS '원본파일이름';
 COMMENT ON COLUMN Posts.rename_file IS '수정파일이름';
 COMMENT ON COLUMN Posts.post_count IS '조회수';
+
+
+
+-- Reply 테이블 삭제
+BEGIN
+    EXECUTE IMMEDIATE 'DROP TABLE Reply CASCADE CONSTRAINTS';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -942 THEN
+            RAISE;
+        END IF;
+END;
+/
+
+-- Reply 테이블 생성
+CREATE TABLE Reply(
+   reply_id NUMBER CONSTRAINT pk_reply_id PRIMARY KEY,  
+   rcontent CLOB NOT NULL,
+   rwriter VARCHAR2(30) NOT NULL,
+   rnickname VARCHAR2(30),
+   rdate DATE DEFAULT SYSDATE,
+   replyref NUMBER,
+    CONSTRAINT FK_REPLYREF FOREIGN KEY (REPLYREF) REFERENCES Posts(post_id) ON DELETE SET NULL,
+    CONSTRAINT FK_RWITER FOREIGN KEY (rwriter) REFERENCES Member (memberid) ON DELETE CASCADE
+    );
+    
+-- Reply 테이블 코멘트 생성
+COMMENT ON COLUMN Reply.reply_id IS '댓글번호';
+COMMENT ON COLUMN Reply.rcontent IS '댓글내용';
+COMMENT ON COLUMN Reply.rwriter IS '댓글작성자';
+COMMENT ON COLUMN Reply.rnickname IS '댓글닉네임';
+COMMENT ON COLUMN Reply.rdate IS '작성일자';
+COMMENT ON COLUMN Reply.replyref IS '참조글번호';
+
+
 
 -- Notice 테이블 삭제
 BEGIN
@@ -202,7 +238,6 @@ COMMENT ON COLUMN Notice.ncount IS '조회수';
 
 
 
-
 -- FAQ 테이블 삭제
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE FAQ CASCADE CONSTRAINTS';
@@ -230,7 +265,7 @@ CREATE TABLE FAQ (
     ,CONSTRAINT fk_faq_writer FOREIGN KEY (faq_writer) REFERENCES MEMBER(memberid) ON DELETE SET NULL
 );
 
--- 컬럼에 대한 설명 추가
+-- FAQ 테이블 코멘트 생성
 COMMENT ON COLUMN FAQ.faq_id IS 'FAQ 글 번호';
 COMMENT ON COLUMN FAQ.faq_title IS 'FAQ 글 제목';
 COMMENT ON COLUMN FAQ.faq_content IS 'FAQ 글 내용';
@@ -241,6 +276,69 @@ COMMENT ON COLUMN FAQ.created_at IS 'FAQ 등록일';
 COMMENT ON COLUMN FAQ.qna_id IS 'QNA 글번호';
 COMMENT ON COLUMN FAQ.faq_writer IS '작성자';
 
+
+
+-- question 테이블 삭제
+BEGIN
+    EXECUTE IMMEDIATE 'DROP TABLE question CASCADE CONSTRAINTS';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -942 THEN
+            RAISE;
+        END IF;
+END;
+/
+
+-- QUESTION 테이블 생성
+CREATE TABLE QUESTION (
+    QNO NUMBER CONSTRAINT PK_QNO PRIMARY KEY,
+    QTITLE VARCHAR2(200) NOT NULL,
+    QCONTENT VARCHAR2(4000), 
+    QDATE DATE DEFAULT SYSDATE,
+    QWRITER VARCHAR2(50) NOT NULL,
+    ANSWER_YN CHAR(1) DEFAULT 'N' NOT NULL, -- 답변 여부
+    CONSTRAINT FK_QWRITER FOREIGN KEY (QWRITER) REFERENCES MEMBER(USERID) ON DELETE CASCADE
+);
+
+-- QUESTION 테이블 코멘트 생성
+COMMENT ON COLUMN QUESTION.QNO IS '글번호';
+COMMENT ON COLUMN QUESTION.QTITLE IS '글제목';
+COMMENT ON COLUMN QUESTION.QCONTENT IS '글내용';
+COMMENT ON COLUMN QUESTION.QDATE IS '작성일자';
+COMMENT ON COLUMN QUESTION.QWRITER IS '작성자';
+COMMENT ON COLUMN QUESTION.ANSWER_YN IS '답변여부';
+
+
+-- answer 테이블 삭제
+BEGIN
+    EXECUTE IMMEDIATE 'DROP TABLE answer CASCADE CONSTRAINTS';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -942 THEN
+            RAISE;
+        END IF;
+END;
+/
+
+-- ANSWER 테이블 생성
+CREATE TABLE ANSWER (
+    ANO NUMBER CONSTRAINT PK_ANO PRIMARY KEY,           -- 답변 번호
+    ATITLE VARCHAR2(200) NOT NULL,                       -- 답변 제목
+    ACONTENT VARCHAR2(4000),                             -- 답변 내용
+    ADATE DATE DEFAULT SYSDATE,                          -- 답변 날짜
+    AWRITER VARCHAR2(50) NOT NULL,                       -- 답변 작성자
+    ANSWERREF NUMBER,                                    -- 원글 참조 (boardRef와 유사)
+    CONSTRAINT FK_AWRITER FOREIGN KEY (AWRITER) REFERENCES MEMBER(USERID) ON DELETE CASCADE,    -- 작성자 외래 키 제약
+    CONSTRAINT FK_ANSWERREF FOREIGN KEY (ANSWERREF) REFERENCES QUESTION(QNO) ON DELETE CASCADE  -- 원글 외래 키 제약
+);
+
+-- ANSWER 테이블 코멘트 생성
+COMMENT ON COLUMN ANSWER.ANO IS '답변번호';
+COMMENT ON COLUMN ANSWER.ATITLE IS '답변제목';
+COMMENT ON COLUMN ANSWER.ACONTENT IS '답변내용';
+COMMENT ON COLUMN ANSWER.ADATE IS '답변날짜';
+COMMENT ON COLUMN ANSWER.AWRITER IS '답변작성자';
+COMMENT ON COLUMN ANSWER.ANSWERREF IS '원글참조';
 
 
 
