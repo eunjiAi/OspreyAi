@@ -1,10 +1,12 @@
 package org.myweb.ospreyai.member.model.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class EmailService {
 
@@ -25,9 +27,9 @@ public class EmailService {
 
             // 이메일 전송
             mailSender.send(message);
-            System.out.println("이메일 전송 성공: " + to);
+            log.info("이메일 전송 성공: " + to);
         } catch (Exception e) {
-            System.err.println("이메일 전송 실패: " + e.getMessage());
+            log.warn("이메일 전송 실패: " + e.getMessage());
             throw new RuntimeException("이메일 전송에 실패했습니다.", e);
         }
     }
