@@ -104,6 +104,7 @@ function FaqWrite() {
                 <tr><th>카테고리</th>
                     <td>
                         <select
+                            type="category"
                             name="category" 
                             value={formData.category}
                             onChange={handleChange}
