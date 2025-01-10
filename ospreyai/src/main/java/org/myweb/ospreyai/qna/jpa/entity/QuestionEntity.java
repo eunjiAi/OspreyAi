@@ -25,7 +25,7 @@ public class QuestionEntity {
     private String qtitle;
     @Column(name = "QCONTENT", nullable = false, length = 4000)
     private String qcontent;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+//    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "QDATE")
     private Date qdate;
     @Column(name = "QWRITER", nullable = false, length = 50)

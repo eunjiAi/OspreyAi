@@ -235,7 +235,7 @@ const QuestionDetail = () => {
                   answer.acontent
                 )}
               </td>
-              <td>{answer.aDate}</td>
+              <td>{answer.adate}</td>
               <td>
                 {isLoggedIn &&
                   userid === answer.awriter &&

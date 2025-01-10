@@ -123,7 +123,6 @@ function QuestionList({ searchResults }){
   if (error) {
     return <div className={styles.error}>{error}</div>; // 에러 메시지 표시
   }
-
   return (
     <div className={styles.questionContainer}>
       <h1 className={styles.title}>Q & A</h1>
