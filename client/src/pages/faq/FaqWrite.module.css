@@ -24,13 +24,14 @@
   /* 폼 스타일 */
   .form {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 25px;
   }
   
   /* 테이블 스타일 */
   .table {
-    width: 100%;
+    width: 90%;
     border-spacing: 15px;
     margin-bottom: 20px;
   }
@@ -71,18 +72,14 @@
   }
   
   /* 파일 입력 스타일 */
-  .table input[type="file"] {
-    font-size: 16px;
+  .table select[type="category"] {
+    font-size: 14px;
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .table input[type="file"]:hover {
-    background-color: #f0f0f0;
   }
   
   /* 버튼 그룹 스타일 */

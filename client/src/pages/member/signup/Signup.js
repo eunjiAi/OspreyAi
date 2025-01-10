@@ -273,6 +273,7 @@ function Signup({ onSignupSuccess }) {
           <select
             id="gender"
             name="gender"
+            style={{ width: 372 }}
             className={style.select}
             value={formData.gender}
             onChange={handleChange}
@@ -289,7 +290,6 @@ function Signup({ onSignupSuccess }) {
       </form>
     </div>
   );
-
 }
 
 export default Signup;
