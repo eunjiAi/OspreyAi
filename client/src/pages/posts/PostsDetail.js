@@ -14,8 +14,6 @@ const PostsDetail = () => {
   const [showReplyForm, setShowReplyForm] = useState(false);  // 댓글 입력창 표시 여부
   const { isLoggedIn, accessToken, userid } = useContext(AuthContext);
 
-    // 댓글 | 대댓글 등록 타겟 변수
-    const [replyTarget, setReplyTarget] = useState(null);
 
   // 댓글 | 대댓글 수정 상태 관리
   const [editingReply, setEditingReply] = useState(null); //수정중인 댓글 변호(ID) 저장
@@ -32,6 +30,29 @@ const PostsDetail = () => {
       console.error("게시글 상세 조회 실패:", error);
     }
   };
+
+  const handleMoveEdit = () => {
+    navigate(`/posts/edit/${id}`);
+  };
+
+  const handleDelete = async (rfile) => {
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      try {
+        await apiClient.delete(`/posts/${id}`, {
+          params: { rfile: rfile },
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        alert("삭제가 완료되었습니다.");
+        navigate("/posts");
+      } catch (error) {
+        console.error("Delete error : ", error);
+        alert("삭제 실패!");
+      }
+    }
+  };
+
 
   useEffect(() => {
     fetchPostsDetail();
@@ -118,11 +139,26 @@ const PostsDetail = () => {
       <div   style={{ whiteSpace: "pre-line" }}
       className={styles.detailContent}>{posts?.content}</div>
 
-      {/* 댓글 등록 버튼 */}
+      {/* 댓글 달기 or 수정, 삭제 버튼 */}
+      {isLoggedIn && posts?.writer === userid ? (
+              <>
+                <button onClick={handleMoveEdit} className={styles.editButton}>
+                  수정
+                </button>
+                <button
+                  onClick={() => handleDelete(posts?.renameFile)}
+                  className={styles.deleteButton}
+                >
+                  삭제
+                </button>
+              </>
+            ) : (
+              isLoggedIn && (
       <button className={styles.replyButton} onClick={handleReplyToggle}>
         댓글 달기
       </button>
-
+              )
+            )}
       {/* 댓글 입력창이 열리면 ReplyWrite 컴포넌트 표시 */}
       {showReplyForm && (
         <ReplyWrite postId={id} onReplyAdded={handleReplyAdded} />
