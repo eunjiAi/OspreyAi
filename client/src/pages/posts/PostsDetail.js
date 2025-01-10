@@ -84,14 +84,14 @@ const PostsDetail = () => {
 
       {/* 작성자, 등록날짜, 조회수 */}
       <div className={styles.postInfo}>
-        <span>{posts.nickname}</span>
+        <span>{posts?.nickname}</span>
         <span>|</span>
-        <span>{posts.postDate}</span>
-        <span>| 조회수: {posts.postCount}</span>
+        <span>{posts?.postDate}</span>
+        <span>| 조회수: {posts?.postCount}</span>
       </div>
 
       {/* 게시글 내용 */}
-      <div className={styles.detailContent}>{posts.content}</div>
+      <div className={styles.detailContent}>{posts?.content}</div>
 
       {/* 댓글 등록 버튼 */}
       <button className={styles.replyButton} onClick={handleReplyToggle}>
