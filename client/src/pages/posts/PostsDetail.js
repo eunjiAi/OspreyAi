@@ -13,11 +13,46 @@ const PostsDetail = () => {
   const [replies, setReplies] = useState([]);
   const [showReplyForm, setShowReplyForm] = useState(false);  // 댓글 입력창 표시 여부
   const { isLoggedIn, accessToken, userid } = useContext(AuthContext);
+  const [photoFile, setPhotoFile] = useState(null);
+  const [previewPhoto, setPreviewPhoto] = useState('');
+    // 첨부파일 이미지 본문에 삽입 변수
+    const [imageUrl, setImageUrl] = useState(null);
 
 
   // 댓글 | 대댓글 수정 상태 관리
   const [editingReply, setEditingReply] = useState(null); //수정중인 댓글 변호(ID) 저장
   const [editingContent, setEditingContent] = useState(""); //수정 중인 댓글 내용 저장용
+
+  const handleFileDownload = async (ofileName, rfileName) => {
+    try {
+      const response = await apiClient.get("/posts/pfdown", {
+        params: { ofile: ofileName, rfile: rfileName },
+        responseType: "blob",
+      });
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", ofileName);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (error) {
+      console.error("File download error : ", error);
+      alert("파일 다운로드에 실패했습니다.");
+    }
+  };
+
+  // useEffect(() => {
+  //   if (posts?.fileName) {
+  //     // 첨부파일이 이미지인 경우만 처리
+  //     const fileExtension = posts?.fileName.split('.').pop().toLowerCase();
+  //     if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExtension)) {
+  //       setImageUrl(`${apiClient.defaults.baseURL}/uploads/${posts?.renameFile}`);
+  //     } else {
+  //       setImageUrl(null);  // 이미지가 아닐 경우, null 처리
+  //     }
+  //   }
+  // }, [posts]);
 
   // fetchPostsDetail 함수를 useEffect 밖으로 이동
   const fetchPostsDetail = async () => {
@@ -133,11 +168,42 @@ const PostsDetail = () => {
         <span>|</span>
         <span>{posts?.postDate}</span>
         <span>| 조회수: {posts?.postCount}</span>
+
+        
+          {/* 첨부파일 버튼 */}
+          <div className={styles.downloadFile}>
+            {posts?.fileName ? (
+              <button
+                className={styles.downloadButton}
+                onClick={() =>
+                  handleFileDownload(posts?.fileName, posts?.renameFile)
+                }
+              >
+                {posts.fileName}
+              </button>
+            ) : (
+              "첨부파일 없음"
+            )}
+          </div>
+
       </div>
 
+      
+
       {/* 게시글 내용 */}
-      <div   style={{ whiteSpace: "pre-line" }}
-      className={styles.detailContent}>{posts?.content}</div>
+  <div className={styles.detailContent}>
+    {/* 본문 내용 */}
+    <div style={{ whiteSpace: "pre-line" }}>
+      {posts?.content}
+    </div>
+
+   { /*첨부된 이미지 표시  */}
+    {imageUrl && (
+      <div className={styles.imagePreviewContainer}>
+        <img src={imageUrl} alt="첨부된 이미지" className={styles.attachedImage} />
+      </div>
+    )}
+  </div>
 
       {/* 댓글 달기 or 수정, 삭제 버튼 */}
       {isLoggedIn && posts?.writer === userid ? (

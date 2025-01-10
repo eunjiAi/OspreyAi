@@ -119,3 +119,18 @@
   min-height: 550px;
 }
 
+/* 첨부된 이미지 스타일 */
+.imagePreviewContainer {
+  margin-top: 20px; /* 본문과 이미지 사이 여백 */
+  display: flex;
+  justify-content: center; /* 이미지 가운데 정렬 */
+  padding-top: 10px;
+}
+
+.attachedImage {
+  width: 100%;
+  max-width: 100%; /* 이미지가 부모의 너비에 맞도록 */
+  height: auto; /* 자동으로 높이 조정 */
+  border-radius: 5px; /* 둥근 모서리 */
+  object-fit: contain; /* 이미지 비율 유지 */
+}
