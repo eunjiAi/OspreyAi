@@ -14,6 +14,11 @@ const PostsDetail = () => {
   const [showReplyForm, setShowReplyForm] = useState(false);  // 댓글 입력창 표시 여부
   const { isLoggedIn, accessToken, userid } = useContext(AuthContext);
 
+
+  // 댓글 | 대댓글 수정 상태 관리
+  const [editingReply, setEditingReply] = useState(null); //수정중인 댓글 변호(ID) 저장
+  const [editingContent, setEditingContent] = useState(""); //수정 중인 댓글 내용 저장용
+
   // fetchPostsDetail 함수를 useEffect 밖으로 이동
   const fetchPostsDetail = async () => {
     try {
@@ -25,6 +30,29 @@ const PostsDetail = () => {
       console.error("게시글 상세 조회 실패:", error);
     }
   };
+
+  const handleMoveEdit = () => {
+    navigate(`/posts/edit/${id}`);
+  };
+
+  const handleDelete = async (rfile) => {
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      try {
+        await apiClient.delete(`/posts/${id}`, {
+          params: { rfile: rfile },
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        alert("삭제가 완료되었습니다.");
+        navigate("/posts");
+      } catch (error) {
+        console.error("Delete error : ", error);
+        alert("삭제 실패!");
+      }
+    }
+  };
+
 
   useEffect(() => {
     fetchPostsDetail();
@@ -56,14 +84,31 @@ const PostsDetail = () => {
     }
   };
 
-  const handleEditReply = async (replyId, newContent) => {
-    const updatedReply = { rcontent: newContent };
+    // 댓글 | 대댓글 수정 버튼 클릭시, 내용이 input 으로 변경 처리하는 핸들러
+    const handleReplyEdit = (replyId, rcontent) => {
+      setEditingReply(replyId);
+      setEditingContent(rcontent);
+    };
+
+  const handleSaveReplyEdit = async (replyId) => {
     try {
-      await apiClient.put(`/reply/${replyId}`, updatedReply, {
+      await apiClient.put(`/reply/${replyId}`, 
+        { 
+          replyId: replyId,
+          rcontent: editingContent,
+        }, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         }
       });
+      setReplies((prevReplies) =>
+        prevReplies.map((reply) =>
+          reply.replyId === replyId
+            ? { ...reply, rcontent: editingContent }
+            : reply
+        )
+      );
+      setEditingReply(null);
       alert("댓글이 수정되었습니다.");
       fetchPostsDetail();  // 댓글 목록 갱신
     } catch (error) {
@@ -91,13 +136,29 @@ const PostsDetail = () => {
       </div>
 
       {/* 게시글 내용 */}
-      <div className={styles.detailContent}>{posts?.content}</div>
+      <div   style={{ whiteSpace: "pre-line" }}
+      className={styles.detailContent}>{posts?.content}</div>
 
-      {/* 댓글 등록 버튼 */}
+      {/* 댓글 달기 or 수정, 삭제 버튼 */}
+      {isLoggedIn && posts?.writer === userid ? (
+              <>
+                <button onClick={handleMoveEdit} className={styles.editButton}>
+                  수정
+                </button>
+                <button
+                  onClick={() => handleDelete(posts?.renameFile)}
+                  className={styles.deleteButton}
+                >
+                  삭제
+                </button>
+              </>
+            ) : (
+              isLoggedIn && (
       <button className={styles.replyButton} onClick={handleReplyToggle}>
         댓글 달기
       </button>
-
+              )
+            )}
       {/* 댓글 입력창이 열리면 ReplyWrite 컴포넌트 표시 */}
       {showReplyForm && (
         <ReplyWrite postId={id} onReplyAdded={handleReplyAdded} />
@@ -117,15 +178,37 @@ const PostsDetail = () => {
           {replies.map((reply) => (
             <tr key={reply.replyId}>
               <td>{reply.rwriter}</td>
-              <td>{reply.rcontent}</td>
+              <td>
+                {editingReply === reply.replyId ? (
+                  <input
+                    type="text"
+                    value={editingContent}
+                    onChange={(e) => setEditingContent(e.target.value)}
+                  />
+                ) : (
+                  reply.rcontent
+                )}
+              </td>
               <td>{reply.rdate}</td>
               <td>
-                {isLoggedIn && userid === reply.rwriter && (
-                  <>
-                    <button onClick={() => handleEditReply(reply.replyId, prompt("수정할 내용을 입력하세요:", reply.rcontent))}>수정</button>
-                    <button onClick={() => handleDeleteReply(reply.replyId)}>삭제</button>
-                  </>
-                )}
+                {isLoggedIn &&
+                  userid === reply.rwriter &&
+                  (editingReply === reply.replyId ? (
+                    <button onClick={() => handleSaveReplyEdit(reply.replyId)}>
+                      저장
+                    </button>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() =>
+                          handleReplyEdit(reply.replyId, reply.rcontent)
+                        }
+                      >
+                        수정
+                      </button>
+                      <button onClick={() => handleDeleteReply(reply.replyId)}>삭제</button>
+                    </>
+                  ))}
               </td>
             </tr>
           ))}
