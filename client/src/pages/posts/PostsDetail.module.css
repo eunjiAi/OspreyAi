@@ -103,3 +103,40 @@
   margin-right: 5px;
   font-size: 1rem;
 }
+
+/* 액션 링크 스타일 (댓글 달기, 수정, 삭제) */
+.actionsContainer {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.actionLink {
+  cursor: pointer;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.actionLink:hover {
+  text-decoration: underline;
+  color: #343a40; /* hover 시 색상 변경 */
+}
+
+.separator {
+  margin: 0 5px;
+  color: #ced4da; /* 구분자 색상 */
+}
+
+/* 첨부 이미지 컨테이너 */
+.imagePreviewContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.attachedImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

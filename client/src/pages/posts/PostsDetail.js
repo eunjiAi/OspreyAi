@@ -17,6 +17,7 @@ const PostsDetail = () => {
   const [previewPhoto, setPreviewPhoto] = useState('');
     // 첨부파일 이미지 본문에 삽입 변수
     const [imageUrl, setImageUrl] = useState(null);
+    const [showImage, setShowImage] = useState(null);
 
 
   // 댓글 | 대댓글 수정 상태 관리
@@ -61,10 +62,29 @@ const PostsDetail = () => {
       const { posts, replies } = response.data;
       setPosts(posts);
       setReplies(replies);
+
+      if (posts?.renameFile || posts?.fileName) {
+        const fileUrl = posts.renameFile
+          ? `/uploads/${posts.renameFile}`
+          : `/uploads/${posts.fileName}`;
+        setShowImage(fileUrl);
+      } else {
+        setShowImage(null);
+      }
     } catch (error) {
       console.error("게시글 상세 조회 실패:", error);
     }
   };
+
+  useEffect(() => {
+    fetchPostsDetail();
+    return () => {
+      if (showImage) {
+        URL.revokeObjectURL(showImage);
+      }
+    };
+  }, [id]);
+
 
   const handleMoveEdit = () => {
     navigate(`/posts/edit/${id}`);
@@ -186,38 +206,47 @@ const PostsDetail = () => {
     </div>
   )}
 </div>
-
-        
-  
         <div className={styles.detailContent} style={{ marginBottom: "500px" }}>
   <div style={{ whiteSpace: "pre-line" }}>{posts?.content}</div>
+  {showImage && (
+  <div className={styles.imagePreviewContainer}>
+    <img
+      src={showImage}
+      alt="첨부된 이미지"
+      className={styles.attachedImage}
+    />
+  </div>
+)}
 </div>
 
 
 {isLoggedIn && (
           <div className={styles.actionsContainer}>
-            <button 
-              className={styles.replyButton} 
+            <span 
+              className={styles.actionLink} 
               onClick={() => setShowReplyForm(!showReplyForm)}>
               댓글 달기 ({getReplyCount()})
-            </button>
+            </span>
             {posts?.writer === userid && (
               <>
-                <button onClick={() => navigate(`/posts/edit/${id}`)} className={styles.editButton}>
+                <span className={styles.separator}>|</span>
+                <span 
+                  className={styles.actionLink} 
+                  onClick={() => navigate(`/posts/edit/${id}`)}>
                   수정
-                </button>
-                <button
+                </span>
+                <span className={styles.separator}>|</span>
+                <span 
+                  className={styles.actionLink} 
                   onClick={() => {
                     if (window.confirm("게시글을 삭제하시겠습니까?")) {
                       apiClient.delete(`/posts/${id}`, {
                         headers: { Authorization: `Bearer ${accessToken}` },
                       }).then(() => navigate("/posts"));
                     }
-                  }}
-                  className={styles.deleteButton}
-                >
+                  }}>
                   삭제
-                </button>
+                </span>
               </>
             )}
           </div>
