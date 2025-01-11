@@ -210,7 +210,10 @@ function Header({
         {isLoggedIn ? (
           <>
             <span className={styles.username}>
-              <Link to="/mypage/mypageMain/" className={styles.linkUserName}>{username}</Link> 님 환영합니다.
+              <Link to="/mypage/mypageMain/" className={styles.linkUserName}>
+                <strong>{username}</strong>
+              </Link>{" "}
+              님 환영합니다.
             </span>
             <button onClick={handleLogout} className={styles.authButton}>
               로그아웃

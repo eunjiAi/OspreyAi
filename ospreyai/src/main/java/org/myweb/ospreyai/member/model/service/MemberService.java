@@ -128,11 +128,17 @@ public class MemberService {
         }
     }
 
+    //회원 구글 정보 삭제
+    @Transactional
+    public void deleteGoogle(String uuid) {
+        memberRepository.deleteByGoogle(uuid);
+    }
+
     //회원정보 삭제
     @Transactional
-    public int deleteMember(String userId) {
+    public int deleteMember(String uuid) {
         try {
-            memberRepository.deleteById(userId);
+            memberRepository.deleteById(uuid);
             return 1;
         } catch (Exception e) {
             log.info(e.getMessage());
@@ -197,6 +203,7 @@ public class MemberService {
             return 0;
         }
     }
+
 
 
 }

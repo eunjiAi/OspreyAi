@@ -1,3 +1,4 @@
+/* 전체 컨테이너 스타일 */
 .mypageEditContainer {
   max-width: 600px;
   margin: 0 auto;
@@ -5,6 +6,7 @@
   padding: 30px;
 }
 
+/* 제목 스타일 */
 .mypageEditTitle {
   text-align: center;
   font-size: 28px;
@@ -14,13 +16,15 @@
   letter-spacing: 1px;
 }
 
-.editForm {
+/* 폼 스타일 */
+.mypageEditForm {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.editFormLabel {
+/* 레이블 스타일 */
+.mypageLabel {
   font-size: 16px;
   color: #555;
   display: flex;
@@ -29,74 +33,109 @@
   gap: 8px;
 }
 
-.editFormInput,
-.editFormSelect {
+/* 입력 필드 스타일 */
+.mypageInput,
+.mypageSelect {
+  width: 580px;
   padding: 12px;
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
-  transition: border-color 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.editFormInput:focus,
-.editFormSelect:focus {
+.mypageInput:focus,
+.mypageSelect:focus {
   border-color: #007bff;
   outline: none;
   box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.5);
 }
 
-.editFormText {
-  font-size: 16px;
-  color: #333;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.saveBtn,
-.deleteFaceidBtn,
-.faceidRegisterBtn {
-  padding: 12px 0;
+/* 버튼 공통 스타일 */
+.mypageButton {
+  padding: 12px;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  color: white;
-  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
   width: 100%;
-  margin-top: 20px;
 }
 
-.saveBtn:hover,
-.deleteFaceidBtn:hover,
-.faceidRegisterBtn:hover {
+/* 저장 버튼 */
+.mypageButtonPrimary {
+  background-color: #007bff;
+}
+
+.mypageButtonPrimary:hover {
   background-color: #0056b3;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.deleteFaceidBtn {
+.mypageButtonDisabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  color: #666;
+}
+
+/* Face ID 등록 버튼 */
+.mypageFaceIDButton {
+  background-color: #28a745;
+}
+
+.mypageFaceIDButton:hover {
+  background-color: #218838;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Face ID 삭제 버튼 */
+.mypageFaceIDDeleteButton {
   background-color: #ff4d4d;
 }
 
-.deleteFaceidBtn:hover {
+.mypageFaceIDDeleteButton:hover {
   background-color: #e60000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.loading,
-.error {
+/* 소셜 연동 버튼 */
+.mypageSocialButton {
+  background-color: #17a2b8;
+}
+
+.mypageSocialButton:hover {
+  background-color: #138496;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 소셜 연동 해제 버튼 */
+.mypageSocialUnlinkButton {
+  background-color: #dc3545;
+}
+
+.mypageSocialUnlinkButton:hover {
+  background-color: #c82333;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 로딩 및 에러 */
+.mypageLoading {
   text-align: center;
   font-size: 18px;
-  margin-top: 20px;
-}
-
-.loading {
   color: #007bff;
 }
 
-.error {
+.mypageError {
+  text-align: center;
+  font-size: 18px;
   color: red;
   font-weight: bold;
 }
@@ -111,19 +150,18 @@
     font-size: 24px;
   }
 
-  .editFormLabel {
+  .mypageLabel {
     font-size: 14px;
   }
 
-  .editFormInput,
-  .editFormSelect {
+  .mypageInput,
+  .mypageSelect {
     font-size: 13px;
     padding: 10px;
   }
 
-  .saveBtn,
-  .deleteFaceidBtn,
-  .faceidRegisterBtn {
+  .mypageButton {
     font-size: 14px;
+    padding: 10px;
   }
 }

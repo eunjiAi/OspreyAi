@@ -196,9 +196,32 @@ public class MemberController {
         }
     }
 
+    // Google 이메일 연동하기
+    @PostMapping("/google")
+    public ResponseEntity<String> insertGoogle(@RequestBody Map<String, String> map) {
+        log.info("구글 인서트() : uuid: {}, email: {} ", map.get("uuid"), map.get("email"));
+        Member member = memberService.selectUuid(map.get("uuid"));
+        member.setGoogle(map.get("email"));
+        memberService.updateMember(member);
+
+        return ResponseEntity.ok().build();
+    }
+
+    // Google 이메일 연동 해제하기
+    @PutMapping("/google")
+    public ResponseEntity<String> deleteGoogle(@RequestBody Map<String, String> map) {
+        log.info("구글 컬럼 삭제() : uuid: {}", map.get("uuid"));
+        memberService.deleteGoogle(map.get("uuid"));
+
+        return ResponseEntity.ok().build();
+    }
+
+
+
+
     // 새로운 비밀번호로 변경
     @PutMapping("/mypage/pwchange/{uuid}")
-    public ResponseEntity<?> pwChangeMethod(@PathVariable String uuid, @RequestBody Map<String, String> request) {
+    public ResponseEntity pwChangeMethod(@PathVariable String uuid, @RequestBody Map<String, String> request) {
         Member member = memberService.selectUuid(uuid);
 
         member.setPw(bcryptPasswordEncoder.encode(request.get("pw")));

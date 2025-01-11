@@ -21,7 +21,7 @@ function Login({ onLoginSuccess }) {
   // Google OAuth 설정
   const GOOGLE_CLIENT_ID =
     "1087336071184-odcsdaa33savuptnd86oi2kbv2ida6jd.apps.googleusercontent.com";
-  const GOOGLE_REDIRECT_URI = "http://localhost:3000";
+  const GOOGLE_REDIRECT_URI = "http://localhost:3000/";
   const GOOGLE_SCOPE = "email profile openid";
 
   const handleGoogleLogin = () => {
