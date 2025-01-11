@@ -74,7 +74,6 @@
   text-decoration: underline;
 }
 
-
 /* 첨부파일 섹션 */
 .attachedFilePlaceholder {
   margin-top: 10px;
@@ -83,6 +82,7 @@
   color: #555;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .fileLink {

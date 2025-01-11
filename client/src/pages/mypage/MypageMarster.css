@@ -1,0 +1,44 @@
+.admin-page-container {
+  padding: 20px;
+}
+
+.admin-page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.members-table th, .members-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.members-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.members-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.members-table select {
+  padding: 5px;
+}
+
+.members-table button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.members-table button:hover {
+  background-color: #ff0000;
+}

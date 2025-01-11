@@ -8,6 +8,7 @@ import Withdrawal from "../pages/mypage/Withdrawal";
 import MyPageUpdate from "../pages/mypage/MyPageUpdate";
 import MyInfo from "../pages/mypage/MyInfo";
 import MypageAdmin from "../pages/mypage/MypageAdmin";
+import MypageMarster from "../pages/mypage/MypageMarster";
 
 const mypageRouter = [
   <Route path="/mypage" element={<MyPage />}>
@@ -17,6 +18,7 @@ const mypageRouter = [
     <Route path="/mypage/withdrawal" element={<Withdrawal />} />
     <Route path="/mypage/mypageUpdate" element={<MyPageUpdate />} />
     <Route path="/mypage/mypageAdmin" element={<MypageAdmin />} />
+    <Route path="/mypage/mypageMarster" element={<MypageMarster />} />
   </Route>,
 ];
 

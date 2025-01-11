@@ -4,7 +4,7 @@ import { AuthContext } from "../../AuthProvider";
 import "./MyPage.css";
 
 function MyPage() {
-  const { isLoggedIn, role } = useContext(AuthContext);
+  const { isLoggedIn, role, userid } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -44,12 +44,22 @@ function MyPage() {
         >
           회원탈퇴
         </button>
-        {isLoggedIn && role === "ADMIN" && (<button
-          onClick={() => navigate("/mypage/mypageAdmin")}
-          className={`tab ${location.pathname === "/mypage/mypageAdmin" ? "active" : ""}`}
-        >
-          (관리자)회원 관리
-        </button>)}
+        {isLoggedIn && role === "ADMIN" && (
+          <button
+            onClick={() => navigate("/mypage/mypageAdmin")}
+            className={`tab ${location.pathname === "/mypage/mypageAdmin" ? "active" : ""}`}
+          >
+            (관리자)회원 관리
+          </button>
+        )}
+        {isLoggedIn && role === "ADMIN" && userid === "marster" && (
+          <button
+            onClick={() => navigate("/mypage/mypageMarster")}
+            className={`tab ${location.pathname === "/mypage/mypageMarster" ? "active" : ""}`}
+          >
+            (마스터)회원 관리
+          </button>
+        )}
       </div>
 
       {/* 오른쪽 페이지 */}
