@@ -42,7 +42,7 @@ function MyPage() {
           onClick={() => navigate("/mypage/withdrawal")}
           className={`tab ${location.pathname === "/mypage/withdrawal" ? "active" : ""}`}
         >
-          회원탈퇴
+          회원해지
         </button>
         {isLoggedIn && role === "ADMIN" && (
           <button
@@ -54,8 +54,8 @@ function MyPage() {
         )}
         {isLoggedIn && role === "ADMIN" && userid === "master" && (
           <button
-            onClick={() => navigate("/mypage/mypageMarster")}
-            className={`tab ${location.pathname === "/mypage/mypageMarster" ? "active" : ""}`}
+            onClick={() => navigate("/mypage/mypageMaster")}
+            className={`tab ${location.pathname === "/mypage/mypageMaster" ? "active" : ""}`}
           >
             (마스터)회원 관리
           </button>

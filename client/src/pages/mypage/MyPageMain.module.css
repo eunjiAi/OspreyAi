@@ -1,12 +1,12 @@
 /* 공통 컨테이너 스타일 */
-.mypage-container {
+.mypageContainer {
   max-width: 800px;
   margin: 0 auto;
   padding: 100px;
 }
 
 /* 타이틀 스타일 */
-.mypage-title {
+.mypageTitle {
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
@@ -18,14 +18,14 @@
 }
 
 /* 사용자 정보 */
-.user-info {
+.userInfo {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px 20px;
   margin-bottom: 20px;
 }
 
-.user-info p {
+.userInfo p {
   margin: 5px 0;
   font-size: 16px;
   color: #555;
@@ -33,13 +33,13 @@
   justify-content: space-between;
 }
 
-.user-info p strong {
+.userInfo p strong {
   color: #007bff;
   font-weight: bold;
 }
 
 /* 버튼 스타일 */
-.update-btn, .faceid-register-btn {
+.updateBtn {
   display: block;
   width: 100%;
   padding: 12px 0;
@@ -54,44 +54,43 @@
   transition: all 0.3s ease-in-out;
 }
 
-.update-btn:hover, .faceid-register-btn:hover {
+.updateBtn:hover {
   background-color: #0056b3;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* 로딩 및 에러 스타일 */
-.loading,
-.error {
+.loading {
   text-align: center;
   font-size: 18px;
   margin-top: 20px;
-}
-
-.loading {
   color: #007bff;
 }
 
 .error {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
   color: red;
   font-weight: bold;
 }
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
-  .mypage-container {
+  .mypageContainer {
     padding: 15px;
   }
 
-  .user-info {
+  .userInfo {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  .mypage-title {
+  .mypageTitle {
     font-size: 20px;
   }
 
-  .update-btn .faceid-register-btn {
+  .updateBtn {
     font-size: 14px;
     padding: 10px 0;
   }

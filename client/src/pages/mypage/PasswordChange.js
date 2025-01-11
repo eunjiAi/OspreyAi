@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
-import "./PasswordChange.css";
+import styles from "./PasswordChange.module.css"; // 모듈 import
 import { AuthContext } from "../../AuthProvider";
 
 function PasswordChange() {
@@ -44,12 +44,12 @@ function PasswordChange() {
       alert("현재 비밀번호를 입력하세요.");
       return false;
     }
-    if (passwordData.newPassword !== passwordData.confirmNewPassword) {
-      alert("새로운 비밀번호가 서로 일치하지 않습니다.");
+    if (!passwordData.newPassword || passwordData.newPassword.length < 4) {
+      alert("새로운 비밀번호를 4자 이상 작성해 주세요");
       return false;
     }
-    if (passwordData.newPassword < 4) {
-      alert("새로운 비밀번호를 4자 이상 작성해 주세요");
+    if (passwordData.newPassword !== passwordData.confirmNewPassword) {
+      alert("새로운 비밀번호가 서로 일치하지 않습니다.");
       return false;
     }
     return true;
@@ -64,7 +64,6 @@ function PasswordChange() {
     }
 
     try {
-      // 현재 비밀번호 확인
       const checkResponse = await apiClient.post(
         `/member/mypage/chkpw/${userid}`,
         { pw: passwordData.currentPassword },
@@ -80,7 +79,6 @@ function PasswordChange() {
         return;
       }
 
-      // 새 비밀번호 업데이트 요청
       const updatedData = {
         ...userData,
         pw: passwordData.newPassword,
@@ -113,36 +111,39 @@ function PasswordChange() {
   };
 
   return (
-    <div className="password-change-container">
-      <h1 className="password-change-title">비밀번호 변경</h1>
-      <form className="password-change-form">
-        <label>
+    <div className={styles.passwordChangeContainer}>
+      <h1 className={styles.passwordChangeTitle}>비밀번호 변경</h1>
+      <form className={styles.passwordChangeForm}>
+        <label className={styles.passwordChangeFormLabel}>
           현재 비밀번호:
           <input
             type="password"
             name="currentPassword"
             value={passwordData.currentPassword}
             onChange={handleInputChange}
+            className={styles.passwordChangeFormInput}
             required
           />
         </label>
-        <label>
+        <label className={styles.passwordChangeFormLabel}>
           새 비밀번호:
           <input
             type="password"
             name="newPassword"
             value={passwordData.newPassword}
             onChange={handleInputChange}
+            className={styles.passwordChangeFormInput}
             required
           />
         </label>
-        <label>
+        <label className={styles.passwordChangeFormLabel}>
           새 비밀번호 확인:
           <input
             type="password"
             name="confirmNewPassword"
             value={passwordData.confirmNewPassword}
             onChange={handleInputChange}
+            className={styles.passwordChangeFormInput}
             required
           />
         </label>
@@ -150,7 +151,7 @@ function PasswordChange() {
         <button
           type="button"
           onClick={handlePasswordChange}
-          className="save-btn"
+          className={styles.saveBtn}
         >
           변경
         </button>

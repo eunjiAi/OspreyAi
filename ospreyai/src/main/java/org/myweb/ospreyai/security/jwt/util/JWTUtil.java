@@ -93,12 +93,10 @@ public class JWTUtil {
         return getClaimsFromToken(token).get("role", String.class);
     }
 
-    // 추가: 토큰에서 UUID 추출
     public String getUuidFromToken(String token) {
         return getClaimsFromToken(token).get("uuid", String.class);
     }
 
-    // 추가: 토큰에서 Name 추출
     public String getNameFromToken(String token) {
         return getClaimsFromToken(token).get("name", String.class);
     }

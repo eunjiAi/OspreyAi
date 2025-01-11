@@ -169,6 +169,7 @@ public class MemberController {
         preMember.setName(member.getName());
         preMember.setNickname(member.getNickname());
         preMember.setPhoneNumber(member.getPhoneNumber());
+        preMember.setGender(member.getGender());
         preMember.setGoogle(member.getGoogle());
         preMember.setNaver(member.getNaver());
         preMember.setKakao(member.getKakao());
@@ -262,7 +263,7 @@ public class MemberController {
         paging.calculate();
 
         Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
-                Sort.by(Sort.Direction.DESC, "enrollDate"));
+                Sort.by(Sort.Direction.DESC, "adminYn"));
 
         try {
             List<Member> members = memberService.selectMasterList(pageable);

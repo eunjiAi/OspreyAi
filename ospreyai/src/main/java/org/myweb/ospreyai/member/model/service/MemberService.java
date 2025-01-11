@@ -162,22 +162,13 @@ public class MemberService {
     // 마스터용 회원 리스트 조회
     public ArrayList<Member> selectMasterList(Pageable pageable) {
         Page<MemberEntity> entityList = memberRepository.findAll(pageable);
-
-        ArrayList<Member> adminList = new ArrayList<>();
-        ArrayList<Member> nonAdminList = new ArrayList<>();
-
+        ArrayList<Member> list = new ArrayList<>();
         for (MemberEntity entity : entityList) {
-            if (!"master".equals(entity.getMemberId())) {
-                if ("Y".equals(entity.getAdminYn())) {
-                    adminList.add(entity.toDto());
-                } else {
-                    nonAdminList.add(entity.toDto());
-                }
+            if (!entity.getMemberId().equals("master")) {
+                list.add(entity.toDto());
             }
         }
-
-        adminList.addAll(nonAdminList);
-        return adminList;
+        return list;
     }
 
 

@@ -1,37 +1,38 @@
-.admin-page-container {
+.adminPageContainer {
   padding: 20px;
 }
 
-.admin-page-title {
+.adminPageTitle {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.members-table {
+.membersTable {
   width: 100%;
   border-collapse: collapse;
 }
 
-.members-table th, .members-table td {
+.membersTable th,
+.membersTable td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
 }
 
-.members-table th {
+.membersTable th {
   background-color: #f4f4f4;
   font-weight: bold;
 }
 
-.members-table tr:hover {
+.membersTable tr:hover {
   background-color: #f9f9f9;
 }
 
-.members-table select {
+.membersTable select {
   padding: 5px;
 }
 
-.members-table button {
+.membersTable button {
   background-color: #ff4d4d;
   color: white;
   border: none;
@@ -39,6 +40,21 @@
   cursor: pointer;
 }
 
-.members-table button:hover {
+.membersTable button:hover {
   background-color: #ff0000;
+}
+
+.loading {
+  font-size: 18px;
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error {
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
 }

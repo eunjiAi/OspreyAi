@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import apiClient from "../../utils/axios";
-import styles from "./MypageMarster.css";
+import styles from "./MypageMaster.module.css"; // CSS 모듈 import
 import PagingView from "../../components/common/PagingView";
 import { AuthContext } from "../../AuthProvider";
 
@@ -43,7 +43,7 @@ function MypageAdmin() {
     try {
       const response = await apiClient.put(
         `member/loginok/${uuid}/${loginOk}`,
-        {}, // Request body는 비어 있음
+        {},
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -65,7 +65,6 @@ function MypageAdmin() {
     }
   };
 
-  // 회원 관리
   const handleAdminYnChange = async (uuid, adminYn) => {
     try {
       const response = await apiClient.put(
@@ -87,17 +86,15 @@ function MypageAdmin() {
         );
       }
     } catch (err) {
-      console.error("Error updating loginOk:", err);
+      console.error("Error updating adminYn:", err);
       alert("관리자 권한 변경에 실패했습니다.");
     }
   };
 
-  // 컴포넌트 로드 시 첫 페이지 데이터 가져오기
   useEffect(() => {
     fetchMembers(1);
   }, []);
 
-  // 페이지 변경 처리
   const handlePageChange = (page) => {
     fetchMembers(page);
   };
@@ -106,9 +103,9 @@ function MypageAdmin() {
   if (error) return <div className={styles.error}>{error}</div>;
 
   return (
-    <div className="admin-page-container">
-      <h1 className="admin-page-title">회원 관리</h1>
-      <table className="members-table">
+    <div className={styles.adminPageContainer}>
+      <h1 className={styles.adminPageTitle}>회원 관리</h1>
+      <table className={styles.membersTable}>
         <thead>
           <tr>
             <th>ID</th>
@@ -124,7 +121,7 @@ function MypageAdmin() {
             <tr key={member.memberId}>
               <td>{member.memberId}</td>
               <td>{member.name}</td>
-              <td>{member.google}</td>
+              <td>{member.email}</td>
               <td>
                 <select
                   value={member.adminYn}
@@ -133,7 +130,7 @@ function MypageAdmin() {
                   }
                 >
                   <option value="Y">관리자</option>
-                  <option value="N">일반회원</option>
+                  <option value="N">회원</option>
                 </select>
               </td>
               <td>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
-import styles from "./MyPageMain.css";
+import styles from "./MyPageMain.module.css"; // CSS 모듈 import
 import { AuthContext } from "../../AuthProvider";
 
 function MyPage() {
@@ -19,7 +19,7 @@ function MyPage() {
     google: "",
     naver: "",
     kakao: "",
-    faceId: "", 
+    faceId: "",
   });
 
   const [loading, setLoading] = useState(true);
@@ -39,7 +39,7 @@ function MyPage() {
         console.error("Error fetching user data:", err);
         setError("회원 정보를 불러오는데 실패했습니다.");
       } finally {
-        setLoading(false); // 로딩 종료
+        setLoading(false);
       }
     };
 
@@ -47,7 +47,7 @@ function MyPage() {
   }, [userid, accessToken]);
 
   const handleEditClick = () => {
-    navigate("/mypage/mypageUpdate"); // 정보 수정 페이지로 이동
+    navigate("/mypage/mypageUpdate");
   };
 
   if (loading) {
@@ -59,9 +59,9 @@ function MyPage() {
   }
 
   return (
-    <div className="mypage-container">
-      <h1 className="mypage-title">마이페이지</h1>
-      <div className="user-info">
+    <div className={styles.mypageContainer}>
+      <h1 className={styles.mypageTitle}>마이페이지</h1>
+      <div className={styles.userInfo}>
         <p>
           <strong>이름:</strong> {userData.name || "정보 없음"}
         </p>
@@ -79,26 +79,26 @@ function MyPage() {
           {userData.gender === "F"
             ? "Female"
             : userData.gender === "M"
-            ? "Male"
-            : "정보 없음"}
+              ? "Male"
+              : "정보 없음"}
         </p>
         <p>
           <strong>가입 날짜:</strong> {userData.enrollDate || "정보 없음"}
         </p>
         <p>
-          <strong>구글 연동:</strong> {userData.google || "미연동"}
+          <strong>구글 연동:</strong> {userData.google ? "연동" : "미연동"}
         </p>
         <p>
-          <strong>네이버 연동:</strong> {userData.naver || "미연동"}
+          <strong>네이버 연동:</strong> {userData.naver ? "연동" : "미연동"}
         </p>
         <p>
-          <strong>카카오 연동:</strong> {userData.kakao || "미연동"}
+          <strong>카카오 연동:</strong> {userData.kakao ? "연동" : "미연동"}
         </p>
         <p>
           <strong>Face ID:</strong> {userData.faceId ? "등록" : "미등록"}
         </p>
       </div>
-      <button className="update-btn" onClick={handleEditClick}>
+      <button className={styles.updateBtn} onClick={handleEditClick}>
         정보 수정
       </button>
     </div>

@@ -1,4 +1,4 @@
-.withdrawal-container {
+.withdrawalContainer {
   max-width: 600px;
   margin: 0 auto;
   margin-top: 2.5%;
@@ -10,13 +10,13 @@
   text-align: center;
 }
 
-.withdrawal-icon {
+.withdrawalIcon {
   font-size: 50px;
   color: #007bff;
   margin-bottom: 20px;
 }
 
-.withdrawal-container h2 {
+.withdrawalContainer h2 {
   font-size: 26px;
   margin-bottom: 20px;
   color: #333;
@@ -24,25 +24,25 @@
   letter-spacing: 1px;
 }
 
-.withdrawal-container p {
+.withdrawalContainer p {
   font-size: 16px;
   color: #666;
   margin-bottom: 30px;
   line-height: 1.6;
 }
 
-.reason-container {
+.reasonContainer {
   margin-bottom: 20px;
 }
 
-.reason-container label {
+.reasonContainer label {
   display: block;
   font-size: 16px;
   color: #555;
   margin-bottom: 8px;
 }
 
-.reason-container textarea {
+.reasonContainer textarea {
   width: 100%;
   padding: 10px;
   font-size: 14px;
@@ -51,14 +51,14 @@
   resize: none;
 }
 
-.button-group {
+.buttonGroup {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-.withdrawal-btn,
-.cancel-btn {
+.withdrawalBtn,
+.cancelBtn {
   flex: 1;
   padding: 12px 0;
   font-size: 16px;
@@ -71,18 +71,18 @@
   transition: all 0.3s ease;
 }
 
-.withdrawal-btn {
+.withdrawalBtn {
   background-color: #007bff;
 }
 
-.withdrawal-btn:hover {
+.withdrawalBtn:hover {
   background-color: #0056b3;
 }
 
-.cancel-btn {
+.cancelBtn {
   background-color: #6c757d;
 }
 
-.cancel-btn:hover {
+.cancelBtn:hover {
   background-color: #5a6268;
 }

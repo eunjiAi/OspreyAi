@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import apiClient from "../../utils/axios";
-import styles from "./MypageAdmin.css";
+import styles from "./MypageAdmin.module.css"; // 모듈 파일 import
 import PagingView from "../../components/common/PagingView"; // PagingView 컴포넌트 import
 import { AuthContext } from "../../AuthProvider";
 
@@ -16,23 +16,18 @@ function MypageAdmin() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // 회원 목록 가져오기 함수
   const fetchMembers = async (page) => {
     try {
       setLoading(true);
-
-      // API 요청
       const response = await apiClient.get(`/member/admin/members`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-        params: {
-          page: page,
-        },
+        params: { page },
       });
 
-      setMembers(response.data.list); // 회원 목록 설정
-      setPagingInfo(response.data.paging); // 페이징 정보 설정
+      setMembers(response.data.list);
+      setPagingInfo(response.data.paging);
     } catch (err) {
       console.error("Error fetching members:", err);
       setError("회원 목록을 불러오는데 실패했습니다.");
@@ -41,7 +36,6 @@ function MypageAdmin() {
     }
   };
 
-  // 로그인 제한 상태 변경
   const handleLoginOkChange = async (uuid, loginOk) => {
     try {
       const response = await apiClient.put(
@@ -68,12 +62,10 @@ function MypageAdmin() {
     }
   };
 
-  // 컴포넌트 로드 시 첫 페이지 데이터 가져오기
   useEffect(() => {
     fetchMembers(1);
   }, []);
 
-  // 페이지 변경 처리
   const handlePageChange = (page) => {
     fetchMembers(page);
   };
@@ -82,9 +74,9 @@ function MypageAdmin() {
   if (error) return <div className={styles.error}>{error}</div>;
 
   return (
-    <div className="admin-page-container">
-      <h1 className="admin-page-title">회원 관리</h1>
-      <table className="members-table">
+    <div className={styles.adminPageContainer}>
+      <h1 className={styles.adminPageTitle}>회원 관리</h1>
+      <table className={styles.membersTable}>
         <thead>
           <tr>
             <th>ID</th>
@@ -100,7 +92,7 @@ function MypageAdmin() {
             <tr key={member.memberId}>
               <td>{member.memberId}</td>
               <td>{member.name}</td>
-              <td>{member.google}</td>
+              <td>{member.email}</td>
               <td>{member.adminYn}</td>
               <td>
                 <select

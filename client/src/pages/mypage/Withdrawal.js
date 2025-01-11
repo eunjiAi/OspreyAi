@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
 import { AuthContext } from "../../AuthProvider";
-import "./Withdrawal.css";
+import styles from "./Withdrawal.module.css"; // 모듈 CSS import
 
 function Withdrawal() {
   const { uuid, accessToken, logout } = useContext(AuthContext);
@@ -35,23 +35,30 @@ function Withdrawal() {
   };
 
   return (
-    <div className="withdrawal-container">
-      <h2>회원탈퇴</h2>
-      <p>정말로 회원탈퇴를 진행하시겠습니까? 탈퇴 후 모든 정보가 삭제됩니다.</p>
-      <div className="reason-container">
-        <label htmlFor="reason">탈퇴 사유 (선택):</label>
+    <div className={styles.withdrawalContainer}>
+      <h2>회원해지</h2>
+      <p>
+        정말로 회원탈퇴를 진행하시겠습니까?
+        <br />
+        (탈퇴하려면 '이용종료'를 입력해주세요.)
+      </p>
+      <div className={styles.reasonContainer}>
         <textarea
           id="reason"
           value={reason}
           onChange={(e) => setReason(e.target.value)}
-          placeholder="탈퇴 사유를 입력해주세요."
+          placeholder="이용종료"
         />
       </div>
-      <div className="button-group">
-        <button onClick={handleWithdrawal} className="withdrawal-btn">
-          회원탈퇴
+      <div className={styles.buttonGroup}>
+        <button
+          onClick={handleWithdrawal}
+          className={styles.withdrawalBtn}
+          disabled={reason !== "이용종료"}
+        >
+          이용종료
         </button>
-        <button onClick={() => navigate(-1)} className="cancel-btn">
+        <button onClick={() => navigate(-1)} className={styles.cancelBtn}>
           취소
         </button>
       </div>
