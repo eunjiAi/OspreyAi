@@ -1,6 +1,6 @@
 /* 전체 페이지 배경 */
 .pageBackground {
-  background-color: #f0f8ff;
+  background: linear-gradient(135deg, #e9efff, #b2c9ff);
   padding: 20px 0;
 }
 
