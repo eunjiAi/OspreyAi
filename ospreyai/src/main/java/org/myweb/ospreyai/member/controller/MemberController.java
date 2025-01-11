@@ -224,7 +224,7 @@ public class MemberController {
     }
 
     // 관리자 기능 *********************************************************
-// 회원 목록 보기 요청
+    // 회원 목록 보기 요청
     @GetMapping("/admin/members")
     public ResponseEntity<Map<String, Object>> memberListMethod(
             //ajax 통신에서는 반환형을 ResponseEntity<객체자료형> 을 사용하지 않아도 됨
@@ -250,16 +250,57 @@ public class MemberController {
         }
     }
 
-    //회원 로그인 제한/허용 처리용 메소드
+    // 마스터페이지 목록 보기 요청
+    @GetMapping("/admin/master")
+    public ResponseEntity<Map<String, Object>> masterListMethod(
+            //ajax 통신에서는 반환형을 ResponseEntity<객체자료형> 을 사용하지 않아도 됨
+            @RequestParam(name = "page", defaultValue = "1") int currentPage,
+            @RequestParam(name = "limit", defaultValue = "10") int limit) {
+
+        int listCount = memberService.selectListCount();
+        Paging paging = new Paging(listCount, limit, currentPage);
+        paging.calculate();
+
+        Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
+                Sort.by(Sort.Direction.DESC, "enrollDate"));
+
+        try {
+            List<Member> members = memberService.selectMasterList(pageable);
+            Map<String, Object> map = new HashMap<>();
+            map.put("list", members);
+            map.put("paging", paging);
+            return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    //회원 로그인 제한/허용 처리
     @PutMapping("/loginok/{uuid}/{loginOk}")
     public ResponseEntity<String> changeLoginOKMethod(
             @PathVariable String uuid,
-            @PathVariable String loginOk,
-            @RequestBody Member member) {
+            @PathVariable String loginOk) {
         log.info("회원 제한 메서드() : " + uuid + ", " + loginOk);
 
         try {
             memberService.updateLoginOK(uuid, loginOk);
+            return new ResponseEntity(HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    //관리자 권한 변경 처리
+    @PutMapping("/adminYn/{uuid}/{adminYn}")
+    public ResponseEntity<String> changeAdminYnMethod(
+            @PathVariable String uuid,
+            @PathVariable String adminYn) {
+        log.info("관리자 권한 메서드() : " + uuid + ", " + adminYn);
+
+        try {
+            memberService.updateAdminYn(uuid, adminYn);
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();

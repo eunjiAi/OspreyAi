@@ -15,7 +15,6 @@ public class Paging implements java.io.Serializable {
 	
 	//기본생성자 없음
 	
-	//매개변수 4개 있는 생성자만 사용함
 	public Paging(int listCount, int limit, int currentPage, String urlMapping) {
 		super();
 		this.listCount = listCount;

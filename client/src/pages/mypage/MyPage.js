@@ -52,7 +52,7 @@ function MyPage() {
             (관리자)회원 관리
           </button>
         )}
-        {isLoggedIn && role === "ADMIN" && userid === "marster" && (
+        {isLoggedIn && role === "ADMIN" && userid === "master" && (
           <button
             onClick={() => navigate("/mypage/mypageMarster")}
             className={`tab ${location.pathname === "/mypage/mypageMarster" ? "active" : ""}`}
