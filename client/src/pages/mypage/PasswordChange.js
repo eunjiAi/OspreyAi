@@ -48,6 +48,10 @@ function PasswordChange() {
       alert("새로운 비밀번호가 서로 일치하지 않습니다.");
       return false;
     }
+    if (passwordData.newPassword < 4) {
+      alert("새로운 비밀번호를 4자 이상 작성해 주세요");
+      return false;
+    }
     return true;
   };
 
@@ -107,7 +111,6 @@ function PasswordChange() {
       }
     }
   };
-
 
   return (
     <div className="password-change-container">
