@@ -1,16 +1,15 @@
 package org.myweb.ospreyai.member.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.net.URI;
 
 @Controller
 public class NaverCallbackController {
@@ -23,7 +22,7 @@ public class NaverCallbackController {
     private String redirectUri;
 
     @GetMapping("/naver/callback")
-    public ResponseEntity<String> naverCallback(@RequestParam String code, @RequestParam String state) {
+    public ResponseEntity<Void> naverCallback(@RequestParam String code, @RequestParam String state) {
         String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code" +
                 "&client_id=" + clientId +
                 "&client_secret=" + clientSecret +
@@ -40,18 +39,13 @@ public class NaverCallbackController {
         // 사용자 정보 요청
         String email = getUserEmail(accessToken);
 
-        // 이메일을 POST 요청으로 /login 엔드포인트로 전달
+        // React로 이메일 정보 전달
+        String redirectUrl = "http://localhost:3000/naver/callbackUi?email=" + email;
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Content-Type", "application/x-www-form-urlencoded");
-
-        String body = "naverEmail=" + email;
-        HttpEntity<String> request = new HttpEntity<>(body, headers);
-
-        ResponseEntity<String> loginResponse = restTemplate.postForEntity("http://localhost:8888/login", request, String.class);
-
-        // 클라이언트에게 로그인 결과 반환
-        return ResponseEntity.ok(loginResponse.getBody());
+        headers.setLocation(URI.create(redirectUrl));
+        return new ResponseEntity<>(headers, HttpStatus.FOUND); // 302 리디렉션
     }
+
 
 
     private String extractAccessToken(String responseBody) {

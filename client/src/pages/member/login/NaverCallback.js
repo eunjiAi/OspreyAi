@@ -1,43 +1,83 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import axios from "axios";
+import { useSearchParams } from "react-router-dom";
+import { AuthContext } from "../../../AuthProvider"; // AuthContext 가져오기
 
-function NaverCallback() {
+const NaverCallback = ({ onLoginSuccess }) => {
+  const { login } = useContext(AuthContext); // AuthProvider의 login 함수 가져오기
+  const [searchParams] = useSearchParams();
+
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.hash.substring(1));
-    const accessToken = urlParams.get("accessToken");
-    const refreshToken = urlParams.get("refreshToken");
+    const email = searchParams.get("email"); // 네이버에서 받은 이메일 파라미터
+    console.log("추출된 이메일:", email);
 
-    if (accessToken) {
-      // 로컬 스토리지 저장
-      try {
-        localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("refreshToken", refreshToken);
-        console.log("토큰 저장 성공");
-      } catch (e) {
-        console.error("로컬 스토리지 저장 오류: ", e);
-      }
+    if (email) {
+      handleLogin(email);
     } else {
-      console.error("액세스 토큰이 없습니다.");
+      console.error("이메일 정보가 없습니다.");
+      alert("이메일 정보가 전달되지 않았습니다. 다시 시도하세요.");
+      closePopupAndRefreshParent(); // 팝업 닫기 및 부모창 새로고침
     }
+  }, [searchParams]);
 
-    // 부모 창으로 메시지 전달
-    if (window.opener) {
-      window.opener.postMessage(
+  const handleLogin = async (email) => {
+    try {
+      // 이메일을 FormData로 /login으로 전송
+      const formData = new FormData();
+      formData.append("naverEmail", email);
+
+      const response = await axios.post(
+        "http://localhost:8888/login",
+        formData,
         {
-          success: !!accessToken,
-          accessToken,
-          refreshToken,
-          message: accessToken ? "로그인 성공" : "로그인 실패",
-        },
-        "http://localhost:8888"
+          headers: {
+            "Content-Type": "multipart/form-data", // FormData 전송을 위한 헤더
+          },
+        }
       );
-      window.close();
-    } else {
-      console.error("부모 창이 존재하지 않습니다.");
-    }
-  }, []);
 
-  // 화면 렌더링 방지
-  return null;
-}
+      // 헤더에서 Authorization 정보 추출
+      const authorizationHeader = response.headers["authorization"];
+      if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
+        throw new Error("Authorization 헤더가 잘못되었거나 없습니다.");
+      }
+
+      // Access Token 추출
+      const jwtAccessToken = authorizationHeader.substring("Bearer ".length);
+
+      // Response 데이터에서 Refresh Token 추출
+      const { refreshToken } = response.data;
+      if (!refreshToken) {
+        throw new Error("Refresh Token이 응답에 없습니다.");
+      }
+
+      // AuthProvider의 login 함수 호출
+      login({ accessToken: jwtAccessToken, refreshToken });
+
+      console.log("로그인 성공!");
+      // 로그인 성공 후 추가 동작 수행
+      if (onLoginSuccess) onLoginSuccess();
+      closePopupAndRefreshParent(); // 팝업 닫기 및 부모창 새로고침
+    } catch (error) {
+      closePopupAndRefreshParent(); // 팝업 닫기 및 부모창 새로고침
+    }
+  };
+
+  const closePopupAndRefreshParent = () => {
+    // 부모창 새로고침
+    if (window.opener) {
+      window.opener.location.reload(); // 부모창 새로고침
+    }
+    // 현재 팝업창 닫기
+    window.close();
+  };
+
+  return (
+    <div>
+      <h1>Naver Login Callback</h1>
+      <p>로그인 처리가 진행 중입니다...</p>
+    </div>
+  );
+};
 
 export default NaverCallback;

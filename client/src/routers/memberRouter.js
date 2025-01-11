@@ -14,7 +14,7 @@ const memberRouter = [
   <Route path="/findId" element={<FindId />} />,
   <Route path="/findPassword" element={<FindPassword />} />,
   <Route path="/faceIdRegister" element={<FaceIdRegister />} />,
-  <Route path="/naver/callback-ui" element={<NaverCallback />} />,
+  <Route path="/naver/callbackUi" element={<NaverCallback />} />,
 ];
 
 export default memberRouter;
