@@ -82,9 +82,8 @@ function MyPageUpdate() {
 
   // Google 연동
   const handleGoogleLink = async () => {
-    const GOOGLE_CLIENT_ID =
-      "1087336071184-odcsdaa33savuptnd86oi2kbv2ida6jd.apps.googleusercontent.com";
-    const GOOGLE_REDIRECT_URI = "http://localhost:3000/mypage/mypageUpdate";
+    const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+    const GOOGLE_REDIRECT_URI = process.env.REACT_APP_GOOGLE_REDIRECT_URI;
     const GOOGLE_SCOPE = "email profile openid";
 
     const googleLoginUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=token&scope=${GOOGLE_SCOPE}`;
@@ -164,6 +163,149 @@ function MyPageUpdate() {
     }
   };
 
+  // Naver 연동
+  const handleNaverLink = () => {
+    const naverLoginUrl = process.env.REACT_APP_NAVER_LINK_URL;
+    console.log("Naver Login URL:", naverLoginUrl);
+
+    const popup = window.open(
+      naverLoginUrl,
+      "Naver Login",
+      "width=500,height=600,scrollbars=yes"
+    );
+
+    if (!popup) {
+      alert("팝업이 차단된 것 같습니다. 팝업 차단을 해제해주세요.");
+      return;
+    }
+  };
+
+  const unlinkNaverAccount = async () => {
+    try {
+      await apiClient.put(
+        `/member/Naver`,
+        { uuid },
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        }
+      );
+      alert("Kakao 연동 해제가 완료되었습니다.");
+      setFormData({ ...formData, naver: "" });
+    } catch {
+      alert("Kakao 연동 해제에 실패했습니다.");
+    }
+  };
+
+  // kakao 연동
+  const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
+  const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
+
+  const handleKakaoLink = () => {
+    const kakaoLoginUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
+    console.log("Kakao Login URL:", kakaoLoginUrl);
+
+    // 팝업 창 열기
+    const popup = window.open(
+      kakaoLoginUrl,
+      "Kakao Login",
+      "width=500,height=600,scrollbars=yes"
+    );
+
+    if (!popup) {
+      alert("팝업이 차단된 것 같습니다. 팝업 차단을 해제해주세요.");
+      return;
+    }
+
+    // 팝업 창의 URL 변경 감지
+    const interval = setInterval(() => {
+      try {
+        const currentUrl = popup.location.href;
+
+        if (currentUrl.includes("code")) {
+          // 인가 코드 추출
+          const params = new URLSearchParams(currentUrl.split("?")[1]);
+          const authCode = params.get("code");
+          console.log("Kakao Authorization Code:", authCode);
+
+          // 팝업 닫기
+          popup.close();
+          clearInterval(interval);
+
+          // 액세스 토큰 요청
+          handleKakaoCallback(authCode);
+        }
+      } catch (error) {
+        // URL 접근 권한이 없을 경우 발생 (무시 가능)
+      }
+    }, 500);
+  };
+
+  const handleKakaoCallback = async (authCode) => {
+    try {
+      // 액세스 토큰 요청
+      const tokenResponse = await axios.post(
+        "https://kauth.kakao.com/oauth/token",
+        null,
+        {
+          params: {
+            grant_type: "authorization_code",
+            client_id: KAKAO_CLIENT_ID,
+            redirect_uri: KAKAO_REDIRECT_URI,
+            code: authCode,
+          },
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
+
+      const accessToken = tokenResponse.data.access_token;
+      console.log("Kakao Access Token:", accessToken);
+
+      // 사용자 정보 요청
+      const userInfoResponse = await axios.get(
+        "https://kapi.kakao.com/v2/user/me",
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+
+      const email = userInfoResponse.data.kakao_account.email;
+      console.log("Kakao 사용자 이메일:", email);
+
+      await apiClient.post(
+        `/member/kakao`,
+        { email, uuid },
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        }
+      );
+      alert("Kakao 연동이 완료되었습니다.");
+      setFormData({ ...formData, kakao: email });
+    } catch (error) {
+      console.error("Kakao 연동 처리 실패:", error);
+      alert("Kakao 연동에 실패했습니다.");
+    }
+  };
+
+  const unlinkKakaoAccount = async () => {
+    try {
+      await apiClient.put(
+        `/member/kakao`,
+        { uuid },
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        }
+      );
+      alert("Kakao 연동 해제가 완료되었습니다.");
+      setFormData({ ...formData, kakao: "" });
+    } catch {
+      alert("Kakao 연동 해제에 실패했습니다.");
+    }
+  };
+
   if (loading) return <div className={styles.mypageLoading}>로딩 중...</div>;
   if (error) return <div className={styles.mypageError}>{error}</div>;
 
@@ -232,6 +374,46 @@ function MyPageUpdate() {
               className={`${styles.mypageButton} ${styles.mypageSocialButton}`}
             >
               Google 연동
+            </button>
+          )}
+        </div>
+        {/* Naver 연동 버튼 */}
+        <div>
+          {formData.naver ? (
+            <button
+              type="button"
+              onClick={unlinkNaverAccount}
+              className={`${styles.mypageButton} ${styles.mypageSocialUnlinkButton}`}
+            >
+              Google 연동 해제
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={handleNaverLink}
+              className={`${styles.mypageButton} ${styles.mypageSocialButton}`}
+            >
+              Google 연동
+            </button>
+          )}
+        </div>
+        {/* Kakao 연동 버튼 */}
+        <div>
+          {formData.kakao ? (
+            <button
+              type="button"
+              onClick={unlinkKakaoAccount}
+              className={`${styles.mypageButton} ${styles.mypageSocialUnlinkButton}`}
+            >
+              Kakao 연동 해제
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={handleKakaoLink}
+              className={`${styles.mypageButton} ${styles.mypageSocialButton}`}
+            >
+              Kakao 연동
             </button>
           )}
         </div>

@@ -134,6 +134,12 @@ public class MemberService {
         memberRepository.deleteByGoogle(uuid);
     }
 
+    //회원 카카오 정보 삭제
+    @Transactional
+    public void deleteKakao(String uuid) {
+        memberRepository.deleteByKakao(uuid);
+    }
+
     //회원정보 삭제
     @Transactional
     public int deleteMember(String uuid) {

@@ -19,9 +19,8 @@ function Login({ onLoginSuccess }) {
 
   // Google Login -----------------------------------------------------------------------------
   // Google OAuth 설정
-  const GOOGLE_CLIENT_ID =
-    "1087336071184-odcsdaa33savuptnd86oi2kbv2ida6jd.apps.googleusercontent.com";
-  const GOOGLE_REDIRECT_URI = "http://localhost:3000/";
+  const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+  const GOOGLE_REDIRECT_URI = process.env.REACT_APP_GOOGLE_REDIRECT_URI;
   const GOOGLE_SCOPE = "email profile openid";
 
   const handleGoogleLogin = () => {
@@ -126,8 +125,11 @@ function Login({ onLoginSuccess }) {
 
   // Naver Login -----------------------------------------------------------------------------
   const handleNaverLogin = () => {
+    const naverLoginUrl = process.env.REACT_APP_NAVER_LOGIN_URL;
+    console.log("Naver Login URL:", naverLoginUrl);
+
     const popup = window.open(
-      "http://localhost:8888/naver/login",
+      naverLoginUrl,
       "Naver Login",
       "width=500,height=600,scrollbars=yes"
     );
@@ -139,8 +141,8 @@ function Login({ onLoginSuccess }) {
   };
 
   // kakao Login ------------------------------------------------------------------------------------
-  const KAKAO_CLIENT_ID = "2622b65a32dcd94387b5723343731afc";
-  const KAKAO_REDIRECT_URI = "http://localhost:3000";
+  const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
+  const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
 
   const handleKakaoLogin = () => {
     const kakaoLoginUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;

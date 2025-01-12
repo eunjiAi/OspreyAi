@@ -207,6 +207,17 @@ public class MemberController {
         return ResponseEntity.ok().build();
     }
 
+    // Kakao 이메일 연동하기
+    @PostMapping("/kakao")
+    public ResponseEntity<String> insertKakao(@RequestBody Map<String, String> map) {
+        log.info("카카오 인서트() : uuid: {}, email: {} ", map.get("uuid"), map.get("email"));
+        Member member = memberService.selectUuid(map.get("uuid"));
+        member.setKakao(map.get("email"));
+        memberService.updateMember(member);
+
+        return ResponseEntity.ok().build();
+    }
+
     // Google 이메일 연동 해제하기
     @PutMapping("/google")
     public ResponseEntity<String> deleteGoogle(@RequestBody Map<String, String> map) {
@@ -216,7 +227,14 @@ public class MemberController {
         return ResponseEntity.ok().build();
     }
 
+    // Kakao 이메일 연동 해제하기
+    @PutMapping("/kakao")
+    public ResponseEntity<String> deleteKakao(@RequestBody Map<String, String> map) {
+        log.info("카카오 컬럼 삭제() : uuid: {}", map.get("uuid"));
+        memberService.deleteKakao(map.get("uuid"));
 
+        return ResponseEntity.ok().build();
+    }
 
 
     // 새로운 비밀번호로 변경

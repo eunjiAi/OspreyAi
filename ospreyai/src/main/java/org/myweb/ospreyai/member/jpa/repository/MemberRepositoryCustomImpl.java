@@ -106,6 +106,15 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
                 .execute();
     }
 
+    @Override
+    public void deleteByKakao(String uuid) {
+        queryFactory
+                .update(member)
+                .set(member.kakao, (String) null)
+                .where(member.uuid.eq(uuid))
+                .execute();
+    }
+
 
 }
 

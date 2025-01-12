@@ -40,7 +40,7 @@
   padding: 12px;
   font-size: 14px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 16px;
   background-color: #fff;
   transition:
     border-color 0.3s ease,
@@ -62,7 +62,7 @@
   text-align: center;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
   transition:
     background-color 0.3s ease,
@@ -88,21 +88,21 @@
 
 /* Face ID 등록 버튼 */
 .mypageFaceIDButton {
-  background-color: #28a745;
+  background-color: #007bff;
 }
 
 .mypageFaceIDButton:hover {
-  background-color: #218838;
+  background-color: #0056b3;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Face ID 삭제 버튼 */
 .mypageFaceIDDeleteButton {
-  background-color: #ff4d4d;
+  background-color: #6c757d; /* 회색 계열 */
 }
 
 .mypageFaceIDDeleteButton:hover {
-  background-color: #e60000;
+  background-color: #5a6268; /* 어두운 회색 */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -118,11 +118,11 @@
 
 /* 소셜 연동 해제 버튼 */
 .mypageSocialUnlinkButton {
-  background-color: #dc3545;
+  background-color: #6c757d; /* 회색 계열 */
 }
 
 .mypageSocialUnlinkButton:hover {
-  background-color: #c82333;
+  background-color: #5a6268; /* 어두운 회색 */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -130,13 +130,11 @@
 .mypageLoading {
   text-align: center;
   font-size: 18px;
-  color: #007bff;
 }
 
 .mypageError {
   text-align: center;
   font-size: 18px;
-  color: red;
   font-weight: bold;
 }
 

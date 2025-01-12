@@ -26,4 +26,6 @@ public interface MemberRepositoryCustom {
     void updatePassword(String userId, String encryptedPassword);
     // 구글 정보 삭제(연동해제)
     void deleteByGoogle(String uuid);
+    // 카카오 정보 삭제(연동해제)
+    void deleteByKakao(String uuid);
 }
