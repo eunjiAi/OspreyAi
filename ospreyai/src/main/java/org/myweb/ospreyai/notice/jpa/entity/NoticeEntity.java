@@ -30,7 +30,7 @@ public class NoticeEntity {
     @Column(name = "NCREATED_AT")
     private Date nCreatedAt;    //    NCREATED_AT	DATE
     @Column(name = "NUPDATED_AT")
-    private Date nUpdatedAt;    //    NCREATED_AT	DATE
+    private Date nUpdatedAt;    //    NUPDATED_AT	DATE
     @Column(name = "OFILENAME")
     private String ofileName;   //    OFILENAME	VARCHAR2(200 BYTE)
     @Column(name = "RFILENAME")

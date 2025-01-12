@@ -46,15 +46,6 @@ public class NoticeService {
 		return entityOptional.get().toDto();
 	}
 
-	// 조회수 증가
-	@Transactional
-	public void updateAddReadCount(int noticeNo) {
-		Optional<NoticeEntity> entity = noticeRepository.findById(noticeNo);
-		NoticeEntity noticeEntity = entity.get();
-		noticeEntity.setNCount(noticeEntity.getNCount() + 1);
-		noticeRepository.save(noticeEntity).toDto();
-	}
-
 	// 공지사항 리스트 조회 (페이징 처리)
 	public ArrayList<Notice> selectList(Pageable pageable) {
 		return toList(noticeRepository.findAll(pageable));
@@ -69,26 +60,34 @@ public class NoticeService {
 		return toList(list);  // toList를 사용하여 변환 후 반환
 	}
 
-	// 공지사항 전체 개수 조회
+	// 공지사항 전체 갯수 조회
 	public int selectListCount() {
 		return (int)noticeRepository.count();
 	}
 
+	// 공지사항 전체 갯수 조회(마이페이지)
 	public int selectListIdCount(String userid) {
 		// userid에 맞는 공지사항의 개수를 반환
 		return (int) noticeRepository.countBynWriter(userid);
+	}
+
+	// 조회수 증가
+	@Transactional
+	public void updateAddReadCount(int noticeNo) {
+		Optional<NoticeEntity> entity = noticeRepository.findById(noticeNo);
+		NoticeEntity noticeEntity = entity.get();
+		noticeEntity.setNCount(noticeEntity.getNCount() + 1);
+		noticeRepository.save(noticeEntity).toDto();
 	}
 
 	// 공지사항 추가
 	@Transactional
 	public int insertNotice(Notice notice) {
 		try {
-			//마지막 번호에서 +1 추가
 			notice.setNoticeNo(noticeRepository.findLastNoticeNo() + 1);
 			noticeRepository.save(notice.toEntity());
 			return 1;
 		}catch(Exception e){
-			log.info(e.getMessage());
 			return 0;
 		}
 	}
@@ -100,7 +99,6 @@ public class NoticeService {
 			noticeRepository.deleteById(noticeNo);
 			return 1;
 		}catch(Exception e){
-			log.info(e.getMessage());
 			return 0;
 		}
 	}
@@ -121,38 +119,19 @@ public class NoticeService {
 			noticeRepository.save(notice.toEntity());
 			return 1;
 		} catch (Exception e) {
-			log.info(e.getMessage());
 			return 0;
 		}
 	}
 
-
-	//검색용 메소드 --------------------------------------------------------
+	// 제목으로 검색하기
 	public ArrayList<Notice> selectSearchTitle(String keyword, Pageable pageable) {
 		return toList(noticeRepository.findSearchTitle(keyword, pageable));
 	}
 
+	// 제목으로 검색하기(카운트용)
 	public int selectSearchTitleCount(String keyword) {
 		return (int)noticeRepository.countSearchTitle(keyword);
 	}
-
-
-//
-//	public ArrayList<Notice> selectSearchContent(String keyword, Pageable pageable) {
-//		return toList(noticeRepository.findSearchContent(keyword, pageable));
-//	}
-//
-//	public int selectSearchContentCount(String keyword) {
-//		return (int)noticeRepository.countSearchContent(keyword);
-//	}
-//
-//	public ArrayList<Notice> selectSearchDate(Search search, Pageable pageable) {
-//		return toList(noticeRepository.findSearchDate(search.getBegin(), search.getEnd(), pageable));
-//	}
-//
-//	public int selectSearchDateCount(Search search) {
-//		return (int)noticeRepository.countSearchDate(search.getBegin(), search.getEnd());
-//	}
 }
 
 
