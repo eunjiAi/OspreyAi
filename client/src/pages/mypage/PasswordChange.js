@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
-import styles from "./PasswordChange.module.css"; // 모듈 import
+import styles from "./PasswordChange.module.css";
 import { AuthContext } from "../../AuthProvider";
 
 function PasswordChange() {
@@ -18,6 +18,7 @@ function PasswordChange() {
 
   useEffect(() => {
     const fetchUserData = async () => {
+      if (!accessToken || !userid) return;
       try {
         const response = await apiClient.get(`/member/mypage/${userid}`, {
           headers: {
@@ -26,7 +27,6 @@ function PasswordChange() {
         });
         setUserData(response.data);
       } catch (err) {
-        console.error("Error fetching user data:", err);
         alert("사용자 정보를 불러오는 중 문제가 발생했습니다.");
       }
     };
@@ -57,12 +57,10 @@ function PasswordChange() {
 
   const handlePasswordChange = async () => {
     if (!validatePasswords()) return;
-
     if (!userData) {
       alert("사용자 정보를 불러오는 중 문제가 발생했습니다.");
       return;
     }
-
     try {
       const checkResponse = await apiClient.post(
         `/member/mypage/chkpw/${userid}`,
@@ -104,7 +102,6 @@ function PasswordChange() {
       if (err.response && err.response.status === 401) {
         alert("현재 비밀번호가 일치하지 않습니다.");
       } else {
-        console.error("Error changing password:", err);
         alert("비밀번호 변경에 실패했습니다.");
       }
     }

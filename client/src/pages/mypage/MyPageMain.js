@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
-import styles from "./MyPageMain.module.css"; // CSS 모듈 import
+import styles from "./MyPageMain.module.css";
 import { AuthContext } from "../../AuthProvider";
 
 function MyPage() {
@@ -27,6 +27,13 @@ function MyPage() {
 
   useEffect(() => {
     const fetchMyPage = async () => {
+      if (!accessToken || !userid) {
+        console.log(
+          "Access token 또는 userid가 준비되지 않았습니다. 대기 중..."
+        );
+        return;
+      }
+
       try {
         setLoading(true);
         const response = await apiClient.get(`/member/mypage/${userid}`, {

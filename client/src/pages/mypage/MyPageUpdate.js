@@ -26,6 +26,13 @@ function MyPageUpdate() {
   // 사용자 정보 가져오기
   useEffect(() => {
     const fetchUserData = async () => {
+      if (!accessToken || !userid) {
+        console.log(
+          "Access token 또는 userid가 준비되지 않았습니다. 대기 중..."
+        );
+        return;
+      }
+
       try {
         setLoading(true);
         const response = await apiClient.get(`/member/mypage/${userid}`, {
@@ -42,7 +49,7 @@ function MyPageUpdate() {
       }
     };
     fetchUserData();
-  }, [userid, accessToken]);
+  }, [userid, accessToken]); // accessToken과 userid가 변경되면 호출
 
   // 수정 상태 확인
   useEffect(() => {
@@ -196,7 +203,7 @@ function MyPageUpdate() {
     }
   };
 
-  // kakao 연동 ---------------------------------------------------------------------------------------------------
+  // Kakao 연동 ---------------------------------------------------------------------------------------------------
   const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
   const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
 
@@ -204,7 +211,6 @@ function MyPageUpdate() {
     const kakaoLoginUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
     console.log("Kakao Login URL:", kakaoLoginUrl);
 
-    // 팝업 창 열기
     const popup = window.open(
       kakaoLoginUrl,
       "Kakao Login",
@@ -216,18 +222,15 @@ function MyPageUpdate() {
       return;
     }
 
-    // 팝업 창의 URL 변경 감지
     const interval = setInterval(() => {
       try {
         const currentUrl = popup.location.href;
 
         if (currentUrl.includes("code")) {
-          // 인가 코드 추출
           const params = new URLSearchParams(currentUrl.split("?")[1]);
           const authCode = params.get("code");
           console.log("Kakao Authorization Code:", authCode);
 
-          // 팝업 닫기
           popup.close();
           clearInterval(interval);
 
@@ -242,7 +245,6 @@ function MyPageUpdate() {
 
   const handleKakaoCallback = async (authCode) => {
     try {
-      // 액세스 토큰 요청
       const tokenResponse = await axios.post(
         "https://kauth.kakao.com/oauth/token",
         null,
@@ -262,7 +264,6 @@ function MyPageUpdate() {
       const accessToken = tokenResponse.data.access_token;
       console.log("Kakao Access Token:", accessToken);
 
-      // 사용자 정보 요청
       const userInfoResponse = await axios.get(
         "https://kapi.kakao.com/v2/user/me",
         {
@@ -347,10 +348,10 @@ function MyPageUpdate() {
           성별:
           <select
             name="gender"
-            style={{ width: 605 }}
             value={formData.gender}
             onChange={handleInputChange}
             className={styles.mypageSelect}
+            style={{ width: 605 }}
           >
             <option value="M">남성</option>
             <option value="F">여성</option>
@@ -362,7 +363,6 @@ function MyPageUpdate() {
             type="text"
             name="email"
             value={formData.email}
-            onChange={handleInputChange}
             className={styles.mypageInput}
             readOnly
           />
@@ -448,6 +448,7 @@ function MyPageUpdate() {
           </button>
         )}
 
+        {/* 저장 버튼 */}
         <button
           type="button"
           onClick={handleSave}
