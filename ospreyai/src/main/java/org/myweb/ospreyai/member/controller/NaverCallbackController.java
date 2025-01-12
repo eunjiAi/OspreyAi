@@ -23,6 +23,7 @@ public class NaverCallbackController {
     @Value("${naver.redirect_linkuri}")
     private String redirectLinkUri;
 
+    // 네이버 로그인 콜백
     @GetMapping("/naver/callback")
     public ResponseEntity<Void> naverCallback(@RequestParam String code, @RequestParam String state) {
         String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code" +
@@ -35,19 +36,17 @@ public class NaverCallbackController {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> tokenResponse = restTemplate.getForEntity(tokenUrl, String.class);
 
-        // Access Token 추출
         String accessToken = extractAccessToken(tokenResponse.getBody());
-
-        // 사용자 정보 요청
         String email = getUserEmail(accessToken);
 
-        // React로 이메일 정보 전달
         String redirectUrl = "http://localhost:3000/naver/callbackUi?email=" + email;
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(redirectUrl));
-        return new ResponseEntity<>(headers, HttpStatus.FOUND); // 302 리디렉션
+
+        return new ResponseEntity<>(headers, HttpStatus.FOUND);
     }
 
+    // 네이버 연동 콜백 (로그인과는 다른 페이지를 불러오기 위해 작성)
     @GetMapping("/naver/linkcallback")
     public ResponseEntity<Void> naverLinkCallback(@RequestParam String code, @RequestParam String state) {
         String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code" +
@@ -60,21 +59,16 @@ public class NaverCallbackController {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> tokenResponse = restTemplate.getForEntity(tokenUrl, String.class);
 
-        // Access Token 추출
         String accessToken = extractAccessToken(tokenResponse.getBody());
-
-        // 사용자 정보 요청
         String email = getUserEmail(accessToken);
 
-        // React로 이메일 정보 전달
         String redirectUrl = "http://localhost:3000/naver/linkcallbackUi?email=" + email;
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(redirectUrl));
-        return new ResponseEntity<>(headers, HttpStatus.FOUND); // 302 리디렉션
+        return new ResponseEntity<>(headers, HttpStatus.FOUND);
     }
 
-
-
+    // 네이버 액세스 토큰 추출
     private String extractAccessToken(String responseBody) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -85,6 +79,7 @@ public class NaverCallbackController {
         }
     }
 
+    // 네이버 액세스 토큰으로 네이버 사용자 정보 API 호출
     private String getUserEmail(String accessToken) {
         String userInfoUrl = "https://openapi.naver.com/v1/nid/me";
 
@@ -96,10 +91,10 @@ public class NaverCallbackController {
 
         ResponseEntity<String> response = restTemplate.exchange(userInfoUrl, HttpMethod.GET, request, String.class);
 
-        // 이메일 정보 추출
         return extractEmail(response.getBody());
     }
 
+    // 네이버 응답에서 사용자 이메일 추출
     private String extractEmail(String responseBody) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
