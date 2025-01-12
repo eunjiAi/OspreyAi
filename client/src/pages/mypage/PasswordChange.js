@@ -15,6 +15,7 @@ function PasswordChange() {
   });
 
   const [userData, setUserData] = useState(null);
+  const [showNewPasswordFields, setShowNewPasswordFields] = useState(false); // 새로운 비밀번호 필드 표시 여부
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -37,6 +38,11 @@ function PasswordChange() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setPasswordData({ ...passwordData, [name]: value });
+
+    // 현재 비밀번호 입력 시 새로운 비밀번호 필드 표시
+    if (name === "currentPassword" && value.trim().length > 3) {
+      setShowNewPasswordFields(true);
+    }
   };
 
   const validatePasswords = () => {
@@ -112,6 +118,7 @@ function PasswordChange() {
       <h1 className={styles.passwordChangeTitle}>비밀번호 변경</h1>
       <form className={styles.passwordChangeForm}>
         <label className={styles.passwordChangeFormLabel}>
+          <p></p><p></p>
           현재 비밀번호:
           <input
             type="password"
@@ -122,28 +129,36 @@ function PasswordChange() {
             required
           />
         </label>
-        <label className={styles.passwordChangeFormLabel}>
-          새 비밀번호:
-          <input
-            type="password"
-            name="newPassword"
-            value={passwordData.newPassword}
-            onChange={handleInputChange}
-            className={styles.passwordChangeFormInput}
-            required
-          />
-        </label>
-        <label className={styles.passwordChangeFormLabel}>
-          새 비밀번호 확인:
-          <input
-            type="password"
-            name="confirmNewPassword"
-            value={passwordData.confirmNewPassword}
-            onChange={handleInputChange}
-            className={styles.passwordChangeFormInput}
-            required
-          />
-        </label>
+
+        <div
+          className={`${styles.newPasswordFields} ${
+            showNewPasswordFields ? styles.show : ""
+          }`}
+        >
+          <label className={styles.passwordChangeFormLabel}>
+            새 비밀번호:
+            <input
+              type="password"
+              name="newPassword"
+              value={passwordData.newPassword}
+              onChange={handleInputChange}
+              className={styles.passwordChangeFormInput}
+              required
+            />
+          </label>
+          <p></p>
+          <label className={styles.passwordChangeFormLabel}>
+            새 비밀번호 확인:
+            <input
+              type="password"
+              name="confirmNewPassword"
+              value={passwordData.confirmNewPassword}
+              onChange={handleInputChange}
+              className={styles.passwordChangeFormInput}
+              required
+            />
+          </label>
+        </div>
 
         <button
           type="button"
