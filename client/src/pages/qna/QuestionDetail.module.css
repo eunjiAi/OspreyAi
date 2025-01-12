@@ -1,0 +1,164 @@
+/* 전체 페이지 배경 */
+.pageBackground {
+  background: linear-gradient(135deg, #f7f9fc, #eaf3ff);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* 컨테이너 */
+.detailContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border: 1px solid #dbe5f1;
+}
+
+/* 질문 제목 */
+.questionTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 질문 정보 테이블 */
+.questionTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.questionTable th {
+  background: #f0f4ff;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.questionTable td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+  white-space: pre-wrap;
+}
+
+/* 버튼 그룹 */
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* 버튼 공통 스타일 */
+.actionButton {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 뒤로가기 버튼 */
+.backButton {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.backButton:hover {
+  background-color: #495057;
+}
+
+/* 수정 버튼 */
+.editButton {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.editButton:hover {
+  background-color: #0056b3;
+}
+
+/* 삭제 버튼 */
+.deleteButton {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+.deleteButton:hover {
+  background-color: #cc0000;
+}
+
+/* 답변하기 버튼 */
+.answerButton {
+  background-color: #50c878;
+  color: #fff;
+}
+
+.answerButton:hover {
+  background-color: #3ca564;
+}
+
+/* 댓글 섹션 제목 */
+.answerSectionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+}
+
+/* 댓글 테이블 */
+.answerTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.answerTable th {
+  background: #f9fbff;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.answerTable td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+
+/* 댓글 줄임 */
+.replyItem {
+  padding-left: 0;
+}
+
+.replyIndented {
+  padding-left: 20px;
+  background-color: #f7faff;
+  border-left: 3px solid #cce1ff;
+}
+
+/* 로딩 메시지 */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #007bff;
+  padding: 20px;
+}
+
+/* 에러 메시지 */
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ff4d4d;
+  font-weight: bold;
+  padding: 20px;
+}
