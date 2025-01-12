@@ -1,20 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom"; //이전 페이지에서 전달온 값을 받기 위함
+import { useParams, useNavigate } from "react-router-dom";
 import apiClient from "../../utils/axios";
 import styles from "./NoticeDetail.module.css";
 import { AuthContext } from "../../AuthProvider";
 
 const NoticeDetail = () => {
-  const { id } = useParams(); // URL 에서 no 파라미터를 가져옴(추출함)
-  const navigate = useNavigate(); //useNavigate 훅 사용
-  const [notice, setNotice] = useState(null); //공지 데이터 저장할 상태 변수 선언과 초기화함
-  const [error, setError] = useState(null); //에러 메세지 저장용 상태 변수 선언과 초기화
-  const [loading, setLoading] = useState(true); // 로딩 상태
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [notice, setNotice] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const { isLoggedIn, role, accessToken } = useContext(AuthContext);
 
   useEffect(() => {
-    //서버측에 요청해서 해당 공지글 가져오는 ajax 통신 처리 함수를 작성할 수 있음
     const fetchNoticeDetail = async () => {
       try {
         setLoading(true);
@@ -28,21 +27,16 @@ const NoticeDetail = () => {
       }
     };
 
-    //작성된 함수 실행
     fetchNoticeDetail();
   }, [id]);
 
   const handleFileDownload = async (ofileName, rfileName) => {
     try {
       const response = await apiClient.get("/notice/nfdown", {
-        params: {
-          ofile: ofileName,
-          rfile: rfileName,
-        },
-        responseType: "blob", //파일 다운로드를 위한 설정
+        params: { ofile: ofileName, rfile: rfileName },
+        responseType: "blob",
       });
 
-      //파일 다운로드 처리
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
       link.href = url;
@@ -51,7 +45,7 @@ const NoticeDetail = () => {
       link.click();
       link.remove();
     } catch (error) {
-      console.error("File download error : ", error);
+      console.error("File download error:", error);
       alert("파일 다운로드에 실패했습니다.");
     }
   };
@@ -65,33 +59,24 @@ const NoticeDetail = () => {
       try {
         await apiClient.delete(`/notice/${id}`, {
           params: { rfile: rfile },
-          headers: {
-            Authorization: `Bearer ${accessToken}`, // accessToken 추가
-          },
+          headers: { Authorization: `Bearer ${accessToken}` },
         });
         alert("삭제가 완료되었습니다.");
-        //브라우저 히스토리를 이용해서, 목록 출력 페이지로 이동 <= 리액트의 히스토리를 이용한다면
-        //history.push('/notice');
-        navigate("/notice"); //목록 출력 페이지로 이동
+        navigate("/notice");
       } catch (error) {
-        console.error("Delete error : ", error);
+        console.error("Delete error:", error);
         alert("삭제 실패!");
       }
     }
   };
 
-  if (!notice) {
-    return <div className={styles.loading}>로딩 중...</div>; // 로딩 표시
-  }
-
-  if (error) {
-    return <div className={styles.error}>{error}</div>; // 에러 메시지 표시
-  }
+  if (loading) return <div className={styles.loading}>로딩 중...</div>;
+  if (error) return <div className={styles.error}>{error}</div>;
 
   return (
-    <div className={styles.detailcontainer}>
-      <h2 className={styles.detailtitle}> {id}번 공지사항 상세보기</h2>
-      <table border="2">
+    <div className={styles.detailContainer}>
+      <h2 className={styles.detailTitle}>공지사항 상세보기</h2>
+      <table className={styles.detailTable}>
         <tbody>
           <tr>
             <th>제목</th>
@@ -106,6 +91,7 @@ const NoticeDetail = () => {
             <td>
               {notice.ofileName ? (
                 <button
+                  className={styles.fileButton}
                   onClick={() =>
                     handleFileDownload(notice.ofileName, notice.rfileName)
                   }
@@ -131,30 +117,32 @@ const NoticeDetail = () => {
           </tr>
         </tbody>
       </table>
-      {/* ADMIN 권한만 수정 및 삭제 버튼 표시 */}
-      <div className={styles.buttongroup}>
+      <div className={styles.buttonGroup}>
         {isLoggedIn && role === "ADMIN" && (
           <>
-            <button onClick={handleMoveEdit} className={styles.editbutton}>
-              수정 페이지로 이동
+            <button
+              onClick={handleMoveEdit}
+              className={`${styles.button} ${styles.editButton}`}
+            >
+              수정
             </button>
             <button
               onClick={() => handleDelete(notice.rfileName)}
-              className={styles.deletebutton}
+              className={`${styles.button} ${styles.deleteButton}`}
             >
-              삭제하기
+              삭제
             </button>
           </>
         )}
         <button
           onClick={() => navigate("/notice")}
-          className={styles.backbutton}
+          className={`${styles.button} ${styles.backButton}`}
         >
           목록
         </button>
       </div>
     </div>
   );
-}; // const NoticeDetail
+};
 
 export default NoticeDetail;

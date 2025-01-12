@@ -1,131 +1,121 @@
-/* 상세보기 컨테이너 */
-.detailcontainer {
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-family: 'Arial', sans-serif;
-  padding-bottom: 40px;
-  min-height: 550px;
-  box-sizing: border-box; /* 테두리와 내용이 정확히 맞도록 설정 */
+/* 페이지 배경 */
+.pageBackground {
+  background: linear-gradient(135deg, #e9efff, #b2c9ff);
+  padding: 20px 0;
 }
 
-.detailtitle {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+/* 상세보기 컨테이너 */
+.detailContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border: 2px solid #d9eaff;
+}
+
+/* 제목 스타일 */
+.detailTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.detailcontent,
-.editcontent {
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.editcontent {
+/* 테이블 스타일 */
+.detailTable {
   width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.detailTable th {
+  background: #f1f5ff;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border-bottom: 1px solid #ddd;
 }
 
-.buttongroup {
-  margin-bottom: 20px;
-  padding: 10px 15px;
-  margin-right: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.back-button,
-.edit-button,
-.delete-button {
-  padding: 10px 15px;
-  margin-right: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 0.85rem; /* 버튼 텍스트 크기 조정 */
-  cursor: pointer;
-}
-
-.backbutton {
-  background: #6c757d;
-  color: #fff;
-}
-
-.backbutton:hover {
-  background: #5a6268;
-}
-
-.editbutton {
-  background: #ffc107;
-  color: #fff;
-}
-
-.editbutton:hover {
-  background: #e0a800;
-}
-
-.deletebutton {
-  background: #dc3545;
-  color: #fff;
-}
-
-.deletebutton:hover {
-  background: #c82333;
-}
-
-/* 작성자, 등록날짜, 조회수 줄 */
-.postinfo {
-  font-size: 0.9rem; /* 폰트 크기 약간 축소 */
+.detailTable td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
   color: #555;
-  margin-bottom: 15px;
+}
+
+/* 버튼 그룹 */
+.buttonGroup {
+  margin-top: 20px;
   display: flex;
-  align-items: center;
+  justify-content: right;
 }
 
-.postinfo span {
-  margin-right: 8px;
+/* 버튼 공통 스타일 */
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.postinfo .separator {
-  margin: 0 5px; /* 구분선 간격 축소 */
+/* 수정 버튼 */
+.editButton {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.editButton:hover {
+  background-color: #0056b3;
+}
+
+/* 삭제 버튼 */
+.deleteButton {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+.deleteButton:hover {
+  background-color: #cc0000;
+}
+
+/* 목록 버튼 */
+.backButton {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.backButton:hover {
+  background-color: #495057;
 }
 
 /* 첨부파일 버튼 */
-.downloadfile {
-  margin-left: auto;
-}
-
-.downloadbutton {
-  padding: 10px 15px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+.fileButton {
+  background: none;
+  color: #007bff;
   cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
 }
 
-.downloadbutton:hover {
-  background: #0056b3;
+.fileButton:hover {
+  text-decoration: underline;
 }
 
-/* 내용 */
-.detailcontent {
-  background-color: #ffffff; /* 깔끔한 흰색 배경 */
-  border: 1px solid #e0e0e0; /* 연한 회색 테두리 */
-  border-radius: 5px; /* 둥근 모서리 */
-  border-top: 1px solid #ddd;
-  padding: 20px;
-  font-size: 1.6rem;
-  line-height: 1.6;
-  margin-top: 15px;
-  box-sizing: border-box; /* 테두리와 내용이 어긋나지 않도록 설정 */
-  min-height: 550px;
+/* 로딩 및 에러 메시지 */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #007bff;
 }
 
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ff4d4d;
+  font-weight: bold;
+}
