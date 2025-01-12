@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import axios from "../../../utils/axios"; // Axios 유틸리티 가져오기
-import styles from "./FindPassword.module.css"; // CSS 모듈 스타일 가져오기
+import axios from "../../../utils/axios";
+import styles from "./FindPassword.module.css";
 
-function FindPassword() {
-  const [userId, setUserId] = useState("");
-  const [email, setEmail] = useState("");
+const FindPassword = () => {
+  const [formData, setFormData] = useState({ userId: "", email: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,12 +20,7 @@ function FindPassword() {
     setErrorMessage("");
 
     try {
-      // 서버에 아이디와 이메일 전송
-      const response = await axios.post("/member/resetPassword", {
-        userId,
-        email,
-      });
-
+      const response = await axios.post("/member/resetPassword", formData);
       setSuccessMessage(
         "비밀번호 재설정 링크가 이메일로 전송되었습니다. 이메일을 확인하세요."
       );
@@ -40,28 +39,40 @@ function FindPassword() {
       <h2>비밀번호 찾기</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.inputGroup}>
-          <label htmlFor="userId">아이디</label>
+          <label htmlFor="userId" className={styles.label}>
+            아이디 :
+          </label>
           <input
             type="text"
             id="userId"
             placeholder="아이디를 입력하세요"
-            value={userId}
-            onChange={(e) => setUserId(e.target.value)}
+            value={formData.userId}
+            onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
+
         <div className={styles.inputGroup}>
-          <label htmlFor="email">이메일</label>
+          <label htmlFor="email" className={styles.label}>
+            이메일 :
+          </label>
           <input
             type="email"
             id="email"
             placeholder="이메일을 입력하세요"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <button type="submit" disabled={isLoading} className={styles.button}>
+        <p></p>
+        <button
+          type="submit"
+          disabled={isLoading}
+          className={`${styles.button} ${isLoading ? styles.disabledButton : ""}`}
+        >
           {isLoading ? "처리 중..." : "비밀번호 찾기"}
         </button>
       </form>
@@ -72,6 +83,6 @@ function FindPassword() {
       {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
     </div>
   );
-}
+};
 
 export default FindPassword;

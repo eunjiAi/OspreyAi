@@ -1,10 +1,8 @@
 .container {
   max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 150px;
   text-align: center;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
   border-radius: 8px;
 }
 
@@ -16,33 +14,35 @@
 .inputGroup {
   margin-bottom: 15px;
   text-align: left;
+  width: 373px;
 }
 
-label {
+.label {
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
 }
 
-input {
+.input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 16px;
   font-size: 16px;
 }
 
-button {
+.button {
   padding: 10px;
   font-size: 16px;
+  width: 200px;
   color: white;
   background-color: #007bff;
   border: none;
-  border-radius: 4px;
+  border-radius: 16px;
   cursor: pointer;
 }
 
-button:disabled {
+.disabledButton {
   background-color: #cccccc;
   cursor: not-allowed;
 }
@@ -60,7 +60,7 @@ button:disabled {
 
 .buttonGroup {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -70,4 +70,10 @@ button:disabled {
 
 .secondaryButton {
   background-color: #6c757d;
+}
+
+.errorMessage {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 10px;
 }

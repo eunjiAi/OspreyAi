@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "../../../utils/axios";
-import Modal from "../../../components/common/Modal"; // Modal 컴포넌트 가져오기
-import Login from "../../member/login/Login"; // Login 컴포넌트 가져오기
+import Modal from "../../../components/common/Modal";
+import Login from "./Login";
 import styles from "./FindId.module.css";
 
 function FindId() {
@@ -10,7 +10,7 @@ function FindId() {
   const [isLoading, setIsLoading] = useState(false);
   const [foundId, setFoundId] = useState(null);
   const [error, setError] = useState("");
-  const [showLoginModal, setShowLoginModal] = useState(false); // 로그인 모달 상태
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,11 +35,11 @@ function FindId() {
   };
 
   const handleOpenLoginModal = () => {
-    setShowLoginModal(true); // 로그인 모달 열기
+    setShowLoginModal(true);
   };
 
   const handleCloseLoginModal = () => {
-    setShowLoginModal(false); // 로그인 모달 닫기
+    setShowLoginModal(false);
   };
 
   return (
@@ -47,7 +47,9 @@ function FindId() {
       <h2>아이디 찾기</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.inputGroup}>
-          <label htmlFor="name">이름</label>
+          <label htmlFor="name" className={styles.label}>
+            이름 :
+          </label>
           <input
             type="text"
             id="name"
@@ -55,10 +57,13 @@ function FindId() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            className={styles.input}
           />
         </div>
         <div className={styles.inputGroup}>
-          <label htmlFor="email">이메일</label>
+          <label htmlFor="email" className={styles.label}>
+            이메일 :
+          </label>
           <input
             type="email"
             id="email"
@@ -66,9 +71,16 @@ function FindId() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className={styles.input}
           />
         </div>
-        <button type="submit" disabled={isLoading} className={styles.button}>
+        <p></p>
+        <button
+          type="submit"
+          disabled={isLoading}
+          style={{ borderRadius: 16 }}
+          className={`${isLoading ? styles.disabledButton : ""}`}
+        >
           {isLoading ? "처리 중..." : "아이디 찾기"}
         </button>
       </form>
@@ -87,7 +99,7 @@ function FindId() {
             </button>
             <button
               className={`${styles.button} ${styles.primaryButton}`}
-              onClick={handleOpenLoginModal} // 로그인 모달 열기
+              onClick={handleOpenLoginModal}
             >
               로그인하기
             </button>
