@@ -1,64 +1,86 @@
 /* 페이지 배경 */
 .pageBackground {
-  background: linear-gradient(135deg, #e9efff, #b2c9ff);
-  padding: 20px 0;
+  background: linear-gradient(135deg, #f9fbff, #dbe9ff);
+  padding: 30px 0;
 }
 
 /* 상세보기 컨테이너 */
 .detailContainer {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border: 2px solid #d9eaff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  border: 2px solid #dceeff;
 }
 
 /* 제목 스타일 */
 .detailTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 공지사항 내용 */
+.detailContent {
+  margin-bottom: 20px;
+}
+
+.noticeTitle {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+.noticeMeta {
+  font-size: 0.9rem;
+  color: #777;
   margin-bottom: 20px;
-  text-align: center;
 }
 
-/* 테이블 스타일 */
-.detailTable {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+.noticeBody {
+  background: #f7f9fc;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.6;
 }
 
-.detailTable th {
-  background: #f1f5ff;
-  color: #333;
-  font-weight: bold;
-  text-align: left;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.detailTable td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+.noticeText {
   color: #555;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.fileButton {
+  background: none;
+  color: #007bff;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.fileButton:hover {
+  color: #0056b3;
 }
 
 /* 버튼 그룹 */
 .buttonGroup {
-  margin-top: 20px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-/* 버튼 공통 스타일 */
 .button {
   padding: 10px 20px;
   font-size: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -93,24 +115,11 @@
   background-color: #495057;
 }
 
-/* 첨부파일 버튼 */
-.fileButton {
-  background: none;
-  color: #007bff;
-  cursor: pointer;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-
-.fileButton:hover {
-  text-decoration: underline;
-}
-
 /* 로딩 및 에러 메시지 */
 .loading {
   text-align: center;
   font-size: 1.2rem;
-  color: #007bff;
+  color: #4a90e2;
 }
 
 .error {

@@ -21,7 +21,7 @@ const NoticeDetail = () => {
         setNotice(response.data);
       } catch (error) {
         console.error("Error fetching notice details:", error);
-        setError("공지글 상세 조회 실패!");
+        setError("공지사항 조회에 실패했습니다.");
       } finally {
         setLoading(false);
       }
@@ -46,7 +46,7 @@ const NoticeDetail = () => {
       link.remove();
     } catch (error) {
       console.error("File download error:", error);
-      alert("파일 다운로드에 실패했습니다.");
+      alert("첨부파일 다운로드에 실패했습니다.");
     }
   };
 
@@ -55,91 +55,75 @@ const NoticeDetail = () => {
   };
 
   const handleDelete = async (rfile) => {
-    if (window.confirm("정말 삭제하시겠습니까?")) {
+    if (window.confirm("이 공지사항을 삭제하시겠습니까?")) {
       try {
         await apiClient.delete(`/notice/${id}`, {
           params: { rfile: rfile },
           headers: { Authorization: `Bearer ${accessToken}` },
         });
-        alert("삭제가 완료되었습니다.");
+        alert("공지사항이 성공적으로 삭제되었습니다.");
         navigate("/notice");
       } catch (error) {
         console.error("Delete error:", error);
-        alert("삭제 실패!");
+        alert("공지사항 삭제에 실패했습니다.");
       }
     }
   };
 
-  if (loading) return <div className={styles.loading}>로딩 중...</div>;
+  if (loading)
+    return (
+      <div className={styles.loading}>공지사항을 불러오는 중입니다...</div>
+    );
   if (error) return <div className={styles.error}>{error}</div>;
 
   return (
-    <div className={styles.detailContainer}>
-      <h2 className={styles.detailTitle}>공지사항 상세보기</h2>
-      <table className={styles.detailTable}>
-        <tbody>
-          <tr>
-            <th>제목</th>
-            <td>{notice.ntitle}</td>
-          </tr>
-          <tr>
-            <th>작성자</th>
-            <td>{notice.nnickname}</td>
-          </tr>
-          <tr>
-            <th>첨부파일</th>
-            <td>
-              {notice.ofileName ? (
-                <button
-                  className={styles.fileButton}
-                  onClick={() =>
-                    handleFileDownload(notice.ofileName, notice.rfileName)
-                  }
-                >
-                  {notice.ofileName}
-                </button>
-              ) : (
-                "첨부파일 없음"
-              )}
-            </td>
-          </tr>
-          <tr>
-            <th>등록날짜</th>
-            <td>{notice.ncreatedAt}</td>
-          </tr>
-          <tr>
-            <th>내용</th>
-            <td style={{ whiteSpace: "pre-line" }}>{notice.ncontent}</td>
-          </tr>
-          <tr>
-            <th>조회수</th>
-            <td>{notice.ncount}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div className={styles.buttonGroup}>
-        {isLoggedIn && role === "ADMIN" && (
-          <>
-            <button
-              onClick={handleMoveEdit}
-              className={`${styles.button} ${styles.editButton}`}
-            >
-              수정
-            </button>
-            <button
-              onClick={() => handleDelete(notice.rfileName)}
-              className={`${styles.button} ${styles.deleteButton}`}
-            >
-              삭제
-            </button>
-          </>
-        )}
-        <button
-          onClick={() => navigate("/notice")}
-          className={`${styles.button} ${styles.backButton}`}
-        >
-          목록
-        </button>
+    <div className={styles.pageBackground}>
+      <div className={styles.detailContainer}>
+        <h2 className={styles.detailTitle}>공지사항</h2>
+        <div className={styles.detailContent}>
+          <h3 className={styles.noticeTitle}>{notice.ntitle}</h3>
+          <p className={styles.noticeMeta}>
+            작성자: {notice.nnickname} | 등록일: {notice.ncreatedAt} | 조회수:{" "}
+            {notice.ncount}
+          </p>
+          <div className={styles.noticeBody}>
+            <p className={styles.noticeText}>{notice.ncontent}</p>
+            {notice.ofileName && (
+              <button
+                className={styles.fileButton}
+                onClick={() =>
+                  handleFileDownload(notice.ofileName, notice.rfileName)
+                }
+              >
+                첨부파일: {notice.ofileName}
+              </button>
+            )}
+          </div>
+        </div>
+        <div className={styles.buttonGroup}>
+          {isLoggedIn && role === "ADMIN" && (
+            <>
+              <button
+                onClick={handleMoveEdit}
+                className={`${styles.button} ${styles.editButton}`}
+              >
+                공지 수정
+              </button>
+              <button
+                onClick={() => handleDelete(notice.rfileName)}
+                className={`${styles.button} ${styles.deleteButton}`}
+              >
+                공지 삭제
+              </button>
+            </>
+          )}
+          <button
+            onClick={() => navigate("/notice")}
+            className={`${styles.button} ${styles.backButton}`}
+          >
+            목록으로 돌아가기
+          </button>
+        </div>
       </div>
     </div>
   );

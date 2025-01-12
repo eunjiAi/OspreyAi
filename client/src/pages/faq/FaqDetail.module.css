@@ -1,0 +1,88 @@
+.faqContainer {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  background-color: #f7f9fc; /* 연한 파스텔 블루 */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faqBlock {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faqQuestion {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4a90e2; /* 파스텔 블루 */
+}
+
+.faqAnswerTitle {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #50c878; /* 밝은 그린 */
+}
+
+.faqContent {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.faqMeta {
+  font-size: 12px;
+  color: #777;
+}
+
+.faqLoading,
+.faqError {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.faqLoading {
+  color: #4a90e2;
+}
+
+.faqError {
+  color: #ff6b6b;
+}
+
+.faqActions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.faqButton {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 14px;
+  color: white;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faqButton:hover {
+  background-color: #4178d4;
+}
+
+.faqButton:active {
+  background-color: #365ba9;
+}
+
+.faqButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
