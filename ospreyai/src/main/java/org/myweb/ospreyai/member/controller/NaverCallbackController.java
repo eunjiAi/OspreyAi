@@ -20,6 +20,8 @@ public class NaverCallbackController {
     private String clientSecret;
     @Value("${naver.redirect_uri}")
     private String redirectUri;
+    @Value("${naver.redirect_linkuri}")
+    private String redirectLinkUri;
 
     @GetMapping("/naver/callback")
     public ResponseEntity<Void> naverCallback(@RequestParam String code, @RequestParam String state) {
@@ -41,6 +43,31 @@ public class NaverCallbackController {
 
         // React로 이메일 정보 전달
         String redirectUrl = "http://localhost:3000/naver/callbackUi?email=" + email;
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(URI.create(redirectUrl));
+        return new ResponseEntity<>(headers, HttpStatus.FOUND); // 302 리디렉션
+    }
+
+    @GetMapping("/naver/linkcallback")
+    public ResponseEntity<Void> naverLinkCallback(@RequestParam String code, @RequestParam String state) {
+        String tokenUrl = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code" +
+                "&client_id=" + clientId +
+                "&client_secret=" + clientSecret +
+                "&redirect_uri=" + redirectLinkUri +
+                "&code=" + code +
+                "&state=" + state;
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> tokenResponse = restTemplate.getForEntity(tokenUrl, String.class);
+
+        // Access Token 추출
+        String accessToken = extractAccessToken(tokenResponse.getBody());
+
+        // 사용자 정보 요청
+        String email = getUserEmail(accessToken);
+
+        // React로 이메일 정보 전달
+        String redirectUrl = "http://localhost:3000/naver/linkcallbackUi?email=" + email;
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(redirectUrl));
         return new ResponseEntity<>(headers, HttpStatus.FOUND); // 302 리디렉션

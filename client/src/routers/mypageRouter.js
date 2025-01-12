@@ -9,6 +9,7 @@ import MyPageUpdate from "../pages/mypage/MyPageUpdate";
 import MyInfo from "../pages/mypage/MyInfo";
 import MypageAdmin from "../pages/mypage/MypageAdmin";
 import MypageMaster from "../pages/mypage/MypageMaster";
+import NaverLinkCallback from "../pages/mypage/NaverLinkCallback";
 
 const mypageRouter = [
   <Route path="/mypage" element={<MyPage />}>
@@ -20,6 +21,7 @@ const mypageRouter = [
     <Route path="/mypage/mypageAdmin" element={<MypageAdmin />} />
     <Route path="/mypage/mypageMaster" element={<MypageMaster />} />
   </Route>,
+  <Route path="/naver/linkcallbackUi" element={<NaverLinkCallback />} />,
 ];
 
 export default mypageRouter;

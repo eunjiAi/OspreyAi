@@ -16,7 +16,7 @@ function MyPageUpdate() {
     memberid: "",
     phoneNumber: "",
     gender: "",
-    google: "",
+    email: "",
     faceId: "",
   });
   const [loading, setLoading] = useState(true);
@@ -80,7 +80,7 @@ function MyPageUpdate() {
     }
   };
 
-  // Google 연동
+  // Google 연동 ---------------------------------------------------------------------------------------------------
   const handleGoogleLink = async () => {
     const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
     const GOOGLE_REDIRECT_URI = process.env.REACT_APP_GOOGLE_REDIRECT_URI;
@@ -163,13 +163,13 @@ function MyPageUpdate() {
     }
   };
 
-  // Naver 연동
+  // Naver 연동 ---------------------------------------------------------------------------------------------------
   const handleNaverLink = () => {
-    const naverLoginUrl = process.env.REACT_APP_NAVER_LINK_URL;
-    console.log("Naver Login URL:", naverLoginUrl);
+    const naverLinkUrl = process.env.REACT_APP_NAVER_LINK_URL;
+    console.log("Naver Login URL:", naverLinkUrl);
 
     const popup = window.open(
-      naverLoginUrl,
+      naverLinkUrl,
       "Naver Login",
       "width=500,height=600,scrollbars=yes"
     );
@@ -183,20 +183,20 @@ function MyPageUpdate() {
   const unlinkNaverAccount = async () => {
     try {
       await apiClient.put(
-        `/member/Naver`,
+        `/member/naver`,
         { uuid },
         {
           headers: { Authorization: `Bearer ${accessToken}` },
         }
       );
-      alert("Kakao 연동 해제가 완료되었습니다.");
+      alert("Naver 연동 해제가 완료되었습니다.");
       setFormData({ ...formData, naver: "" });
     } catch {
-      alert("Kakao 연동 해제에 실패했습니다.");
+      alert("Naver 연동 해제에 실패했습니다.");
     }
   };
 
-  // kakao 연동
+  // kakao 연동 ---------------------------------------------------------------------------------------------------
   const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
   const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
 
@@ -356,6 +356,17 @@ function MyPageUpdate() {
             <option value="F">여성</option>
           </select>
         </label>
+        <label className={styles.mypageLabel}>
+          이메일(수정불가):
+          <input
+            type="text"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            className={styles.mypageInput}
+            readOnly
+          />
+        </label>
 
         {/* Google 연동 버튼 */}
         <div>
@@ -385,7 +396,7 @@ function MyPageUpdate() {
               onClick={unlinkNaverAccount}
               className={`${styles.mypageButton} ${styles.mypageSocialUnlinkButton}`}
             >
-              Google 연동 해제
+              Naver 연동 해제
             </button>
           ) : (
             <button
@@ -393,7 +404,7 @@ function MyPageUpdate() {
               onClick={handleNaverLink}
               className={`${styles.mypageButton} ${styles.mypageSocialButton}`}
             >
-              Google 연동
+              Naver 연동
             </button>
           )}
         </div>

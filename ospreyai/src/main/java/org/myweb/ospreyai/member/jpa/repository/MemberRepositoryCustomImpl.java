@@ -107,6 +107,15 @@ public class MemberRepositoryCustomImpl implements MemberRepositoryCustom {
     }
 
     @Override
+    public void deleteByNaver(String uuid) {
+        queryFactory
+                .update(member)
+                .set(member.naver, (String) null)
+                .where(member.uuid.eq(uuid))
+                .execute();
+    }
+
+    @Override
     public void deleteByKakao(String uuid) {
         queryFactory
                 .update(member)

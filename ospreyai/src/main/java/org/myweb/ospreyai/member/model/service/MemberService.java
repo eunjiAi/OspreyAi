@@ -134,6 +134,12 @@ public class MemberService {
         memberRepository.deleteByGoogle(uuid);
     }
 
+    //회원 네이버 정보 삭제
+    @Transactional
+    public void deleteNaver(String uuid) {
+        memberRepository.deleteByNaver(uuid);
+    }
+
     //회원 카카오 정보 삭제
     @Transactional
     public void deleteKakao(String uuid) {

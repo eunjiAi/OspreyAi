@@ -199,9 +199,20 @@ public class MemberController {
     // Google 이메일 연동하기
     @PostMapping("/google")
     public ResponseEntity<String> insertGoogle(@RequestBody Map<String, String> map) {
-        log.info("구글 인서트() : uuid: {}, email: {} ", map.get("uuid"), map.get("email"));
+        log.info("구글 연동() : uuid: {}, email: {} ", map.get("uuid"), map.get("email"));
         Member member = memberService.selectUuid(map.get("uuid"));
         member.setGoogle(map.get("email"));
+        memberService.updateMember(member);
+
+        return ResponseEntity.ok().build();
+    }
+
+    // Naver 이메일 연동하기
+    @PostMapping("/naver")
+    public ResponseEntity<String> insertNaver(@RequestBody Map<String, String> map) {
+        log.info("네이버 연동() : uuid: {}, email: {} ", map.get("uuid"), map.get("email"));
+        Member member = memberService.selectUuid(map.get("uuid"));
+        member.setNaver(map.get("email"));
         memberService.updateMember(member);
 
         return ResponseEntity.ok().build();
@@ -210,7 +221,7 @@ public class MemberController {
     // Kakao 이메일 연동하기
     @PostMapping("/kakao")
     public ResponseEntity<String> insertKakao(@RequestBody Map<String, String> map) {
-        log.info("카카오 인서트() : uuid: {}, email: {} ", map.get("uuid"), map.get("email"));
+        log.info("카카오 연동() : uuid: {}, email: {} ", map.get("uuid"), map.get("email"));
         Member member = memberService.selectUuid(map.get("uuid"));
         member.setKakao(map.get("email"));
         memberService.updateMember(member);
@@ -223,6 +234,15 @@ public class MemberController {
     public ResponseEntity<String> deleteGoogle(@RequestBody Map<String, String> map) {
         log.info("구글 컬럼 삭제() : uuid: {}", map.get("uuid"));
         memberService.deleteGoogle(map.get("uuid"));
+
+        return ResponseEntity.ok().build();
+    }
+
+    // Naver 이메일 연동 해제하기
+    @PutMapping("/naver")
+    public ResponseEntity<String> deleteNaver(@RequestBody Map<String, String> map) {
+        log.info("네이버 컬럼 삭제() : uuid: {}", map.get("uuid"));
+        memberService.deleteNaver(map.get("uuid"));
 
         return ResponseEntity.ok().build();
     }
