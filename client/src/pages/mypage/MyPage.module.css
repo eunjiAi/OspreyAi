@@ -1,11 +1,10 @@
-.mypage-layout {
+.mypageLayout {
   display: flex;
   height: 100vh;
   background-color: #f5f7fa;
-  font-family: "Arial", sans-serif;
 }
 
-.tabs-container {
+.tabsContainer {
   border-radius: 15px;
   margin: 20px;
   width: 220px;
@@ -18,7 +17,7 @@
   border: 1px solid #e0e0e0;
 }
 
-.tabs-container .tab {
+.tab {
   background-color: #f9f9f9;
   color: #333;
   padding: 12px 20px;
@@ -32,21 +31,19 @@
   border: 1px solid #e0e0e0;
 }
 
-/* 탭이 활성화 상태인 경우 */
-.tabs-container .tab.active {
+.tabActive {
   background-color: #0056b3;
   color: #fff;
   border-color: #0056b3;
 }
 
-/* 탭을 호버한 경우 */
-.tabs-container .tab:hover {
+.tabHover {
   background-color: #007bff;
   color: #fff;
   border-color: #007bff;
 }
 
-.content-container {
+.contentContainer {
   flex: 1;
   background-color: #ffffff;
   border-radius: 15px;

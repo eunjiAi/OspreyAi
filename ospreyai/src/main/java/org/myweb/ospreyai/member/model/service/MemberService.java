@@ -37,7 +37,7 @@ public class MemberService {
         return memberRepository.findById(uuid).get().toDto();
     }
 
-    //구글 이메일로 회원 정보 조회
+    // 구글 이메일로 회원 정보 조회
     public Member findGoogleEmail(String email) {
         Optional<MemberEntity> entityOptional = memberRepository.findByGoogle(email);
 
@@ -46,7 +46,7 @@ public class MemberService {
                 .orElseThrow(() -> new NoSuchElementException("해당 구글정보를 조회할 수 없습니다 : " + email));
     }
 
-    //네이버 이메일로 회원 정보 조회
+    // 네이버 이메일로 회원 정보 조회
     public Member findNaverEmail(String email) {
         Optional<MemberEntity> entityOptional = memberRepository.findByNaver(email);
 
@@ -55,7 +55,7 @@ public class MemberService {
                 .orElseThrow(() -> new NoSuchElementException("해당 네이버정보를 조회할 수 없습니다 : " + email));
     }
 
-    //카카오 이메일로 회원 정보 조회
+    // 카카오 이메일로 회원 정보 조회
     public Member findKakaoEmail(String email) {
         Optional<MemberEntity> entityOptional = memberRepository.findByKakao(email);
 
@@ -64,7 +64,7 @@ public class MemberService {
                 .orElseThrow(() -> new NoSuchElementException("해당 카카오정보를 조회할 수 없습니다 : " + email));
     }
 
-    //회원가입시 id 중복 검사용
+    // 회원가입시 id 중복 검사용
     public int selectCheckId(String memberId) {
         String uuid = memberRepository.findByMemberId(memberId)
                 .map(MemberEntity::getUuid)
@@ -73,28 +73,27 @@ public class MemberService {
         return (uuid != null && memberRepository.existsById(uuid)) ? 1 : 0;
     }
 
-    //닉네임 조회
+    // 아이디로 닉네임 조회
     public String getNicknameByUserId(String userid) {
         return memberRepository.findByMemberId(userid)
                 .map(MemberEntity::getNickname)
                 .orElseThrow(() -> new IllegalArgumentException("해당 사용자 ID를 찾을 수 없습니다: " + userid));
     }
 
-    //패스워드 비교(비밀번호 변경시)
+    // 현재 패스워드 비교(비밀번호 변경시)
     public boolean checkPassword(String userId, String inputPassword) {
         Member member = memberRepository.findByMemberId(userId)
                 .orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없습니다.")).toDto();
-        log.info("checkPassword() : " + member);
 
         return bCryptPasswordEncoder.matches(inputPassword, member.getPw());
     }
 
-    // 이름과 이메일로 아이디 찾기
+    // 이름과 이메일로 => 아이디 찾기
     public Member findByNameAndEmail(String name, String email) {
         return memberRepository.findByNameAndEmail(name, email).get().toDto();
     }
 
-    // 비밀번호 변경시 아이디와 이메일로 일치 회원 조회
+    // 아이디와 이메일로 일치 회원 조회(비밀번호 변경 전 체크)
     public Optional<MemberEntity> checkUserExists(String userId, String email) {
         return memberRepository.existsByUserIdAndEmail(userId, email);
     }
@@ -104,7 +103,8 @@ public class MemberService {
         memberRepository.updatePassword(userId, encryptedPassword);
     }
 
-    //회원 가입
+    /* 트랜잭션 파트 */
+    // 회원 가입
     @Transactional
     public int insertMember(Member member) {
         try {
@@ -116,7 +116,7 @@ public class MemberService {
         }
     }
 
-    //회원정보 수정
+    // 회원정보 수정
     @Transactional
     public int updateMember(Member member) {
         try {
@@ -128,25 +128,25 @@ public class MemberService {
         }
     }
 
-    //회원 구글 정보 삭제
+    // 회원 구글 정보 삭제
     @Transactional
     public void deleteGoogle(String uuid) {
         memberRepository.deleteByGoogle(uuid);
     }
 
-    //회원 네이버 정보 삭제
+    // 회원 네이버 정보 삭제
     @Transactional
     public void deleteNaver(String uuid) {
         memberRepository.deleteByNaver(uuid);
     }
 
-    //회원 카카오 정보 삭제
+    // 회원 카카오 정보 삭제
     @Transactional
     public void deleteKakao(String uuid) {
         memberRepository.deleteByKakao(uuid);
     }
 
-    //회원정보 삭제
+    // 회원정보 삭제(탈퇴)
     @Transactional
     public int deleteMember(String uuid) {
         try {
@@ -158,18 +158,17 @@ public class MemberService {
         }
     }
 
-    //관리자용 ******************************************
+    /* 관리자용 파트(관리자, 마스터) */
     // 회원 카운트
     public int selectListCount() {
         return (int) memberRepository.count();
     }
 
-    // 회원 리스트 조회
+    // 회원 리스트 조회(관리자용, 관리자는 리스트에서 포함시키지 않음)
     public ArrayList<Member> selectList(Pageable pageable) {
         Page<MemberEntity> entityList = memberRepository.findAll(pageable);
         ArrayList<Member> list = new ArrayList<>();
         for (MemberEntity entity : entityList) {
-            //관리자가 아닌 회원만 리스트에 저장
             if (entity.getAdminYn().equals("N")) {
                 list.add(entity.toDto());
             }
@@ -177,7 +176,7 @@ public class MemberService {
         return list;
     }
 
-    // 마스터용 회원 리스트 조회
+    // 마스터용 회원 리스트 조회(관리자 포함, 마스터는 제외)
     public ArrayList<Member> selectMasterList(Pageable pageable) {
         Page<MemberEntity> entityList = memberRepository.findAll(pageable);
         ArrayList<Member> list = new ArrayList<>();
@@ -189,8 +188,7 @@ public class MemberService {
         return list;
     }
 
-
-    // 회원 로그인 가능/불가 관리
+    // 회원 로그인 가능/불가 관리(관리자, 마스터)
     public int updateLoginOK(String uuid, String loginOk) {
         try {
             Member updateMember = memberRepository.findById(uuid).get().toDto();
@@ -203,7 +201,7 @@ public class MemberService {
         }
     }
 
-    // 관리자 권한 관리
+    // 관리자 권한 관리(마스터)
     public int updateAdminYn(String uuid, String adminYn) {
         try {
             Member updateMember = memberRepository.findById(uuid).get().toDto();
@@ -215,7 +213,4 @@ public class MemberService {
             return 0;
         }
     }
-
-
-
 }

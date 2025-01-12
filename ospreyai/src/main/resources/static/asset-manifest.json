@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.710ba81f.css",
-    "main.js": "/static/js/main.f4fc08e0.js",
+    "main.css": "/static/css/main.972e874e.css",
+    "main.js": "/static/js/main.04f64fa7.js",
     "static/js/453.419a5d54.chunk.js": "/static/js/453.419a5d54.chunk.js",
     "static/media/SignInWithNaver.png": "/static/media/SignInWithNaver.c876de3650dd1e42ee4d.png",
     "static/media/logo.png": "/static/media/logo.36190b28045b5def6c20.png",
@@ -10,12 +10,12 @@
     "static/media/chatbot.png": "/static/media/chatbot.2789bcca62be967ad8a6.png",
     "static/media/SignInWithGoogle.png": "/static/media/SignInWithGoogle.efad756da941579739b1.png",
     "index.html": "/index.html",
-    "main.710ba81f.css.map": "/static/css/main.710ba81f.css.map",
-    "main.f4fc08e0.js.map": "/static/js/main.f4fc08e0.js.map",
+    "main.972e874e.css.map": "/static/css/main.972e874e.css.map",
+    "main.04f64fa7.js.map": "/static/js/main.04f64fa7.js.map",
     "453.419a5d54.chunk.js.map": "/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.710ba81f.css",
-    "static/js/main.f4fc08e0.js"
+    "static/css/main.972e874e.css",
+    "static/js/main.04f64fa7.js"
   ]
 }

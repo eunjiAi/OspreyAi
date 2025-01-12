@@ -19,17 +19,13 @@ public class EmailService {
 
     public void sendEmail(String to, String subject, String text) {
         try {
-            // 이메일 메시지 생성
-            SimpleMailMessage message = new SimpleMailMessage();
-            message.setTo(to); // 수신자 이메일 주소
-            message.setSubject(subject); // 이메일 제목
-            message.setText(text); // 이메일 본문
+            SimpleMailMessage message = new SimpleMailMessage();    // 이메일 객체 생성
+            message.setTo(to);                                      // 수신자 이메일 주소
+            message.setSubject(subject);                            // 이메일 제목
+            message.setText(text);                                  // 이메일 본문
 
-            // 이메일 전송
-            mailSender.send(message);
-            log.info("이메일 전송 성공: " + to);
+            mailSender.send(message);                               // 이메일 전송
         } catch (Exception e) {
-            log.warn("이메일 전송 실패: " + e.getMessage());
             throw new RuntimeException("이메일 전송에 실패했습니다.", e);
         }
     }

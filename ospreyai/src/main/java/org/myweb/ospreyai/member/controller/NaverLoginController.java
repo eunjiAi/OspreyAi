@@ -18,7 +18,7 @@ public class NaverLoginController {
 
     @GetMapping("/naver/login")
     public String naverLogin() {
-        String state = "random_state_string"; // CSRF 방지를 위해 랜덤 값 생성
+        String state = "random_state_string";
         String authUrl = "https://nid.naver.com/oauth2.0/authorize?response_type=code" +
                 "&client_id=" + clientId +
                 "&redirect_uri=" + redirectUri +
@@ -29,7 +29,7 @@ public class NaverLoginController {
 
     @GetMapping("/naver/link")
     public String naverLink() {
-        String state = "random_state_string"; // CSRF 방지를 위해 랜덤 값 생성
+        String state = "random_state_string";
         String authUrl = "https://nid.naver.com/oauth2.0/authorize?response_type=code" +
                 "&client_id=" + clientId +
                 "&redirect_uri=" + redirectLinkUri +
