@@ -10,20 +10,22 @@ import java.util.Optional;
 
 public interface MemberRepositoryCustom {
 
-    // 아이디 정보 조회
+    // 아이디 정보 조회(로그인)
     Optional<MemberEntity> findByMemberId(String memberId);
-    // 구글 이메일 조회
+    // 구글 이메일 조회(로그인)
     Optional<MemberEntity> findByGoogle(String email);
-    // 네이버 이메일 조회
+    // 네이버 이메일 조회(로그인)
     Optional<MemberEntity> findByNaver(String email);
-    // 카카오 이메일 조회
+    // 카카오 이메일 조회(로그인)
     Optional<MemberEntity> findByKakao(String email);
-    // 이름과 이메일로 아이디 찾기
+
+    // 이름과 이메일로 => 아이디 찾기
     Optional<MemberEntity> findByNameAndEmail(String name, String email);
-    // 아이디와 이메일로 사용자 찾기(패스워드 찾기에서 사용)
+    // 아이디와 이메일로 => 사용자 일치회원 찾기(패스워드 찾기에서 사용)
     Optional<MemberEntity> existsByUserIdAndEmail(String userId, String email);
-    // 비밀번호 변경
+    // 비밀번호 변경(임의 문자열로 저장)
     void updatePassword(String userId, String encryptedPassword);
+
     // 구글 정보 삭제(연동해제)
     void deleteByGoogle(String uuid);
     // 구글 정보 삭제(연동해제)
