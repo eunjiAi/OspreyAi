@@ -414,13 +414,15 @@ function Login({ onLoginSuccess }) {
             </button>
           </div>
           <div className={styles.findInfo}>
-            <a href="/findId" className={styles.link}>
-              아이디찾기
-            </a>{" "}
-            |{" "}
-            <a href="/findPassword" className={styles.link}>
-              비밀번호찾기
-            </a>
+            <div>
+              <a href="/findId" className={styles.link}>
+                아이디찾기
+              </a>{" "}
+              |{" "}
+              <a href="/findPassword" className={styles.link}>
+                비밀번호찾기
+              </a>
+            </div>
           </div>
           <div>
             <button
