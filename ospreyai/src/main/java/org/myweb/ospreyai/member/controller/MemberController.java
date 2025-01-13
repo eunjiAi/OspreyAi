@@ -31,7 +31,7 @@ public class MemberController {
     @PostMapping("/memberidchk")
     public ResponseEntity<String> checkIdMethod(@RequestParam("memberId") String memberId) {
         if (memberId.trim().isEmpty()) {
-            return new ResponseEntity<String>("dup", HttpStatus.OK);
+            return ResponseEntity.badRequest().build();
         }
         if (memberService.selectCheckId(memberId) == 0) {
             return new ResponseEntity<String>("ok", HttpStatus.OK);
