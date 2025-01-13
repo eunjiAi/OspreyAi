@@ -148,7 +148,10 @@ const QuestionDetail = () => {
   return (
     <div className={styles.pageBackground}>
       <div className={styles.detailContainer}>
+        {/* 질문 제목 */}
         <h2 className={styles.questionTitle}>{question.qtitle}</h2>
+  
+        {/* 질문 정보 테이블 */}
         <table className={styles.questionTable}>
           <tbody>
             <tr>
@@ -161,132 +164,99 @@ const QuestionDetail = () => {
             </tr>
             <tr>
               <th>내용</th>
-              <td>{question.qcontent}</td>
+              <td className={styles.contentCell}>{question.qcontent}</td>
             </tr>
           </tbody>
         </table>
-        <div className={styles.buttonGroup}>
-          <button
-            className={`${styles.actionButton} ${styles.backButton}`}
-            onClick={() => navigate(-1)}
-          >
+  
+        {/* 액션 버튼 */}
+        <div className={styles.actionsContainer}>
+          <span onClick={() => navigate(-1)} className={styles.actionLink}>
             뒤로가기
-          </button>
-          {isLoggedIn && userid === question.qwriter && question.answerYn === "N" ? (
+          </span>
+          {isLoggedIn && role === "ADMIN" && (
             <>
-              <button
-                className={`${styles.actionButton} ${styles.editButton}`}
-                onClick={handleMoveEdit}
-              >
-                수정
-              </button>
-              <button
-                className={`${styles.actionButton} ${styles.deleteButton}`}
-                onClick={() => handleDelete()}
-              >
-                삭제
-              </button>
-            </>
-          ) : (
-            isLoggedIn &&
-            role === "ADMIN" &&
-            question.answerYn === "N" && (
-              <button
-                className={`${styles.actionButton} ${styles.answerButton}`}
+              <span className={styles.separator}>|</span>
+              <span
                 onClick={() => openModal({ qno: question.qno })}
+                className={styles.actionLink}
               >
                 답변하기
-              </button>
-            )
+              </span>
+            </>
           )}
         </div>
-        <h3 className={styles.answerSectionTitle}>댓글</h3>
-        <table className={styles.answerTable}>
-          <thead>
-            <tr>
-              <th>작성자</th>
-              <th>제목</th>
-              <th>내용</th>
-              <th>등록날짜</th>
-              <th>수정|삭제</th>
-            </tr>
-          </thead>
-          <tbody>
-            {answers.map((answer) => (
-              <tr
-                key={answer.ano}
-                className={
-                  answer.replyLev === 2 ? styles.replyIndented : styles.replyItem
-                }
-              >
-                <td>{answer.awriter}</td>
-                <td>
-                  {editingAnswer === answer.ano ? (
-                    <input
-                      type="text"
-                      value={editingTitle}
-                      onChange={(e) => setEditingTitle(e.target.value)}
-                    />
-                  ) : (
-                    answer.atitle
-                  )}
-                </td>
-                <td>
-                  {editingAnswer === answer.ano ? (
-                    <input
-                      type="text"
-                      value={editingContent}
-                      onChange={(e) => setEditingContent(e.target.value)}
-                    />
-                  ) : (
-                    answer.acontent
-                  )}
-                </td>
-                <td>{answer.adate}</td>
-                <td>
-                  {isLoggedIn &&
-                    userid === answer.awriter &&
-                    (editingAnswer === answer.ano ? (
-                      <button onClick={() => handleSaveAnswerEdit(answer.ano)}>
-                        저장
-                      </button>
-                    ) : (
-                      <>
-                        <button
-                          onClick={() =>
-                            handleAnswerEdit(
-                              answer.ano,
-                              answer.atitle,
-                              answer.acontent
-                            )
-                          }
-                        >
-                          수정
-                        </button>
-                        <button onClick={() => handleAnswerDelete(answer.ano)}>
-                          삭제
-                        </button>
-                      </>
-                    ))}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
-      {/* 답변 등록 모달창 */}
-      {showModal && (
-        <Modal onClose={closeModal}>
-          <AnswerWrite
-            qno={answerTarget.qno}
-            ano={answerTarget.ano}
-            onAnswerAdded={closeModal}
-          />
-        </Modal>
-      )}
+        {/* 밑줄과 간격 */}
+<div className={styles.separatorLine}></div>
+  
+        {/* 답변 섹션 */}
+        <div className={styles.answerSection}>
+        {answers.length > 0 && (
+          <>
+            <h3 className={styles.answerSectionTitle}>답변</h3>
+            <table className={styles.answerTable}>
+              <tbody>
+                {answers.map((answer) => (
+                  <React.Fragment key={answer.ano}>
+                    <tr>
+                      <th>작성자</th>
+                      <td>{answer.awriter}</td>
+                    </tr>
+                    <tr>
+                      <th>제목</th>
+                      <td>{answer.atitle}</td>
+                    </tr>
+                    <tr>
+                      <th>내용</th>
+                      <td className={styles.contentCell}>{answer.acontent}</td>
+                    </tr>
+                    <tr>
+                      <td colSpan="2" className={styles.answerButtons}>
+                        {isLoggedIn && userid === answer.awriter && (
+                          <>
+                            <span
+                              onClick={() =>
+                                handleAnswerEdit(
+                                  answer.ano,
+                                  answer.atitle,
+                                  answer.acontent
+                                )
+                              }
+                              className={styles.buttonLink}
+                            >
+                              수정
+                            </span>
+                            <span className={styles.separator}>|</span>
+                            <span
+                              onClick={() => handleAnswerDelete(answer.ano)}
+                              className={styles.buttonLink}
+                            >
+                              삭제
+                            </span>
+                          </>
+                        )}
+                      </td>
+                    </tr>
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+          </>
+        )}
+  
+        {/* 답변 등록 모달 */}
+        {showModal && (
+          <Modal onClose={closeModal}>
+            <AnswerWrite qno={answerTarget.qno} onAnswerAdded={closeModal} />
+          </Modal>
+        )}
+      </div>
+    </div>
     </div>
   );
+  
+  
 }; // const QuestionDetail
 
 export default QuestionDetail;

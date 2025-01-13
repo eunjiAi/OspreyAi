@@ -1,6 +1,6 @@
 /* 전체 페이지 배경 */
 .pageBackground {
-  background: linear-gradient(135deg, #e9efff, #b2c9ff);
+  background: #F2F2F2;
   padding: 20px 0;
 }
 
@@ -10,9 +10,8 @@
   margin: 0 auto;
   background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border: 2px solid #d9eaff;
+  border: 0.6px solid #D8D8D8;
 }
 
 /* 제목과 버튼 그룹 */
