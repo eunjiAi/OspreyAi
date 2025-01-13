@@ -36,229 +36,228 @@ import java.util.Map;
 @CrossOrigin
 public class NoticeController {
 
-	private final NoticeService noticeService;
+    private final NoticeService noticeService;
 
-	@Value("${file.upload-dir}")
-	private String uploadDir;
+    @Value("${file.upload-dir}")
+    private String uploadDir;
 
-	// 공지글 상세 보기
-	@GetMapping("/{id}")
-	public ResponseEntity<Notice> getNoticeById(@PathVariable int id) {
-		try {
-			Notice notice = noticeService.selectNotice(id);
-			if (notice == null) {
-				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-			}
-			noticeService.updateAddReadCount(id);
-			return ResponseEntity.ok(notice);
-		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-		}
-	}
+    // 공지사항 전체 목록보기
+    @GetMapping
+    public Map<String, Object> noticeListMethod(
+            @RequestParam(name = "page", defaultValue = "1") int currentPage,
+            @RequestParam(name = "limit", defaultValue = "10") int limit) {
 
-	// 공지사항 전체 목록보기
-	@GetMapping
-	public Map<String, Object> noticeListMethod(
-			@RequestParam(name = "page", defaultValue = "1") int currentPage,
-			@RequestParam(name = "limit", defaultValue = "10") int limit) {
+        int listCount = noticeService.selectListCount();
+        Paging paging = new Paging(listCount, limit, currentPage);
+        paging.calculate();
 
-		int listCount = noticeService.selectListCount();
-		Paging paging = new Paging(listCount, limit, currentPage);
-		paging.calculate();
+        Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
+                Sort.by(Sort.Direction.DESC, "noticeNo"));
 
-		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
-				Sort.by(Sort.Direction.DESC, "noticeNo"));
+        ArrayList<Notice> list = noticeService.selectList(pageable);
 
-		ArrayList<Notice> list = noticeService.selectList(pageable);
+        Map<String, Object> map = new HashMap<>();
+        map.put("list", list);
+        map.put("paging", paging);
 
-		Map<String, Object> map = new HashMap<>();
-		map.put("list", list);
-		map.put("paging", paging);
+        return map;
+    }
 
-		return map;
-	}
+    // 공지글 상세 보기
+    @GetMapping("/{id}")
+    public ResponseEntity<Notice> getNoticeById(@PathVariable int id) {
+        try {
+            Notice notice = noticeService.selectNotice(id);
+            if (notice == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+            noticeService.updateAddReadCount(id);
+            return ResponseEntity.ok(notice);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
 
-	// 공지사항 필터링 목록보기 요청(마이페이지)
-	@GetMapping("/my")
-	public Map<String, Object> noticeListIdMethod(
-			@RequestParam(name = "page", defaultValue = "1") int currentPage,
-			@RequestParam(name = "limit", defaultValue = "10") int limit,
-			@RequestParam(name = "userid", required = false) String userid) {
+    // 공지글 등록(파일 업로드)
+    @PostMapping
+    public ResponseEntity<?> noticeInsertMethod(
+            @ModelAttribute Notice notice,
+            @RequestParam(name = "ofile", required = false) MultipartFile mfile) {
+        String savePath = uploadDir + "/notice_upfiles";
+        if (notice.getNTitle().trim().isEmpty()) {
+            notice.setNTitle("제목이 없습니다.");
+        }
 
-		int listCount = noticeService.selectListIdCount(userid);
-		Paging paging = new Paging(listCount, limit, currentPage);
-		paging.calculate();
+        File directory = new File(savePath);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
 
-		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
-				Sort.by(Sort.Direction.DESC, "noticeNo"));
+        if (mfile != null && !mfile.isEmpty()) {
+            String fileName = mfile.getOriginalFilename();
+            String renameFileName = null;
 
-		ArrayList<Notice> list = noticeService.selectListId(pageable, userid);  // userid로 필터링된 공지사항만 가져오기
+            if (fileName != null && !fileName.isEmpty()) {
+                renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
+                try {
+                    mfile.transferTo(new File(savePath, renameFileName));
+                } catch (Exception e) {
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                }
+            }
+            notice.setOfileName(fileName);
+            notice.setRfileName(renameFileName);
+        }
 
-		Map<String, Object> map = new HashMap<>();
-		map.put("list", list);
-		map.put("paging", paging);
+        if (noticeService.insertNotice(notice) > 0) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 
-		return map;
-	}
+    // 첨부파일 다운로드
+    @GetMapping("/nfdown")
+    public ResponseEntity<Resource> fileDownload(
+            @RequestParam("ofile") String originalFileName,
+            @RequestParam("rfile") String renameFileName) throws IOException {
+        String savePath = uploadDir + "/notice_upfiles";
 
-	// 공지글 등록(파일 업로드)
-	@PostMapping
-	public ResponseEntity<?> noticeInsertMethod(
-			@ModelAttribute Notice notice,
-			@RequestParam(name = "ofile", required = false) MultipartFile mfile) {
-		String savePath = uploadDir + "/notice_upfiles";
-		if(notice.getNTitle().trim().isEmpty()) {
-			notice.setNTitle("제목이 없습니다.");
-		}
+        Path path = Paths.get(savePath).toAbsolutePath().normalize();
 
-		File directory = new File(savePath);
-		if (!directory.exists()) {
-			directory.mkdirs();
-		}
+        Resource resource = null;
+        try {
+            resource = new UrlResource(path.toUri() + "/" + renameFileName);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
 
-		if (mfile != null && !mfile.isEmpty()) {
-			String fileName = mfile.getOriginalFilename();
-			String renameFileName = null;
+        String encodedFileName = originalFileName != null ? originalFileName : renameFileName;
+        try {
+            encodedFileName = URLEncoder.encode(encodedFileName, "UTF-8").replaceAll("\\+", "%20");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
 
-			if (fileName != null && !fileName.isEmpty()) {
-				renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
-				try {
-					mfile.transferTo(new File(savePath, renameFileName));
-				} catch (Exception e) {
-					return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-				}
-			}
-			notice.setOfileName(fileName);
-			notice.setRfileName(renameFileName);
-		}
+        String contentDisposition = "attachment; filename=\"" + encodedFileName + "\"";
 
-		if (noticeService.insertNotice(notice) > 0) {
-			return ResponseEntity.ok().build();
-		} else {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-	}
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .header("Content-Disposition", contentDisposition)
+                .body(resource);
+    }
 
-	// 첨부파일 다운로드
-	@GetMapping("/nfdown")
-	public ResponseEntity<Resource> fileDownload(
-			@RequestParam("ofile") String originalFileName,
-			@RequestParam("rfile") String renameFileName) throws IOException {
-		String savePath = uploadDir + "/notice_upfiles";
+    // 공지글 삭제
+    @DeleteMapping("/{noticeNo}")
+    public ResponseEntity<?> noticeDeleteMethod(@PathVariable int noticeNo,
+                                                @RequestParam(name = "rfile", required = false) String renameFileName) {
+        if (noticeService.deleteNotice(noticeNo) > 0) {
+            if (renameFileName != null && renameFileName.length() > 0) {
+                String savePath = uploadDir + "/notice_upfiles";
 
-		Path path = Paths.get(savePath).toAbsolutePath().normalize();
+                Path path = Paths.get(savePath, renameFileName);
+                File file = path.toFile();
+                if (file.exists()) {
+                    if (!file.delete()) {
+                        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                    }
+                }
+            }
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 
-		Resource resource = null;
-		try {
-			resource = new UrlResource(path.toUri() + "/" + renameFileName);
-		} catch (Exception e){
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
+    // 공지글 수정
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateNotice(
+            @ModelAttribute Notice notice,
+            @RequestParam(name = "ofile", required = false) MultipartFile mfile) {
+        if (notice.getNTitle().trim().isEmpty()) {
+            notice.setNTitle("제목이 없습니다.");
+        }
+        String savePath = uploadDir + "/notice_upfiles";
 
-		String encodedFileName = originalFileName != null ? originalFileName : renameFileName;
-		try {
-			encodedFileName = URLEncoder.encode(encodedFileName, "UTF-8").replaceAll("\\+", "%20");
-		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
+        if (mfile != null && !mfile.isEmpty()) {
+            new File(savePath, notice.getRfileName()).delete();
+            notice.setOfileName(null);
+            notice.setRfileName(null);
 
-		String contentDisposition = "attachment; filename=\"" + encodedFileName + "\"";
+            String fileName = mfile.getOriginalFilename();
+            if (fileName != null && !fileName.isEmpty()) {
+                String renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
+                try {
+                    mfile.transferTo(new File(savePath, renameFileName));
+                    notice.setOfileName(fileName);
+                    notice.setRfileName(renameFileName);
+                } catch (Exception e) {
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                }
+            }
+        }
 
-		return ResponseEntity.ok()
-				.contentType(MediaType.APPLICATION_OCTET_STREAM)
-				.header("Content-Disposition", contentDisposition)
-				.body(resource);
-	}
+        // 서비스 호출
+        int result = noticeService.updateNotice(notice);
+        if (result > 0) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 
+    // 공지글 제목 검색용 (페이징 처리 포함)
+    @GetMapping("/search/title")
+    public ResponseEntity<Map> noticeSearchTitle(
+            @RequestParam("action") String action,
+            @RequestParam("keyword") String keyword,
+            @RequestParam(name = "page", defaultValue = "1") int currentPage,
+            @RequestParam(name = "limit", defaultValue = "10") int limit) {
+        int listCount = noticeService.selectSearchTitleCount(keyword);
 
-	// 공지글 삭제
-	@DeleteMapping("/{noticeNo}")
-	public ResponseEntity<?> noticeDeleteMethod(@PathVariable int noticeNo,
-			@RequestParam(name = "rfile", required = false) String renameFileName) {
-		if (noticeService.deleteNotice(noticeNo) > 0) {
-			if (renameFileName != null && renameFileName.length() > 0) {
-				String savePath = uploadDir + "/notice_upfiles";
+        Paging paging = new Paging(listCount, limit, currentPage);
+        paging.calculate();
 
-				Path path = Paths.get(savePath, renameFileName);
-				File file = path.toFile();
-				if (file.exists()) {
-					if(!file.delete()){
-						return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-					}
-				}
-			}
-			return ResponseEntity.ok().build();
-		} else {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-	}
+        Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
+                Sort.by(Sort.Direction.DESC, "noticeNo"));
 
-	// 공지글 수정
-	@PutMapping("/{id}")
-	public ResponseEntity<?> updateNotice(
-			@ModelAttribute Notice notice,
-			@RequestParam(name = "ofile", required = false) MultipartFile mfile) {
-		if(notice.getNTitle().trim().isEmpty()) {
-			notice.setNTitle("제목이 없습니다.");
-		}
-		String savePath = uploadDir + "/notice_upfiles";
+        ArrayList<Notice> list = noticeService.selectSearchTitle(keyword, pageable);
+        Map<String, Object> map = new HashMap<String, Object>();
 
-		if (mfile != null && !mfile.isEmpty()) {
-			new File(savePath, notice.getRfileName()).delete();
-			notice.setOfileName(null);
-			notice.setRfileName(null);
+        if (list != null && list.size() > 0) {
+            map.put("list", list);
+            map.put("paging", paging);
+            map.put("action", action);
+            map.put("keyword", keyword);
 
-			String fileName = mfile.getOriginalFilename();
-			if (fileName != null && !fileName.isEmpty()) {
-				String renameFileName = FileNameChange.change(fileName, "yyyyMMddHHmmss");
-				try {
-					mfile.transferTo(new File(savePath, renameFileName));
-					notice.setOfileName(fileName);
-					notice.setRfileName(renameFileName);
-				} catch (Exception e) {
-					return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-				}
-			}
-		}
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        } else {
+            map.put("message", "검색실패");
+            return new ResponseEntity<>(map, HttpStatus.BAD_REQUEST);
+        }
+    }
 
-		// 서비스 호출
-		int result = noticeService.updateNotice(notice);
-		if (result > 0) {
-			return ResponseEntity.ok().build();
-		} else {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-	}
+    // 공지사항 필터링 목록보기 요청(마이페이지)
+    @GetMapping("/my")
+    public Map<String, Object> noticeListIdMethod(
+            @RequestParam(name = "page", defaultValue = "1") int currentPage,
+            @RequestParam(name = "limit", defaultValue = "10") int limit,
+            @RequestParam(name = "userid", required = false) String userid) {
 
+        int listCount = noticeService.selectListIdCount(userid);
+        Paging paging = new Paging(listCount, limit, currentPage);
+        paging.calculate();
 
-	// 공지글 제목 검색용 (페이징 처리 포함)
-	@GetMapping("/search/title")
-	public ResponseEntity<Map> noticeSearchTitle(
-			@RequestParam("action") String action,
-			@RequestParam("keyword") String keyword,
-			@RequestParam(name = "page", defaultValue = "1") int currentPage,
-			@RequestParam(name = "limit", defaultValue = "10") int limit) {
-		int listCount = noticeService.selectSearchTitleCount(keyword);
+        Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
+                Sort.by(Sort.Direction.DESC, "noticeNo"));
 
-		Paging paging = new Paging(listCount, limit, currentPage);
-		paging.calculate();
+        ArrayList<Notice> list = noticeService.selectListId(pageable, userid);  // userid로 필터링된 공지사항만 가져오기
 
-		Pageable pageable = PageRequest.of(paging.getCurrentPage() - 1, paging.getLimit(),
-				Sort.by(Sort.Direction.DESC, "noticeNo"));
+        Map<String, Object> map = new HashMap<>();
+        map.put("list", list);
+        map.put("paging", paging);
 
-		ArrayList<Notice> list = noticeService.selectSearchTitle(keyword, pageable);
-		Map<String, Object> map = new HashMap<String, Object>();
+        return map;
+    }
 
-		if (list != null && list.size() > 0) {
-			map.put("list", list);
-			map.put("paging", paging);
-			map.put("action", action);
-			map.put("keyword", keyword);
-
-			return new ResponseEntity<>(map, HttpStatus.OK);
-		} else {
-			map.put("message", "검색실패");
-			return new ResponseEntity<>(map, HttpStatus.BAD_REQUEST);
-		}
-	}
 }
