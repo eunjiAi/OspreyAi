@@ -43,29 +43,43 @@ const AnswerWrite = ({ qno, onAnswerAdded }) => {
 
     return (
         <form className={styles.answerForm} onSubmit={handleSubmit}>
-            <div>
-                <label>작성자 : </label>
-                <input type="text" value={userid} readOnly className={styles.readOnlyInput} />
-            </div>
-            <div>
-                <label>제목 : </label>
-                <input type="text" 
-                    value={aTitle} 
-                    onChange={(e) => setATitle(e.target.value)} 
-                    placeholder="제목을 입력하세요."
-                    required />
-            </div>
-            <div>
-                <label>내용 : </label>
-                <textarea value={aContent} 
-                    onChange={(e) => setAContent(e.target.value)}
-                    rows="4"
-                    placeholder="내용을 입력하세요."
-                    required></textarea>
-            </div>
-            <button type="submit" className={styles.submitButton}>등록</button>
+          <div className={styles.formGroup}>
+            <label>작성자:</label>
+            <input
+              type="text"
+              value={userid}
+              readOnly
+              className={styles.readOnlyInput}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label>제목:</label>
+            <input
+              type="text"
+              value={aTitle}
+              onChange={(e) => setATitle(e.target.value)}
+              placeholder="제목을 입력하세요."
+              required
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label>내용:</label>
+            <textarea
+              value={aContent}
+              onChange={(e) => setAContent(e.target.value)}
+              rows="6"
+              placeholder="내용을 입력하세요."
+              required
+            />
+          </div>
+          <div className={styles.formActions}>
+            <button type="submit" className={styles.submitButton}>
+              등록
+            </button>
+          </div>
         </form>
-    );
+      );
+      
 };
 
 export default AnswerWrite;
