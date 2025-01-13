@@ -17,7 +17,7 @@ const FaceIDLogin = forwardRef((props, ref) => {
       }
     } catch (error) {
       console.error("웹캠 시작 오류:", error);
-      alert("웹캠을 시작하는 데 실패했습니다. 브라우저 설정을 확인해주세요.");
+      alert("웹캠을 시작하는 데 실패했습니다.");
     }
   };
 
@@ -27,9 +27,9 @@ const FaceIDLogin = forwardRef((props, ref) => {
       const stream = videoRef.current.srcObject;
       if (stream) {
         stream.getTracks().forEach((track) => track.stop()); // 스트림의 모든 트랙 종료
-      }
-      videoRef.current.srcObject = null; // 스트림 해제
-      setIsWebcamActive(false); // 상태 업데이트
+      } 
+      videoRef.current.srcObject = null;     // 스트림 해제
+      setIsWebcamActive(false);       // 상태 업데이트
     }
   };
 
