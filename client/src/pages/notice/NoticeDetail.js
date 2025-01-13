@@ -81,23 +81,27 @@ const NoticeDetail = () => {
         {/* 제목과 목록 버튼 */}
         <div className={styles.titleAndButtons}>
           <h2 className={styles.detailTitle}>공지사항</h2>
-          <span onClick={() => navigate("/notice")} className={styles.actionLink}>
+          <span
+            onClick={() => navigate("/notice")}
+            className={styles.actionLink}
+          >
             목록
           </span>
         </div>
-  
+
         {/* 공지사항 정보 */}
         <div className={styles.noticeMeta}>
           작성자: {notice.nnickname} | 등록 날짜 : {notice.ncreatedAt} | 조회수:{" "}
           {notice.ncount}
-  
           {/* 첨부파일 */}
           {notice.ofileName ? (
             <div className={styles.attachedFilePlaceholder}>
               <span className={styles.fileIcon}>📎</span>
               <span
                 className={styles.fileLink}
-                onClick={() => handleFileDownload(notice.ofileName, notice.rfileName)}
+                onClick={() =>
+                  handleFileDownload(notice.ofileName, notice.rfileName)
+                }
               >
                 {notice.ofileName}
               </span>
@@ -108,10 +112,12 @@ const NoticeDetail = () => {
             </div>
           )}
         </div>
-  
+
         {/* 공지사항 본문 */}
-        <div className={styles.detailContent} style={{ marginBottom: "500px" }}>{notice.ncontent}</div>
-  
+        <div className={styles.detailContent} style={{ marginBottom: "500px" }}>
+          {notice.ncontent}
+        </div>
+
         {/* 액션 버튼 */}
         {isLoggedIn && role === "ADMIN" && (
           <div className={styles.actionsContainer}>
@@ -130,7 +136,6 @@ const NoticeDetail = () => {
       </div>
     </div>
   );
-  
-  };
-  
+};
+
 export default NoticeDetail;
