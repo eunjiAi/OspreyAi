@@ -40,7 +40,7 @@ function PasswordChange() {
     setPasswordData({ ...passwordData, [name]: value });
 
     // 현재 비밀번호 입력 시 새로운 비밀번호 필드 표시
-    if (name === "currentPassword" && value.trim().length > 3) {
+    if (name === "currentPassword" && value.length > 3) {
       setShowNewPasswordFields(true);
     }
   };
