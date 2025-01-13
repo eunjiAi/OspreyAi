@@ -123,7 +123,6 @@ public class MemberService {
             memberRepository.save(member.toEntity()).toDto();
             return 1;
         } catch (Exception e) {
-            log.error(e.getMessage());
             return 0;
         }
     }

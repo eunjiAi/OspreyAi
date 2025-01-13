@@ -46,8 +46,12 @@ public class MemberController {
         member.setLoginOk("Y");
         member.setAdminYn("N");
 
-        memberService.insertMember(member);
+        int result = memberService.insertMember(member);
+        if (result == 1) {
         return ResponseEntity.status(HttpStatus.OK).build();
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
 
     }
 
@@ -78,16 +82,10 @@ public class MemberController {
                     .body(Collections.singletonMap("message", "아이디와 이메일 정보가 일치하지 않습니다."));
         }
 
-        // 임시 비밀번호 생성
         String tempPassword = UUID.randomUUID().toString().substring(0, 16);
-
-        // 임시 비밀번호 암호화
         String encryptedPassword = bcryptPasswordEncoder.encode(tempPassword);
-
-        // 비밀번호 업데이트
         memberService.updatePassword(userId, encryptedPassword);
 
-        // 이메일 전송
         emailService.sendEmail(email, "OspreyAI 임시 비밀번호 발급",
                 "안녕하세요, OspreyAI 사용자님.\n\n임시 비밀번호 :\n" +
                         tempPassword +

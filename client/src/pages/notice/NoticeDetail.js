@@ -80,7 +80,7 @@ const NoticeDetail = () => {
     <div className={styles.pageBackground}>
       <div className={styles.detailContainer}>
         <h2 className={styles.detailTitle}>공지사항</h2>
-        <div className={styles.detailContent}>
+        <div className={styles.detailContent} style={{ marginBottom: "500px" }}>
           <h3 className={styles.noticeTitle}>{notice.ntitle}</h3>
           <p className={styles.noticeMeta}>
             작성자: {notice.nnickname} | 등록일: {notice.ncreatedAt} | 조회수:{" "}
@@ -107,13 +107,13 @@ const NoticeDetail = () => {
                 onClick={handleMoveEdit}
                 className={`${styles.button} ${styles.editButton}`}
               >
-                공지 수정
+              수정
               </button>
               <button
                 onClick={() => handleDelete(notice.rfileName)}
                 className={`${styles.button} ${styles.deleteButton}`}
               >
-                공지 삭제
+              삭제
               </button>
             </>
           )}
@@ -121,7 +121,7 @@ const NoticeDetail = () => {
             onClick={() => navigate("/notice")}
             className={`${styles.button} ${styles.backButton}`}
           >
-            목록으로 돌아가기
+            목록
           </button>
         </div>
       </div>
