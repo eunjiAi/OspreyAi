@@ -30,6 +30,9 @@ public class MemberController {
     // ajax 통신으로 가입할 회원의 아이디(유니크) 중복 검사 요청 처리용 메소드
     @PostMapping("/memberidchk")
     public ResponseEntity<String> checkIdMethod(@RequestParam("memberId") String memberId) {
+        if (memberId.trim().isEmpty()) {
+            return new ResponseEntity<String>("dup", HttpStatus.OK);
+        }
         if (memberService.selectCheckId(memberId) == 0) {
             return new ResponseEntity<String>("ok", HttpStatus.OK);
         } else {
