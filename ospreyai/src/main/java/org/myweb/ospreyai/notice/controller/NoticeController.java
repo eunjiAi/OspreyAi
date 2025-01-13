@@ -110,7 +110,7 @@ public class NoticeController {
 		if(notice.getNTitle().trim().isEmpty()) {
 			notice.setNTitle("제목이 없습니다.");
 		}
-		
+
 		File directory = new File(savePath);
 		if (!directory.exists()) {
 			directory.mkdirs();
@@ -198,6 +198,9 @@ public class NoticeController {
 	public ResponseEntity<?> updateNotice(
 			@ModelAttribute Notice notice,
 			@RequestParam(name = "ofile", required = false) MultipartFile mfile) {
+		if(notice.getNTitle().trim().isEmpty()) {
+			notice.setNTitle("제목이 없습니다.");
+		}
 		String savePath = uploadDir + "/notice_upfiles";
 
 		if (mfile != null && !mfile.isEmpty()) {
