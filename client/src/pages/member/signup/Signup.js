@@ -25,7 +25,7 @@ function Signup({ onSignupSuccess }) {
   };
 
   const handleIdCheck = async () => {
-    if (!formData.memberId) {
+    if (!formData.memberId || formData.memberId.trim().length < 1) {
       alert("아이디를 입력하세요.");
       return;
     }
@@ -34,7 +34,6 @@ function Signup({ onSignupSuccess }) {
       const response = await apiClient.post("/member/memberidchk", null, {
         params: { memberId: formData.memberId },
       });
-
       if (response.data === "ok") {
         setIsIdAvailable(true);
         alert("사용 가능한 아이디입니다.");
