@@ -174,17 +174,31 @@ const QuestionDetail = () => {
           <span onClick={() => navigate(-1)} className={styles.actionLink}>
             뒤로가기
           </span>
-          {isLoggedIn && role === "ADMIN" && (
+          {isLoggedIn && userid === question.qwriter && question.answerYn === 'N' ? (
             <>
               <span className={styles.separator}>|</span>
               <span
-                onClick={() => openModal({ qno: question.qno })}
+                onClick={handleMoveEdit}
                 className={styles.actionLink}
               >
-                답변하기
+                수정하기
               </span>
+              <span className={styles.separator}>|</span>
+              <span onClick={() => handleDelete()}
+                className={styles.actionLink}>삭제하기</span>
             </>
-          )}
+          ) : (isLoggedIn && role === "ADMIN" && question.answerYn === 'N' && (
+            <>
+            <span className={styles.separator}>|</span>
+            <span
+              onClick={() => openModal({ qno: question.qno })}
+              className={styles.actionLink}
+            >
+              답변하기
+            </span>
+          </>
+          ))} 
+
         </div>
 
         {/* 밑줄과 간격 */}
@@ -205,15 +219,31 @@ const QuestionDetail = () => {
                     </tr>
                     <tr>
                       <th>제목</th>
-                      <td>{answer.atitle}</td>
+                      <td>{editingAnswer === answer.ano ? (
+                                  <input type="text"
+                                      value={editingTitle}
+                                      onChange={(e) => setEditingTitle(e.target.value)} />
+                              ) : (
+                                  answer.atitle
+                              )}</td>
                     </tr>
                     <tr>
                       <th>내용</th>
-                      <td className={styles.contentCell}>{answer.acontent}</td>
+                      <td className={styles.contentCell}>{editingAnswer === answer.ano ? (
+                                  <input type="text"
+                                      value={editingContent}
+                                      onChange={(e) => setEditingContent(e.target.value)} />
+                              ) : (
+                                  answer.acontent
+                              )} </td>
                     </tr>
                     <tr>
                       <td colSpan="2" className={styles.answerButtons}>
                         {isLoggedIn && userid === answer.awriter && (
+                          editingAnswer === answer.ano ? (
+                            <span onClick={() => handleSaveAnswerEdit(answer.ano)}
+                            className={styles.buttonLink}>저장</span>
+                          ) : (
                           <>
                             <span
                               onClick={() =>
@@ -235,7 +265,7 @@ const QuestionDetail = () => {
                               삭제
                             </span>
                           </>
-                        )}
+                        ))}
                       </td>
                     </tr>
                   </React.Fragment>
