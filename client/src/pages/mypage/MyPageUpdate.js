@@ -59,10 +59,7 @@ function MyPageUpdate() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
-    let updatedValue = value;
-    if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
-      updatedValue = updatedValue.trimStart();
-    }
+    const updatedValue = value.replace(/\s+/g, ''); // 모든 공백 제거
 
     setFormData({ ...formData, [name]: updatedValue });
   };
