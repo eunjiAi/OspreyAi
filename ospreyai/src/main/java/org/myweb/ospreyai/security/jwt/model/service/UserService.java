@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.myweb.ospreyai.member.model.dto.Member;
 import org.myweb.ospreyai.member.model.service.MemberService;
 import org.myweb.ospreyai.security.jwt.filter.output.CustomUserDetails;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -29,6 +30,11 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException("조회된 회원 정보 없음 : " + username);
         }
 
+        // 로그인 제한 여부 체크
+        if ("N".equals(member.getLoginOk())) {
+            throw new DisabledException("로그인 제한된 계정입니다.");  // DisabledException으로 예외 처리
+        }
+
         // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
         return new CustomUserDetails(member.toEntity());
     }
@@ -38,6 +44,12 @@ public class UserService implements UserDetailsService {
         Member member = memberService.findGoogleEmail(username);
         if (member == null) {
             throw new UsernameNotFoundException("조회된 회원 정보 없음 : " + username);
+        }
+
+        // 로그인 제한 여부 체크
+        if ("N".equals(member.getLoginOk())) {
+            // 로그인 제한된 계정에 대해 DisabledException 던지기
+            throw new DisabledException("로그인 제한된 계정입니다.");
         }
 
         // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
@@ -51,6 +63,12 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException("조회된 회원 정보 없음 : " + username);
         }
 
+        // 로그인 제한 여부 체크
+        if ("N".equals(member.getLoginOk())) {
+            // 로그인 제한된 계정에 대해 DisabledException 던지기
+            throw new DisabledException("로그인 제한된 계정입니다.");
+        }
+
         // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
         return new CustomUserDetails(member.toEntity());
     }
@@ -62,6 +80,12 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException("조회된 회원 정보 없음 : " + username);
         }
 
+        // 로그인 제한 여부 체크
+        if ("N".equals(member.getLoginOk())) {
+            // 로그인 제한된 계정에 대해 DisabledException 던지기
+            throw new DisabledException("로그인 제한된 계정입니다.");
+        }
+
         // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
         return new CustomUserDetails(member.toEntity());
     }
@@ -70,6 +94,12 @@ public class UserService implements UserDetailsService {
         Member member = memberService.selectMember(id);
         if (member == null) {
             throw new UsernameNotFoundException("조회된 회원 정보 없음 : " + id);
+        }
+
+        // 로그인 제한 여부 체크
+        if ("N".equals(member.getLoginOk())) {
+            // 로그인 제한된 계정에 대해 DisabledException 던지기
+            throw new DisabledException("로그인 제한된 계정입니다.");
         }
 
         // UserDetails 를 상속받은 CustomUserDetails 객체로 반환 처리
