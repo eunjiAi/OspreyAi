@@ -138,7 +138,7 @@ function Posts({ searchResults }) {
           {posts.map((post) => (
             <tr key={post.postId} className={styles.postItem}>
               <td className={styles.postId}>{post.postId}</td>
-              <td className={styles.title}>
+              <td className={styles.title}  style={{width: "40%", textAlign: "left"}}>
                 <span
                   style={{
                     color: "blue",

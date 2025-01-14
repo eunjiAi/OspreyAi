@@ -21,7 +21,11 @@ function Signup({ onSignupSuccess }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+
+    // 공백을 제거한 값으로 업데이트
+    const updatedValue = value.replace(/\s+/g, ''); // 모든 공백 제거
+
+    setFormData({ ...formData, [name]: updatedValue });
   };
 
   const handleIdCheck = async () => {

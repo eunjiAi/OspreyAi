@@ -5,6 +5,8 @@
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+  white-space: pre-wrap; /* 공백과 줄바꿈을 그대로 유지 */
+  word-wrap: break-word; /* 긴 단어가 줄을 넘을 경우 줄 바꿈 */
 }
 
 /* 공지사항 제목 */
