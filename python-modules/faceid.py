@@ -31,7 +31,7 @@ USER_HOME_PATH = os.path.expanduser("~")
 print(f"USER_HOME_PATH: {USER_HOME_PATH}")
 
 # "OneDrive" -> "바탕 화면" 경로로 연결
-desktop_path = os.path.join(USER_HOME_PATH, "OneDrive", "바탕 화면")
+desktop_path = os.path.join(USER_HOME_PATH, "Desktop")
 print(f"Desktop path: {desktop_path}")
 
 # "FaceID_Images" 폴더 경로
@@ -161,7 +161,7 @@ def delete_faceid():
 
 
 # 로그인중인 이미지 데이터를 로컬 저장된 이미지의 얼굴들과 비교해서 일치 여부 확인
-def compare_faces(image_data, tolerance=0.4):   # 0.6이 기본값, 더 정교하려면 0.4
+def compare_faces(image_data, tolerance=0.6):   # 0.6이 기본값, 더 정교하려면 0.4
     known_faces = []
     known_face_names = []
     
