@@ -75,55 +75,64 @@ const NoticeDetail = () => {
       <div className={styles.loading}>공지사항을 불러오는 중입니다...</div>
     );
   if (error) return <div className={styles.error}>{error}</div>;
-
   return (
     <div className={styles.pageBackground}>
       <div className={styles.detailContainer}>
-        <h2 className={styles.detailTitle}>공지사항</h2>
-        <div className={styles.detailContent} style={{ marginBottom: "500px" }}>
-          <h3 className={styles.noticeTitle}>{notice.ntitle}</h3>
-          <p className={styles.noticeMeta}>
-            작성자: {notice.nnickname} | 등록일: {notice.ncreatedAt} | 조회수:{" "}
-            {notice.ncount}
-          </p>
-          <div className={styles.noticeBody}>
-            <p className={styles.noticeText}>{notice.ncontent}</p>
-            {notice.ofileName && (
-              <button
-                className={styles.fileButton}
+        {/* 제목과 목록 버튼 */}
+        <div className={styles.titleAndButtons}>
+          <h2 className={styles.detailTitle}>공지사항</h2>
+          <span
+            onClick={() => navigate("/notice")}
+            className={styles.actionLink}
+          >
+            목록
+          </span>
+        </div>
+
+        {/* 공지사항 정보 */}
+        <div className={styles.noticeMeta}>
+          작성자: {notice.nnickname} | 등록 날짜 : {notice.ncreatedAt} | 조회수:{" "}
+          {notice.ncount}
+          {/* 첨부파일 */}
+          {notice.ofileName ? (
+            <div className={styles.attachedFilePlaceholder}>
+              <span className={styles.fileIcon}>📎</span>
+              <span
+                className={styles.fileLink}
                 onClick={() =>
                   handleFileDownload(notice.ofileName, notice.rfileName)
                 }
               >
-                첨부파일: {notice.ofileName}
-              </button>
-            )}
-          </div>
-        </div>
-        <div className={styles.buttonGroup}>
-          {isLoggedIn && role === "ADMIN" && (
-            <>
-              <button
-                onClick={handleMoveEdit}
-                className={`${styles.button} ${styles.editButton}`}
-              >
-              수정
-              </button>
-              <button
-                onClick={() => handleDelete(notice.rfileName)}
-                className={`${styles.button} ${styles.deleteButton}`}
-              >
-              삭제
-              </button>
-            </>
+                {notice.ofileName}
+              </span>
+            </div>
+          ) : (
+            <div className={styles.attachedFilePlaceholder}>
+              <span className={styles.noFile}>첨부된 파일 없음</span>
+            </div>
           )}
-          <button
-            onClick={() => navigate("/notice")}
-            className={`${styles.button} ${styles.backButton}`}
-          >
-            목록
-          </button>
         </div>
+
+        {/* 공지사항 본문 */}
+        <div className={styles.detailContent} style={{ marginBottom: "500px" }}>
+          {notice.ncontent}
+        </div>
+
+        {/* 액션 버튼 */}
+        {isLoggedIn && role === "ADMIN" && (
+          <div className={styles.actionsContainer}>
+            <span className={styles.actionLink} onClick={handleMoveEdit}>
+              수정
+            </span>
+            <span className={styles.separator}>|</span>
+            <span
+              className={styles.actionLink}
+              onClick={() => handleDelete(notice.rfileName)}
+            >
+              삭제
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );

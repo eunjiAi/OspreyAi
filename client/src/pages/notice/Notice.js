@@ -115,12 +115,15 @@ function Notice({ searchResults }) {
           {notices.map((notice) => (
             <tr key={notice.noticeNo} className={styles.noticeItem}>
               <td className={styles.noticeNo}>{notice.noticeNo}</td>
-              <td className={styles.nTitle}>
+              <td
+                className={styles.nTitle}
+                style={{ width: "40%", textAlign: "left" }}
+              >
                 <span
                   style={{
                     color: "blue",
                     cursor: "pointer",
-                  }}                  
+                  }}
                   onClick={() => handleTitleClick(notice.noticeNo)}
                 >
                   {notice.ntitle}
