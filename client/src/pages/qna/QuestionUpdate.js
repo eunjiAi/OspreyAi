@@ -54,9 +54,14 @@ const QuestionUpdate = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
+    let updatedValue = value;
+    if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+      updatedValue = updatedValue.trimStart();
+    }
+
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
+      [name]: updatedValue,
     }));
   };
 

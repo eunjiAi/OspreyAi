@@ -57,7 +57,17 @@ const AnswerWrite = ({ qno, onAnswerAdded }) => {
             <input
               type="text"
               value={aTitle}
-              onChange={(e) => setATitle(e.target.value)}
+              onChange={(e) => {
+                // 첫 번째 공백이 있는지 확인
+                let updatedValue = e.target.value;
+
+                // 첫 번째 공백을 제거
+                if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+                  updatedValue = updatedValue.trimStart(); // 첫 번째 공백 제거
+                }
+
+                setATitle(updatedValue);
+              }}
               placeholder="제목을 입력하세요."
               required
             />
@@ -66,7 +76,17 @@ const AnswerWrite = ({ qno, onAnswerAdded }) => {
             <label>내용:</label>
             <textarea
               value={aContent}
-              onChange={(e) => setAContent(e.target.value)}
+              onChange={(e) => {
+                // 첫 번째 공백이 있는지 확인
+                let updatedValue = e.target.value;
+
+                // 첫 번째 공백을 제거
+                if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+                  updatedValue = updatedValue.trimStart(); // 첫 번째 공백 제거
+                }
+
+                setAContent(updatedValue);
+              }}
               rows="6"
               placeholder="내용을 입력하세요."
               required

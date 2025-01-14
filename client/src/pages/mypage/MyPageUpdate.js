@@ -58,11 +58,34 @@ function MyPageUpdate() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+
+    let updatedValue = value;
+    if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+      updatedValue = updatedValue.trimStart();
+    }
+
+    setFormData({ ...formData, [name]: updatedValue });
   };
 
   // 저장 버튼 클릭
   const handleSave = async () => {
+    if (!formData.nickname || formData.nickname.trim() === "") {
+      alert("닉네임을 입력해주세요.");
+      return; // 빈 값이 있을 경우 제출 방지
+    }
+
+    // 전화번호가 빈 값이면 제출하지 않도록 처리
+    if (!formData.phoneNumber || formData.phoneNumber.trim() === "") {
+      alert("전화번호를 입력해주세요.");
+      return; // 빈 값이 있을 경우 제출 방지
+    }
+
+    const phoneRegex = /^[0-9]{3}-[0-9]{4}-[0-9]{4}$/;
+    if (!phoneRegex.test(formData.phoneNumber)) {
+      alert("올바른 전화번호 형식(010-0000-0000)을 입력해주세요.");
+      return;
+    }
+  
     try {
       await apiClient.put(`/member/mypage/${uuid}`, formData, {
         headers: {
@@ -85,6 +108,31 @@ function MyPageUpdate() {
     } catch {
       alert("Face ID 삭제에 실패했습니다.");
     }
+  };
+
+  const handlePhoneNumberChange = (e) => {
+    const { name, value } = e.target;
+
+    // 010을 고정값으로 처리하고, 나머지 값만 받는다
+    if (!value.startsWith("010")) {
+      return; // 010 이외의 값은 처리하지 않음
+    }
+  
+    // 하이픈을 제외한 숫자만 추출
+    let formattedValue = value.replace(/[^\d]/g, ''); // 숫자가 아닌 문자는 모두 제거
+
+    // 010은 고정값이므로 010을 추가하고 나머지 값만 처리
+    formattedValue = "010" + formattedValue.slice(3); // 010 고정 후, 나머지 부분만 슬라이싱
+  
+    // 백스페이스 처리: 길이가 4, 8이면 해당 위치에서 하이픈 제거
+    if (formattedValue.length > 3 && formattedValue.length <= 6) {
+      formattedValue = `${formattedValue.slice(0, 3)}-${formattedValue.slice(3)}`;
+    } else if (formattedValue.length > 7) {
+      formattedValue = `${formattedValue.slice(0, 3)}-${formattedValue.slice(3, 7)}-${formattedValue.slice(7, 11)}`;
+    }
+  
+    // 상태 업데이트
+    setFormData({ ...formData, [name]: formattedValue });
   };
 
   // Google 연동 ---------------------------------------------------------------------------------------------------
@@ -322,6 +370,7 @@ function MyPageUpdate() {
             value={formData.name}
             onChange={handleInputChange}
             className={styles.mypageInput}
+            required
           />
         </label>
         <label className={styles.mypageLabel}>
@@ -332,6 +381,7 @@ function MyPageUpdate() {
             value={formData.nickname}
             onChange={handleInputChange}
             className={styles.mypageInput}
+            required
           />
         </label>
         <label className={styles.mypageLabel}>
@@ -340,8 +390,10 @@ function MyPageUpdate() {
             type="text"
             name="phoneNumber"
             value={formData.phoneNumber}
-            onChange={handleInputChange}
+            onChange={handlePhoneNumberChange}
+            placeholder="010-0000-0000"
             className={styles.mypageInput}
+            required
           />
         </label>
         <label className={styles.mypageLabel}>

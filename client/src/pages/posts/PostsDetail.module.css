@@ -33,6 +33,8 @@
 /* 댓글 컨테이너 */
 .repliesContainer {
   margin-top: 20px;
+  white-space: pre-wrap; /* 공백과 줄바꿈을 그대로 유지 */
+  word-wrap: break-word; /* 긴 단어가 줄을 넘을 경우 줄 바꿈 */
 }
 
 /* 댓글 아이템 */

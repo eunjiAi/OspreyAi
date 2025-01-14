@@ -55,13 +55,19 @@ const NoticeEdit = () => {
     fetchNoticeDetail();
   }, [id]);
 
-  //input 태그의 입력값값 변경 처리
+  //input 태그의 입력값 변경 처리
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
+    // 첫 번째 공백을 허용하지 않음 (첫 번째 공백이 있으면 제거)
+    let updatedValue = value;
+    if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+      updatedValue = updatedValue.trimStart();
+    }
+
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: type === "checkbox" ? (checked ? "Y" : "N") : value,
+      [name]: type === "checkbox" ? (checked ? "Y" : "N") : updatedValue,
     }));
   };
 

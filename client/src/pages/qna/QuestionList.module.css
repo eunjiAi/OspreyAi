@@ -20,6 +20,7 @@
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
+    white-space: pre-wrap; /* 공백과 줄바꿈을 그대로 유지 */
 }
 
 .title {

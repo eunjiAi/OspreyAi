@@ -37,7 +37,11 @@ function PasswordChange() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setPasswordData({ ...passwordData, [name]: value });
+
+    // 공백을 제거한 값으로 업데이트
+    const updatedValue = value.replace(/\s+/g, ''); // 모든 공백 제거
+
+    setPasswordData({ ...passwordData, [name]: updatedValue });
 
     // 현재 비밀번호 입력 시 새로운 비밀번호 필드 표시
     if (name === "currentPassword" && value.length > 3) {

@@ -14,7 +14,7 @@ function FaqWrite() {
     const [formData, setFormData] = useState({
         faqTitle: '',
         faqWriter: '', //초기 상태 
-        category: '',     
+        category: "질문 TOP",     
         faqContent: '',
         answerContent: '',
     });
@@ -33,12 +33,19 @@ function FaqWrite() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+
+        // 첫 번째 문자가 공백이나 엔터인지 확인
+        let updatedValue = value;
+        if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+            updatedValue = updatedValue.trimStart(); // 첫 번째 공백 또는 엔터를 제거
+        }
+
         if(name === 'answerContent'){
-            setAnswerContent(value);
+            setAnswerContent(updatedValue);
         }
         setFormData((prevFormData) => ({
             ...prevFormData,
-            [name]: value,
+            [name]: updatedValue,
 
         }));
     };

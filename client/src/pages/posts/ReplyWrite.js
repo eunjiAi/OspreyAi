@@ -43,7 +43,17 @@ const ReplyWrite = ({ postId, onReplyAdded }) => {
                 <label>내용: </label>
                 <textarea 
                     value={rcontent} 
-                    onChange={(e) => setrcontent(e.target.value)}
+                    onChange={(e) => {
+                         // 첫 번째 공백이 있는지 확인
+                        let updatedValue = e.target.value;
+
+                        // 첫 번째 공백을 제거
+                        if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+                            updatedValue = updatedValue.trimStart(); // 첫 번째 공백 제거
+                        }
+
+                        setrcontent(updatedValue); // 수정된 값을 상태에 업데이트
+                    }}
                     rows="4"
                     placeholder="내용을 입력하세요."
                     required

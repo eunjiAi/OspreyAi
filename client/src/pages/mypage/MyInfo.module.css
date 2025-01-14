@@ -4,6 +4,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 20px;
+  white-space: pre-wrap; /* 공백과 줄바꿈을 그대로 유지 */
 }
 
 /* mainContent 영역에 flexbox 적용하여 사이드바와 콘텐츠를 나란히 배치 */

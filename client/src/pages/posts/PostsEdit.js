@@ -59,9 +59,15 @@ const PostsEdit = () => {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
+    // 첫 번째 공백을 허용하지 않음 (첫 번째 공백이 있으면 제거)
+    let updatedValue = value;
+    if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+      updatedValue = updatedValue.trimStart();
+    }
+
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: type === "checkbox" ? (checked ? "Y" : "N") : value,
+      [name]: type === "checkbox" ? (checked ? "Y" : "N") : updatedValue,
     }));
   };
 

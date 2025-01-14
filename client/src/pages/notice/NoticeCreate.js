@@ -48,7 +48,7 @@ function NoticeCreate() {
 
     // 첫 번째 공백을 허용하지 않음 (첫 번째 공백이 있으면 제거)
     let updatedValue = value;
-    if (updatedValue.startsWith(' ')) {
+    if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
       updatedValue = updatedValue.trimStart();
     }
 
