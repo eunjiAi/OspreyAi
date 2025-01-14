@@ -222,7 +222,13 @@ const QuestionDetail = () => {
                       <td>{editingAnswer === answer.ano ? (
                                   <input type="text"
                                       value={editingTitle}
-                                      onChange={(e) => setEditingTitle(e.target.value)} />
+                                      onChange={(e) => {
+                                        let updatedValue = e.target.value;
+                                        if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+                                          updatedValue = updatedValue.trimStart();
+                                        }
+                                        setEditingTitle(updatedValue);
+                                      }} />
                               ) : (
                                   answer.atitle
                               )}</td>
@@ -232,7 +238,13 @@ const QuestionDetail = () => {
                       <td className={styles.contentCell}>{editingAnswer === answer.ano ? (
                                   <input type="text"
                                       value={editingContent}
-                                      onChange={(e) => setEditingContent(e.target.value)} />
+                                      onChange={(e) => {
+                                        let updatedValue = e.target.value;
+                                        if (updatedValue.startsWith(' ') || updatedValue.startsWith('\n')) {
+                                          updatedValue = updatedValue.trimStart();
+                                        }
+                                        setEditingContent(updatedValue);
+                                      }} />
                               ) : (
                                   answer.acontent
                               )} </td>

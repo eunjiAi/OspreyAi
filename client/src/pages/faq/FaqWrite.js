@@ -14,7 +14,7 @@ function FaqWrite() {
     const [formData, setFormData] = useState({
         faqTitle: '',
         faqWriter: '', //초기 상태 
-        category: "질문 TOP",     
+        category: '질문 TOP',     
         faqContent: '',
         answerContent: '',
     });
