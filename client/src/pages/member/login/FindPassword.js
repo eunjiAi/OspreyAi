@@ -10,7 +10,11 @@ const FindPassword = () => {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData((prev) => ({ ...prev, [id]: value }));
+
+    // 공백을 제거한 값으로 업데이트
+    const updatedValue = value.replace(/\s+/g, ''); // 모든 공백 제거
+
+    setFormData((prev) => ({ ...prev, [id]: updatedValue }));
   };
 
   const handleSubmit = async (e) => {

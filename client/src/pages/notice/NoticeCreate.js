@@ -45,9 +45,16 @@ function NoticeCreate() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // 첫 번째 공백을 허용하지 않음 (첫 번째 공백이 있으면 제거)
+    let updatedValue = value;
+    if (updatedValue.startsWith(' ')) {
+      updatedValue = updatedValue.trimStart();
+    }
+
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
+      [name]: updatedValue,
     }));
   };
 

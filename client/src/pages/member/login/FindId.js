@@ -55,7 +55,7 @@ function FindId() {
             id="name"
             placeholder="이름을 입력하세요"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setName(e.target.value.replace(/\s+/g, ''))}  // 모든 공백 제거
             required
             className={styles.input}
           />
@@ -69,7 +69,7 @@ function FindId() {
             id="email"
             placeholder="이메일을 입력하세요"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value.replace(/\s+/g, ''))}
             required
             className={styles.input}
           />
