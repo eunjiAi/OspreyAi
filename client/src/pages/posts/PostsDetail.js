@@ -142,6 +142,7 @@ const PostsDetail = () => {
 
     // 댓글 | 대댓글 수정 버튼 클릭시, 내용이 input 으로 변경 처리하는 핸들러
     const handleReplyEdit = (replyId, rcontent) => {
+
       setEditingReply(replyId);
       setEditingContent(rcontent);
     };
@@ -270,7 +271,16 @@ const PostsDetail = () => {
                   <input
                     type="text"
                     value={editingContent}
-                    onChange={(e) => setEditingContent(e.target.value)}
+                    onChange={(e) => {
+                      let updatedContent = e.target.value;
+
+                      // 첫 번째 글자가 공백이나 엔터인지 확인
+                      if (updatedContent.startsWith(' ') || updatedContent.startsWith('\n')) {
+                        updatedContent = updatedContent.trimStart(); // 첫 번째 공백 또는 엔터를 제거
+                      }
+
+                      setEditingContent(updatedContent); // 수정된 content로 상태 업데이트
+                    }}
                   />
                 ) : (
                   <span>{reply.rcontent}</span>

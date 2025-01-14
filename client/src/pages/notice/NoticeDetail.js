@@ -80,7 +80,7 @@ const NoticeDetail = () => {
       <div className={styles.detailContainer}>
         {/* 제목과 목록 버튼 */}
         <div className={styles.titleAndButtons}>
-          <h2 className={styles.detailTitle}>공지사항</h2>
+          <h2 className={styles.detailTitle}>{notice.ntitle}</h2>
           <span
             onClick={() => navigate("/notice")}
             className={styles.actionLink}
