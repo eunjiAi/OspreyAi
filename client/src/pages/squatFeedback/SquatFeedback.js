@@ -8,7 +8,7 @@ function SquatFeedback() {
   const [dailyStats, setDailyStats] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const [intervalTime, setIntervalTime] = useState(1000);
+  const [intervalTime, setIntervalTime] = useState(100);
   const [isRunning, setIsRunning] = useState(false);
   const [detected, setDetected] = useState(false);
   const [loading, setLoading] = useState(false);           // 로딩 상태
@@ -50,7 +50,7 @@ function SquatFeedback() {
   const isTokenExpired = (token) => {
     if (!token) return true;
     const payload = getPayloadFromToken(token);
-    const currentTime = Math.floor(Date.now() / 1000);
+    const currentTime = Math.floor(Date.now() / 100);
     return payload.exp < currentTime;
   };
 
@@ -233,7 +233,7 @@ function SquatFeedback() {
   const updateSliderBackground = () => {
     const slider = document.querySelector('.slider');
     if (slider) {
-      const percentage = ((intervalTime / 1000 - 1) / 2) * 100; // 1~3초 기준
+      const percentage = ((intervalTime / 100 - 1) / 2) * 10; // 1~3초 기준
       slider.style.background = `linear-gradient(to right, #4a90e2 ${percentage}%, #ddd ${percentage}%)`;
     }
   };
@@ -287,13 +287,13 @@ function SquatFeedback() {
         </div>
 
         <div className="control-panel">
-          <label>검사 간격 (초): {intervalTime / 1000}초</label>
+          <label>검사 간격 (초): {intervalTime / 100}초</label>
           <input
             type="range"
             min="1"
             max="3"
-            value={intervalTime / 1000}
-            onChange={(e) => setIntervalTime(e.target.value * 1000)}
+            value={intervalTime / 100}
+            onChange={(e) => setIntervalTime(e.target.value * 100)}
             className="slider"
           />
           <button onClick={startAnalysis} disabled={isRunning} className={`control-button start ${isRunning ? 'active' : ''}`}>
