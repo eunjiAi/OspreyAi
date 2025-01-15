@@ -206,18 +206,10 @@ const PostsDetail = () => {
       <span className={styles.noFile}>첨부된 파일 없음</span>
     </div>
   )}
-</div>
-        <div className={styles.detailContent} style={{ marginBottom: "500px" }}>
+ </div>
+  <div className={styles.detailContent} style={{ marginBottom: "500px" }}>
   <div style={{ whiteSpace: "pre-line" }}>{posts?.content}</div>
-  {showImage && (
-  <div className={styles.imagePreviewContainer}>
-    <img
-      src={showImage}
-      alt="첨부된 이미지"
-      className={styles.attachedImage}
-    />
-  </div>
-)}
+  
 </div>
 
 
@@ -312,6 +304,16 @@ const PostsDetail = () => {
 // {imageUrl && (
 //   <div className={styles.imagePreviewContainer}>
 //     <img src={imageUrl} alt="첨부된 이미지" className={styles.attachedImage} />
+//   </div>
+// )}
+
+// {showImage && (
+//   <div className={styles.imagePreviewContainer}>
+//     <img
+//       src={showImage}
+//       alt="첨부된 이미지"
+//       className={styles.attachedImage}
+//     />
 //   </div>
 // )}
 export default PostsDetail;
