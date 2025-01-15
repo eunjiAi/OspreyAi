@@ -50,7 +50,7 @@ function SquatFeedback() {
   const isTokenExpired = (token) => {
     if (!token) return true;
     const payload = getPayloadFromToken(token);
-    const currentTime = Math.floor(Date.now() / 100);
+    const currentTime = Math.floor(Date.now() / 1000);
     return payload.exp < currentTime;
   };
 
@@ -233,7 +233,7 @@ function SquatFeedback() {
   const updateSliderBackground = () => {
     const slider = document.querySelector('.slider');
     if (slider) {
-      const percentage = ((intervalTime / 100 - 1) / 2) * 10; // 1~3초 기준
+      const percentage = ((intervalTime / 100 - 1) / 2) * 100; // 1~3초 기준
       slider.style.background = `linear-gradient(to right, #4a90e2 ${percentage}%, #ddd ${percentage}%)`;
     }
   };
